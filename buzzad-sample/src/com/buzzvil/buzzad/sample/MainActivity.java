@@ -16,19 +16,21 @@ public class MainActivity extends Activity {
         /**
          * Initialize BuzzAd.
          * BuzzAd.init have to be called prior to other methods.
+         * app_key : get from publisher page
+         * this : context
          */
-        BuzzAd.init("43", this);
+        BuzzAd.init("app_key", this);
         
         findViewById(R.id.open_offerwall).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             	/**
             	 * Show offer wall.
-            	 * MainActivity.this : current activity, "my title", 
-            	 * "Get Points" : header title on offer wall
-            	 * "media_user_id" : unique user id in publisher
+            	 * MainActivity.this : current activity
+            	 * Get Points : header title on offer wall
+            	 * publisher_user_id : unique user id for publisher
             	 */
-                BuzzAd.showOfferWall(MainActivity.this, "Get Points", "media_user_id");
+            	BuzzAd.showOfferWall(MainActivity.this, "Get Points", "publisher_user_id");
             }
         });
     }
