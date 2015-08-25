@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
             	/**
             	 * Show offer wall.
             	 * MainActivity.this : current activity, "my title", 
-            	 * "my title" : header title on offer wall
+            	 * "Get Points" : header title on offer wall
             	 * "media_user_id" : unique user id in publisher
             	 */
                 BuzzAd.showOfferWall(MainActivity.this, "Get Points", "media_user_id");
