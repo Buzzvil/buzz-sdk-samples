@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
             	 * "my title" : header title on offer wall
             	 * "media_user_id" : unique user id in publisher
             	 */
-                BuzzAd.showOfferWall(MainActivity.this, "my title", "media_user_id");
+                BuzzAd.showOfferWall(MainActivity.this, "Get Points", "media_user_id");
             }
         });
     }
