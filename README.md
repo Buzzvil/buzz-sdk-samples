@@ -32,6 +32,15 @@
 </manifest>
 ```
 
+##### Proguard 설정
+Proguard 사용시에 다음 라인들을 Proguard 설정에 추가합니다.
+
+```
+-keep class com.buzzvil.buzzad.sdk.** { *; }
+-keep interface com.buzzvil.buzzad.sdk.** { *; }
+```
+
+
 ### 2. 오퍼월 호출
 - BuzzAd.init(String appKey, Context context) : 오퍼월을 보여주려는 액티비티의 onCreate에서 호출.
     
