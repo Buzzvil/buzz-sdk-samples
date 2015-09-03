@@ -104,4 +104,4 @@ public class MainActivity extends Activity {
     | point | 유저에게 지급해야 할 포인트 |
     | transaction_id | 포인트 중복 적립을 막기 위한 id. 같은 transaction_id로 요청이 온 경우에는 반드시 포인트 중복 적립이 안되도록 처리해주어야 한다.|
 
-- 포인트 적립 요청에 매체사 서버는 정상 처리된 경우는 `HTTP STATUS 200` 응답을 보내야 하며, 그 외의 경우는 재시도를 하게 된다.
+- 포인트 적립 요청에 매체사 서버는 정상 처리된 경우는 `HTTP STATUS 200` 응답을 보내야 하며, 그 외의 경우 특정 시간동안 포인트 적립 요청은 재시도가 된다.
