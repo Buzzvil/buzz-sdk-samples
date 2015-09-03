@@ -50,7 +50,7 @@ To prevent ProGuard from stripping away required classes, add the following line
 
 - `BuzzAd.showOfferWall(Activity activity, String title, String userId)` : Shows Offer Wall on your application.
 
-    > `userId`(Publisher User Id) is sent to publisher with points accumulation request(Please refer to 3. Points Accumulation Request for more details). Publishers can identify each user by using `userId`, and give points to the user.
+    > `userId`(Publisher User Id) is sent to publisher through points accumulation request(Please refer to 3. Points Accumulation Request for more details). Publishers can identify each user by using `userId`, and give points to the user.
 
 #### Example
 
@@ -103,6 +103,7 @@ You can set the postback URL to get the postback from BuzzAd server in BuzzAd da
     | title | Campaign Title |
     | user_id  | The value used in BuzzAd.showOfferWall() of SDK |
     | point | The value how many points a user can get |
-    | transaction_id | A unique ID to prevent duplicated same postback. If transaction_id is same with previous postback, you have to skip the postback |
+    | transaction_id | A unique ID to prevent duplicated postback. If transaction_id is same with previous postback, you have to skip the postback. |
 
 - Response : If a postback is precessed successfully, publishers have to respond with `HTTP STATUS 200`. Otherwise, the postback is sent to publisher again in specific peorid. We do not care anything except http status code for retry policy.
+	> **Caution** : If duplicated `transaction_id` is sent through postback, you have to respond with `HTTP STATUS 200` to prevent retry.
