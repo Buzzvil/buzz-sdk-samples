@@ -100,7 +100,7 @@ public class MainActivity extends Activity {
     | app_key  | SDK 연동시 사용한 app_key  |
     | campaign_id  | 참여한 광고 아이디  |
     | title | 참여한 광고명  |
-    | user_id  | 매체사 유저 아이디  |
+    | user_id  | 매체사 유저 아이디로 SDK의 BuzzAd.showOfferWall 호출시 전달했던  `userId`  |
     | point | 유저에게 지급해야 할 포인트 |
     | transaction_id | 포인트 중복 적립을 막기 위한 id. 같은 transaction_id로 요청이 온 경우에는 반드시 포인트 중복 적립이 안되도록 처리해주어야 한다.|
 
