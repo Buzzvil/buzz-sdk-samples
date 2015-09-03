@@ -65,8 +65,8 @@ public class MainActivity extends Activity {
         /**
          * Initialize BuzzAd.
          * BuzzAd.init have to be called prior to other methods.
-         * app_key : get from publisher admin
-         * this : context
+         * app_key : Unique key value for publisher. Please find it on your BuzzAd dashboard.
+         * this : Context
          */
         BuzzAd.init("app_key", this);
 
@@ -75,9 +75,9 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
             	/**
             	 * Show offer wall.
-            	 * MainActivity.this : current activity
-            	 * Get Points : header title on offer wall
-            	 * publisher_user_id : unique user id for publisher
+            	 * MainActivity.this : Current activity
+            	 * Get Points : Header title on offer wall
+            	 * publisher_user_id : Unique user id for publisher
             	 */
                 BuzzAd.showOfferWall(MainActivity.this, "Get Points", "publisher_user_id");
             }
@@ -105,4 +105,4 @@ You can set the postback URL to get the postback from BuzzAd server in BuzzAd da
     | point | The value how many points a user can get |
     | transaction_id | A unique ID to prevent duplicated same postback. If transaction_id is same with previous postback, you have to skip the postback |
 
-- Response : If a postback is precessed successfully, publishers have to respond with `HTTP STATUS 200`. Otherwise, the postback is sent to again in specific peorid. We do not care anything except http status code for retry policy.
+- Response : If a postback is precessed successfully, publishers have to respond with `HTTP STATUS 200`. Otherwise, the postback is sent to publisher again in specific peorid. We do not care anything except http status code for retry policy.

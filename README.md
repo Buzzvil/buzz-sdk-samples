@@ -25,7 +25,7 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        
+
         <!-- Activity for BuzzAd -->
         <activity
             android:name="com.buzzvil.buzzad.sdk.OfferWallActivity"
@@ -45,7 +45,7 @@ Proguard 사용시에 다음 라인들을 Proguard 설정에 추가합니다.
 
 ### 2. 오퍼월 호출
 - `BuzzAd.init(String appKey, Context context)` : 오퍼월을 보여주려는 액티비티의 onCreate에서 호출.
-    
+
     > `app_key`는 퍼블리셔 어드민 페이지에 로그인하여 확인.
 
 - `BuzzAd.showOfferWall(Activity activity, String title, String userId)` : 오퍼월 호출
@@ -61,23 +61,23 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         /**
          * Initialize BuzzAd.
          * BuzzAd.init have to be called prior to other methods.
-         * app_key : get from publisher admin
-         * this : context
+         * app_key : Unique key value for publisher. Please find it on your BuzzAd dashboard.
+         * this : Context
          */
         BuzzAd.init("app_key", this);
-        
+
         findViewById(R.id.open_offerwall).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             	/**
             	 * Show offer wall.
-            	 * MainActivity.this : current activity
-            	 * Get Points : header title on offer wall
-            	 * publisher_user_id : unique user id for publisher
+            	 * MainActivity.this : Current activity
+            	 * Get Points : Header title on offer wall
+            	 * publisher_user_id : Unique user id for publisher
             	 */
                 BuzzAd.showOfferWall(MainActivity.this, "Get Points", "publisher_user_id");
             }

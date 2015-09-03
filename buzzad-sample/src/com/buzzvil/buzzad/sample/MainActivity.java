@@ -16,8 +16,8 @@ public class MainActivity extends Activity {
         /**
          * Initialize BuzzAd.
          * BuzzAd.init have to be called prior to other methods.
-         * app_key : get from publisher page
-         * this : context
+         * app_key : Unique key value for publisher. Please find it on your BuzzAd dashboard.
+         * this : Context
          */
         BuzzAd.init("app_key", this);
         
@@ -26,8 +26,8 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
             	/**
             	 * Show offer wall.
-            	 * MainActivity.this : current activity
-            	 * Get Points : header title on offer wall
+            	 * MainActivity.this : Current activity
+            	 * Get Points : Header title on offer wall
             	 * publisher_user_id : unique user id for publisher
             	 */
             	BuzzAd.showOfferWall(MainActivity.this, "Get Points", "publisher_user_id");
