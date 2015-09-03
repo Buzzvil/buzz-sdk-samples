@@ -4,6 +4,8 @@
 - SDK 연동 및 샘플 어플리케이션 실행을 위해서는 app_key(버즈애드 퍼블리셔 어드민에서 확인 가능) 필요
 - 구글 플레이 서비스 라이브러리 설정 필요. [구글 플레이 서비스 라이브러리 설정방법](https://developers.google.com/android/guides/setup)을 참고하여 직접 추가하면 된다.
 
+    > 안드로이드 스튜디오와 이클립스 설정이 다릅니다. 안드로이드 스튜디오인 경우는 **build.gradle > dependencies**에 **compile 'com.google.android.gms:play-services-ads:7.5.0'**만 추가하면 됩니다. 다운받은 소스에서 샘플을 참고하세요.
+
 ## 버즈애드 SDK 연동가이드
 
 ### 1. 설정
