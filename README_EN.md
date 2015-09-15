@@ -38,8 +38,12 @@ Add permission and activity to your Android Manifest as below.
 To prevent ProGuard from stripping away required classes, add the following lines in your ProGuard configuration file.
 
 ```
--keep class com.buzzvil.buzzad.sdk.** { *; }
--keep interface com.buzzvil.buzzad.sdk.** { *; }
+-keep class com.buzzvil.buzzad.sdk.** {*;}
+-keep interface com.buzzvil.buzzad.sdk.** {*;}
+
+-keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {*;}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info {*;}
 ```
 
 
