@@ -99,14 +99,14 @@ public class MainActivity extends Activity {
 - 요청 방향 : 버즈애드 서버 -> 매체사 서버
 - 파라미터
 
-    | Name  | Description |
-    | ------------- | ------------- |
-    | app_key  | SDK 연동시 사용한 app_key  |
-    | campaign_id  | 참여한 광고 아이디  |
-    | title | 참여한 광고명  |
-    | user_id  | 매체사 유저 아이디로 SDK의 BuzzAd.showOfferWall 호출시 전달했던  `userId`  |
-    | point | 유저에게 지급해야 할 포인트 |
-    | transaction_id | 포인트 중복 적립을 막기 위한 id. 같은 transaction_id로 요청이 온 경우에는 반드시 포인트 중복 적립이 안되도록 처리해주어야 한다.|
+    | Name  | Type | Description |
+    | ------ | ----------| ----------- |
+    | app_key  | Integer | SDK 연동시 사용한 app_key  |
+    | campaign_id | Integer | 참여한 광고 아이디  |
+    | title | String | 참여한 광고명  |
+    | user_id  | String | 매체사 유저 아이디로 SDK의 BuzzAd.showOfferWall 호출시 전달했던  `userId`|
+    | point | Integer | 유저에게 지급해야 할 포인트 |
+    | transaction_id | String | 포인트 중복 적립을 막기 위한 id. 같은 transaction_id로 요청이 온 경우에는 반드시 포인트 중복 적립이 안되도록 처리해주어야 한다.|
 
 - 포인트 적립 요청에 매체사 서버는 정상 처리된 경우는 `HTTP STATUS 200` 응답을 보내야 하며, 그 외의 경우 특정 시간동안 포인트 적립 요청은 재시도가 된다.
 	> **주의** : 만약 중복된 `transaction_id`가 포스트백을 통해 전달되면, `HTTP STATUS 200` 응답을 보내야 한다. 그렇지 않으면, 해당 요청에 대해 재시도가 이루어진다.
