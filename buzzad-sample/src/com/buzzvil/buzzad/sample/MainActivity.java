@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.buzzvil.buzzad.sdk.BuzzAd;
+import com.buzzvil.buzzad.sdk.UserProfile;
 
 public class MainActivity extends Activity {
 
@@ -20,6 +21,15 @@ public class MainActivity extends Activity {
          * this : Context
          */
         BuzzAd.init("app_key", this);
+
+        /**
+         * Set User's profile(Optional)
+         * BuzzAd.getUserProfile have to be called after BuzzAd.init is called.
+         */
+        UserProfile userProfile = BuzzAd.getUserProfile();
+
+        userProfile.setBirthYear(1993);
+        userProfile.setGender(UserProfile.USER_GENDER_FEMALE);
         
         findViewById(R.id.open_offerwall).setOnClickListener(new View.OnClickListener() {
             @Override
