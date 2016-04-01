@@ -54,7 +54,23 @@ Proguard 사용시에 다음 라인들을 Proguard 설정에 추가합니다.
 
 - `BuzzAd.showOfferWall(Activity activity, String title, String userId)` : 오퍼월 호출
 
-    > 이 때 전달되는 `userId`(매체사 유저 아이디)는 포인트 적립 요청시(3. 포인트 적립 요청 참고)에 같이 전달된다. 이 값을 통해 매체사가 유저를 구분하여 포인트 지급 처리를 할 수 있다.
+    > 이 때 전달되는 `userId`(매체사 유저 아이디)는 포인트 적립 요청시(4. 포인트 적립 요청 참고)에 같이 전달된다. 이 값을 통해 매체사가 유저를 구분하여 포인트 지급 처리를 할 수 있다.
+    
+    > **주의** : 반드시 `BuzzAd.init()` 을 호출한 이후에만 오퍼월 호출이 가능하다.
+
+### 3. 타게팅 정보 추가(선택사항)
+성별, 나이별 타게팅 정보를 가진 광고를 유저에게 보여주려 할 때 다음의 메소드를 통해 유저의 정보를 입력할 수 있다.
+
+- `BuzzAd.getUserProfile()` : `UserProfile` 객체를 리턴한다. 리턴된 객체에 유저의 성별, 나이 정보를 아래에 기술된 UserProfile 클래스의 메소드를 이용하여 설정할 수 있다.
+
+    > **주의** : 반드시 `BuzzAd.init()` 을 호출한 이후에만 이 메소드를 이용해서 UserProfile 객체를 리턴할 수 있다.
+
+##### UserProfile 클래스 내의 메소드 목록
+- `setGender(String gender)` : 성별을 설정한다. 다음과 같은 미리 정의된 String을 통해 형식에 맞춰 성별을 적용해야 한다.
+    - `UserProfile.USER_GENDER_MALE` : 남성인 경우
+    - `UserProfile.USER_GENDER_FEMALE` : 여성인 경우
+
+- `setBirthYear(int birthYear)` : 유저의 출생 년도를 4자리의 숫자로 입력하여 나이를 설정한다.
 
 #### 사용 예제
 
@@ -74,15 +90,24 @@ public class MainActivity extends Activity {
          */
         BuzzAd.init("app_key", this);
 
+        /**
+         * Set User's profile(Optional)
+         * BuzzAd.getUserProfile have to be called after BuzzAd.init is called.
+         */
+        UserProfile userProfile = BuzzAd.getUserProfile();
+
+        userProfile.setBirthYear(1993);
+        userProfile.setGender(UserProfile.USER_GENDER_FEMALE);
+
         findViewById(R.id.open_offerwall).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            	/**
-            	 * Show offer wall.
-            	 * MainActivity.this : Current activity
-            	 * Get Points : Header title on offer wall
-            	 * publisher_user_id : Unique user id for publisher
-            	 */
+                /**
+                 * Show offer wall.
+                 * MainActivity.this : Current activity
+                 * Get Points : Header title on offer wall
+                 * publisher_user_id : Unique user id for publisher
+                 */
                 BuzzAd.showOfferWall(MainActivity.this, "Get Points", "publisher_user_id");
             }
         });
@@ -90,7 +115,7 @@ public class MainActivity extends Activity {
 }
 ```
 
-### 3. 포인트 적립 요청(포스트백)  - 서버 연동
+### 4. 포인트 적립 요청(포스트백)  - 서버 연동
 - 버즈애드에서 포인트 적립이 발생했을 때 버즈애드에서 직접 매체사 유저들에게 포인트를 지급하는 것이 아니다. 버즈애드 서버에서 매체사 서버로 포인트 적립 요청을 보낼 뿐이고, 실제 지급은 매체사 서버에서 처리한다.
 - 포인트 적립 요청을 받을 매체사 주소는 버즈애드 매체사 어드민 페이지에서 등록하면 해당 주소로 포인트 적립시에 요청이 이루어진다.
 
@@ -109,4 +134,4 @@ public class MainActivity extends Activity {
     | transaction_id | String | 포인트 중복 적립을 막기 위한 id. 같은 transaction_id로 요청이 온 경우에는 반드시 포인트 중복 적립이 안되도록 처리해주어야 한다.|
 
 - 포인트 적립 요청에 매체사 서버는 정상 처리된 경우는 `HTTP STATUS 200` 응답을 보내야 하며, 그 외의 경우 특정 시간동안 포인트 적립 요청은 재시도가 된다.
-	> **주의** : 만약 중복된 `transaction_id`가 포스트백을 통해 전달되면, `HTTP STATUS 200` 응답을 보내야 한다. 그렇지 않으면, 해당 요청에 대해 재시도가 이루어진다.
+    > **주의** : 만약 중복된 `transaction_id`가 포스트백을 통해 전달되면, `HTTP STATUS 200` 응답을 보내야 한다. 그렇지 않으면, 해당 요청에 대해 재시도가 이루어진다.
