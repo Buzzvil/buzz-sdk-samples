@@ -46,7 +46,8 @@ keytool -exportcert -alias <Release key alias> -keystore <Release key path> | op
 
 #### UserToken API Interface OverView
 User Token의 전체적인 전달 흐름을 그림으로 표현하면 다음과 같다.
-![buzzstore user token](https://github.com/Buzzvil/buzzstore-sdk-publisher/blob/guide/buzzstore.png)
+
+![buzzstore user token](https://github.com/Buzzvil/buzzstore-sdk-publisher/blob/master/buzzstore.png)
 
 - Request 주체 : Publisher App
 - Response 주체 : BuzzStore Server
