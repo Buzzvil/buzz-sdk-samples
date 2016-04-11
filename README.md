@@ -151,10 +151,10 @@ Proguard 사용 시 다음 라인들을 Proguard 설정에 추가한다.
 
 - `BuzzStore.loadStore(Activity activity)` : 버즈스토어 모바일 UI를 호출한다.
 
-> **주의** : 반드시 `BuzzStore.init()`, `BuzzStore.setUserTokenListener()` 이 모두 호출된 이후에 호출해야 한다.
+	> **주의** : 반드시 `BuzzStore.init()`, `BuzzStore.setUserTokenListener()` 이 모두 호출된 이후에 호출해야 한다.
 
 #### UserToken 유효성 체크 interface 구현
-제공하는 `UserTokenListener` 를 통해 `UserToken API` call이 필요할 때(OnNeedAPICall())와, UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail())의 이벤트 처리를 할 수 있다.
+제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
 
 interface의 구성은 다음과 같다.
 ```Java
@@ -164,7 +164,7 @@ public interface UserTokenListener {
 }
 ```
 
-- `String OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 퍼블리셔가 구현한 `UserToken API` 를 호출하고 (2. UserToken API Implementation 참조), 이를 통해 전달받은 UserToken을 리턴하도록 구현해야 한다. SDK는 이 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
+- `String OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 `UserToken API` 를 호출하고 (2. UserToken API Implementation 참조), 이 API를 통해 전달받은 UserToken을 리턴하도록 구현해야 한다. SDK는 이 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
 
 > **주의** : OnNeedAPICall() 은 재시도만을 위한 것이 아니라 유저가 버즈스토어를 최초로 로드하여 UserToken을 생성하려 할 때에도 불리게 된다. 따라서 필수적으로 구현해야 한다.
 
