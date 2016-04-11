@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.buzzvil.buzzstore.sample"
-        minSdkVersion 9
+        minSdkVersion 15
         targetSdkVersion 23
     }
 
@@ -22,4 +22,5 @@ android {
 dependencies {
     compile files('libs/buzzstore.jar')
     compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.google.android.gms:play-services-ads:7.5.0'
 }
