@@ -74,7 +74,7 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
 ###### 요청
 - API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
 - method : `POST`
-- url : `https://52.193.111.153/api/users` (테스트 환경)
+- url : `https://test-bsp.buzzad.io/api/users` (테스트 환경)
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-KEY` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 키
