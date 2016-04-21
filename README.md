@@ -1,43 +1,11 @@
-# BuzzStore Integration Guide v0.9
+# BuzzStore Integration Guide v1.0
 
-버즈스토어를 연동하기 위한 통합 가이드. 연동 과정은 전체적으로 다음의 세 단계로 구성되어 있다.
+버즈스토어를 연동하기 위한 통합 가이드. 연동 과정은 전체적으로 다음의 두 단계로 구성되어 있다.
 
-1. Key Hash Registration
-2. UserToken API Implementation
-3. SDK Integration
+1. UserToken API Implementation
+2. SDK Integration
 
-
-## 1. Key Hash Registration
-- 버즈스토어는 보안을 강화하기 위해 퍼블리셔 앱 내에서 SDK를 통해 버즈스토어를 호출할 때 앱의 Key Hash값을 같이 전달받아 요청의 유효성을 판별한다. 
-- 버즈스토어 어드민에 아래에 제시된 대로 콘솔을 이용하거나 코드를 이용해서 생성한 Key Hash를 등록한다.
-- Key Hash는 디버그 앱과 릴리즈 앱이 서로 다르다. 두 버젼 모두 등록해야 한다.
-- 디버그 앱의 Key Hash는 빌드하는 환경(e.g. 컴퓨터)에 따라 달라진다. 다수의 개발자가 디버그용 앱을 각각 다른 환경에서 빌드할 경우, 각각의 환경에서의 Key Hash를 모두 등록해야 한다.
-- 릴리즈 앱의 Key Hash는 유일하다.
-
-> **주의** : 기존에 등록된 Key Hash 값이 아닌 다른 값이 요청 시 전달된다면 서버는 비정상 요청으로 판단하여 해당 요청을 차단한다. 따라서 연동을 시작할 때 제일 처음 단계로 모든 Key Hash를 등록하는 것을 권장한다.
-
-#### (1) 터미널을 이용해서 생성하는 법
-##### 디버그용 Key Hash
-터미널에서 다음과 같은 command를 통해 디버그용 Key Hash를 얻을 수 있다.
-> **주의** : 디버그용 키 저장소의 default 비밀번호는 `android` 이다.
-
-```
-keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
-```
-
-##### 릴리즈용 Key Hash
-터미널에서 다음과 같은 command를 통해 릴리즈용 Key Hash를 얻을 수 있다. 아래의 `<Release key alias>` 에는 릴리즈 키의 alias를, `<Release key path>` 에는 릴리즈 키의 path를 입력한다.
-> **주의** : 릴리즈용 키를 얻으려면 기존에 지정해 둔 키 저장소 비밀번호 입력이 필요하다.
-
-```
-keytool -exportcert -alias <Release key alias> -keystore <Release key path> | openssl sha1 -binary | openssl base64
-```
-
-#### (2) 코드를 이용해서 생성하는 법
-- 제공하는 SDK 내의 `BuzzStore.getKeyHash(Context context)` 함수를 이용한다. 이 함수는 앱의 context 를 파라미터로 받아 현재 빌드된 앱의 Key Hash를 String 형태로 리턴한다.
-
-
-## 2. UserToken API Implementation
+## 1. UserToken API Implementation
 - 퍼블리셔의 유저가 버즈스토어를 이용할 때 주고받는 정보에 대한 보안을 강화하기 위해 버즈스토어는 User Token 을 이용한다.
 - User Token 은 퍼블리셔 User Id 와 1:1 매칭되는 값으로, 버즈스토어 서버에서 생성하고 관리한다. 
 - 버즈스토어 호출 시 전달되는 User Token 이 없거나 무효하면 버즈스토어 서버는 이를 비정상적 상황으로 인식하고 해당 호출을 차단한다.
@@ -60,7 +28,7 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
 
 > **주의** : 퍼블리셔 서버에서 유저 토큰을 별도로 저장하여 관리할 필요는 없다. 유저 토큰 요청의 시작은 언제나 퍼블리셔 앱에서 일어나기 때문에 퍼블리셔 서버는 버즈스토어 서버에서 받아온 유저 토큰을 단순히 퍼블리셔 앱으로 전달해주기만 하면 된다.
 
-> **주의** : 구현된 UserToken API의 앱 내 호출은 BuzzStore SDK에서 제공하는 'UserToken 유효성 체크 인터페이스' 내의 OnNeedAPICall() 메소드 안에서만 일어나면 된다.(그림의 'Token Validate check' 참조) SDK에서 UserToken의 유효성을 체크하기 때문에 퍼블리셔 측에서 이 외에 별도로 API 호출을 위한 로직을 짤 필요는 없다.
+> **주의** : 구현된 UserToken API의 앱 내 호출은 BuzzStore SDK에서 제공하는 'UserToken 유효성 체크 인터페이스' 내의 OnNeedAPICall() 메소드 안에서만 일어나야 된다.(그림의 'Token Validate check' 참조) SDK에서 UserToken의 유효성을 체크하기 때문에 퍼블리셔 측에서 이 외에 별도로 API 호출을 위한 로직을 짤 필요는 없다.
 
 #### Publisher App <-> Publisher Server(App 내 API 구현)
 - 기존에 퍼블리셔 앱이 서버와 통신하던 방식을 이용해 퍼블리셔 서버에게 현재 유저의 정보에 맞는 User Token을 요청하는 API를 구현한다.
@@ -77,25 +45,25 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
 - url : `https://test-bsp.buzzad.io/api/users` (테스트 환경)
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
-    - `HTTP-X-BUZZVIL-API-KEY` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 키
+    - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
 - POST 필수 파라미터 : 퍼블리셔의 유저 식별자 `publisher_user_id`
 
 e.g.
 ```JSON
 {
-"publisher_user_id": 1270537
+    "publisher_user_id": 1270537
 }
 ```
 
-> **주의** : 버즈스토어는 퍼블리셔 유저 식별자를 기준으로 유저를 식별하므로 해당 값은 추후 바꿀 수 없다. 버즈스토어는 두개 이상의 서로 다른 유저 식별자를 서로 다른 유저로 인식한다. 따라서 퍼블리셔가 제공하는 유저 식별자는 절대 업데이트되지 않는 값을 사용해야 한다. 예를들어, 계정에 연동 된 이메일 주소와 같이 추후 변동될 여지가 있는 값 보다는 퍼블리셔 디비 내의 고정 값으로 사용하길 권장한다.
+> **주의** : 버즈스토어는 퍼블리셔 유저 식별자를 기준으로 유저를 식별하므로 해당 값은 추후 바꿀 수 없다. 버즈스토어는 두개 이상의 서로 다른 유저 식별자를 서로 다른 유저로 인식한다. 따라서 퍼블리셔가 제공하는 유저 식별자는 절대 업데이트되지 않는 값을 사용해야 한다. 예를들어, 계정에 연동 된 이메일 주소와 같이 추후 변동될 여지가 있는 값 보다는 퍼블리셔 디비 내의 유저 식별자 값(e.g. Users 테이블의 pk 값)으로 사용하길 권장한다.
 
 - 성공 시 JSON 포맷으로 `publisher_user_id`, `token` 를 리턴한다. HTTP 응답 상태 코드는 200 이다. 
 
 e.g.
 ```JSON
 {
-"publisher_user_id": 1270537,
-"token": "yYn05pKNlHpMdmBd2GeXU4tBdQtIENuFmFJ0MhBJkwBIzE2TXffLTA7bfWAmRSOc"
+    "publisher_user_id": 1270537,
+    "token": "yYn05pKNlHpMdmBd2GeXU4tBdQtIENuFmFJ0MhBJkwBIzE2TXffLTA7bfWAmRSOc"
 }
 ```
 - 실패 시 JSON 포맷으로 `error_code`, `error_message` 를 리턴한다.
@@ -104,9 +72,9 @@ e.g.
 버즈스토어 서버에 일시적 장애가 발생하여 이 API 를 통한 토큰 발급에 실패하는 경우 스토어 SDK 이용이 제한된다. 이 때, SDK내에서 제공하는 `UserTokenListener` 의 `OnNeedAPICall()` 의 구현이 완료되어 있으면 SDK가 자동으로 재시도를 한다.(3. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
 
 
-## 3. SDK Integration
+## 2. SDK Integration
 - 버즈스토어를 안드로이드 어플리케이션에 연동하기 위한 라이브러리
-- 안드로이드 버전 지원 : Android 4.0.3(API Level 15) 이상
+- 안드로이드 버전 지원 : Android 4.0(API Level 14) 이상
 - SDK는 버즈스토어 UI 호출 기능과 UserToken 유효성 체크 기능을 제공한다.
 - 버즈스토어 UI는 모두 웹으로 이루어져 있으며, 필수 파라미터를 전달하여 웹뷰를 통해 호출한다.
 - UserToken 유효성 체크는 Java interface로 제공하므로 아래의 가이드에 따라 Publisher 앱 내에서 직접 interface 의 구현이 필요하다.
@@ -154,21 +122,24 @@ Proguard 사용 시 다음 라인들을 Proguard 설정에 추가한다.
 	> **주의** : 반드시 `BuzzStore.init()`, `BuzzStore.setUserTokenListener()` 이 모두 호출된 이후에 호출해야 한다.
 
 #### UserToken 유효성 체크 interface 구현
-제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
+제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, Initialize 중 유저가 스토어 호출을 눌러서 다시 한번 재시도를 해야 할 때(OnInitFail), UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
 
 interface의 구성은 다음과 같다.
 ```Java
 public interface UserTokenListener {
-    String OnNeedAPICall();
+    void OnNeedAPICall();
+    void OnInitFail();
     void OnFail();
 }
 ```
 
-- `String OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 `UserToken API` 를 호출하고 (2. UserToken API Implementation 참조), 이 API를 통해 전달받은 UserToken을 리턴하도록 구현해야 한다. SDK는 이 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
+- `void OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 `UserToken API` 를 호출하고 (2. UserToken API Implementation 참조), 이 API를 통해 전달받은 UserToken을 `setUserToken` 메소드를 통해 등록하도록 구현해야 한다. SDK는 `setUserToken`을 통해 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
+    - `void setUserToken(String userToken)` : API call이 성공했을 때, Response로 전달받은 UserToken을 String 형태로 전달한다. API call이 실패했을 때는 빈 스트링("")을 인자로 넣어 이 메소드를 호출해야 SDK에서 자동으로 재시도를 하게 된다.
 
 > **주의** : OnNeedAPICall() 은 재시도만을 위한 것이 아니라 유저가 버즈스토어를 최초로 로드하여 UserToken을 생성하려 할 때에도 불리게 된다. 따라서 필수적으로 구현해야 한다.
 
-- `void OnFail()` : SDK는 OnNeedAPICall() 을 통해 전달받은 UserToken을 가지고 BuzzStore Server로 유효성 체크 시도를 반복하는데, 최대 횟수 만큼 시도했으나 결국 유효한 UserToken을 발급받지 못해 최종 실패한 경우 이 메소드가 호출된다. 이 메소드는 연동 중 디버깅 용이나 유저에게 버즈스토어 접근 불가를 알리는 UI 처리를 위해 사용할 수 있다.
+- `void OnInitFail()` :  BuzzStore를 띄우기 위해 Initialize 처리를 하는 도중 유저가 loadStore를 호출하여 스토어 호출에 실패했을 때 호출된다. 유저에게 다시 한번 시도하라는 메세지를 전달하는 UI 처리를 구현하는 것이 권장된다.
+- `void OnFail()` : SDK는 OnNeedAPICall() 을 통해 전달받은 UserToken을 가지고 BuzzStore Server로 유효성 체크 시도를 반복하는데, 최대 횟수 만큼 시도했으나 결국 유효한 UserToken을 발급받지 못해 최종 실패한 경우 이 메소드가 호출된다. 버즈스토어 서버 혹은 퍼블리셔 서버가 사고로 작동하지 않을 때 이러한 경우가 생길 수 있다. 유저에게 서버 에러로 인한 버즈스토어 접근 불가를 알리는 UI 처리를 구현하는 것이 권장된다.
 
 ##### 사용 예제
 ```Java
@@ -188,25 +159,53 @@ public class MainActivity extends Activity {
          */
         BuzzStore.init("appId", "userId", this);
 
-        BuzzStore.setUserTokenListener(new BuzzStore.UserTokenListener() {
+        BuzzStore.setBuzzStoreListener(new BuzzStore.BuzzStoreListener() {
             @Override
-            public String OnNeedAPICall() {
+            public void OnNeedAPICall() {
                 /**
-                 * 해당 함수가 호출되면 퍼블리셔 서버로의 API 콜을 통해 해당 유저의 유저토큰을 전달받아 리턴해야 한다.
+                 * 해당 함수가 호출되면 퍼블리셔 서버로의 API 콜을 통해 해당 유저의 유저토큰을 전달받아 setUserToken 메소드를 통해 등록해야 한다.
                  * 보안상의 이유로 해당 유저토큰은 Server-To-Server로만 제공되므로 퍼블리셔앱은 반드시 퍼블리셔 서버를 통해서 버즈스토어로 요청해야 한다.
+                 *
+                 * 주의 : 아래의 코드는 참고를 위한 Pseudo-code 로 실제로 이와 같은 메소드가 제공되지는 않는다.
                  */
-                return UserToken;
+                Request(
+                        new ResponseListener() {
+                            OnSuccess(Response response) {
+                                String userToken = response.getString("user_token");
+                                /**
+                                 * 서버로부터 userToken을 전달받은 후에 아래의 메소드를 호출한다.
+                                 */
+                                BuzzStore.setUserToken(userToken);
+                            }
+                            OnError() {
+                                /**
+                                 * 서버 통신 실패 시 아래와 같이 빈 스트링으로 setUserToken을 다시 요청한다.
+                                 */
+                                BuzzStore.setUserToken("");
+                            }
+                        }
+                );
             }
 
             @Override
             public void OnFail() {
                 /**
                  * 최대 횟수 만큼 SDK 내부에서 Validation 시도를 하였으나 최종 실패한 경우 이 함수가 호출된다.
+                 * 버즈스토어 서버 혹은 퍼블리셔 서버가 작동하지 않을 때 이런 경우가 발생한다.
                  * 이 때, 퍼블리셔는 실패 UI 등을 유저에게 보이도록 처리하는 것이 권장된다.
-                 * ex. 서버 장애로 인한 접속 불가 메세지 알림
+                 * ex. 서버 장애 공지 메세지
                  */
+                Toast.makeText(MainActivity.this, "서버 장애 발생. 현재 접근이 제한되어 있습니다.", Toast.LENGTH_LONG).show();
             }
-        });
+
+            @Override
+            public void OnInitFail() {
+                /**
+                 * Initialize 처리를 하는 도중 loadStore가 호출될 경우 접근이 중단되며 이 함수가 호출된다.
+                 * 재시도를 요구하는 UI를 유저에게 보이도록 처리하는 것이 권장된다.
+                 */
+                Toast.makeText(MainActivity.this, "일시적 오류가 발생했습니다. 다시 시도하십시오.", Toast.LENGTH_LONG).show();
+            }
 
         findViewById(R.id.showStoreButton).setOnClickListener(new View.OnClickListener() {
             @Override
