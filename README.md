@@ -1,9 +1,10 @@
 # BuzzStore Integration Guide v1.0
 
-버즈스토어를 연동하기 위한 통합 가이드. 연동 과정은 전체적으로 다음의 두 단계로 구성되어 있다.
+버즈스토어를 연동하기 위한 통합 가이드. 연동 과정은 전체적으로 다음의 세 단계로 구성되어 있다.
 
 1. UserToken API Implementation
 2. SDK Integration
+3. 기타 API Implementation
 
 ## 1. UserToken API Implementation
 - 퍼블리셔의 유저가 버즈스토어를 이용할 때 주고받는 정보에 대한 보안을 강화하기 위해 버즈스토어는 User Token 을 이용한다.
@@ -34,7 +35,7 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
 - 기존에 퍼블리셔 앱이 서버와 통신하던 방식을 이용해 퍼블리셔 서버에게 현재 유저의 정보에 맞는 User Token을 요청하는 API를 구현한다.
 - 이 API는 보안상의 이유로 퍼블리셔쪽 인증이 이뤄진 채널을 통해서 통신해야 한다. e.g. 로그인
 - 해당 API는 SDK가 제공하는 interface 인 `UserTokenListener` 의 `OnNeedAPICall()` 안에 호출되도록 구현한다.
-- 호출 결과 받아온 User Token은 `UserTokenListener` 의 `OnNeedAPICall()` 의 리턴값으로 전달되도록 구현한다.(3. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
+- 호출 결과 받아온 User Token은 `UserTokenListener` 의 `OnNeedAPICall()` 의 리턴값으로 전달되도록 구현한다.(2. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
 
 #### Publisher Server <-> BuzzStore server(Server-To-Server 연동)
 - 이 연동을 하기 앞서 퍼블리셔 서버의 아이피 주소를 버즈스토어 서버에 `화이트 리스트`로 등록해야 한다. 화이트 리스트에 등록 될 아이피주소는 별도의 채널(e.g. 이메일)을 통해서 퍼블리셔가 전달한다.
@@ -42,7 +43,7 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
 ###### 요청
 - API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
 - method : `POST`
-- url : `https://test-bsp.buzzad.io/api/users` (테스트 환경)
+- url : `https://test-bsp.buzzad.io/api/users` (테스트 환경), `https://store.buzzad.io/api/users` (프로덕션 환경)
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
@@ -69,7 +70,7 @@ e.g.
 - 실패 시 JSON 포맷으로 `error_code`, `error_message` 를 리턴한다.
 
 ###### 실패 시 재시도에 관하여
-버즈스토어 서버에 일시적 장애가 발생하여 이 API 를 통한 토큰 발급에 실패하는 경우 스토어 SDK 이용이 제한된다. 이 때, SDK내에서 제공하는 `UserTokenListener` 의 `OnNeedAPICall()` 의 구현이 완료되어 있으면 SDK가 자동으로 재시도를 한다.(3. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
+버즈스토어 서버에 일시적 장애가 발생하여 이 API 를 통한 토큰 발급에 실패하는 경우 스토어 SDK 이용이 제한된다. 이 때, SDK내에서 제공하는 `UserTokenListener` 의 `OnNeedAPICall()` 의 구현이 완료되어 있으면 SDK가 자동으로 재시도를 한다.(2. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
 
 
 ## 2. SDK Integration
@@ -133,7 +134,7 @@ public interface UserTokenListener {
 }
 ```
 
-- `void OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 `UserToken API` 를 호출하고 (2. UserToken API Implementation 참조), 이 API를 통해 전달받은 UserToken을 `setUserToken` 메소드를 통해 등록하도록 구현해야 한다. SDK는 `setUserToken`을 통해 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
+- `void OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 `UserToken API` 를 호출하고 (1. UserToken API Implementation 참조), 이 API를 통해 전달받은 UserToken을 `setUserToken` 메소드를 통해 등록하도록 구현해야 한다. SDK는 `setUserToken`을 통해 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
     - `void setUserToken(String userToken)` : API call이 성공했을 때, Response로 전달받은 UserToken을 String 형태로 전달한다. API call이 실패했을 때는 빈 스트링("")을 인자로 넣어 이 메소드를 호출해야 SDK에서 자동으로 재시도를 하게 된다.
 
 > **주의** : OnNeedAPICall() 은 재시도만을 위한 것이 아니라 유저가 버즈스토어를 최초로 로드하여 UserToken을 생성하려 할 때에도 불리게 된다. 따라서 필수적으로 구현해야 한다.
@@ -220,3 +221,36 @@ public class MainActivity extends Activity {
     }
 }
 ```
+
+## 3. 기타 API Implementation
+이 항목에서는 기타 버즈스토어가 지원하는 API에 대한 설명이 기술되어 있다. 기타 API 는 Server-To-Server 를 통한 통신만을 지원한다. 따라서 1. UserToken API Implementation 에 설명된 것 처럼 사전에 화이트리스트 처리 된 아이피를 통한 API 호출만이 허용 된다. 
+
+#### 잔고 조회 API
+- 이 연동을 하기 앞서 퍼블리셔 서버의 아이피 주소를 버즈스토어 서버에 `화이트 리스트`로 등록해야 한다. 화이트 리스트에 등록 될 아이피주소는 별도의 채널(e.g. 이메일)을 통해서 퍼블리셔가 전달한다.
+- 해당 API 는 특정 유저 A의 잔고를 조회한다.
+
+###### 요청
+- API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
+- method : `GET`
+- url : `https://test-bsp.buzzad.io/api/users/[PUBLISHER_USER_ID]/points` (테스트 환경), `https://store.buzzad.io/api/users/[PUBLISHER_USER_ID]/points` (프로덕션 환경)
+- Headers : 다음의 파라미터를 담아서 요청한다.
+    - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
+    - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
+    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디. 이 값은 위 Url 에 포함 된 `[PUBLISHER_USER_ID]` 와 일치해야 한다.
+
+e.g.
+```
+GET https://test-bsp.buzzad.io/api/users/12332/points
+```
+
+> **주의** : 잔고 호출 API 는 절대 클라이언트에서 직접 호출 되서는 안된다. 클라이언트 <-> 퍼블리셔 서버 <-> 버즈스토어 서버를 통한 중계 방식을 이용해야 한다.
+
+- 성공 시 JSON 포맷으로 `balance` 를 리턴한다. HTTP 응답 상태 코드는 200 이다. 
+
+e.g.
+```JSON
+{
+    "balance": 2000
+}
+```
+- 실패 시 JSON 포맷으로 `error_code`, `error_message` 를 리턴한다.
