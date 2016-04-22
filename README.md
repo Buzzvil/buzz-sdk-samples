@@ -1,9 +1,10 @@
 # BuzzStore Integration Guide v1.0
 
-버즈스토어를 연동하기 위한 통합 가이드. 연동 과정은 전체적으로 다음의 두 단계로 구성되어 있다.
+버즈스토어를 연동하기 위한 통합 가이드. 연동 과정은 전체적으로 다음의 세 단계로 구성되어 있다.
 
 1. UserToken API Implementation
 2. SDK Integration
+3. 기타 API Implementation
 
 ## 1. UserToken API Implementation
 - 퍼블리셔의 유저가 버즈스토어를 이용할 때 주고받는 정보에 대한 보안을 강화하기 위해 버즈스토어는 User Token 을 이용한다.
@@ -220,3 +221,36 @@ public class MainActivity extends Activity {
     }
 }
 ```
+
+## 3. 기타 API Implementation
+이 항목에서는 기타 버즈스토어가 지원하는 API에 대한 설명이 기술되어 있다. 기타 API 는 Server-To-Server 를 통한 통신만을 지원한다. 따라서 1. UserToken API Implementation 에 설명된 것 처럼 사전에 화이트리스트 처리 된 아이피를 통한 API 호출만이 허용 된다. 
+
+#### 잔고 조회 API
+- 이 연동을 하기 앞서 퍼블리셔 서버의 아이피 주소를 버즈스토어 서버에 `화이트 리스트`로 등록해야 한다. 화이트 리스트에 등록 될 아이피주소는 별도의 채널(e.g. 이메일)을 통해서 퍼블리셔가 전달한다.
+- 해당 API 는 특정 유저 A의 잔고를 조회한다.
+
+###### 요청
+- API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
+- method : `GET`
+- url : `https://test-bsp.buzzad.io/api/users/[PUBLISHER_USER_ID]/points` (테스트 환경), `https://store.buzzad.io/api/users/[PUBLISHER_USER_ID]/points` (프로덕션 환경)
+- Headers : 다음의 파라미터를 담아서 요청한다.
+    - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
+    - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
+    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디. 이 값은 위 Url 에 포함 된 `[PUBLISHER_USER_ID]` 와 일치해야 한다.
+
+e.g.
+```
+GET https://test-bsp.buzzad.io/api/users/12332/points
+```
+
+> **주의** : 잔고 호출 API 는 절대 클라이언트에서 직접 호출 되서는 안된다. 클라이언트 <-> 퍼블리셔 서버 <-> 버즈스토어 서버를 통한 중계 방식을 이용해야 한다.
+
+- 성공 시 JSON 포맷으로 `balance` 를 리턴한다. HTTP 응답 상태 코드는 200 이다. 
+
+e.g.
+```JSON
+{
+    "balance": 2000
+}
+```
+- 실패 시 JSON 포맷으로 `error_code`, `error_message` 를 리턴한다.
