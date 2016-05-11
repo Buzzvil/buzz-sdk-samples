@@ -115,15 +115,14 @@ Proguard 사용 시 다음 라인들을 Proguard 설정에 추가한다.
 - `BuzzStore.init(String appId, String userId, Context context)` : 초기화 함수로, 버즈스토어를 로드하려는 액티비티의 onCreate 에 호출한다.
     - `appId` : 버즈스토어에서 퍼블리셔 앱에게 부여하는 고유한 식별자이다. 연동 시작 시 지급되며 버즈스토어 어드민에서 확인할 수 있다.
     - `userId` : 퍼블리셔에서 관리하는 유저의 고유한 식별자이다. 버즈스토어는 이 정보를 그대로 받아 포인트 관리를 하게 된다.
+    - `context` : 앱의 Context 를 파라미터로 전달한다. 
 
-- `BuzzStore.setUserTokenListener(UserTokenListener listener)` : 유저 토큰의 유효성을 검사하여 유효하지 않을 때 호출되는 리스너인 UserTokenListener 를 구현하는 함수이다.
-
-- `BuzzStore.loadStore(Activity activity, UserTokenListener listener)` : 버즈스토어 모바일 UI를 호출한다. 파라미터로 반드시 UserTokenListener을 구현하여 전달해야 한다(UserToken 유효성 체크 interface 구현 참조)
+- `BuzzStore.loadStore(Activity activity, UserTokenListener listener)` : 버즈스토어 모바일 UI를 호출한다. 파라미터로 반드시 UserTokenListener을 구현하여 전달해야 한다(구현해야 할 내용은 'UserToken 유효성 체크 interface 구현' 참조)
 
 	> **주의** : 반드시 `BuzzStore.init()`이 호출된 이후에 호출해야 한다.
 
 #### UserToken 유효성 체크 interface 구현
-제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, Initialize 중 유저가 스토어 호출을 눌러서 다시 한번 재시도를 해야 할 때(OnInitFail), UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
+제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
 
 interface의 구성은 다음과 같다.
 ```Java
