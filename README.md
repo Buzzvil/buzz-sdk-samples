@@ -118,9 +118,9 @@ Proguard 사용 시 다음 라인들을 Proguard 설정에 추가한다.
 
 - `BuzzStore.setUserTokenListener(UserTokenListener listener)` : 유저 토큰의 유효성을 검사하여 유효하지 않을 때 호출되는 리스너인 UserTokenListener 를 구현하는 함수이다.
 
-- `BuzzStore.loadStore(Activity activity)` : 버즈스토어 모바일 UI를 호출한다.
+- `BuzzStore.loadStore(Activity activity, UserTokenListener listener)` : 버즈스토어 모바일 UI를 호출한다. 파라미터로 반드시 UserTokenListener을 구현하여 전달해야 한다(UserToken 유효성 체크 interface 구현 참조)
 
-	> **주의** : 반드시 `BuzzStore.init()`, `BuzzStore.setUserTokenListener()` 이 모두 호출된 이후에 호출해야 한다.
+	> **주의** : 반드시 `BuzzStore.init()`이 호출된 이후에 호출해야 한다.
 
 #### UserToken 유효성 체크 interface 구현
 제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, Initialize 중 유저가 스토어 호출을 눌러서 다시 한번 재시도를 해야 할 때(OnInitFail), UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
@@ -129,7 +129,6 @@ interface의 구성은 다음과 같다.
 ```Java
 public interface UserTokenListener {
     void OnNeedAPICall();
-    void OnInitFail();
     void OnFail();
 }
 ```
@@ -139,7 +138,6 @@ public interface UserTokenListener {
 
 > **주의** : OnNeedAPICall() 은 재시도만을 위한 것이 아니라 유저가 버즈스토어를 최초로 로드하여 UserToken을 생성하려 할 때에도 불리게 된다. 따라서 필수적으로 구현해야 한다.
 
-- `void OnInitFail()` :  BuzzStore를 띄우기 위해 Initialize 처리를 하는 도중 유저가 loadStore를 호출하여 스토어 호출에 실패했을 때 호출된다. 유저에게 다시 한번 시도하라는 메세지를 전달하는 UI 처리를 구현하는 것이 권장된다.
 - `void OnFail()` : SDK는 OnNeedAPICall() 을 통해 전달받은 UserToken을 가지고 BuzzStore Server로 유효성 체크 시도를 반복하는데, 최대 횟수 만큼 시도했으나 결국 유효한 UserToken을 발급받지 못해 최종 실패한 경우 이 메소드가 호출된다. 버즈스토어 서버 혹은 퍼블리셔 서버가 사고로 작동하지 않을 때 이러한 경우가 생길 수 있다. 유저에게 서버 에러로 인한 버즈스토어 접근 불가를 알리는 UI 처리를 구현하는 것이 권장된다.
 
 ##### 사용 예제
@@ -150,72 +148,61 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         /**
          * Initialize BuzzStore.
          * BuzzStore.init have to be called prior to BuzzStore.loadStore
-         * appId : Unique key value to identify the publisher.
-         * userId : user identifier used from publisher
-         * this : Context
+         * @param appId : Unique key value to identify the publisher.
+         * @param userId : user identifier used from publisher
+         * @param this : Context
          */
         BuzzStore.init("appId", "userId", this);
-
-        BuzzStore.setBuzzStoreListener(new BuzzStore.BuzzStoreListener() {
-            @Override
-            public void OnNeedAPICall() {
-                /**
-                 * 해당 함수가 호출되면 퍼블리셔 서버로의 API 콜을 통해 해당 유저의 유저토큰을 전달받아 setUserToken 메소드를 통해 등록해야 한다.
-                 * 보안상의 이유로 해당 유저토큰은 Server-To-Server로만 제공되므로 퍼블리셔앱은 반드시 퍼블리셔 서버를 통해서 버즈스토어로 요청해야 한다.
-                 *
-                 * 주의 : 아래의 코드는 참고를 위한 Pseudo-code 로 실제로 이와 같은 메소드가 제공되지는 않는다.
-                 */
-                Request(
-                        new ResponseListener() {
-                            OnSuccess(Response response) {
-                                String userToken = response.getString("user_token");
-                                /**
-                                 * 서버로부터 userToken을 전달받은 후에 아래의 메소드를 호출한다.
-                                 */
-                                BuzzStore.setUserToken(userToken);
-                            }
-                            OnError() {
-                                /**
-                                 * 서버 통신 실패 시 아래와 같이 빈 스트링으로 setUserToken을 다시 요청한다.
-                                 */
-                                BuzzStore.setUserToken("");
-                            }
-                        }
-                );
-            }
-
-            @Override
-            public void OnFail() {
-                /**
-                 * 최대 횟수 만큼 SDK 내부에서 Validation 시도를 하였으나 최종 실패한 경우 이 함수가 호출된다.
-                 * 버즈스토어 서버 혹은 퍼블리셔 서버가 작동하지 않을 때 이런 경우가 발생한다.
-                 * 이 때, 퍼블리셔는 실패 UI 등을 유저에게 보이도록 처리하는 것이 권장된다.
-                 * ex. 서버 장애 공지 메세지
-                 */
-                Toast.makeText(MainActivity.this, "서버 장애 발생. 현재 접근이 제한되어 있습니다.", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void OnInitFail() {
-                /**
-                 * Initialize 처리를 하는 도중 loadStore가 호출될 경우 접근이 중단되며 이 함수가 호출된다.
-                 * 재시도를 요구하는 UI를 유저에게 보이도록 처리하는 것이 권장된다.
-                 */
-                Toast.makeText(MainActivity.this, "일시적 오류가 발생했습니다. 다시 시도하십시오.", Toast.LENGTH_LONG).show();
-            }
 
         findViewById(R.id.showStoreButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /**
                  * Load BuzzStore.
-                 * MainActivity.this : Current activity
+                 * @param MainActivity.this : Current activity
+                 * @param BuzzStore.UserTokenListener : UserTokenListener that the publisher must implement
                  */
-                BuzzStore.loadStore(MainActivity.this);
+                BuzzStore.loadStore(MainActivity.this, new BuzzStore.UserTokenListener() {
+                    @Override
+                    public void OnNeedAPICall() {
+                        /**
+                         * 해당 함수가 호출되면 퍼블리셔 서버로의 API 콜을 통해 해당 유저의 유저토큰을 전달받아 setUserToken 메소드를 통해 등록해야 한다.
+                         * 보안상의 이유로 해당 유저토큰은 Server-To-Server로만 제공되므로 퍼블리셔앱은 반드시 퍼블리셔 서버를 통해서 버즈스토어로 요청해야 한다.
+                         * 주의 : 아래의 코드는 참고를 위한 Pseudo-code 로 실제로 이와 같은 메소드가 제공되지는 않는다.
+                         */
+                        Request(
+                                new ResponseListener() {
+                                    OnSuccess(String userToken) {
+                                        /**
+                                         * 서버로부터 userToken을 전달받은 후에 아래의 메소드를 호출한다.
+                                         */
+                                        BuzzStore.setUserToken(userToken);
+                                    }
+                                    OnError() {
+                                        /**
+                                         * 서버 통신 실패 시 아래와 같이 빈 스트링으로 setUserToken을 다시 요청한다.
+                                         */
+                                        BuzzStore.setUserToken("");
+                                    }
+                                }
+                        );
+                    }
+
+                    @Override
+                    public void OnFail() {
+                        /**
+                         * 최대 횟수 만큼 SDK 내부에서 Validation 시도를 하였으나 최종 실패한 경우 이 함수가 호출된다.
+                         * 버즈스토어 서버 혹은 퍼블리셔 서버가 작동하지 않을 때 이런 경우가 발생한다.
+                         * 이 때, 퍼블리셔는 실패 UI 등을 유저에게 보이도록 처리하는 것이 권장된다.
+                         * ex. 서버 장애 공지 메세지
+                         */
+                        Toast.makeText(MainActivity.this, "서버 장애 발생. 현재 접근이 제한되어 있습니다.", Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
     }
