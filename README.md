@@ -27,15 +27,15 @@ User Token의 전체적인 전달 흐름을 그림으로 표현하면 다음과 
 
 User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼블리셔 서버에게만 Server-To-Server 방식으로 전달하게 되어 있다. 따라서 퍼블리셔 앱은 직접 버즈스토어 서버로의 토큰 요청이 불가하고 반드시 퍼블리셔 서버를 거쳐야 한다. 이 때, 퍼블리셔 앱에서 퍼블리셔 서버로의 Request는 곧바로 퍼블리셔 서버에서 버즈스토어 서버로의 Request로 이어져야 한다. 마찬가지로 버즈스토어 서버에서 퍼블리셔 서버로 돌아온 Response는 곧바로 퍼블리셔 서버에서 퍼블리셔 앱으로의 Response로 이어져야 한다.
 
-> **주의** : 퍼블리셔 서버에서 유저 토큰을 별도로 저장하여 관리할 필요는 없다. 유저 토큰 요청의 시작은 언제나 퍼블리셔 앱에서 일어나기 때문에 퍼블리셔 서버는 버즈스토어 서버에서 받아온 유저 토큰을 단순히 퍼블리셔 앱으로 전달해주기만 하면 된다.
+> **주의1** : 퍼블리셔 서버에서 유저 토큰을 별도로 저장하여 관리할 필요는 없다. 유저 토큰 요청의 시작은 언제나 퍼블리셔 앱에서 일어나기 때문에 퍼블리셔 서버는 버즈스토어 서버에서 받아온 유저 토큰을 단순히 퍼블리셔 앱으로 전달해주기만 하면 된다.
 
-> **주의** : 구현된 UserToken API의 앱 내 호출은 BuzzStore SDK에서 제공하는 'UserToken 유효성 체크 인터페이스' 내의 OnNeedAPICall() 메소드 안에서만 일어나야 된다.(그림의 'Token Validate check' 참조) SDK에서 UserToken의 유효성을 체크하기 때문에 퍼블리셔 측에서 이 외에 별도로 API 호출을 위한 로직을 짤 필요는 없다.
+> **주의2** : 구현된 UserToken API의 앱 내 호출은 BuzzStore SDK에서 제공하는 'UserToken 유효성 체크 인터페이스' 내의 OnNeedAPICall() 메소드 안에서만 일어나야 된다.(그림의 'Token Validate check' 참조) SDK에서 UserToken의 유효성을 체크하기 때문에 퍼블리셔 측에서 이 외에 별도로 API 호출을 위한 로직을 짤 필요는 없다.
 
 #### Publisher App <-> Publisher Server(App 내 API 구현)
 - 기존에 퍼블리셔 앱이 서버와 통신하던 방식을 이용해 퍼블리셔 서버에게 현재 유저의 정보에 맞는 User Token을 요청하는 API를 구현한다.
 - 이 API는 보안상의 이유로 퍼블리셔쪽 인증이 이뤄진 채널을 통해서 통신해야 한다. e.g. 로그인
 - 해당 API는 SDK가 제공하는 interface 인 `UserTokenListener` 의 `OnNeedAPICall()` 안에 호출되도록 구현한다.
-- 호출 결과 받아온 User Token은 `UserTokenListener` 의 `OnNeedAPICall()` 의 리턴값으로 전달되도록 구현한다.(2. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
+- 호출 결과 받아온 User Token은 `UserTokenListener` 의 `OnNeedAPICall()` 에서 호출한 API의 Response가 온 시점에서 SDK의 `setUserToken()` 을 호출하여 전달되도록 구현한다.(2. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
 
 #### Publisher Server <-> BuzzStore server(Server-To-Server 연동)
 - 이 연동을 하기 앞서 퍼블리셔 서버의 아이피 주소를 버즈스토어 서버에 `화이트 리스트`로 등록해야 한다. 화이트 리스트에 등록 될 아이피주소는 별도의 채널(e.g. 이메일)을 통해서 퍼블리셔가 전달한다.
@@ -119,7 +119,7 @@ Proguard 사용 시 다음 라인들을 Proguard 설정에 추가한다.
 
 - `BuzzStore.loadStore(Activity activity, UserTokenListener listener)` : 버즈스토어 모바일 UI를 호출한다. 파라미터로 반드시 UserTokenListener을 구현하여 전달해야 한다(구현해야 할 내용은 'UserToken 유효성 체크 interface 구현' 참조)
 
-	> **주의** : 반드시 `BuzzStore.init()`이 호출된 이후에 호출해야 한다.
+    > **주의** : 반드시 `BuzzStore.init()`이 호출된 이후에 호출해야 한다.
 
 #### UserToken 유효성 체크 interface 구현
 제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
@@ -132,8 +132,10 @@ public interface UserTokenListener {
 }
 ```
 
-- `void OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 `UserToken API` 를 호출하고 (1. UserToken API Implementation 참조), 이 API를 통해 전달받은 UserToken을 `setUserToken` 메소드를 통해 등록하도록 구현해야 한다. SDK는 `setUserToken`을 통해 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
+- `void OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. **이 메소드는 퍼블리셔의 `UserToken API` 를 호출하고 (1. UserToken API Implementation 참조) 이 API의 Response를 통해 전달받은 UserToken을 `setUserToken` 메소드를 통해 등록하도록 구현해야 한다**. SDK는 전달받은 UserToken 을 가지고 다시 버즈스토어 서버에서 UserToken의 유효성을 체크하여 스토어를 로드할 수 있는지 여부를 판단한다.
     - `void setUserToken(String userToken)` : API call이 성공했을 때, Response로 전달받은 UserToken을 String 형태로 전달한다. API call이 실패했을 때는 빈 스트링("")을 인자로 넣어 이 메소드를 호출해야 SDK에서 자동으로 재시도를 하게 된다.
+    
+    > **주의** : setUserToken() 은 반드시 호출되도록 정해진 시점(OnNeedAPICall 에서 UserToken API call 이후)에서만 호출해야 한다.
 
 > **주의** : OnNeedAPICall() 은 재시도만을 위한 것이 아니라 유저가 버즈스토어를 최초로 로드하여 UserToken을 생성하려 할 때에도 불리게 된다. 따라서 필수적으로 구현해야 한다.
 
