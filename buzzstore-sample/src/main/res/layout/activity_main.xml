@@ -4,21 +4,25 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <ToggleButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/loginButton"
-        android:layout_gravity="center_horizontal"
-        android:textOn="Log on"
-        android:textOff="Log off" />
-
     <Button
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Show BuzzStore"
         android:id="@+id/showStoreButton"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Coupons"
+        android:id="@+id/showCouponButton"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Points"
+        android:id="@+id/showPointButton"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
