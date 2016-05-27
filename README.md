@@ -54,7 +54,7 @@ Proguard 사용시에 다음 라인들을 Proguard 설정에 추가한다.
 - `BuzzAd.showOfferWall(Activity activity, String title, String userId)` : 오퍼월 호출
 
     > 이 때 전달되는 `userId`(매체사 유저 아이디)는 포인트 적립 요청시([포인트 적립 요청 가이드](https://github.com/Buzzvil/buzzad-sdk-publisher#포인트-적립-요청포스트백---서버-연동) 참고)에 같이 전달된다. 이 값을 통해 매체사가 유저를 구분하여 포인트 지급 처리를 할 수 있다.
-    https://github.com/Buzzvil/buzzad-sdk-publisher#포인트-적립-요청포스트백---서버-연동
+
     > **주의** : 반드시 `BuzzAd.init()` 을 호출한 이후에만 오퍼월 호출이 가능하다.
 
 ### 타게팅 정보 추가(선택사항)
