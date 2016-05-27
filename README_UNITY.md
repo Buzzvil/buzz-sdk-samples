@@ -78,4 +78,4 @@ Proguard 사용시에 다음 라인들을 Proguard 설정에 추가한다.
 - 빌드된 앱을 안드로이드 단말기에서 실행하면 오퍼월을 호출할 수 있는 버튼이 생성된다.
 
 ## 포인트 적립 요청(포스트백) - 서버 연동
-[포인트 적립 요청 가이드](https://github.com/Buzzvil/buzzad-sdk-publisher#포인트-적립-요청포스트백----서버-연동) 참고
+[포인트 적립 요청 가이드](https://github.com/Buzzvil/buzzad-sdk-publisher#포인트-적립-요청포스트백---서버-연동) 참고
