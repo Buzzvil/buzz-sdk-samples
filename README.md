@@ -43,7 +43,7 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
 ###### 요청
 - API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
 - method : `POST`
-- url : `https://test-bsp.buzzad.io/api/users` (테스트 환경), `https://store.buzzad.io/api/users` (프로덕션 환경)
+- url : `https://store-test.buzzvil.com/api/users` (테스트 환경), `https://store-api.buzzvil.com/api/users` (프로덕션 환경)
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
@@ -256,7 +256,7 @@ public class MainActivity extends Activity {
 ###### 요청
 - API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
 - method : `GET`
-- url : `https://test-bsp.buzzad.io/api/users/[PUBLISHER_USER_ID]/points` (테스트 환경), `https://store.buzzad.io/api/users/[PUBLISHER_USER_ID]/points` (프로덕션 환경)
+- url : `https://store-test.buzzvil.com/api/users/[PUBLISHER_USER_ID]/points` (테스트 환경), `https://store-api.buzzvil.com/api/users/[PUBLISHER_USER_ID]/points` (프로덕션 환경)
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
@@ -264,7 +264,7 @@ public class MainActivity extends Activity {
 
 e.g.
 ```
-GET https://test-bsp.buzzad.io/api/users/12332/points
+GET https://store-test.buzzvil.com/api/users/12332/points
 ```
 
 > **주의** : 잔고 호출 API 는 절대 클라이언트에서 직접 호출 되서는 안된다. 클라이언트 <-> 퍼블리셔 서버 <-> 버즈스토어 서버를 통한 중계 방식을 이용해야 한다.
