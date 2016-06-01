@@ -27,15 +27,15 @@ User Token의 전체적인 전달 흐름을 그림으로 표현하면 다음과 
 
 User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼블리셔 서버에게만 Server-To-Server 방식으로 전달하게 되어 있다. 따라서 퍼블리셔 앱은 직접 버즈스토어 서버로의 토큰 요청이 불가하고 반드시 퍼블리셔 서버를 거쳐야 한다. 이 때, 퍼블리셔 앱에서 퍼블리셔 서버로의 Request는 곧바로 퍼블리셔 서버에서 버즈스토어 서버로의 Request로 이어져야 한다. 마찬가지로 버즈스토어 서버에서 퍼블리셔 서버로 돌아온 Response는 곧바로 퍼블리셔 서버에서 퍼블리셔 앱으로의 Response로 이어져야 한다.
 
-> **주의** : 퍼블리셔 서버에서 유저 토큰을 별도로 저장하여 관리할 필요는 없다. 유저 토큰 요청의 시작은 언제나 퍼블리셔 앱에서 일어나기 때문에 퍼블리셔 서버는 버즈스토어 서버에서 받아온 유저 토큰을 단순히 퍼블리셔 앱으로 전달해주기만 하면 된다.
+> **주의 1** : 퍼블리셔 서버에서 유저 토큰을 별도로 저장하여 관리할 필요는 없다. 유저 토큰 요청의 시작은 언제나 퍼블리셔 앱에서 일어나기 때문에 퍼블리셔 서버는 버즈스토어 서버에서 받아온 유저 토큰을 단순히 퍼블리셔 앱으로 전달해주기만 하면 된다.
 
-> **주의** : 구현된 UserToken API의 앱 내 호출은 BuzzStore SDK에서 제공하는 'UserToken 유효성 체크 인터페이스' 내의 OnNeedAPICall() 메소드 안에서만 일어나야 된다.(그림의 'Token Validate check' 참조) SDK에서 UserToken의 유효성을 체크하기 때문에 퍼블리셔 측에서 이 외에 별도로 API 호출을 위한 로직을 짤 필요는 없다.
+> **주의 2** : 구현된 UserToken API의 앱 내 호출은 BuzzStore SDK에서 제공하는 'UserToken 유효성 체크 인터페이스' 내의 OnNeedAPICall() 메소드 안에서만 일어나야 된다.(그림의 'Token Validate check' 참조) SDK에서 UserToken의 유효성을 체크하기 때문에 퍼블리셔 측에서 이 외에 별도로 API 호출을 위한 로직을 짤 필요는 없다.
 
 #### Publisher App <-> Publisher Server(App 내 API 구현)
 - 기존에 퍼블리셔 앱이 서버와 통신하던 방식을 이용해 퍼블리셔 서버에게 현재 유저의 정보에 맞는 User Token을 요청하는 API를 구현한다.
 - 이 API는 보안상의 이유로 퍼블리셔쪽 인증이 이뤄진 채널을 통해서 통신해야 한다. e.g. 로그인
 - 해당 API는 SDK가 제공하는 interface 인 `UserTokenListener` 의 `OnNeedAPICall()` 안에 호출되도록 구현한다.
-- 호출 결과 받아온 User Token은 `UserTokenListener` 의 `OnNeedAPICall()` 의 리턴값으로 전달되도록 구현한다.(2. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
+- 호출 결과 받아온 User Token은 `UserTokenListener` 의 `OnNeedAPICall()` 에서 호출한 API의 Response가 온 시점에서 SDK의 `setUserToken()` 을 호출하여 전달되도록 구현한다.(2. SDK Integration 내 'UserToken 유효성 체크 interface 구현' 참조)
 
 #### Publisher Server <-> BuzzStore server(Server-To-Server 연동)
 - 이 연동을 하기 앞서 퍼블리셔 서버의 아이피 주소를 버즈스토어 서버에 `화이트 리스트`로 등록해야 한다. 화이트 리스트에 등록 될 아이피주소는 별도의 채널(e.g. 이메일)을 통해서 퍼블리셔가 전달한다.
@@ -115,31 +115,39 @@ Proguard 사용 시 다음 라인들을 Proguard 설정에 추가한다.
 - `BuzzStore.init(String appId, String userId, Context context)` : 초기화 함수로, 버즈스토어를 로드하려는 액티비티의 onCreate 에 호출한다.
     - `appId` : 버즈스토어에서 퍼블리셔 앱에게 부여하는 고유한 식별자이다. 연동 시작 시 지급되며 버즈스토어 어드민에서 확인할 수 있다.
     - `userId` : 퍼블리셔에서 관리하는 유저의 고유한 식별자이다. 버즈스토어는 이 정보를 그대로 받아 포인트 관리를 하게 된다.
+    - `context` : 앱의 Context 를 파라미터로 전달한다.
 
-- `BuzzStore.setUserTokenListener(UserTokenListener listener)` : 유저 토큰의 유효성을 검사하여 유효하지 않을 때 호출되는 리스너인 UserTokenListener 를 구현하는 함수이다.
+- `BuzzStore.setUserTokenListener(UserTokenListener listener)` : 유저 토큰의 유효성을 검사하여 유효하지 않을 때 호출되는 리스너인 UserTokenListener 를 구현하는 함수이다.(구현해야 할 내용은 'UserToken 유효성 체크 interface 구현' 참조)
 
 - `BuzzStore.loadStore(Activity activity)` : 버즈스토어 모바일 UI를 호출한다.
 
-	> **주의** : 반드시 `BuzzStore.init()`, `BuzzStore.setUserTokenListener()` 이 모두 호출된 이후에 호출해야 한다.
+- `BuzzStore.loadStore(Activity activity, StoreType type)` : 버즈스토어 모바일 UI를 호출하면서 명시적으로 특정 타입의 탭을 먼저 띄우려 할 때 사용한다.
+    
+    **StoreType list**
+    - `DEFAULT` : 스토어의 메인 페이지인 상품 페이지로 연결된다.
+    - `COUPONS` : 쿠폰함으로 연결된다.
+    - `POINTS` : 포인트 내역으로 연결된다.
+    
+    > **주의 1** : 반드시 `BuzzStore.init()`이 호출된 이후에 호출해야 한다.
+    
+    > **주의 2** : 위의 메소드처럼 탭을 명시하지 않으면 `StoreType.DEFAULT` 로 자동 설정된다. 즉, `BuzzStore.loadStore(activity)` 는 `BuzzStore.loadStore(activity, BuzzStore.StoreType.DEFAULT)` 와 동일하다.
 
 #### UserToken 유효성 체크 interface 구현
-제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, Initialize 중 유저가 스토어 호출을 눌러서 다시 한번 재시도를 해야 할 때(OnInitFail), UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
+제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
 
 interface의 구성은 다음과 같다.
 ```Java
 public interface UserTokenListener {
     void OnNeedAPICall();
-    void OnInitFail();
     void OnFail();
 }
 ```
 
-- `void OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. 이 메소드는 `UserToken API` 를 호출하고 (1. UserToken API Implementation 참조), 이 API를 통해 전달받은 UserToken을 `setUserToken` 메소드를 통해 등록하도록 구현해야 한다. SDK는 `setUserToken`을 통해 전달받은 UserToken 을 가지고 버즈스토어 서버로 다시 UserToken의 유효성을 체크한다.
+- `void OnNeedAPICall()` : UserToken이 유효하지 않을 때 호출된다. **이 메소드는 퍼블리셔의 `UserToken API` 를 호출하고 (1. UserToken API Implementation 참조) 이 API의 Response를 통해 전달받은 UserToken을 `setUserToken` 메소드를 통해 등록하도록 구현해야 한다**. SDK는 전달받은 UserToken 을 가지고 다시 버즈스토어 서버에서 UserToken의 유효성을 체크하여 스토어를 로드할 수 있는지 여부를 판단한다.
     - `void setUserToken(String userToken)` : API call이 성공했을 때, Response로 전달받은 UserToken을 String 형태로 전달한다. API call이 실패했을 때는 빈 스트링("")을 인자로 넣어 이 메소드를 호출해야 SDK에서 자동으로 재시도를 하게 된다.
 
 > **주의** : OnNeedAPICall() 은 재시도만을 위한 것이 아니라 유저가 버즈스토어를 최초로 로드하여 UserToken을 생성하려 할 때에도 불리게 된다. 따라서 필수적으로 구현해야 한다.
 
-- `void OnInitFail()` :  BuzzStore를 띄우기 위해 Initialize 처리를 하는 도중 유저가 loadStore를 호출하여 스토어 호출에 실패했을 때 호출된다. 유저에게 다시 한번 시도하라는 메세지를 전달하는 UI 처리를 구현하는 것이 권장된다.
 - `void OnFail()` : SDK는 OnNeedAPICall() 을 통해 전달받은 UserToken을 가지고 BuzzStore Server로 유효성 체크 시도를 반복하는데, 최대 횟수 만큼 시도했으나 결국 유효한 UserToken을 발급받지 못해 최종 실패한 경우 이 메소드가 호출된다. 버즈스토어 서버 혹은 퍼블리셔 서버가 사고로 작동하지 않을 때 이러한 경우가 생길 수 있다. 유저에게 서버 에러로 인한 버즈스토어 접근 불가를 알리는 UI 처리를 구현하는 것이 권장된다.
 
 ##### 사용 예제
@@ -150,13 +158,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         /**
          * Initialize BuzzStore.
          * BuzzStore.init have to be called prior to BuzzStore.loadStore
-         * appId : Unique key value to identify the publisher.
-         * userId : user identifier used from publisher
-         * this : Context
+         * @param appId : Unique key value to identify the publisher.
+         * @param userId : user identifier used from publisher
+         * @param this : Context
          */
         BuzzStore.init("appId", "userId", this);
 
@@ -191,31 +199,47 @@ public class MainActivity extends Activity {
             @Override
             public void OnFail() {
                 /**
-                 * 최대 횟수 만큼 SDK 내부에서 Validation 시도를 하였으나 최종 실패한 경우 이 함수가 호출된다.
+                 * 최대 횟수 만큼 SDK 내부에서 Validation 시도를 하였으나 최종 실패한 경우 이 함수가 호출
+                 된다.
                  * 버즈스토어 서버 혹은 퍼블리셔 서버가 작동하지 않을 때 이런 경우가 발생한다.
                  * 이 때, 퍼블리셔는 실패 UI 등을 유저에게 보이도록 처리하는 것이 권장된다.
                  * ex. 서버 장애 공지 메세지
                  */
                 Toast.makeText(MainActivity.this, "서버 장애 발생. 현재 접근이 제한되어 있습니다.", Toast.LENGTH_LONG).show();
             }
-
-            @Override
-            public void OnInitFail() {
-                /**
-                 * Initialize 처리를 하는 도중 loadStore가 호출될 경우 접근이 중단되며 이 함수가 호출된다.
-                 * 재시도를 요구하는 UI를 유저에게 보이도록 처리하는 것이 권장된다.
-                 */
-                Toast.makeText(MainActivity.this, "일시적 오류가 발생했습니다. 다시 시도하십시오.", Toast.LENGTH_LONG).show();
-            }
-
+        }
+        
         findViewById(R.id.showStoreButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 /**
                  * Load BuzzStore.
-                 * MainActivity.this : Current activity
+                 * @param MainActivity.this : Current activity
                  */
                 BuzzStore.loadStore(MainActivity.this);
+//                BuzzStore.loadStore(MainActivity.this, BuzzStore.StoreType.DEFAULT); // Same as above
+            }
+        });[^1]
+
+        findViewById(R.id.showCouponButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                /**
+                 * Load BuzzStore with 'coupons' tab shown first.
+                 */
+                BuzzStore.loadStore(MainActivity.this, BuzzStore.StoreType.COUPONS);
+            }
+        });
+
+        findViewById(R.id.showPointButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /**
+                 * Load BuzzStore with 'points' tab shown first.
+                 */
+                BuzzStore.loadStore(MainActivity.this, BuzzStore.StoreType.POINTS);
             }
         });
     }
