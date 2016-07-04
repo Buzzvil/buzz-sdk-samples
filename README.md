@@ -168,7 +168,7 @@ public class MainActivity extends Activity {
          */
         BuzzStore.init("appId", "userId", this);
 
-        BuzzStore.setBuzzStoreListener(new BuzzStore.BuzzStoreListener() {
+        BuzzStore.setUserTokenListener(new BuzzStore.UserTokenListener() {
             @Override
             public void OnNeedAPICall() {
                 /**
