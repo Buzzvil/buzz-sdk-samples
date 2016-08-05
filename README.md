@@ -80,6 +80,11 @@ e.g.
 - 버즈스토어 UI는 모두 웹으로 이루어져 있으며, 필수 파라미터를 전달하여 웹뷰를 통해 호출한다.
 - UserToken 유효성 체크는 Java interface로 제공하므로 아래의 가이드에 따라 Publisher 앱 내에서 직접 interface 의 구현이 필요하다.
 
+#### 업데이트 내역
+- 2016.08.05 로딩 UI 변경
+    - AndroidManifest.xml 중 activity 설정하는 부분에서 theme 제거
+    - `BuzzStore.setLoadingText(String text, float size)` 추가
+
 #### 기본 설정
 
 - [SDK 다운로드](https://github.com/Buzzvil/buzzstore-sdk-publisher/archive/master.zip) 후 압축해제하여 buzzstore-sdk/buzzstore.jar를 개발중인 안드로이드 어플리케이션에 라이브러리로 포함시킨다.
@@ -97,8 +102,7 @@ e.g.
 
     <!-- activity for BuzzStore -->
     <activity
-            android:name="com.buzzvil.buzzstore.StoreActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:name="com.buzzvil.buzzstore.StoreActivity" />
     </application>
     ...
 </manifest>
@@ -131,6 +135,12 @@ Proguard 사용 시 다음 라인들을 Proguard 설정에 추가한다.
     > **주의 1** : 반드시 `BuzzStore.init()`이 호출된 이후에 호출해야 한다.
     
     > **주의 2** : 위의 메소드처럼 탭을 명시하지 않으면 `StoreType.DEFAULT` 로 자동 설정된다. 즉, `BuzzStore.loadStore(activity)` 는 `BuzzStore.loadStore(activity, BuzzStore.StoreType.DEFAULT)` 와 동일하다.
+
+- (Optional) `BuzzStore.setLoadingText(String text, float size)` : 버즈스토어를 로드하는 중에 나타나는 UI 문구 및 글자 크기를 수정한다. 
+    - `text` : 문구를 입력한다. 기본값은 "상점에 들어가는 중...".
+    - `size` : 보여질 문구의 크기(sp 단위)를 입력한다. 기본값은 18sp.
+    
+    > 주의 : 반드시 `BuzzStore.loadStore()` 이전에 호출해야 한다.
 
 #### UserToken 유효성 체크 interface 구현
 제공하는 `UserTokenListener` 를 통해 `UserToken API` 호출이 필요할 때(OnNeedAPICall)와, UserToken 요청의 재시도에도 불구하고 지속적으로 유저 토큰 획득에 실패하여 유저가 결국 BuzzStore를 띄울 수 없을 때(OnFail)의 이벤트 처리를 할 수 있다.
