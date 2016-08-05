@@ -43,7 +43,7 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
 ###### 요청
 - API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
 - method : `POST`
-- url : `https://store-test.buzzvil.com/api/users` (테스트 환경), `https://store-api.buzzvil.com/api/users` (프로덕션 환경)
+- url : `https://store-api.buzzvil.com/api/v1/users`
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
@@ -58,7 +58,7 @@ e.g.
 
 > **주의** : 버즈스토어는 퍼블리셔 유저 식별자를 기준으로 유저를 식별하므로 해당 값은 추후 바꿀 수 없다. 버즈스토어는 두개 이상의 서로 다른 유저 식별자를 서로 다른 유저로 인식한다. 따라서 퍼블리셔가 제공하는 유저 식별자는 절대 업데이트되지 않는 값을 사용해야 한다. 예를들어, 계정에 연동 된 이메일 주소와 같이 추후 변동될 여지가 있는 값 보다는 퍼블리셔 디비 내의 유저 식별자 값(e.g. Users 테이블의 pk 값)으로 사용하길 권장한다.
 
-- 성공 시 JSON 포맷으로 `publisher_user_id`, `token` 를 리턴한다. HTTP 응답 상태 코드는 200 이다. 
+- 성공 시 JSON 포맷으로 `publisher_user_id`, `token` 를 리턴한다. HTTP 응답 상태 코드는 200 또는 201 이다. 
 
 e.g.
 ```JSON
@@ -266,7 +266,7 @@ public class MainActivity extends Activity {
 ###### 요청
 - API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
 - method : `GET`
-- url : `https://store-test.buzzvil.com/api/users/[PUBLISHER_USER_ID]/points` (테스트 환경), `https://store-api.buzzvil.com/api/users/[PUBLISHER_USER_ID]/points` (프로덕션 환경)
+- url : `https://store-api.buzzvil.com/api/v1/points`
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
@@ -274,7 +274,7 @@ public class MainActivity extends Activity {
 
 e.g.
 ```
-GET https://store-test.buzzvil.com/api/users/12332/points
+GET https://store-api.buzzvil.com/api/v1/points
 ```
 
 > **주의** : 잔고 호출 API 는 절대 클라이언트에서 직접 호출 되서는 안된다. 클라이언트 <-> 퍼블리셔 서버 <-> 버즈스토어 서버를 통한 중계 방식을 이용해야 한다.
