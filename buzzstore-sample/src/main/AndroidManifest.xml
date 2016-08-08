@@ -21,8 +21,7 @@
 
         <!--activity for buzzstore-->
         <activity
-            android:name="com.buzzvil.buzzstore.sdk.StoreActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:name="com.buzzvil.buzzstore.sdk.StoreActivity" />
     </application>
 
 </manifest>
