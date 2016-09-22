@@ -267,13 +267,11 @@ public class MainActivity extends Activity {
 
 ### 4. HTTP Request Parameters
 
-* Info
-
 | 필드 | 타입 | 설명 |
 |-----|----|-----|
 | user_id | String | 매체사에서 정의한 user_id |
 | campaign_name | String | 포인트가 지급된 캠페인 이름 |
-| point | Integer | 유저에게 지급할 포인트의 전체 합.<br>유저의 액션에 의해 캠페인에서 지급되는 포인트와 기본적립금인 base_point를 합친 값이다. |
+| point | Integer | 유저에게 지급할 포인트 |
 
 ## 4. 기타 API Implementation
 이 항목에서는 기타 버즈스토어가 지원하는 API에 대한 설명이 기술되어 있다. 기타 API 는 Server-To-Server 를 통한 통신만을 지원한다. 따라서 1. UserToken API Implementation 에 설명된 것 처럼 사전에 화이트리스트 처리 된 아이피를 통한 API 호출만이 허용 된다. 
