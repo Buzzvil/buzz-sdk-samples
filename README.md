@@ -249,7 +249,33 @@ public class MainActivity extends Activity {
 }
 ```
 
-## 3. 기타 API Implementation
+## 3. Push Postback
+포인트 적립시 어플리케이션의 푸시 노티피케이션을 이용해 사용자에게 푸시 알림 전달이 필요할 경우 사용하는 API. 매체사에서 postback api을 받는 로직을 구현하고 해당 url을 버즈스토어에 등록해야 한다. BuzzStore에서 등록한 postback url로 요청이 오면 전달받은 파라미터를 이용해 직접 사용자에게 푸시를 전송해야한다.
+
+![buzzstore postback api](https://github.com/Buzzvil/buzzstore-sdk-publisher/blob/master/postback.png)
+
+### 1. 요청 방향
+* BuzzStore -> 매체사
+ 
+### 2. HTTP Request method
+
+* **POST**
+ 
+### 3. HTTP Request URL
+
+* 매체사에서 정의
+
+### 4. HTTP Request Parameters
+
+* Info
+
+| 필드 | 타입 | 설명 |
+|-----|----|-----|
+| user_id | String | 매체사에서 정의한 user_id |
+| campaign_name | String | 포인트가 지급된 캠페인 이름 |
+| point | Integer | 유저에게 지급할 포인트의 전체 합.<br>유저의 액션에 의해 캠페인에서 지급되는 포인트와 기본적립금인 base_point를 합친 값이다. |
+
+## 4. 기타 API Implementation
 이 항목에서는 기타 버즈스토어가 지원하는 API에 대한 설명이 기술되어 있다. 기타 API 는 Server-To-Server 를 통한 통신만을 지원한다. 따라서 1. UserToken API Implementation 에 설명된 것 처럼 사전에 화이트리스트 처리 된 아이피를 통한 API 호출만이 허용 된다. 
 
 #### 잔고 조회 API
