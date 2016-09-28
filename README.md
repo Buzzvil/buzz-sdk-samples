@@ -263,7 +263,7 @@ public class MainActivity extends Activity {
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
-    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디. 이 값은 위 Url 에 포함 된 `[PUBLISHER_USER_ID]` 와 일치해야 한다.
+    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
 
 e.g.
 ```
@@ -280,4 +280,21 @@ e.g.
     "balance": 2000
 }
 ```
+- 실패 시 JSON 포맷으로 `error_code`, `error_message` 를 리턴한다.
+
+#### 회원 탈퇴 API
+- 이 연동을 하기 앞서 퍼블리셔 서버의 아이피 주소를 버즈스토어 서버에 `화이트 리스트`로 등록해야 한다. 화이트 리스트에 등록 될 아이피주소는 별도의 채널(e.g. 이메일)을 통해서 퍼블리셔가 전달한다.
+- 해당 API 는 특정 유저를 버즈스토어에서 탈퇴 시킨다.
+
+###### 요청
+- API 호출 방향 : 퍼블리셔 서버 -> 버즈스토어 서버
+- method : `POST`
+- url : `https://store-api.buzzvil.com/api/v1/users/deactivate`
+- Headers : 다음의 파라미터를 담아서 요청한다.
+    - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
+    - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
+    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
+    
+###### 응답
+- 성공시 HTTP 응답 상태 코드는 200 이다. 
 - 실패 시 JSON 포맷으로 `error_code`, `error_message` 를 리턴한다.
