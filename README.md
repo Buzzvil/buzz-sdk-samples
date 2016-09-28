@@ -297,11 +297,4 @@ e.g.
     
 ###### 응답
 - 성공시 HTTP 응답 상태 코드는 200 이다. 
-
-e.g.
-```JSON
-{
-  "error_message": "OK",
-  "error_code": 200
-}
-```
+- 실패 시 JSON 포맷으로 `error_code`, `error_message` 를 리턴한다.
