@@ -263,7 +263,7 @@ public class MainActivity extends Activity {
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
-    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디. 이 값은 위 Url 에 포함 된 `[PUBLISHER_USER_ID]` 와 일치해야 한다.
+    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
 
 e.g.
 ```
@@ -293,7 +293,7 @@ e.g.
 - Headers : 다음의 파라미터를 담아서 요청한다.
     - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
-    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디. 이 값은 위 Url 에 포함 된 `[PUBLISHER_USER_ID]` 와 일치해야 한다.
+    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
     
 ###### 응답
 - 성공시 HTTP 응답 상태 코드는 200 이다. 
