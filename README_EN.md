@@ -18,6 +18,10 @@ Add permission and activity to your Android Manifest as below.
     ...
     <!-- Permission for BuzzAd -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Below are Optional but recommended.
+    without it you can only get limited ad list -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application>
         ...
