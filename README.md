@@ -138,6 +138,7 @@ public class MainActivity extends Activity {
     | event_at | Long | 포인트 지급 시점. **timestamp**값이다.<br>대부분 API 호출시점과 동일하지만 API 호출이 재시도인 경우 다를 수 있다.|
     | extra | String | 매체사별 자체 정의한 캠페인 데이터의 json serilaize된 스트링.<br>라이브중에 캠페인 extra 정보가 바뀐 경우, 실제 포인트 적립 api에서 바뀐 정보가 적용되는데에 최대 10분이 걸릴 수 있다.<br>eg) `{"sub_type": "A", "source":"external"}`|
     | is_media | Integer |0: 버즈빌측 캠페인<br>1: 매체사측 캠페인|
+    | revenue_type | String | 광고 타입. cpi, cpe, cpa 등의 값이 올 수 있다. |
     | action_type | String | 포인트를 지급 받기 위해 유저가 취한 액션 타입.<br>추후 새로운 타입이 추가될 수 있으므로 연동시 이를 고려해야 한다. <ul><li><b>u</b>: 잠금해제 </li><li><b>l</b>: 랜딩</li><li><b>a</b>: 액션</li></ul>|
 
 - 포인트 적립 요청에 매체사 서버는 정상 처리된 경우는 `HTTP STATUS 200` 응답을 보내야 하며, 그 외의 경우 특정 시간동안 포인트 적립 요청은 재시도가 된다.
