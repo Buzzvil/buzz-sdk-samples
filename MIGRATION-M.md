@@ -1,9 +1,9 @@
-## M앱 마이그레이션 작업
+## M앱 마이그레이션 구현
 참고 샘플 : **`sample_main`**
 
 ### 1. 기존의 버즈스크린 연동은 변경하지 않습니다.
 
-### 2. 버즈스크린 SDK 업데이트
+### 2. 버즈스크린 SDK 업데이트 확인
 마이그레이션은 버즈스크린 SDK 버전 1.6.0 이상에서 지원합니다. `build.gradle`에서 버즈스크린 버전이 `1.+` 인 경우는 자동으로 업데이트되기 때문에 추가작업이 필요없지만, 특정 버전으로 지정된 경우는 반드시 1.6.0 버전 이상을 사용해야 합니다.
 
 아래와 같이 버즈스크린 라이브러리 추가 코드 확인.
@@ -14,8 +14,21 @@ dependencies {
 
 ```
 
-### 3. 마이그레이션 SDK 추가
-모듈 내의 `build.gradle` 에 다음 코드를 추가합니다. **L앱과 설정이 다름에 주의**합니다.
+### 3. `build.gradle` 설정
+
+#### `manifestPlaceholders` 에 추가
+
+```
+android {
+    defaultConfig {
+        // my_app_key 에는 버즈스크린 연동시 발급받은 앱키를 입력합니다.
+        manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
+    }
+}
+```
+
+#### `dependencies` 에 추가
+**L앱과 설정이 다름에 주의**합니다.
 
 ```
 dependencies {
