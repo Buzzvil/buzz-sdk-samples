@@ -1,4 +1,5 @@
 ## M앱 마이그레이션 구현
+M앱에서는 더이상 버즈스크린을 활성화하는 화면을 제공하지 않지만 버즈스크린이 켜져있는 경우를 가정합니다.
 참고 샘플 : **`sample_main`**
 
 ### 1. 기존의 버즈스크린 연동은 변경하지 않습니다.
@@ -16,7 +17,7 @@ dependencies {
 
 ### 3. `build.gradle` 설정
 
-#### `manifestPlaceholders` 에 추가
+#### `manifestPlaceholders` 추가
 
 ```
 android {
@@ -32,7 +33,7 @@ android {
 
 ```
 dependencies {
-    compile 'com.buzzvil:buzzscreen-migration-from:1.+'
+    compile 'com.buzzvil:buzzscreen-migration-from:+'
 }
 ```
 
@@ -43,21 +44,21 @@ dependencies {
 
     **Parameters**
     - `context` : Application context 를 `this` 로 전달
-    -  `lockScreenPackageName` : L앱의 패키지명
+    - `lockScreenPackageName` : L앱의 패키지명
 
 - `MigrationFrom.bind(OnMigrationListener onMigrationListener)`
 
     마이그레이션 진행을 위한 함수입니다. 마이그레이션 과정을 `onMigrationListener`를 통해 수신받을 수 있고, 마이그레이션시에 M앱에서 L앱으로 옮기고 싶은 정보를 전달할 수 있습니다. **반드시 `MigrationFrom.init` 후에 호출**합니다.
 
     **Parameters**
-    - `onMigrationListener`
-        - `onAlreadyMigrated` : 이미 마이그레이션이 진행된경우 호출됩니다.
-        - `onMigrationStarted` : 마이그레이션 시작시 호출됩니다. 리턴값을 통해 M앱에서 L앱으로의 정보 전달이 가능합니다. M앱의 유저인증정보를 전달하여 L앱에서 추가적인 유저 액션 없이 자동로그인을 구현할 수 있습니다.
-        - `onMigrationCompleted` : 마이그레이션 종료시 호출됩니다. 마이그레이션 종료시 M앱에서 버즈스크린이 자동으로 off 됩니다. 만약 on/off 정보를 기록하고 있다면 여기서 off 상태로 변경바랍니다.
+    - `onMigrationListener` : 마이그레이션 리스너
+        - `void onAlreadyMigrated()` : 이미 마이그레이션이 진행된경우 호출됩니다.
+        - `Bundle onMigrationStarted()` : 마이그레이션 시작시 호출됩니다. 리턴값을 통해 M앱에서 L앱으로의 정보 전달이 가능합니다. M앱의 유저인증정보를 전달하여 L앱에서 추가적인 유저 액션 없이 자동로그인을 구현할 수 있습니다.
+        - `void onMigrationCompleted()` : 마이그레이션 종료시 호출됩니다. 마이그레이션 종료시 M앱에서 버즈스크린이 자동으로 off 됩니다. 만약 on/off 정보를 기록하고 있다면 여기서 off 상태로 변경바랍니다.
 
 **사용 예시**
 
-```Java
+```java
 public class App extends Application {
 
     @Override
