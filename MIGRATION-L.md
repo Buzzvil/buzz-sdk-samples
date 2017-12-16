@@ -80,6 +80,9 @@ public class App extends Application {
 
 잠금화면을 활성화하는데 있어서 유저 정보를 통한 로그인이 필요하면 M앱의 `MigrationFrom.bind` 호출시에 유저 정보를 전달할 수 있습니다. 데이터 마이그레이션이 끝나면 자동으로 M앱의 잠금화면이 비활성화 되고 `activate()` 호출여부에 따라 L앱에서 잠금화면이 자동으로 활성화 됩니다.
 
+####정상 마이그레이션 흐름
+![Normal Migration Flow](normal_migration_flow.jpg)
+
 #### 마이그레이션 코드 추가
 마이그레이션을 수행하려는 액티비티에 다음의 코드를 추가합니다. 마이그레이션 수행 함수는 최초로 실행되는 액티비티에서 호출해야 합니다.
 
