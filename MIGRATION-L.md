@@ -63,12 +63,12 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Do not touch. M앱과 동일한 기존 버즈스크린 초기화 코드.
+        // M앱과 동일한 기존 버즈스크린 초기화 코드.
         BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // 마이그레이션을 위한 코드
         // M앱의 패키지명이 com.buzzvil.sample_main 인 경우 사용 예시
-        MigrationTo.init(this, "\"com.buzzvil.sample_main\"");
+        MigrationTo.init(this, "com.buzzvil.sample_main");
     }
 }
 
