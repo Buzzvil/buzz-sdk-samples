@@ -40,7 +40,7 @@ android {
 
 ```
 dependencies {
-   compile 'com.buzzvil:buzzscreen-migration-to:+'
+   compile 'com.buzzvil.buzzscreen.ext:migration-to:+'
 }
 ```
 
