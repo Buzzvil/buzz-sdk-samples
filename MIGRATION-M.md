@@ -54,7 +54,7 @@ dependencies {
     - `onMigrationListener` : 마이그레이션 리스너.
         - `void onAlreadyMigrated()` : 이미 마이그레이션이 진행된경우 호출됩니다.
         - `Bundle onMigrationStarted()` : 마이그레이션 시작시 호출됩니다. 리턴값을 통해 M앱에서 L앱으로의 정보 전달이 가능합니다. M앱의 유저인증정보를 전달하여 L앱에서 추가적인 유저 액션 없이 자동로그인을 구현할 수 있습니다.
-        - `void onMigrationCompleted()` : 마이그레이션 종료시 호출됩니다. 마이그레이션 종료시 M앱에서 버즈스크린이 자동으로 off 됩니다. 만약 on/off 정보를 기록하고 있다면 여기서 off 상태로 변경바랍니다.
+        - `void onMigrationCompleted()` : 마이그레이션 완료시 호출됩니다. 이 호출과 함께 M앱에서 버즈스크린이 자동으로 off 됩니다. 만약 on/off 정보를 기록하고 있다면 여기서 off 상태로 변경바랍니다.
 
     > 위 리스너 호출 흐름은 [정상 마이그레이션 흐름](MIGRATION-L.md#정상-마이그레이션-흐름) 을 참고
 
@@ -81,7 +81,7 @@ public class App extends Application {
             @Override
             public Bundle onMigrationStarted() {
                 // M앱에서 이미 설정한 버즈스크린 UserProfile, 잠금화면 on/off 정보는 자동으로 L앱으로 전달됩니다.
-                // 그 외의 정보 전달을 리턴해주면 됩니다.
+                // 그 외의 필요한 정보를 리턴해주면 마이그레이션 과정에서 M앱으로 전달됩니다.
                 // 반드시 유저 인증정보를 전달하여 L앱에서 유저의 추가 액션없이 자동 로그인이 되도록 구현바랍니다.
                 // 여기서는 user_id 를 유저인증정보로 가정하고 전달하여 L앱에서 자동로그인을 구현하였습니다.
                 if (isLoggedIn()) {

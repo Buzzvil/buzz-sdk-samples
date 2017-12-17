@@ -169,14 +169,14 @@ public class IntroActivity extends AppCompatActivity {
                 public void onError() {
                     Log.e(TAG, "OnMigrationListener.onError");
                     if (!Utils.isAppInstalled(IntroActivity.this, App.MAIN_APP_PACKAGE)) {
-                        // M앱이 설치되지 않았을 경우에도 자체 로그인을 통한 사용은 가능합니다.
+                        // M앱이 설치되지않은 경우, 자체 로그인을 구현하여 잠금화면을 사용할 수 있도록 구현합니다.
                         Toast.makeText(IntroActivity.this, "Main app is not installed.\nPlease install it or login.", Toast.LENGTH_LONG).show();
                         useManualLogin();
                     } else if (Utils.getAppVersionCode(IntroActivity.this, App.MAIN_APP_PACKAGE) < SUPPORTED_MAIN_APP_VERSION) {
                         // M앱 버전이 옛 버전인 경우 잠금화면이 중복으로 뜰 수 있으므로 L앱 사용을 막고 M앱의 업데이트를 요구합니다.
                         alertMustUpdate();
                     } else {
-                        // 마이그레이션 과정시 일시적인 에러의 경우 재시도를 요구하거나 수동로그인을 통해 진입가능합니다.
+                        // 마이그레이션 과정시 일시적인 에러인 경우 재시도를 요구하거나 수동로그인을 통해 진입가능합니다.
                         useManualLogin();
                     }
                 }
