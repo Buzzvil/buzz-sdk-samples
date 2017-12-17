@@ -71,8 +71,8 @@ public class App extends Application {
         BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // 마이그레이션을 위한 코드
-        // L앱의 패키지명이 com.buzzvil.sample_lock 인 경우 사용 예시
-        MigrationFrom.init(this, "com.buzzvil.sample_lock");
+        // L앱의 패키지명이 com.buzzvil.buzzscreen.sample_lock 인 경우 사용 예시
+        MigrationFrom.init(this, "com.buzzvil.buzzscreen.sample_lock");
         MigrationFrom.bind(new MigrationFrom.OnMigrationListener() {
             @Override
             public void onAlreadyMigrated() {
@@ -103,3 +103,5 @@ public class App extends Application {
 }
 
 ```
+
+### [L앱 마이그레이션 구현하러 가기](MIGRATION-L.md)

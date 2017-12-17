@@ -10,13 +10,13 @@
         <application>
             ...
             <!-- Configuration for BuzzScreen-->
+            <!-- <app_license> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
+            <!-- <plist> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
             <meta-data
                 android:name="app_license"
-                <!-- <app_license> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
                 android:value="<app_license>" />
             <meta-data
                 android:name="com.buzzvil.locker.mediation.baidu.plist"
-                <!-- <plist> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
                 android:value="<plist>" />
         </application>
     </manifest>
@@ -67,8 +67,8 @@ public class App extends Application {
         BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // 마이그레이션을 위한 코드
-        // M앱의 패키지명이 com.buzzvil.sample_main 인 경우 사용 예시
-        MigrationTo.init(this, "com.buzzvil.sample_main");
+        // M앱의 패키지명이 com.buzzvil.buzzscreen.sample_main 인 경우 사용 예시
+        MigrationTo.init(this, "com.buzzvil.buzzscreen.sample_main");
     }
 }
 

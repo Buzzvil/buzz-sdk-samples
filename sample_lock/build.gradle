@@ -1,11 +1,18 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    maven { url "http://dl.appnext.com/" }
+    maven { url "https://dl.bintray.com/buzzvil/buzzscreen/" }
+}
+
 android {
     compileSdkVersion 26
-
+    buildToolsVersion "26.0.2"
 
 
     defaultConfig {
+        // my_app_key 에는 버즈스크린 연동시 발급받은 앱키를 입력합니다.
+        manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
         applicationId "com.buzzvil.buzzscreen.sample_lock"
         minSdkVersion 15
         targetSdkVersion 26
@@ -24,8 +31,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:26.1.0'
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.buzzvil:buzzscreen:1.+'
+    compile 'com.buzzvil.buzzscreen.ext:migration-to:+'
 }
