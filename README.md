@@ -1,7 +1,7 @@
 # BuzzScreen Migration SDK Integration Guide
 - 구글 정책 대응을 위해, 기존 [버즈스크린을 연동](https://github.com/Buzzvil/buzzscreen-sdk-publisher)한 어플리케이션의 잠금화면을 새로운 잠금화면 전용 어플리케이션의 잠금화면으로 마이그레이션을 수행하기 위한 가이드입니다.
     > 이하 기존 버즈스크린을 연동한 어플리케이션을 M(Main) 앱으로 지칭하고, 새로운 잠금화면 전용 어플리케이션을 L(LockScreen) 앱으로 지칭 
-- 이 SDK의 연동작업을 통해, L앱의 설치과정을 제외한 모든 과정을 자동화하여 M앱의 버즈스크린 사용자를 L앱의 버즈스크린 사용자로 자연스럽게 전환 가능헙니다.
+- 이 SDK의 연동작업을 통해, L앱의 설치과정을 제외한 모든 과정을 자동화하여 M앱의 버즈스크린 사용자를 L앱의 버즈스크린 사용자로 자연스럽게 전환 가능합니다.
     > L앱의 설치(APK 파일 다운로드 & 설치)는 유저의 액션없이 진행할 수 없기에 자동화 불가능
 - 마이그레이션 동작을 위해 M앱과 L앱은 서로 정보를 주고 받는데, 다른 앱에서의 접근을 막기 위해 반드시 **동일한 서명으로 APK 생성**해야 합니다.
     > 다른 앱에서의 접근을 막기 위해 안드로이드의 [protectionLevel="signature"](https://developer.android.com/guide/topics/manifest/permission-element.html#plevel) 권한 사용을 위함
