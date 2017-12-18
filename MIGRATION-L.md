@@ -5,7 +5,7 @@
 - 버즈스크린 SDK 버전 1.6.0 이상 사용
 - 단, `AndroidManifest.xml`의 `app_license`와 `com.buzzvil.locker.mediation.baidu.plist`는 새로 발급(버즈빌 문의)받아서 적용해야 합니다.
     `AndroidManifest.xml` 관련 코드
-    ```
+    ```xml
     <manifest>
         <application>
             ...
@@ -26,7 +26,7 @@
        
 #### `manifestPlaceholders` 추가
 
-```
+```groovy
 android {
    defaultConfig {
        // my_app_key 에는 버즈스크린 연동시 발급받은 앱키를 입력합니다.
@@ -38,7 +38,7 @@ android {
 #### `dependencies` 에 추가
 **M앱과 설정이 다름에 주의**합니다.
 
-```
+```groovy
 dependencies {
    compile 'com.buzzvil.buzzscreen.ext:migration-to:+'
 }
