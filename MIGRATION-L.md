@@ -40,7 +40,7 @@ android {
 
 ```groovy
 dependencies {
-   compile 'com.buzzvil.buzzscreen.ext:migration-to:+'
+   compile 'com.buzzvil.buzzscreen.ext:migration-to:0.9.0'
 }
 ```
 
@@ -93,9 +93,9 @@ public class App extends Application {
     **Parameters**
     - `onMigrationListener` : 마이그레이션 리스너
         - `void onAlreadyMigrated()` : 이미 마이그레이션이 진행된경우 호출됩니다.
-        - `void onDataMigrated(Bundle data, boolean usedLockscreen)` : M앱에서 데이터가 전달된 후에 호출됩니다. 전달받은 데이터, M앱에서 잠금화면 사용 유무, UserProfile 정보를 조합하여 자동으로 잠금화면 활성화 할지 결정합니다.
+        - `void onDataMigrated(Bundle data, boolean usingLockScreen)` : M앱에서 데이터가 전달된 후에 호출됩니다. 전달받은 데이터, M앱에서 잠금화면 사용 유무, UserProfile 정보를 조합하여 자동으로 잠금화면 활성화 할지 결정합니다.
             - `data` : M앱의 마이그레이션 작업에서 `onMigrationStarted` 를 통해 전달된 데이터
-            - `usedLockscreen` : M앱에서 버즈스크린 활성화 여부
+            - `usingLockScreen` : M앱에서 버즈스크린 활성화 여부
         - `void onError()` : 마이그레이션 진행시 다음과 같은 경우에 호출됩니다.
             - M앱이 설치되지 않았을 때 : M앱의 잠금화면 활성화 과정처럼, 독자적으로 로그인을 진행하여 잠금화면을 활성화 합니다.
             - M앱의 버전이 마이그레이션 작업을 적용한 버전 미만일 때 : M앱의 잠금화면 활성화 상태를 확인할 수 없기때문에 잠금화면이 M앱과 L앱 둘다 활성화 되는 것을 막기 위해 무조건 M앱의 업데이트를 요구합니다.
@@ -109,7 +109,7 @@ public class IntroActivity extends AppCompatActivity {
     private MigrationTo migration;
     
     // M 앱에서 기존에 잠금화면을 쓰고 있었는지 여부 저장
-    private boolean usedLockScreen = false;
+    private boolean usingLockScreen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,15 +147,15 @@ public class IntroActivity extends AppCompatActivity {
                  * M앱에서 데이터를 전달받고 UserProfile 정보가 업데이트된 이후 호출됩니다.
                  *
                  * @param data M앱의 마이그레이션 연동에서 `onMigrationStarted` 를 통해 전달된 데이터
-                 * @param usedLockScreen M앱에서 버즈스크린 활성화 여부
+                 * @param usingLockScreen M앱에서 버즈스크린 활성화 여부
                  */
                 @Override
-                public void onDataMigrated(Bundle data, boolean usedLockScreen) {
+                public void onDataMigrated(Bundle data, boolean usingLockScreen) {
                     Log.d(TAG, "OnMigrationListener.onDataMigrated");
-                    IntroActivity.this.usedLockScreen = usedLockScreen;
+                    IntroActivity.this.usingLockScreen = usingLockScreen;
                     if (data != null) {
                         // M앱으로부터 받은 유저 정보를 사용하여 자동 로그인을 수행합니다.
-                        // 자동로그인 성공시에는 usedLockScreen 에 따라 잠금화면 활성화 여부를 선택합니다.
+                        // 자동로그인 성공시에는 usingLockScreen 에 따라 잠금화면 활성화 여부를 선택합니다.
                         // 자동로그인 실패시에는 유저의 액션이 필요한 수동로그인을 진행합니다.
                         String userId = data.getString("user_id");
                         requestLogin(userId);

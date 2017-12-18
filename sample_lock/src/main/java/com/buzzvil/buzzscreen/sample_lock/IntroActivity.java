@@ -33,7 +33,7 @@ public class IntroActivity extends AppCompatActivity {
     private MigrationTo migration;
 
     // Main 앱에서 기존에 잠금화면을 쓰고 있었는지 여부
-    private boolean usedLockscreen = false;
+    private boolean usingLockScreen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,15 +73,15 @@ public class IntroActivity extends AppCompatActivity {
                  * M앱에서 데이터를 전달받고 UserProfile 정보가 업데이트된 이후 호출됩니다.
                  *
                  * @param data M앱의 마이그레이션 연동에서 `onMigrationStarted` 를 통해 전달된 데이터
-                 * @param usedLockScreen M앱에서 버즈스크린 활성화 여부
+                 * @param usingLockScreen M앱에서 버즈스크린 활성화 여부
                  */
                 @Override
-                public void onDataMigrated(Bundle data, boolean usedLockScreen) {
+                public void onDataMigrated(Bundle data, boolean usingLockScreen) {
                     Log.d(TAG, "OnMigrationListener.onDataMigrated");
-                    IntroActivity.this.usedLockscreen = usedLockScreen;
+                    IntroActivity.this.usingLockScreen = usingLockScreen;
                     if (data != null) {
                         // M앱으로부터 받은 유저 정보를 사용하여 자동 로그인을 수행합니다.
-                        // 자동로그인 성공시에는 usedLockScreen 에 따라 잠금화면 활성화 여부를 선택합니다.
+                        // 자동로그인 성공시에는 usingLockScreen 에 따라 잠금화면 활성화 여부를 선택합니다.
                         // 자동로그인 실패시에는 유저의 액션이 필요한 수동로그인을 진행합니다.
                         String userId = data.getString("user_id");
                         requestLogin(userId);
@@ -155,7 +155,7 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     private void onLoginSuccess() {
-        if (usedLockscreen) {
+        if (usingLockScreen) {
             // 이전에 잠금화면을 쓰고 있던 유저 - 바로 activate
             Toast.makeText(IntroActivity.this, "Activated lockscreen according to the previous setting", Toast.LENGTH_LONG).show();
             // 옮겨진 Profile 에 대한 유효성 검사
