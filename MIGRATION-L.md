@@ -40,7 +40,7 @@ android {
 
 ```groovy
 dependencies {
-   compile 'com.buzzvil.buzzscreen.ext:migration-to:0.9.0'
+   compile 'com.buzzvil.buzzscreen.ext:migration-to:0.9.1'
 }
 ```
 
@@ -96,10 +96,10 @@ public class App extends Application {
         - `void onDataMigrated(Bundle data, boolean usingLockScreen)` : M앱에서 데이터가 전달된 후에 호출됩니다. 전달받은 데이터, M앱에서 잠금화면 사용 유무, UserProfile 정보를 조합하여 자동으로 잠금화면 활성화 할지 결정합니다.
             - `data` : M앱의 마이그레이션 작업에서 `onMigrationStarted` 를 통해 전달된 데이터
             - `usingLockScreen` : M앱에서 버즈스크린 활성화 여부
-        - `void onError()` : 마이그레이션 진행시 다음과 같은 경우에 호출됩니다.
-            - M앱이 설치되지 않았을 때 : M앱의 잠금화면 활성화 과정처럼, 독자적으로 로그인을 진행하여 잠금화면을 활성화 합니다.
-            - M앱의 버전이 마이그레이션 작업을 적용한 버전 미만일 때 : M앱의 잠금화면 활성화 상태를 확인할 수 없기때문에 잠금화면이 M앱과 L앱 둘다 활성화 되는 것을 막기 위해 무조건 M앱의 업데이트를 요구합니다.
-            - 그 외의 에러 : 잘못된 연동 혹은 일시적인 에러로 발생할 수 있습니다. 일시적인 에러인 경우에는 재시도하거나, 독자적으로 로그인을 진행하여 잠금화면을 활성화 합니다.
+        - `void onError(MigrationTo.MigrationError migrationError)` : 마이그레이션 진행시 다음과 같은 경우에 호출됩니다.
+            - `MAIN_APP_NOT_INSTALLED` : M앱이 설치되지 않은 경우로, M앱의 잠금화면 활성화 과정처럼, 독자적으로 로그인을 진행하여 잠금화면을 활성화 합니다.
+            - `MAIN_APP_MIGRATION_NOT_SUPPORTED` : M앱이 마이그레이션 연동이 안된 버전일 때, M앱의 잠금화면 활성화 상태를 확인할 수 없기때문에 잠금화면이 M앱과 L앱 둘다 활성화 되는 것을 막기 위해 무조건 M앱의 업데이트를 요구합니다.
+            - `UNKNOWN_ERROR` : 잘못된 연동 혹은 일시적인 에러로 발생할 수 있습니다. 일시적인 에러인 경우에는 재시도하거나, 독자적으로 로그인을 진행하여 잠금화면을 활성화 합니다.
             
 **사용 예시**
 ```java
@@ -166,18 +166,22 @@ public class IntroActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onError() {
-                    Log.e(TAG, "OnMigrationListener.onError");
-                    if (!Utils.isAppInstalled(IntroActivity.this, App.MAIN_APP_PACKAGE)) {
-                        // M앱이 설치되지않은 경우, 자체 로그인을 구현하여 잠금화면을 사용할 수 있도록 구현합니다.
-                        Toast.makeText(IntroActivity.this, "Main app is not installed.\nPlease install it or login.", Toast.LENGTH_LONG).show();
-                        useManualLogin();
-                    } else if (Utils.getAppVersionCode(IntroActivity.this, App.MAIN_APP_PACKAGE) < SUPPORTED_MAIN_APP_VERSION) {
-                        // M앱 버전이 옛 버전인 경우 잠금화면이 중복으로 뜰 수 있으므로 L앱 사용을 막고 M앱의 업데이트를 요구합니다.
-                        alertMustUpdate();
-                    } else {
-                        // 마이그레이션 과정시 일시적인 에러인 경우 재시도를 요구하거나 수동로그인을 통해 진입가능합니다.
-                        useManualLogin();
+                public void onError(MigrationTo.MigrationError migrationError) {
+                    Log.e(TAG, "OnMigrationListener.onError : " + migrationError);
+                    switch (migrationError) {
+                        case MAIN_APP_NOT_INSTALLED:
+                            // M앱이 설치되지않은 경우, 자체 로그인을 구현하여 잠금화면을 사용할 수 있도록 구현합니다.
+                            Toast.makeText(IntroActivity.this, "Main app is not installed.\nPlease install it or login.", Toast.LENGTH_LONG).show();
+                            useManualLogin();
+                            break;
+                        case MAIN_APP_MIGRATION_NOT_SUPPORTED:
+                            // M앱 버전이 마이그레이션을 지원하지 않는 버전인 경우 잠금화면이 중복으로 뜰 수 있으므로 L앱 사용을 막고 M앱의 업데이트를 요구합니다.
+                            alertMustUpdate();
+                            break;
+                        case UNKNOWN_ERROR:
+                            // 마이그레이션 과정시 일시적인 에러인 경우 재시도를 요구하거나 수동 로그인을 통해 진입가능합니다.
+                            useManualLogin();
+                            break;
                     }
                 }
             });
