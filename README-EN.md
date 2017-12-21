@@ -13,8 +13,8 @@
     > Please change `my_app_key` (in `build.gradle`, `BuzzScreen.init`), `<app_license>` and `<plist>` in `AndroidManifest.xml` of the sample app to the key values given.
 - M app and L app both have additional integration works to be done for migration, which are guided in the following links.
 
-### [M app migration guide] (MIGRATION-M-EN.md)
-### [L app migration guide] (MIGRATION-L-EN.md)
+### [M app migration guide](MIGRATION-M-EN.md)
+### [L app migration guide](MIGRATION-L-EN.md)
 
 
 
