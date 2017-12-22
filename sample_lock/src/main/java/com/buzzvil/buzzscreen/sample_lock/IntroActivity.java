@@ -118,7 +118,7 @@ public class IntroActivity extends AppCompatActivity {
     public void onPause() {
         if (migration != null) {
             // 마이그레이션 진행 중단을 위해 호출합니다.
-            // 여기서 중단하지 않으면 onDataMigrated or onAlreadyMigrated 가 호출됩니다.
+            // 여기서 중단하지 않으면 paused상태에서 onDataMigrated or onAlreadyMigrated 가 호출될 수 있습니다.
             migration.abort();
         }
         super.onPause();
