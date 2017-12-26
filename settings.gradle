@@ -1,1 +1,1 @@
-include ':sample_main', ':sample_lock'
+include ':sample_main', ':sample_lock', ':sample_main_light', ':sample_lock_light'

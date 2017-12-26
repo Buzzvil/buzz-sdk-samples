@@ -9,7 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/sample_lock" />
+            <option value="$PROJECT_DIR$/sample_lock_light" />
             <option value="$PROJECT_DIR$/sample_main" />
+            <option value="$PROJECT_DIR$/sample_main_light" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/buzzscreen-sdk-publisher-migration.iml" filepath="$PROJECT_DIR$/buzzscreen-sdk-publisher-migration.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample_lock/sample_lock.iml" filepath="$PROJECT_DIR$/sample_lock/sample_lock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample_lock_light/sample_lock_light.iml" filepath="$PROJECT_DIR$/sample_lock_light/sample_lock_light.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample_main/sample_main.iml" filepath="$PROJECT_DIR$/sample_main/sample_main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample_main_light/sample_main_light.iml" filepath="$PROJECT_DIR$/sample_main_light/sample_main_light.iml" />
     </modules>
   </component>
 </project>
