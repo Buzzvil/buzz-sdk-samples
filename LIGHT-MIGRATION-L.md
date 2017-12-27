@@ -16,7 +16,7 @@
 ```groovy
 android {
     defaultConfig {
-        // my_app_key 에는 버즈스크린 연동시 발급받은 앱키를 입력합니다.
+        // my_app_key 에는 버즈스크린 연동 시 발급받은 앱키를 입력합니다.
         manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
     }
 }
@@ -32,14 +32,14 @@ dependencies {
     // M앱과 동일한 버즈스크린 연동
     compile 'com.buzzvil:buzzscreen:1.+'
     
-    // L앱을 위한 마이그레이션 라이브러리. migration-host 와 버전이 반드시 일치해야합니다.
+    // L앱을 위한 마이그레이션 라이브러리. migration-host 와 버전이 반드시 일치해야 합니다.
     compile 'com.buzzvil.buzzscreen.ext:migration-client:0.9.2'
 }
 ```
 
 
 ### 2. `AndroidManifest.xml` 변경
-버즈스크린 연동을 위해 `app_license`와 `com.buzzvil.locker.mediation.baidu.plist`는 새로 발급(버즈빌 문의)받아서 L앱에 적용해야 합니다.
+버즈스크린 연동을 위해 `app_license`와 `com.buzzvil.locker.mediation.baidu.plist`는 새로 발급(버즈빌 문의)받아 L앱에 적용해야 합니다.
 ```xml
 <manifest>
     <application>
