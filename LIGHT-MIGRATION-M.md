@@ -14,7 +14,7 @@
 ```groovy
 android {
     defaultConfig {
-        // my_app_key 에는 버즈스크린 연동시 발급받은 앱키를 입력합니다.
+        // my_app_key 에는 버즈스크린 연동 시 발급받은 앱키를 입력합니다.
         manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
     }
 }
@@ -84,7 +84,7 @@ L앱은 M앱의 유저 정보로 잠금화면을 활성화 할 뿐 직접 유저
 
     - `MigrationHost.requestActivationWithLaunch()`
 
-        L앱을 통해 잠금화면을 활성화합니다. L앱이 설치 안된 경우 마켓을 통해 설치후 자동으로 활성화되고, L앱이 설치된 경우 L앱을 실행하면서 자동으로 잠금화면이 활성화됩니다.
+        L앱을 통해 잠금화면을 활성화합니다. L앱이 설치 안된 경우 마켓을 통해 설치 후 자동으로 활성화되고, L앱이 설치된 경우 L앱을 실행하면서 자동으로 잠금화면이 활성화됩니다.
         > `MigrationHost.requestActivationWithLaunch()` 을 호출하기 전에도 이전 버즈스크린 연동처럼 `BuzzScreen.getInstance().getUserProfile()`를 통해 [유저 정보 설정](https://github.com/Buzzvil/buzzscreen-sdk-publisher#2-%EC%9C%A0%EC%A0%80-%EC%A0%95%EB%B3%B4-%EC%84%A4%EC%A0%95)하는 코드는 미리 호출되어야 합니다. 이 정보를 그대로 L앱에서 활용하여 잠금화면이 활성화됩니다.
 
 #### L앱 잠금화면 활성화 과정
