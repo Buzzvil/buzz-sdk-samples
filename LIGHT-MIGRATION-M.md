@@ -31,7 +31,7 @@ dependencies {
     compile 'com.buzzvil:buzzscreen:1.+'
     
     // M앱을 위한 마이그레이션 라이브러리. L앱과 다름에 주의!
-    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.2'
+    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.3'
 }
 ```
 
