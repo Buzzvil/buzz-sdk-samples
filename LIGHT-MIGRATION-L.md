@@ -7,6 +7,9 @@
 - M앱에서 로그아웃 시점에 `MigrationHost.requestDeactivation()` 를 호출하거나 M앱이 제거되면 자동으로 L앱의 잠금화면이 비활성화됩니다.
 - L앱의 버즈스크린 연동에서 유저 정보 설정 과정은 따로 진행하지 않아도 됩니다.
     > 마이그레이션 SDK를 통해 M앱에서 설정된 버즈스크린 유저 정보를 그대로 가져와서 사용하게 됩니다.
+- L앱의 샘플을 활용하여 손쉽게 L앱을 만들 수 있습니다.([샘플을 활용하여 L앱 만들기](#샘플을-활용하여-L앱-만들기))
+- 마이그레이션 SDK 이외에도 통신 모듈을 사용하여 [M앱과 L앱 간의 추가적인 통신](#M앱과-L앱-간의-통신-유틸)을 구현할 수 있습니다.
+    > 이를 통해 L앱에서는 M앱의 기능이나 데이터를 L앱에서 활용할 수 있습니다.
 
 
 ### 1. `build.gradle` 설정
@@ -196,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 
-### 샘플을 활용하여 잠금화면 전용앱 만들기
+### 샘플을 활용하여 L앱 만들기
 `sample_lock_light`에서 확인할 수 있는 샘플 잠금화면 앱은 위 가이드의 구현을 담았을 뿐만 아니라 최소한의 기능도 구현되어있습니다. 따라서 `sample_lock_light` 을 다운받고 다음 과정만 진행해도 잠금화면 앱이 완성됩니다.
 > 샘플앱에 대해 궁금한 사항이나 지원이 필요하다면 언제든지 버즈빌에 문의주세요.
 
@@ -209,3 +212,12 @@ public class MainActivity extends AppCompatActivity {
 - 색상 : `res/colors.xml` 변경만으로 메인 색상 적용 가능
 - 로고 : `activity_main.xml`에서 툴바의 로고 변경
 - [잠금화면 노티피케이션 커스텀](https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/LOCKSCREEN-SERVICE-NOTIFICATION.md)
+
+
+### M앱과 L앱 간의 통신 유틸
+마이그레이션 SDK에서 제공하는 기능 이외에도 M앱과 L앱 간의 통신이 필요하다면 여기서 제공하는 통신 모듈을 사용하여 개발할 수 있습니다. 통신 모듈에서는 다음과 같이 3가지 통신 방식을 제공합니다.
+- 공유되는 데이터 저장소가 필요한 경우 : [DataStorage](COMMUNICATION-UTILS.md#datastorage)
+- 단방향 이벤트 전달이 필요한 경우 : [EventHandler](COMMUNICATION-UTILS.md#eventhandler)
+- 완전한 서버-클라이언트 구조가 필요한 경우 : [RequestHandler](COMMUNICATION-UTILS.md#requesthandler)
+
+#### [Inter M-L Communication Utils Guide](COMMUNICATION-UTILS.md)
