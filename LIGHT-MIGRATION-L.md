@@ -36,7 +36,7 @@ dependencies {
     compile 'com.buzzvil:buzzscreen:1.+'
     
     // L앱을 위한 마이그레이션 라이브러리. migration-host 와 버전이 반드시 일치해야 합니다.
-    compile 'com.buzzvil.buzzscreen.ext:migration-client:0.9.3'
+    compile 'com.buzzvil.buzzscreen.ext:migration-client:0.9.4'
 }
 ```
 

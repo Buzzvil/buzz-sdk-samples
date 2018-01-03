@@ -31,7 +31,7 @@ dependencies {
     compile 'com.buzzvil:buzzscreen:1.+'
     
     // M앱을 위한 마이그레이션 라이브러리. L앱과 다름에 주의!
-    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.3'
+    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.4'
 }
 ```
 
@@ -125,6 +125,19 @@ M앱에서 로그아웃이 일어나는 경우 `BuzzScreen.getInstance().logout(
     
     **Parameters**
         - `link` : 커스텀 마켓 링크
+        
+- `MigrationHost.requestActivation(OnRequestActivateResponseListener listener)`
+
+    L앱의 잠금화면을 활성화 합니다. `MigrationHost.requestActivationWithLaunch()` 와 다른 점은 L앱의 실행없이 L앱의 잠금화면이 활성화 된다는 점입니다. 잠금화면을 활성화 할때는 M앱에서 설정된 유저 정보를 사용하게 됩니다.
+     
+    **Parameters**
+    - `OnRequestActivateResponseListener`
+        - `onAlreadyActivated()` : L앱에서 버즈스크린이 이미 활성화가 되어있는 경우 호출됩니다.
+        - `onActivated()` : L앱에서 버즈스크린이 활성화가 된 경우 호출됩니다.
+        - `onError(RequestActivationError error)` : L앱의 버즈스크린 활성화에 실패한 경우 호출됩니다.
+            - `LOCKSCREEN_APP_NOT_INSTALLED` : L앱이 설치되지 않아 활성화에 실패한 경우
+            - `LOCKSCREEN_APP_MIGRATION_NOT_SUPPORTED` : L앱에서 마이그레이션 연동이 되지 않아 활성화에 실패한 경우
+            - `UNKNOWN_ERROR` : 잘못된 연동 혹은 일시적인 에러로 발생한 경우
     
 
 ### [L앱 마이그레이션 구현하러 가기](LIGHT-MIGRATION-L.md)
