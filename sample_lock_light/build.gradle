@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         // my_app_key 에는 버즈스크린 연동시 발급받은 앱키를 입력합니다.
-        manifestPlaceholders = [buzzScreenAppKey:"419318955785795"]
+        manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
         applicationId "com.buzzvil.buzzscreen.sample_lock_light"
         minSdkVersion 15
         targetSdkVersion 26
