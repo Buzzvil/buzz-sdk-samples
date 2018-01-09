@@ -63,7 +63,7 @@ public class App extends Application {
         MigrationHost.init(this, "com.buzzvil.buzzscreen.sample_lock_light");
         
         // L앱에서 버즈스크린이 활성화되어 M앱에서 잠금화면이 비활성화 되는 경우 호출되는 리스너 등록 예시
-        MigrationHost.setOnDeactivatedByLockScreenAppListener(new MigrationHost.OnDeactivateByLockScreenAppListener() {
+        MigrationHost.setOnDeactivatedByLockScreenAppListener(new MigrationHost.OnDeactivatedByLockScreenAppListener() {
             @Override
             public void onDeactivated() {
                 Log.i("MainApp", "LockScreen is deactivated by LockScreen App");
