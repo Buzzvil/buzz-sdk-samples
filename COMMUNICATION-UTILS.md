@@ -68,9 +68,9 @@ MigrationXXX.getDataStorage().getAsync("SHARED_CONFIG_KEY", new DataStorage.Asyn
 - `void post(String eventName, Bundle extras)` : Bundle 형태의 추가 데이터를 담아서 이벤트를 Receiver 에게 보냅니다.
 
 #### 이벤트 수신
+**주의 : 반드시 Application Class 에서 호출되어야 합니다.**
 - `void registerEventListener(String eventName, EventHandler.OnEventListener listener)` : 특정 이벤트를 받았을 때의 로직을 OnEventListener를 통해 구현해서 eventName과 매핑해 등록합니다.
-    > 반드시 Application Class 에서 호출되어야 합니다.
-    
+
     **Parameters**
     - `OnEventListener`
         - `void onEvent(Bundle extras)` : 이벤트를 받았을 때 호출되며 파라미터로 Sender 에서 보낸 추가 데이터가 전달됩니다(없을 경우 null 이 아닌 빈 Bundle 전달).
@@ -109,8 +109,9 @@ MigrationXXX.getEventHandler().registerEventListener("SAMPLE_EVENT", new EventHa
 `MigrationXXX.getRequestHandler()` 를 통해 RequestHandler instance를 가져옵니다.
 
 #### 서버
+
+**주의 : 반드시 Application Class 에서 호출되어야 합니다.**
 - `void registerResponder(int requestCode, MsgRequestHandler.Responder responder)` : 클라이언트로부터 요청이 왔을 때의 응답을 구현합니다.
-    > 반드시 Application Class에서 호출되어야 합니다.
 
     **Parameters**
     - `requestCode` : 요청을 구분하는 고유 코드
