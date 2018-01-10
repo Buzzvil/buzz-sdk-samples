@@ -40,7 +40,7 @@ android {
 
 ```groovy
 dependencies {
-   compile 'com.buzzvil.buzzscreen.ext:migration-to:0.9.4'
+   compile 'com.buzzvil.buzzscreen.ext:migration-to:0.9.5'
 }
 ```
 

@@ -34,5 +34,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
 
     compile 'com.buzzvil:buzzscreen:1.+'
-    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.4'
+    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.5'
 }
