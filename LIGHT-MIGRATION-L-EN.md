@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
 ### Creating market-ready L app using sample
 `sample_lock_light` contains what this guide entails as well as other small features. Thus, by customizing the `sample_lock_light` a bit, you can get a simple market-ready version of a lockscreen app.
-> Please contact Buzzvil for any issues or questions regaring the sample app.
+> Please contact Buzzvil for any issues or questions regarding the sample app.
 
 1. Modify `build.gradle` : Replace `my_app_key` with the app key given for BuzzScreen integration process and `applicationId` to new lockscreen app package name.
 2. Modify `AndroidManifest.xml` : Replace `<app_license>` and `<plist>` with newly published value respectively.
