@@ -208,4 +208,4 @@ public class MainActivity extends AppCompatActivity {
 - Icon : change `ic_launcher.png`
 - Color : change the main color via modifying `res/colors.xml`
 - Logo : change the logo on tool bar at `activity_main.xml`
-- [Lockscreen Customization](https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/ADVANCED-USAGE_EN.md)
+- [Customizing Lockscreen Notification](https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/LOCKSCREEN-SERVICE-NOTIFICATION.md)
