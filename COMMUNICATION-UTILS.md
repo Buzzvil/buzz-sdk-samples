@@ -27,7 +27,7 @@
 
 #### 데이터 검색
 - `String get(String key)` : key 에 매핑된 value 를 Synchronous 하게 검색한 후 리턴합니다. 
-- `void getAsync(String key, DataStoage.AsyncQueryListener listener)` : key 에 매핑된 value 를 Asynchronous 하게 검색해서 AsyncQueryListener 에 전달합니다.
+- `void getAsync(String key, DataStorage.AsyncQueryListener listener)` : key 에 매핑된 value 를 Asynchronous 하게 검색해서 AsyncQueryListener 에 전달합니다.
     > DataStorage 는 [ContentProvider](https://developer.android.com/guide/topics/providers/content-providers.html) 를 사용하는데 ContentProvider 특성상 데이터 처리시 소요 시간이 길어질 수 있으므로 비동기 방법인 `getAsync()` 를 사용하는 것을 권장합니다.
 
     **Parameters**
