@@ -129,6 +129,8 @@ M앱에서 로그아웃이 일어나는 경우 `BuzzScreen.getInstance().logout(
 - `MigrationHost.requestActivation(OnRequestActivateResponseListener listener)`
 
     L앱의 잠금화면을 활성화 합니다. `MigrationHost.requestActivationWithLaunch()` 와 다른 점은 L앱의 실행없이 L앱의 잠금화면이 활성화 된다는 점입니다. 잠금화면을 활성화 할때는 M앱에서 설정된 유저 정보를 사용하게 됩니다.
+    
+    **주의 : M앱의 MigrationHost 0.9.4 이상에서 호출되어야 하며, L앱 역시 MigrationClient 0.9.4 이상이 적용되어야 합니다.**
      
     **Parameters**
     - `OnRequestActivateResponseListener`

@@ -127,5 +127,20 @@ Remove both `BuzzScreen.getInstance().activate()` and `BuzzScreen.getInstance().
     **Parameters**
         - `link` : custom link
     
+        
+- `MigrationHost.requestActivation(OnRequestActivateResponseListener listener)`
 
+    Activates lockscreen in L app. The method above differs from `MigrationHost.requestActivationWithLaunch()` in that L app's lockscreen will be activated without running L app. When activating lockscreen, user info set in the M app will be used.
+    
+    **note : MigrationHost 0.9.4 or higher of M app, and MigrationClient 0.9.4 or higher of L app are required for the method above.**
+     
+    **Parameters**
+    - `OnRequestActivateResponseListener`
+        - `onAlreadyActivated()` : This method will be called if BuzzScreen was already enabled in L app.
+        - `onActivated()` : This method will be called when BuzzScreen is enabled in L app.
+        - `onError(RequestActivationError error)` : This method will be called when BuzzScreen of L app activation fails.
+            - `LOCKSCREEN_APP_NOT_INSTALLED` : Error code indicating when activation fails because L app is not installed
+            - `LOCKSCREEN_APP_MIGRATION_NOT_SUPPORTED` : Error code indicating when the activation fails because the L App doesn't support migration features.
+            - `UNKNOWN_ERROR` : Error code indicating incorrect integration or temporary error
+            
 ### [L app Migration Implementation](LIGHT-MIGRATION-L-EN.md)
