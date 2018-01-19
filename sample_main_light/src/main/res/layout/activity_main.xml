@@ -56,13 +56,13 @@
             android:id="@+id/lockscreen_disable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="잠금화면 비활성화하기"/>
+            android:text="@string/light_decativation_button"/>
 
         <Button
             android:id="@+id/lockscreen_app_activation_request"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="잠금화면 앱 사용하러 가기"/>
+            android:text="@string/light_move_to_l_app"/>
 
     </LinearLayout>
 

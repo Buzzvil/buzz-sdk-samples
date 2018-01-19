@@ -4,11 +4,13 @@ import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -272,9 +274,28 @@ public class MainActivity extends AppCompatActivity {
         if (BuzzScreen.getInstance().isSnoozed()) {
             int snoozeTo = BuzzScreen.getInstance().getSnoozeTo();
             Date dtSnoozeTo = new Date(snoozeTo * 1000L);
-            String time = new SimpleDateFormat("MMM d일 h:mm aa", Locale.getDefault()).format(dtSnoozeTo);
+
+            String dateTemplate;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                dateTemplate = DateFormat.getBestDateTimePattern(Locale.getDefault(), "E d MMM h:mm aa");
+            } else {
+                Locale locale = Locale.getDefault();
+                if (locale.equals(Locale.KOREA)) {
+                    dateTemplate = "MMM d일 h:mm aa";
+                } else if (locale.equals(Locale.JAPAN)) {
+                    dateTemplate = "MMM d日 h:mm aa";
+                } else if (locale.equals(Locale.US)) {
+                    dateTemplate = "MMM d h:mm aa";
+                } else {
+                    dateTemplate = "d MMM h:mm aa";
+                }
+            }
+
+            String time = new SimpleDateFormat(dateTemplate, Locale.getDefault()).format(dtSnoozeTo);
+
             tvMessage.setVisibility(View.VISIBLE);
-            tvMessage.setText(time + "에 켜집니다");
+            tvMessage.setText(time + getString(R.string.main_snooze_on_time));
         } else {
             tvMessage.setVisibility(View.GONE);
         }

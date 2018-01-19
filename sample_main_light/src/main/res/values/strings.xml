@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Main App(Light)</string>
+    <string name="app_name" translatable="false">Main App(Light)</string>
+    <string name="light_user_agreement">Consent to use lockscreen</string>
+    <string name="light_deactivated_message">Lockscreen is deactivated.</string>
+    <string name="light_move_to_l_app">Go to lockscreen app</string>
+    <string name="light_decativation_button">Deactivate lockscreen</string>
 </resources>

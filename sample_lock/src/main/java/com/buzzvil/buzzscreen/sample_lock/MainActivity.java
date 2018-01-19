@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showSnoozeSettings() {
         selectedPosition = 0;
-        CharSequence snoozeItems[] = new CharSequence[]{"잠시 사용 안함(2시간)", "오늘만 사용 안함", "계속 사용 안함"};
+        CharSequence snoozeItems[] = new CharSequence[]{getString(R.string.main_snooze_0), getString(R.string.main_snooze_1), getString(R.string.main_snooze_2)};
 
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
         adb.setTitle("Snooze?");

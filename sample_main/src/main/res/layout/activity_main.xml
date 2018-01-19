@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:text="잠금화면 활성화"/>
+                android:text="@string/main_activate_lockscreen"/>
 
             <android.support.v7.widget.SwitchCompat
                 android:id="@+id/main_lockscreen_enable"

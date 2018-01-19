@@ -24,9 +24,11 @@ import java.util.Locale;
 public class CustomLockerActivity extends BaseLockerActivity {
     final static String TAG = "LockerActivity";
 
+    // Slider at the bottom of the screen
     // 화면 하단 슬라이더
     Slider slider;
 
+    // clock
     // 시계
     TextView tvTime;
     TextView tvAmPm;
@@ -48,6 +50,7 @@ public class CustomLockerActivity extends BaseLockerActivity {
 
         slider = (Slider)findViewById(R.id.locker_slider);
 
+        // Listener that is called when the left icon in the slider is selected (touch up in the left icon position)
         // 슬라이더에서 왼쪽 아이콘이 선택(왼쪽 아이콘 위치에서 터치 업)되었을 때 호출되는 리스너
         slider.setLeftOnSelectListener(new SliderIcon.OnSelectListener() {
             @Override
@@ -56,6 +59,7 @@ public class CustomLockerActivity extends BaseLockerActivity {
             }
         });
 
+        // Listener that is called when the right icon in the slider is selected (touch up in the right icon position)
         // 슬라이더에서 오른쪽 아이콘이 선택(오른쪽 아이콘 위치에서 터치 업)되었을 때 호출되는 리스너
         slider.setRightOnSelectListener(new SliderIcon.OnSelectListener() {
             @Override
@@ -64,7 +68,8 @@ public class CustomLockerActivity extends BaseLockerActivity {
             }
         });
 
-        // 화면 터치시 상하 페이시 화살표 표시
+        // Display up/down arrow when touching the screen
+        // 화면 터치시 상하 페이지 화살표 표시
         setPageIndicators(
                 findViewById(R.id.locker_arrow_top),
                 findViewById(R.id.locker_arrow_bottom)
@@ -74,10 +79,13 @@ public class CustomLockerActivity extends BaseLockerActivity {
 
     @Override
     protected void onCurrentCampaignUpdated(Campaign campaign) {
-        // 현재 보여지고 있는 캠페인이 업데이트 될때 호출된다.
-        // 현재 캠페인에 따라 UI를 변화시키고 싶으면 여기서 작업하면 된다.
+        // This is called when the current campaign is updated.
+        // If you want to change UI according to the current campaign, you can write the code here.
+        // 현재 보여지고 있는 캠페인이 업데이트 될때 호출됩니다.
+        // 현재 캠페인에 따라 UI를 변화시키고 싶으면 여기서 작업하면 됩니다.
         Log.i(TAG, campaign.toString());
 
+        // Update UI when left and right points are changed
         // 좌우 포인트가 변경되었을 때 UI 업데이트
         int landingPoints = campaign.getLandingPoints();
         int unlockPoints = campaign.getUnlockPoints();

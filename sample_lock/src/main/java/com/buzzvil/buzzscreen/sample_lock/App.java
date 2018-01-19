@@ -21,9 +21,11 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // BuzzScreen initialization code (same as the M app)
         // M앱과 동일한 기존 버즈스크린 초기화 코드.
         BuzzScreen.init("my_app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
+        // Code for migration
         // 마이그레이션을 위한 코드
         MigrationTo.init(this, App.MAIN_APP_PACKAGE);
 
@@ -33,7 +35,7 @@ public class App extends Application {
             @Override
             public void onSuccess(BuzzScreen.PointType type, int points) {
                 if (isNotificationEnabled()) {
-                    String message = String.format("%dP 적립되었습니다.", points);
+                    String message = String.format("%dP", points) + R.string.main_point_payment;
                     showNotification(message);
                 }
             }
@@ -69,6 +71,7 @@ public class App extends Application {
     }
 
     public boolean login(String userId) {
+        // Sign users into your service
         // 퍼블리셔 로그인
         if (TextUtils.isEmpty(userId)) {
             return false;
@@ -92,13 +95,12 @@ public class App extends Application {
         if (userProfile.getBirthYear() == 0
                 || TextUtils.isEmpty(userProfile.getGender())
                 || TextUtils.isEmpty(userProfile.getRegion())) {
+            // Enter targeting data received from the user or the M app
             // 타게팅 정보를 유저로부터 입력받거나 M에서 전달한 정보 입력.
             int birthYear = 1985;
             String gender = UserProfile.USER_GENDER_MALE;
-            String region = "서울특별시 관악구";
             userProfile.setBirthYear(birthYear);
             userProfile.setGender(gender);
-            userProfile.setRegion(region);
         }
     }
 }

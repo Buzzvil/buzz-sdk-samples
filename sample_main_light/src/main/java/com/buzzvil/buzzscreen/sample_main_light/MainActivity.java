@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     private int birthYear = 1985;
     private String gender = UserProfile.USER_GENDER_MALE;
-    private String region = "서울특별시 관악구";
 
     private AlertDialog dialog;
 
@@ -56,12 +55,13 @@ public class MainActivity extends AppCompatActivity {
                     String userId = "testuserid" + new Random().nextInt(100000);
                     app.login(userId);
                     UserProfile userProfile = BuzzScreen.getInstance().getUserProfile();
+                    // // SetUserId must be called to give users rewards through s2s postback or batch process.
                     // 포인트 적립을 위해서는 setUserId를 반드시 호출해야 함
                     userProfile.setUserId(userId);
+                    // Targeting information for campaign allocation
                     // 캠페인 할당을 위한 타게팅 정보
                     userProfile.setBirthYear(birthYear);
                     userProfile.setGender(gender);
-                    userProfile.setRegion(region);
                 } else {
                     app.logout();
                 }
@@ -73,15 +73,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (app.isTermAgree()) {
+                    // The location where you originally called BuzzScreen.getInstance().activate()
                     // 기존에 BuzzScreen.getInstance().activate() 호출하던 위치
                     MigrationHost.requestActivationWithLaunch();
                 } else {
                     dialog = new AlertDialog.Builder(MainActivity.this)
-                            .setMessage("잠금화면 이용약관 동의")
+                            .setMessage(R.string.light_user_agreement)
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     app.setTermAgree(true);
+                                    // The location where you originally called BuzzScreen.getInstance().activate()
                                     // 기존에 BuzzScreen.getInstance().activate() 호출하던 위치
                                     MigrationHost.requestActivationWithLaunch();
                                 }
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 if (BuzzScreen.getInstance().isActivated()) {
                     BuzzScreen.getInstance().deactivate();
                     btDisableLockscreen.setVisibility(View.GONE);
-                    Toast.makeText(MainActivity.this, "잠금화면이 비활성화되었습니다", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.light_deactivated_message, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -120,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
             ((TextView)findViewById(R.id.profile_user_id)).setText("ID : " + PreferenceHelper.getString(PrefKeys.PREF_KEY_USER_ID, ""));
             ((TextView)findViewById(R.id.profile_birth_year)).setText("Birth year : " + birthYear);
             ((TextView)findViewById(R.id.profile_gender)).setText("Gender : " + gender);
-            ((TextView)findViewById(R.id.profile_region)).setText("Region : " + region);
             btRequsetLockscreenAppActivation.setEnabled(true);
         } else {
             layoutProfile.setVisibility(View.GONE);

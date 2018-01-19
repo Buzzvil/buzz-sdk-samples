@@ -16,6 +16,8 @@ public class App extends Application {
     public static final String MAIN_APP_PACKAGE = "com.buzzvil.buzzscreen.sample_main_light";
 
     /**
+     * Set a deeplink to use when moving the user to Main app because the conditions for turning on lockscreen are not met
+     * If not, run Main app.
      * 잠금화면을 켜기 위한 조건이 충족되지 않아서 Main 앱으로 유저를 이동시켜야 할 때 사용할 딥링크 설정
      * 설정되지 않았을 경우 Main 앱을 실행한다.
      */

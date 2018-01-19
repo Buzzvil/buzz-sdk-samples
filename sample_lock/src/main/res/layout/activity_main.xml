@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_point"
-                android:text="포인트 내역 확인"
+                android:text="@string/main_check_point"
                 android:textSize="16sp" />
 
             <View
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_cart"
-                android:text="스토어 바로가기"
+                android:text="@string/main_go_store"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -112,7 +112,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="잠금화면 활성화"
+                    android:text="@string/main_decativation_lockscreen"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -151,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:text="적립 알림 설정"
+                android:text="@string/main_point_notification"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -177,7 +177,7 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="잠금화면 사용안내"
+            android:text="@string/main_lockscreen_info"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -194,7 +194,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="서비스 이용 약관 >"
+            android:text="@string/main_terms_of_service"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
 
@@ -211,7 +211,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="개인정보 처리방침 >"
+            android:text="@string/main_privacy_policy"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
 

@@ -27,6 +27,10 @@
             android:taskAffinity="${applicationId}.Locker" />
 
         <!-- Configuration for BuzzScreen-->
+        <!--Replace <app_license> with a new value provided by your account manager.
+         This valude should be different from the original M app.-->
+        <!--Replace <plist> with with a new value provided by your account manager.
+         This valude should be different from the original M app.-->
         <!-- <app_license> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
         <!-- <plist> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
         <meta-data
