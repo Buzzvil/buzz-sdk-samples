@@ -1,5 +1,5 @@
 # Buzzscreen Extension JS SDK 가이드
-> [English Version Link](BUZZSCREEN-EXTENSION-JS-SDK-GUIDE-EN.md)
+> [English Version Link](README.md)
 
 * 개인화된 콘텐츠와 광고를 안드로이드 잠금화면에서 보여주는 [버즈스크린](https://github.com/Buzzvil/buzzscreen-sdk-publisher)의 동작을 돕는 익스텐션 SDK입니다.
 * 버즈스크린의 개인화를 위해서는 유저 정보가 필요하며, 퍼블리셔의 웹사이트에서 버즈스크린으로 유저 정보를 전달하기 위해서 이 SDK를 사용합니다.
