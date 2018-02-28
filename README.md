@@ -1,5 +1,6 @@
 # Buzzscreen Extension JS SDK Guide
 
+> [Korean Version Link](BUZZSCREEN-EXTENSION-JS-SDK-GUIDE-KR.md)
 * An extension SDK that helps you to work with the [BuzzScreen](https://github.com/Buzzvil/buzzscreen-sdk-publisher) which shows personalized content and ads on Android lockscreen.
 * You need user information to use the personalization feature in BuzzScreen, and you need to pass user information to the Buzzscreen app via this SDK. 
 * This guide explains how you can apply this SDK to publisher's web site.
