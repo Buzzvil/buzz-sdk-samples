@@ -4,7 +4,9 @@
 - Please find `app_key` on your BuzzAd dashboard before beginning the SDK  integration or running sample applications.
 - The Google Play Services SDK must be configured. Please refer to Google`s [Setting Up Google Play Services](https://developers.google.com/android/guides/setup) guide for more details.
 
-    > Android studio configuration is different from eclipse. If you are using andorid studio, just add `compile 'com.google.android.gms:play-services-ads:7.5.0'` to **build.gradle > dependencies**.
+    > Android studio configuration is different from eclipse. If you are using andorid studio, just add 
+    > `compile 'com.google.android.gms:play-services-base:8.4.0'`
+    > `compile 'com.google.android.gms:play-services-ads:8.4.0'` to **build.gradle > dependencies**.
 
 ## Integration Guide
 
