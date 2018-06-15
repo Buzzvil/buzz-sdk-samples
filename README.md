@@ -9,7 +9,9 @@
 - 압축 해제한 폴더 내의 buzzad-sdk/buzzad.jar를 개발중인 안드로이드 어플리케이션에 포함
 - 구글 플레이 서비스 라이브러리 설정 필요. [구글 플레이 서비스 라이브러리 설정방법](https://developers.google.com/android/guides/setup)을 참고하여 직접 추가하면 된다.
 
-    > 개발 환경이 안드로이드 스튜디오인 경우는 **build.gradle > dependencies**에 `compile 'com.google.android.gms:play-services-ads:7.5.0'`만 추가하면 된다.
+    > 개발 환경이 안드로이드 스튜디오인 경우는 **build.gradle > dependencies**에 
+    > `compile 'com.google.android.gms:play-services-base:8.4.0'`
+    > `compile 'com.google.android.gms:play-services-ads:8.4.0'`만 추가하면 된다.
 
 - AndroidManifest.xml : 아래와 같이 권한, 액티비티 설정
 ```Xml
