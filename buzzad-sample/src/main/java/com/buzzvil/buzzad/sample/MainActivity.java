@@ -1,6 +1,7 @@
 package com.buzzvil.buzzad.sample;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -41,6 +42,29 @@ public class MainActivity extends Activity {
             	 * publisher_user_id : unique user id for publisher
             	 */
             	BuzzAd.showOfferWall(MainActivity.this, "Get Points", "publisher_user_id");
+            }
+        });
+
+        findViewById(R.id.open_inquiry_page).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /**
+                 * Show inquiry page.
+                 * MainActivity.this : Current activity
+                 * Get Points : Header title on offer wall
+                 * publisher_user_id : unique user id for publisher
+                 */
+                BuzzAd.showInquiryPage(MainActivity.this, "publisher_user_id");
+            }
+        });
+
+        findViewById(R.id.open_custom_offerwall).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, OfferActivity.class);
+                intent.putExtra("title", "Get Points (Custom)");
+                intent.putExtra("userId", "publisher_user_id");
+                startActivity(intent);
             }
         });
     }

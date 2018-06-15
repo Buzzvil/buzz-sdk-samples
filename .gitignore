@@ -8,3 +8,14 @@ bin/
 gen/
 
 .idea/
+
+*.pyc
+*.class
+.DS_Store
+out/
+.gradle/
+.DS_Store
+local.properties
+*.iml
+build/
+
