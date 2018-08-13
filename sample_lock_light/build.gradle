@@ -32,8 +32,8 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.0.2'
 
     compile 'com.buzzvil:buzzscreen:1.+'
-    compile 'com.buzzvil.buzzscreen.ext:migration-client:0.9.6'
+    compile 'com.buzzvil.buzzscreen.ext:migration-client:1.0.1'
 }

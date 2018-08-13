@@ -36,6 +36,6 @@
 
     <string name="main_error_unknown_title">잠시 후 다시 시도해주세요!</string>
     <string name="main_error_unknown_message">일시적 오류가 발생했습니다. 잠시 후 다시 시도해주세요!</string>
-    <string name="main_error_unknown_button">확인</string>
+    <string name="main_error_unknown_button">재시도</string>
     <string name="main_snooze_on_time">에 켜집니다.</string>
 </resources>

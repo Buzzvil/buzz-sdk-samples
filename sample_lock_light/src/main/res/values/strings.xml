@@ -27,7 +27,7 @@
     <string name="main_error_agree_button">Go to consent</string>
     <string name="main_error_unknown_title">Please try again in a few minutes!</string>
     <string name="main_error_unknown_message">There was a temporary error. Please try again in a few minutes!</string>
-    <string name="main_error_unknown_button">Confirm</string>
+    <string name="main_error_unknown_button">Retry</string>
     <string name="main_snooze_on_time">: Time remaining until turn-on</string>
 
 </resources>

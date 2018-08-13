@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvMessage;
 
     private View errorLayout;
+    private Button btnError;
+    private Button btnDeactivateOnError;
     private View switchLayout;
     private Button btnSwitchOn;
     private Button btnSwitchOff;
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         tvMessage = (TextView) findViewById(R.id.main_message);
 
         errorLayout = findViewById(R.id.main_error_layout);
+        btnError = findViewById(R.id.main_error_button);
+        btnDeactivateOnError = findViewById(R.id.main_error_deactivate_button);
         switchLayout = findViewById(R.id.main_switch_layout);
         btnSwitchOn = (Button)findViewById(R.id.main_switch_on);
         btnSwitchOff = (Button)findViewById(R.id.main_switch_off);
@@ -94,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        checkAvailability();
+    }
+
+    private void checkAvailability() {
         showLoading();
         migrationClient.checkAvailability(new MigrationClient.OnCheckAvailabilityListener() {
             @Override
@@ -155,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                                 new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-                                        finish();
+                                        checkAvailability();
                                     }
                                 });
                         break;
@@ -200,12 +208,27 @@ public class MainActivity extends AppCompatActivity {
         tvTitle.setText(titleResId);
         tvMessage.setVisibility(View.VISIBLE);
         tvMessage.setText(messageResId);
-        ((Button)findViewById(R.id.main_error_button)).setText(btnResId);
-        ((Button)findViewById(R.id.main_error_button)).setOnClickListener(buttonClickListener);
+        btnError.setText(btnResId);
+        btnError.setOnClickListener(buttonClickListener);
+
+        if (BuzzScreen.getInstance().isActivated()) {
+            btnDeactivateOnError.setVisibility(View.VISIBLE);
+            btnDeactivateOnError.setText(getString(R.string.main_switch_off));
+            btnDeactivateOnError.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    BuzzScreen.getInstance().deactivate();
+                    btnDeactivateOnError.setVisibility(View.GONE);
+                }
+            });
+        } else {
+            btnDeactivateOnError.setVisibility(View.GONE);
+        }
     }
 
     private void showSwitchLayout() {
         pbLoading.setVisibility(View.GONE);
+        errorLayout.setVisibility(View.GONE);
         switchLayout.setVisibility(View.VISIBLE);
         tvMessage.setVisibility(View.VISIBLE);
         updateSwitchLayout();
