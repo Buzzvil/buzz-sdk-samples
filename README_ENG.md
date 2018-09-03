@@ -40,7 +40,7 @@ The User Token is to be delivered to the pre-registered Publisher server via Ser
 - Set the User Token received by calling `setUserToken()` of the SDK when getting response from API called by `OnNeedAPICall()` of `UserTokenListener`. (please refer to 'UserToken Validity Check Interface' in SDK integration)
 
 #### Publisher Server <-> BuzzStore Server(Server-To-Server Integration)
-- Prior to the API integration,, a publisher must `whitelist` the IP address of its server on the Buzzstore server. The publisher should share the IP address to be registered through separate channel (eg. e-mail).
+- Prior to the API integration, a publishers' IP address must be whitelisted on the Buzzstore server. The publisher should share the IP address to be registered through separate channel (eg. e-mail).
 
 ###### Request
 - API Call Direction : Publisher Server -> BuzzStore Server
