@@ -49,23 +49,25 @@ The User Token is to be delivered to the pre-registered Publisher server via Ser
 - Headers : Request with the following parameters.
     - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API. 
-- Essential POST Parameter : Publisher's user identifier `publisher_user_id`
-
-e.g.
-```JSON
-{
-    "publisher_user_id": 1270537
-}
-```
-
-> ** Note ** : As BuzzStore identifies the user based on the publisher user identifier, it cannot be changed later. BuzzStore recognizes two or more different user identifiers as different users. Therefore, the user identifier provided by the publisher must be a value that is never updated. For example, it is recommended to use the user identifier value in the publisher database (for example, the pk value in the Users table) rather than a value that may change later, such as an email address linked with an account.
-
-- When successed, `publisher_user_id`, `token` are returned in JSON format. HTTP response code is 200 or 201. 
+- Essential POST Parameter : Publisher's user identifier `publisher_user_id` and Publisher's user country code in ISO 2-letter format `country`
 
 e.g.
 ```JSON
 {
     "publisher_user_id": 1270537,
+    "country": "KR"
+}
+```
+
+> ** Note ** : As BuzzStore identifies the user based on the publisher user identifier, it cannot be changed later. BuzzStore recognizes two or more different user identifiers as different users. Therefore, the user identifier provided by the publisher must be a value that is never updated. For example, it is recommended to use the user identifier value in the publisher database (for example, the pk value in the Users table) rather than a value that may change later, such as an email address linked with an account.
+
+- When successed, `publisher_user_id`, `token`, `country` are returned in JSON format. HTTP response code is 200 or 201. 
+
+e.g.
+```JSON
+{
+    "publisher_user_id": 1270537,
+    "country": "KR",
     "token": "yYn05pKNlHpMdmBd2GeXU4tBdQtIENuFmFJ0MhBJkwBIzE2TXffLTA7bfWAmRSOc"
 }
 ```
