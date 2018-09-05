@@ -47,8 +47,8 @@ The User Token is to be delivered to the pre-registered Publisher server via Ser
 - method : `POST`
 - url : `https://store-api.buzzvil.com/api/v1/users`
 - Headers : Request with the following parameters.
-    - `HTTP-X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
-    - `HTTP-X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API. 
+    - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
+    - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API. 
 - Essential POST Parameter : Publisher's user identifier `publisher_user_id`
 
 e.g.
