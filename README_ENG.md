@@ -60,6 +60,7 @@ e.g.
 ```
 
 > ** Note ** : As BuzzStore identifies the user based on the publisher user identifier, it cannot be changed later. BuzzStore recognizes two or more different user identifiers as different users. Therefore, the user identifier provided by the publisher must be a value that is never updated. For example, it is recommended to use the user identifier value in the publisher database (for example, the pk value in the Users table) rather than a value that may change later, such as an email address linked with an account.
+> ** Note ** : If country code is not in ISO 2-letter format, it will generate invalid country error
 
 - When successed, `publisher_user_id`, `token`, `country` are returned in JSON format. HTTP response code is 200 or 201. 
 
