@@ -48,9 +48,10 @@ User Token은 외부 유출을 원천 차단하기 위해 사전 등록된 퍼�
     - `X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
     - `X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
 - POST 필수 파라미터 : 퍼블리셔의 유저 식별자 `publisher_user_id`, 퍼블리셔의 유저의 국가코드 (ISO 2글자 포맷, 대문자) `country`
+- Content-Type: application/x-www-form-urlencoded (아래의 요청 Body가 이런 포맷으로 전달되어야 함)
 
 e.g.
-```JSON
+```Body
 {
     "publisher_user_id": 1270537,
     "country": "KR"
@@ -289,9 +290,9 @@ public class MainActivity extends Activity {
 - method : `GET`
 - url : `https://store-api.buzzvil.com/api/v1/points`
 - Headers : 다음의 파라미터를 담아서 요청한다.
-    - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
-    - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
-    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
+    - `X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
+    - `X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
+    - `X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
 
 e.g.
 ```
@@ -319,9 +320,10 @@ e.g.
 - method : `POST`
 - url : `https://store-api.buzzvil.com/api/v1/users/deactivate`
 - Headers : 다음의 파라미터를 담아서 요청한다.
-    - `HTTP-X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
-    - `HTTP-X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
-    - `HTTP-X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
+    - `X-BUZZVIL-APP-ID` : 사전에 발급한 퍼블리셔 앱에 부여 된 고유한 아이디.
+    - `X-BUZZVIL-API-TOKEN` : 사전에 발급한 서버 투 서버 API 사용을 위한 고유한 API 토큰
+    - `X-BUZZVIL-USER-ID`: 퍼블리셔 유저 아이디.
+- Content-Type: application/x-www-form-urlencoded
     
 ###### 응답
 - 성공시 HTTP 응답 상태 코드는 200 이다. 
