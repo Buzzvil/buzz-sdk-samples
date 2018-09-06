@@ -50,9 +50,10 @@ The User Token is to be delivered to the pre-registered Publisher server via Ser
     - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API. 
 - Essential POST Parameter : Publisher's user identifier `publisher_user_id` and Publisher's user country code in ISO 2-letter format in upper case `country`
+- Content-Type: application/x-www-form-urlencoded (below body should be requested in this format)
 
 e.g.
-```JSON
+```BODY
 {
     "publisher_user_id": 1270537,
     "country": "KR"
@@ -292,9 +293,9 @@ Here describes other APIs supported by BuzzStore. As only Server-to-Server commu
 - method : `GET`
 - url : `https://store-api.buzzvil.com/api/v1/points`
 - Headers : Request with parameters below. 
-    - `HTTP-X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
-    - `HTTP-X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
-    - `HTTP-X-BUZZVIL-USER-ID`: Publisher user ID. 
+    - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
+    - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
+    - `X-BUZZVIL-USER-ID`: Publisher user ID. 
 
 e.g.
 ```
@@ -322,9 +323,10 @@ e.g.
 - method : `POST`
 - url : `https://store-api.buzzvil.com/api/v1/users/deactivate`
 - Headers : Request with parameters below.
-    - `HTTP-X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
-    - `HTTP-X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
-    - `HTTP-X-BUZZVIL-USER-ID`: Publisher user ID.
+    - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
+    - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
+    - `X-BUZZVIL-USER-ID`: Publisher user ID.
+- Content-Type: application/x-www-form-urlencoded
     
 ###### Response
 - On success, the HTTP response status code is 200.
