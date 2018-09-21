@@ -313,7 +313,7 @@ e.g.
 - Returns `error_code`, `error_message` in JSON format on fail.
 
 
-#### Point creation/withdrawal API
+#### Point Creation/Withdrawal API
 - Prior to the API integration, IP address of publisher server must be `whitelist`ed in BuzzStore server. The IP address should be sent by the publisher through a separate channel (eg. e-mail).
 - The API provides/withdraws the point to/from a specific user A.
 
@@ -326,9 +326,10 @@ e.g.
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
     - `X-BUZZVIL-USER-ID`: Publisher user ID.
 - Required POST Parameter : 
-    - `amount`: creation/withdrawal point amount. It should be int and in point unit (not currency unit). If the amount is positive, it provides the amount to the user and if negative, it withdraws the amount from the user
+    - `amount`: Point amount to provide or withdraw. It should be int and in point unit (not currency unit). If the amount is positive, it provides the amount to the user and if negative, it withdraws the amount from the user
     - `title`: Reason for creation/withdrawl (ex. "Mar18 marketing event")
 - Content-Type: application/json
+
  e.g.
 ```
 {
@@ -336,11 +337,12 @@ e.g.
     "title": "Luckdraw event"
 }
 ```
+ 
  e.g.
 ```
 POST https://store-api.buzzvil.com/api/v1/points
 ```
-> **Note** : Point Balance Checking API should NEVER be called directly from the client side. Need to be called by using Client <-> Publisher Server <-> BuzzStore Server communication method. 
+> **Note** : Point Creation/Withdrawal API should NEVER be called directly from the client side. Need to be called by using Client <-> Publisher Server <-> BuzzStore Server communication method. 
 
 - Returns HTTP response status code 200 on success.
 - Returns `error_code`, `error_message` in JSON format on fail.
