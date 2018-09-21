@@ -49,7 +49,7 @@ The User Token is to be delivered to the pre-registered Publisher server via Ser
 - Headers : Request with the following parameters.
     - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API. 
-- Essential POST Parameter : Publisher's user identifier `publisher_user_id` and Publisher's user country code in ISO 2-letter format in upper case `country`
+- Required POST Parameter : Publisher's user identifier `publisher_user_id` and Publisher's user country code in ISO 2-letter format in upper case `country`
 - Content-Type: application/x-www-form-urlencoded (below body should be requested in this format)
 
 e.g.
@@ -126,7 +126,6 @@ When using Proguard, please add below lines to Proguard settings.
      - `appId`: A unique identifier given to the publisher app in BuzzStore. It will be sent to publisher upon starting integration. It is also possible to check this value on BuzzStore Admin.
      - `userId`: A unique identifier of the user managed by the publisher. BuzzStore manages point with this information.
      - `context`: Context of the app.
-
 
 - `BuzzStore.setUserTokenListener(UserTokenListener listener)` : A function to register UserTokenListener which is called when the token is not valid. (Please refer to 'UserToken Validity Check Interface Implementation' for the details.) 
 
@@ -287,7 +286,6 @@ Here describes other APIs supported by BuzzStore. As only Server-to-Server commu
 - Prior to the API integration, IP address of publisher server must be `whitelist`ed in BuzzStore server. The IP address should be sent by the publisher through a separate channel (eg. e-mail).
 - The API retrieves the balance of a specific user A
 
-
 ###### Request 
 - API Call Direction : Publisher server -> BuzzStore server
 - method : `GET`
@@ -313,6 +311,40 @@ e.g.
 }
 ```
 - Returns `error_code`, `error_message` in JSON format on fail.
+
+
+#### Point creation/withdrawal API
+- Prior to the API integration, IP address of publisher server must be `whitelist`ed in BuzzStore server. The IP address should be sent by the publisher through a separate channel (eg. e-mail).
+- The API provides/withdraws the point to/from a specific user A.
+
+###### Request
+- API Call Direction : Publisher server -> BuzzStore server
+- method : `POST`
+- url : `https://store-api.buzzvil.com/api/v1/points`
+- Headers : Request with parameters below. 
+    - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
+    - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
+    - `X-BUZZVIL-USER-ID`: Publisher user ID.
+- Required POST Parameter : 
+    - `amount`: creation/withdrawal point amount. It should be int and in point unit (not currency unit). If the amount is positive, it provides the amount to the user and if negative, it withdraws the amount from the user
+    - `title`: Reason for creation/withdrawl (ex. "Mar18 marketing event")
+- Content-Type: application/json
+ e.g.
+```
+{
+    "amount": 500,
+    "title": "Luckdraw event"
+}
+```
+ e.g.
+```
+POST https://store-api.buzzvil.com/api/v1/points
+```
+> **Note** : Point Balance Checking API should NEVER be called directly from the client side. Need to be called by using Client <-> Publisher Server <-> BuzzStore Server communication method. 
+
+- Returns HTTP response status code 200 on success.
+- Returns `error_code`, `error_message` in JSON format on fail.
+
 
 #### Account Removal API
 - Prior to the API integration, IP address of publisher server must be `whitelist`ed in BuzzStore server. The IP address should be sent by the publisher through a separate channel (eg. e-mail).
