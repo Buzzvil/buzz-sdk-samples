@@ -326,7 +326,7 @@ e.g.
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
     - `X-BUZZVIL-USER-ID`: Publisher user ID.
 - Required POST Parameter : 
-    - `amount`: Point amount to provide or withdraw. It should be int and in point unit (not currency unit). If the amount is positive, it provides the amount to the user and if negative, it withdraws the amount from the user
+    - `amount`: Point amount to provide or withdraw. It should be `int` and in point unit (not currency unit). If the amount is positive, it provides the amount to the user and if negative, it withdraws the amount from the user
     - `title`: Reason for creation/withdrawl (ex. "Mar18 marketing event")
 - Content-Type: application/json
 
