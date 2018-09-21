@@ -44,8 +44,8 @@ The User Token is to be delivered to the pre-registered Publisher server via Ser
 
 ###### Request
 - API Call Direction : Publisher Server -> BuzzStore Server
-- method : `POST`
-- url : `https://store-api.buzzvil.com/api/v1/users`
+- Method : `POST`
+- URL : `https://store-api.buzzvil.com/api/v1/users`
 - Headers : Request with the following parameters.
     - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API. 
@@ -288,8 +288,8 @@ Here describes other APIs supported by BuzzStore. As only Server-to-Server commu
 
 ###### Request 
 - API Call Direction : Publisher server -> BuzzStore server
-- method : `GET`
-- url : `https://store-api.buzzvil.com/api/v1/points`
+- Method : `GET`
+- URL : `https://store-api.buzzvil.com/api/v1/points`
 - Headers : Request with parameters below. 
     - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
@@ -319,22 +319,22 @@ e.g.
 
 ###### Request
 - API Call Direction : Publisher server -> BuzzStore server
-- method : `POST`
-- url : `https://store-api.buzzvil.com/api/v1/points`
+- Method : `POST`
+- URL : `https://store-api.buzzvil.com/api/v1/points`
 - Headers : Request with parameters below. 
     - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
     - `X-BUZZVIL-USER-ID`: Publisher user ID.
 - Required POST Parameter : 
-    - `amount`: Point amount to provide or withdraw. It should be `int` and in point unit (not currency unit). If the amount is positive, it provides the amount to the user and if negative, it withdraws the amount from the user
-    - `title`: Reason for creation/withdrawl (ex. "Mar18 marketing event")
-- Content-Type: application/json
+    - `amount` : Point amount to provide or withdraw. It should be `int` and in point unit (not currency unit). If the amount is positive, it provides the amount to the user and if negative, it withdraws the amount from the user
+    - `title` : Reason for creation/withdrawl (ex. "Mar18 marketing event")
+- Content-Type : application/json
 
  e.g.
 ```
 {
-    "amount": 500,
-    "title": "Luckdraw event"
+    "amount" : 500,
+    "title" : "Luckdraw event"
 }
 ```
  
@@ -354,13 +354,13 @@ POST https://store-api.buzzvil.com/api/v1/points
 
 ###### Request
 - API Call Direction : Publisher server -> BuzzStore server
-- method : `POST`
-- url : `https://store-api.buzzvil.com/api/v1/users/deactivate`
+- Method : `POST`
+- URL : `https://store-api.buzzvil.com/api/v1/users/deactivate`
 - Headers : Request with parameters below.
     - `X-BUZZVIL-APP-ID` : A unique ID that is issued to publisher application. 
     - `X-BUZZVIL-API-TOKEN` : A unique API token issued previously for server-to-server API.
     - `X-BUZZVIL-USER-ID`: Publisher user ID.
-- Content-Type: application/x-www-form-urlencoded
+- Content-Type : application/x-www-form-urlencoded
     
 ###### Response
 - On success, the HTTP response status code is 200.
