@@ -19,7 +19,6 @@ import com.buzzvil.buzzad.benefit.ui.feed.FeedHandler;
 import com.buzzvil.buzzad.benefit.ui.media.CtaView;
 import com.buzzvil.buzzad.benefit.ui.media.MediaView;
 import com.buzzvil.buzzad.benefit.ui.nativead.NativeAd;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -107,13 +106,13 @@ public class MainActivity extends AppCompatActivity {
         titleTextView.setText(ad.getTitle());
         descriptionTextView.setText(ad.getDescription());
         Glide.with(this).load(ad.getIconUrl()).into(iconImageView);
-        ImageLoader.getInstance().displayImage(ad.getIconUrl(), iconImageView);
         ctaView.setRewardText(String.format(Locale.US, "+%d", ad.getReward()));
         ctaView.setCallToActionText(ad.getCallToAction());
 
         // 3) Create a list of clickable views and register it.
         final List<View> clickableViews = new ArrayList<>();
         clickableViews.add(ctaView);
+
         // optional
         clickableViews.add(mediaView);
         clickableViews.add(titleTextView);
@@ -121,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 4) Call nativeAd.registerViewForInteraction().
         nativeAd.registerViewForInteraction(adView, mediaView, clickableViews);
+
         return interstitialView;
     }
 
