@@ -46,7 +46,7 @@ To summarize the role of each page,
 
 Insert this SDK on each of the two pages accessible by the "Sign-in verification URL".
 ```html
-<script src="buzzscreen-extension-0.0.1.js"></script>
+<script src="buzzscreen-extension-0.0.2.js"></script>
 ```
 
 ### Notify "signed in"

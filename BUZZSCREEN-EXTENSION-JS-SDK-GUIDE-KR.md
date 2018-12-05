@@ -46,7 +46,7 @@
 
 '로그인 체크 주소'로 접근 가능한 두 페이지에 각각 이 SDK를 삽입합니다.
 ```html
-<script src="buzzscreen-extension-0.0.1.js"></script>
+<script src="buzzscreen-extension-0.0.2.js"></script>
 ```
 
 ### '로그인 되어 있음'을 알리기
