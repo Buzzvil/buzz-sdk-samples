@@ -51,16 +51,18 @@ Insert this SDK on each of the two pages accessible by the "Sign-in verification
 
 ### Notify "signed in"
 
-On **personal page** from the above diagram (the page shown when the user has signed in), call the following JavaScript code to pass the user information (user ID, year of birth and gender) and to notify Buzzscreen.
+On **personal page** from the above diagram (the page shown when the user has signed in), call the following JavaScript code to pass the user information (user ID, year of birth, gender and extra data) and to notify Buzzscreen.
+> Extra data is optional. When used, it should be passed by JSON string, as shown in the sample code below.
+
 ```html
 <script>
-BuzzScreen.notifySignedIn('userId', 1990, BuzzScreen.GENDER_MALE);
-BuzzScreen.notifySignedIn('userId', 1990, BuzzScreen.GENDER_FEMALE);
+BuzzScreen.notifySignedIn('userId', 1990, BuzzScreen.GENDER_MALE, '{"key1":"value1","key2":"value2"}');
+BuzzScreen.notifySignedIn('userId', 1990, BuzzScreen.GENDER_FEMALE, '{"key1":"value1","key2":"value2"}');
 </script>
 ```
-The type of each argument is `string`, `number`, `string` in that order. Please take extra caution not to use wrong argument types. If the arguments are set incorrectly, error logs are left in the console window.
+The type of each argument is `string`, `number`, `string`, `string` in that order. Please take extra caution not to use wrong argument types. If the arguments are set incorrectly, error logs are left in the console window.
 
-In case where users' birthYear and gender information is not available, the following code can be called instead.
+In case where users' birthYear, gender and extra information is not available, the following code can be called instead.
 > Note: If this information is not set, targeted ads will not be allocated to lockscreen, which will reduce the total number of ads users can see.
 ```html
 <script>
@@ -92,6 +94,6 @@ If you set the verbose option to `true`, you can also view logs at the `console.
 ```html
 <script>
 BuzzScreen.setVerbose(true);
-BuzzScreen.notifySignedIn('userId', 1990, BuzzScreen.GENDER_MALE);
+BuzzScreen.notifySignedIn('userId', 1990, BuzzScreen.GENDER_MALE, '{"key1":"value1","key2":"value2"}');
 </script>
 ```
