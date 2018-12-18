@@ -86,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 ctaView.setParticipated(true);
                 ctaView.setRewardText(null);
             }
+
+            @Override
+            public void onAdClicked(@NonNull Ad ad) {
+            }
         });
         nativeAd.loadAd();
     }
