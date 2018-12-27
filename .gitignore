@@ -1,9 +1,14 @@
+.gradle
+/local.properties
+.idea/
+build/
+*.iml
+
 .metadata
 .settings
 .recommenders/
 .project
 .classpath
-.idea
 
 bin/
 gen/
