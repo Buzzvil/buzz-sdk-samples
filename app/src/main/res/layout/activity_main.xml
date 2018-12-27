@@ -16,10 +16,18 @@
             android:text="NativeAd" />
 
         <Button
-            android:id="@+id/native_ad_button"
+            android:id="@+id/interstitial_ad_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show NativeAd" />
+            android:text="Single - Interstitial Ad"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/native_ads_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Multiple - Pager Ads"
+            android:textAllCaps="false" />
 
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Title"
@@ -32,7 +40,8 @@
             android:id="@+id/feed_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Feed" />
+            android:text="Feed Activity"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 

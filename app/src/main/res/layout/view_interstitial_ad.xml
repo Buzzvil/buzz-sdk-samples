@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#80000000"
+    android:clickable="true"
     android:padding="20dp">
 
-    <FrameLayout
-        android:id="@+id/ad_view"
+    <com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView
+        android:id="@+id/native_ad_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical">
@@ -32,12 +33,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
-                        android:text="앱 열자마자 포인트 적립!"
-                        android:textAllCaps="true"
+                        android:text="@string/native_ad_sample_title"
                         android:textColor="@android:color/black"
                         android:textSize="14sp" />
 
-                    <com.buzzvil.buzzad.benefit.ui.media.MediaView
+                    <com.buzzvil.buzzad.benefit.presentation.media.MediaView
                         android:id="@+id/ad_media_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                             android:textColor="#8A000000"
                             android:textSize="12sp" />
 
-                        <com.buzzvil.buzzad.benefit.ui.media.CtaView
+                        <com.buzzvil.buzzad.benefit.presentation.media.CtaView
                             android:id="@+id/ad_cta_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -121,6 +121,6 @@
             android:padding="8dp"
             android:src="@drawable/ic_gift" />
 
-    </FrameLayout>
+    </com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView>
 
 </FrameLayout>

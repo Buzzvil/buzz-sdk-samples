@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BuzzAdBenefit sample</string>
+    <string name="native_ad_sample_title">앱 열자마자 포인트 적립!</string>
 </resources>

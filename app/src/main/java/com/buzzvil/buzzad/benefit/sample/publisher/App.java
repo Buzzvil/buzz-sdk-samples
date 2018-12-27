@@ -2,9 +2,9 @@ package com.buzzvil.buzzad.benefit.sample.publisher;
 
 import android.app.Application;
 
+import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
+import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
-import com.buzzvil.buzzad.benefit.ui.BuzzAdBenefit;
-import com.buzzvil.buzzad.benefit.ui.FeedConfig;
 
 public class App extends Application {
 
@@ -16,14 +16,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        BuzzAdBenefit.init(this, APP_ID);
-
-        final FeedConfig feedConfig = new FeedConfig.Builder()
-                .unitId(UNIT_ID_FEED)
-                .title("BuzzAdBenefit Feed")
-                .primaryColor("#1290FF")
-                .build();
-        BuzzAdBenefit.setFeedConfig(feedConfig);
+        BuzzAdBenefit.init(this, new BuzzAdBenefitConfig.Builder(APP_ID).build());
 
         final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")
