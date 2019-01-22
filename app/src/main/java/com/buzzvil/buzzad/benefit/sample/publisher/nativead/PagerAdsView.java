@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.buzzvil.buzzad.benefit.core.models.Ad;
@@ -20,6 +21,7 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 import java.util.ArrayList;
@@ -115,6 +117,14 @@ public class PagerAdsView extends FrameLayout {
             final CtaView ctaView = nativeAdView.findViewById(R.id.ad_cta_view);
 
             mediaView.setCreative(ad.getCreative());
+            mediaView.setOnMediaEventListener(new MediaView.OnMediaEventListener() {
+                @Override
+                public void onVideoError(@NonNull Context context, @NonNull VideoErrorStatus errorStatus, @Nullable String errorMessage) {
+                    if (errorMessage != null) {
+                        Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
             titleTextView.setText(ad.getTitle());
             descriptionTextView.setText(ad.getDescription());
             Glide.with(context).load(ad.getIconUrl()).into(iconImageView);
@@ -131,7 +141,7 @@ public class PagerAdsView extends FrameLayout {
             nativeAdView.setClickableViews(clickableViews);
             nativeAdView.setNativeAd(nativeAd);
 
-            nativeAdView.setOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
+            nativeAdView.addOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
                 @Override
                 public void onImpressed(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
 
@@ -147,6 +157,7 @@ public class PagerAdsView extends FrameLayout {
                     final CtaView ctaView = nativeAdView.findViewById(R.id.ad_cta_view);
                     ctaView.setParticipated(true);
                     ctaView.setRewardText(null);
+                    ctaView.setCallToActionText(nativeAdView.getResources().getString(R.string.bz_cta_done));
                 }
             });
 

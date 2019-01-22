@@ -14,6 +14,9 @@ import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdLoader;
+import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomAdsAdapter;
+import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedHeaderViewAdapter;
+import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedToolbarHolder;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
 
@@ -54,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_FEED)
-                        .title("BuzzAdBenefit Feed")
-                        .primaryColor("#1290FF")
+                        .adsAdapterClass(CustomAdsAdapter.class)
+                        .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
+                        .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
                         .build();
                 final FeedHandler feedHandler = new FeedHandler(feedConfig);
                 feedHandler.startFeedActivity(MainActivity.this);
