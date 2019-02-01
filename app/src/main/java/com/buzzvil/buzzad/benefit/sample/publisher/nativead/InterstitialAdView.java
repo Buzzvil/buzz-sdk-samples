@@ -70,11 +70,11 @@ public class InterstitialAdView extends FrameLayout {
         final Ad ad = nativeAd.getAd();
 
         mediaView.setCreative(ad.getCreative());
-        mediaView.setOnMediaEventListener(new MediaView.OnMediaEventListener() {
+        mediaView.addOnMediaErrorListener(new MediaView.OnMediaErrorListener() {
             @Override
-            public void onVideoError(@NonNull Context context, @NonNull VideoErrorStatus errorStatus, @Nullable String errorMessage) {
+            public void onVideoError(@NonNull MediaView mediaView, @NonNull VideoErrorStatus videoErrorStatus, @Nullable String errorMessage) {
                 if (errorMessage != null) {
-                    Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mediaView.getContext(), errorMessage, Toast.LENGTH_SHORT).show();
                 }
             }
         });
