@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.buzzvil.buzzad.benefit.core.models.Ad;
 import com.buzzvil.buzzad.benefit.presentation.feed.ad.AdsAdapter;
+import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
@@ -22,7 +23,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Locale;
 
 public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> {
 
@@ -66,19 +66,8 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
         }
 
         if (ctaView != null) {
-            if (nativeAd.isParticipated()) {
-                ctaView.setParticipated(true);
-                ctaView.setRewardText(null);
-                ctaView.setCallToActionText(view.getResources().getString(R.string.bz_cta_done));
-            } else {
-                ctaView.setParticipated(false);
-                if (ad.getReward() > 0) {
-                    ctaView.setRewardText(String.format(Locale.US, "+%d", ad.getReward()));
-                } else {
-                    ctaView.setRewardText(null);
-                }
-                ctaView.setCallToActionText(ad.getCallToAction());
-            }
+            final CtaPresenter presenter = new CtaPresenter(ctaView);
+            presenter.bind(nativeAd);
         }
 
         final Collection<View> clickableViews = Arrays.asList((View) ctaView);

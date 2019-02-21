@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.buzzvil.buzzad.benefit.core.models.Ad;
+import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
@@ -22,7 +23,6 @@ import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class InterstitialAdView extends FrameLayout {
 
@@ -81,8 +81,8 @@ public class InterstitialAdView extends FrameLayout {
         titleTextView.setText(ad.getTitle());
         descriptionTextView.setText(ad.getDescription());
         Glide.with(this).load(ad.getIconUrl()).into(iconImageView);
-        ctaView.setRewardText(String.format(Locale.US, "+%d", ad.getReward()));
-        ctaView.setCallToActionText(ad.getCallToAction());
+        final CtaPresenter ctaPresenter = new CtaPresenter(ctaView);
+        ctaPresenter.bind(nativeAd);
 
         final List<View> clickableViews = new ArrayList<>();
         clickableViews.add(ctaView);
@@ -107,9 +107,7 @@ public class InterstitialAdView extends FrameLayout {
 
             @Override
             public void onParticipated(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                ctaView.setParticipated(true);
-                ctaView.setRewardText(null);
-                ctaView.setCallToActionText(nativeAdView.getResources().getString(R.string.bz_cta_done));
+                ctaPresenter.bind(nativeAd);
             }
         });
     }
