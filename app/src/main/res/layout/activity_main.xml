@@ -16,7 +16,7 @@
             android:text="NativeAd" />
 
         <Button
-            android:id="@+id/interstitial_ad_button"
+            android:id="@+id/native_ad_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Single - Interstitial Ad"
@@ -42,6 +42,44 @@
             android:layout_height="wrap_content"
             android:text="Feed Activity"
             android:textAllCaps="false" />
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="InterstitialAd" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/type_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginRight="4dp"
+                android:entries="@array/interstitial_ad_types"/>
+
+            <Spinner
+                android:id="@+id/customization_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginRight="4dp"
+                android:entries="@array/interstitial_ad_customizable_fields"/>
+
+            <Button
+                android:id="@+id/interstitial_ad_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Show"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

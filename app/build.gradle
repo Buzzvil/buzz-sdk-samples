@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    implementation "com.buzzvil:buzzad-benefit:1.3.3"
+    implementation "com.buzzvil:buzzad-benefit:1.3.5"
 
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation "com.android.support:design:26.1.0"

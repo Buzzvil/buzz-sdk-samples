@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">BuzzAdBenefit sample</string>
     <string name="native_ad_sample_title">앱 열자마자 포인트 적립!</string>
+    <string-array name="interstitial_ad_types">
+        <item>Dialog</item>
+        <item>BottomSheet</item>
+    </string-array>
+    <string-array name="interstitial_ad_customizable_fields">
+        <item>Default</item>
+        <item>Top Icon</item>
+        <item>Background and Text</item>
+        <item>CTA</item>
+    </string-array>
 </resources>
