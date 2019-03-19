@@ -2,8 +2,8 @@
 //  main.m
 //  BABSample
 //
-//  Created by Jaehee Ko on 19/03/2019.
-//  Copyright © 2019 Buzzvil. All rights reserved.
+//  Created by Jaehee Ko on 18/12/2018.
+//  Copyright © 2018 Buzzvil. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

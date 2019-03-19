@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  BABSample
 //
-//  Created by Jaehee Ko on 19/03/2019.
-//  Copyright © 2019 Buzzvil. All rights reserved.
+//  Created by Jaehee Ko on 18/12/2018.
+//  Copyright © 2018 Buzzvil. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import <BuzzAdBenefit/BuzzAdBenefit.h>
 
 @interface AppDelegate ()
 
@@ -14,9 +15,15 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
+  BABConfig *config = [[BABConfig alloc] initWithAppId:@"YOUR_APP_ID" environment:BABEnvTest logging:YES];
+  [BuzzAdBenefit initializeWithConfig:config];
+
+  BABUserProfile *userProfile = [[BABUserProfile alloc] initWithUserId:@"SAMPLE_USER_ID"];
+  [BuzzAdBenefit setUserProfile:userProfile];
+
+  BABUserPreference *userPreference = [[BABUserPreference alloc] initWithAutoPlayType:BABVideoAutoPlayDisabled];
+  [BuzzAdBenefit setUserPreference:userPreference];
   return YES;
 }
 
