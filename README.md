@@ -1,4 +1,4 @@
 
-# BuzzRewarded SDK for iOS
+# BuzzAdBeneift SDK for iOS
 
-* 개발 가이드: https://github.com/Buzzvil/bab-ios-sdk/wiki
+* 개발 가이드: https://github.com/Buzzvil/buzzad-benefit-sdk-publisher-ios/wiki
