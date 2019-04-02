@@ -7,8 +7,6 @@ import android.view.View;
 import com.buzzvil.buzzad.benefit.presentation.feed.toolbar.FeedActivityToolbar;
 import com.buzzvil.buzzad.benefit.presentation.feed.toolbar.FeedToolbarHolder;
 
-import java.util.Locale;
-
 public class CustomFeedToolbarHolder implements FeedToolbarHolder {
     private FeedActivityToolbar toolbar;
 
@@ -27,14 +25,6 @@ public class CustomFeedToolbarHolder implements FeedToolbarHolder {
     }
 
     @Override
-    public void onTotalRewardUpdated(int totalReward) {
-        if (totalReward > 0) {
-            toolbar.setReward(String.format(Locale.US, "+%d", totalReward));
-            toolbar.setRewardImageVisibility(View.VISIBLE);
-        } else {
-            toolbar.setReward(null);
-            toolbar.setRewardImageVisibility(View.GONE);
-        }
-    }
+    public void onTotalRewardUpdated(int totalReward) {}
 }
 
