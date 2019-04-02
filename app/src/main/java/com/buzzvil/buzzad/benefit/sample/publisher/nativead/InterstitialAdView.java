@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.buzzvil.buzzad.benefit.core.models.Ad;
+import com.buzzvil.buzzad.benefit.core.models.Creative;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
@@ -28,9 +29,10 @@ public class InterstitialAdView extends FrameLayout {
 
     private NativeAdView nativeAdView;
     private MediaView mediaView;
+    private View titleLayout;
+    private ImageView iconImageView;
     private TextView titleTextView;
     private TextView descriptionTextView;
-    private ImageView iconImageView;
     private CtaView ctaView;
 
     public interface OnCloseClickListener {
@@ -48,9 +50,10 @@ public class InterstitialAdView extends FrameLayout {
         LayoutInflater.from(context).inflate(R.layout.view_interstitial_ad, this);
         this.nativeAdView = findViewById(R.id.native_ad_view);
         this.mediaView = findViewById(R.id.ad_media_view);
+        this.titleLayout = findViewById(R.id.ad_title_layout);
+        this.iconImageView = findViewById(R.id.ad_icon_image);
         this.titleTextView = findViewById(R.id.ad_title_text);
         this.descriptionTextView = findViewById(R.id.ad_description_text);
-        this.iconImageView = findViewById(R.id.ad_icon_image);
         this.ctaView = findViewById(R.id.ad_cta_view);
         findViewById(R.id.ad_close_text).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,10 +87,19 @@ public class InterstitialAdView extends FrameLayout {
         final CtaPresenter ctaPresenter = new CtaPresenter(ctaView);
         ctaPresenter.bind(nativeAd);
 
+        final Creative.Type creativeType = ad.getCreative() == null ? null : ad.getCreative().getType();
+        if (Creative.Type.IMAGE.equals(creativeType)) {
+            titleLayout.setVisibility(View.GONE);
+            descriptionTextView.setVisibility(View.GONE);
+        } else {
+            titleLayout.setVisibility(View.VISIBLE);
+            descriptionTextView.setVisibility(View.VISIBLE);
+        }
+
         final List<View> clickableViews = new ArrayList<>();
         clickableViews.add(ctaView);
         clickableViews.add(mediaView);
-        clickableViews.add(titleTextView);
+        clickableViews.add(titleLayout);
         clickableViews.add(descriptionTextView);
 
         nativeAdView.setMediaView(mediaView);

@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         .adsAdapterClass(CustomAdsAdapter.class)
                         .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
                         .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
+                        .imageTypeEnabled(true)
                         .build();
                 final FeedHandler feedHandler = new FeedHandler(feedConfig);
                 feedHandler.startFeedActivity(MainActivity.this);
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.adView = interstitialAdView;
                 ((ViewGroup) findViewById(android.R.id.content)).addView(adView);
             }
-        });
+        }, true);
     }
 
     private void loadNativeAds() {

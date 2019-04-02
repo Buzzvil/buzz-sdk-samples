@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#80000000"
-    android:clickable="true"
     android:padding="20dp">
 
     <com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView
         android:id="@+id/native_ad_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -30,6 +32,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/card_title_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
@@ -41,10 +44,11 @@
                         android:id="@+id/ad_media_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="12dp"
                         android:minHeight="100dp" />
 
                     <LinearLayout
+                        android:id="@+id/ad_title_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
@@ -79,12 +83,13 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="12dp"
                         android:layout_marginRight="16dp"
+                        android:layout_marginBottom="28dp"
                         android:textColor="@android:color/black" />
 
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
+                        android:layout_marginTop="12dp"
                         android:layout_marginBottom="16dp">
 
                         <TextView
@@ -123,4 +128,4 @@
 
     </com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView>
 
-</FrameLayout>
+</android.support.constraint.ConstraintLayout>
