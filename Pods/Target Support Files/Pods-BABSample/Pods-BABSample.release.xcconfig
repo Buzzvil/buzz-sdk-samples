@@ -1,9 +1,11 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_ROOT}/BuzzAdBenefit"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/libwebp" "${PODS_ROOT}/BuzzAdBenefit"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) SD_WEBP=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/libwebp/libwebp.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "BuzzAdBenefit" -framework "BuzzAdBenefitInterstitial" -framework "BuzzAdBenefitNative" -framework "SDWebImage"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/libwebp/libwebp.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" -iframework "${PODS_ROOT}/BuzzAdBenefit" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/libwebp"
+OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "BuzzAdBenefit" -framework "BuzzAdBenefitFeed" -framework "BuzzAdBenefitInterstitial" -framework "BuzzAdBenefitNative" -framework "CoreGraphics" -framework "ImageIO" -framework "MobileCoreServices" -framework "SDWebImage" -framework "Security" -framework "SystemConfiguration" -framework "libwebp"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
+USER_HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT)/libwebp/src

@@ -29,7 +29,7 @@
 		C4A2975A2240F06B00F6D677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4A2975C2240F06B00F6D677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A2975D2240F06B00F6D677 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C4A297642240F0D500F6D677 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		C4A297642240F0D500F6D677 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BABSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,12 +195,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BABSample/Pods-BABSample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${PODS_ROOT}/BuzzAdBenefit/BuzzAdBenefit.framework",
 				"${PODS_ROOT}/BuzzAdBenefit/BuzzAdBenefitNative.framework",
 				"${PODS_ROOT}/BuzzAdBenefit/BuzzAdBenefitInterstitial.framework",
+				"${PODS_ROOT}/BuzzAdBenefit/BuzzAdBenefitFeed.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -210,11 +212,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BuzzAdBenefit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BuzzAdBenefitNative.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BuzzAdBenefitInterstitial.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BuzzAdBenefitFeed.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BABSample/Pods-BABSample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

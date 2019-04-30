@@ -8,6 +8,11 @@
 
 #import <BuzzAdBenefitNative/BABNativeAdView.h>
 #import <BuzzAdBenefitNative/BABMediaView.h>
-#import <BuzzAdBenefitNative/BABReadyMadeNativeAdView.h>
+#import <BuzzAdBenefitNative/BABDefaultAdViewHolder.h>
 #import <BuzzAdBenefitNative/BABFullscreenTransition.h>
 #import <BuzzAdBenefitNative/BABStateValue.h>
+#import <BuzzAdBenefitNative/BABDefaultArticleViewHolder.h>
+#import <BuzzAdBenefitNative/UIView+Layout.h>
+#import <BuzzAdBenefitNative/BABCreativePrefetcher.h>
+
+static const NSNotificationName BABAdParticipatedNotification = @"BABAdParticipatedNotificiation";

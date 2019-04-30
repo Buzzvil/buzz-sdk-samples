@@ -17,8 +17,8 @@
 
 - (void)switchToFullscreen;
 
-- (void)handleAdImpression;
-- (void)handleAdClick;
-- (void)handleAdParticipation;
+- (void)handleImpression;
+- (void)handleClick;
+- (void)handleParticipation;
 
 @end

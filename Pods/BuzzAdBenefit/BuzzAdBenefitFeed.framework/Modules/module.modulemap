@@ -1,0 +1,6 @@
+framework module BuzzAdBenefitFeed {
+  umbrella header "BuzzAdBenefitFeed.h"
+
+  export *
+  module * { export * }
+}

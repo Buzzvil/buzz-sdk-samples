@@ -15,9 +15,12 @@
 #import <BuzzAdBenefit/BABCreative.h>
 #import <BuzzAdBenefit/BABVideoAdMetadata.h>
 #import <BuzzAdBenefit/BABVideoAdMetadataLoader.h>
-#import <BuzzAdBenefit/BABAdTracker.h>
+#import <BuzzAdBenefit/BABTracker.h>
 #import <BuzzAdBenefit/BABReachability.h>
-#import <BuzzAdBenefit/BABAdLauncher.h>
+#import <BuzzAdBenefit/BABLauncher.h>
+#import <BuzzAdBenefit/BABArticleLoader.h>
+#import <BuzzAdBenefit/BABArticle.h>
+#import <BuzzAdBenefit/NSString+URL.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,20 +28,20 @@ NS_ASSUME_NONNULL_BEGIN
 @class BABUserProfile;
 @class BABUserPreference;
 
-extern NSString *const BAB_SESSION_REGISTERED_NOTIFICATION;
+extern NSString *const BABSessionRegisteredNotification;
 
 @interface BuzzAdBenefit: NSObject
 
 @property (nonatomic, readonly, nullable) BABConfig *config;
 @property (nonatomic, readonly, nullable) BABUserProfile *userProfile;
 @property (nonatomic, readonly, nullable) BABUserPreference *userPreference;
-@property (nonatomic, readonly) id<BABAdLauncher> adLauncher;
+@property (nonatomic, readonly) id<BABLauncher> adLauncher;
 
 + (BuzzAdBenefit *)sharedInstance;
 + (void)initializeWithConfig:(BABConfig *)config;
 + (void)setUserProfile:(nullable BABUserProfile *)userProfile;
 + (void)setUserPreference:(nullable BABUserPreference *)userPreference;
-+ (void)setAdLauncher:(id<BABAdLauncher>)adLauncher;
++ (void)setAdLauncher:(id<BABLauncher>)adLauncher;
 
 @end
 

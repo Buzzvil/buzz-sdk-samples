@@ -10,9 +10,10 @@
 #import <BuzzAdBenefit/BuzzAdBenefit.h>
 #import <BuzzAdBenefitNative/BuzzAdBenefitNative.h>
 #import <BuzzAdBenefitInterstitial/BuzzAdBenefitInterstitial.h>
+#import <BuzzAdBenefitFeed/BuzzAdBenefitFeed.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface ViewController () <BABNativeAdViewDelegate, BABInterstitialAdLoaderDelegate>
+@interface ViewController () <BABNativeAdViewDelegate, BABInterstitialAdHandlerDelegate>
 
 @end
 
@@ -25,7 +26,7 @@
 }
 
 - (IBAction)loadNativeButtonTapped:(id)sender {
-  BABAdLoader *adLoader = [[BABAdLoader alloc] initWithUnitId:@"YOUR_UNIT_ID"];
+  BABAdLoader *adLoader = [[BABAdLoader alloc] initWithUnitId:@"166467299612761"];
   [adLoader loadAdWithOnSuccess:^(BABAd * _Nonnull ad) {
     self.titleLabel.text = ad.creative.title;
     self.descriptionLabel.text = ad.creative.body;
@@ -42,15 +43,28 @@
 }
 
 - (IBAction)loadInterstitialButtonTapped:(id)sender {
-  BABInterstitialAdLoader *adLoader = [[BABInterstitialAdLoader alloc] initWithUnitId:@"YOUR_UNIT_ID" type:BABInterstitialDialog];
+  BABInterstitialAdHandler *adLoader = [[BABInterstitialAdHandler alloc] initWithUnitId:@"166467299612761" type:BABInterstitialDialog];
   adLoader.delegate = self;
   [adLoader show:self withConfig:nil];
 }
 
 - (IBAction)loadBottomSheetButtonTapped:(id)sender {
-  BABInterstitialAdLoader *adLoader = [[BABInterstitialAdLoader alloc] initWithUnitId:@"YOUR_UNIT_ID" type:BABInterstitialBottomSheet];
+  BABInterstitialAdHandler *adLoader = [[BABInterstitialAdHandler alloc] initWithUnitId:@"166467299612761" type:BABInterstitialBottomSheet];
   adLoader.delegate = self;
   [adLoader show:self withConfig:nil];
+}
+
+- (IBAction)loadFeedButtonTapped:(id)sender {
+  BABFeedConfig *config = [[BABFeedConfig alloc] initWithUnitId:@"166467299612761"];
+  config.title = @"꿀 피드";
+  config.articlesEnabled = YES;
+  config.articleCategories = @[BABArticleCategorySports, BABArticleCategoryFun];
+//  config.adViewHolderClass = [BABDefaultAdViewHolder class];
+//  config.articleViewHolderClass = [BABDefaultArticleViewHolder class];
+
+  BABFeedHandler *feedHandler = [[BABFeedHandler alloc] initWithConfig:config];
+//  [self presentViewController:[feedHandler populateViewController] animated:YES completion:nil];
+  [self.navigationController pushViewController:[feedHandler populateViewController] animated:YES];
 }
 
 #pragma mark - BABNativeAdViewDelegate
@@ -67,17 +81,25 @@
 
 }
 
+- (void)BABNativeAdView:(BABNativeAdView *)adView willRequestRewardForAd:(BABAd *)ad {
+
+}
+
+- (void)BABNativeAdView:(BABNativeAdView *)adView didRequestRewardForAd:(BABAd *)ad withResult:(int)result {
+
+}
+
 - (void)BABNativeAdView:(BABNativeAdView *)adView didParticipateAd:(BABAd *)ad {
 
 }
 
-#pragma mark - BABInterstitialAdLoaderDelegate
+#pragma mark - BABInterstitialAdHandlerDelegate
 
-- (void)BABInterstitialAdLoaderDidSucceedLoadingAd:(BABInterstitialAdLoader *)adLoader {
+- (void)BABInterstitialAdHandlerDidSucceedLoadingAd:(BABInterstitialAdHandler *)adLoader {
 
 }
 
-- (void)BABInterstitialAdLoaderDidFailToLoadAd:(BABInterstitialAdLoader *)adLoader {
+- (void)BABInterstitialAdHandlerDidFailToLoadAd:(BABInterstitialAdHandler *)adLoader {
 
 }
 

@@ -6,5 +6,5 @@
 //  Copyright © 2019 Buzzvil. All rights reserved.
 //
 
-#import <BuzzAdBenefitInterstitial/BABInterstitialAdLoader.h>
+#import <BuzzAdBenefitInterstitial/BABInterstitialAdHandler.h>
 #import <BuzzAdBenefitInterstitial/BABInterstitialConfig.h>

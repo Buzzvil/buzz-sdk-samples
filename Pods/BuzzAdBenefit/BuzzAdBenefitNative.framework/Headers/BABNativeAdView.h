@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class BABMediaView;
 
 @protocol BABNativeAdViewDelegate <NSObject>
+@optional
 - (UIViewController *)BABNativeAdViewViewControlleForPresentingFullscreen;
 - (void)BABNativeAdView:(BABNativeAdView *)adView didImpressAd:(BABAd *)ad;
 - (void)BABNativeAdView:(BABNativeAdView *)adView didClickAd:(BABAd *)ad;

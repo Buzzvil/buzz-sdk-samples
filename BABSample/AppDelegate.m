@@ -16,7 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  BABConfig *config = [[BABConfig alloc] initWithAppId:@"YOUR_APP_ID" environment:BABEnvTest logging:YES];
+  BABConfig *config = [[BABConfig alloc] initWithAppId:@"100000044" environment:BABEnvProduction logging:YES];
   [BuzzAdBenefit initializeWithConfig:config];
 
   BABUserProfile *userProfile = [[BABUserProfile alloc] initWithUserId:@"SAMPLE_USER_ID"];
