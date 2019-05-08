@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CustomAdViewHolder.h"
 #import <BuzzAdBenefit/BuzzAdBenefit.h>
 #import <BuzzAdBenefitNative/BuzzAdBenefitNative.h>
 #import <BuzzAdBenefitInterstitial/BuzzAdBenefitInterstitial.h>
@@ -58,8 +59,7 @@
   BABFeedConfig *config = [[BABFeedConfig alloc] initWithUnitId:@"166467299612761"];
   config.title = @"꿀 피드";
   config.articlesEnabled = YES;
-  config.articleCategories = @[BABArticleCategorySports, BABArticleCategoryFun];
-//  config.adViewHolderClass = [BABDefaultAdViewHolder class];
+  config.adViewHolderClass = [CustomAdViewHolder class];
 //  config.articleViewHolderClass = [BABDefaultArticleViewHolder class];
 
   BABFeedHandler *feedHandler = [[BABFeedHandler alloc] initWithConfig:config];
