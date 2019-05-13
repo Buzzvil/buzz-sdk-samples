@@ -19,7 +19,7 @@
   BABConfig *config = [[BABConfig alloc] initWithAppId:@"100000044" environment:BABEnvProduction logging:YES];
   [BuzzAdBenefit initializeWithConfig:config];
 
-  BABUserProfile *userProfile = [[BABUserProfile alloc] initWithUserId:@"SAMPLE_USER_ID"];
+  BABUserProfile *userProfile = [[BABUserProfile alloc] initWithUserId:[NSString stringWithFormat:@"%d", arc4random() % 99999999]];
   [BuzzAdBenefit setUserProfile:userProfile];
 
   BABUserPreference *userPreference = [[BABUserPreference alloc] initWithAutoPlayType:BABVideoAutoPlayDisabled];

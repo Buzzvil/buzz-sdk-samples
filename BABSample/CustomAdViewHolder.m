@@ -9,6 +9,7 @@
 #import "CustomAdViewHolder.h"
 #import <BuzzAdBenefit/BuzzAdBenefit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <Toast/Toast.h>
 
 @interface CustomAdViewHolder () <BABNativeAdViewDelegate> {
   CGFloat _defaultRewardIconLeading;
@@ -106,11 +107,35 @@
 #pragma mark - BABNativeAdViewDelegate
 
 - (void)BABNativeAdView:(BABNativeAdView *)adView didImpressAd:(BABAd *)ad {
-
+  [self.window makeToast:[NSString stringWithFormat:@"\"%@\" impressed", ad.creative.title]];
 }
 
 - (void)BABNativeAdView:(BABNativeAdView *)adView didClickAd:(BABAd *)ad {
+ [self.window makeToast:[NSString stringWithFormat:@"\"%@\" clicked", ad.creative.title]];
+}
 
+- (void)BABNativeAdView:(BABNativeAdView *)adView willRequestRewardForAd:(BABAd *)ad {
+  [self.window makeToast:[NSString stringWithFormat:@"\"%@\" reward request started", ad.creative.title]];
+}
+
+- (void)BABNativeAdView:(BABNativeAdView *)adView didRewardForAd:(BABAd *)ad withResult:(BABRewardResult)result {
+  switch (result) {
+    case BABRewardResultSuccess:
+      [self.window makeToast:[NSString stringWithFormat:@"\"%@\" rewarded", ad.creative.title]];
+      break;
+    case BABRewardResultBrowserNotLaunched:
+      [self.window makeToast:[NSString stringWithFormat:@"\"%@\" browser not launched", ad.creative.title]];
+      break;
+    case BABRewardResultTooShortToParticipate:
+      [self.window makeToast:[NSString stringWithFormat:@"\"%@\" too short to participate", ad.creative.title]];
+      break;
+    case BABRewardResultAlreadyParticipated:
+      [self.window makeToast:[NSString stringWithFormat:@"\"%@\" already participated", ad.creative.title]];
+      break;
+    default:
+      [self.window makeToast:[NSString stringWithFormat:@"\"%@\" reward failed: %d", ad.creative.title, result]];
+      break;
+  }
 }
 
 - (void)BABNativeAdView:(BABNativeAdView *)adView didParticipateAd:(BABAd *)ad {

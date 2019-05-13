@@ -1,6 +1,0 @@
-framework module BuzzAdBenefitInterstitial {
-  umbrella header "BuzzAdBenefitInterstitial.h"
-
-  export *
-  module * { export * }
-}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BFDD35759B08FD80179F975 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
 		C41DEF4A2282AD2600271C34 /* CustomAdViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C41DEF472282AD2600271C34 /* CustomAdViewHolder.m */; };
 		C41DEF4B2282AD2600271C34 /* CustomAdViewHolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = C41DEF492282AD2600271C34 /* CustomAdViewHolder.xib */; };
 		C4A297502240F06900F6D677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2974F2240F06900F6D677 /* AppDelegate.m */; };
@@ -15,7 +16,6 @@
 		C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A297572240F06B00F6D677 /* Assets.xcassets */; };
 		C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */; };
 		C4A2975E2240F06B00F6D677 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2975D2240F06B00F6D677 /* main.m */; };
-		C7C17D335CD126C8F489C3C9 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C17D335CD126C8F489C3C9 /* Pods_BABSample.framework in Frameworks */,
+				9BFDD35759B08FD80179F975 /* Pods_BABSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +189,7 @@
 				"${PODS_ROOT}/BuzzAdBenefit/BuzzAdBenefitInterstitial.framework",
 				"${PODS_ROOT}/BuzzAdBenefit/BuzzAdBenefitFeed.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -201,6 +202,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BuzzAdBenefitInterstitial.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BuzzAdBenefitFeed.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,12 +387,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67369282ZY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BABSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSample;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Toast\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSamplea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -403,12 +416,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67369282ZY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BABSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSample;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Toast\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSamplea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,6 +1,0 @@
-framework module BuzzAdBenefitNative {
-  umbrella header "BuzzAdBenefitNative.h"
-
-  export *
-  module * { export * }
-}
