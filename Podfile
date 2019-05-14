@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'BABSample' do
-  pod 'BuzzAdBenefit', '1.2.0.rc2'
+  pod 'BuzzAdBenefit', '1.2.0'
   pod 'Toast', '~> 4.0.0'
 end
 

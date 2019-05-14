@@ -109,6 +109,11 @@
   [self.view.window makeToast:[NSString stringWithFormat:@"\"%@\" impressed", ad.creative.title]];
 }
 
+- (BOOL)BABNativeAdView:(BABNativeAdView *)adView shouldClickAd:(BABAd *)ad {
+  [self.view.window makeToast:[NSString stringWithFormat:@"\"%@\" should click: %@", ad.creative.title, _shouldClickSwitch.isOn ? @"YES" : @"NO"]];
+  return _shouldClickSwitch.isOn;
+}
+
 - (void)BABNativeAdView:(BABNativeAdView *)adView didClickAd:(BABAd *)ad {
   [self.view.window makeToast:[NSString stringWithFormat:@"\"%@\" clicked", ad.creative.title]];
 }

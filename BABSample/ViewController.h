@@ -20,6 +20,7 @@
 @property (nonatomic, strong) IBOutlet UIButton *ctaButton;
 @property (nonatomic, strong) IBOutlet BABMediaView *mediaView;
 @property (nonatomic, strong) IBOutlet UISwitch *launcherSwitch;
+@property (nonatomic, strong) IBOutlet UISwitch *shouldClickSwitch;
 
 @end
 

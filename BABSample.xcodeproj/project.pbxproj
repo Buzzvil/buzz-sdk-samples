@@ -403,7 +403,7 @@
 					"-framework",
 					"\"Toast\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSamplea;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,7 +432,7 @@
 					"-framework",
 					"\"Toast\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSamplea;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buzzvil.BABSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
