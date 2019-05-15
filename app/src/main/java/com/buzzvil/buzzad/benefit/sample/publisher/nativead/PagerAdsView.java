@@ -21,6 +21,7 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRewardResult;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
@@ -153,7 +154,21 @@ public class PagerAdsView extends FrameLayout {
                 }
 
                 @Override
+                public void onRewardRequested(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
+                    // Called when request has been sent to the server
+                }
+
+                @Override
+                public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable NativeAdRewardResult nativeAdRewardResult) {
+                    // Result of Reward Request can be found here
+                    // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
+                    // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
+                }
+
+                @Override
                 public void onParticipated(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
+                    // Called when the Ad has been participated
+                    // Redraw UI with update Ad information here
                     ctaPresenter.bind(nativeAd);
                 }
             });
