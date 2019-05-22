@@ -10,6 +10,11 @@ LABEL "com.github.actions.color"="green-dark"
 
 RUN apk add --no-cache git gomplate
 RUN gem install cocoapods -v 1.6.2
+RUN adduser cocoapods
+USER cocoapods
+RUN pod setup
+USER root
+
 ADD entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
