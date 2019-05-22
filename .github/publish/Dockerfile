@@ -1,4 +1,4 @@
-FROM ruby:2-stretch
+FROM ruby:2-alpine
 
 LABEL version="1.0.0"
 LABEL repository="http://github.com/Buzzvil/buzzad-benefit-sdk-publisher-ios"
@@ -8,8 +8,8 @@ LABEL "com.github.actions.description"="This is an action to publish cocoapods."
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="green-dark"
 
-RUN apt-get update && apt-get install -y jq && \
-    gem install cocoapods -v 1.6.2
+RUN apk add --no-cache git gomplate
+RUN gem install cocoapods -v 1.6.2
 ADD entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
