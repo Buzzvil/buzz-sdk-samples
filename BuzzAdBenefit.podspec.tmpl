@@ -6,13 +6,13 @@ Pod::Spec.new do |s|
   s.name = "BuzzAdBenefit"
   s.summary = "The BuzzAd Benefit SDK makes it easy to serve advertisements with benefit in your iOS app."
   s.description = "The BuzzAd Benefit SDK makes it easy to serve advertisements with benefit in your iOS app. It supports native ads and video ads. It provides powerful and customizable UI elements to make the ads look great in your app."
-  s.version = "{{ (ds "event").release.tag_name }}"
+  s.version = "{{ (ds "event").release.tag_name | strings.TrimPrefix "v" }}"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = "Buzzvil"
   s.homepage = "https://github.com/buzzvil/bab-ios-sdk"
 
   s.source = {
-    :http => "https://github.com/Buzzvil/bab-ios-sdk/releases/download/v{{ (ds "event").release.tag_name }}/BuzzAdBenefit.zip"
+    :http => "https://github.com/Buzzvil/bab-ios-sdk/releases/download/{{ (ds "event").release.tag_name }}/BuzzAdBenefit.zip"
   }
 
   s.dependency 'AFNetworking', '~> 3.0'
