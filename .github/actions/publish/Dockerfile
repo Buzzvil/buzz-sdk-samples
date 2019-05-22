@@ -8,7 +8,7 @@ LABEL "com.github.actions.description"="This is an action to publish cocoapods."
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="green-dark"
 
-RUN apk add --no-cache git gomplate
+RUN apk add --no-cache git gomplate su-exec
 RUN gem install cocoapods -v 1.6.2
 RUN addgroup -S cocoapods && adduser -S cocoapods -G cocoapods
 

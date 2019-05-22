@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo -u nobody sh -c : && RUNAS="sudo -u cocoapods"
+RUNAS="exec su-exec cocoapods"
 
 gomplate -d event=${GITHUB_EVENT_PATH} -f BuzzAdBenefit.podspec.tmpl -o BuzzAdBenefit.podspec
 $RUNAS sh<<_
