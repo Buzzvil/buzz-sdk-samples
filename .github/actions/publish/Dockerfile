@@ -10,7 +10,7 @@ LABEL "com.github.actions.color"="green-dark"
 
 RUN apk add --no-cache git gomplate
 RUN gem install cocoapods -v 1.6.2
-RUN adduser cocoapods
+RUN addgroup -S cocoapods && adduser -S cocoapods -G cocoapods
 USER cocoapods
 RUN pod setup
 USER root
