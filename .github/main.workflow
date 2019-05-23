@@ -1,6 +1,6 @@
 workflow "Publish" {
-  resolves = ["Publish Cocoapods"]
   on = "release"
+  resolves = ["Notify"]
 }
 
 action "Filters publish action" {
@@ -12,4 +12,10 @@ action "Publish Cocoapods" {
   uses = "./.github/actions/publish/"
   needs = ["Filters publish action"]
   secrets = ["COCOAPODS_TRUNK_TOKEN"]
+}
+
+action "Notify" {
+  uses = "Ilshidur/action-slack@f37693b4e0589604815219454efd5cb9b404fb85"
+  needs = ["Publish Cocoapods"]
+  secrets = ["SLACK_WEBHOOK"]
 }
