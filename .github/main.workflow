@@ -11,4 +11,5 @@ action "Filters publish action" {
 action "Publish Cocoapods" {
   uses = "./.github/actions/publish/"
   needs = ["Filters publish action"]
+  secrets = ["COCOAPODS_TRUNK_TOKEN"]
 }
