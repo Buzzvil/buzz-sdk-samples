@@ -32,8 +32,16 @@
   _adView.delegate = self;
 }
 
+- (BOOL)shouldAutorotate {
+  return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+  return UIInterfaceOrientationMaskPortrait;
+}
+
 - (IBAction)loadNativeButtonTapped:(id)sender {
-  BABAdLoader *adLoader = [[BABAdLoader alloc] initWithUnitId:@"166467299612761"];
+  BABAdLoader *adLoader = [[BABAdLoader alloc] initWithUnitId:@"198784894780152"];
   [adLoader loadAdWithOnSuccess:^(BABAd * _Nonnull ad) {
     self.titleLabel.text = ad.creative.title;
     self.descriptionLabel.text = ad.creative.body;
@@ -49,34 +57,54 @@
     self.adView.mediaView = self.mediaView;
     self.adView.clickableViews = @[self.ctaButton, self.iconImageView, self.mediaView];
 
-  } onFailure:^(NSError * _Nullable error) {
-
+  } onFailure:^(BABError *error) {
+    NSString *errorMsg;
+    switch(error.code) {
+      case BABUnknownError:
+        errorMsg = @"Unknown";
+        break;
+      case BABServerError:
+        errorMsg = @"ServerError";
+        break;
+      case BABInvalidRequest:
+        errorMsg = @"InvalidRequest";
+        break;
+      case BABRequestTimeout:
+        errorMsg = @"Timeout";
+        break;
+      case BABEmptyResponse:
+        errorMsg = @"EmptyResponse";
+        break;
+      default:
+        errorMsg = @"Unknown";
+        break;
+    }
+    [self.view.window makeToast:[NSString stringWithFormat:@"Ad load failed with error: %@", errorMsg]];
   }];
 }
 
 - (IBAction)loadInterstitialButtonTapped:(id)sender {
-  BABInterstitialAdHandler *adLoader = [[BABInterstitialAdHandler alloc] initWithUnitId:@"166467299612761" type:BABInterstitialDialog];
+  BABInterstitialAdHandler *adLoader = [[BABInterstitialAdHandler alloc] initWithUnitId:@"198784894780152" type:BABInterstitialDialog];
   adLoader.delegate = self;
   [adLoader show:self withConfig:nil];
 }
 
 - (IBAction)loadBottomSheetButtonTapped:(id)sender {
-  BABInterstitialAdHandler *adLoader = [[BABInterstitialAdHandler alloc] initWithUnitId:@"166467299612761" type:BABInterstitialBottomSheet];
+  BABInterstitialAdHandler *adLoader = [[BABInterstitialAdHandler alloc] initWithUnitId:@"198784894780152" type:BABInterstitialBottomSheet];
   adLoader.delegate = self;
   [adLoader show:self withConfig:nil];
 }
 
 - (IBAction)loadFeedButtonTapped:(id)sender {
-  BABFeedConfig *config = [[BABFeedConfig alloc] initWithUnitId:@"166467299612761"];
+  BABFeedConfig *config = [[BABFeedConfig alloc] initWithUnitId:@"165100597190534"];
   config.title = @"꿀 피드";
   config.articlesEnabled = YES;
   config.articleCategories = @[BABArticleCategorySports, BABArticleCategoryFun];
   config.adViewHolderClass = [CustomAdViewHolder class];
-//  config.articleViewHolderClass = [BABDefaultArticleViewHolder class];
 
   BABFeedHandler *feedHandler = [[BABFeedHandler alloc] initWithConfig:config];
-//  [self presentViewController:[feedHandler populateViewController] animated:YES completion:nil];
-  [self.navigationController pushViewController:[feedHandler populateViewController] animated:YES];
+  [self presentViewController:[feedHandler populateViewController] animated:YES completion:nil];
+//  [self.navigationController pushViewController:[feedHandler populateViewController] animated:YES];
 
 }
 
@@ -156,8 +184,29 @@
 
 }
 
-- (void)BABInterstitialAdHandlerDidFailToLoadAd:(BABInterstitialAdHandler *)adLoader {
-
+- (void)BABInterstitialAdHandler:(BABInterstitialAdHandler *)adLoader didFailToLoadAdWithError:(BABError *)error {
+  NSString *errorMsg;
+  switch(error.code) {
+    case BABUnknownError:
+      errorMsg = @"Unknown";
+      break;
+    case BABServerError:
+      errorMsg = @"ServerError";
+      break;
+    case BABInvalidRequest:
+      errorMsg = @"InvalidRequest";
+      break;
+    case BABRequestTimeout:
+      errorMsg = @"Timeout";
+      break;
+    case BABEmptyResponse:
+      errorMsg = @"EmptyResponse";
+      break;
+    default:
+      errorMsg = @"Unknown";
+      break;
+  }
+  [self.view.window makeToast:[NSString stringWithFormat:@"Interstitial Ad load failed with error: %@", errorMsg]];
 }
 
 @end
