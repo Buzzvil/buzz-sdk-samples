@@ -110,17 +110,18 @@ public class InterstitialAdView extends FrameLayout {
         nativeAdView.addOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
             @Override
             public void onImpressed(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-
+                Toast.makeText(getContext(), "onImpressed", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onClicked(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-
+                Toast.makeText(getContext(), "onClicked", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRewardRequested(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
                 // Called when request has been sent to the server
+                Toast.makeText(getContext(), "onRewardRequested", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -128,12 +129,14 @@ public class InterstitialAdView extends FrameLayout {
                 // Result of Reward Request can be found here
                 // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
                 // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
+                Toast.makeText(getContext(), "onRewarded: " + nativeAdRewardResult, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onParticipated(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
                 // Called when the Ad has been participated
                 // Redraw UI with update Ad information here
+                Toast.makeText(getContext(), "onParticipated", Toast.LENGTH_SHORT).show();
                 ctaPresenter.bind(nativeAd);
             }
         });

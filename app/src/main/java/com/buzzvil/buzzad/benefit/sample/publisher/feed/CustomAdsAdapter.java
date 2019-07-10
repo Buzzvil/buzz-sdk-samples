@@ -19,6 +19,7 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRewardResult;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
@@ -27,6 +28,33 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> {
+
+    private final NativeAdView.OnNativeAdEventListener onNativeAdEventListener = new NativeAdView.OnNativeAdEventListener() {
+        @Override
+        public void onImpressed(final @NonNull NativeAdView view, final @NonNull NativeAd nativeAd) {
+            Toast.makeText(view.getContext(), "onImpressed", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onClicked(@NonNull NativeAdView view, @NonNull NativeAd nativeAd) {
+            Toast.makeText(view.getContext(), "onClicked", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onRewardRequested(@NonNull NativeAdView view, @NonNull NativeAd nativeAd) {
+            Toast.makeText(view.getContext(), "onRewardRequested", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onRewarded(@NonNull NativeAdView view, @NonNull NativeAd nativeAd, @Nullable NativeAdRewardResult nativeAdRewardResult) {
+            Toast.makeText(view.getContext(), "onRewarded: " + nativeAdRewardResult, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onParticipated(final @NonNull NativeAdView view, final @NonNull NativeAd nativeAd) {
+            Toast.makeText(view.getContext(), "onParticipated", Toast.LENGTH_SHORT).show();
+        }
+    };
 
     @Override
     public AdsAdapter.NativeAdViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -38,6 +66,7 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
     @Override
     public void onBindViewHolder(NativeAdViewHolder holder, NativeAd nativeAd) {
         final NativeAdView view = (NativeAdView) holder.itemView;
+        view.addOnNativeAdEventListener(onNativeAdEventListener);
 
         final Ad ad = nativeAd.getAd();
         final MediaView mediaView = view.findViewById(R.id.mediaView);

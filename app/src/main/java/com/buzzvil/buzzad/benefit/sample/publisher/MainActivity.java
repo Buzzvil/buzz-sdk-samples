@@ -1,11 +1,16 @@
 package com.buzzvil.buzzad.benefit.sample.publisher;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
@@ -41,10 +47,20 @@ public class MainActivity extends AppCompatActivity {
 
     private View adView;
 
+    private BroadcastReceiver sessionReadyReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.e("SessionKey", "Session is Ready. Ads can be loaded now.");
+            Toast.makeText(MainActivity.this, "Session is Ready. Ads can be loaded now.", Toast.LENGTH_SHORT).show();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        registerSessionReadyReceiver();
 
         this.nativeAdButton = findViewById(R.id.native_ad_button);
         nativeAdButton.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +106,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterSessionReadyReceiver();
+    }
+
     private void loadNativeAd() {
         progressBar.setVisibility(View.VISIBLE);
         final NativeAdLoader loader = new NativeAdLoader(App.UNIT_ID_NATIVE_AD);
@@ -97,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLoadError(@NonNull AdError adError) {
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this, "Failed to load a native ad.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Failed to load native ad: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -125,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLoadError(@NonNull AdError adError) {
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this, "Failed to load native ads.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Failed to load native ads: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -165,6 +187,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void showInterstitialAd() {
         final int selectedType = interstitialTypeSpinner.getSelectedItemPosition();
+        final InterstitialAdHandler.OnInterstitialAdEventListener eventListener = new InterstitialAdHandler.OnInterstitialAdEventListener() {
+            @Override
+            public void onAdLoadFailed(@NonNull AdError adError) {
+                Toast.makeText(MainActivity.this, "Failed to load ads: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdLoaded() {
+
+            }
+        };
 
         final InterstitialAdHandler.Type interstitialType = selectedType == 0 || selectedType == Spinner.INVALID_POSITION
                 ? InterstitialAdHandler.Type.Dialog
@@ -179,7 +212,8 @@ public class MainActivity extends AppCompatActivity {
                         new InterstitialAdConfig.Builder()
                                 .topIcon(R.drawable.ic_gift_green)
 //                                .topIcon(ContextCompat.getDrawable(this, R.drawable.ic_gift_green))
-                                .build());
+                                .build(),
+                        eventListener);
                 return;
             case 2:
                 interstitialAdHandler.show(this,
@@ -188,7 +222,8 @@ public class MainActivity extends AppCompatActivity {
                                 .textColor(android.R.color.white)
                                 .titleText(getString(R.string.bz_interstitial_title))
                                 .closeText(getString(R.string.bz_interstitial_close)) // For Dialog only
-                                .build());
+                                .build(),
+                        eventListener);
                 return;
             case 3:
                 interstitialAdHandler.show(this,
@@ -197,13 +232,14 @@ public class MainActivity extends AppCompatActivity {
                                 .ctaViewTextColor(getCtaViewTextColorList())
                                 .ctaRewardDrawable(R.drawable.ic_reward_gray)
                                 .ctaParticipatedDrawable(R.drawable.ic_participated)
-                                .build());
+                                .build(),
+                        eventListener);
                 return;
             case 0:
             default:
                 // Default Dialog or BottomSheet does not have title and close button text.
                 // It is recommended to provide the strings with translations.
-                interstitialAdHandler.show(this);
+                interstitialAdHandler.show(this, null, eventListener);
                 break;
         }
     }
@@ -236,5 +272,13 @@ public class MainActivity extends AppCompatActivity {
 
         return new ColorStateList(states, colors);
 
+    }
+
+    private void registerSessionReadyReceiver() {
+        LocalBroadcastManager.getInstance(this).registerReceiver(sessionReadyReceiver, BuzzAdBenefit.getSessionReadyIntentFilter());
+    }
+
+    private void unregisterSessionReadyReceiver() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(sessionReadyReceiver);
     }
 }
