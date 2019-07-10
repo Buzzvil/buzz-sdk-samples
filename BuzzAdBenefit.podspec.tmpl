@@ -9,10 +9,10 @@ Pod::Spec.new do |s|
   s.version = "{{ (ds "event").release.tag_name | strings.TrimPrefix "v" }}"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author = "Buzzvil"
-  s.homepage = "https://github.com/buzzvil/bab-ios-sdk"
+  s.homepage = "https://github.com/buzzvil/buzzad-benefit-sdk-publisher-ios"
 
   s.source = {
-    :http => "https://github.com/Buzzvil/bab-ios-sdk/releases/download/{{ (ds "event").release.tag_name }}/BuzzAdBenefit.zip"
+    :http => "https://github.com/Buzzvil/buzzad-benefit-sdk-publisher-ios/releases/download/{{ (ds "event").release.tag_name }}/BuzzAdBenefit.zip"
   }
 
   s.dependency 'AFNetworking', '~> 3.0'
