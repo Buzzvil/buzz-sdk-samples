@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>Buzzad-Benefit SDK Sample Webpage for Publishers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+
+    <!-- for Toast Message Library -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  </head>
+  <body>
+    <h1>Buzzad-Benefit SDK Sample Webpage for Publishers</h1>
+    <div id="login">
+      <button id="login-button" onclick="login(this)">
+        Test Web Login
+      </button>
+    </div>
+    <ol id="posts">
+      <li class="post">
+        <div class="image">
+          <img src="https://picsum.photos/500/260?q=1">
+        </div>
+        <div class="writer">
+          <div class="icon-wrapper">
+            <img class="icon" src="https://picsum.photos/32/32?q=1" alt="profile">
+          </div>
+          <div class="info">
+            <h5 class="name">John Stone</h5>
+            <div class="timestamp">30 minutes ago</div>
+          </div>
+        </div>
+        <div class="body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur sodales eros a tincidunt. Aenean laoreet vitae eros et feugiat.
+        </div>
+      </li>
+      <!-- View to display ad -->
+      <li class="post native-ad" id="nativeAd" style="display: none">
+        <div class="image">
+          <img class="clickable">
+        </div>
+        <div class="writer">
+          <div class="icon-wrapper clickable">
+            <img class="icon">
+          </div>
+          <div class="info">
+            <h5 class="name clickable"></h5>
+          </div>
+        </div>
+        <div class="body">
+        </div>
+        <div class="button-wrapper">
+          <button class="cta clickable"></button>
+        </div>
+      </li>
+      <li class="post">
+        <div class="image">
+          <img src="https://picsum.photos/500/260?q=2" />
+        </div>
+        <div class="writer">
+          <div class="icon-wrapper">
+            <img class="icon" src="https://picsum.photos/32/32?q=2" alt="profile">
+          </div>
+          <div class="info">
+            <h5 class="name">Ponnappa Priya</h5>
+            <div class="timestamp">1 hours ago</div>
+          </div>
+        </div>
+        <div class="body">
+          Praesent varius sapien sed turpis dictum egestas. In a hendrerit lorem. Sed malesuada nunc eros, et egestas orci gravida sed. Fusce efficitur nisl tellus.
+        </div>
+      </li>
+      <li class="post">
+        <div class="image">
+          <img src="https://picsum.photos/500/260?q=3" />
+        </div>
+        <div class="writer">
+          <div class="icon-wrapper">
+            <img class="icon" src="https://picsum.photos/32/32?q=3" alt="profile">
+          </div>
+          <div class="info">
+            <h5 class="name">Nguta Ithya</h5>
+            <div class="timestamp">1 hours ago</div>
+          </div>
+        </div>
+        <div class="body">
+          Donec pellentesque ante a nibh sodales, sed eleifend nisi laoreet. Sed sit amet diam vel orci placerat tempus nec quis velit. Sed venenatis porta magna quis posuere.
+        </div>
+      </li>
+    </ol>
+    <!-- for Toast Message Library -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- end -->
+
+    <script src="https://buzz-js.buzzvil.com/buzzad-benefit-sdk/1.0.0/buzzad-benefit-sdk.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

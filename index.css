@@ -1,0 +1,135 @@
+body {
+  background-color: #f1f2f3;
+  margin: 0;
+  padding: 8px;
+}
+h1 {
+  font-size: 110%;
+}
+#posts {
+  margin: 0;
+  padding: 0;
+}
+li.post {
+  max-width: 500px;
+  list-style-type: none;
+  background-color: white;
+  padding: 16px;
+}
+.writer {
+  display: flex;
+  flex-direction: row;
+  margin: 11px 4px 8px 4px;
+}
+.writer .icon-wrapper {
+  position: relative;
+  display: block;
+  margin-right: 8px;
+}
+.writer .icon {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.writer .icon-wrapper::after {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+.writer .info {
+  display: flex;
+  flex-direction: column;
+}
+.writer .info .name {
+  height: 16px;
+  line-height: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  margin: 0;
+}
+.writer .info .timestamp {
+  height: 16px;
+  line-height: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+.native-ad .writer .info .name {
+  height: 32px;
+  line-height: 32px;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+.body {
+  margin: 0 4px;
+}
+.image img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+}
+.button-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 8px;
+}
+.cta {
+  position: relative;
+  height: 32px;
+  line-height: 32px;
+  width: 144px;
+  border-radius: 200px;
+  background: #FF695E;
+  padding: 0;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.5px; 
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+.cta.reward, .cta.participated {
+  padding-left: 12px;
+}
+.cta::before {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+.cta.reward::before {
+  content: '';
+  background-image: url('resources/coin.svg');
+}
+.cta.participated::before {
+  content: '';
+  background-image: url('resources/check.svg');
+}
+.cta:hover, .cta:active {
+  background: #e35d54;
+}
