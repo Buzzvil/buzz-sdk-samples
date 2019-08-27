@@ -19,7 +19,7 @@ ext {
     compileSdkVersion = 28
 
     minSdkVersion = 14
-    targetSdkVersion = 26
+    targetSdkVersion = 28
 
     supportLibVersion = '26.1.0'
     playServiceAdsLibVersion = "15.0.1"
