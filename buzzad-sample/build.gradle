@@ -1,8 +1,11 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    maven { url "https://dl.bintray.com/buzzvil/maven/" }
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.buzzvil.buzzad.sample"
@@ -21,8 +24,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: '*.jar', dir: 'libs')
-    compile 'com.android.support:appcompat-v7:19.+'
-    compile 'com.google.android.gms:play-services-base:8.4.0'
-    compile 'com.google.android.gms:play-services-ads:8.4.0'
+    implementation "com.buzzvil:buzzad-offerwall:1.1.0"
+    implementation 'com.google.android.gms:play-services-base:8.4.0'
+    implementation 'com.google.android.gms:play-services-ads:8.4.0'
 }
