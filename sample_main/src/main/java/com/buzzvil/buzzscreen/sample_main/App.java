@@ -1,7 +1,7 @@
 package com.buzzvil.buzzscreen.sample_main;
 
-import android.app.Application;
 import android.os.Bundle;
+import android.support.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
 import com.buzzvil.buzzscreen.migration.MigrationFrom;
@@ -12,7 +12,7 @@ import com.buzzvil.buzzscreen.sdk.SimpleLockerActivity;
  * Created by patrick on 2017. 12. 6..
  */
 
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     public static final String LOCKSCREEN_APP_PACKAGE = "com.buzzvil.buzzscreen.sample_lock";
 

@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 repositories {
     maven { url "http://dl.appnext.com/" }
-    maven { url "https://dl.bintray.com/buzzvil/buzzscreen/" }
+    maven { url "https://dl.bintray.com/buzzvil/maven/" }
 }
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     buildToolsVersion "26.0.2"
 
 
@@ -16,10 +16,10 @@ android {
         manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
         applicationId "com.buzzvil.buzzscreen.sample_lock"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -33,8 +33,8 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.0.2'
 
-    compile 'com.buzzvil:buzzscreen:1.+'
-    compile 'com.buzzvil.buzzscreen.ext:migration-to:0.9.6'
+    compile 'com.buzzvil:buzzscreen:2.0.5.1'
+    compile 'com.buzzvil.buzzscreen.ext:migration-to:1.0.3.6'
 }

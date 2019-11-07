@@ -1,6 +1,6 @@
 package com.buzzvil.buzzscreen.sample_lock_light;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 import android.widget.Toast;
 
 import com.buzzvil.buzzscreen.migration.MigrationClient;
@@ -11,7 +11,7 @@ import com.buzzvil.buzzscreen.sdk.SimpleLockerActivity;
  * Created by patrick on 2017. 12. 6..
  */
 
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     public static final String MAIN_APP_PACKAGE = "com.buzzvil.buzzscreen.sample_main_light";
 

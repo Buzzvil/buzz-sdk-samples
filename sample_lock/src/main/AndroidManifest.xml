@@ -35,10 +35,10 @@
         <!-- <plist> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
         <meta-data
             android:name="app_license"
-            android:value="<app_license>" />
+            android:value="__app_license__" />
         <meta-data
             android:name="com.buzzvil.locker.mediation.baidu.plist"
-            android:value="<plist>" />
+            android:value="__plist__" />
     </application>
 
 </manifest>

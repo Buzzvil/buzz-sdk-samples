@@ -20,10 +20,10 @@
         <!-- Configuration for BuzzScreen-->
         <meta-data
             android:name="app_license"
-            android:value="<app_license>" />
+            android:value="__app_license__" />
         <meta-data
             android:name="com.buzzvil.locker.mediation.baidu.plist"
-            android:value="<plist>" />
+            android:value="__plist__" />
     </application>
 
 </manifest>

@@ -1,7 +1,7 @@
 package com.buzzvil.buzzscreen.sample_lock;
 
-import android.app.Application;
 import android.app.NotificationManager;
+import android.support.multidex.MultiDexApplication;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 
@@ -13,7 +13,7 @@ import com.buzzvil.buzzscreen.sdk.UserProfile;
  * Created by patrick on 2017. 12. 6..
  */
 
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     public static final String MAIN_APP_PACKAGE = "com.buzzvil.buzzscreen.sample_main";
 
