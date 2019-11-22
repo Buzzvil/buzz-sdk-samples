@@ -91,8 +91,6 @@ function log(message, bad) {
     rootView.getElementsByClassName('icon')[0].setAttribute('src', nativeAd.iconUrl);
     rootView.getElementsByClassName('name')[0].innerHTML = nativeAd.title;
     rootView.getElementsByClassName('body')[0].innerHTML = nativeAd.description;
-    rootView.getElementsByClassName('image')[0]
-      .getElementsByTagName('img')[0].setAttribute('src', nativeAd.imageUrl);
 
     updateCtaView(rootView.getElementsByClassName('cta')[0], nativeAd);
   }
@@ -114,6 +112,9 @@ function log(message, bad) {
       onParticipated: function(element, nativeAd) {
         log('ON PARTICIPATED: The ad is set to particiated.');
         updateCtaView(element.getElementsByClassName('cta')[0], nativeAd);
+      },
+      onVideoError: function(element, nativeAd, errorCode, errorMessage) {
+        log('ON VIDEO ERROR: An error is detected: ' + errorCode + '\n' + errorMessage);
       },
     };
 

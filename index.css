@@ -79,7 +79,7 @@ li.post {
 .body {
   margin: 0 4px;
 }
-.image img {
+.image img, .buzz-mediaview {
   max-width: 100%;
   width: auto;
   height: auto;
