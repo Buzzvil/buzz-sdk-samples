@@ -1,4 +1,4 @@
-package com.buzzvil.buzzscreen.popsample
+package com.buzzvil.buzzad.benefit.popsample
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.buzzvil.buzzscreen.popsample", appContext.packageName)
+        assertEquals("com.buzzvil.buzzad.benefit.popsample", appContext.packageName)
     }
 }

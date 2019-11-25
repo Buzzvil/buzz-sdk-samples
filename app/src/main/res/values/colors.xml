@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="benefit_native_bg_cta_button_pressed">#0072E1</color>
+    <color name="benefit_native_bg_cta_button_disabled">#DDDEDF</color>
+    <color name="benefit_native_bg_cta_button_normal">#1290FF</color>
 </resources>

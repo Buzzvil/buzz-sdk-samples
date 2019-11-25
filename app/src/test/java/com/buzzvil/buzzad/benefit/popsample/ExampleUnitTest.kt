@@ -1,4 +1,4 @@
-package com.buzzvil.buzzscreen.popsample
+package com.buzzvil.buzzad.benefit.popsample
 
 import org.junit.Test
 
