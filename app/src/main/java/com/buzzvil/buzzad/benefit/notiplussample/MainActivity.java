@@ -195,10 +195,10 @@ public class MainActivity extends AppCompatActivity {
             @NonNull final Activity activity,
             @NonNull final BuzzAdNotiPlus buzzAdNotiPlus,
             @NonNull final BuzzAdNotiPlus.OnRegisterListener onRegisterListener) {
-        View notiPlusDialogStep2Layout = activity.getLayoutInflater().inflate(com.buzzvil.buzzad.benefit.notification.R.layout.benefit_notiplus_view_settings_dialog_register_step_2, null);
-        ViewGroup layoutNotiPlusCheckbox = notiPlusDialogStep2Layout.findViewById(com.buzzvil.buzzad.benefit.notification.R.id.layoutNotiPlusCheckbox);
+        View notiPlusDialogStep2Layout = activity.getLayoutInflater().inflate(R.layout.view_settings_dialog_register_step_2, null);
+        ViewGroup layoutNotiPlusCheckbox = notiPlusDialogStep2Layout.findViewById(R.id.layoutNotiPlusCheckbox);
 
-        final CheckBox checkBoxCheckAll = layoutNotiPlusCheckbox.findViewById(com.buzzvil.buzzad.benefit.notification.R.id.checkboxNotiPlusAll);
+        final CheckBox checkBoxCheckAll = layoutNotiPlusCheckbox.findViewById(R.id.checkboxNotiPlusAll);
         final List<CheckBox> checkBoxes = new ArrayList<>();
 
         final NotiPlusHourParser notiPlusHourParser = new NotiPlusHourParser(activity);
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
         final List<Integer> list = buzzAdNotiPlus.getNotiPlusHoursOption(activity);
         for (int i = 0; i < list.size(); i++) {
             checkBoxValues.add(list.get(i));
-            CheckBox checkBox = (CheckBox) activity.getLayoutInflater().inflate(com.buzzvil.buzzad.benefit.notification.R.layout.benefit_notiplus_view_settings_dialog_register_step_2_checkbox, null);
+            CheckBox checkBox = (CheckBox) activity.getLayoutInflater().inflate(R.layout.view_settings_dialog_register_step_2_checkbox, null);
             checkBox.setText(notiPlusHourParser.convertHourToString(list.get(i)));
             layoutNotiPlusCheckbox.addView(checkBox);
             checkBoxes.add(checkBox);
@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
 
         final AlertDialog dialog = new AlertDialog.Builder(activity)
                 .setView(notiPlusDialogStep2Layout)
-                .setPositiveButton(com.buzzvil.buzzad.benefit.notification.R.string.benefit_notiplus_settings_dialog_register_step_2_confrim, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.benefit_notiplus_settings_dialog_register_step_2_confrim, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         List<Integer> result = new ArrayList<>();
@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
                         buzzAdNotiPlus.register(activity);
                     }
                 })
-                .setNegativeButton(com.buzzvil.buzzad.benefit.notification.R.string.benefit_notiplus_settings_dialog_register_step_2_cancel, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.benefit_notiplus_settings_dialog_register_step_2_cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         onRegisterListener.onCanceled();
