@@ -145,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    // showNotiPlusRegisterDialogStep2(MainActivity.this, BuzzAdNotiPlus, );
 
     private void customRegister(final BuzzAdNotiPlus buzzAdNotiPlus) {
         buzzAdNotiPlus.fetchNotiPlusHoursOptionIfNeeded(
