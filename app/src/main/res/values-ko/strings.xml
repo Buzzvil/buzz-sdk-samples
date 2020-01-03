@@ -13,8 +13,8 @@
     <string name="benefit_notiplus_settings_dialog_unregister_message">지금 구독을 취소하면 더 이상 리워드 광고 구독하기 알림을 받아볼 수 없습니다. 취소 하시겠습니까?</string>
     <string name="benefit_notiplus_settings_dialog_unregister_confrim">구독 취소</string>
     <string name="benefit_notiplus_settings_dialog_unregister_cancel">나중에 하기</string>
-    <string name="benefit_notiplus_settings_am">오전 %1$d</string>
-    <string name="benefit_notiplus_settings_pm">오후 %1$d</string>
+    <string name="benefit_notiplus_settings_am">오전 %1$d 시</string>
+    <string name="benefit_notiplus_settings_pm">오후 %1$d 시</string>
     <string name="benefit_notiplus_register_complete">%1$d월 %2$d일 리워드 광고 구독에 동의하였습니다</string>
     <string name="benefit_notiplus_notification_title_template">[광고] %1$s [수신거부:설정]</string>
 </resources>

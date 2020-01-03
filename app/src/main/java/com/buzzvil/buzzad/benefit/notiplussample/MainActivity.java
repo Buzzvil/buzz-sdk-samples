@@ -158,27 +158,34 @@ public class MainActivity extends AppCompatActivity {
                                 new BuzzAdNotiPlus.OnRegisterListener() {
                                     @Override
                                     public void onSuccess() {
-                                        Log.d(TAG, "TRACK_DEBUG showNotiPlusRegisterDialogStep2 onSuccess");
                                         switchAdNotiRegister.setChecked(true);
                                     }
 
                                     @Override
                                     public void onCanceled() {
-                                        Log.d(TAG, "TRACK_DEBUG showNotiPlusRegisterDialogStep2 onCanceled");
                                         switchAdNotiRegister.setChecked(false);
-
                                     }
-
                                 }
                         );
                     }
 
                     @Override
                     public void onFetchSuccess() {
-                        List<Integer> list = buzzAdNotiPlus.getNotiPlusHoursOption(MainActivity.this);
-                        for (Integer hour : list) {
-                            Log.d(TAG, "TRACK_DEBUG onFetchSuccess hour = " + hour);
-                        }
+                        showNotiPlusRegisterDialogStep2(
+                                MainActivity.this,
+                                buzzAdNotiPlus,
+                                new BuzzAdNotiPlus.OnRegisterListener() {
+                                    @Override
+                                    public void onSuccess() {
+                                        switchAdNotiRegister.setChecked(true);
+                                    }
+
+                                    @Override
+                                    public void onCanceled() {
+                                        switchAdNotiRegister.setChecked(false);
+                                    }
+                                }
+                        );
                     }
                 });
     }
