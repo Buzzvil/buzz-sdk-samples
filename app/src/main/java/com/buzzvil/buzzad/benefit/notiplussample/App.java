@@ -8,8 +8,6 @@ import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.presentation.notification.NotiPlusDialogConfig;
 
 public class App extends MultiDexApplication {
-
-    public static final String APP_ID = "APP_ID";
     public static final String UNIT_ID_FEED = "UNIT_ID_FEED";
 
     @Override
