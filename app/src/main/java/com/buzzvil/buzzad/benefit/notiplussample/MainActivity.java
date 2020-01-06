@@ -10,7 +10,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -192,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BuzzAdNotiPlus initBuzzAdNotiPlus() {
         return new BuzzAdNotiPlus(
-                App.UNIT_ID_FEED,
+                App.UNIT_ID_NOTI_PLUS,
                 CustomNotificationWorker.class,
                 App.getNotiPlusDialogConfig()
         );

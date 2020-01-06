@@ -19,8 +19,8 @@ public class CustomNotificationWorker extends NotificationWorker {
     @Override
     @NonNull
     public NotificationConfig getNotificationConfig() {
-        final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_FEED).build();
-        return new NotificationConfig.Builder(App.UNIT_ID_FEED)
+        final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_NOTI_PLUS).build();
+        return new NotificationConfig.Builder(App.UNIT_ID_NOTI_PLUS)
                 .putExtra(FeedActivity.EXTRA_CONFIG, feedConfig)
                 .build();
     }

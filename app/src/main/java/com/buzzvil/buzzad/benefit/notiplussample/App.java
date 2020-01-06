@@ -9,7 +9,7 @@ import com.buzzvil.buzzad.benefit.presentation.notification.NotiPlusDialogConfig
 
 public class App extends MultiDexApplication {
     public static final String APP_ID = "APP_ID";
-    public static final String UNIT_ID_FEED = "UNIT_ID_FEED";
+    public static final String UNIT_ID_NOTI_PLUS = "UNIT_ID_NOTI_PLUS";
 
     @Override
     public void onCreate() {
