@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation ("com.buzzvil:buzzad-benefit:1.6.7") {
+    implementation ("com.buzzvil:buzzad-benefit:1.6.8") {
         // Pop is not released for public use yet.
         // Exclude this module so that your app does not include any unnecessary permissions in the manifest.
         exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'

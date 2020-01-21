@@ -22,6 +22,7 @@ import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRewardResult;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
+import com.buzzvil.buzzad.benefit.presentation.video.VideoEventListener;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
 
 import java.util.ArrayList;
@@ -77,14 +78,48 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
         final CtaView ctaView = view.findViewById(R.id.ctaView);
 
         mediaView.setCreative(ad.getCreative());
-        mediaView.addOnMediaErrorListener(new MediaView.OnMediaErrorListener() {
+        mediaView.setVideoEventListener(new VideoEventListener() {
             @Override
-            public void onVideoError(@NonNull MediaView mediaView, @NonNull VideoErrorStatus videoErrorStatus, @Nullable String errorMessage) {
+            public void onResume() {
+            }
+
+            @Override
+            public void onPause() {
+            }
+
+            @Override
+            public void onReplay() {
+            }
+
+            @Override
+            public void onLanding() {
+            }
+
+            @Override
+            public void onError(@NonNull VideoErrorStatus videoErrorStatus, @Nullable String errorMessage) {
                 if (errorMessage != null) {
                     Toast.makeText(mediaView.getContext(), errorMessage, Toast.LENGTH_SHORT).show();
                 }
             }
+
+            @Override
+            public void onVideoEnded() {
+            }
         });
+        /* Optional feature to customize VideoPlayer
+            mediaView.setVideoPlayerOverlayView(new VideoPlayerOverlayMediaView(getContext()));
+            mediaView.setVideoUIConfig(
+                    new VideoUIConfig.Builder()
+                            .fullscreenIcon(R.drawable.bz_ic_fullscreen)
+                            .showFullscreen(false)
+                            .soundIconSelector(R.drawable.bz_ic_volume)
+                            .playButtonIcon(R.drawable.exo_icon_play)
+                            .pauseButtonIcon(R.drawable.exo_icon_pause)
+                            .replayButtonIcon(R.drawable.bz_ic_btn_restart)
+                            .goToButtonIcon(R.drawable.bz_ic_btn_more)
+                            .build()
+            );
+         */
         titleView.setText(ad.getTitle());
         descriptionView.setText(ad.getDescription());
         Glide.with(holder.itemView).load(ad.getIconUrl()).into(iconView);
