@@ -6,10 +6,12 @@ import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.presentation.notification.NotiPlusDialogConfig;
+import com.buzzvil.buzzad.benefit.presentation.notification.RewardNotificationConfig;
 
 public class App extends MultiDexApplication {
     public static final String APP_ID = "APP_ID";
     public static final String UNIT_ID_NOTI_PLUS = "UNIT_ID_NOTI_PLUS";
+    public static RewardNotificationConfig rewardNotificationConfig;
 
     @Override
     public void onCreate() {
@@ -37,5 +39,12 @@ public class App extends MultiDexApplication {
                 .imageRegisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
                 .imageUnregisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
                 .build();
+    }
+
+    public static RewardNotificationConfig getRewardNotificationConfig() {
+        if (rewardNotificationConfig == null) {
+            rewardNotificationConfig = new RewardNotificationConfig.Builder().build();
+        }
+        return rewardNotificationConfig;
     }
 }
