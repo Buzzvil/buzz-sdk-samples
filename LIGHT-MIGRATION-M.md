@@ -28,10 +28,10 @@ M앱을 위한 마이그레이션 라이브러리를 추가하고, 버즈스크�
 dependencies {
     
     // 기존 버즈스크린 연동
-    compile 'com.buzzvil:buzzscreen:1.+'
-    
+    compile "com.buzzvil:buzzscreen:$buzzscreenVersionName"
+
     // M앱을 위한 마이그레이션 라이브러리. L앱과 다름에 주의!
-    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.6'
+    compile "com.buzzvil.buzzscreen.ext:migration-host:$buzzscreenExtentionVersionName"
 }
 ```
 

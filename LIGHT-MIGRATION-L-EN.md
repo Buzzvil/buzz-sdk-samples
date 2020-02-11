@@ -30,10 +30,10 @@ Add the BuzzScreen library as well as the L app migration library. It requires B
 dependencies {
     
     // BuzzScreen Integration (same as M app's)
-    compile 'com.buzzvil:buzzscreen:1.+'
+    compile "com.buzzvil:buzzscreen:$buzzscreenVersionName"
     
     // Migration library for L app. The version MUST be same as migration-host's
-    compile 'com.buzzvil.buzzscreen.ext:migration-client:0.9.2'
+    compile "com.buzzvil.buzzscreen.ext:migration-client:$buzzscreenExtentionVersionName"
 }
 ```
 

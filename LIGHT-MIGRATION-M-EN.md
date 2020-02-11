@@ -27,11 +27,11 @@ Migration library for M app should be added, and Buzzscreen SDK version must be 
 ```groovy
 dependencies {
     
-    // Buzzscreen Integration (as before)
-    compile 'com.buzzvil:buzzscreen:1.+'
+    // Buzzscreen Integration (as before) (Optional)
+    compile "com.buzzvil:buzzscreen:$buzzscreenVersionName"
     
     // Migration library for M app. Please take extra caution of the library name as it is different for L app. 
-    compile 'com.buzzvil.buzzscreen.ext:migration-host:0.9.2'
+    compile "com.buzzvil.buzzscreen.ext:migration-host:$buzzscreenExtentionVersionName"
 }
 ```
 

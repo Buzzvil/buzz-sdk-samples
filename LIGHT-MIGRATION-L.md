@@ -33,10 +33,10 @@ L앱을 위한 마이그레이션 라이브러리뿐만 아니라 버즈스크�
 dependencies {
     
     // M앱과 동일한 버즈스크린 연동
-    compile 'com.buzzvil:buzzscreen:1.+'
+    compile "com.buzzvil:buzzscreen:$buzzscreenVersionName"
     
     // L앱을 위한 마이그레이션 라이브러리. migration-host 와 버전이 반드시 일치해야 합니다.
-    compile 'com.buzzvil.buzzscreen.ext:migration-client:0.9.6'
+    compile "com.buzzvil.buzzscreen.ext:migration-client:$buzzscreenExtentionVersionName"
 }
 ```
 
