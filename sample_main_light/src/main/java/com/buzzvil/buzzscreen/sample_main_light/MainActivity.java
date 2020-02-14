@@ -8,12 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.buzzvil.buzzscreen.migration.MigrationHost;
-import com.buzzvil.buzzscreen.sdk.BuzzScreen;
-import com.buzzvil.buzzscreen.sdk.UserProfile;
 
 import java.util.Random;
 
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private App app;
 
     private int birthYear = 1985;
-    private String gender = UserProfile.USER_GENDER_MALE;
+    // private String gender = UserProfile.USER_GENDER_MALE;
 
     private AlertDialog dialog;
 
@@ -39,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         app = (App) getApplicationContext();
 
-        BuzzScreen.getInstance().launch();
+        // BuzzScreen.getInstance().launch();
 
         btLogin = (ToggleButton) findViewById(R.id.login_toggle);
         layoutProfile = findViewById(R.id.profile_layout);
@@ -54,14 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 if (isChecked) {
                     String userId = "testuserid" + new Random().nextInt(100000);
                     app.login(userId);
-                    UserProfile userProfile = BuzzScreen.getInstance().getUserProfile();
-                    // // SetUserId must be called to give users rewards through s2s postback or batch process.
-                    // 포인트 적립을 위해서는 setUserId를 반드시 호출해야 함
-                    userProfile.setUserId(userId);
-                    // Targeting information for campaign allocation
-                    // 캠페인 할당을 위한 타게팅 정보
-                    userProfile.setBirthYear(birthYear);
-                    userProfile.setGender(gender);
+//                    UserProfile userProfile = BuzzScreen.getInstance().getUserProfile();
+//                    // // SetUserId must be called to give users rewards through s2s postback or batch process.
+//                    // 포인트 적립을 위해서는 setUserId를 반드시 호출해야 함
+//                    userProfile.setUserId(userId);
+//                    // Targeting information for campaign allocation
+//                    // 캠페인 할당을 위한 타게팅 정보
+//                    userProfile.setBirthYear(birthYear);
+//                    userProfile.setGender(gender);
                 } else {
                     app.logout();
                 }
@@ -104,15 +101,15 @@ public class MainActivity extends AppCompatActivity {
         btDisableLockscreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (BuzzScreen.getInstance().isActivated()) {
-                    BuzzScreen.getInstance().deactivate();
-                    btDisableLockscreen.setVisibility(View.GONE);
-                    Toast.makeText(MainActivity.this, R.string.light_deactivated_message, Toast.LENGTH_SHORT).show();
-                }
+//                if (BuzzScreen.getInstance().isActivated()) {
+//                    BuzzScreen.getInstance().deactivate();
+//                    btDisableLockscreen.setVisibility(View.GONE);
+//                    Toast.makeText(MainActivity.this, R.string.light_deactivated_message, Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
-        tvVersion.setText("Version : " + BuildConfig.VERSION_NAME);
+        // tvVersion.setText("Version : " + BuildConfig.VERSION_NAME);
         updateStatusUi();
     }
 
@@ -121,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             layoutProfile.setVisibility(View.VISIBLE);
             ((TextView)findViewById(R.id.profile_user_id)).setText("ID : " + PreferenceHelper.getString(PrefKeys.PREF_KEY_USER_ID, ""));
             ((TextView)findViewById(R.id.profile_birth_year)).setText("Birth year : " + birthYear);
-            ((TextView)findViewById(R.id.profile_gender)).setText("Gender : " + gender);
+            // ((TextView)findViewById(R.id.profile_gender)).setText("Gender : " + gender);
             btRequsetLockscreenAppActivation.setEnabled(true);
         } else {
             layoutProfile.setVisibility(View.GONE);
@@ -140,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        int visibility = BuzzScreen.getInstance().isActivated() ? View.VISIBLE : View.GONE;
-        btDisableLockscreen.setVisibility(visibility);
+        // int visibility = BuzzScreen.getInstance().isActivated() ? View.VISIBLE : View.GONE;
+        // btDisableLockscreen.setVisibility(visibility);
     }
 }

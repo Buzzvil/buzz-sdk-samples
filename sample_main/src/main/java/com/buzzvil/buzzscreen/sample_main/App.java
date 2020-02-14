@@ -5,8 +5,8 @@ import android.support.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
 import com.buzzvil.buzzscreen.migration.MigrationFrom;
-import com.buzzvil.buzzscreen.sdk.BuzzScreen;
-import com.buzzvil.buzzscreen.sdk.SimpleLockerActivity;
+//import com.buzzvil.buzzscreen.sdk.BuzzScreen;
+//import com.buzzvil.buzzscreen.sdk.SimpleLockerActivity;
 
 /**
  * Created by patrick on 2017. 12. 6..
@@ -22,7 +22,7 @@ public class App extends MultiDexApplication {
 
         // BuzzScreen initialization code
         // 기존 버즈스크린 초기화 코드.
-        BuzzScreen.init("my_app_key", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
+        // BuzzScreen.init("my_app_key", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
 
         // Code for migration
         // 마이그레이션을 위한 코드
@@ -73,6 +73,6 @@ public class App extends MultiDexApplication {
 
     public void logout() {
         PreferenceHelper.remove(Constants.PREF_KEY_USER_ID);
-        BuzzScreen.getInstance().logout();
+        // BuzzScreen.getInstance().logout();
     }
 }
