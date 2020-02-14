@@ -10,7 +10,7 @@
 아래와 같이 버즈스크린 라이브러리 추가 코드 확인.
 ```groovy
 dependencies {
-    compile 'com.buzzvil:buzzscreen:1.+'
+    compile "com.buzzvil:buzzscreen:$buzzscreenVersionName"
 }
 
 ```

@@ -10,7 +10,7 @@ Migration is supported for SDK version 1.6.0 or higher. If your current Buzzscre
 Check if Buzzscreen library code is as below:
 ```groovy
 dependencies {
-    compile 'com.buzzvil:buzzscreen:1.+'
+    compile "com.buzzvil:buzzscreen:$buzzscreenVersionName"
 }
 
 ```

@@ -30,8 +30,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile "com.buzzvil.buzzscreen.ext:migration-from:$buzzscreenExtentionVersionName"
+    implementation "com.buzzvil.buzzscreen.ext:migration-from:$buzzscreenExtentionVersionName"
     // optional: compile "com.buzzvil:buzzscreen:$buzzscreenVersionName"
 }
