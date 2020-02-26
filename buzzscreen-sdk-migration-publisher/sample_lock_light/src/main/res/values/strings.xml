@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">LockScreen App(light)</string>
+    <string name="main_loading">Loading...</string>
+    <string name="main_auto_activated_title">Activate lockscreen</string>
+    <string name="main_auto_activated_message">[L App Name] is activated! Get more rewards and more benefits on lockscreen!</string>
+    <string name="main_auto_activated_show_lock_screen">Go to lockscreen</string>
+    <string name="main_auto_activated_close">Close</string>
+    <string name="main_switch_on">Turn on lockscreen</string>
+    <string name="main_switch_on_status">Lockscreen is currently on.</string>
+    <string name="main_switch_off">Turn off lockscreen</string>
+    <string name="main_switch_off_status">Lockscreen is currently off.</string>
+    <string name="main_go_main">Go to [M App Name]</string>
+    <string name="app_deactivated_by_m">You have been logged out of [M App Name] and lockscreen has been disabled!</string>
+    <string name="main_snooze_title">Turn off lockscreen</string>
+    <string name="main_snooze_0">Snooze for 2 hours</string>
+    <string name="main_snooze_1">Snooze for 6 hours</string>
+    <string name="main_snooze_2">Snooze for 24 hours</string>
+    <string name="main_snooze_3">Turn off</string>
+    <string name="main_error_install_title">[M App Name] Installation required!</string>
+    <string name="main_error_install_message">To use [L App Name], [M App Name] must be installed first. Please install [M App Name] first!</string>
+    <string name="main_error_install_button">Go to install</string>
+    <string name="main_error_update_title">Please update the app!</string>
+    <string name="main_error_update_message">[L App Name] requires the latest version of [M App Name]!</string>
+    <string name="main_error_update_button">Go to update</string>
+    <string name="main_error_agree_title">Consent to use the lockscreen is required!</string>
+    <string name="main_error_agree_message">[L App Name] requires a consent to use the lockscreen. Please consent to use on lockscreen!</string>
+    <string name="main_error_agree_button">Go to consent</string>
+    <string name="main_error_unknown_title">Please try again in a few minutes!</string>
+    <string name="main_error_unknown_message">There was a temporary error. Please try again in a few minutes!</string>
+    <string name="main_error_unknown_button">Retry</string>
+    <string name="main_snooze_on_time">: Time remaining until turn-on</string>
+
+</resources>

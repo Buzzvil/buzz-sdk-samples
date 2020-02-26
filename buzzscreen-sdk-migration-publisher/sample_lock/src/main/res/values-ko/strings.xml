@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_point_payment">적립되었습니다</string>
+    <string name="main_snooze_0">잠시 사용 안함</string>
+    <string name="main_snooze_1">오늘만 사용 안함</string>
+    <string name="main_snooze_2">계속 사용 안함</string>
+    <string name="main_check_point">포인트 내역 확인</string>
+    <string name="main_go_store">스토어 바로가기</string>
+    <string name="main_decativation_lockscreen">잠금화면 활성화</string>
+    <string name="main_point_notification">적립 알림 설정</string>
+    <string name="main_lockscreen_info">잠금화면 사용안내</string>
+    <string name="main_terms_of_service">서비스 이용 약관 ></string>
+    <string name="main_privacy_policy">개인정보 처리방침 ></string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="light_user_agreement">잠금화면 이용약관 동의</string>
+    <string name="light_deactivated_message">"잠금화면이 비활성화되었습니다"</string>
+    <string name="light_decativation_button">잠금화면 비활성화하기</string>
+    <string name="light_move_to_l_app">잠금화면 앱 사용하러 가기</string>
+</resources>

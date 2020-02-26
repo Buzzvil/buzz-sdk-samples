@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name" translatable="false">LockScreen App(FULL)</string>
+    <string name="main_point_payment">have been added</string>
+    <string name="main_snooze_0">Snooze for 2 hours</string>
+    <string name="main_snooze_1">Snooze for 24 hours</string>
+    <string name="main_snooze_2">Turn off</string>
+    <string name="main_privacy_policy">Privacy Policy</string>
+    <string name="main_terms_of_service">Terms of Service</string>
+    <string name="main_lockscreen_info">Lockscreen info</string>
+    <string name="main_point_notification">Point Nofitication</string>
+    <string name="main_decativation_lockscreen">Activate lockscreen</string>
+    <string name="main_go_store">Go to store</string>
+    <string name="main_check_point">Check point</string>
+</resources>
