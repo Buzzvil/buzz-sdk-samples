@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchAdNotiRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Register"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <Button
+                android:id="@+id/btnRegister1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Register w/ Description"
+                />
+
+            <Button
+                android:id="@+id/btnRegister2"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Register w/o Description"/>
+
+            <Button
+                android:id="@+id/btnCustomRegister"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Custom Register"/>
+
+            <Button
+                android:id="@+id/btnUnregister"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Unregister"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
