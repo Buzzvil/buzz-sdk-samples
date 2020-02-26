@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TITLE"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"/>
+        <Button
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:text="Close"/>
+        <Button
+            android:id="@+id/inquiryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/closeButton"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:text="Inquiry"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/offerwall"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
+</LinearLayout>
