@@ -6,19 +6,19 @@ You can load a project each directory.
 - Requirements
     > Android Studio, Gradle
 - Development Guide
-    > [Development Guide - BuzzAd Benefit Pop](https://buzzvil.atlassian.net/wiki/spaces/DEV/pages/480346356/BuzzAdPop)
+    > [Development Guide - BuzzAd Benefit Pop](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/486081028/BuzzAdPop)
 
 ## 2. buzzad-benefit-notiplus
 - Requirements
     > Android Studio, Gradle
 - Development Guide
-    > [Development Guide - BuzzAd Benefit Notiplus](https://buzzvil.atlassian.net/wiki/spaces/DEV/pages/508362869/BuzzAdNotiPlus)
+    > [Development Guide - BuzzAd Benefit Notiplus - Permission required](https://buzzvil.atlassian.net/wiki/spaces/DEV/pages/508362869/BuzzAdNotiPlus)
 
 ## 3. buzzad-benefit-web
 - Requirements
     >
-- Development Guide
-    > [Development Guide - BuzzAd Benefit for Web](https://buzzvil.github.io/buzzad-benefit-sdk-publisher-web/)
+- Sample page
+    > [Sample page - BuzzAd Benefit for Web](https://buzzvil.github.io/buzzad-benefit-sdk-publisher-web/)
 
 ## 4. buzzad-offerwall
 - Requirements
