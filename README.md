@@ -1,7 +1,7 @@
 # Sample apps for publisher
 
 ## Open Source License Announcement
-- "Announcement page ([Original file](./3rd_party_licenses.html)|[Rendered page](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
+- [Original file](./3rd_party_licenses.html)|[Rendered page](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html)
 
 ## 1. buzzad-benefit-pop
 - Requirements
