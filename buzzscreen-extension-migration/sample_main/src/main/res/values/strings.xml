@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">Main App(FULL)</string>
+    <string name="main_activate_lockscreen">Activate lockscreen</string>
+</resources>

@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    maven { url "http://dl.appnext.com/" }
+    maven { url "https://dl.bintray.com/buzzvil/maven/" }
+}
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        // Use the app key that was issued while integrating BuzzScreen for my_app_key
+        // my_app_key 에는 버즈스크린 연동시 발급받은 앱키를 입력합니다.
+        manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
+        applicationId "com.buzzvil.buzzscreen.sample_lock"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.0.2'
+
+    implementation "com.buzzvil.buzzscreen.ext:migration-to:$buzzscreenExtentionVersionName"
+    implementation "com.buzzvil:buzzscreen:$buzzscreenVersionName"
+}

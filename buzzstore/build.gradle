@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+ext {
+    compileSdkVersion = 28
+
+    minSdkVersion = 14
+    targetSdkVersion = 28
+
+    supportLibVersion = '26.1.0'
+    playServiceAdsLibVersion = "15.0.1"
+}

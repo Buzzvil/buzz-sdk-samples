@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/logo_buzzscreen" />
+
+        </FrameLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <!-- Top layout to show status -->
+    <RelativeLayout
+        android:id="@+id/main_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/topDark">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/il_frame" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="24dp">
+
+            <ProgressBar
+                android:id="@+id/main_top_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/main_top_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/main_title"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center" />
+
+    <!-- Message -->
+    <TextView
+        android:id="@+id/main_message"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:textAlignment="center"
+        android:visibility="gone" />
+
+
+    <!-- Error Layout or Switch Layout -->
+
+    <!-- Error Layout -->
+    <LinearLayout
+        android:id="@+id/main_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/main_error_deactivate_button"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/main_error_button"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <!-- Switch Layout -->
+    <RelativeLayout
+        android:id="@+id/main_switch_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/main_switch_on"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="@string/main_switch_on"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/main_switch_off"
+                style="@style/Base.Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="@string/main_switch_off"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1e000000" />
+
+            <Button
+                android:id="@+id/main_go_main"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/ic_bs_main_app"
+                android:text="@string/main_go_main" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

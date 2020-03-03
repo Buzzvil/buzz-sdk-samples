@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="@string/benefit_notiplus_settings_dialog_register_step_2_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layoutNotiPlusCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="17dp">
+
+            <CheckBox
+                android:id="@+id/checkboxNotiPlusAll"
+                style="@style/BenefitAdNotiPlusCheckbox"
+                android:textStyle="bold"
+                android:text="@string/benefit_notiplus_settings_dialog_register_step_2_subscribe_all"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

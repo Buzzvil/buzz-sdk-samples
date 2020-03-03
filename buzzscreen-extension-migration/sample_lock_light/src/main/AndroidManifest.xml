@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.buzzvil.buzzscreen.sample_lock_light">
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Configuration for BuzzScreen-->
+        <meta-data
+            android:name="app_license"
+            android:value="__app_license__" />
+        <meta-data
+            android:name="com.buzzvil.locker.mediation.baidu.plist"
+            android:value="__plist__" />
+    </application>
+
+</manifest>

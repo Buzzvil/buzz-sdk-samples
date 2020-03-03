@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="snooze_strings">
+        <item>@string/main_snooze_0</item>
+        <item>@string/main_snooze_1</item>
+        <item>@string/main_snooze_2</item>
+        <item>@string/main_snooze_3</item>
+    </array>
+</resources>
