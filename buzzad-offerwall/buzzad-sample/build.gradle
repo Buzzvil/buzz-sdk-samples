@@ -24,7 +24,7 @@ android {
 }
 
 dependencies {
-    implementation "com.buzzvil:buzzad-offerwall:1.1.2"
+    implementation "com.buzzvil:buzzad-offerwall:1.1.3"
     implementation "com.google.android.gms:play-services-base:15.0.1"
     implementation "com.google.android.gms:play-services-ads-identifier:15.0.1"
 }
