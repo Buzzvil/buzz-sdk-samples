@@ -8,6 +8,7 @@ import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.SidePosition;
+import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.popsample.R;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
@@ -56,6 +57,7 @@ public class App extends MultiDexApplication {
      */
     private void initBuzzAdBenefitWithCustomPopHeaderViewAdapter() {
         final FeedConfig feedConfig = new FeedConfig.Builder(UNIT_ID_POP)
+                .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
                 .feedHeaderViewAdapterClass(CustomPopHeaderViewAdapter.class)
                 .articlesEnabled(true)
                 .articleInAppLandingEnabled(true)
