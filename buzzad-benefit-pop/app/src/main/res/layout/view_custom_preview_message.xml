@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/itemKeepIcon"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginLeft="16dp"
+	android:layout_marginTop="5dp"
+	android:layout_marginRight="16dp"
+	android:background="@android:color/darker_gray"
+	android:gravity="center_vertical"
+	android:paddingLeft="15dp"
+	android:paddingTop="16dp"
+	android:paddingRight="15dp"
+	android:paddingBottom="16dp">
+
+	<LinearLayout
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="16dp"
+		android:layout_weight="1"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/textCustomPreviewMessageTitle"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:ellipsize="end"
+			android:maxLines="2"
+			tools:text="Publisher Preview message"
+			android:textColor="@android:color/black"
+			android:textSize="14dp" />
+
+		<TextView
+			android:id="@+id/textCustomPreviewMessageCta"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:maxLines="1"
+			android:text="@string/bz_pop_message_preview_default_cta"
+			android:textColor="#1290FF"
+			android:textSize="12dp" />
+
+	</LinearLayout>
+
+	<ImageView
+		android:id="@+id/imagePreviewMessageIcon"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@mipmap/ic_launcher" />
+
+</LinearLayout>

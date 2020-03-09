@@ -9,6 +9,7 @@ import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.SidePosition;
 import com.buzzvil.buzzad.benefit.popsample.R;
+import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
 
@@ -20,7 +21,8 @@ public class App extends MultiDexApplication {
         super.onCreate();
 
         initBuzzAdBenefit();
-        // initBuzzAdBenefitWithCustomControlService(); // Use this for custom pop notification
+//        initBuzzAdBenefitWithCustomPopHeaderViewAdapter(); // User this for custom pop header view adapter
+//        initBuzzAdBenefitWithCustomControlService(); // Use this for custom pop notification
     }
 
     private void initBuzzAdBenefit() {
@@ -30,11 +32,46 @@ public class App extends MultiDexApplication {
                 .colorResId(R.color.colorPrimary)
                 .notificationId(1021)
                 .build();
-
         final PopConfig popConfig = new PopConfig.Builder(UNIT_ID_POP)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .popNotificationConfig(popNotificationConfig)
+                .previewIntervalInMillis(1000) // for test
+                .build();
+
+        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(APP_ID)
+                .add(UNIT_ID_POP, popConfig)
+                .build();
+        BuzzAdBenefit.init(this, buzzAdBenefitConfig);
+
+        final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
+                .userId("SAMPLE_USER_ID")
+                .gender(UserProfile.Gender.FEMALE)
+                .birthYear(1993)
+                .build();
+        BuzzAdBenefit.setUserProfile(userProfile);
+    }
+    /**
+     * [CUSTOM_POP_HEADER_VIEW_ADAPTER] Set custom CustomPopHeaderViewAdapter
+     */
+    private void initBuzzAdBenefitWithCustomPopHeaderViewAdapter() {
+        final FeedConfig feedConfig = new FeedConfig.Builder(UNIT_ID_POP)
+                .feedHeaderViewAdapterClass(CustomPopHeaderViewAdapter.class)
+                .articlesEnabled(true)
+                .articleInAppLandingEnabled(true)
+                .build();
+        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(R.drawable.ic_notification_pop_gift)
+                .titleResId(R.string.pop_notification_title)
+                .textResId(R.string.pop_notification_text)
+                .colorResId(R.color.colorPrimary)
+                .notificationId(1021)
+                .build();
+        final PopConfig popConfig = new PopConfig.Builder(UNIT_ID_POP)
+                .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
+                .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
+                .feedConfig(feedConfig)
+                .popNotificationConfig(popNotificationConfig)
+                .previewIntervalInMillis(1000) // for test
                 .build();
 
         final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(APP_ID)
