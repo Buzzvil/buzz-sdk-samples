@@ -1,16 +1,14 @@
 package com.buzzvil.buzzad.benefit.popsample.java;
 
-import android.annotation.TargetApi;
 import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.os.Build;
 import android.widget.RemoteViews;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
+
 import com.buzzvil.buzzad.benefit.pop.PopControlService;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.popsample.R;
@@ -42,15 +40,5 @@ public class CustomControlService extends PopControlService {
             builder.setColor(ContextCompat.getColor(this, popNotificationConfig.getColorResId()));
         }
         return builder.build();
-    }
-
-    @TargetApi(Build.VERSION_CODES.O)
-    private void createNotificationChannelIfNeeded() {
-        final NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        if (notificationManager.getNotificationChannel(NOTIFICATION_CHANNEL_ID) == null) {
-            final NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_LOW);
-            channel.setShowBadge(false);
-            notificationManager.createNotificationChannel(channel);
-        }
     }
 }
