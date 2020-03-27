@@ -27,13 +27,14 @@ public class App extends MultiDexApplication {
     }
 
     private void initBuzzAdBenefit() {
-        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(R.drawable.ic_notification_pop_gift)
+        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
+                .smallIconResId(R.drawable.ic_notification_pop_gift)
                 .titleResId(R.string.pop_notification_title)
                 .textResId(R.string.pop_notification_text)
                 .colorResId(R.color.colorPrimary)
                 .notificationId(1021)
                 .build();
-        final PopConfig popConfig = new PopConfig.Builder(UNIT_ID_POP)
+        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .popNotificationConfig(popNotificationConfig)
@@ -56,19 +57,20 @@ public class App extends MultiDexApplication {
      * [CUSTOM_POP_HEADER_VIEW_ADAPTER] Set custom CustomPopHeaderViewAdapter
      */
     private void initBuzzAdBenefitWithCustomPopHeaderViewAdapter() {
-        final FeedConfig feedConfig = new FeedConfig.Builder(UNIT_ID_POP)
+        final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
                 .feedHeaderViewAdapterClass(CustomPopHeaderViewAdapter.class)
                 .articlesEnabled(true)
                 .articleInAppLandingEnabled(true)
                 .build();
-        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(R.drawable.ic_notification_pop_gift)
+        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
+                .smallIconResId(R.drawable.ic_notification_pop_gift)
                 .titleResId(R.string.pop_notification_title)
                 .textResId(R.string.pop_notification_text)
                 .colorResId(R.color.colorPrimary)
                 .notificationId(1021)
                 .build();
-        final PopConfig popConfig = new PopConfig.Builder(UNIT_ID_POP)
+        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .feedConfig(feedConfig)
@@ -93,11 +95,12 @@ public class App extends MultiDexApplication {
      * [CUSTOM_POP_CONTROL_SERVICE] Set custom PopControlService
      */
     private void initBuzzAdBenefitWithCustomControlService() {
-        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(R.drawable.ic_notification_pop_gift)
+        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
+                .smallIconResId(R.drawable.ic_notification_pop_gift)
                 .notificationId(1021)
                 .build();
 
-        final PopConfig popConfig = new PopConfig.Builder(UNIT_ID_POP)
+        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .controlService(CustomControlService.class)

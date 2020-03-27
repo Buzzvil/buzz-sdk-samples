@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
 
-        buzzAdPop = new BuzzAdPop(App.UNIT_ID_POP);
+        buzzAdPop = new BuzzAdPop(this, App.UNIT_ID_POP);
         popShowButton = findViewById(R.id.pop_show_button);
         popShowButton.setOnClickListener(new View.OnClickListener() {
             @Override

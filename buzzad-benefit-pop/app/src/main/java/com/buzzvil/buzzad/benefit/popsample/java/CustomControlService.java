@@ -7,14 +7,12 @@ import android.widget.RemoteViews;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
-import androidx.core.content.ContextCompat;
 
 import com.buzzvil.buzzad.benefit.pop.PopControlService;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.popsample.R;
 
 import static androidx.core.app.NotificationCompat.PRIORITY_LOW;
-import static com.buzzvil.buzzad.benefit.pop.PopNotificationConfig.RESOURCE_NOT_SET;
 
 public class CustomControlService extends PopControlService {
 
@@ -36,8 +34,8 @@ public class CustomControlService extends PopControlService {
                 .setContentIntent(popPendingIntent)
                 .setPriority(PRIORITY_LOW)
                 .setShowWhen(false);
-        if (popNotificationConfig.getColorResId() != RESOURCE_NOT_SET) {
-            builder.setColor(ContextCompat.getColor(this, popNotificationConfig.getColorResId()));
+        if (popNotificationConfig.getColor() == null) {
+            builder.setColor(popNotificationConfig.getColor());
         }
         return builder.build();
     }
