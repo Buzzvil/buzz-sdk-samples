@@ -8,9 +8,9 @@ import androidx.annotation.Nullable;
 
 import com.buzzvil.buzzad.benefit.presentation.feed.ad.DefaultAdsAdapter;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
-import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRewardResult;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
 import com.buzzvil.buzzad.benefit.presentation.notification.BuzzAdNotiPlus;
+import com.buzzvil.buzzad.benefit.presentation.reward.RewardResult;
 
 public class CustomFeedAdsAdapter extends DefaultAdsAdapter {
 
@@ -31,10 +31,10 @@ public class CustomFeedAdsAdapter extends DefaultAdsAdapter {
         }
 
         @Override
-        public void onRewarded(@NonNull NativeAdView view, @NonNull NativeAd nativeAd, @Nullable NativeAdRewardResult nativeAdRewardResult) {
-            Toast.makeText(view.getContext(), "onRewarded: " + nativeAdRewardResult, Toast.LENGTH_SHORT).show();
-            if (nativeAdRewardResult == NativeAdRewardResult.SUCCESS) {
-                BuzzAdNotiPlus.showRewardNotification(view.getContext(), App.getRewardNotificationConfig(), nativeAd.getAd().getReward());
+        public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
+            Toast.makeText(nativeAdView.getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
+            if (rewardResult == RewardResult.SUCCESS) {
+                BuzzAdNotiPlus.showRewardNotification(nativeAdView.getContext(), App.getRewardNotificationConfig(), nativeAd.getAd().getReward());
             }
         }
 

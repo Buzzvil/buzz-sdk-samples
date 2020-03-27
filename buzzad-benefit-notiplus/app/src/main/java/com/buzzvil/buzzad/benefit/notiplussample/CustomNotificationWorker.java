@@ -20,7 +20,7 @@ public class CustomNotificationWorker extends NotificationWorker {
     @Override
     @NonNull
     public NotificationConfig getNotificationConfig() {
-        final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_NOTI_PLUS)
+        final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_NOTI_PLUS)
                 .adsAdapterClass(CustomFeedAdsAdapter.class)
                 .build();
         return new NotificationConfig.Builder(App.UNIT_ID_NOTI_PLUS)
