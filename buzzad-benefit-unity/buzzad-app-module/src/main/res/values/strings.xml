@@ -1,0 +1,4 @@
+<resources>
+    <string name="pop_notification_title">test pop title</string>
+    <string name="pop_notification_text">test pop text</string>
+</resources>

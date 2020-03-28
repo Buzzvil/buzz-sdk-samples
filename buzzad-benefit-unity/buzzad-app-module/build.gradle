@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library' // ADDED BY ALAN
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        multiDexEnabled true        // ADDED BY ALAN
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {                // ADDED BY ALAN
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+afterEvaluate {
+    generateReleaseBuildConfig.enabled = false
+    generateDebugBuildConfig.enabled = false
+}
+
+repositories {
+    maven { url "https://dl.bintray.com/buzzvil/test/" }        // ADDED BY ALAN
+    maven { url "https://dl.bintray.com/buzzvil/maven/" }       // ADDED BY ALAN
+}
+
+dependencies {
+    compileOnly fileTree(include: ['*.jar'], dir: 'libs')       // ADDED BY ALAN
+    compileOnly files('libs/classes.jar')                       // ADDED BY ALAN
+
+    testImplementation 'junit:junit:4.12'
+
+    compileOnly ("com.buzzvil:buzzad-benefit-pop:2.0.1-alpha-rc13")   // ADDED BY ALAN
+    implementation ("androidx.multidex:multidex:2.0.1")                 // ADDED BY ALAN
+    // implementation 'androidx.appcompat:appcompat:1.0.2'
+}
