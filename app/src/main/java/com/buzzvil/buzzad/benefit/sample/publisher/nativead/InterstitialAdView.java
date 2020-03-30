@@ -77,6 +77,11 @@ public class InterstitialAdView extends FrameLayout {
         mediaView.setCreative(ad.getCreative());
         mediaView.setVideoEventListener(new VideoEventListener() {
             @Override
+            public void onVideoStarted() {
+
+            }
+
+            @Override
             public void onResume() {
             }
 

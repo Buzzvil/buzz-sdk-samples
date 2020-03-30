@@ -80,6 +80,11 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
         mediaView.setCreative(ad.getCreative());
         mediaView.setVideoEventListener(new VideoEventListener() {
             @Override
+            public void onVideoStarted() {
+
+            }
+
+            @Override
             public void onResume() {
             }
 
