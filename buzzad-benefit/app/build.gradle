@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.buzzvil.buzzad.benefit.sample.publisher"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven { url "https://dl.bintray.com/buzzvil/maven/" }
+}
+
+dependencies {
+    implementation ("com.buzzvil:buzzad-benefit:1.6.9") {
+        // Pop is not released for public use yet.
+        // Exclude this module so that your app does not include any unnecessary permissions in the manifest.
+        exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
+    }
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation "com.android.support:design:26.1.0"
+    implementation ('com.github.bumptech.glide:glide:4.8.0') {
+        // exclude 처리를 안해서 support library 끼리 버전이 섞이면 AppCompatActivity 에서 runtime exception (NoSuchMethodError) 발생
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.android.support:support-annotations:26.1.0'
+    implementation 'com.android.support:support-fragment:26.1.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+}
