@@ -2,5 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.buzzvil.buzzad.unity.sample">
 
-    <application android:name="com.buzzvil.buzzad.unity.sample.App" />
+    <application android:name="com.buzzvil.buzzad.unity.sample.App">
+        <meta-data
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-100000043" />
+    </application>
 </manifest>
