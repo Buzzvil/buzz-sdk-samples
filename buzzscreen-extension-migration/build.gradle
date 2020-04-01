@@ -21,11 +21,31 @@ allprojects {
     }
 }
 
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://dl.bintray.com/buzzvil/maven/"
+            credentials {
+                username = "dev@buzzvil"
+                password = "a9f939087dcaadc302d5ede94ac3c34a099c1727"
+            }
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
 ext {
-    buzzscreenExtentionVersionName = '1.1.1.0'
-    buzzscreenVersionName = '2.0.5.9'
+    buzzscreenExtentionVersionName = '1.2.0.3'
+    buzzscreenVersionName = '3.4.2'
+
+    compileSdkVersion = 29
+    targetSdkVersion = 28
+    minSdkVersion = 15
+
+    androidXAppcompatVersion = '1.1.0'
 }

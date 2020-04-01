@@ -68,7 +68,7 @@ public class App extends Application {
         super.onCreate();
 
         // Existing code to initialize Buzzscreen
-        BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // Initialization for migration
         // the example code uses com.buzzvil.buzzscreen.sample_lock for the L app package name

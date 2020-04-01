@@ -5,7 +5,7 @@ Reference : **`sample_main`**
 ### 1. Do NOT change the original integration of Buzzscreen.
 
 ### 2. Check Buzzscreen SDK update
-Migration is supported for SDK version 1.6.0 or higher. If your current Buzzscreen version is `1.+` in `build.gradle`, no further work is required as SDK will be automatically updated. However, in case where Buzzscreen version is specified in `build.gradle`, you need to explicitly use version 1.6.0 or higher. 
+Migration is supported for SDK version 1.6.0 or higher. If your current Buzzscreen version is `1.+` in `build.gradle`, no further work is required as SDK will be automatically updated. However, in case where Buzzscreen version is specified in `build.gradle`, you need to explicitly use version 1.6.0 or higher.
 
 Check if Buzzscreen library code is as below:
 ```groovy
@@ -68,7 +68,7 @@ public class App extends Application {
         super.onCreate();
 
         // original initiation code for Buzzscreen.
-        BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // code for migration
         // example code uses com.buzzvil.buzzscreen.sample_lock for L app package name

@@ -1,8 +1,8 @@
 package com.buzzvil.buzzscreen.sample_lock;
 
 import android.app.NotificationManager;
-import android.support.multidex.MultiDexApplication;
-import android.support.v4.app.NotificationCompat;
+import androidx.multidex.MultiDexApplication;
+import androidx.core.app.NotificationCompat;
 import android.text.TextUtils;
 
 import com.buzzvil.buzzscreen.migration.MigrationTo;
@@ -23,7 +23,7 @@ public class App extends MultiDexApplication {
 
         // BuzzScreen initialization code (same as the M app)
         // M앱과 동일한 기존 버즈스크린 초기화 코드.
-        BuzzScreen.init("my_app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // Code for migration
         // 마이그레이션을 위한 코드

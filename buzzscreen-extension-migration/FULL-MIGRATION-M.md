@@ -68,7 +68,7 @@ public class App extends Application {
         super.onCreate();
 
         // 기존 버즈스크린 초기화 코드.
-        BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // 마이그레이션을 위한 코드
         // L앱의 패키지명이 com.buzzvil.buzzscreen.sample_lock 인 경우 사용 예시

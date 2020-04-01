@@ -26,19 +26,10 @@
             android:screenOrientation="portrait"
             android:taskAffinity="${applicationId}.Locker" />
 
-        <!-- Configuration for BuzzScreen-->
-        <!--Replace <app_license> with a new value provided by your account manager.
-         This valude should be different from the original M app.-->
-        <!--Replace <plist> with with a new value provided by your account manager.
-         This valude should be different from the original M app.-->
-        <!-- <app_license> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
-        <!-- <plist> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
+        <!-- 0000000000000를 발급받은 값으로 교체합니다. -->
         <meta-data
-            android:name="app_license"
-            android:value="__app_license__" />
-        <meta-data
-            android:name="com.buzzvil.locker.mediation.baidu.plist"
-            android:value="__plist__" />
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-0000000000000" />
     </application>
 
 </manifest>

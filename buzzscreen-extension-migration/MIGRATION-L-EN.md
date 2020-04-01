@@ -2,22 +2,18 @@
 Reference : **`sample_lock`**
 
 ### 1. Buzzscreen SDK should be integrated with L app.
-- Buzzscreen SDK version 1.6.0 or higher
-- `app_license` and `com.buzzvil.locker.mediation.baidu.plist` values should be newly issued (please ask Buzzvil AM). 
+- Buzzscreen SDK version 3.0.0 or higher
+- `com.buzzvil.APP_KEY` values should be newly issued (please ask Buzzvil AM).
     `AndroidManifest.xml` 
     ```xml
     <manifest>
         <application>
             ...
             <!-- Configuration for BuzzScreen-->
-            <!-- <app_license> should be newly issued and different from the value used on M app. -->
-            <!-- Replace <plist> with newly issued value.  -->
+            <!-- Replace 0000000000000 with newly issued value.  -->
             <meta-data
-                android:name="app_license"
-                android:value="<app_license>" />
-            <meta-data
-                android:name="com.buzzvil.locker.mediation.baidu.plist"
-                android:value="<plist>" />
+                android:name="com.buzzvil.APP_KEY"
+                android:value="app-pub-0000000000000" />
         </application>
     </manifest>
     ```
@@ -64,7 +60,7 @@ public class App extends Application {
         super.onCreate();
 
         // original initiation code for Buzzscreen. This code is the same for M App and L App.
-        BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // code for migration
         // example code uses com.buzzvil.buzzscreen.sample_main for M app package name
