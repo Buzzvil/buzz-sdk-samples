@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sample">
 
-    <application/>
+    <uses-sdk tools:overrideLibrary="com.google.android.exoplayer2.core,
+        com.google.android.exoplayer2.ext.ima,
+        com.google.android.exoplayer2.source.hls,
+        com.google.android.exoplayer2.ui" />
+
+    <application
+        android:name="com.sample.App">
+
+        <!-- Caution: Replace `419318955785795` with Your AppKey  -->
+        <meta-data
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-419318955785795" />
+    </application>
 
 </manifest>

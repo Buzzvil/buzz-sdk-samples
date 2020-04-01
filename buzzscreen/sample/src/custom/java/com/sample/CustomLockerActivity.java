@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.Snackbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -17,6 +16,7 @@ import com.buzzvil.buzzscreen.sdk.Campaign;
 import com.buzzvil.buzzscreen.sdk.widget.Slider;
 import com.buzzvil.buzzscreen.sdk.widget.SliderIcon;
 import com.buzzvil.locker.AutoplayState;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
