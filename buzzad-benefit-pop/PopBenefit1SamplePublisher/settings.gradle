@@ -1,0 +1,2 @@
+rootProject.name='PopBenefit1SamplePublisher'
+include ':app'
