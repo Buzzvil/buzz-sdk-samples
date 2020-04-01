@@ -12,6 +12,7 @@ import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.SidePosition;
+import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
@@ -34,6 +35,7 @@ public class App extends MultiDexApplication {
 
     private void initBuzzAdBenefit() {
         final FeedConfig popFeedConfig = new FeedConfig.Builder(this, UNIT_ID)
+                .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
                 .articlesEnabled(true)
                 .articleInAppLandingEnabled(true)
                 .build();

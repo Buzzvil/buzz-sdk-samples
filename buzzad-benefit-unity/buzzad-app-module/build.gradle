@@ -25,7 +25,6 @@ afterEvaluate {
 }
 
 repositories {
-    maven { url "https://dl.bintray.com/buzzvil/test/" }        // ADDED BY ALAN
     maven { url "https://dl.bintray.com/buzzvil/maven/" }       // ADDED BY ALAN
 }
 
@@ -35,7 +34,6 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
-    compileOnly ("com.buzzvil:buzzad-benefit-pop:2.0.1-alpha-rc13")   // ADDED BY ALAN
-    implementation ("androidx.multidex:multidex:2.0.1")                 // ADDED BY ALAN
-    // implementation 'androidx.appcompat:appcompat:1.0.2'
+    compileOnly ("com.buzzvil:buzzad-benefit-pop:2.0.0-rc15")   // ADDED BY ALAN
+    implementation ("androidx.multidex:multidex:2.0.1")         // ADDED BY ALAN
 }
