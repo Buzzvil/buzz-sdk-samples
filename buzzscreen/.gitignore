@@ -1,0 +1,15 @@
+.gradle
+/local.properties
+.idea/
+build/
+*.iml
+
+.metadata
+.settings
+.recommenders/
+.project
+.classpath
+
+bin/
+gen/
+reports/
