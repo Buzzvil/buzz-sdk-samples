@@ -11,14 +11,27 @@ import WebKit
 import BuzzAdBenefit
 import BuzzAdBenefitWebInterface
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKScriptMessageHandler {
 
   @IBOutlet var loginButton: UIButton!
-  @IBOutlet var webView: WKWebView!
+  @IBOutlet var webViewContainer: UIView!
+  var webView: WKWebView!
+  var webInterface: BABWebInterface!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let config = WKWebViewConfiguration()
+    let contentController = WKUserContentController()
+    contentController.add(self, name: BuzzAdBenefitWebInterfaceName)
+    config.userContentController = contentController
+
+    webView = WKWebView(frame: webViewContainer.bounds, configuration: config)
+    webViewContainer.addSubview(webView)
+
+    webInterface = BABWebInterface(webView: webView)
+
+    NotificationCenter.default.addObserver(self, selector: #selector(sessionRegistered), name: NSNotification.Name.BABSessionRegistered, object: nil)
   }
 
   @IBAction func loginButtonTapped(_ sender: UIButton?) {
@@ -27,11 +40,20 @@ class ViewController: UIViewController {
     if loggedIn {
       BuzzAdBenefit.setUserProfile(nil)
     } else {
-      let userProfile = BABUserProfile(userId: YOUR_SERVICE_USER_ID, birthYear: 1985, gender: BABUserGenderMale)
+      let userProfile = BABUserProfile(userId: "YOUR_SERVICE_USER_ID", birthYear: 1985, gender: BABUserGenderMale)
       BuzzAdBenefit.setUserProfile(userProfile)
-
     }
   }
 
+  func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    webInterface.handle(message)
+  }
+
+  @objc func sessionRegistered() {
+    if let url = URL(string: "https://buzzvil.github.io/buzzad-benefit-sdk-publisher-web/") {
+      let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+      webView.load(request)
+    }
+  }
 }
 
