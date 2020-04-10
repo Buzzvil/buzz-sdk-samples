@@ -23,7 +23,16 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    implementation ("com.buzzvil:buzzad-benefit:1.7.0") {
+        // 현재 Pop 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
+        exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
+        // 현재 Notification 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
+        exclude group: 'com.buzzvil', module: 'buzzad-benefit-notification'
+    }
+
     testImplementation 'junit:junit:4.12'
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
