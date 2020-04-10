@@ -1,0 +1,9 @@
+platform :ios, '9.0'
+
+target 'BABWebSample' do
+  use_frameworks!
+  inhibit_all_warnings!
+
+  # Pods for BABWebSample
+  pod 'BuzzAdBenefit', '1.2.15'
+end

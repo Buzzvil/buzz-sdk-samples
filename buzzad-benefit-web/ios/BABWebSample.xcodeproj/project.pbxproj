@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DF3E26CBC1A5E5C65FCC046 /* Pods_BABWebSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12483E95592D141DF859704C /* Pods_BABWebSample.framework */; };
 		C4B2482C2440677700079036 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2482B2440677700079036 /* AppDelegate.swift */; };
 		C4B2482E2440677700079036 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2482D2440677700079036 /* SceneDelegate.swift */; };
 		C4B248302440677700079036 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2482F2440677700079036 /* ViewController.swift */; };
@@ -15,7 +16,23 @@
 		C4B248382440677900079036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B248362440677900079036 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C46D1D26244068E400B503FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		12483E95592D141DF859704C /* Pods_BABWebSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BABWebSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A314770F5C8050B51117CE9C /* Pods-BABWebSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABWebSample.debug.xcconfig"; path = "Target Support Files/Pods-BABWebSample/Pods-BABWebSample.debug.xcconfig"; sourceTree = "<group>"; };
+		BF2F9CF0E922BCD1F34E2403 /* Pods-BABWebSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABWebSample.release.xcconfig"; path = "Target Support Files/Pods-BABWebSample/Pods-BABWebSample.release.xcconfig"; sourceTree = "<group>"; };
 		C4B248282440677700079036 /* BABWebSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BABWebSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B2482B2440677700079036 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B2482D2440677700079036 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DF3E26CBC1A5E5C65FCC046 /* Pods_BABWebSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,8 @@
 			children = (
 				C4B2482A2440677700079036 /* BABWebSample */,
 				C4B248292440677700079036 /* Products */,
+				DADB95DA34D509F3E7366D1A /* Pods */,
+				E891BEFCB10BF28C0CD0DBC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +87,23 @@
 			path = BABWebSample;
 			sourceTree = "<group>";
 		};
+		DADB95DA34D509F3E7366D1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A314770F5C8050B51117CE9C /* Pods-BABWebSample.debug.xcconfig */,
+				BF2F9CF0E922BCD1F34E2403 /* Pods-BABWebSample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E891BEFCB10BF28C0CD0DBC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12483E95592D141DF859704C /* Pods_BABWebSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +111,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4B2483C2440677900079036 /* Build configuration list for PBXNativeTarget "BABWebSample" */;
 			buildPhases = (
+				0E4DA2E772F208A1CD920F54 /* [CP] Check Pods Manifest.lock */,
 				C4B248242440677700079036 /* Sources */,
 				C4B248252440677700079036 /* Frameworks */,
 				C4B248262440677700079036 /* Resources */,
+				C46D1D26244068E400B503FF /* Embed Frameworks */,
+				0BC731B482405B3F7D49740E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +172,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BC731B482405B3F7D49740E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BABWebSample/Pods-BABWebSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BABWebSample/Pods-BABWebSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BABWebSample/Pods-BABWebSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E4DA2E772F208A1CD920F54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BABWebSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4B248242440677700079036 /* Sources */ = {
@@ -282,10 +364,15 @@
 		};
 		C4B2483D2440677900079036 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A314770F5C8050B51117CE9C /* Pods-BABWebSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67369282ZY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BABWebSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,10 +387,15 @@
 		};
 		C4B2483E2440677900079036 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF2F9CF0E922BCD1F34E2403 /* Pods-BABWebSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67369282ZY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BABWebSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

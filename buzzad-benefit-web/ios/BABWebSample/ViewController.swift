@@ -7,14 +7,31 @@
 //
 
 import UIKit
+import WebKit
+import BuzzAdBenefit
+import BuzzAdBenefitWebInterface
 
 class ViewController: UIViewController {
 
+  @IBOutlet var loginButton: UIButton!
+  @IBOutlet var webView: WKWebView!
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
   }
 
+  @IBAction func loginButtonTapped(_ sender: UIButton?) {
+    let loggedIn = BuzzAdBenefit.sharedInstance().userProfile?.isSessionRegistered() ?? false
+
+    if loggedIn {
+      BuzzAdBenefit.setUserProfile(nil)
+    } else {
+      let userProfile = BABUserProfile(userId: YOUR_SERVICE_USER_ID, birthYear: 1985, gender: BABUserGenderMale)
+      BuzzAdBenefit.setUserProfile(userProfile)
+
+    }
+  }
 
 }
 
