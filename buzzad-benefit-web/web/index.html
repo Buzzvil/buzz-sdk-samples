@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <title>Buzzad-Benefit SDK Sample Webpage for Publishers</title>
+    <title>Web Sample Code for Benefit JS SDK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="index.css" rel="stylesheet">
 
@@ -10,30 +10,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   </head>
   <body>
-    <h1>Buzzad-Benefit SDK Sample Webpage for Publishers</h1>
+    <h1>Web Sample Code for Benefit JS SDK</h1>
     <div id="login">
       <button id="login-button" onclick="login(this)">
         Test Web Login
       </button>
+      <button id="reload-button" onclick="reloadAd()">
+        Reload Ad
+      </button>
     </div>
     <ol id="posts">
-      <li class="post">
-        <div class="image">
-          <img src="https://picsum.photos/500/260?q=1">
-        </div>
-        <div class="writer">
-          <div class="icon-wrapper">
-            <img class="icon" src="https://picsum.photos/32/32?q=1" alt="profile">
-          </div>
-          <div class="info">
-            <h5 class="name">John Stone</h5>
-            <div class="timestamp">30 minutes ago</div>
-          </div>
-        </div>
-        <div class="body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur sodales eros a tincidunt. Aenean laoreet vitae eros et feugiat.
-        </div>
-      </li>
       <!-- View to display ad -->
       <li class="post native-ad" id="nativeAd" style="display: none">
         <div class="buzz-mediaview clickable">
@@ -50,6 +36,23 @@
         </div>
         <div class="button-wrapper">
           <button class="cta clickable"></button>
+        </div>
+      </li>
+      <li class="post">
+        <div class="image">
+          <img src="https://picsum.photos/500/260?q=1">
+        </div>
+        <div class="writer">
+          <div class="icon-wrapper">
+            <img class="icon" src="https://picsum.photos/32/32?q=1" alt="profile">
+          </div>
+          <div class="info">
+            <h5 class="name">John Stone</h5>
+            <div class="timestamp">30 minutes ago</div>
+          </div>
+        </div>
+        <div class="body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur sodales eros a tincidunt. Aenean laoreet vitae eros et feugiat.
         </div>
       </li>
       <li class="post">
@@ -92,7 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- end -->
 
-    <script src="https://buzz-js.buzzvil.com/buzzad-benefit-sdk/1.1.1/buzzad-benefit-sdk.js"></script>
+    <script src="https://buzz-js.buzzvil.com/buzzad-benefit-sdk/1.0.4/buzzad-benefit-sdk.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
