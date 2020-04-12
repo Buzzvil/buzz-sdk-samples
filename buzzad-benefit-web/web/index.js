@@ -41,19 +41,23 @@ function log(message, bad) {
 
   BuzzAdBenefit.init(config);
 
+  var ads = [];
+
   function loadAd() {
     // Setup Ad Placement
     const loadConfig = {
       unitId: {
         android: '232661007718829',
         ios: '131298264757814',
-      }
+      },
+      count: 3
     }
 
     BuzzAdBenefit.loadAd(loadConfig)
-      .then(function (nativeAd) {
+      .then(function (nativeAds) {
         log('ON AD LOADED: An ad is loaded.');
-        populateAd(nativeAd);
+        ads = ads.concat(nativeAds);
+        populateAd(ads.shift());
       }).catch(function(error) {
         log('ON LOAD ERROR: An error is detected: ' + error.message, true);
       });
