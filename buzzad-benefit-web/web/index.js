@@ -67,7 +67,15 @@ function log(message, bad) {
     console.log(error.message);
   }
 
-  window.reloadAd = loadAd;
+  function reloadAd() {
+    if (ads.length) {
+      populateAd(ads.shift());
+    } else {
+      loadAd();
+    }
+  }
+
+  window.reloadAd = reloadAd;
 
   BuzzAdBenefit.ensureAuthenticated
     .then(loadAd)
