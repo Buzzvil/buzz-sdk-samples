@@ -94,10 +94,14 @@ li.post {
   position: relative;
   height: 32px;
   line-height: 32px;
-  width: 144px;
+  min-width: 144px;
+  max-width: 50%;
   border-radius: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background: #FF695E;
-  padding: 0;
+  padding: 0 10px;
   font-family: Noto Sans KR;
   font-style: normal;
   font-weight: bold;
@@ -112,7 +116,7 @@ li.post {
   border: none;
 }
 .cta.reward, .cta.participated {
-  padding-left: 12px;
+  padding-left: 30px;
 }
 .cta::before {
   position: absolute;
