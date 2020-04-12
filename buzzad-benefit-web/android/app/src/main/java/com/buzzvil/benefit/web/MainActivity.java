@@ -1,8 +1,5 @@
 package com.buzzvil.benefit.web;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.webkit.WebView;
@@ -44,21 +41,13 @@ public class MainActivity extends AppCompatActivity {
         setupUserIdView();
         setupLoginButton();
         setupWebView();
-        final boolean isLogin = fetchBuzzvilCredential();
-        if (isLogin) {
-            openWebPage();
-        }
     }
 
+    /**
+     * Create random userId when app is launched
+     */
     private void setupUserIdView() {
         userIdView.setText("TEST_" + (random.nextInt() & Integer.MAX_VALUE));
-        BuzzAdBenefit.registerSessionReadyBroadcastReceiver(this, new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                BuzzAdBenefit.unregisterSessionReadyBroadcastReceiver(context, this);
-                fetchBuzzvilCredential();
-            }
-        });
     }
 
     private void setupLoginButton() {
@@ -74,9 +63,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * IMPORTANT
+     * <p>
+     * * Javascript must be enabled
+     * * Apply BuzzAdBenefitJavascriptInterface
+     */
     private void setupWebView() {
         final BuzzAdBenefitJavascriptInterface javascriptInterface = new BuzzAdBenefitJavascriptInterface(webView);
-        webView.getSettings().setJavaScriptEnabled(true); // JS를 사용하여 광고를 로드하기 때문에 필수임
+        webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(javascriptInterface, BuzzAdBenefitJavascriptInterface.INTERFACE_NAME);
     }
 
@@ -91,15 +86,13 @@ public class MainActivity extends AppCompatActivity {
         this.userIdView.setEnabled(true);
     }
 
-    private boolean fetchBuzzvilCredential() {
-        final UserProfile userProfile = BuzzAdBenefit.getUserProfile();
-        if (userProfile != null && !TextUtils.isEmpty(userProfile.getUserId())) {
-            setLoginUi(userProfile.getUserId());
-            return true;
-        }
-        return false;
-    }
-
+    /**
+     * IMPORTANT
+     * <p>
+     * Create UserProfile from user's info,
+     * apply to BuzzAdBenefit
+     * and open the web page which benefit JS SDK is integrated in.
+     */
     private void login() {
         // Simulate a user's login
         final String userId = userIdView.getText().toString();
@@ -125,6 +118,12 @@ public class MainActivity extends AppCompatActivity {
         closeWebPage();
     }
 
+    /**
+     * IMPORTANT
+     * <p>
+     * Open the page which benefit JS SDK is integrated in.
+     * It must not be called before UserProfile is set.
+     */
     private void openWebPage() {
         webView.loadUrl(App.MY_WEB_PAGE);
     }
