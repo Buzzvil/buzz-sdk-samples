@@ -58,9 +58,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
   }
 
   @objc func sessionRegistered() {
-//    let urlString = "https://buzzvil.github.io/buzz-js/buzzad-benefit-sdk/happyscreen/"
     let urlString = "https://buzzvil.github.io/buzzad-benefit-sdk-publisher-web/"
-//    let urlString = "http://www.naver.com/"
     if let url = URL(string: urlString) {
       let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
       webView.load(request)
