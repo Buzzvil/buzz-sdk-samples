@@ -5,5 +5,5 @@ target 'BABWebSample' do
   inhibit_all_warnings!
 
   # Pods for BABWebSample
-  pod 'BuzzAdBenefit', '1.2.15'
+  pod 'BuzzAdBenefit', '1.2.16'
 end

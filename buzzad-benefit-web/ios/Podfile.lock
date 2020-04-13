@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - BuzzAdBenefit (1.2.15):
+  - BuzzAdBenefit (1.2.16):
     - AFNetworking (~> 3.0)
     - SDWebImage (~> 4.0)
     - SDWebImage/WebP (~> 4.0)
@@ -35,7 +35,7 @@ PODS:
     - SDWebImage/Core
 
 DEPENDENCIES:
-  - BuzzAdBenefit (= 1.2.15)
+  - BuzzAdBenefit (= 1.2.16)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -46,10 +46,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  BuzzAdBenefit: 781d7e89cc55a0c880f9f583dc90abcafd0dfaf3
+  BuzzAdBenefit: 4ee2f78d4a2c7ddb9a8e64e3f4c2a8c790b560e0
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
-PODFILE CHECKSUM: aedf183458ed2d7d3b23cc45ca686277dc07cb29
+PODFILE CHECKSUM: 7437b3d706a77cae43bb98e42f33cce85866c448
 
 COCOAPODS: 1.7.5

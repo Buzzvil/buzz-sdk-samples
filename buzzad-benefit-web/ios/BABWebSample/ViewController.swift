@@ -29,6 +29,14 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     webView = WKWebView(frame: webViewContainer.bounds, configuration: config)
     webViewContainer.addSubview(webView)
 
+    webView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      NSLayoutConstraint(item: webView!, attribute: .top, relatedBy: .equal, toItem: webViewContainer, attribute: .top, multiplier: 1, constant: 0),
+      NSLayoutConstraint(item: webView!, attribute: .bottom, relatedBy: .equal, toItem: webViewContainer, attribute: .bottom, multiplier: 1, constant: 0),
+      NSLayoutConstraint(item: webView!, attribute: .left, relatedBy: .equal, toItem: webViewContainer, attribute: .left, multiplier: 1, constant: 0),
+      NSLayoutConstraint(item: webView!, attribute: .right, relatedBy: .equal, toItem: webViewContainer, attribute: .right, multiplier: 1, constant: 0),
+    ])
+
     webInterface = BABWebInterface(webView: webView)
 
     NotificationCenter.default.addObserver(self, selector: #selector(sessionRegistered), name: NSNotification.Name.BABSessionRegistered, object: nil)
@@ -40,7 +48,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     if loggedIn {
       BuzzAdBenefit.setUserProfile(nil)
     } else {
-      let userProfile = BABUserProfile(userId: "YOUR_SERVICE_USER_ID", birthYear: 1985, gender: BABUserGenderMale)
+      let userProfile = BABUserProfile(userId: "YOUR_SERVICE_USER_ID_\(arc4random())", birthYear: 1985, gender: BABUserGenderMale)
       BuzzAdBenefit.setUserProfile(userProfile)
     }
   }
@@ -50,7 +58,10 @@ class ViewController: UIViewController, WKScriptMessageHandler {
   }
 
   @objc func sessionRegistered() {
-    if let url = URL(string: "https://buzzvil.github.io/buzzad-benefit-sdk-publisher-web/") {
+//    let urlString = "https://buzzvil.github.io/buzz-js/buzzad-benefit-sdk/happyscreen/"
+    let urlString = "https://buzzvil.github.io/buzzad-benefit-sdk-publisher-web/"
+//    let urlString = "http://www.naver.com/"
+    if let url = URL(string: urlString) {
       let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
       webView.load(request)
     }
