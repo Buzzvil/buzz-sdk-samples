@@ -28,42 +28,6 @@
                 android:layout_height="wrap_content"
                 android:text="Unregister pop" />
 
-            <TextView
-                style="@style/Base.TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Pop Message Preview" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
-
-                <Button
-                    android:id="@+id/pop_set_message_preview"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Message" />
-
-                <Button
-                    android:id="@+id/pop_set_message_preview_with_icon"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Icon" />
-
-                <Button
-                    android:id="@+id/pop_remove_message_preview"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Remove" />
-
-            </LinearLayout>
-
         </LinearLayout>
 
     </ScrollView>
