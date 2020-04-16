@@ -1,10 +1,14 @@
 package com.buzzvil.buzzad.benefit.sample.publisher.nativead;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.buzzvil.buzzad.benefit.presentation.reward.RewardResult;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -21,7 +25,6 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
-import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRewardResult;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoEventListener;
@@ -79,7 +82,7 @@ public class PagerAdsView extends FrameLayout {
         pager.setAdapter(nativeAdsAdapter);
     }
 
-    private static class NativeAdsAdapter extends android.support.v4.view.PagerAdapter {
+    private static class NativeAdsAdapter extends PagerAdapter {
         private final List<NativeAd> nativeAds;
 
         NativeAdsAdapter(Collection<NativeAd> nativeAds) {
@@ -200,11 +203,11 @@ public class PagerAdsView extends FrameLayout {
                 }
 
                 @Override
-                public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable NativeAdRewardResult nativeAdRewardResult) {
+                public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
                     // Result of Reward Request can be found here
                     // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
                     // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
-                    Toast.makeText(nativeAdView.getContext(), "onRewarded: " + nativeAdRewardResult, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(nativeAdView.getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
                 }
 
                 @Override

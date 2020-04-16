@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         feedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_FEED)
+                final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
                         .adsAdapterClass(CustomAdsAdapter.class)
                         .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
                         .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
