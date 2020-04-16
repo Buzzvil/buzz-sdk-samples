@@ -1,8 +1,8 @@
 package com.buzzvil.buzzad.benefit.sample.publisher.nativead;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +18,8 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
-import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRewardResult;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.presentation.reward.RewardResult;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoEventListener;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
@@ -166,11 +166,11 @@ public class InterstitialAdView extends FrameLayout {
             }
 
             @Override
-            public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable NativeAdRewardResult nativeAdRewardResult) {
+            public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
                 // Result of Reward Request can be found here
                 // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
                 // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
-                Toast.makeText(getContext(), "onRewarded: " + nativeAdRewardResult, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
             }
 
             @Override

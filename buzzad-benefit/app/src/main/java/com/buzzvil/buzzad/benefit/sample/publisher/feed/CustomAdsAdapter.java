@@ -1,8 +1,8 @@
 package com.buzzvil.buzzad.benefit.sample.publisher.feed;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +19,8 @@ import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
-import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRewardResult;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.presentation.reward.RewardResult;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoEventListener;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
@@ -47,8 +47,8 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
         }
 
         @Override
-        public void onRewarded(@NonNull NativeAdView view, @NonNull NativeAd nativeAd, @Nullable NativeAdRewardResult nativeAdRewardResult) {
-            Toast.makeText(view.getContext(), "onRewarded: " + nativeAdRewardResult, Toast.LENGTH_SHORT).show();
+        public void onRewarded(@NonNull NativeAdView view, @NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
+            Toast.makeText(view.getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
         }
 
         @Override
