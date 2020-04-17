@@ -1,5 +1,8 @@
 package com.buzzvil.benefit.web;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.webkit.WebView;
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         this.random = new Random();
 
         setupView();
+        setupBuzzAdBenefitSessionListener();
+        openWebPage();
     }
 
     private void setupView() {
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
      * Create random userId when app is launched
      */
     private void setupUserIdView() {
-        userIdView.setText("TEST_" + (random.nextInt() & Integer.MAX_VALUE));
+        userIdView.setText("TEST_AOS_" + (random.nextInt() & Integer.MAX_VALUE));
     }
 
     private void setupLoginButton() {
@@ -109,13 +114,30 @@ public class MainActivity extends AppCompatActivity {
 
         BuzzAdBenefit.setUserProfile(userProfile);
         this.setLoginUi(userId);
-        openWebPage();
     }
 
     private void logout() {
         BuzzAdBenefit.setUserProfile(null);
         setLogoutUi();
-        closeWebPage();
+    }
+
+    /**
+     * If UserProfile is setup, set to Login UI
+     */
+    private void setupBuzzAdBenefitSessionListener() {
+        final UserProfile userProfile = BuzzAdBenefit.getUserProfile();
+        if (userProfile == null || TextUtils.isEmpty(userProfile.getSessionKey())) {
+            BuzzAdBenefit.registerSessionReadyBroadcastReceiver(this, new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    BuzzAdBenefit.unregisterSessionReadyBroadcastReceiver(MainActivity.this, this);
+                    final UserProfile userProfile = BuzzAdBenefit.getUserProfile();
+                    setLoginUi(userProfile.getUserId());
+                }
+            });
+        } else {
+            setLoginUi(userProfile.getUserId());
+        }
     }
 
     /**
@@ -126,9 +148,5 @@ public class MainActivity extends AppCompatActivity {
      */
     private void openWebPage() {
         webView.loadUrl(App.MY_WEB_PAGE);
-    }
-
-    private void closeWebPage() {
-        webView.loadUrl("about:blank");
     }
 }

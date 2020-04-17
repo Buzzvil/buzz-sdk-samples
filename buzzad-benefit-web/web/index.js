@@ -1,6 +1,10 @@
 function login() {
+  const userId = document.getElementById('user-id').value;
+  if (!userId) {
+    return;
+  }
   const userProfile = {
-    userId: 'TEST_USER_ID',
+    userId: userId,
     birthYear: 1980,
   };
   if (window.BuzzAdBenefit) {
@@ -10,7 +14,14 @@ function login() {
     }
     userProfile.gender = genders.FEMALE;
     window.BuzzAdBenefit.setUserProfile(userProfile);
+    setLoginUi(userId);
   }
+}
+
+function setLoginUi(userId) {
+  document.getElementById('user-id').value = userId;
+  document.getElementById('user-id').disabled = true;
+  document.getElementById('login-button').disabled = true;
 }
 
 function showToast(message, bad) {
@@ -25,6 +36,11 @@ function log(message, bad) {
   console.log(message);
   showToast(message, bad);
 }
+
+(function() {
+  const userIdView = document.getElementById('user-id');
+  userIdView.value += Math.random().toString(36).substring(7);
+})();
 
 /**
  * Setup BuzzAdBenefit SDK
@@ -44,6 +60,7 @@ function log(message, bad) {
   var ads = [];
 
   function loadAd() {
+    setLoginUi(BuzzAdBenefit.instance.core.userProfile.userId);
     // Setup Ad Placement
     const loadConfig = {
       unitId: {
