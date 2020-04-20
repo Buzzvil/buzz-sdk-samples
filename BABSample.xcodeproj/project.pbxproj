@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9BFDD35759B08FD80179F975 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
-		C41DEF4A2282AD2600271C34 /* CustomAdViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = C41DEF472282AD2600271C34 /* CustomAdViewHolder.m */; };
-		C41DEF4B2282AD2600271C34 /* CustomAdViewHolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = C41DEF492282AD2600271C34 /* CustomAdViewHolder.xib */; };
+		C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AAE244D299E00F0C436 /* CarouselView.m */; };
+		C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4307AB0244D299E00F0C436 /* CarouselView.xib */; };
+		C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AB3244D299F00F0C436 /* WebViewController.m */; };
 		C4A297502240F06900F6D677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2974F2240F06900F6D677 /* AppDelegate.m */; };
 		C4A297532240F06900F6D677 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A297522240F06900F6D677 /* ViewController.m */; };
 		C4A297562240F06900F6D677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A297542240F06900F6D677 /* Main.storyboard */; };
@@ -21,9 +22,11 @@
 /* Begin PBXFileReference section */
 		B58C59731E43AC7DA91D8058 /* Pods-BABSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B80A664165F8931FCCCA62FF /* Pods-BABSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.release.xcconfig"; sourceTree = "<group>"; };
-		C41DEF472282AD2600271C34 /* CustomAdViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAdViewHolder.m; sourceTree = "<group>"; };
-		C41DEF482282AD2600271C34 /* CustomAdViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAdViewHolder.h; sourceTree = "<group>"; };
-		C41DEF492282AD2600271C34 /* CustomAdViewHolder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAdViewHolder.xib; sourceTree = "<group>"; };
+		C4307AAC244D299E00F0C436 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		C4307AAD244D299E00F0C436 /* CarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselView.h; sourceTree = "<group>"; };
+		C4307AAE244D299E00F0C436 /* CarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselView.m; sourceTree = "<group>"; };
+		C4307AB0244D299E00F0C436 /* CarouselView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
+		C4307AB3244D299F00F0C436 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		C4A2974B2240F06900F6D677 /* BABSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BABSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A2974E2240F06900F6D677 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4A2974F2240F06900F6D677 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,13 +84,15 @@
 		C4A2974D2240F06900F6D677 /* BABSample */ = {
 			isa = PBXGroup;
 			children = (
+				C4307AAD244D299E00F0C436 /* CarouselView.h */,
+				C4307AAE244D299E00F0C436 /* CarouselView.m */,
+				C4307AB0244D299E00F0C436 /* CarouselView.xib */,
+				C4307AAC244D299E00F0C436 /* WebViewController.h */,
+				C4307AB3244D299F00F0C436 /* WebViewController.m */,
 				C4A2974E2240F06900F6D677 /* AppDelegate.h */,
 				C4A2974F2240F06900F6D677 /* AppDelegate.m */,
 				C4A297512240F06900F6D677 /* ViewController.h */,
 				C4A297522240F06900F6D677 /* ViewController.m */,
-				C41DEF482282AD2600271C34 /* CustomAdViewHolder.h */,
-				C41DEF472282AD2600271C34 /* CustomAdViewHolder.m */,
-				C41DEF492282AD2600271C34 /* CustomAdViewHolder.xib */,
 				C4A297542240F06900F6D677 /* Main.storyboard */,
 				C4A297572240F06B00F6D677 /* Assets.xcassets */,
 				C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */,
@@ -164,10 +169,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C41DEF4B2282AD2600271C34 /* CustomAdViewHolder.xib in Resources */,
 				C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */,
 				C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */,
 				C4A297562240F06900F6D677 /* Main.storyboard in Resources */,
+				C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,9 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C41DEF4A2282AD2600271C34 /* CustomAdViewHolder.m in Sources */,
+				C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */,
 				C4A297532240F06900F6D677 /* ViewController.m in Sources */,
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
+				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
 				C4A297502240F06900F6D677 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

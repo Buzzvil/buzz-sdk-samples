@@ -10,6 +10,7 @@
 
 @class BABNativeAdView;
 @class BABMediaView;
+@class CarouselView;
 
 @interface ViewController : UIViewController
 
@@ -21,6 +22,8 @@
 @property (nonatomic, strong) IBOutlet BABMediaView *mediaView;
 @property (nonatomic, strong) IBOutlet UISwitch *launcherSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *shouldClickSwitch;
-
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *loginButton;
+@property (nonatomic, strong) IBOutlet CarouselView *carouselView;
+@property (nonatomic, strong) IBOutlet UIView *container;
 @end
 

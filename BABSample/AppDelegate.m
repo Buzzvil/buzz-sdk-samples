@@ -17,12 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   BABConfig *config = [[BABConfig alloc] initWithAppId:@"100000044" environment:BABEnvProduction logging:YES];
+  NSString *appGroupId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AppGroupId"];
+  if (appGroupId != nil) {
+    [config setEnableWidget:YES];
+    [config setAppGroupId:appGroupId];
+  }
   [BuzzAdBenefit initializeWithConfig:config];
 
-  BABUserProfile *userProfile = [[BABUserProfile alloc] initWithUserId:[NSString stringWithFormat:@"%d", arc4random() % 99999999]];
-  [BuzzAdBenefit setUserProfile:userProfile];
-
-  BABUserPreference *userPreference = [[BABUserPreference alloc] initWithAutoPlayType:BABVideoAutoPlayDisabled];
+  BABUserPreference *userPreference = [[BABUserPreference alloc] initWithAutoPlayType:BABVideoAutoPlayOnWifi];
   [BuzzAdBenefit setUserPreference:userPreference];
   return YES;
 }
