@@ -3,8 +3,10 @@ package com.buzzvil.benefit.web;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -77,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
     private void setupWebView() {
         final BuzzAdBenefitJavascriptInterface javascriptInterface = new BuzzAdBenefitJavascriptInterface(webView);
         webView.getSettings().setJavaScriptEnabled(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // 롤리팝부터 Mixed Content 에러 막기 위함.
+            webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
         webView.addJavascriptInterface(javascriptInterface, BuzzAdBenefitJavascriptInterface.INTERFACE_NAME);
     }
 
