@@ -8,8 +8,13 @@ android {
         multiDexEnabled true        // ADDED BY ALAN
     }
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -34,6 +39,6 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
-    compileOnly ("com.buzzvil:buzzad-benefit-pop:2.0.2-rc2")    // ADDED BY ALAN
+    compileOnly ("com.buzzvil:buzzad-benefit-pop:2.0.2")        // ADDED BY ALAN
     implementation ("androidx.multidex:multidex:2.0.1")         // ADDED BY ALAN
 }
