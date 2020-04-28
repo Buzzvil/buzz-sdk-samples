@@ -17,6 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- Change the value of APP_KEY to yours. -->
+        <meta-data
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-310600461728380" />
+    </application>
 </manifest>

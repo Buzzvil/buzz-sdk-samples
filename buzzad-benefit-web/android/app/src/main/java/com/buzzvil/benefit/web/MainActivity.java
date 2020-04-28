@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.CompoundButton;
@@ -119,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         BuzzAdBenefit.setUserProfile(userProfile);
-        this.setLoginUi(userId);
     }
 
     private void logout() {
@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             BuzzAdBenefit.registerSessionReadyBroadcastReceiver(this, new BroadcastReceiver() {
                 @Override
                 public void onReceive(Context context, Intent intent) {
+                    Log.d("JSSDK", "REGISTER SESSION READY");
                     BuzzAdBenefit.unregisterSessionReadyBroadcastReceiver(MainActivity.this, this);
                     final UserProfile userProfile = BuzzAdBenefit.getUserProfile();
                     setLoginUi(userProfile.getUserId());
