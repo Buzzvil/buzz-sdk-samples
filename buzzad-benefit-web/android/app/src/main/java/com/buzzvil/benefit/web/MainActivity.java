@@ -119,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         BuzzAdBenefit.setUserProfile(userProfile);
-        this.setLoginUi(userId);
     }
 
     private void logout() {
@@ -131,19 +130,14 @@ public class MainActivity extends AppCompatActivity {
      * If UserProfile is setup, set to Login UI
      */
     private void setupBuzzAdBenefitSessionListener() {
-        final UserProfile userProfile = BuzzAdBenefit.getUserProfile();
-        if (userProfile == null || TextUtils.isEmpty(userProfile.getSessionKey())) {
-            BuzzAdBenefit.registerSessionReadyBroadcastReceiver(this, new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
-                    BuzzAdBenefit.unregisterSessionReadyBroadcastReceiver(MainActivity.this, this);
-                    final UserProfile userProfile = BuzzAdBenefit.getUserProfile();
-                    setLoginUi(userProfile.getUserId());
-                }
-            });
-        } else {
-            setLoginUi(userProfile.getUserId());
-        }
+        BuzzAdBenefit.registerSessionReadyBroadcastReceiver(this, new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                BuzzAdBenefit.unregisterSessionReadyBroadcastReceiver(MainActivity.this, this);
+                final UserProfile userProfile = BuzzAdBenefit.getUserProfile();
+                setLoginUi(userProfile.getUserId());
+            }
+        });
     }
 
     /**
