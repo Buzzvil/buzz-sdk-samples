@@ -52,31 +52,28 @@ function log(message, bad) {
 
   // Initiate SDK
   const config = {
-    appId: '310600461728380'
+    appId: APP_ID
   }
 
   BuzzAdBenefit.init(config);
-
-  var ads = [];
 
   function loadAd() {
     setLoginUi(BuzzAdBenefit.instance.core.userProfile.userId);
     // Setup Ad Placement
     const loadConfig = {
       unitId: {
-        android: '232661007718829',
-        ios: '131298264757814',
-      },
-      count: 3
+        android: UNIT_ID_ANDROID,
+        ios: UNIT_ID_IOS,
+      }
     }
 
     BuzzAdBenefit.loadAd(loadConfig)
-      .then(function (nativeAds) {
+      .then(function (nativeAd) {
         log('ON AD LOADED: An ad is loaded.');
-        ads = ads.concat(nativeAds);
-        populateAd(ads.shift());
+        populateAd(nativeAd);
       }).catch(function(error) {
         log('ON LOAD ERROR: An error is detected: ' + error.message, true);
+        hideAd();
       });
   }
 
@@ -85,11 +82,7 @@ function log(message, bad) {
   }
 
   function reloadAd() {
-    if (ads.length) {
-      populateAd(ads.shift());
-    } else {
-      loadAd();
-    }
+    loadAd();
   }
 
   window.reloadAd = reloadAd;
@@ -122,6 +115,11 @@ function log(message, bad) {
     rootView.getElementsByClassName('body')[0].innerHTML = nativeAd.description;
 
     updateCtaView(rootView.getElementsByClassName('cta')[0], nativeAd);
+  }
+
+  function hideAd() {
+    const rootView = document.getElementById('nativeAd');
+    rootView.style.display = 'none';
   }
 
   function populateAd(nativeAd) {
