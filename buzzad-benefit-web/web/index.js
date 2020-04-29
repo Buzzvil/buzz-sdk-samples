@@ -52,7 +52,7 @@ function log(message, bad) {
 
   // Initiate SDK
   const config = {
-    appId: '310600461728380'
+    appId: APP_ID
   }
 
   BuzzAdBenefit.init(config);
@@ -62,8 +62,8 @@ function log(message, bad) {
     // Setup Ad Placement
     const loadConfig = {
       unitId: {
-        android: '232661007718829',
-        ios: '131298264757814',
+        android: UNIT_ID_ANDROID,
+        ios: UNIT_ID_IOS,
       }
     }
 
