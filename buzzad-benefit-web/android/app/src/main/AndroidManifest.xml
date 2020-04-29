@@ -18,9 +18,9 @@
             </intent-filter>
         </activity>
 
-        <!-- Change the value of APP_KEY to yours. -->
+        <!-- Change the value 0123456789 of APP_KEY to yours. -->
         <meta-data
             android:name="com.buzzvil.APP_KEY"
-            android:value="app-pub-310600461728380" />
+            android:value="app-pub-0123456789" />
     </application>
 </manifest>
