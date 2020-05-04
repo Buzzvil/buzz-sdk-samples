@@ -108,45 +108,45 @@ function log(message, bad) {
     ctaView.innerText = ctaTextHeader + nativeAd.callToAction;
   }
 
-  function renderAd(rootView, nativeAd) {
-    rootView.style.display = '';
-    rootView.getElementsByClassName('icon')[0].setAttribute('src', nativeAd.iconUrl);
-    rootView.getElementsByClassName('name')[0].innerHTML = nativeAd.title;
-    rootView.getElementsByClassName('body')[0].innerHTML = nativeAd.description;
+  function renderAd(placementView, nativeAd) {
+    placementView.style.display = '';
+    placementView.getElementsByClassName('icon')[0].setAttribute('src', nativeAd.iconUrl);
+    placementView.getElementsByClassName('name')[0].innerHTML = nativeAd.title;
+    placementView.getElementsByClassName('body')[0].innerHTML = nativeAd.description;
 
-    updateCtaView(rootView.getElementsByClassName('cta')[0], nativeAd);
+    updateCtaView(placementView.getElementsByClassName('cta')[0], nativeAd);
   }
 
   function hideAd() {
-    const rootView = document.getElementById('nativeAd');
-    rootView.style.display = 'none';
+    const placementView = document.getElementById('placement1');
+    placementView.style.display = 'none';
   }
 
   function populateAd(nativeAd) {
     const adListener = {
-      onImpressed: function(element, nativeAd) {
+      onImpressed: function(placementView, nativeAd) {
         log('ON IMPRESSED: The ad is impressed.');
       },
-      onClicked: function(element, nativeAd) {
+      onClicked: function(placementView, nativeAd) {
         log('ON CLICKED: The ad is clicked.');
       },
-      onRewardRequested: function(element, nativeAd) {
+      onRewardRequested: function(placementView, nativeAd) {
         log('ON REWARD REQUESTED: Reward is requested.');
       },
-      onRewarded: function(element, nativeAd, result) {
+      onRewarded: function(placementView, nativeAd, result) {
         log('ON REWARDED: The result of Reward: ' + result);
       },
-      onParticipated: function(element, nativeAd) {
+      onParticipated: function(placementView, nativeAd) {
         log('ON PARTICIPATED: The ad is set to particiated.');
-        updateCtaView(element.getElementsByClassName('cta')[0], nativeAd);
+        updateCtaView(placementView.getElementsByClassName('cta')[0], nativeAd);
       },
-      onVideoError: function(element, nativeAd, errorCode, errorMessage) {
+      onVideoError: function(placementView, nativeAd, errorCode, errorMessage) {
         log('ON VIDEO ERROR: An error is detected: ' + errorCode + '\n' + errorMessage);
       },
     };
 
-    const rootView = document.getElementById('nativeAd');
-    BuzzAdBenefit.registerNativeAd(nativeAd, rootView, adListener);
-    renderAd(rootView, nativeAd);
+    const placementView = document.getElementById('placement1');
+    BuzzAdBenefit.registerNativeAd(nativeAd, placementView, adListener);
+    renderAd(placementView, nativeAd);
   }
 })();
