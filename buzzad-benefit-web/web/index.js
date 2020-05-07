@@ -71,7 +71,7 @@ function log(message, bad) {
       .then(function (nativeAd) {
         log('ON AD LOADED: An ad is loaded.');
         populateAd(nativeAd);
-      }).catch(function(error) {
+      }, function(error) {
         log('ON LOAD ERROR: An error is detected: ' + error.message, true);
         hideAd();
       });
@@ -88,8 +88,7 @@ function log(message, bad) {
   window.reloadAd = reloadAd;
 
   BuzzAdBenefit.ensureAuthenticated
-    .then(loadAd)
-    .catch(onError);
+    .then(loadAd, onError);
 
   function updateCtaView(ctaView, nativeAd) {
     var ctaTextHeader = '';
