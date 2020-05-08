@@ -1,2 +1,2 @@
 # pop-sample
-[버즈빌 개발 가이드 문서](https://buzzvil.atlassian.net/wiki/spaces/DEV/pages/480346356/BuzzAdPop)를 확인해주세요.
+[버즈빌 개발 가이드 문서](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK)를 확인해주세요.
