@@ -1,6 +1,6 @@
 # BuzzAdBenefit SDK for Android
 
-* 개발 가이드: https://github.com/Buzzvil/buzzad-benefit-sdk-publisher/wiki
+* 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
 
 # 2.0.2
