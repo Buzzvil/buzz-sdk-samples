@@ -14,7 +14,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SafariServices/SafariServices.h>
 #import <Toast/Toast.h>
-#import "CustomAdViewHolder.h"
+#import "WebViewController.h"
+#import "CarouselView.h"
 
 @interface ViewController () <BABNativeAdViewDelegate, BABInterstitialAdHandlerDelegate, BABLauncher>
 
@@ -29,6 +30,8 @@
   [CSToastManager setQueueEnabled:YES];
   [CSToastManager setDefaultDuration:1];
 
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionRegistered:) name:BABSessionRegisteredNotification object:nil];
+
   _adView.delegate = self;
 }
 
@@ -41,6 +44,8 @@
 }
 
 - (IBAction)loadNativeButtonTapped:(id)sender {
+  [self.container bringSubviewToFront:self.adView];
+  
   BABAdLoader *adLoader = [[BABAdLoader alloc] initWithUnitId:@"198784894780152"];
   [adLoader loadAdWithOnSuccess:^(BABAd * _Nonnull ad) {
     self.titleLabel.text = ad.creative.title;
@@ -56,7 +61,6 @@
     self.adView.ad = ad;
     self.adView.mediaView = self.mediaView;
     self.adView.clickableViews = @[self.ctaButton, self.iconImageView, self.mediaView];
-
   } onFailure:^(BABError *error) {
     NSString *errorMsg;
     switch(error.code) {
@@ -83,6 +87,20 @@
   }];
 }
 
+- (IBAction)loadCarouselButtonTapped:(id)sender {
+  BABAdLoader *adLoader = [[BABAdLoader alloc] initWithUnitId:@"198784894780152"];
+  [self.container bringSubviewToFront:self.carouselView];
+  [adLoader loadAdsWithSize:5 onSuccess:^(NSArray<BABAd *> *ads) {
+    if (ads.count > 0) {
+      [self.carouselView renderAds:ads];
+    } else {
+      [self.carouselView renderAds:@[]];
+    }
+  } onFailure:^(BABError *error) {
+    [self.carouselView renderAds:@[]];
+  }];
+}
+
 - (IBAction)loadInterstitialButtonTapped:(id)sender {
   BABInterstitialAdHandler *adLoader = [[BABInterstitialAdHandler alloc] initWithUnitId:@"198784894780152" type:BABInterstitialDialog];
   adLoader.delegate = self;
@@ -96,11 +114,13 @@
 }
 
 - (IBAction)loadFeedButtonTapped:(id)sender {
-  BABFeedConfig *config = [[BABFeedConfig alloc] initWithUnitId:@"165100597190534"];
+  BABFeedConfig *config = [[BABFeedConfig alloc] initWithUnitId:@"235299148396323"];
   config.title = @"꿀 피드";
   config.articlesEnabled = YES;
-  config.articleCategories = @[BABArticleCategorySports, BABArticleCategoryFun];
-  config.adViewHolderClass = [CustomAdViewHolder class];
+//  config.articleCategories = @[BABArticleCategoryNews];
+  config.separatorColor = [UIColor colorWithWhite:0.8 alpha:1];
+  config.separatorHeight = 1 / UIScreen.mainScreen.scale;
+  config.separatorHorizontalMargin = 10;
 
   BABFeedHandler *feedHandler = [[BABFeedHandler alloc] initWithConfig:config];
   [self presentViewController:[feedHandler populateViewController] animated:YES completion:nil];
@@ -108,11 +128,28 @@
 
 }
 
+- (IBAction)loadTestWebPage:(id)sender {
+  WebViewController *webViewController = [[WebViewController alloc] init];
+  NSString *samplePageUrl = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"BuzzAdBenefitJSSamplePageUrl"];
+  webViewController.url = [NSURL URLWithString:samplePageUrl];
+  [self.navigationController pushViewController:webViewController animated:YES];
+}
+
 - (IBAction)launcherSwitchChanged:(id)sender {
   if (_launcherSwitch.isOn) {
     [BuzzAdBenefit setLauncher:self];
   } else {
     [BuzzAdBenefit setLauncher:nil];
+  }
+}
+
+- (IBAction)loginButtonTapped:(id)sender {
+  if (BuzzAdBenefit.sharedInstance.userProfile.isSessionRegistered) {
+    [BuzzAdBenefit setUserProfile:nil];
+    [_loginButton setTitle:@"LOGIN"];
+  } else {
+    BABUserProfile *userProfile = [[BABUserProfile alloc] initWithUserId:[NSString stringWithFormat:@"iOS_TEST_%u", arc4random() % 10000] birthYear:1985 gender:BABUserGenderMale];
+    [BuzzAdBenefit setUserProfile:userProfile];
   }
 }
 
@@ -207,6 +244,11 @@
       break;
   }
   [self.view.window makeToast:[NSString stringWithFormat:@"Interstitial Ad load failed with error: %@", errorMsg]];
+}
+
+- (void)sessionRegistered:(NSNotification *)notification {
+  [_loginButton setTitle:@"LOGOUT"];
+  [self.navigationController.view.window makeToast:@"Session registered"];
 }
 
 @end
