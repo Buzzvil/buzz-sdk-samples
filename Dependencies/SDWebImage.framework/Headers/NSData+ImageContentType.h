@@ -10,17 +10,25 @@
 #import <Foundation/Foundation.h>
 #import "SDWebImageCompat.h"
 
-typedef NS_ENUM(NSInteger, SDImageFormat) {
-    SDImageFormatUndefined = -1,
-    SDImageFormatJPEG = 0,
-    SDImageFormatPNG,
-    SDImageFormatGIF,
-    SDImageFormatTIFF,
-    SDImageFormatWebP,
-    SDImageFormatHEIC,
-    SDImageFormatHEIF
-};
+/**
+ You can use switch case like normal enum. It's also recommended to add a default case. You should not assume anything about the raw value.
+ For custom coder plugin, it can also extern the enum for supported format. See `SDImageCoder` for more detailed information.
+ */
+typedef NSInteger SDImageFormat NS_TYPED_EXTENSIBLE_ENUM;
+static const SDImageFormat SDImageFormatUndefined = -1;
+static const SDImageFormat SDImageFormatJPEG      = 0;
+static const SDImageFormat SDImageFormatPNG       = 1;
+static const SDImageFormat SDImageFormatGIF       = 2;
+static const SDImageFormat SDImageFormatTIFF      = 3;
+static const SDImageFormat SDImageFormatWebP      = 4;
+static const SDImageFormat SDImageFormatHEIC      = 5;
+static const SDImageFormat SDImageFormatHEIF      = 6;
+static const SDImageFormat SDImageFormatPDF       = 7;
+static const SDImageFormat SDImageFormatSVG       = 8;
 
+/**
+ NSData category about the image content type and UTI.
+ */
 @interface NSData (ImageContentType)
 
 /**
@@ -37,14 +45,16 @@ typedef NS_ENUM(NSInteger, SDImageFormat) {
  *
  *  @param format Format as SDImageFormat
  *  @return The UTType as CFStringRef
+ *  @note For unknown format, `kUTTypeImage` abstract type will return
  */
-+ (nonnull CFStringRef)sd_UTTypeFromSDImageFormat:(SDImageFormat)format;
++ (nonnull CFStringRef)sd_UTTypeFromImageFormat:(SDImageFormat)format CF_RETURNS_NOT_RETAINED NS_SWIFT_NAME(sd_UTType(from:));
 
 /**
  *  Convert UTTyppe to SDImageFormat
  *
  *  @param uttype The UTType as CFStringRef
  *  @return The Format as SDImageFormat
+ *  @note For unknown type, `SDImageFormatUndefined` will return
  */
 + (SDImageFormat)sd_imageFormatFromUTType:(nonnull CFStringRef)uttype;
 

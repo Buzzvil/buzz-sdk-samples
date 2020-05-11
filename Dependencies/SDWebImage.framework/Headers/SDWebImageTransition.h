@@ -11,16 +11,25 @@
 #if SD_UIKIT || SD_MAC
 #import "SDImageCache.h"
 
-// This class is used to provide a transition animation after the view category load image finished. Use this on `sd_imageTransition` in UIView+WebCache.h
-// for UIKit(iOS & tvOS), we use `+[UIView transitionWithView:duration:options:animations:completion]` for transition animation.
-// for AppKit(macOS), we use `+[NSAnimationContext runAnimationGroup:completionHandler:]` for transition animation. You can call `+[NSAnimationContext currentContext]` to grab the context during animations block.
-// These transition are provided for basic usage. If you need complicated animation, consider to directly use Core Animation or use `SDWebImageAvoidAutoSetImage` and implement your own after image load finished.
-
 #if SD_UIKIT
 typedef UIViewAnimationOptions SDWebImageAnimationOptions;
 #else
 typedef NS_OPTIONS(NSUInteger, SDWebImageAnimationOptions) {
-    SDWebImageAnimationOptionAllowsImplicitAnimation = 1 << 0, // specify `allowsImplicitAnimation` for the `NSAnimationContext`
+    SDWebImageAnimationOptionAllowsImplicitAnimation   = 1 << 0, // specify `allowsImplicitAnimation` for the `NSAnimationContext`
+    
+    SDWebImageAnimationOptionCurveEaseInOut            = 0 << 16, // default
+    SDWebImageAnimationOptionCurveEaseIn               = 1 << 16,
+    SDWebImageAnimationOptionCurveEaseOut              = 2 << 16,
+    SDWebImageAnimationOptionCurveLinear               = 3 << 16,
+    
+    SDWebImageAnimationOptionTransitionNone            = 0 << 20, // default
+    SDWebImageAnimationOptionTransitionFlipFromLeft    = 1 << 20,
+    SDWebImageAnimationOptionTransitionFlipFromRight   = 2 << 20,
+    SDWebImageAnimationOptionTransitionCurlUp          = 3 << 20,
+    SDWebImageAnimationOptionTransitionCurlDown        = 4 << 20,
+    SDWebImageAnimationOptionTransitionCrossDissolve   = 5 << 20,
+    SDWebImageAnimationOptionTransitionFlipFromTop     = 6 << 20,
+    SDWebImageAnimationOptionTransitionFlipFromBottom  = 7 << 20,
 };
 #endif
 
@@ -28,6 +37,12 @@ typedef void (^SDWebImageTransitionPreparesBlock)(__kindof UIView * _Nonnull vie
 typedef void (^SDWebImageTransitionAnimationsBlock)(__kindof UIView * _Nonnull view, UIImage * _Nullable image);
 typedef void (^SDWebImageTransitionCompletionBlock)(BOOL finished);
 
+/**
+ This class is used to provide a transition animation after the view category load image finished. Use this on `sd_imageTransition` in UIView+WebCache.h
+ for UIKit(iOS & tvOS), we use `+[UIView transitionWithView:duration:options:animations:completion]` for transition animation.
+ for AppKit(macOS), we use `+[NSAnimationContext runAnimationGroup:completionHandler:]` for transition animation. You can call `+[NSAnimationContext currentContext]` to grab the context during animations block.
+ @note These transition are provided for basic usage. If you need complicated animation, consider to directly use Core Animation or use `SDWebImageAvoidAutoSetImage` and implement your own after image load finished.
+ */
 @interface SDWebImageTransition : NSObject
 
 /**
@@ -41,7 +56,7 @@ typedef void (^SDWebImageTransitionCompletionBlock)(BOOL finished);
 /**
  The timing function used for all animations within this transition animation (macOS).
  */
-@property (nonatomic, strong, nullable) CAMediaTimingFunction *timingFunction NS_AVAILABLE_MAC(10_7);
+@property (nonatomic, strong, nullable) CAMediaTimingFunction *timingFunction API_UNAVAILABLE(ios, tvos, watchos) API_DEPRECATED("Use SDWebImageAnimationOptions instead, or grab NSAnimationContext.currentContext and modify the timingFunction", macos(10.10, 10.10));
 /**
  A mask of options indicating how you want to perform the animations.
  */
@@ -61,14 +76,13 @@ typedef void (^SDWebImageTransitionCompletionBlock)(BOOL finished);
 
 @end
 
-// Convenience way to create transition. Remember to specify the duration if needed.
-// for UIKit, these transition just use the correspond `animationOptions`. By default we enable `UIViewAnimationOptionAllowUserInteraction` to allow user interaction during transition.
-// for AppKit, these transition use Core Animation in `animations`. So your view must be layer-backed. Set `wantsLayer = YES` before you apply it.
-
+/**
+ Convenience way to create transition. Remember to specify the duration if needed.
+ for UIKit, these transition just use the correspond `animationOptions`. By default we enable `UIViewAnimationOptionAllowUserInteraction` to allow user interaction during transition.
+ for AppKit, these transition use Core Animation in `animations`. So your view must be layer-backed. Set `wantsLayer = YES` before you apply it.
+ */
 @interface SDWebImageTransition (Conveniences)
 
-// class property is available in Xcode 8. We will drop the Xcode 7.3 support in 5.x
-#if __has_feature(objc_class_property)
 /// Fade transition.
 @property (nonatomic, class, nonnull, readonly) SDWebImageTransition *fadeTransition;
 /// Flip from left transition.
@@ -83,15 +97,6 @@ typedef void (^SDWebImageTransitionCompletionBlock)(BOOL finished);
 @property (nonatomic, class, nonnull, readonly) SDWebImageTransition *curlUpTransition;
 /// Curl down transition.
 @property (nonatomic, class, nonnull, readonly) SDWebImageTransition *curlDownTransition;
-#else
-+ (nonnull instancetype)fadeTransition;
-+ (nonnull instancetype)flipFromLeftTransition;
-+ (nonnull instancetype)flipFromRightTransition;
-+ (nonnull instancetype)flipFromTopTransition;
-+ (nonnull instancetype)flipFromBottomTransition;
-+ (nonnull instancetype)curlUpTransition;
-+ (nonnull instancetype)curlDownTransition;
-#endif
 
 @end
 
