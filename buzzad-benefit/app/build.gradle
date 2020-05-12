@@ -23,12 +23,8 @@ android {
     }
 }
 
-repositories {
-    maven { url "https://dl.bintray.com/buzzvil/maven/" }
-}
-
 dependencies {
-    implementation ("com.buzzvil:buzzad-benefit:2.0.2") {
+    implementation ("com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName") {
         // Pop is not released for public use yet.
         // Exclude this module so that your app does not include any unnecessary permissions in the manifest.
         exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
