@@ -5,11 +5,13 @@ import androidx.multidex.MultiDexApplication;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
+import com.buzzvil.buzzad.benefit.pop.DefaultPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.SidePosition;
 import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.popsample.R;
+import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
@@ -27,6 +29,15 @@ public class App extends MultiDexApplication {
     }
 
     private void initBuzzAdBenefit() {
+        final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), UNIT_ID_POP)
+                // DefaultPopToolbarHolder: DefaultToolbar
+                // TemplatePopToolbarHolder: Minimum customize, pop feed icon, name, button
+                // CustomPopToolbarHolder: Use layout for toolbar
+                .feedToolbarHolderClass(CustomPopToolbarHolder.class)
+                .feedHeaderViewAdapterClass(DefaultPopHeaderViewAdapter.class)
+                .articlesEnabled(true)
+                .articleInAppLandingEnabled(true)
+                .build();
         final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
                 .smallIconResId(R.drawable.ic_notification_pop_gift)
                 .titleResId(R.string.pop_notification_title)
@@ -37,6 +48,7 @@ public class App extends MultiDexApplication {
         final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
+                .feedConfig(feedConfig)
                 .popNotificationConfig(popNotificationConfig)
                 .previewIntervalInMillis(1000) // for test
                 .build();
