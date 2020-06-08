@@ -11,6 +11,8 @@ import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.SidePosition;
 import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.popsample.R;
+import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomControlService;
+import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
