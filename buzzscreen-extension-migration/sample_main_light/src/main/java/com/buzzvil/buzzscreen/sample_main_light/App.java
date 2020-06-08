@@ -1,6 +1,6 @@
 package com.buzzvil.buzzscreen.sample_main_light;
 
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -20,7 +20,7 @@ public class App extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
 
-        // BuzzScreen.init("my_app_key", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
+        // BuzzScreen.init("unit_id", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
 
         MigrationHost.init(this, LOCKSCREEN_APP_PACKAGE);
         MigrationHost.setOnDeactivatedByLockScreenAppListener(new MigrationHost.OnDeactivatedByLockScreenAppListener() {

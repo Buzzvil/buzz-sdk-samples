@@ -15,7 +15,6 @@ import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 import com.buzzvil.buzzad.benefit.pop.PopOverlayPermissionConfig;
-import com.buzzvil.buzzad.benefit.pop.message.MessagePreviewOption;
 
 import io.mattcarroll.hover.overlay.OverlayPermission;
 
@@ -28,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button popShowButton;
     private Button popUnregisterButton;
-    private Button popSetMessagePreview;
-    private Button popSetMessagePreviewWithIcon;
-    private Button popRemoveMessagePreview;
 
     private BuzzAdPop buzzAdPop;
     private BroadcastReceiver sessionReadyReceiver = new BroadcastReceiver() {
@@ -70,50 +66,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 buzzAdPop.removePop(MainActivity.this);
-            }
-        });
-
-        popSetMessagePreview = findViewById(R.id.pop_set_message_preview);
-        popSetMessagePreview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buzzAdPop.setMessagePreview(
-                        new MessagePreviewOption(
-                                "말풍선 메세지 프리뷰",
-                                System.currentTimeMillis(),
-                                System.currentTimeMillis() + 48 * 60 * 60 * 1000,
-                                10 * 1000,
-                                1
-                        )
-                );
-                Toast.makeText(MainActivity.this, "Message Preview Set", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        popSetMessagePreviewWithIcon = findViewById(R.id.pop_set_message_preview_with_icon);
-        popSetMessagePreviewWithIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buzzAdPop.setMessagePreview(
-                        new MessagePreviewOption(
-                                "말풍선 메세지 프리뷰",
-                                R.drawable.bz_default_pop_icon,
-                                System.currentTimeMillis(),
-                                System.currentTimeMillis() + 48 * 60 * 60 * 1000,
-                                10 * 1000,
-                                1
-                        )
-                );
-                Toast.makeText(MainActivity.this, "Message Preview with Icon Set", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        popRemoveMessagePreview = findViewById(R.id.pop_remove_message_preview);
-        popRemoveMessagePreview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buzzAdPop.removeMessagePreview();
-                Toast.makeText(MainActivity.this, "Message Preview Removed", Toast.LENGTH_SHORT).show();
             }
         });
 

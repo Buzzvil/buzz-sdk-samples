@@ -39,20 +39,16 @@ dependencies {
 
 
 ### 2. Modify `AndroidManifest.xml`
-Renewed `app_license` and `com.buzzvil.locker.mediation.baidu.plist` values should be used and applied on L app in order to integrate BuzzScreen.
+Renewed `com.buzzvil.APP_KEY` values should be used and applied on L app in order to integrate BuzzScreen.
 ```xml
 <manifest>
     <application>
         ...
         <!-- Configuration for BuzzScreen-->
-        <!-- Replace <app_license> to new one that is different from existing one. -->
-        <!-- Replace <plist> to new one that is different from existing one. -->
+        <!-- 0000000000000 should be newly issued and different from the value used on M app. -->
         <meta-data
-            android:name="app_license"
-            android:value="<app_license>" />
-        <meta-data
-            android:name="com.buzzvil.locker.mediation.baidu.plist"
-            android:value="<plist>" />
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-0000000000000" />
     </application>
 </manifest>
 ```
@@ -86,7 +82,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         // The existing code to initialize Buzzscreen
-        BuzzScreen.init("app_key", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
 
         // Initialization for migration
         // The example code uses com.buzzvil.buzzscreen.sample_main_light for M app package name.

@@ -1,7 +1,7 @@
 package com.buzzvil.buzzscreen.sample_main;
 
 import android.os.Bundle;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
 import com.buzzvil.buzzscreen.migration.MigrationFrom;

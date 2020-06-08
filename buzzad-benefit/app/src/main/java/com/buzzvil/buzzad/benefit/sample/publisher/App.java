@@ -1,6 +1,8 @@
 package com.buzzvil.buzzad.benefit.sample.publisher;
 
 import android.app.Application;
+import android.content.Context;
+import androidx.multidex.MultiDex;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
@@ -11,6 +13,12 @@ public class App extends Application {
     public static final String APP_ID = "YOUR_APP_ID";
     public static final String UNIT_ID_NATIVE_AD = "YOUR_NATIVE_AD_UNIT_ID";
     public static final String UNIT_ID_FEED = "YOUR_FEED_UNIT_ID";
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {

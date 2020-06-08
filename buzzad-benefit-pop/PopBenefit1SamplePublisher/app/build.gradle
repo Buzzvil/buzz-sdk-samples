@@ -28,8 +28,7 @@ dependencies {
 
     implementation 'com.android.support:appcompat-v7:26.0.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-
-    implementation "com.buzzvil:buzzad-benefit-pop:1.6.8"
+    implementation "com.buzzvil:buzzad-benefit-pop:1.7.0"
 
     testImplementation 'junit:junit:4.12'
 }

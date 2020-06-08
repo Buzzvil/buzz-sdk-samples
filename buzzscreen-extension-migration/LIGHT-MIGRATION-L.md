@@ -48,14 +48,10 @@ dependencies {
     <application>
         ...
         <!-- Configuration for BuzzScreen-->
-        <!-- <app_license> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
-        <!-- <plist> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
+        <!-- 0000000000000 를 발급받은 새로운 값으로 교체합니다. 기존 M앱과 다른 새로운 값입니다. -->
         <meta-data
-            android:name="app_license"
-            android:value="<app_license>" />
-        <meta-data
-            android:name="com.buzzvil.locker.mediation.baidu.plist"
-            android:value="<plist>" />
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-0000000000000" />
     </application>
 </manifest>
 ```
@@ -89,7 +85,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         // 기존 버즈스크린 초기화 코드.
-        BuzzScreen.init("app_key", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
 
         // 마이그레이션을 위한 코드
         // M앱의 패키지명이 com.buzzvil.buzzscreen.sample_main_light 인 경우 사용 예시

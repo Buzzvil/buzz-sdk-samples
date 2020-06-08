@@ -2,22 +2,18 @@
 참고 샘플 : **`sample_lock`**
 
 ### 1. M앱에서 연동한 버즈스크린 SDK를 L앱에도 동일하게 적용합니다.
-- 버즈스크린 SDK 버전 1.6.3 이상 사용
-- 단, `AndroidManifest.xml` 의 `app_license` 와 `com.buzzvil.locker.mediation.baidu.plist` 는 새로 발급(버즈빌 문의)받아 적용해야 합니다.
+- 버즈스크린 SDK 버전 3.0.0 이상 사용
+- 단, `AndroidManifest.xml` 의 `com.buzzvil.APP_KEY` 는 새로 발급(버즈빌 문의)받아 적용해야 합니다.
     `AndroidManifest.xml` 관련 코드
     ```xml
     <manifest>
         <application>
             ...
             <!-- Configuration for BuzzScreen-->
-            <!-- <app_license> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
-            <!-- <plist> 를 기존 M앱과 다른 새로운 값으로 교체합니다. -->
+            <!-- 0000000000000 를 발급받은 새로운 값으로 교체합니다. 기존 M앱과 다른 새로운 값입니다. -->
             <meta-data
-                android:name="app_license"
-                android:value="<app_license>" />
-            <meta-data
-                android:name="com.buzzvil.locker.mediation.baidu.plist"
-                android:value="<plist>" />
+                android:name="com.buzzvil.APP_KEY"
+                android:value="app-pub-0000000000000" />
         </application>
     </manifest>
     ```
@@ -64,7 +60,7 @@ public class App extends Application {
         super.onCreate();
 
         // M앱과 동일한 기존 버즈스크린 초기화 코드.
-        BuzzScreen.init("app_key", this, CustomLockerActivity.class, R.drawable.image_on_fail);
+        BuzzScreen.init("unit_id", this, CustomLockerActivity.class, R.drawable.image_on_fail);
 
         // 마이그레이션을 위한 코드
         // M앱의 패키지명이 com.buzzvil.buzzscreen.sample_main 인 경우 사용 예시

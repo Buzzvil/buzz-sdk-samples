@@ -1,5 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.buzzvil.buzzad.benefit.sample.publisher">
+
+    <uses-sdk tools:overrideLibrary="com.google.android.exoplayer2.core,
+            com.google.android.exoplayer2.ext.ima,
+            com.google.android.exoplayer2.source.hls,
+            com.google.android.exoplayer2.ui" />
 
     <application
         android:name=".App"
