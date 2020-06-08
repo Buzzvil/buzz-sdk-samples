@@ -101,18 +101,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPop() {
-        buzzAdPop.preload(new BuzzAdPop.PopPreloadListener() {
-            @Override
-            public void onPreloaded(int adsSize, int articlesSize) {
-                buzzAdPop.showPop(MainActivity.this, true);
-            }
+        buzzAdPop.preloadAndShowPop(MainActivity.this);
 
-            @Override
-            public void onError(AdError error) {
-                Toast.makeText(MainActivity.this, "Failed to load Pop Ads: " + error.toString(), Toast.LENGTH_SHORT).show();
-                buzzAdPop.showPop(MainActivity.this, false);
-            }
-        });
+        // Use this instead of preloadAndShowPop if need to show pop tutorial dialog
+        // buzzAdPop.showTutorialPopup(MainActivity.this);
     }
 
     /*
