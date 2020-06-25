@@ -6,7 +6,6 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.popsample"
         minSdkVersion 15
@@ -36,8 +35,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.multidex:multidex:2.0.1'
 
-    // BuzzAdBenefit
-    implementation "com.buzzvil:buzzad-benefit-pop:2.0.0"
+    // BuzzAd-Pop
+    implementation "com.buzzvil:buzzad-benefit-pop:2.2.0"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
