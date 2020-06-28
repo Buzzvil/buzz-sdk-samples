@@ -3,6 +3,8 @@
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
 
+# 2.2.1
+* [FIX] FeedFragment.init 하위버전 호환
 
 # 2.2.0
 * 인터스티셜에 문의하기 버튼 추가

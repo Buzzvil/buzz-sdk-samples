@@ -39,6 +39,6 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
-    compileOnly ("com.buzzvil:buzzad-benefit-pop:2.0.2")        // ADDED BY ALAN
+    compileOnly ("com.buzzvil:buzzad-benefit-pop:$buzzAdBenefitVersionName")        // ADDED BY ALAN
     implementation ("androidx.multidex:multidex:2.0.1")         // ADDED BY ALAN
 }

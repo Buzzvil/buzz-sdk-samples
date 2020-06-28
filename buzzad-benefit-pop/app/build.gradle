@@ -36,7 +36,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     // BuzzAd-Pop
-    implementation "com.buzzvil:buzzad-benefit-pop:2.2.0"
+    implementation "com.buzzvil:buzzad-benefit-pop:$buzzAdBenefitVersionName"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
