@@ -31,3 +31,8 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    buzzAdBenefitVersionName = '2.2.1'
+}
+
