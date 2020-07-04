@@ -3,6 +3,9 @@
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
 
+# 2.2.2
+* [FIX] 드물게 특정 광고에서 이미지가 표시 안되는 문제 수정
+
 # 2.2.1
 * [FIX] FeedFragment.init 하위버전 호환
 
