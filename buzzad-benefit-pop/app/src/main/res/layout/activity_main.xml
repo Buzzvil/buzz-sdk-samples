@@ -22,6 +22,13 @@
                 android:layout_height="wrap_content"
                 android:text="Show pop" />
 
+            <!-- Optional: CUSTOM PERMISSION DIALOG-->
+            <Button
+                android:id="@+id/pop_show_button_with_custom_permission_dialog_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(Optional) Show pop w/ custom permission dialog" />
+
             <Button
                 android:id="@+id/pop_unregister_button"
                 android:layout_width="match_parent"
