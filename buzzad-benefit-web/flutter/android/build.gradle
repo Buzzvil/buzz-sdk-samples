@@ -33,6 +33,6 @@ task clean(type: Delete) {
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.2.2'
+    buzzAdBenefitVersionName = '2.2.3'
 }
 
