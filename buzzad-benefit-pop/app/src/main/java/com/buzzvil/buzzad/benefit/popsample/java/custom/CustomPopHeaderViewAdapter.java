@@ -1,4 +1,4 @@
-package com.buzzvil.buzzad.benefit.popsample.java;
+package com.buzzvil.buzzad.benefit.popsample.java.custom;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -19,7 +19,7 @@
         </activity>
 
         <!-- [CUSTOM_POP_CONTROL_SERVICE] Only need to add this service when use custom pop control service, otherwise don't need to add this service -->
-        <service android:name=".java.CustomControlService" />
+        <service android:name=".java.custom.CustomControlService" />
     </application>
 
 </manifest>
