@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initUI();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            initUI();
             BuzzPedometerSdk.getPedometer().setStepListener(onStepListener);
             BuzzPedometerSdk.getPedometer().setMilestoneListener(onMilestoneListener);
             updateMilestoneUI(BuzzPedometerSdk.getPedometer().getMilestones());
@@ -82,14 +82,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void disableAll() {
-        btLogin = findViewById(R.id.btLogin);
-        btGetUserProfile = findViewById(R.id.btGetUserProfile);
-        btSetUserProfile = findViewById(R.id.btSetUserProfile);
-        btDailyHistory = findViewById(R.id.btGetDailyStepHistory);
-        btDeactivate = findViewById(R.id.btDeactivate);
-        btActivate = findViewById(R.id.btActivate);
-        btRequestReward = findViewById(R.id.btRequestReward);
-
         btLogin.setEnabled(false);
         btGetUserProfile.setEnabled(false);
         btSetUserProfile.setEnabled(false);
@@ -97,21 +89,10 @@ public class MainActivity extends AppCompatActivity {
         btDeactivate.setEnabled(false);
         btActivate.setEnabled(false);
         btRequestReward.setEnabled(false);
-
-        tvStepCount = findViewById(R.id.tvStepCount);
-        tvActivateStatus = findViewById(R.id.tvActivateStatus);
-        tvRedeemable = findViewById(R.id.tvRedeemable);
-        tvRewarded = findViewById(R.id.tvRewarded);
-
         tvStepCount.setText("None");
         tvActivateStatus.setText("Disabled");
         tvRedeemable.setText("None");
         tvRewarded.setText("None");
-
-        etWeight = findViewById(R.id.etWeight);
-        etHeight = findViewById(R.id.etHeight);
-        etStepHistoryRange = findViewById(R.id.etStepHistoryRange);
-
         etWeight.setEnabled(false);
         etHeight.setEnabled(false);
         etStepHistoryRange.setEnabled(false);
@@ -125,6 +106,16 @@ public class MainActivity extends AppCompatActivity {
         btRequestReward = findViewById(R.id.btRequestReward);
 
         btLogin = findViewById(R.id.btLogin);
+        btActivate = findViewById(R.id.btActivate);
+        btDeactivate = findViewById(R.id.btDeactivate);
+        btRequestReward = findViewById(R.id.btRequestReward);
+        btDailyHistory = findViewById(R.id.btGetDailyStepHistory);
+        etStepHistoryRange = findViewById(R.id.etStepHistoryRange);
+        etHeight = findViewById(R.id.etHeight);
+        etWeight = findViewById(R.id.etWeight);
+        btSetUserProfile = findViewById(R.id.btSetUserProfile);
+        btGetUserProfile = findViewById(R.id.btGetUserProfile);
+
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,8 +135,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        btActivate = findViewById(R.id.btActivate);
         btActivate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btDeactivate = findViewById(R.id.btDeactivate);
         btDeactivate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,8 +150,6 @@ public class MainActivity extends AppCompatActivity {
                 updateActivationUI();
             }
         });
-
-        btRequestReward = findViewById(R.id.btRequestReward);
         btRequestReward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -195,9 +181,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-
-        btDailyHistory = findViewById(R.id.btGetDailyStepHistory);
-        etStepHistoryRange = findViewById(R.id.etStepHistoryRange);
         btDailyHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -219,12 +202,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        etHeight = findViewById(R.id.etHeight);
-        etWeight = findViewById(R.id.etWeight);
-        btSetUserProfile = findViewById(R.id.btSetUserProfile);
-        btGetUserProfile = findViewById(R.id.btGetUserProfile);
-
         btSetUserProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
