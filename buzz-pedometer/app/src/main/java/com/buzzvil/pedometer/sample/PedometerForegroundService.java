@@ -22,9 +22,6 @@ public class PedometerForegroundService extends Service {
         super.onCreate();
         createNotificationChannel();
         Intent notificationIntent = new Intent(this, MainActivity.class);
-        notificationIntent.setAction(Intent.ACTION_MAIN);
-        notificationIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Pedometer Sample Foreground Service")

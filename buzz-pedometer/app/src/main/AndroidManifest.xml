@@ -20,7 +20,9 @@
             android:name="com.buzzvil.APP_KEY"
             android:value="app-pub-000000000000" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
