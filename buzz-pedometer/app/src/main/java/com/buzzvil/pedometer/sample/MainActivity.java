@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             BuzzPedometerSdk.getPedometer().setStepListener(onStepListener);
             BuzzPedometerSdk.getPedometer().setMilestoneListener(onMilestoneListener);
+            updateActivationUI();
             updateMilestoneUI(BuzzPedometerSdk.getPedometer().getMilestones());
             updateStepUI(BuzzPedometerSdk.getPedometer().getStepCount());
         } else {
