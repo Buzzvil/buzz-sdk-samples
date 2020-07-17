@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final TextListFragment dialog = new TextListFragment();
                 String intervalString = etStepHistoryRange.getText().toString();
-                if (intervalString.isEmpty()) {
+                if (!intervalString.isEmpty()) {
                     BuzzPedometerSdk.getPedometer().getDailyStepHistory(Integer.parseInt(intervalString), new OnStepHistoryListener() {
                         @Override
                         public void onLoad(List<StepHistory> stepHistories) {
