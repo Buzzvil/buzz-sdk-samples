@@ -1,6 +1,6 @@
 package com.buzzvil.buzzad.benefit.popbenefit1samplepublisher;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
@@ -9,7 +9,7 @@ import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.SidePosition;
 
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     public static final String APP_ID = "260318561407891";
     public static final String UNIT_ID_POP = "236027834764095";
