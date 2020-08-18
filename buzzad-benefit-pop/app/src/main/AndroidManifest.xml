@@ -20,6 +20,11 @@
 
         <!-- [CUSTOM_POP_CONTROL_SERVICE] Only need to add this service when use custom pop control service, otherwise don't need to add this service -->
         <service android:name=".java.custom.CustomControlService" />
+
+        <!-- Caution: Replace `260318561407891` with Your AppKey  -->
+        <meta-data
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-260318561407891" />
     </application>
 
 </manifest>

@@ -17,8 +17,6 @@ import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
-
-    public static final String APP_ID = "260318561407891";
     public static final String UNIT_ID_POP = "236027834764095";
 
     @Override
@@ -55,8 +53,8 @@ public class App extends MultiDexApplication {
                 .previewIntervalInMillis(1000) // for test
                 .build();
 
-        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(APP_ID)
-                .add(UNIT_ID_POP, popConfig)
+        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
+                .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
@@ -92,8 +90,8 @@ public class App extends MultiDexApplication {
                 .previewIntervalInMillis(1000) // for test
                 .build();
 
-        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(APP_ID)
-                .add(UNIT_ID_POP, popConfig)
+        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
+                .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
@@ -121,8 +119,8 @@ public class App extends MultiDexApplication {
                 .popNotificationConfig(popNotificationConfig)
                 .build();
 
-        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(APP_ID)
-                .add(UNIT_ID_POP, popConfig)
+        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
+                .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
