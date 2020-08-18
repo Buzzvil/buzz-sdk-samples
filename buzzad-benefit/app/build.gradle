@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.sample.publisher"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -30,15 +30,15 @@ dependencies {
         exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
     }
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.material:material:1.0.0'
     implementation ('com.github.bumptech.glide:glide:4.8.0') {
         // exclude 처리를 안해서 support library 끼리 버전이 섞이면 AppCompatActivity 에서 runtime exception (NoSuchMethodError) 발생
         exclude group: 'com.android.support'
     }
-    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'androidx.fragment:fragment:1.1.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.fragment:fragment:1.1.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
 
     implementation 'androidx.multidex:multidex:2.0.0'
 }
