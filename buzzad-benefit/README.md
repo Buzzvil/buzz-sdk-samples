@@ -2,6 +2,11 @@
 
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
+# 2.3.0
+* [ADD] 브리지 포인트 조회 화면
+* [ADD] CPYoutube / CPK 타잎 지원
+* [CHANGE] 로그 정리
+* [FIX] 드물게 Fragment 재생성 시 발생하는 크래시 수정
 
 # 2.2.3
 * [CHANGE] CPK 지원
