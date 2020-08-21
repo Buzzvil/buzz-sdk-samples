@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
         tvRedeemable.setText(String.valueOf(redeemableMilestones));
         tvRewarded.setText(String.valueOf(rewardedMilestones));
-        btRequestReward.setEnabled("0" != tvRedeemable.getText());
+        btRequestReward.setEnabled(!tvRedeemable.getText().toString().equals("0"));
     }
 
     private void updateStepUI(long value) {
