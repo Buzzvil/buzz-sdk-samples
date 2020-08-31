@@ -9,7 +9,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sample.R;
 import com.buzzvil.buzzscreen.sdk.BuzzScreen;
 import com.buzzvil.buzzscreen.sdk.UserProfile;
 
@@ -37,13 +36,13 @@ public class MainActivity extends Activity {
                 UserProfile userProfile = BuzzScreen.getInstance().getUserProfile();
 
                 // 포인트 적립을 위해서는 setUserId를 반드시 호출해야 함
-//                userProfile.setUserId("testuserid12345");
                 userProfile.setUserId("testuserid" + new Random().nextInt(100000));
 
                 // 캠페인 할당을 위한 타게팅 정보
                 userProfile.setBirthYear(1985);
                 userProfile.setGender(UserProfile.USER_GENDER_MALE);
                 userProfile.setRegion("서울특별시 관악구");
+                // userProfile.setFavoriteCategories(Arrays.asList(new String[] {"news", "sports"}));
 
                 // 버즈스크린 활성화
                 if (Constants.useGDPR) {

@@ -30,6 +30,6 @@ ext {
     mediationMobvistaVersion = '9.0.2.0'
     mediationMopubVersion = '5.5.0.0'
     mediationMytargetVersion = '5.1.2.1'
-    mediationOutbrainVersion = '2.5.3.1'
+    mediationOutbrainVersion = '3.9.2.1'
     mediationYandexVersion = '2.100.0'
 }
