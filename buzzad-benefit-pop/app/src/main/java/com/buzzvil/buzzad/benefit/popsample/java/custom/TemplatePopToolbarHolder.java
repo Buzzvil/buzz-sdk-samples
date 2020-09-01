@@ -12,15 +12,17 @@ import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.pop.toolbar.PopMenuImageView;
 import com.buzzvil.buzzad.benefit.pop.toolbar.PopToolbar;
 import com.buzzvil.buzzad.benefit.popsample.R;
+import com.buzzvil.buzzad.benefit.popsample.java.App;
 
 public class TemplatePopToolbarHolder extends DefaultPopToolbarHolder {
+
     @Override
-    public View getView(Activity activity) {
+    public View getView(Activity activity, @NonNull String unitId) {
         toolbar = new PopToolbar(activity);
         toolbar.setTitle("TemplatePopToolbarHolder");
         toolbar.setBackgroundColor(Color.LTGRAY);
 
-        addInquiryMenuItemView(activity);
+        addInquiryMenuItemView(activity, App.UNIT_ID_POP);
         addRightMenuItemView1(activity);
         return toolbar;
     }
