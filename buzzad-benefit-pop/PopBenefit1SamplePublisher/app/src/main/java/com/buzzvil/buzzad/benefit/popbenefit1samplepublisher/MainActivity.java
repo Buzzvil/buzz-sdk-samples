@@ -78,8 +78,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPop() {
-        Intent i = new Intent(MainActivity.this, PopContentActivity.class);
-        startActivity(i);
+        buzzAdPop.preload(new BuzzAdPop.PopPreloadListener() {
+            @Override
+            public void onPreloaded() {
+                buzzAdPop.showPop(MainActivity.this, true);
+            }
+
+            @Override
+            public void onError(AdError error) {
+                Toast.makeText(MainActivity.this, "Failed to load Pop Ads: " + error.toString(), Toast.LENGTH_SHORT).show();
+                buzzAdPop.showPop(MainActivity.this, false);
+            }
+        });
     }
 
     @Override
