@@ -6,10 +6,6 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +13,11 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private Button nativeAdButton;
     private Button nativeAdsButton;
     private Button feedButton;
+    private Button feedWithTabButton;
     private ProgressBar progressBar;
     private Spinner interstitialTypeSpinner;
     private Spinner interstitialCustomizationSpinner;
@@ -87,6 +89,23 @@ public class MainActivity extends AppCompatActivity {
                         .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
                         .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
                         .imageTypeEnabled(true)
+                        .build();
+                final FeedHandler feedHandler = new FeedHandler(feedConfig);
+                feedHandler.startFeedActivity(MainActivity.this);
+            }
+        });
+
+        this.feedWithTabButton = findViewById(R.id.feed_with_tab_button);
+        feedWithTabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
+                        .adsAdapterClass(CustomAdsAdapter.class)
+                        .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
+                        .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
+                        .imageTypeEnabled(true)
+                        .tabUiEnabled(true)
+                        .filterUiEnabled(true)
                         .build();
                 final FeedHandler feedHandler = new FeedHandler(feedConfig);
                 feedHandler.startFeedActivity(MainActivity.this);
