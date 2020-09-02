@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         setListener(buzzAdNotiPlus);
 
-        switchAdNotiRegister.setChecked(buzzAdNotiPlus.isRegistered());
-
+        switchAdNotiRegister.setChecked(buzzAdNotiPlus.isRegistered(getApplicationContext()));
     }
 
     private void setListener(final BuzzAdNotiPlus buzzAdNotiPlus) {
