@@ -2,6 +2,13 @@
 
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
+# 2.5.0 [WIP][Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/IN/pages/1092944473/AOS+2.0)
+* [CHANGE] Feed UI 개선 (탭, 필터, 정렬 기능)
+* [CHANGE] 문의하기 기능에 unitId 입력 필요.
+* [CHANGE] Pop init 방법 변경
+* [CHANGE] workManager 2.4.0 업데이트
+* [FIX] LG, 6.x 에서 Pop이 죽는 문제 수정
+
 # 2.3.0
 * [ADD] 브리지 포인트 조회 화면
 * [ADD] CPYoutube / CPK 타잎 지원
