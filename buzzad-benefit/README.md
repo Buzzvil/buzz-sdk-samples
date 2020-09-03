@@ -2,7 +2,7 @@
 
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
-# 2.5.0 [WIP][Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/IN/pages/1092944473/AOS+2.0)
+# 2.5.0 [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
 * [CHANGE] Feed UI 개선 (탭, 필터, 정렬 기능)
 * [CHANGE] 문의하기 기능에 unitId 입력 필요.
 * [CHANGE] Pop init 방법 변경
