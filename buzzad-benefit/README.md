@@ -1,8 +1,10 @@
+
 # BuzzAdBenefit SDK for Android
 
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
-# 2.5.0 [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
+# 2.5.0 
+* [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
 * [CHANGE] Feed UI 개선 (탭, 필터, 정렬 기능)
 * [CHANGE] 문의하기 기능에 unitId 입력 필요.
 * [CHANGE] Pop init 방법 변경
@@ -15,15 +17,6 @@
 * [CHANGE] 로그 정리
 * [FIX] 드물게 Fragment 재생성 시 발생하는 크래시 수정
 
-# 2.2.3
-* [CHANGE] CPK 지원
-* [FIX] 드물게 POP이 크래시(잠시 후 재 실행됨) 되는 문제 수정
-
-# 2.2.2
-* [FIX] 드물게 특정 광고에서 이미지가 표시 안되는 문제 수정
-
-# 2.2.1
-* [FIX] FeedFragment.init 하위버전 호환
 
 # 2.2.0
 * 인터스티셜에 문의하기 버튼 추가
@@ -36,12 +29,19 @@
 * 액션형 광고의 참여여부에 따른 CTA 변경
 * [FIX] 컨텐츠 랜딩 시 Feed 내의 카드뷰로 랜딩되도록 변경.
 * [FIX] 특정 단말에서 Pop 종료 버튼(X버튼) 에니메이션 개선
+> ## 2.2.1
+> * [FIX] FeedFragment.init 하위버전 호환
+> ## 2.2.2
+> * [FIX] 드물게 특정 광고에서 이미지가 표시 안되는 문제 수정
+> ## 2.2.3
+> * [CHANGE] CPK 지원
+> * [FIX] 드물게 POP이 크래시(잠시 후 재 실행됨) 되는 문제 수정
 
-# 2.0.2
-* Feed에서 광고 클릭시 가끔 이미지가 다시 로드되면서, 깜빡이는 문제 수정
-* 의도치 않게 POP 서비스가 죽었을 때, 다시 살리는 로직 추가
-* Benefit-Web을 위한 인터페이스 추가
-* AndroidManifest.xml에 android:allowBackup="true" 가 추가되지 않도록 수정
 
 # 2.0.0
 * AndroidX 기반으로 변경
+> ## 2.0.2
+> * Feed에서 광고 클릭시 가끔 이미지가 다시 로드되면서, 깜빡이는 문제 수정
+> * 의도치 않게 POP 서비스가 죽었을 때, 다시 살리는 로직 추가
+> * Benefit-Web을 위한 인터페이스 추가
+> * AndroidManifest.xml에 android:allowBackup="true" 가 추가되지 않도록 수정
