@@ -10,6 +10,9 @@
 * [CHANGE] Pop init 방법 변경
 * [CHANGE] workManager 2.4.0 업데이트
 * [FIX] LG, 6.x 에서 Pop이 죽는 문제 수정
+> ## 2.5.1
+> * [UPDATE] Bridge point dialog UI 개선
+> * [FIX] MD's Pick 다양한 해상도 대응
 
 # 2.3.0
 * [ADD] 브리지 포인트 조회 화면
