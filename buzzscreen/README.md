@@ -13,16 +13,18 @@
 > * [FIX] 첫번째 광고 할당이 자주 실패되는 문제 수정
 > ## 3.9.2
 > * [UPDATE] Memory 부족한 상황에서 할당이 실패하는 경우, 재시도를 통해서 할당 가능성 높이기
+> ## 3.9.3
+> * [FIX] 아랍어 설정시 랜딩 안되는 문제 수정
 
 # 3.7.0
 * [FIX] In App Browser 에서 간헐적인 크래시 수정
 > ## 3.7.1
 > * [UPDATE] Added Interface for Favorite categories
 > * [FIX] Fixed Vertical Video UI
->
 > ## 3.7.2
 > * [FIX] 첫번째 광고 할당이 자주 실패되는 문제 수정
-
+> ## 3.7.3
+> * [FIX] 아랍어 설정시 랜딩 안되는 문제 수정
 
 # 3.6.0
 * [FIX] Lockscreen에서 Content filter메뉴가 screen off 후에도 사라지지 않는 현상 수정
