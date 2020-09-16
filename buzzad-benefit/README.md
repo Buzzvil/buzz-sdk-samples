@@ -13,6 +13,8 @@
 > ## 2.5.1
 > * [UPDATE] Bridge point dialog UI 개선
 > * [FIX] MD's Pick 다양한 해상도 대응
+> ## 2.5.5
+> * [FIX] 앱에서 meterial library 1.3.0-alpha02 이상을 사용하는 경우 resource 이름 충돌로 빌드가 실패하는 문제 수정
 
 # 2.3.0
 * [ADD] 브리지 포인트 조회 화면

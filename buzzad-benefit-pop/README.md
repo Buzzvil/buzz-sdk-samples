@@ -5,6 +5,8 @@
 * https://github.com/Buzzvil/buzz-sdk-samples/blob/master/buzzad-benefit/README.md
 > ## 2.5.1
 > * https://github.com/Buzzvil/buzz-sdk-samples/blob/master/buzzad-benefit/README.md
+> ## 2.5.5
+> * https://github.com/Buzzvil/buzz-sdk-samples/blob/master/buzzad-benefit/README.md
 
 # 2.3.0
 * https://github.com/Buzzvil/buzz-sdk-samples/blob/master/buzzad-benefit/README.md
