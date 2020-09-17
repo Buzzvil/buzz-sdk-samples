@@ -15,13 +15,16 @@
 > * [FIX] MD's Pick 다양한 해상도 대응
 > ## 2.5.5
 > * [FIX] 앱에서 meterial library 1.3.0-alpha02 이상을 사용하는 경우 resource 이름 충돌로 빌드가 실패하는 문제 수정
+> ## 2.5.6
+> * [FIX] 누락된 Analytics를 위한 파라미터 추가.
 
 # 2.3.0
 * [ADD] 브리지 포인트 조회 화면
 * [ADD] CPYoutube / CPK 타잎 지원
 * [CHANGE] 로그 정리
 * [FIX] 드물게 Fragment 재생성 시 발생하는 크래시 수정
-
+> ## 2.3.1
+> * [FIX] 누락된 Analytics를 위한 파라미터 추가.
 
 # 2.2.0
 * 인터스티셜에 문의하기 버튼 추가
