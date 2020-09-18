@@ -5,6 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.buzzvil.buzzad.benefit.BuzzAdBenefit
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler
 import com.buzzvil.buzzad.benefit.presentation.feed.header.DefaultFeedHeaderViewAdapter
@@ -14,6 +15,9 @@ class MainActivity : AppCompatActivity() {
         Log.d("MainActivity", "onCreate()")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // This makes core is initiated
+        Log.d("MainActivity", "${BuzzAdBenefit.getInstance().core.appId}");
 
         Handler(Looper.getMainLooper()).postDelayed({
             //Do something after 100ms
