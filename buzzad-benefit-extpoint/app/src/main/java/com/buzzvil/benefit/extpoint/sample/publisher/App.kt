@@ -2,6 +2,7 @@ package com.buzzvil.benefit.extpoint.sample.publisher
 
 import android.app.Application
 import android.graphics.Color
+import android.util.Log
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig
 import com.buzzvil.buzzad.benefit.extauth.BuzzAdBenefitExtauthConfig
@@ -9,6 +10,7 @@ import com.buzzvil.buzzad.benefit.extauth.BuzzAdBenefitExtauthInstaller
 
 class App : Application() {
     override fun onCreate() {
+        Log.d("App", "onCreate()")
         super.onCreate()
 
         //// Extauth 모듈 활성화를 위해 다음 항목들을 추가합니다. ////
@@ -23,6 +25,7 @@ class App : Application() {
             .build()
 
         // (3) 초기화
+        Log.d("App", "onCreate() BuzzAdBenefit.init()")
         BuzzAdBenefit.init(this, buzzAdBenefitConfig)
     }
 }

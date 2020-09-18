@@ -7,8 +7,8 @@ android {
     buildToolsVersion "30.0.0"
 
     /** Apply the correct value you want to test **/
-    def buzzAppId = '0123456789'
-    def buzzFeedUnitId = '0123456789'
+    def buzzAppId = '173236362960603'
+    def buzzFeedUnitId = '121599072691873'
 
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.extpoint.sample.publisher"
