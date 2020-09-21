@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 30
+
+    /** Apply the correct value you want to test **/
+    def buzzAppId = '0123456789'
+    def buzzFeedUnitId = '0123456789'
+
+    defaultConfig {
+        applicationId "com.buzzvil.buzzad.benefit.extpoint.sample.publisher"
+        minSdkVersion 15
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [buzzAppId: buzzAppId]
+        buildConfigField "String", "BUZZ_FEED_UNIT_ID", '"' + buzzFeedUnitId + '"'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation ("com.buzzvil:buzzad-benefit:2.3.0-extpoint-1.0.1") {
+
+        // (2) 현재 Pop 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
+        exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
+        // 현재 Notification 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
+        exclude group: 'com.buzzvil', module: 'buzzad-benefit-notification'
+
+        // (3) 다음의 코드가 존재한다면, 제거해야 합니다.
+        // exclude group: 'com.buzzvil', module: 'buzzad-benefit-extauth'
+    }
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
