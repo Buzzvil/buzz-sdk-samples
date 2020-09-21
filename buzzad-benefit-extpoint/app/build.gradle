@@ -3,8 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.0"
+    compileSdkVersion 30
 
     /** Apply the correct value you want to test **/
     def buzzAppId = '0123456789'
@@ -12,8 +11,8 @@ android {
 
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.extpoint.sample.publisher"
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion 15
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
