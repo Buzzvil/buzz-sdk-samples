@@ -1,5 +1,5 @@
 framework module libwebp {
-  umbrella header "libwebp.h"
+  umbrella header "libwebp-umbrella.h"
 
   export *
   module * { export * }
