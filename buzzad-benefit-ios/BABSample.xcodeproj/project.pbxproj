@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9BFDD35759B08FD80179F975 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
+		696534B22516811E00714D40 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
+		696534F725183A3600714D40 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696534B6251681CE00714D40 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		69653575251984D000714D40 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69653574251984D000714D40 /* BrowserViewController.m */; };
 		C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AAE244D299E00F0C436 /* CarouselView.m */; };
 		C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4307AB0244D299E00F0C436 /* CarouselView.xib */; };
 		C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AB3244D299F00F0C436 /* WebViewController.m */; };
@@ -20,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		696534B6251681CE00714D40 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		69653573251984C300714D40 /* BrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		69653574251984D000714D40 /* BrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		B58C59731E43AC7DA91D8058 /* Pods-BABSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B80A664165F8931FCCCA62FF /* Pods-BABSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.release.xcconfig"; sourceTree = "<group>"; };
 		C4307AAC244D299E00F0C436 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -46,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFDD35759B08FD80179F975 /* Pods_BABSample.framework in Frameworks */,
+				696534B22516811E00714D40 /* Pods_BABSample.framework in Frameworks */,
+				696534F725183A3600714D40 /* AppTrackingTransparency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +104,8 @@
 				C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */,
 				C4A2975C2240F06B00F6D677 /* Info.plist */,
 				C4A2975D2240F06B00F6D677 /* main.m */,
+				69653573251984C300714D40 /* BrowserViewController.h */,
+				69653574251984D000714D40 /* BrowserViewController.m */,
 			);
 			path = BABSample;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 		F43C05F5557925D6AF9C17E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				696534B6251681CE00714D40 /* AppTrackingTransparency.framework */,
 				CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */,
 			);
 			name = Frameworks;
@@ -230,6 +239,7 @@
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
 				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
 				C4A297502240F06900F6D677 /* AppDelegate.m in Sources */,
+				69653575251984D000714D40 /* BrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

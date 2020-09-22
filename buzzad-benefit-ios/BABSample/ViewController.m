@@ -16,6 +16,7 @@
 #import <Toast/Toast.h>
 #import "WebViewController.h"
 #import "CarouselView.h"
+#import "BrowserViewController.h"
 
 @interface ViewController () <BABNativeAdViewDelegate, BABInterstitialAdHandlerDelegate, BABLauncher>
 
@@ -155,16 +156,17 @@
 
 #pragma mark - BABLauncher
 
-- (void)openUrl:(NSURL *)url object:(id)object userInfo:(NSDictionary *)userInfo {
-  if (@available(iOS 9.0, *)) {
-    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
-    if (self.presentedViewController) {
-      [self.presentedViewController presentViewController:safariViewController animated:YES completion:nil];
-    } else {
-      [self.navigationController presentViewController:safariViewController animated:YES completion:nil];
-    }
+- (void)openWithLaunchInfo:(BABLaunchInfo *)launchInfo {
+  [self openWithLaunchInfo:launchInfo delegate:nil];
+}
+
+- (void)openWithLaunchInfo:(BABLaunchInfo *)launchInfo delegate:(id<BABLauncherEventDelegate>)delegate {
+  BrowserViewController *browserViewController = [[BrowserViewController alloc] init];
+
+  if (self.presentedViewController) {
+    [self.presentedViewController presentViewController:browserViewController animated:YES completion:nil];
   } else {
-    [UIApplication.sharedApplication openURL:url];
+    [self.navigationController presentViewController:browserViewController animated:YES completion:nil];
   }
 }
 
