@@ -1,0 +1,70 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - BuzzAdBenefit (2.0.0):
+    - AFNetworking (~> 4.0)
+    - GoogleAds-IMA-iOS-SDK (~> 3.11.3)
+    - ReactiveObjC (~> 3.1.1)
+    - SDWebImage (~> 5.0)
+    - SDWebImageWebPCoder
+  - GoogleAds-IMA-iOS-SDK (3.11.3)
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
+    - libwebp/webp
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
+  - SDWebImageWebPCoder (0.6.1):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.7)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - BuzzAdBenefit (~> 2.0.0)
+  - Toast (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Toast
+  trunk:
+    - AFNetworking
+    - BuzzAdBenefit
+    - GoogleAds-IMA-iOS-SDK
+    - libwebp
+    - ReactiveObjC
+    - SDWebImage
+    - SDWebImageWebPCoder
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  BuzzAdBenefit: 9163d20b7cd40226aecf06ec48c110a209a22806
+  GoogleAds-IMA-iOS-SDK: 134b35758455576aaa6b3d2d3146699dcf8af4f1
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
+  SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: d9fbb3eda74a53a13e091d8edf89f9173c9b8c6d
+
+COCOAPODS: 1.9.3
