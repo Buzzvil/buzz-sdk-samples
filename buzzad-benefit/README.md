@@ -3,9 +3,18 @@
 
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
+# 2.7.0
+* [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
+* [NEW] Pop 아이콘 customize
+* [UPDATE] 체류리워드 UI 개선
+* [UPDATE] Bridge 포인트 조회 화면 UI 개선
+* [FIX] 5.0 단말기에서 드물게 ArrayStoreException 발생하는 오류 수정
+* [FIX] 특정 환경에서 resource 충돌로인해 빌드 실패 오류 수정
+ - BuzzScreen SDK 를 사용중이라면 3.11.+ 로 업데이트 필요
+
 # 2.5.0 
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
-* [CHANGE] Feed UI 개선 (탭, 필터, 정렬 기능)
+* [UPDATE] Feed UI 개선 (탭, 필터, 정렬 기능)
 * [CHANGE] 문의하기 기능에 unitId 입력 필요.
 * [CHANGE] Pop init 방법 변경
 * [CHANGE] workManager 2.4.0 업데이트
@@ -19,22 +28,22 @@
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
 
 # 2.3.0
-* [ADD] 브리지 포인트 조회 화면
-* [ADD] CPYoutube / CPK 타잎 지원
+* [NEW] 브리지 포인트 조회 화면
+* [NEW] CPYoutube / CPK 타잎 지원
 * [CHANGE] 로그 정리
 * [FIX] 드물게 Fragment 재생성 시 발생하는 크래시 수정
 > ## 2.3.1
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
 
 # 2.2.0
-* 인터스티셜에 문의하기 버튼 추가
-* Video에 Open Measurement 스펙 적용
-* Pop 사라지는 시간을 커스텀하는 기능 추가
-* Pop 베이스 리워드와 광고 리워드를 통합해서 Preview에 노출
-* Pop feed의 툴바 커스텀하는 기능 추가
-* 인앱랜딩을 위한 액티비티의 테마가 App 테마를 따르도록 변경.
-* 인앱랜딩을 위한 액티비티 커스텀하는 기능 추가
-* 액션형 광고의 참여여부에 따른 CTA 변경
+* [NEW] 인터스티셜에 문의하기 버튼 추가
+* [NEW] Pop feed의 툴바 커스텀하는 기능 추가
+* [NEW] Pop 사라지는 시간을 커스텀하는 기능 추가
+* [NEW] 인앱랜딩을 위한 액티비티 커스텀하는 기능 추가
+* [CHANGE] 액션형 광고의 참여여부에 따른 CTA 변경
+* [UPDATE] Video에 Open Measurement 스펙 적용
+* [UPDATE] Pop 베이스 리워드와 광고 리워드를 통합해서 Preview에 노출
+* [FIX] 인앱랜딩을 위한 액티비티의 테마가 App 테마를 따르도록 변경.
 * [FIX] 컨텐츠 랜딩 시 Feed 내의 카드뷰로 랜딩되도록 변경.
 * [FIX] 특정 단말에서 Pop 종료 버튼(X버튼) 에니메이션 개선
 > ## 2.2.1
