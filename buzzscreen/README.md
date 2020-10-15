@@ -9,9 +9,10 @@
 
 # 3.11.0
 * [FIX] 최초 광고할당 실패시 튜토리얼 오동작 문제 수정
+> ## 3.11.1
+> * [UPDATE] 2:1 Image support
 
 # 3.9.0
-* [UPDATE] 2:1 Image support
 > ## 3.9.1
 > * [FIX] 첫번째 광고 할당이 자주 실패되는 문제 수정
 > ## 3.9.2
@@ -20,6 +21,8 @@
 > * [FIX] 아랍어 설정시 랜딩 안되는 문제 수정
 > ## 3.9.5
 > * [FIX] 앱에서 meterial library 1.3.0-alpha02 이상을 사용하는 경우 resource 이름 충돌로 빌드가 실패하는 문제 수정
+> ## 3.9.6
+> * [UPDATE] 2:1 Image support
 
 # 3.7.0
 * [FIX] In App Browser 에서 간헐적인 크래시 수정
