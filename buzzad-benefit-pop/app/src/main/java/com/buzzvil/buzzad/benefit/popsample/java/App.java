@@ -18,17 +18,17 @@ import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
     public static final String UNIT_ID_POP = "236027834764095";
-
+    public boolean isBenefitInitialized = false;
     @Override
     public void onCreate() {
         super.onCreate();
 
-        initBuzzAdBenefit();
+//        initBuzzAdBenefit();
 //        initBuzzAdBenefitWithCustomPopHeaderViewAdapter(); // User this for custom pop header view adapter
 //        initBuzzAdBenefitWithCustomControlService(); // Use this for custom pop notification
     }
 
-    private void initBuzzAdBenefit() {
+    public void initBuzzAdBenefit() {
         final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 // DefaultPopToolbarHolder: DefaultToolbar
                 // TemplatePopToolbarHolder: Minimum customize, pop feed icon, name, button
@@ -57,6 +57,8 @@ public class App extends MultiDexApplication {
                 .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
+
+        isBenefitInitialized = true;
 
         final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")
