@@ -46,13 +46,19 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private App app;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
+        app = (App) getApplication();
 
-        this.buzzAdPop = new BuzzAdPop(this, App.UNIT_ID_POP);
+        if (app.isBenefitInitialized) {
+            BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
+            this.buzzAdPop = new BuzzAdPop(this, App.UNIT_ID_POP);
+        }
+
         this.popShowButton = findViewById(R.id.pop_show_button);
         popShowButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
         popUnregisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (buzzAdPop == null) {
+                    Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to unregister pop", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 buzzAdPop.removePop(MainActivity.this);
             }
         });
@@ -80,7 +90,11 @@ public class MainActivity extends AppCompatActivity {
         if (getIntent().getBooleanExtra(KEY_SETTINGS_RESULT, false)
                 && getIntent().getIntExtra(KEY_SETTINGS_REQUEST_CODE, 0) == REQUEST_CODE_SHOW_POP) {
             if (BuzzAdPop.hasPermission(this)) {
-                buzzAdPop.showTutorialPopup(this);
+                if (buzzAdPop != null) {
+                    buzzAdPop.showTutorialPopup(this);
+                } else {
+                    Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showTutorialPop", Toast.LENGTH_SHORT).show();
+                }
                 // overlay permission granted
                 // collect event here if necessary
             }
@@ -88,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPopOrRequestPermissionWithDialog() {
+        if (buzzAdPop == null) {
+            Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             showPop();
         } else {
@@ -101,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPop() {
+        if (buzzAdPop == null) {
+            Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
+            return;
+        }
         buzzAdPop.preloadAndShowPop(MainActivity.this);
 
         // Use this instead of preloadAndShowPop if need to show pop tutorial dialog
@@ -112,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
      * Use this method when collecting event for overlay permission granted, otherwise see showPopOrRequestPermissionWithDialog
      */
     private void showPopOrShowOverlayPermissionDialog() {
+        if (buzzAdPop == null) {
+            Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             showPop();
         } else {
