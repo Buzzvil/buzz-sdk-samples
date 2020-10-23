@@ -17,6 +17,18 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/pop_init_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Init" />
+
+            <Button
+                android:id="@+id/pop_set_user_profile_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set UserProfile" />
+
+            <Button
                 android:id="@+id/pop_show_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,6 +46,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Unregister pop" />
+
+            <Button
+                android:id="@+id/pop_clear_pop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clear Pop" />
 
         </LinearLayout>
 

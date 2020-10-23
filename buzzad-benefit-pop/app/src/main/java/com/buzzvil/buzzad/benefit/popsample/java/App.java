@@ -1,10 +1,13 @@
 package com.buzzvil.buzzad.benefit.popsample.java;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+
 import androidx.multidex.MultiDexApplication;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
-import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.DefaultPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
@@ -17,18 +20,36 @@ import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
+    public static final String TAG = "App";
+    public static final String BUZZ_AD_PREFERENCE = "BUZZ_AD_PREFERENCE";
+    public static final String POP_ENABLED = "popInitialized";
     public static final String UNIT_ID_POP = "236027834764095";
-    public boolean isBenefitInitialized = false;
+    public boolean isBuzzAdBenefitInitialized = false;
+    private SharedPreferences sharedPref;
+
     @Override
     public void onCreate() {
         super.onCreate();
-
+        sharedPref = getApplicationContext().getSharedPreferences(BUZZ_AD_PREFERENCE, Context.MODE_PRIVATE);
+        boolean popEnabled = sharedPref.getBoolean(POP_ENABLED, false);
+        Log.d(TAG, "onCreate popEnabled = " + popEnabled);
+        if (popEnabled) {
+            Log.d(TAG, "onCreate popEnabled == true initBuzzAdBenefit");
+            initBuzzAdBenefit();
+        }
 //        initBuzzAdBenefit();
 //        initBuzzAdBenefitWithCustomPopHeaderViewAdapter(); // User this for custom pop header view adapter
 //        initBuzzAdBenefitWithCustomControlService(); // Use this for custom pop notification
     }
 
+    public void clearBuzzAdBenefit() {
+        Log.d(TAG, "clearBuzzAdBenefit");
+        isBuzzAdBenefitInitialized = false;
+        sharedPref.edit().putBoolean(POP_ENABLED, false).apply();
+    }
+
     public void initBuzzAdBenefit() {
+        Log.d(TAG, "initBuzzAdBenefit");
         final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 // DefaultPopToolbarHolder: DefaultToolbar
                 // TemplatePopToolbarHolder: Minimum customize, pop feed icon, name, button
@@ -57,16 +78,11 @@ public class App extends MultiDexApplication {
                 .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
+        sharedPref.edit().putBoolean(POP_ENABLED, true).apply();
 
-        isBenefitInitialized = true;
-
-        final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
-                .userId("SAMPLE_USER_ID")
-                .gender(UserProfile.Gender.FEMALE)
-                .birthYear(1993)
-                .build();
-        BuzzAdBenefit.setUserProfile(userProfile);
+        isBuzzAdBenefitInitialized = true;
     }
+
     /**
      * [CUSTOM_POP_HEADER_VIEW_ADAPTER] Set custom CustomPopHeaderViewAdapter
      */
@@ -96,13 +112,6 @@ public class App extends MultiDexApplication {
                 .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
-
-        final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
-                .userId("SAMPLE_USER_ID")
-                .gender(UserProfile.Gender.FEMALE)
-                .birthYear(1993)
-                .build();
-        BuzzAdBenefit.setUserProfile(userProfile);
     }
 
     /**
@@ -125,12 +134,5 @@ public class App extends MultiDexApplication {
                 .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
-
-        final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
-                .userId("SAMPLE_USER_ID")
-                .gender(UserProfile.Gender.FEMALE)
-                .birthYear(1993)
-                .build();
-        BuzzAdBenefit.setUserProfile(userProfile);
     }
 }

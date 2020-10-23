@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
-import com.buzzvil.buzzad.benefit.core.ad.AdError;
+import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 import com.buzzvil.buzzad.benefit.pop.PopOverlayPermissionConfig;
 import com.buzzvil.buzzad.benefit.popsample.R;
@@ -33,9 +33,12 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     private final static int REQUEST_CODE_SHOW_POP = 100;
 
+    private Button popInitButton;
+    private Button popLoginButton;
     private Button popShowButton;
     private Button popUnregisterButton;
     private Button popShowWithCustomPermissoinDialogButton;
+    private Button popClearButton;
 
     private BuzzAdPop buzzAdPop;
     private BroadcastReceiver sessionReadyReceiver = new BroadcastReceiver() {
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             Log.e("SessionKey", "Session is Ready. Ads can be loaded now.");
             Toast.makeText(MainActivity.this, "Session is Ready. Ads can be loaded now.", Toast.LENGTH_SHORT).show();
+            buildBuzzAdPop();
         }
     };
 
@@ -54,10 +58,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         app = (App) getApplication();
 
-        if (app.isBenefitInitialized) {
-            BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
-            this.buzzAdPop = new BuzzAdPop(this, App.UNIT_ID_POP);
-        }
+        buildBuzzAdPop();
+        this.popInitButton = findViewById(R.id.pop_init_button);
+        popInitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!app.isBuzzAdBenefitInitialized) {
+                    app.initBuzzAdBenefit();
+                }
+            }
+        });
+
+        this.popLoginButton = findViewById(R.id.pop_set_user_profile_button);
+        popLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!app.isBuzzAdBenefitInitialized) {
+                    Toast.makeText(MainActivity.this, "buzzAdBenefit is not initialized. unable to set userProfile", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
+                        .userId("SAMPLE_USER_ID")
+                        .gender(UserProfile.Gender.FEMALE)
+                        .birthYear(1993)
+                        .build();
+                BuzzAdBenefit.setUserProfile(userProfile);
+                BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
+            }
+        });
 
         this.popShowButton = findViewById(R.id.pop_show_button);
         popShowButton.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +115,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        this.popClearButton = findViewById(R.id.pop_clear_pop);
+        popClearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (buzzAdPop == null) {
+                    Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to unregister pop", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!app.isBuzzAdBenefitInitialized) {
+                    Log.d(TAG, "BuzzAdPop is not initialized. No need to clear");
+                    return;
+                }
+                buzzAdPop.removePop(MainActivity.this);
+                app.clearBuzzAdBenefit();
+            }
+        });
+
         if (getIntent().getBooleanExtra(KEY_SETTINGS_RESULT, false)
                 && getIntent().getIntExtra(KEY_SETTINGS_REQUEST_CODE, 0) == REQUEST_CODE_SHOW_POP) {
             if (BuzzAdPop.hasPermission(this)) {
@@ -94,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     buzzAdPop.showTutorialPopup(this);
                 } else {
                     Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showTutorialPop", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "buzzAdPop is not ready. unable to showTutorialPop");
                 }
                 // overlay permission granted
                 // collect event here if necessary
@@ -101,9 +147,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void buildBuzzAdPop() {
+        if (app.isBuzzAdBenefitInitialized && buzzAdPop == null) {
+            Log.d(TAG, "buildBuzzAdPop success");
+            buzzAdPop = new BuzzAdPop(MainActivity.this, App.UNIT_ID_POP);
+        } else {
+            Log.d(TAG, "buildBuzzAdPop is already initialized");
+        }
+    }
+
     private void showPopOrRequestPermissionWithDialog() {
         if (buzzAdPop == null) {
             Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "buzzAdPop is not ready. unable to showPop");
             return;
         }
         if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
@@ -121,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
     private void showPop() {
         if (buzzAdPop == null) {
             Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "buzzAdPop is not ready. unable to showPop");
             return;
         }
         buzzAdPop.preloadAndShowPop(MainActivity.this);
@@ -136,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
     private void showPopOrShowOverlayPermissionDialog() {
         if (buzzAdPop == null) {
             Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "buzzAdPop is not ready. unable to showPop");
             return;
         }
         if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
