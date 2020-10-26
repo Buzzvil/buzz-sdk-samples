@@ -12,7 +12,7 @@ public class App extends MultiDexApplication {
     public static final String TAG = "App";
     public static final String BUZZ_AD_PREFERENCE = "BUZZ_AD_PREFERENCE";
     public static final String UNIT_ID_POP = "236027834764095";
-    private BuzzAdPopController buzzAdBenefitController;
+    private BuzzAdBenefitController buzzAdBenefitController;
 
     @Override
     public void onCreate() {
@@ -22,7 +22,7 @@ public class App extends MultiDexApplication {
 
     private void initBuzzAdBenefitController() {
         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(BUZZ_AD_PREFERENCE, Context.MODE_PRIVATE);
-        buzzAdBenefitController = new BuzzAdPopController(getApplicationContext(), sharedPref);
+        buzzAdBenefitController = new BuzzAdBenefitController(getApplicationContext(), sharedPref);
 
         boolean buzzAdBenefitEnabled = buzzAdBenefitController.isBuzzAdBenefitEnabled();
         Log.d(TAG, "onCreate buzzAdBenefitEnabled == " + buzzAdBenefitEnabled);

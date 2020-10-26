@@ -15,7 +15,7 @@ import com.buzzvil.buzzad.benefit.popsample.R;
 import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
-public class BuzzAdPopController {
+public class BuzzAdBenefitController {
     public static final String TAG = "App";
     public static final String BUZZ_AD_BENEFIT_ENABLED = "popInitialized";
     public static final String UNIT_ID_POP = "236027834764095";
@@ -24,7 +24,7 @@ public class BuzzAdPopController {
     private SharedPreferences sharedPref;
     private Context context;
 
-    BuzzAdPopController(Context context, SharedPreferences sharedPref) {
+    BuzzAdBenefitController(Context context, SharedPreferences sharedPref) {
         this.context = context;
         this.sharedPref = sharedPref;
     }
