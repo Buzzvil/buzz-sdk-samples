@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         popInitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!app.isBuzzAdBenefitInitialized) {
+                if (!app.isBuzzAdBenefitInitialized()) {
                     app.initBuzzAdBenefit();
                 }
             }
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         popLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!app.isBuzzAdBenefitInitialized) {
+                if (!app.isBuzzAdBenefitInitialized()) {
                     Toast.makeText(MainActivity.this, "buzzAdBenefit is not initialized. unable to set userProfile", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "buzzAdPop is not ready. No need to clear", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (!app.isBuzzAdBenefitInitialized) {
+                if (!app.isBuzzAdBenefitInitialized()) {
                     Log.d(TAG, "BuzzAdPop is not initialized. No need to clear");
                     return;
                 }
