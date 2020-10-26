@@ -11,10 +11,7 @@ import com.buzzvil.buzzad.benefit.pop.DefaultPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.SidePosition;
-import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.popsample.R;
-import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomControlService;
-import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
@@ -88,58 +85,5 @@ public class BuzzAdPopController {
         sharedPref.edit().putBoolean(POP_ENABLED, true).apply();
 
         isBuzzAdBenefitInitialized = true;
-    }
-
-    /**
-     * [CUSTOM_POP_HEADER_VIEW_ADAPTER] Set custom CustomPopHeaderViewAdapter
-     */
-    private void initBuzzAdBenefitWithCustomPopHeaderViewAdapter() {
-        final FeedConfig feedConfig = new FeedConfig.Builder(context, UNIT_ID_POP)
-                .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
-                .feedHeaderViewAdapterClass(CustomPopHeaderViewAdapter.class)
-                .articlesEnabled(true)
-                .articleInAppLandingEnabled(true)
-                .build();
-        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(context)
-                .smallIconResId(R.drawable.ic_notification_pop_gift)
-                .titleResId(R.string.pop_notification_title)
-                .textResId(R.string.pop_notification_text)
-                .colorResId(R.color.colorPrimary)
-                .notificationId(1021)
-                .build();
-        final PopConfig popConfig = new PopConfig.Builder(context, UNIT_ID_POP)
-                .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
-                .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
-                .feedConfig(feedConfig)
-                .popNotificationConfig(popNotificationConfig)
-                .previewIntervalInMillis(1000) // for test
-                .build();
-
-        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(context)
-                .add(popConfig)
-                .build();
-        BuzzAdBenefit.init(context, buzzAdBenefitConfig);
-    }
-
-    /**
-     * [CUSTOM_POP_CONTROL_SERVICE] Set custom PopControlService
-     */
-    private void initBuzzAdBenefitWithCustomControlService() {
-        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(context)
-                .smallIconResId(R.drawable.ic_notification_pop_gift)
-                .notificationId(1021)
-                .build();
-
-        final PopConfig popConfig = new PopConfig.Builder(context, UNIT_ID_POP)
-                .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
-                .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
-                .controlService(CustomControlService.class)
-                .popNotificationConfig(popNotificationConfig)
-                .build();
-
-        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(context)
-                .add(popConfig)
-                .build();
-        BuzzAdBenefit.init(context, buzzAdBenefitConfig);
     }
 }
