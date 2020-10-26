@@ -17,8 +17,7 @@ import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class BuzzAdPopController {
     public static final String TAG = "App";
-    public static final String BUZZ_AD_PREFERENCE = "BUZZ_AD_PREFERENCE";
-    public static final String POP_ENABLED = "popInitialized";
+    public static final String BUZZ_AD_BENEFIT_ENABLED = "popInitialized";
     public static final String UNIT_ID_POP = "236027834764095";
     public boolean isBuzzAdBenefitInitialized = false;
     private BuzzAdPop buzzAdPop = null;
@@ -30,15 +29,23 @@ public class BuzzAdPopController {
         this.sharedPref = sharedPref;
     }
 
-    public void clearBuzzAdBenefit() {
-        Log.d(TAG, "clearBuzzAdBenefit");
-        isBuzzAdBenefitInitialized = false;
-        buzzAdPop.removePop(context);
-        buzzAdPop = null;
-        sharedPref.edit().putBoolean(POP_ENABLED, false).apply();
+    public boolean isBuzzAdBenefitEnabled() {
+        return sharedPref.getBoolean(BUZZ_AD_BENEFIT_ENABLED, false);
     }
 
-    public void buildBuzzAdPop() {
+    public void clearBuzzAdBenefit() {
+        Log.d(TAG, "clearBuzzAdBenefit");
+        if (buzzAdPop != null) {
+            isBuzzAdBenefitInitialized = false;
+            buzzAdPop.removePop(context);
+            buzzAdPop = null;
+            sharedPref.edit().putBoolean(BUZZ_AD_BENEFIT_ENABLED, false).apply();
+        } else {
+            Log.d(TAG, "clearBuzzAdBenefit fail, buzzAdPop is null");
+        }
+    }
+
+    public void buildBuzzAdPop() throws IllegalStateException {
         if (isBuzzAdBenefitInitialized && buzzAdPop == null) {
             Log.d(TAG, "getBuzzAdPop success");
             buzzAdPop = new BuzzAdPop(context, App.UNIT_ID_POP);
@@ -82,8 +89,8 @@ public class BuzzAdPopController {
                 .add(popConfig)
                 .build();
         BuzzAdBenefit.init(context, buzzAdBenefitConfig);
-        sharedPref.edit().putBoolean(POP_ENABLED, true).apply();
 
+        sharedPref.edit().putBoolean(BUZZ_AD_BENEFIT_ENABLED, true).apply();
         isBuzzAdBenefitInitialized = true;
     }
 }

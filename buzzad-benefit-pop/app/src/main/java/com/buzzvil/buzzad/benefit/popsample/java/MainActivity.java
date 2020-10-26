@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private final static int REQUEST_CODE_SHOW_POP = 100;
 
     private Button popInitButton;
-    private Button popLoginButton;
+    private Button popSetUserProfileButton;
     private Button popShowButton;
     private Button popUnregisterButton;
     private Button popClearButton;
@@ -55,20 +55,19 @@ public class MainActivity extends AppCompatActivity {
         popInitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!app.isBuzzAdBenefitInitialized()) {
-                    app.initBuzzAdBenefit();
-                }
+                app.initBuzzAdBenefit();
             }
         });
 
-        this.popLoginButton = findViewById(R.id.pop_set_user_profile_button);
-        popLoginButton.setOnClickListener(new View.OnClickListener() {
+        this.popSetUserProfileButton = findViewById(R.id.pop_set_user_profile_button);
+        popSetUserProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!app.isBuzzAdBenefitInitialized()) {
                     Toast.makeText(MainActivity.this, "buzzAdBenefit is not initialized. unable to set userProfile", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                Log.d(TAG, "setUserProfile");
                 final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                         .userId("SAMPLE_USER_ID")
                         .gender(UserProfile.Gender.FEMALE)

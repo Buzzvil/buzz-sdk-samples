@@ -11,9 +11,8 @@ import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 public class App extends MultiDexApplication {
     public static final String TAG = "App";
     public static final String BUZZ_AD_PREFERENCE = "BUZZ_AD_PREFERENCE";
-    public static final String POP_ENABLED = "popInitialized";
     public static final String UNIT_ID_POP = "236027834764095";
-    private BuzzAdPopController buzzAdPopController;
+    private BuzzAdPopController buzzAdBenefitController;
 
     @Override
     public void onCreate() {
@@ -23,32 +22,43 @@ public class App extends MultiDexApplication {
 
     private void initBuzzAdBenefitController() {
         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(BUZZ_AD_PREFERENCE, Context.MODE_PRIVATE);
-        boolean popEnabled = sharedPref.getBoolean(POP_ENABLED, false);
-        buzzAdPopController = new BuzzAdPopController(getApplicationContext(), sharedPref);
-        Log.d(TAG, "onCreate popEnabled = " + popEnabled);
-        if (popEnabled) {
-            Log.d(TAG, "onCreate popEnabled == true initBuzzAdBenefit");
-            buzzAdPopController.initBuzzAdBenefit();
+        buzzAdBenefitController = new BuzzAdPopController(getApplicationContext(), sharedPref);
+
+        boolean buzzAdBenefitEnabled = buzzAdBenefitController.isBuzzAdBenefitEnabled();
+        Log.d(TAG, "onCreate buzzAdBenefitEnabled == " + buzzAdBenefitEnabled);
+        if (buzzAdBenefitEnabled) {
+            Log.d(TAG, "onCreate buzzAdBenefitEnabled == true initBuzzAdBenefit");
+            buzzAdBenefitController.initBuzzAdBenefit();
+        } else {
+            Log.d(TAG, "onCreate buzzAdBenefitEnabled == false skip initBuzzAdBenefit");
         }
     }
 
     public boolean isBuzzAdBenefitInitialized() {
-        return buzzAdPopController.isBuzzAdBenefitInitialized;
+        return buzzAdBenefitController.isBuzzAdBenefitInitialized;
     }
 
     public void clearBuzzAdBenefit() {
-        buzzAdPopController.clearBuzzAdBenefit();
+        buzzAdBenefitController.clearBuzzAdBenefit();
     }
 
     public void buildBuzzAdPop() {
-        buzzAdPopController.buildBuzzAdPop();
+        try {
+            buzzAdBenefitController.buildBuzzAdPop();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
     }
 
     public BuzzAdPop getBuzzAdPop() {
-        return buzzAdPopController.getBuzzAdPop();
+        return buzzAdBenefitController.getBuzzAdPop();
     }
 
     public void initBuzzAdBenefit() {
-        buzzAdPopController.initBuzzAdBenefit();
+        if (!isBuzzAdBenefitInitialized()) {
+            buzzAdBenefitController.initBuzzAdBenefit();
+        } else {
+            Log.d(TAG, "initBuzzAdBenefit fail - already initialized");
+        }
     }
 }
