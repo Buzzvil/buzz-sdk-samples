@@ -8,6 +8,7 @@ import androidx.multidex.MultiDexApplication;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
+import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 import com.buzzvil.buzzad.benefit.pop.DefaultPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
@@ -25,6 +26,7 @@ public class App extends MultiDexApplication {
     public static final String POP_ENABLED = "popInitialized";
     public static final String UNIT_ID_POP = "236027834764095";
     public boolean isBuzzAdBenefitInitialized = false;
+    private BuzzAdPop buzzAdPop = null;
     private SharedPreferences sharedPref;
 
     @Override
@@ -45,7 +47,22 @@ public class App extends MultiDexApplication {
     public void clearBuzzAdBenefit() {
         Log.d(TAG, "clearBuzzAdBenefit");
         isBuzzAdBenefitInitialized = false;
+        buzzAdPop.removePop(getApplicationContext());
+        buzzAdPop = null;
         sharedPref.edit().putBoolean(POP_ENABLED, false).apply();
+    }
+
+    public void buildBuzzAdPop() {
+        if (isBuzzAdBenefitInitialized && buzzAdPop == null) {
+            Log.d(TAG, "getBuzzAdPop success");
+            buzzAdPop = new BuzzAdPop(getApplicationContext(), App.UNIT_ID_POP);
+        } else {
+            Log.d(TAG, "getBuzzAdPop is already initialized");
+        }
+    }
+
+    public BuzzAdPop getBuzzAdPop() {
+        return buzzAdPop;
     }
 
     public void initBuzzAdBenefit() {
@@ -70,6 +87,7 @@ public class App extends MultiDexApplication {
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .feedConfig(feedConfig)
+                .idleTimeInMillis(10_000)
                 .popNotificationConfig(popNotificationConfig)
                 .previewIntervalInMillis(1000) // for test
                 .build();

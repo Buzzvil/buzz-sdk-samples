@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -39,14 +40,12 @@ public class MainActivity extends AppCompatActivity {
     private Button popUnregisterButton;
     private Button popShowWithCustomPermissoinDialogButton;
     private Button popClearButton;
-
-    private BuzzAdPop buzzAdPop;
     private BroadcastReceiver sessionReadyReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.e("SessionKey", "Session is Ready. Ads can be loaded now.");
             Toast.makeText(MainActivity.this, "Session is Ready. Ads can be loaded now.", Toast.LENGTH_SHORT).show();
-            buildBuzzAdPop();
+            app.buildBuzzAdPop();
         }
     };
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         app = (App) getApplication();
 
-        buildBuzzAdPop();
+        app.buildBuzzAdPop();
         this.popInitButton = findViewById(R.id.pop_init_button);
         popInitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,11 +106,11 @@ public class MainActivity extends AppCompatActivity {
         popUnregisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (buzzAdPop == null) {
+                if (app.getBuzzAdPop() == null) {
                     Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to unregister pop", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                buzzAdPop.removePop(MainActivity.this);
+                app.getBuzzAdPop().removePop(MainActivity.this);
             }
         });
 
@@ -119,24 +118,29 @@ public class MainActivity extends AppCompatActivity {
         popClearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (buzzAdPop == null) {
-                    Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to unregister pop", Toast.LENGTH_SHORT).show();
+                if (app.getBuzzAdPop() == null) {
+                    Toast.makeText(MainActivity.this, "buzzAdPop is not ready. No need to clear", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (!app.isBuzzAdBenefitInitialized) {
                     Log.d(TAG, "BuzzAdPop is not initialized. No need to clear");
                     return;
                 }
-                buzzAdPop.removePop(MainActivity.this);
-                app.clearBuzzAdBenefit();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        app.clearBuzzAdBenefit();
+                    }
+                }, 2000);
             }
         });
 
         if (getIntent().getBooleanExtra(KEY_SETTINGS_RESULT, false)
                 && getIntent().getIntExtra(KEY_SETTINGS_REQUEST_CODE, 0) == REQUEST_CODE_SHOW_POP) {
             if (BuzzAdPop.hasPermission(this)) {
-                if (buzzAdPop != null) {
-                    buzzAdPop.showTutorialPopup(this);
+                if (app.getBuzzAdPop() != null) {
+                    app.getBuzzAdPop().showTutorialPopup(this);
                 } else {
                     Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showTutorialPop", Toast.LENGTH_SHORT).show();
                     Log.d(TAG, "buzzAdPop is not ready. unable to showTutorialPop");
@@ -147,17 +151,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void buildBuzzAdPop() {
-        if (app.isBuzzAdBenefitInitialized && buzzAdPop == null) {
-            Log.d(TAG, "buildBuzzAdPop success");
-            buzzAdPop = new BuzzAdPop(MainActivity.this, App.UNIT_ID_POP);
-        } else {
-            Log.d(TAG, "buildBuzzAdPop is already initialized");
-        }
-    }
+//    private void buildBuzzAdPop() {
+//        if (app.isBuzzAdBenefitInitialized && buzzAdPop == null) {
+//            Log.d(TAG, "buildBuzzAdPop success");
+//            buzzAdPop = new BuzzAdPop(MainActivity.this, App.UNIT_ID_POP);
+//        } else {
+//            Log.d(TAG, "buildBuzzAdPop is already initialized");
+//        }
+//    }
 
     private void showPopOrRequestPermissionWithDialog() {
-        if (buzzAdPop == null) {
+        if (app.getBuzzAdPop() == null) {
             Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "buzzAdPop is not ready. unable to showPop");
             return;
@@ -175,12 +179,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPop() {
-        if (buzzAdPop == null) {
+        if (app.getBuzzAdPop() == null) {
             Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "buzzAdPop is not ready. unable to showPop");
             return;
         }
-        buzzAdPop.preloadAndShowPop(MainActivity.this);
+        app.getBuzzAdPop().preloadAndShowPop(MainActivity.this);
 
         // Use this instead of preloadAndShowPop if need to show pop tutorial dialog
         // buzzAdPop.showTutorialPopup(MainActivity.this);
@@ -191,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
      * Use this method when collecting event for overlay permission granted, otherwise see showPopOrRequestPermissionWithDialog
      */
     private void showPopOrShowOverlayPermissionDialog() {
-        if (buzzAdPop == null) {
+        if (app.getBuzzAdPop() == null) {
             Toast.makeText(MainActivity.this, "buzzAdPop is not ready. unable to showPop", Toast.LENGTH_SHORT).show();
             Log.d(TAG, "buzzAdPop is not ready. unable to showPop");
             return;
