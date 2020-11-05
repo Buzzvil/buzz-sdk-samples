@@ -5,7 +5,7 @@ import androidx.multidex.MultiDexApplication;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
-import com.buzzvil.buzzad.benefit.presentation.notification.NotiPlusDialogConfig;
+import com.buzzvil.buzzad.benefit.presentation.notification.PushDialogConfig;
 import com.buzzvil.buzzad.benefit.presentation.notification.RewardNotificationConfig;
 
 public class App extends MultiDexApplication {
@@ -32,8 +32,8 @@ public class App extends MultiDexApplication {
         BuzzAdBenefit.setUserProfile(userProfile);
     }
 
-    public static NotiPlusDialogConfig getNotiPlusDialogConfig() {
-        return new NotiPlusDialogConfig.Builder()
+    public static PushDialogConfig getPushDialogConfig() {
+        return new PushDialogConfig.Builder()
                 .colorConfirm(R.color.colorAccent)
                 .colorCancel(R.color.colorPrimary)
                 .imageRegisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
