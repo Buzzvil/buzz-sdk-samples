@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         btnCustomRegister = findViewById(R.id.btnCustomRegister);
         btnUnregister = findViewById(R.id.btnUnregister);
 
-        BuzzAdPush buzzAdNotiPlus = initBuzzAdPush();
+        BuzzAdPush buzzAdPush = initBuzzAdPush();
 
-        setListener(buzzAdNotiPlus);
+        setListener(buzzAdPush);
 
-        switchAdNotiRegister.setChecked(buzzAdNotiPlus.isRegistered(getApplicationContext()));
+        switchAdNotiRegister.setChecked(buzzAdPush.isRegistered(getApplicationContext()));
     }
 
     private void setListener(final BuzzAdPush buzzAdPush) {
@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void registerWithDescription(final BuzzAdPush buzzAdNotiPlus) {
-        buzzAdNotiPlus.registerWithDialog(this, new BuzzAdPush.OnRegisterListener() {
+    private void registerWithDescription(final BuzzAdPush buzzAdPush) {
+        buzzAdPush.registerWithDialog(this, new BuzzAdPush.OnRegisterListener() {
             @Override
             public void onSuccess() {
                 switchAdNotiRegister.setChecked(true);
@@ -116,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void registerWithoutDescription(final BuzzAdPush buzzAdNotiPlus) {
-        buzzAdNotiPlus.registerWithDialog(this, false, new BuzzAdPush.OnRegisterListener() {
+    private void registerWithoutDescription(final BuzzAdPush buzzAdPush) {
+        buzzAdPush.registerWithDialog(this, false, new BuzzAdPush.OnRegisterListener() {
             @Override
             public void onSuccess() {
                 switchAdNotiRegister.setChecked(true);
@@ -130,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void unregister(final BuzzAdPush buzzAdNotiPlus) {
-        buzzAdNotiPlus.unregisterWithDialog(this, new BuzzAdPush.OnRegisterListener() {
+    private void unregister(final BuzzAdPush buzzAdPush) {
+        buzzAdPush.unregisterWithDialog(this, new BuzzAdPush.OnRegisterListener() {
             @Override
             public void onSuccess() {
                 switchAdNotiRegister.setChecked(false);
@@ -144,15 +144,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void customRegister(final BuzzAdPush buzzAdNotiPlus) {
-        buzzAdNotiPlus.fetchPushHoursOptionIfNeeded(
+    private void customRegister(final BuzzAdPush buzzAdPush) {
+        buzzAdPush.fetchPushHoursOptionIfNeeded(
                 this,
                 new PushRepository.OnFetchResultListener() {
                     @Override
                     public void onFetchFail() {
-                        showNotiPlusRegisterDialogStep2(
+                        showPushRegisterDialogStep2(
                                 MainActivity.this,
-                                buzzAdNotiPlus,
+                                buzzAdPush,
                                 new BuzzAdPush.OnRegisterListener() {
                                     @Override
                                     public void onSuccess() {
@@ -169,9 +169,9 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFetchSuccess() {
-                        showNotiPlusRegisterDialogStep2(
+                        showPushRegisterDialogStep2(
                                 MainActivity.this,
-                                buzzAdNotiPlus,
+                                buzzAdPush,
                                 new BuzzAdPush.OnRegisterListener() {
                                     @Override
                                     public void onSuccess() {
@@ -196,14 +196,14 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    void showNotiPlusRegisterDialogStep2(
+    void showPushRegisterDialogStep2(
             @NonNull final Activity activity,
             @NonNull final BuzzAdPush buzzAdPush,
             @NonNull final BuzzAdPush.OnRegisterListener onRegisterListener) {
-        View notiPlusDialogStep2Layout = activity.getLayoutInflater().inflate(R.layout.view_settings_dialog_register_step_2, null);
-        ViewGroup layoutNotiPlusCheckbox = notiPlusDialogStep2Layout.findViewById(R.id.layoutNotiPlusCheckbox);
+        View pushDialogStep2Layout = activity.getLayoutInflater().inflate(R.layout.view_settings_dialog_register_step_2, null);
+        ViewGroup layoutPushCheckbox = pushDialogStep2Layout.findViewById(R.id.layoutNotiPlusCheckbox);
 
-        final CheckBox checkBoxCheckAll = layoutNotiPlusCheckbox.findViewById(R.id.checkboxNotiPlusAll);
+        final CheckBox checkBoxCheckAll = layoutPushCheckbox.findViewById(R.id.checkboxNotiPlusAll);
         final List<CheckBox> checkBoxes = new ArrayList<>();
 
         final PushHourParser pushHourParser = new PushHourParser(activity);
@@ -213,13 +213,13 @@ public class MainActivity extends AppCompatActivity {
             checkBoxValues.add(list.get(i));
             CheckBox checkBox = (CheckBox) activity.getLayoutInflater().inflate(R.layout.view_settings_dialog_register_step_2_checkbox, null);
             checkBox.setText(pushHourParser.convertHourToString(list.get(i)));
-            layoutNotiPlusCheckbox.addView(checkBox);
+            layoutPushCheckbox.addView(checkBox);
             checkBoxes.add(checkBox);
         }
 
         final AlertDialog dialog = new AlertDialog.Builder(activity)
-                .setView(notiPlusDialogStep2Layout)
-                .setPositiveButton(R.string.benefit_notiplus_settings_dialog_register_step_2_confrim, new DialogInterface.OnClickListener() {
+                .setView(pushDialogStep2Layout)
+                .setPositiveButton(R.string.benefit_push_settings_dialog_register_step_2_confrim, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         List<Integer> result = new ArrayList<>();
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                         buzzAdPush.register(activity);
                     }
                 })
-                .setNegativeButton(R.string.benefit_notiplus_settings_dialog_register_step_2_cancel, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.benefit_push_settings_dialog_register_step_2_cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         onRegisterListener.onCanceled();
