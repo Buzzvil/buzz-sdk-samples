@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:text="@string/benefit_notiplus_settings_dialog_register_step_2_title"/>
+        android:text="@string/benefit_push_settings_dialog_register_step_2_title"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:id="@+id/checkboxNotiPlusAll"
                 style="@style/BenefitAdNotiPlusCheckbox"
                 android:textStyle="bold"
-                android:text="@string/benefit_notiplus_settings_dialog_register_step_2_subscribe_all"
+                android:text="@string/benefit_push_settings_dialog_register_step_2_subscribe_all"
                 />
 
         </LinearLayout>

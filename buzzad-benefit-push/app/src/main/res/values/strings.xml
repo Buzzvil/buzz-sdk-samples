@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PushSample</string>
+
+    <string name="benefit_push_settings_dialog_register_step_1_title">리워드 광고 구독하기</string>
+    <string name="benefit_push_settings_dialog_register_step_1_message">원하는 시간대에 놓치는 리워드 광고를 모아서 참여할 수 있는 기능입니다. 간편하게 구독하고 푸짐한 리워드 받아가세요! 광고가 없는 경우에는 알림이 가지 않습니다.</string>
+    <string name="benefit_push_settings_dialog_register_step_1_confrim">다음</string>
+    <string name="benefit_push_settings_dialog_register_step_1_cancel">나중에 하기</string>
+    <string name="benefit_push_settings_dialog_register_step_2_title">구독 시간을 선택해 주세요</string>
+    <string name="benefit_push_settings_dialog_register_step_2_subscribe_all">모두 구독</string>
+    <string name="benefit_push_settings_dialog_register_step_2_confrim">완료</string>
+    <string name="benefit_push_settings_dialog_register_step_2_cancel">나중에 하기</string>
+    <string name="benefit_push_settings_dialog_unregister_title">구독을 취소합니다</string>
+    <string name="benefit_push_settings_dialog_unregister_message">지금 구독을 취소하면 더 이상 리워드 광고 구독하기 알림을 받아볼 수 없습니다. 취소 하시겠습니까?</string>
+    <string name="benefit_push_settings_dialog_unregister_confrim">구독 취소</string>
+    <string name="benefit_push_settings_dialog_unregister_cancel">나중에 하기</string>
+    <string name="benefit_push_settings_am">오전 %1$d 시</string>
+    <string name="benefit_push_settings_pm">오후 %1$d 시</string>
+    <string name="benefit_push_register_complete">%1$d월 %2$d일 리워드 광고 구독에 동의하였습니다</string>
+    <string name="benefit_push_notification_title_template">[광고] %1$s [수신거부:설정]</string>
+</resources>
