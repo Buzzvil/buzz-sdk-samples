@@ -5,10 +5,11 @@
 
 # 2.9.0
 * [UPDATE] Feed category UI 개선
-* [FIX] 웹 방식의 Feed에서, 랜딩 후 "system-initiated process death"가 발생하면 빈 웹화면이 나오는 문제 수정
 * [CHANGE] 이미지 로딩 라이브러리를 UIL 에서 Picasso(v2.71828) 로 변경.
 * [CHANGE] Feed에서 Action형 광고를 클릭시 BottomSheet형태의 WebView로 진입하도록 UI 변경
 * [NEW] 개인정보처리방침 UI 추가 - 이미 앱에서 동의를 받고 있다면, BuzzAdBenefit.getPrivacyPolicyManager().grantConsent(); 호출함으로써, UI가 나타나지 않게 할 수 있음.
+> ## 2.9.1
+> * [FIX] Feed에서, 랜딩 후 "system-initiated process death"가 발생하면 빈 웹화면이 나오는 문제 수정
 
 # 2.7.0
 * [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
