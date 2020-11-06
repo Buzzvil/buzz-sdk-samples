@@ -18,6 +18,9 @@
 * [FIX] 5.0 단말기에서 드물게 ArrayStoreException 발생하는 오류 수정
 * [FIX] 특정 환경에서 resource 충돌로인해 빌드 실패 오류 수정
  - BuzzScreen SDK 를 사용중이라면 3.11.+ 로 업데이트 필요
+> ## 2.7.1
+> * [FIX] Pop 기능의 안정성 개선
+> * [NEW] Notification 기능의 정식 출시
 
 # 2.5.0 
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
