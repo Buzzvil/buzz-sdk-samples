@@ -8,6 +8,8 @@
 
 # 3.13.0
 * [CHANGE] 이미지 로딩 라이브러리를 UIL 에서 Picasso(v2.71828) 로 변경.
+> ## 3.13.1
+> * [FIX] 드물게 NPE 발생 - LockCardViewFragment
 
 # 3.11.0
 * [FIX] 최초 광고할당 실패시 튜토리얼 오동작 문제 수정

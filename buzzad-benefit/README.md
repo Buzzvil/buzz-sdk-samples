@@ -10,6 +10,8 @@
 * [NEW] 개인정보처리방침 UI 추가 - 이미 앱에서 동의를 받고 있다면, BuzzAdBenefit.getPrivacyPolicyManager().grantConsent(); 호출함으로써, UI가 나타나지 않게 할 수 있음.
 > ## 2.9.1
 > * [FIX] Feed에서, 랜딩 후 "system-initiated process death"가 발생하면 빈 웹화면이 나오는 문제 수정
+> ## 2.9.2
+> * [FIX] 드물게 NPE 발생 - LandingRewardManager$x.onItem
 
 # 2.7.0
 * [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
