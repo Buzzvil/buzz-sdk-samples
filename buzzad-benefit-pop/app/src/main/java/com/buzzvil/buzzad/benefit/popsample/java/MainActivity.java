@@ -11,15 +11,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
-import com.buzzvil.buzzad.benefit.core.ad.AdError;
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 import com.buzzvil.buzzad.benefit.pop.PopOverlayPermissionConfig;
+import com.buzzvil.buzzad.benefit.popsample.BuildConfig;
 import com.buzzvil.buzzad.benefit.popsample.R;
 import com.buzzvil.lib.buzzsettingsmonitor.OverlaySettingsMonitor;
 import com.buzzvil.lib.buzzsettingsmonitor.SettingsMonitorManager;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     private final static int REQUEST_CODE_SHOW_POP = 100;
 
+    private TextView textAppVersion;
+    private TextView textSdkSdkVersion;
     private Button popShowButton;
     private Button popUnregisterButton;
     private Button popShowWithCustomPermissoinDialogButton;
@@ -50,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setVersionText();
+
         BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
 
         this.buzzAdPop = new BuzzAdPop(this, App.UNIT_ID_POP);
@@ -85,6 +90,15 @@ public class MainActivity extends AppCompatActivity {
                 // collect event here if necessary
             }
         }
+    }
+
+    private void setVersionText() {
+        textAppVersion = findViewById(R.id.text_app_version);
+        String strAppVersion = BuildConfig.VERSION_NAME;
+        textAppVersion.setText(strAppVersion);
+        textSdkSdkVersion = findViewById(R.id.text_sdk_version);
+        String strBenefitSdkVersion = BuzzAdBenefit.getSdkVersion();
+        textSdkSdkVersion.setText(strBenefitSdkVersion);
     }
 
     private void showPopOrRequestPermissionWithDialog() {
