@@ -63,6 +63,11 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/pop_set_user_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set UserProfile" />
 
             <Button
                 android:id="@+id/pop_show_button"

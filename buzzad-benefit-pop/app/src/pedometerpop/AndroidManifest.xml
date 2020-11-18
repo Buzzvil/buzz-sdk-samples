@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.buzzvil.buzzad.benefit.popsample">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.buzzvil.buzzad.benefit.popsample">
+
+    <uses-sdk android:minSdkVersion="15" tools:overrideLibrary="com.buzzvil.pedometer" />
 
     <application
             android:name="com.buzzvil.buzzad.benefit.popsample.java.App"
@@ -21,10 +24,6 @@
         <!-- [CUSTOM_POP_CONTROL_SERVICE] Only need to add this service when use custom pop control service, otherwise don't need to add this service -->
         <service android:name=".java.custom.CustomControlService" />
 
-        <!-- Caution: Replace `260318561407891` with Your AppKey  -->
-        <meta-data
-            android:name="com.buzzvil.APP_KEY"
-            android:value="app-pub-260318561407891" />
     </application>
 
 </manifest>

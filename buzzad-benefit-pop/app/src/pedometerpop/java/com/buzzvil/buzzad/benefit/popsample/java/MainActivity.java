@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
+import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 import com.buzzvil.buzzad.benefit.pop.PopOverlayPermissionConfig;
 import com.buzzvil.buzzad.benefit.popsample.BuildConfig;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textAppVersion;
     private TextView textSdkSdkVersion;
+    private Button popSetUserProfile;
     private Button popShowButton;
     private Button popUnregisterButton;
     private Button popShowWithCustomPermissoinDialogButton;
@@ -58,6 +60,19 @@ public class MainActivity extends AppCompatActivity {
         BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
 
         this.buzzAdPop = new BuzzAdPop(this, App.UNIT_ID_POP);
+        this.popSetUserProfile = findViewById(R.id.pop_set_user_profile);
+        popSetUserProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
+                        .userId("SAMPLE_USER_ID")
+                        .gender(UserProfile.Gender.FEMALE)
+                        .birthYear(1993)
+                        .build();
+                BuzzAdBenefit.setUserProfile(userProfile);
+            }
+        });
+
         this.popShowButton = findViewById(R.id.pop_show_button);
         popShowButton.setOnClickListener(new View.OnClickListener() {
             @Override
