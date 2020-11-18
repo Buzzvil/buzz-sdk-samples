@@ -21,19 +21,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    flavorDimensions "popType"
+    flavorDimensions "poptype"
     productFlavors {
-        defaultPop {
+        defaultpop {
             // Assigns this product flavor to the "version" flavor dimension.
             // If you are using only one dimension, this property is optional,
             // and the plugin automatically assigns all the module's flavors to
             // that dimension.
-            dimension "popType"
-            applicationIdSuffix ".defaultPop"
-            versionNameSuffix "-defaultPop"
+            dimension "poptype"
+            applicationIdSuffix ".defaultpop"
+            versionNameSuffix "-defaultpop"
         }
-        pedometerPop {
-            dimension "popType"
+        pedometerpop {
+            dimension "poptype"
             applicationIdSuffix ".pedometerpop"
             versionNameSuffix "-pedometerpop"
         }
