@@ -12,9 +12,9 @@ import androidx.multidex.MultiDexApplication;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
-import com.buzzvil.buzzad.benefit.pop.DefaultPopHeaderViewAdapter;
+import com.buzzvil.buzzad.benefit.pop.DefaultPedometerPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
-//import com.buzzvil.buzzad.benefit.pop.PopHeaderConfig;
+import com.buzzvil.buzzad.benefit.pop.PopHeaderConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.pedometer.BuzzAdPopPedometer;
 import com.buzzvil.buzzad.benefit.pop.pedometer.PedometerConfig;
@@ -52,7 +52,7 @@ public class App extends MultiDexApplication {
                 // TemplatePopToolbarHolder: Minimum customize, pop feed icon, name, button
                 // CustomPopToolbarHolder: Use layout for toolbar
                 .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
-                .feedHeaderViewAdapterClass(DefaultPopHeaderViewAdapter.class)
+                .feedHeaderViewAdapterClass(DefaultPedometerPopHeaderViewAdapter.class)
                 .articlesEnabled(true)
                 .articleInAppLandingEnabled(true)
                 .build();
@@ -64,21 +64,14 @@ public class App extends MultiDexApplication {
                 .notificationId(1021)
                 .build();
         final com.buzzvil.buzzad.benefit.pop.pedometer.PedometerConfig pedometerConfig = buildPedometerConfig();
-//        final PopHeaderConfig popHeaderConfig = new PopHeaderConfig.Builder()
-//                .pedometerStepCountDescription(getString(R.string.pop_pedometer_dashboard_today_steps))
-//                .pedometerDashboardProgressChartColor(android.R.color.holo_red_dark)
-//                .pedometerDashboardProgressChartGuideColor(android.R.color.holo_red_light)
-//                .pedometerInProgressDescription(getString(R.string.pop_pedometer_dashboard_inprogress_description))
-//                .pedometerRewardableDescription(getString(R.string.pop_pedometer_dashboard_rewardable_description))
-//                .drawableProgressIcon(R.drawable.bz_pop_ic_pedometer_stat)
-//                .drawablePopPedometerDescriptionIcon(R.drawable.bz_pop_ic_pedometer_run)
-//                .pedometerDashboardBoundaryImage(R.drawable.dashboard_boundary)
-//                .build();
+        final PopHeaderConfig popHeaderConfig = buildPedometerPopHeaderConfig();
         popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
+                .popMode(PopConfig.PopMode.PEDOMETER_POP)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .feedConfig(feedConfig)
                 .pedometerConfig(pedometerConfig)
+                .popHeaderConfig(popHeaderConfig)
                 .popNotificationConfig(popNotificationConfig)
                 .previewIntervalInMillis(1000) // for test
                 .build();
@@ -111,6 +104,21 @@ public class App extends MultiDexApplication {
             }
         }
     };
+
+    @NotNull
+    private PopHeaderConfig buildPedometerPopHeaderConfig() {
+        return new PopHeaderConfig.Builder()
+                // use following code for customizing
+                .pedometerStepCountDescription(getString(R.string.pop_pedometer_dashboard_today_steps))
+                .pedometerDashboardProgressChartColor(android.R.color.holo_red_dark)
+                .pedometerDashboardProgressChartGuideColor(android.R.color.holo_red_light)
+                .pedometerInProgressDescription(getString(R.string.pop_pedometer_dashboard_inprogress_description))
+                .pedometerRewardableDescription(getString(R.string.pop_pedometer_dashboard_rewardable_description))
+                .drawableProgressIcon(R.drawable.bz_pop_ic_pedometer_stat)
+                .drawablePopPedometerDescriptionIcon(R.drawable.bz_pop_ic_pedometer_run)
+                .pedometerDashboardBoundaryImage(R.drawable.dashboard_boundary)
+                .build();
+    }
 
     @NotNull
     private PedometerConfig buildPedometerConfig() {

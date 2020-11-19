@@ -1,26 +1,32 @@
 package com.buzzvil.buzzad.benefit.popsample.java;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 import com.buzzvil.buzzad.benefit.pop.PopOverlayPermissionConfig;
+import com.buzzvil.buzzad.benefit.pop.pedometer.BuzzAdPopPedometer;
 import com.buzzvil.buzzad.benefit.popsample.BuildConfig;
 import com.buzzvil.buzzad.benefit.popsample.R;
 import com.buzzvil.lib.buzzsettingsmonitor.OverlaySettingsMonitor;
@@ -34,6 +40,7 @@ import static com.buzzvil.lib.buzzsettingsmonitor.SettingsMonitor.KEY_SETTINGS_R
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     private final static int REQUEST_CODE_SHOW_POP = 100;
+    private static final int ACTIVATION_REQUEST_CODE = 2000;
 
     private TextView textAppVersion;
     private TextView textSdkSdkVersion;
@@ -41,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private Button popShowButton;
     private Button popUnregisterButton;
     private Button popShowWithCustomPermissoinDialogButton;
+    private Switch pedometerPopSwitch;
 
     private BuzzAdPop buzzAdPop;
     private BroadcastReceiver sessionReadyReceiver = new BroadcastReceiver() {
@@ -77,7 +85,24 @@ public class MainActivity extends AppCompatActivity {
         popShowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopOrRequestPermissionWithDialog();
+                if (!requestActivityRecognitionPermissionIfNeeded(MainActivity.this)) {
+                    showPopOrRequestOverlayPermissionIfNeeded();
+                }
+            }
+        });
+
+        this.pedometerPopSwitch = findViewById(R.id.pedometer_pop_switch);
+        pedometerPopSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pedometerPopSwitch.isChecked()) {
+                    pedometerPopSwitch.setChecked(false);
+                    if (!requestActivityRecognitionPermissionIfNeeded(MainActivity.this)) {
+                        showPopOrRequestOverlayPermissionIfNeeded();
+                    }
+                } else {
+                    unregisterPop();
+                }
             }
         });
 
@@ -93,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         popUnregisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buzzAdPop.removePop(MainActivity.this);
+                unregisterPop();
             }
         });
 
@@ -103,8 +128,22 @@ public class MainActivity extends AppCompatActivity {
                 buzzAdPop.showTutorialPopup(this);
                 // overlay permission granted
                 // collect event here if necessary
+                activatePedometerPop();
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (buzzAdPop != null) {
+            pedometerPopSwitch.setChecked(buzzAdPop.isPopEnabled());
+        }
+    }
+
+    private void unregisterPop() {
+        pedometerPopSwitch.setChecked(false);
+        buzzAdPop.removePop(this);
     }
 
     private void setVersionText() {
@@ -130,10 +169,86 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPop() {
+        pedometerPopSwitch.setChecked(true);
+        activatePedometerPop();
         buzzAdPop.preloadAndShowPop(MainActivity.this);
-
         // Use this instead of preloadAndShowPop if need to show pop tutorial dialog
         // buzzAdPop.showTutorialPopup(MainActivity.this);
+    }
+
+    private void activatePedometerPop() {
+        BuzzAdPopPedometer.activate(new BuzzAdPopPedometer.OnActivationListener() {
+            @Override
+            public void onSuccess() {
+                Log.d(TAG, "BuzzAdPopPedometer.activate onSuccess");
+            }
+
+            @Override
+            public void onPermissionNotReady() {
+                Log.w(TAG, "BuzzAdPopPedometer.activate onPermissionNotReady");
+            }
+
+            @Override
+            public void onSensorError() {
+                Log.w(TAG, "BuzzAdPopPedometer.activate onSensorError");
+            }
+        });
+    }
+
+    private void showPopOrRequestOverlayPermissionIfNeeded() {
+        if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            showPop();
+        } else {
+            BuzzAdPop.requestPermissionWithDialog(MainActivity.this,
+                    new PopOverlayPermissionConfig.Builder(R.string.pop_name)
+                            .settingsIntent(OverlayPermission.createIntentToRequestOverlayPermission(MainActivity.this))
+                            .requestCode(REQUEST_CODE_SHOW_POP)
+                            .build()
+            );
+        }
+    }
+
+    private boolean requestActivityRecognitionPermissionIfNeeded(Activity activity) {
+        if (activity != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACTIVITY_RECOGNITION) != PackageManager.PERMISSION_GRANTED) {
+                requestActivityRecognitionPermission(activity);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @TargetApi(Build.VERSION_CODES.Q)
+    private void requestActivityRecognitionPermission(Activity activity) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.ACTIVITY_RECOGNITION)) {
+            if (!activity.isFinishing()) {
+                new AlertDialog.Builder(activity)
+                        .setTitle(R.string.pop_pedometer_dialog_permission_title)
+                        .setMessage(R.string.pop_pedometer_dialog_permission_description)
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                requestPermissions(new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, ACTIVATION_REQUEST_CODE);
+                            }
+                        }).show();
+            }
+        } else {
+            requestPermissions(new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, ACTIVATION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case ACTIVATION_REQUEST_CODE: {
+                if ((grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    showPopOrRequestOverlayPermissionIfNeeded();
+                } else {
+                    pedometerPopSwitch.setChecked(false);
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     /*
