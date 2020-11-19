@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     private Button popSetUserProfile;
     private Button popShowButton;
     private Button popUnregisterButton;
-    private Button popShowWithCustomPermissoinDialogButton;
     private Switch pedometerPopSwitch;
 
     private BuzzAdPop buzzAdPop;
@@ -103,14 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     unregisterPop();
                 }
-            }
-        });
-
-        this.popShowWithCustomPermissoinDialogButton = findViewById(R.id.pop_show_button_with_custom_permission_dialog_button);
-        popShowWithCustomPermissoinDialogButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopOrShowOverlayPermissionDialog();
             }
         });
 
@@ -249,54 +240,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-
-    /*
-     * (Optional: CUSTOM PERMISSION DIALOG)
-     * Use this method when collecting event for overlay permission granted, otherwise see showPopOrRequestPermissionWithDialog
-     */
-    private void showPopOrShowOverlayPermissionDialog() {
-        if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            showPop();
-        } else {
-            showPopOverlayPermissionDialog(MainActivity.this, new PopOverlayPermissionConfig.Builder(R.string.pop_name)
-                    .settingsIntent(OverlayPermission.createIntentToRequestOverlayPermission(MainActivity.this))
-                    .requestCode(REQUEST_CODE_SHOW_POP)
-                    .build());
-
-        }
-    }
-
-    /*
-     * (Optional: CUSTOM PERMISSION DIALOG)
-     * Use this method when collecting event for overlay permission granted, otherwise see showPopOrRequestPermissionWithDialog
-     */
-    private void showPopOverlayPermissionDialog(@NonNull final Activity activity, @NonNull final PopOverlayPermissionConfig permissionSettings) {
-        final AlertDialog dialog = new AlertDialog.Builder(activity)
-                .setTitle(permissionSettings.getTitle())
-                .setPositiveButton(permissionSettings.getPositiveButtonText(), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            new SettingsMonitorManager().openSettingsActivity(
-                                    new OverlaySettingsMonitor(activity, activity.getClass(), permissionSettings.getRequestCode()),
-                                    activity,
-                                    permissionSettings.getSettingsIntent());
-                            dialog.dismiss();
-                        } else {
-                            Log.e(TAG, "Unnecessary to show showPopOverlayPermissionDialog for this android os version");
-                        }
-                    }
-                })
-                .setNegativeButton(permissionSettings.getNegativeButtonText(), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .setCancelable(true)
-                .create();
-        dialog.show();
     }
 
     @Override
