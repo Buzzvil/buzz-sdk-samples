@@ -26,6 +26,8 @@
 > ## 2.7.1
 > * [FIX] Pop 기능의 안정성 개선
 > * [NEW] Notification 기능의 정식 출시
+> ## 2.7.2
+> * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
 
 # 2.5.0 
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
