@@ -14,6 +14,8 @@
 > * [FIX] 드물게 NPE 발생 - LandingRewardManager$x.onItem
 > ## 2.9.3
 > * [FIX] Tab customization 관련 마이너 버그 수정
+> ## 2.9.4
+> * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
 
 # 2.7.0
 * [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
