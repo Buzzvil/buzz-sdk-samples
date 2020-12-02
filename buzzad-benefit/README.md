@@ -30,6 +30,8 @@
 > * [NEW] Notification 기능의 정식 출시
 > ## 2.7.2
 > * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
+> ## 2.7.3
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 # 2.5.0 
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
@@ -45,6 +47,8 @@
 > * [FIX] 앱에서 meterial library 1.3.0-alpha02 이상을 사용하는 경우 resource 이름 충돌로 빌드가 실패하는 문제 수정
 > ## 2.5.6
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
+> ## 2.5.7
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 # 2.3.0
 * [NEW] 브리지 포인트 조회 화면
@@ -53,6 +57,8 @@
 * [FIX] 드물게 Fragment 재생성 시 발생하는 크래시 수정
 > ## 2.3.1
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
+> ## 2.3.2
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 # 2.2.0
 * [NEW] 인터스티셜에 문의하기 버튼 추가
@@ -72,6 +78,8 @@
 > ## 2.2.3
 > * [CHANGE] CPK 지원
 > * [FIX] 드물게 POP이 크래시(잠시 후 재 실행됨) 되는 문제 수정
+> ## 2.2.4
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 
 # 2.0.0
