@@ -31,8 +31,8 @@ public class App extends MultiDexApplication {
     public static final String TAG = "PopSampleApp";
     public static final String UNIT_ID_POP = "236027834764095";
     public static final String APP_ID = "260318561407891";
-    public static final String UNIT_ID_PEDOMETER = "239470121994416";
-    public static final String UNIT_ID_PEDOMETER_REWARD = "406229237968648";
+    public static final String UNIT_ID_PEDOMETER = "UNIT_ID_PEDOMETER";
+    public static final String UNIT_ID_PEDOMETER_REWARD = "UNIT_ID_PEDOMETER_REWARD";
 
     private PopConfig popConfig;
 
