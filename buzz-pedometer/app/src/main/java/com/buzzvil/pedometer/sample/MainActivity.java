@@ -1,5 +1,7 @@
 package com.buzzvil.pedometer.sample;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -8,12 +10,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.buzzvil.pedometer.BuzzPedometer.OnMilestoneListener;
 import com.buzzvil.pedometer.BuzzPedometer.OnRewardResponseListener;
 import com.buzzvil.pedometer.BuzzPedometer.OnStepHistoryListener;
 import com.buzzvil.pedometer.BuzzPedometer.OnStepListener;
+import com.buzzvil.pedometer.BuzzPedometer.OnActivationListener;
+import com.buzzvil.pedometer.model.ActivationFailureReason;
+import com.buzzvil.pedometer.model.ActivationFailureReason.PermissionError;
+import com.buzzvil.pedometer.model.ActivationFailureReason.SensorError;
 import com.buzzvil.pedometer.model.Milestone;
 import com.buzzvil.pedometer.model.StepHistory;
 import com.buzzvil.pedometer.model.UserProfile;
@@ -41,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etStepHistoryRange;
     private EditText etHeight;
     private EditText etWeight;
+    private static final int ACTIVATION_REQUEST_CODE = 1234;
 
     private OnStepListener onStepListener = new OnStepListener() {
         @Override
@@ -139,7 +147,25 @@ public class MainActivity extends AppCompatActivity {
         btActivate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BuzzPedometerSdk.getPedometer().activate();
+                BuzzPedometerSdk.getPedometer().activate(new OnActivationListener() {
+                    @Override
+                    public void onSuccess() {
+                        Toast.makeText(MainActivity.this, "Pedometer activated", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onFailure(ActivationFailureReason reason) {
+                        if (reason instanceof ActivationFailureReason.PermissionError) {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                                String[] permissions = new String[1];
+                                permissions[0] = Manifest.permission.ACTIVITY_RECOGNITION;
+                                requestPermissions(permissions, ACTIVATION_REQUEST_CODE);
+                            }
+                        } else if (reason instanceof ActivationFailureReason.SensorError) {
+                            Toast.makeText(MainActivity.this, "Sensor dose not exist on this device", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
                 updateActivationUI();
             }
         });
@@ -206,8 +232,8 @@ public class MainActivity extends AppCompatActivity {
         btSetUserProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final int height = Integer.parseInt(etHeight.getText().toString());
-                final int weight = Integer.parseInt(etWeight.getText().toString());
+                final float height = Float.parseFloat(etHeight.getText().toString());
+                final float weight = Float.parseFloat(etWeight.getText().toString());
                 BuzzPedometerSdk.getPedometer().setUserProfile(new UserProfile(height, weight));
             }
         });
@@ -268,6 +294,19 @@ public class MainActivity extends AppCompatActivity {
             btDeactivate.setVisibility(View.GONE);
             tvActivateStatus.setText("Deactivated!");
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == ACTIVATION_REQUEST_CODE) {
+            if ((grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                BuzzPedometerSdk.getPedometer().activate(null);
+                updateMilestoneUI(BuzzPedometerSdk.getPedometer().getMilestones());
+                updateStepUI(BuzzPedometerSdk.getPedometer().getStepCount());
+                updateActivationUI();
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     String formatDate(String unFormattedTime) {
