@@ -3,6 +3,12 @@
 
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
+# 2.11.0
+* BuzzAdPop에 preloadAndShowFeed interface 추가
+* Interstitial 에서 Feed 로 진입하는 entry point 추가
+* IN-APP browser에서 다른 도메인으로 이동하는 경우 External Browser로 내보내는 flow 제거
+* Interstitial 종료 콜백 추가.
+
 # 2.9.0
 * [UPDATE] Feed category UI 개선
 * [CHANGE] 이미지 로딩 라이브러리를 UIL 에서 Picasso(v2.71828) 로 변경.
@@ -14,6 +20,8 @@
 > * [FIX] 드물게 NPE 발생 - LandingRewardManager$x.onItem
 > ## 2.9.3
 > * [FIX] Tab customization 관련 마이너 버그 수정
+> ## 2.9.4
+> * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
 
 # 2.7.0
 * [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
@@ -26,6 +34,10 @@
 > ## 2.7.1
 > * [FIX] Pop 기능의 안정성 개선
 > * [NEW] Notification 기능의 정식 출시
+> ## 2.7.2
+> * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
+> ## 2.7.3
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 # 2.5.0 
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
@@ -41,6 +53,8 @@
 > * [FIX] 앱에서 meterial library 1.3.0-alpha02 이상을 사용하는 경우 resource 이름 충돌로 빌드가 실패하는 문제 수정
 > ## 2.5.6
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
+> ## 2.5.7
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 # 2.3.0
 * [NEW] 브리지 포인트 조회 화면
@@ -49,6 +63,8 @@
 * [FIX] 드물게 Fragment 재생성 시 발생하는 크래시 수정
 > ## 2.3.1
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
+> ## 2.3.2
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 # 2.2.0
 * [NEW] 인터스티셜에 문의하기 버튼 추가
@@ -68,6 +84,8 @@
 > ## 2.2.3
 > * [CHANGE] CPK 지원
 > * [FIX] 드물게 POP이 크래시(잠시 후 재 실행됨) 되는 문제 수정
+> ## 2.2.4
+> * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 
 
 # 2.0.0

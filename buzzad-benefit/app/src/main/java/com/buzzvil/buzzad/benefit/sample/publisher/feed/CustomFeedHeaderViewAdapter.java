@@ -30,4 +30,9 @@ public class CustomFeedHeaderViewAdapter implements FeedHeaderViewAdapter {
             rewardTextView.setText(rewardText);
         }
     }
+
+    @Override
+    public void onDestroyView() {
+
+    }
 }
