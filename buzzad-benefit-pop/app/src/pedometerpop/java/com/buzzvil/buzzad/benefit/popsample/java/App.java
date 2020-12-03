@@ -33,6 +33,8 @@ public class App extends MultiDexApplication {
     public static final String APP_ID = "260318561407891";
     public static final String UNIT_ID_PEDOMETER = "UNIT_ID_PEDOMETER";
     public static final String UNIT_ID_PEDOMETER_REWARD = "UNIT_ID_PEDOMETER_REWARD";
+    public static final String UNIT_ID_PEDOMETER_INTRO = "UNIT_ID_PEDOMETER_INTRO";
+    public static final String UNIT_ID_POP_EXIT = "UNIT_ID_POP_EXIT";
 
     private PopConfig popConfig;
 
@@ -70,6 +72,7 @@ public class App extends MultiDexApplication {
                 .feedConfig(feedConfig)
                 .pedometerConfig(pedometerConfig)
                 .popHeaderConfig(popHeaderConfig)
+//                .popExitUnitId(UNIT_ID_POP_EXIT) // For Interstitial Ad: Pop Exit
                 .popNotificationConfig(popNotificationConfig)
                 .previewIntervalInMillis(1000) // for test
                 .build();
@@ -123,7 +126,7 @@ public class App extends MultiDexApplication {
         return new PedometerConfig
                 .Builder(UNIT_ID_PEDOMETER, UNIT_ID_PEDOMETER_REWARD)
                 // use following code for customizing
-//                .pedometerIntroUnitId(App.unitIdPedometerPopIntro)
+//                .pedometerIntroUnitId(UNIT_ID_PEDOMETER_INTRO) // For Interstitial Ad: Pedometer Fragment Intro
 //                .tutorialUrl("https://www.buzzvil.com/ko/main")
 //                .toolbarTitleResId(R.string.benefit_pop_pedometer_toolbar_title)
 //                .introDescriptionResId(R.string.benefit_pop_pedometer_intro_description)
