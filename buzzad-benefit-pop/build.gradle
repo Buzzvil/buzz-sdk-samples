@@ -28,5 +28,6 @@ task clean(type: Delete) {
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.11.0-rc.2'
+    buzzAdBenefitVersionName = '2.11.+'
+    buzzPedometerVersionName = '1.2.+'
 }
