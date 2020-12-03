@@ -3,6 +3,12 @@
 
 * 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
 
+# 2.11.0
+* BuzzAdPop에 preloadAndShowFeed interface 추가
+* Interstitial 에서 Feed 로 진입하는 entry point 추가
+* IN-APP browser에서 다른 도메인으로 이동하는 경우 External Browser로 내보내는 flow 제거
+* Interstitial 종료 콜백 추가.
+
 # 2.9.0
 * [UPDATE] Feed category UI 개선
 * [CHANGE] 이미지 로딩 라이브러리를 UIL 에서 Picasso(v2.71828) 로 변경.
