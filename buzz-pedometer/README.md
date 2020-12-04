@@ -2,7 +2,7 @@
 
 * 개발 가이드: https://buzzvil.atlassian.net/l/c/fqq7qvvv
 
-# 1.2.5
+# 1.2.6
 * [FIX] Android 10 이상에서 Activity recognition permission 받도록 수정
 * [FIX] 센서를 지원하지 않는 디바이스에서 토스트를 띄우도록 수정
 * 버그 수정
