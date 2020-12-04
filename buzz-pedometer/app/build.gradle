@@ -7,8 +7,8 @@ android {
         applicationId "com.buzzvil.pedometer.sample"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 125
-        versionName "1.2.5"
+        versionCode 126
+        versionName "1.2.6"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -30,5 +30,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.buzzvil:buzz-pedometer-sdk:1.2.5'
+    implementation 'com.buzzvil:buzz-pedometer-sdk:1.2.6'
 }
