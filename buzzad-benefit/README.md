@@ -8,6 +8,8 @@
 * Interstitial 에서 Feed 로 진입하는 entry point 추가
 * IN-APP browser에서 다른 도메인으로 이동하는 경우 External Browser로 내보내는 flow 제거
 * Interstitial 종료 콜백 추가.
+> ## 2.11.1
+> * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
 
 # 2.9.0
 * [UPDATE] Feed category UI 개선
@@ -22,6 +24,8 @@
 > * [FIX] Tab customization 관련 마이너 버그 수정
 > ## 2.9.4
 > * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
+> ## 2.9.5
+> * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
 
 # 2.7.0
 * [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
@@ -38,6 +42,8 @@
 > * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
 > ## 2.7.3
 > * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
+> ## 2.7.4
+> * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
 
 # 2.5.0 
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
