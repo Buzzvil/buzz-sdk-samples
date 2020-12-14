@@ -52,7 +52,7 @@ public class App extends MultiDexApplication {
                 // TemplatePopToolbarHolder: Minimum customize, pop feed icon, name, button
                 // CustomPopToolbarHolder: Use layout for toolbar
                 .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
-                .feedHeaderViewAdapterClass(DefaultPedometerPopHeaderViewAdapter.class)
+                .feedHeaderViewAdapterClass(CustomPedometerPopHeaderViewAdapter2.class)
                 .articlesEnabled(true)
                 .articleInAppLandingEnabled(true)
                 .build();
@@ -117,7 +117,7 @@ public class App extends MultiDexApplication {
                 .pedometerRewardableDescription(getString(R.string.pop_pedometer_dashboard_rewardable_description))
                 .drawableProgressIcon(R.drawable.bz_pop_ic_pedometer_stat)
                 .drawablePopPedometerDescriptionIcon(R.drawable.bz_pop_ic_pedometer_run)
-                .pedometerDashboardBoundaryImage(R.drawable.dashboard_boundary)
+//                .pedometerDashboardBoundaryImage(R.drawable.dashboard_boundary)
                 .build();
     }
 
