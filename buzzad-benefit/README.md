@@ -44,6 +44,8 @@
 > * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
 > ## 2.7.4
 > * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
+> ## 2.7.5
+> * [FIX] Resource Not Found Exception 에 대한 Workaround 처리
 
 # 2.5.0 
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
