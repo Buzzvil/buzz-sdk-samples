@@ -10,6 +10,10 @@
 * Interstitial 종료 콜백 추가.
 > ## 2.11.1
 > * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
+> ## 2.11.2
+> * [FIX] Android Studio 에서 빌드는 되지만 IDE에서 특정 class 찾지 못하는 문제 수정.
+> * [UPDATE] 앱 실행 직후 불필요한 error log 제거
+> * [FIX] AOS11에서, Feed 열린 후 Home으로 나갔다가 앱 재실행 시, 앱이 처음부터 다시 실행되는 문제 수정.
 
 # 2.9.0
 * [UPDATE] Feed category UI 개선

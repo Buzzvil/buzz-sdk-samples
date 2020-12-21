@@ -8,7 +8,10 @@
 |:--------------:| --------------:|
 | 2.7.+          | 1.2.0-hotfix.2 |
 | 2.9.+          | 1.2.1-hotfix.2.|
-| 2.11.+         | 1.2.6          |
+| 2.11.+         | 1.2.6, 1.2.7   |
+
+# 1.2.7
+> * [FIX] Android Studio 에서 빌드는 되지만 IDE에서 특정 class 찾지 못하는 문제 수정.
 
 # 1.2.6
 * [FIX] Android 10 이상에서 Activity recognition permission 받도록 수정
