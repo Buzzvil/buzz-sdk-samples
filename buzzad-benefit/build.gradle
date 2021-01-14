@@ -20,7 +20,9 @@ allprojects {
         google()
         jcenter()
 
-        maven { url "https://dl.bintray.com/buzzvil/maven/" }
+        maven {
+            url "https://dl.bintray.com/buzzvil/maven/"
+        }
     }
 }
 
@@ -29,5 +31,5 @@ task clean(type: Delete) {
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.11.+'
+    buzzAdBenefitVersionName = '2.13.+'
 }

@@ -33,6 +33,10 @@ repositories {
     maven { url "https://dl.bintray.com/buzzvil/maven/" }       // ADDED BY ALAN
 }
 
+ext {
+    buzzAdBenefitVersionName = '2.13.+'
+}
+
 dependencies {
     compileOnly fileTree(include: ['*.jar'], dir: 'libs')       // ADDED BY ALAN
     compileOnly files('libs/classes.jar')                       // ADDED BY ALAN

@@ -56,7 +56,7 @@ dependencies {
     implementation "com.buzzvil:buzzad-benefit-pop:$buzzAdBenefitVersionName"
 
     // for pedometerpop
-    pedometerpopImplementation "com.buzzvil:buzz-pedometer:$buzzPedometerVersionName"
+    pedometerpopImplementation "com.buzzvil:buzz-pedometer:$buzzAdBenefitVersionName"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
