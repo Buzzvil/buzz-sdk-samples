@@ -1,7 +1,12 @@
 
 # BuzzAdBenefit SDK for Android
 
-* 개발 가이드: https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK
+* [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK)
+
+# 2.13.0
+* 푸시 알림창에 만보기 기능 제공 (Pop 연동 필요)
+* Exoplayer2 업데이트 - 드물게 동영상 광고 재생시 멈추는 현상 수정
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1456177338/BuzzAd+2.13.x+BuzzScreen+3.17.x+2021+1) 참조
 
 # 2.11.0
 * BuzzAdPop에 preloadAndShowFeed interface 추가
