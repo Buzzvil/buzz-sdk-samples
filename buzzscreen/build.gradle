@@ -23,9 +23,10 @@ allprojects {
 ext {
     buzzscreenVersionName = '3.17.+'
 
-    mediationAdfitVersion = '3.0.9.0'
+    mediationAdfitVersion = '3.4.0.1'
     mediationAdmobVersion = '17.1.1.1'
     mediationAltamobVersion = '5.2.0.6.9.1'
+    mediationFiveVersion = '1.1.0'
     mediationMobfoxVersion = '4.0.8.2'
     mediationMobvistaVersion = '9.0.2.0'
     mediationMopubVersion = '5.5.0.0'
