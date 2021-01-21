@@ -11,6 +11,8 @@
 > * [FIX] 불필요한 error log 삭제
 > * [FIX] 드물게 Feed CPS 탭에서 category 로드가 늦게 될 경우 NPE가 발생할 수 있는 버그 수정 
 > * [UPDATE] InputMethodService context 에서도 BuzzAd-native 동작 지원
+> ## 2.13.2
+> * [FIX] Feed의 각 placement를 개별적으로 관리하도록 수정.
 
 # 2.11.0
 * BuzzAdPop에 preloadAndShowFeed interface 추가
