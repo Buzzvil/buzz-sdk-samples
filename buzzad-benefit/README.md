@@ -13,6 +13,8 @@
 > * [UPDATE] InputMethodService context 에서도 BuzzAd-native 동작 지원
 > ## 2.13.2
 > * [FIX] Feed의 각 placement를 개별적으로 관리하도록 수정.
+> ## 2.13.3
+> * [FIX] 2.13.1 이후, ContextThemeWrapper(Dialog) 에 NativeAd 를 붙인 경우 Visibility check가 오동작하는 문제 수정
 
 # 2.11.0
 * BuzzAdPop에 preloadAndShowFeed interface 추가
