@@ -15,6 +15,8 @@
 > * [FIX] Feed의 각 placement를 개별적으로 관리하도록 수정.
 > ## 2.13.3
 > * [FIX] 2.13.1 이후, ContextThemeWrapper(Dialog) 에 NativeAd 를 붙인 경우 Visibility check가 오동작하는 문제 수정
+> ## 2.13.4
+> * [FIX] buzzad-browser 에서 외부로그인이 필요한 경우(특정 광고 상품) 오동작 수정
 
 # 2.11.0
 * BuzzAdPop에 preloadAndShowFeed interface 추가
@@ -27,6 +29,8 @@
 > * [FIX] Android Studio 에서 빌드는 되지만 IDE에서 특정 class 찾지 못하는 문제 수정.
 > * [UPDATE] 앱 실행 직후 불필요한 error log 제거
 > * [FIX] AOS11에서, Feed 열린 후 Home으로 나갔다가 앱 재실행 시, 앱이 처음부터 다시 실행되는 문제 수정.
+> ## 2.11.3
+> * [FIX] buzzad-browser 에서 외부로그인이 필요한 경우(특정 광고 상품) 오동작 수정
 
 # 2.9.0
 * [UPDATE] Feed category UI 개선
@@ -43,6 +47,8 @@
 > * [NEW] Profile 입력을 위한 UI 를 제거할 수 있는 Method 추가
 > ## 2.9.5
 > * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
+> ## 2.9.6
+> * [FIX] buzzad-browser 에서 외부로그인이 필요한 경우(특정 광고 상품) 오동작 수정
 
 # 2.7.0
 * [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
