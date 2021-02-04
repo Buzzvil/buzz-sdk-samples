@@ -49,6 +49,7 @@ android {
     packagingOptions {  // related with exoplayer2 (BS publisher have to write this settings)
         exclude 'META-INF/maven/com.google.code.gson/gson/pom.xml'
         exclude 'META-INF/maven/com.google.code.gson/gson/pom.properties'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
     }
 }
 

@@ -6,6 +6,11 @@
 ## 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+# 3.19.0
+* [FIX] 잠금화면 VAST 광고에서 랜딩 후 돌아왔을 때 '더 알아보기'가 동작하지 않는 버그 수정
+* [NEW] adfit 연동
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1577680970/BuzzAd+2.15.x+BuzzScreen+3.19.x+2021+2) 참조
+
 # 3.17.0
 * Exoplayer2 업데이트 - 드물게 동영상 광고 재생시 멈추는 현상 수정
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1456177338/BuzzAd+2.13.x+BuzzScreen+3.17.x+2021+1) 참조
