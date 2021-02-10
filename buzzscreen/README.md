@@ -10,6 +10,8 @@
 * [FIX] 잠금화면 VAST 광고에서 랜딩 후 돌아왔을 때 '더 알아보기'가 동작하지 않는 버그 수정
 * [NEW] adfit 연동
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1577680970/BuzzAd+2.15.x+BuzzScreen+3.19.x+2021+2) 참조
+> ## 3.19.1
+> * [FIX] 통계 관련 오류 수정 (특정 조건에서 통계 누락)
 
 # 3.17.0
 * Exoplayer2 업데이트 - 드물게 동영상 광고 재생시 멈추는 현상 수정

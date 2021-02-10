@@ -3,6 +3,13 @@
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK)
 
+# 2.15.1
+* [NEW] 액션형 광고의 브릿지 페이지(Bottom-sheet)에 애드네트워크 광고 배너를 노출(unit_id를 각각 발급받아 사용해주세요)
+* [NEW] 피드를 종료할 때 인터스티셜 광고 노출하고 종료 여부를 재확인
+* [NEW] 피드 진입 시 기본포인트 지급 기능
+* [NEW] 팝 프리뷰에서 만보기 정보 제공
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1577680970/BuzzAd+2.15.x+BuzzScreen+3.19.x+2021+2) 참조
+
 # 2.13.0
 * 푸시 알림창에 만보기 기능 제공 (Pop 연동 필요)
 * Exoplayer2 업데이트 - 드물게 동영상 광고 재생시 멈추는 현상 수정
