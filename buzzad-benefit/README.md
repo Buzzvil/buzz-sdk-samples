@@ -9,6 +9,8 @@
 * [NEW] 피드 진입 시 기본포인트 지급 기능
 * [NEW] 팝 프리뷰에서 만보기 정보 제공
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1577680970/BuzzAd+2.15.x+BuzzScreen+3.19.x+2021+2) 참조
+> ## 2.15.2
+> * [FIX] setImageDrawable 적용이 안되는 문제 수정
 
 # 2.13.0
 * 푸시 알림창에 만보기 기능 제공 (Pop 연동 필요)
