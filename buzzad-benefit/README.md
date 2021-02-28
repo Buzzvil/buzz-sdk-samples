@@ -11,6 +11,8 @@
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1577680970/BuzzAd+2.15.x+BuzzScreen+3.19.x+2021+2) 참조
 > ## 2.15.2
 > * [FIX] setImageDrawable 적용이 안되는 문제 수정
+> ## 2.15.3
+> * [FIX] Feed를 여는 Activity가 tackAffinity가 명시적으로 지정된 경우, VideoLandingActivity의 Z-order 문제로 Landing event가 전달되지 않는 문제 수정
 
 # 2.13.0
 * 푸시 알림창에 만보기 기능 제공 (Pop 연동 필요)
