@@ -3,6 +3,18 @@
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK)
 
+# 2.17.0
+* [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
+* [NEW] 베이스 리워드 지급 관련 UI 커스텀 기능 추가
+* [NEW] 브릿지포인트를 사용하는 퍼블리셔의 지면에서 베이스 리워드 지급시 노출하는 다이얼로그 UI
+* [NEW] Feed 지면에 Pop 활성화 유도 버튼 추가
+* [NEW] Potto - Tutorial 영역의 landing URL 커스텀 기능 추가
+* [UPDATE] 쇼핑 적립 탭의 필터들을 Slider 형태로 변경
+* [FIX] Pop 활성화 토글 관련 버그 픽스
+* [FIX] 이미지 라이브러리를 Picasso로 사용할 경우 이미지 로딩시에 딜레이가 발생하여 UIL을 사용하도록 변경
+* [FIX] androidx.fragment:fragment:1.3.0 을 사용할 경우, feed 에서 간헐적으로 크래시 발생하는 문제 수정
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1739850216/BuzzAd+2.17.x+BuzzScreen+3.21.x) 참조
+
 # 2.15.1
 * [NEW] 액션형 광고의 브릿지 페이지(Bottom-sheet)에 애드네트워크 광고 배너를 노출(unit_id를 각각 발급받아 사용해주세요)
 * [NEW] 피드를 종료할 때 인터스티셜 광고 노출하고 종료 여부를 재확인

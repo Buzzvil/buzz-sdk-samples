@@ -21,7 +21,7 @@ allprojects {
 }
 
 ext {
-    buzzscreenVersionName = '3.19.+'
+    buzzscreenVersionName = '3.21.+'
 
     mediationAdfitVersion = '3.4.0.1'
     mediationAdmobVersion = '17.1.1.1'
