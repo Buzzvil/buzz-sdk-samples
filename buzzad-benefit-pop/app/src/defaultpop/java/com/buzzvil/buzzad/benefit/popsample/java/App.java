@@ -17,6 +17,7 @@ import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
+    // Caution: Replace `236027834764095` with Your Unit ID
     public static final String UNIT_ID_POP = "236027834764095";
 
     @Override
@@ -95,6 +96,9 @@ public class App extends MultiDexApplication {
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
+        // Caution: Replace `SAMPLE_USER_ID` with User's ID
+        // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
+        // Caution: Replace `1993` with User's BirthYear
         final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")
                 .gender(UserProfile.Gender.FEMALE)
@@ -124,6 +128,9 @@ public class App extends MultiDexApplication {
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
+        // Caution: Replace `SAMPLE_USER_ID` with User's ID
+        // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
+        // Caution: Replace `1993` with User's BirthYear
         final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")
                 .gender(UserProfile.Gender.FEMALE)

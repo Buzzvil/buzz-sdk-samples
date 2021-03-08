@@ -17,7 +17,9 @@ import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
     static final String TAG = "App";
-    private static final String UNIT_ID = "444437953344574";
+
+    // Caution: Replace `236027834764095` with Your Unit ID
+    public static final String UNIT_ID = "236027834764095";
 
     @Override
     public void onCreate() {
@@ -34,11 +36,6 @@ public class App extends MultiDexApplication {
     }
 
     private void initBuzzAdBenefit() {
-        final FeedConfig popFeedConfig = new FeedConfig.Builder(this, UNIT_ID)
-                .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
-                .articlesEnabled(true)
-                .articleInAppLandingEnabled(true)
-                .build();
         final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(this)
                 .smallIconResId(getApplicationInfo().icon)
                 .titleResId(R.string.pop_notification_title)
@@ -48,16 +45,18 @@ public class App extends MultiDexApplication {
                 .build();
         final PopConfig popConfig = new PopConfig.Builder(this, UNIT_ID)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
-                .feedConfig(popFeedConfig)
                 .popNotificationConfig(popNotificationConfig)
                 .iconResId(R.drawable.sample_default_pop_icon)
                 .rewardReadyIconResId(R.drawable.sample_pop_reward_ready_icon_selector)
                 .build();
         final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
-                .add(UNIT_ID, popConfig)
+                .add(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
+        // Caution: Replace `SAMPLE_USER_ID` with User's ID
+        // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
+        // Caution: Replace `1993` with User's BirthYear
         final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")
                 .gender(UserProfile.Gender.FEMALE)

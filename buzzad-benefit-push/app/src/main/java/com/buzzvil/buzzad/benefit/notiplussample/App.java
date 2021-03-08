@@ -9,8 +9,8 @@ import com.buzzvil.buzzad.benefit.presentation.notification.PushDialogConfig;
 import com.buzzvil.buzzad.benefit.presentation.notification.RewardNotificationConfig;
 
 public class App extends MultiDexApplication {
-    public static final String APP_ID = "APP_ID";
-    public static final String UNIT_ID_NOTI_PLUS = "UNIT_ID_NOTI_PLUS";
+    // Caution: Replace `236027834764095` with Your Unit ID
+    public static final String UNIT_ID_NOTI_PLUS = "236027834764095";
     public static RewardNotificationConfig rewardNotificationConfig;
 
     @Override
@@ -20,10 +20,13 @@ public class App extends MultiDexApplication {
     }
 
     private void initBuzzAdBenefit() {
-        BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(APP_ID)
+        BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
+        // Caution: Replace `SAMPLE_USER_ID` with User's ID
+        // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
+        // Caution: Replace `1993` with User's BirthYear
         UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")
                 .gender(UserProfile.Gender.FEMALE)

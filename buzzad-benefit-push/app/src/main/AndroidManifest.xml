@@ -28,6 +28,11 @@
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
+
+        <!-- Caution: Replace `260318561407891` with Your AppKey  -->
+        <meta-data
+            android:name="com.buzzvil.APP_KEY"
+            android:value="app-pub-260318561407891" />
     </application>
 
 </manifest>

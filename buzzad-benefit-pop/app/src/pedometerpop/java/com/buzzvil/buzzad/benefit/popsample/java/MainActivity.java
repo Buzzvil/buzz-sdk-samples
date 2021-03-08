@@ -29,8 +29,6 @@ import com.buzzvil.buzzad.benefit.pop.PopOverlayPermissionConfig;
 import com.buzzvil.buzzad.benefit.pop.pedometer.BuzzAdPopPedometer;
 import com.buzzvil.buzzad.benefit.popsample.BuildConfig;
 import com.buzzvil.buzzad.benefit.popsample.R;
-import com.buzzvil.lib.buzzsettingsmonitor.OverlaySettingsMonitor;
-import com.buzzvil.lib.buzzsettingsmonitor.SettingsMonitorManager;
 
 import io.mattcarroll.hover.overlay.OverlayPermission;
 
@@ -71,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         popSetUserProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Caution: Replace `SAMPLE_USER_ID` with User's ID
+                // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
+                // Caution: Replace `1993` with User's BirthYear
                 final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                         .userId("SAMPLE_USER_ID")
                         .gender(UserProfile.Gender.FEMALE)

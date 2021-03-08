@@ -11,24 +11,24 @@ import androidx.multidex.MultiDexApplication;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
-import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.DefaultPedometerPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
-import com.buzzvil.buzzad.benefit.pop.PopHeaderConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
+import com.buzzvil.buzzad.benefit.pop.SidePosition;
 import com.buzzvil.buzzad.benefit.pop.pedometer.BuzzAdPopPedometer;
 import com.buzzvil.buzzad.benefit.pop.pedometer.PedometerConfig;
-import com.buzzvil.buzzad.benefit.pop.SidePosition;
 import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.popsample.R;
-import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomControlService;
-import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 import org.jetbrains.annotations.NotNull;
 
 public class App extends MultiDexApplication {
     public static final String TAG = "PopSampleApp";
+
+    // Caution: Replace `236027834764095` with Your Unit ID
+    // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
+    // Caution: Replace `1993` with User's BirthYear
     public static final String UNIT_ID_POP = "236027834764095";
     public static final String APP_ID = "260318561407891";
     public static final String UNIT_ID_PEDOMETER = "UNIT_ID_PEDOMETER";
@@ -54,7 +54,6 @@ public class App extends MultiDexApplication {
                 .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
                 .feedHeaderViewAdapterClass(DefaultPedometerPopHeaderViewAdapter.class)
                 .articlesEnabled(true)
-                .articleInAppLandingEnabled(true)
                 .build();
         final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
                 .smallIconResId(R.drawable.ic_notification_pop_gift)
@@ -64,14 +63,12 @@ public class App extends MultiDexApplication {
                 .notificationId(1021)
                 .build();
         final com.buzzvil.buzzad.benefit.pop.pedometer.PedometerConfig pedometerConfig = buildPedometerConfig();
-        final PopHeaderConfig popHeaderConfig = buildPedometerPopHeaderConfig();
         popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .popMode(PopConfig.PopMode.PEDOMETER_POP)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .feedConfig(feedConfig)
                 .pedometerConfig(pedometerConfig)
-                .popHeaderConfig(popHeaderConfig)
 //                .popExitUnitId(UNIT_ID_POP_EXIT) // For Interstitial Ad: Pop Exit
                 .popNotificationConfig(popNotificationConfig)
                 .previewIntervalInMillis(1000) // for test
@@ -107,24 +104,9 @@ public class App extends MultiDexApplication {
     };
 
     @NotNull
-    private PopHeaderConfig buildPedometerPopHeaderConfig() {
-        return new PopHeaderConfig.Builder()
-                // use following code for customizing
-                .pedometerStepCountDescription(getString(R.string.pop_pedometer_dashboard_today_steps))
-                .pedometerDashboardProgressChartColor(android.R.color.holo_red_dark)
-                .pedometerDashboardProgressChartGuideColor(android.R.color.holo_red_light)
-                .pedometerInProgressDescription(getString(R.string.pop_pedometer_dashboard_inprogress_description))
-                .pedometerRewardableDescription(getString(R.string.pop_pedometer_dashboard_rewardable_description))
-                .drawableProgressIcon(R.drawable.bz_pop_ic_pedometer_stat)
-                .drawablePopPedometerDescriptionIcon(R.drawable.bz_pop_ic_pedometer_run)
-                .pedometerDashboardBoundaryImage(R.drawable.dashboard_boundary)
-                .build();
-    }
-
-    @NotNull
     private PedometerConfig buildPedometerConfig() {
         return new PedometerConfig
-                .Builder(UNIT_ID_PEDOMETER, UNIT_ID_PEDOMETER_REWARD)
+                .Builder(this, UNIT_ID_PEDOMETER, UNIT_ID_PEDOMETER_REWARD)
                 // use following code for customizing
 //                .pedometerIntroUnitId(UNIT_ID_PEDOMETER_INTRO) // For Interstitial Ad: Pedometer Fragment Intro
 //                .tutorialUrl("https://www.buzzvil.com/ko/main")
