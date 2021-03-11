@@ -26,15 +26,13 @@ import org.jetbrains.annotations.NotNull;
 public class App extends MultiDexApplication {
     public static final String TAG = "PopSampleApp";
 
-    // Caution: Replace `236027834764095` with Your Unit ID
-    // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
-    // Caution: Replace `1993` with User's BirthYear
+    // Caution: Please replace IDs with your unit IDs.
     public static final String UNIT_ID_POP = "236027834764095";
     public static final String APP_ID = "260318561407891";
-    public static final String UNIT_ID_PEDOMETER = "UNIT_ID_PEDOMETER";
-    public static final String UNIT_ID_PEDOMETER_REWARD = "UNIT_ID_PEDOMETER_REWARD";
-    public static final String UNIT_ID_PEDOMETER_INTRO = "UNIT_ID_PEDOMETER_INTRO";
-    public static final String UNIT_ID_POP_EXIT = "UNIT_ID_POP_EXIT";
+    public static final String UNIT_ID_PEDOMETER = "450190159219814";
+    public static final String UNIT_ID_PEDOMETER_REWARD = "153253018216976";
+    public static final String UNIT_ID_PEDOMETER_INTRO = "304632571836222";
+    public static final String UNIT_ID_POP_EXIT = "96451896568578";
 
     private PopConfig popConfig;
 
