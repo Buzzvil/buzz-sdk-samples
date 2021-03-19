@@ -14,6 +14,9 @@
 * [FIX] 이미지 라이브러리를 Picasso로 사용할 경우 이미지 로딩시에 딜레이가 발생하여 UIL을 사용하도록 변경
 * [FIX] androidx.fragment:fragment:1.3.0 을 사용할 경우, feed 에서 간헐적으로 크래시 발생하는 문제 수정
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1739850216/BuzzAd+2.17.x+BuzzScreen+3.21.x) 참조
+> ## 2.17.1
+> * [FIX] setPreviewInterval 미동작 오류 수정
+> * [FIX] 만보기 걸음 수 UI가 업데이트 되지 않는 버그 픽스
 
 # 2.15.1
 * [NEW] 액션형 광고의 브릿지 페이지(Bottom-sheet)에 애드네트워크 광고 배너를 노출(unit_id를 각각 발급받아 사용해주세요)
