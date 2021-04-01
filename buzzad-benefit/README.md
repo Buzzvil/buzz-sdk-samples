@@ -3,6 +3,14 @@
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK)
 
+# 2.19.0
+# [NEW] Feed 지면과 Pop 지면에 배너 타입 광고 서빙
+# [NEW] Feed 지면과 Pop 지면에 연동 가능한 ADN SDK 추가
+# [UPDATE] 피드 지면의 UI를 Bottomsheet로 변경
+# [UPDATE] 피드 지면의 오토로딩 로직 개선
+# [NEW] Feed 지면에 Pop 활성화 유도 버튼 추가
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1752629414/BuzzAd+2.19.x+BuzzScreen+3.23.x+WIP) 참조
+
 # 2.17.0
 * [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
 * [NEW] 베이스 리워드 지급 관련 UI 커스텀 기능 추가

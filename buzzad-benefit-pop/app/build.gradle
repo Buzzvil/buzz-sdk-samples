@@ -53,7 +53,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     // BuzzAd-Pop
-    implementation "com.buzzvil:buzzad-benefit-pop:$buzzAdBenefitVersionName"
+    implementation "com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName"
 
     // for pedometerpop
     pedometerpopImplementation "com.buzzvil:buzz-pedometer:$buzzAdBenefitVersionName"
