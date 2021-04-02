@@ -28,11 +28,7 @@ android {
 }
 
 dependencies {
-    implementation ("com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName") {
-        // Pop is not released for public use yet.
-        // Exclude this module so that your app does not include any unnecessary permissions in the manifest.
-        exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
-    }
+    implementation ("com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName")
 
     implementation ('com.github.bumptech.glide:glide:4.8.0') {
         // exclude 처리를 안해서 support library 끼리 버전이 섞이면 AppCompatActivity 에서 runtime exception (NoSuchMethodError) 발생
