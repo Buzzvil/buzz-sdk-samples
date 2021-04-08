@@ -28,7 +28,6 @@ public class App extends MultiDexApplication {
 
     // Caution: Please replace IDs with your unit IDs.
     public static final String UNIT_ID_POP = "236027834764095";
-    public static final String APP_ID = "260318561407891";
     public static final String UNIT_ID_PEDOMETER = "450190159219814";
     public static final String UNIT_ID_PEDOMETER_REWARD = "153253018216976";
     public static final String UNIT_ID_PEDOMETER_INTRO = "304632571836222";
@@ -96,7 +95,7 @@ public class App extends MultiDexApplication {
             Log.d(TAG, "Session is Ready. initPedometer");
 
             if (popConfig.getPedometerConfig() != null) {
-                BuzzAdPopPedometer.init(context, APP_ID, UNIT_ID_POP);
+                BuzzAdPopPedometer.init(context, UNIT_ID_POP);
             }
         }
     };
