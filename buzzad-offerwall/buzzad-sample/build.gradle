@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 repositories {
-    maven { url "https://dl.bintray.com/buzzvil/maven/" }
+    maven { url "https://dl.buzzvil.com/public/maven"  }
 }
 
 android {

@@ -30,7 +30,7 @@ afterEvaluate {                     // ADDED BY ALAN
 }
 
 repositories {
-    maven { url "https://dl.bintray.com/buzzvil/maven/" }       // ADDED BY ALAN
+    maven { url "https://dl.buzzvil.com/public/maven"  }       // ADDED BY ALAN
 }
 
 ext {
