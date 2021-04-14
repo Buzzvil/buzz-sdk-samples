@@ -63,11 +63,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     implementation "androidx.webkit:webkit:1.1.0"
-    implementation ("com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName") {
-        // 현재 Pop 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
-        exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
-        // 현재 Notification 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
-        exclude group: 'com.buzzvil', module: 'buzzad-benefit-notification'
-    }
+    implementation ("com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName")
     implementation 'com.android.support:multidex:1.0.3'
 }
