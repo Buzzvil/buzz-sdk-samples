@@ -29,6 +29,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     // BuzzAdBenefit
     implementation "com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName"
+    implementation "com.buzzvil:buzzad-benefit-notification:$buzzAdBenefitVersionName"
     implementation 'com.android.support:multidex:1.0.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
