@@ -10,7 +10,7 @@ import com.buzzvil.buzzad.benefit.presentation.notification.RewardNotificationCo
 
 public class App extends MultiDexApplication {
     // Caution: Replace `236027834764095` with Your Unit ID
-    public static final String UNIT_ID_NOTI_PLUS = "236027834764095";
+    public static final String UNIT_ID_FEED = "236027834764095";
     public static RewardNotificationConfig rewardNotificationConfig;
 
     @Override

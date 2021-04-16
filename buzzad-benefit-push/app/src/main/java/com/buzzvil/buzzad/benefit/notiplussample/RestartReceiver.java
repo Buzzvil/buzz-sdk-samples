@@ -11,7 +11,7 @@ public class RestartReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())
                 || Intent.ACTION_MY_PACKAGE_REPLACED.equals(intent.getAction())) {
-            final BuzzAdPush buzzAdNoti = new BuzzAdPush(App.UNIT_ID_NOTI_PLUS, CustomNotificationWorker.class, App.getPushDialogConfig());
+            final BuzzAdPush buzzAdNoti = new BuzzAdPush(App.UNIT_ID_FEED, CustomNotificationWorker.class, App.getPushDialogConfig());
             buzzAdNoti.registerWorkerIfNeeded(context);
         }
     }
