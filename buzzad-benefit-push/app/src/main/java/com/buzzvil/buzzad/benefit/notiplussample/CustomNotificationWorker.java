@@ -18,10 +18,6 @@ public class CustomNotificationWorker extends NotificationWorker {
     @Override
     @NonNull
     public NotificationConfig getNotificationConfig() {
-        final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
-                .adsAdapterClass(CustomFeedAdsAdapter.class)
-                .closeToastEnabled(true)
-                .build();
         return new NotificationConfig.Builder(App.UNIT_ID_FEED)
                 .build();
     }
