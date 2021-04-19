@@ -25,6 +25,12 @@
 > ## 2.17.1
 > * [FIX] setPreviewInterval 미동작 오류 수정
 > * [FIX] 만보기 걸음 수 UI가 업데이트 되지 않는 버그 픽스
+> ## 2.17.2
+> * [FIX] CtaView customization 관련 마이너 버그 수정
+> * [FIX] 업데이트 시 Pop 활성화 관련 버그 수정
+> * [FIX] Universal Image Loadner 에서 가끔 IOException 크래시 발생하는 버그 수정
+> * [FIX] Pop 닫그 버튼(X 버튼) 애니메이션 수정
+> * [FIX] 특정 비디오 광고에서 minimumTime 관련 NPE 오류 수정
 
 # 2.15.1
 * [NEW] 액션형 광고의 브릿지 페이지(Bottom-sheet)에 애드네트워크 광고 배너를 노출(unit_id를 각각 발급받아 사용해주세요)
@@ -36,6 +42,9 @@
 > * [FIX] setImageDrawable 적용이 안되는 문제 수정
 > ## 2.15.3
 > * [FIX] Feed를 여는 Activity가 tackAffinity가 명시적으로 지정된 경우, VideoLandingActivity의 Z-order 문제로 Landing event가 전달되지 않는 문제 수정
+> ## 2.15.4
+> * [FIX] CtaView customization 관련 마이너 버그 수정
+> * [FIX] 업데이트 시 Pop 활성화 관련 버그 수정
 
 # 2.13.0
 * 푸시 알림창에 만보기 기능 제공 (Pop 연동 필요)

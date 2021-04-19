@@ -13,6 +13,8 @@
 # 3.21.0
 * [FIX] Analytics 관련 개선
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1739850216/BuzzAd+2.17.x+BuzzScreen+3.21.x) 참조
+> ## 3.21.2
+> * [FIX] Universal Image Loadner 에서 가끔 IOException 크래시 발생하는 버그 수정
 
 # 3.19.0
 * [FIX] 잠금화면 VAST 광고에서 랜딩 후 돌아왔을 때 '더 알아보기'가 동작하지 않는 버그 수정
