@@ -10,6 +10,13 @@
 * [UPDATE] 피드 지면의 오토로딩 로직 개선
 * [NEW] Feed 지면에 Pop 활성화 유도 버튼 추가
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1752629414/BuzzAd+2.19.x+BuzzScreen+3.23.x+WIP) 참조
+> ## 2.19.1
+> * [FIX] CtaView customization 관련 마이너 버그 수정
+> * [FIX] 업데이트 시 Pop 활성화 관련 버그 수정
+> * [FIX] Universal Image Loadner 에서 가끔 IOException 크래시 발생하는 > 버그 수정
+> * [FIX] Pop 닫그 버튼(X 버튼) 애니메이션 수정
+> * [UPDATE] dark theme 지원
+> * [NEW] Naverpay 지원
 
 # 2.17.0
 * [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
