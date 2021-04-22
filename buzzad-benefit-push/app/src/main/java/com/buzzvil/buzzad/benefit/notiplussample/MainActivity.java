@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    private SwitchCompat switchAdNotiRegister;
+    private SwitchCompat switchPushRegister;
     private Button btnRegister1;
     private Button btnRegister2;
     private Button btnCustomRegister;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        switchAdNotiRegister = findViewById(R.id.switchAdNotiRegister);
+        switchPushRegister = findViewById(R.id.switchPushRegister);
         btnRegister1 = findViewById(R.id.btnRegister1);
         btnRegister2 = findViewById(R.id.btnRegister2);
         btnCustomRegister = findViewById(R.id.btnCustomRegister);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         setListener(buzzAdPush);
 
-        switchAdNotiRegister.setChecked(buzzAdPush.isRegistered(getApplicationContext()));
+        switchPushRegister.setChecked(buzzAdPush.isRegistered(getApplicationContext()));
     }
 
     private void setListener(final BuzzAdPush buzzAdPush) {
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         pushSwitchCheckChangedListener = buildPushSwitchCheckChangedListener(buzzAdPush);
-        switchAdNotiRegister.setOnCheckedChangeListener(pushSwitchCheckChangedListener);
+        switchPushRegister.setOnCheckedChangeListener(pushSwitchCheckChangedListener);
     }
 
     private CompoundButton.OnCheckedChangeListener buildPushSwitchCheckChangedListener(BuzzAdPush buzzAdPush) {
@@ -157,9 +157,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setPushState(boolean check) {
-        switchAdNotiRegister.setOnCheckedChangeListener(null);
-        switchAdNotiRegister.setChecked(check);
-        switchAdNotiRegister.setOnCheckedChangeListener(pushSwitchCheckChangedListener);
+        switchPushRegister.setOnCheckedChangeListener(null);
+        switchPushRegister.setChecked(check);
+        switchPushRegister.setOnCheckedChangeListener(pushSwitchCheckChangedListener);
         updateButtonState(check);
     }
 
@@ -262,9 +262,9 @@ public class MainActivity extends AppCompatActivity {
             @NonNull final BuzzAdPush buzzAdPush,
             @NonNull final BuzzAdPush.OnRegisterListener onRegisterListener) {
         View pushDialogStep2Layout = activity.getLayoutInflater().inflate(R.layout.view_settings_dialog_register_step_2, null);
-        ViewGroup layoutPushCheckbox = pushDialogStep2Layout.findViewById(R.id.layoutNotiPlusCheckbox);
+        ViewGroup layoutPushCheckbox = pushDialogStep2Layout.findViewById(R.id.layouPushCheckbox);
 
-        final CheckBox checkBoxCheckAll = layoutPushCheckbox.findViewById(R.id.checkboxNotiPlusAll);
+        final CheckBox checkBoxCheckAll = layoutPushCheckbox.findViewById(R.id.checkboxPushAll);
         final List<CheckBox> checkBoxes = new ArrayList<>();
 
         final PushHourParser pushHourParser = new PushHourParser(activity);

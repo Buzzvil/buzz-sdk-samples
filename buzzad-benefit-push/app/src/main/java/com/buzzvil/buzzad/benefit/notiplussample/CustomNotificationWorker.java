@@ -5,7 +5,6 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.work.WorkerParameters;
 
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 import com.buzzvil.buzzad.benefit.presentation.notification.NotificationConfig;
 import com.buzzvil.buzzad.benefit.presentation.notification.NotificationWorker;
 
