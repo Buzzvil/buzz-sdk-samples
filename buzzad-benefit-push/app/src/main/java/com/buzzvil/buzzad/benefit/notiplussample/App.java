@@ -6,12 +6,10 @@ import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.presentation.notification.PushDialogConfig;
-import com.buzzvil.buzzad.benefit.presentation.notification.RewardNotificationConfig;
 
 public class App extends MultiDexApplication {
     // Caution: Replace `236027834764095` with Your Unit ID
     public static final String UNIT_ID_FEED = "236027834764095";
-    public static RewardNotificationConfig rewardNotificationConfig;
 
     @Override
     public void onCreate() {
@@ -42,12 +40,5 @@ public class App extends MultiDexApplication {
                 .imageRegisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
                 .imageUnregisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
                 .build();
-    }
-
-    public static RewardNotificationConfig getRewardNotificationConfig() {
-        if (rewardNotificationConfig == null) {
-            rewardNotificationConfig = new RewardNotificationConfig.Builder().build();
-        }
-        return rewardNotificationConfig;
     }
 }
