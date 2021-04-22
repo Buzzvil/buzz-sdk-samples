@@ -16,9 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.content.ContextCompat;
 
+import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.presentation.notification.BuzzAdPush;
 import com.buzzvil.buzzad.benefit.presentation.notification.PushHourParser;
 import com.buzzvil.buzzad.benefit.presentation.notification.PushRepository;
+import com.buzzvil.buzzad.benefit.privacy.PrivacyPolicyEventListener;
+import com.buzzvil.buzzad.benefit.privacy.PrivacyPolicyManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnRegister2;
     private Button btnCustomRegister;
     private Button btnUnregister;
+    private CompoundButton.OnCheckedChangeListener pushSwitchCheckChangedListener;
+    private BuzzAdPush buzzAdPush;
+    private PrivacyPolicyManager privacyPolicyManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         btnCustomRegister = findViewById(R.id.btnCustomRegister);
         btnUnregister = findViewById(R.id.btnUnregister);
 
-        BuzzAdPush buzzAdPush = initBuzzAdPush();
+        buzzAdPush = initBuzzAdPush();
+        privacyPolicyManager = BuzzAdBenefit.getPrivacyPolicyManager();
 
         setListener(buzzAdPush);
 
@@ -69,7 +76,18 @@ public class MainActivity extends AppCompatActivity {
         btnCustomRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                customRegister(buzzAdPush);
+                if (privacyPolicyManager.isConsentGranted()) {
+                    customRegister(buzzAdPush);
+                } else {
+                    privacyPolicyManager.showConsentUI(MainActivity.this, new PrivacyPolicyEventListener() {
+                        @Override
+                        public void onUpdated(boolean accepted) {
+                            if (accepted) {
+                                customRegister(buzzAdPush);
+                            }
+                        }
+                    });
+                }
             }
         });
 
@@ -80,38 +98,81 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        switchAdNotiRegister.setOnClickListener(new View.OnClickListener() {
+        pushSwitchCheckChangedListener = buildPushSwitchCheckChangedListener(buzzAdPush);
+        switchAdNotiRegister.setOnCheckedChangeListener(pushSwitchCheckChangedListener);
+    }
+
+    private CompoundButton.OnCheckedChangeListener buildPushSwitchCheckChangedListener(BuzzAdPush buzzAdPush) {
+        return new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if (switchAdNotiRegister.isChecked()) {
-                    registerWithDescription(buzzAdPush);
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    setPushState(false);
+                    buzzAdPush.registerWithDialog(MainActivity.this, true, new BuzzAdPush.OnRegisterListener() {
+                        @Override
+                        public void onSuccess() {
+                            setPushState(true);
+                        }
+
+                        @Override
+                        public void onCanceled() {
+                            setPushState(false);
+                        }
+                    });
                 } else {
-                    unregister(buzzAdPush);
+                    buzzAdPush.unregisterWithDialog(MainActivity.this, new BuzzAdPush.OnRegisterListener() {
+                        @Override
+                        public void onSuccess() {
+                            setPushState(false);
+                        }
+
+                        @Override
+                        public void onCanceled() {
+                            setPushState(true);
+                        }
+                    });
                 }
             }
-        });
+        };
+    }
 
-        switchAdNotiRegister.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                btnRegister1.setEnabled(!isChecked);
-                btnRegister2.setEnabled(!isChecked);
-                btnCustomRegister.setEnabled(!isChecked);
-                btnUnregister.setEnabled(isChecked);
-            }
-        });
+    private void updateButtonState(boolean isChecked) {
+        btnRegister1.setEnabled(!isChecked);
+        btnRegister2.setEnabled(!isChecked);
+        btnCustomRegister.setEnabled(!isChecked);
+        btnUnregister.setEnabled(isChecked);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updatePushStatus();
+    }
+
+    private void updatePushStatus() {
+        final PrivacyPolicyManager privacyPolicyManager = BuzzAdBenefit.getPrivacyPolicyManager();
+        if (privacyPolicyManager != null && buzzAdPush != null ) {
+            setPushState(privacyPolicyManager.isConsentGranted() && buzzAdPush.isRegistered(this));
+        }
+    }
+
+    private void setPushState(boolean check) {
+        switchAdNotiRegister.setOnCheckedChangeListener(null);
+        switchAdNotiRegister.setChecked(check);
+        switchAdNotiRegister.setOnCheckedChangeListener(pushSwitchCheckChangedListener);
+        updateButtonState(check);
     }
 
     private void registerWithDescription(final BuzzAdPush buzzAdPush) {
         buzzAdPush.registerWithDialog(this, new BuzzAdPush.OnRegisterListener() {
             @Override
             public void onSuccess() {
-                switchAdNotiRegister.setChecked(true);
+                setPushState(true);
             }
 
             @Override
             public void onCanceled() {
-                switchAdNotiRegister.setChecked(false);
+                setPushState(false);
             }
         });
     }
@@ -120,12 +181,12 @@ public class MainActivity extends AppCompatActivity {
         buzzAdPush.registerWithDialog(this, false, new BuzzAdPush.OnRegisterListener() {
             @Override
             public void onSuccess() {
-                switchAdNotiRegister.setChecked(true);
+                setPushState(true);
             }
 
             @Override
             public void onCanceled() {
-                switchAdNotiRegister.setChecked(false);
+                setPushState(false);
             }
         });
     }
@@ -134,12 +195,12 @@ public class MainActivity extends AppCompatActivity {
         buzzAdPush.unregisterWithDialog(this, new BuzzAdPush.OnRegisterListener() {
             @Override
             public void onSuccess() {
-                switchAdNotiRegister.setChecked(false);
+                setPushState(false);
             }
 
             @Override
             public void onCanceled() {
-                switchAdNotiRegister.setChecked(true);
+                setPushState(true);
             }
         });
     }
@@ -156,12 +217,12 @@ public class MainActivity extends AppCompatActivity {
                                 new BuzzAdPush.OnRegisterListener() {
                                     @Override
                                     public void onSuccess() {
-                                        switchAdNotiRegister.setChecked(true);
+                                        setPushState(true);
                                     }
 
                                     @Override
                                     public void onCanceled() {
-                                        switchAdNotiRegister.setChecked(false);
+                                        setPushState(false);
                                     }
                                 }
                         );
@@ -175,12 +236,12 @@ public class MainActivity extends AppCompatActivity {
                                 new BuzzAdPush.OnRegisterListener() {
                                     @Override
                                     public void onSuccess() {
-                                        switchAdNotiRegister.setChecked(true);
+                                        setPushState(true);
                                     }
 
                                     @Override
                                     public void onCanceled() {
-                                        switchAdNotiRegister.setChecked(false);
+                                        setPushState(false);
                                     }
                                 }
                         );
