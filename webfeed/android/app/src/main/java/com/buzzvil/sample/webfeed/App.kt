@@ -4,6 +4,7 @@ import android.app.Application
 
 class App : Application() {
     companion object {
-        const val WEBFEED_URL = "https://webfeed.buzzvil.com"
+        private const val appId = "123";
+        const val WEBFEED_URL = "https://webfeed.buzzvil.com/app/${appId}"
     }
 }
