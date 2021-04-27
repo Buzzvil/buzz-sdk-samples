@@ -1,8 +1,8 @@
 package com.buzzvil.sample.webfeed
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.buzzvil.sample.webfeed.App.Companion.WEBFEED_SERVER_URL
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -10,9 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        webFeedServerUrl.text = WEBFEED_SERVER_URL
+
         webFeedButton.setOnClickListener {
-            val intent = Intent(this, WebFeedActivity::class.java)
-            startActivity(intent)
+            startActivity(WebFeedActivity.getIntent(this, appIdView.text.toString()))
         }
     }
 }

@@ -2,13 +2,25 @@ package com.buzzvil.sample.webfeed
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
+import com.buzzvil.sample.webfeed.App.Companion.WEBFEED_SERVER_URL
 import kotlinx.android.synthetic.main.activity_webfeed.*
 
 class WebFeedActivity : AppCompatActivity() {
+    companion object {
+        private const val KEY_APP_ID = "KEY_APP_ID"
+
+        fun getIntent(context: Context, appId: String): Intent {
+            return Intent(context, WebFeedActivity::class.java).also {
+                it.putExtra(KEY_APP_ID, appId)
+            }
+        }
+    }
+
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +42,8 @@ class WebFeedActivity : AppCompatActivity() {
                 applicationContext.getDir("databases", Context.MODE_PRIVATE).path
         }
 
-        webView.loadUrl(App.WEBFEED_URL)
+        val appId = intent.extras?.get(KEY_APP_ID) ?: ""
+
+        webView.loadUrl("${WEBFEED_SERVER_URL}${appId}")
     }
 }
