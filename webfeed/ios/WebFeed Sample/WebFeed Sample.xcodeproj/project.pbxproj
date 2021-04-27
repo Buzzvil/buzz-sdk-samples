@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		B62537AA2636BAF100E7D390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62537A92636BAF100E7D390 /* AppDelegate.swift */; };
 		B62537AC2636BAF100E7D390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62537AB2636BAF100E7D390 /* SceneDelegate.swift */; };
-		B62537AE2636BAF100E7D390 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62537AD2636BAF100E7D390 /* ViewController.swift */; };
+		B62537AE2636BAF100E7D390 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62537AD2636BAF100E7D390 /* MainViewController.swift */; };
 		B62537B12636BAF100E7D390 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62537AF2636BAF100E7D390 /* Main.storyboard */; };
 		B62537B32636BAF400E7D390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62537B22636BAF400E7D390 /* Assets.xcassets */; };
 		B62537B62636BAF400E7D390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62537B42636BAF400E7D390 /* LaunchScreen.storyboard */; };
 		B62537C12636BAF400E7D390 /* WebFeed_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62537C02636BAF400E7D390 /* WebFeed_SampleTests.swift */; };
 		B62537CC2636BAF400E7D390 /* WebFeed_SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62537CB2636BAF400E7D390 /* WebFeed_SampleUITests.swift */; };
+		B62537E32636C2E500E7D390 /* WebFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62537E22636C2E500E7D390 /* WebFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		B62537A62636BAF100E7D390 /* WebFeed Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebFeed Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62537A92636BAF100E7D390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B62537AB2636BAF100E7D390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B62537AD2636BAF100E7D390 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B62537AD2636BAF100E7D390 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B62537B02636BAF100E7D390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B62537B22636BAF400E7D390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B62537B52636BAF400E7D390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		B62537C72636BAF400E7D390 /* WebFeed SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebFeed SampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62537CB2636BAF400E7D390 /* WebFeed_SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFeed_SampleUITests.swift; sourceTree = "<group>"; };
 		B62537CD2636BAF400E7D390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B62537E22636C2E500E7D390 /* WebFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,12 @@
 			children = (
 				B62537A92636BAF100E7D390 /* AppDelegate.swift */,
 				B62537AB2636BAF100E7D390 /* SceneDelegate.swift */,
-				B62537AD2636BAF100E7D390 /* ViewController.swift */,
+				B62537AD2636BAF100E7D390 /* MainViewController.swift */,
 				B62537AF2636BAF100E7D390 /* Main.storyboard */,
 				B62537B22636BAF400E7D390 /* Assets.xcassets */,
 				B62537B42636BAF400E7D390 /* LaunchScreen.storyboard */,
 				B62537B72636BAF400E7D390 /* Info.plist */,
+				B62537E22636C2E500E7D390 /* WebFeedViewController.swift */,
 			);
 			path = "WebFeed Sample";
 			sourceTree = "<group>";
@@ -258,9 +261,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62537AE2636BAF100E7D390 /* ViewController.swift in Sources */,
+				B62537AE2636BAF100E7D390 /* MainViewController.swift in Sources */,
 				B62537AA2636BAF100E7D390 /* AppDelegate.swift in Sources */,
 				B62537AC2636BAF100E7D390 /* SceneDelegate.swift in Sources */,
+				B62537E32636C2E500E7D390 /* WebFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
