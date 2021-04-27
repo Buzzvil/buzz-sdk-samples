@@ -13,14 +13,5 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func openWebFeed(sender: UIButton) {
-
-        guard let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "WebFeedViewController") else {
-            return
-        }
-        self.navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    
 }
 

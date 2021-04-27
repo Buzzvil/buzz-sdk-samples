@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="06y-IW-HQf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,22 +11,40 @@
         <!--WebView-->
         <scene sceneID="52i-GE-Zjg">
             <objects>
-                <viewController storyboardIdentifier="WebViewVC" title="WebView" id="4ED-od-AYK" customClass="WebFeedViewController" customModule="WebFeed_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebFeedViewController" title="WebView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4ED-od-AYK" customClass="WebFeedViewController" customModule="WebFeed_Sample" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uta-ku-4FS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="sbr-cR-l2Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FuZ-8y-AIZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSZ-e2-8fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="-13"/>
+            <point key="canvasLocation" x="164" y="100"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rO4-p7-ZL7">
+            <objects>
+                <navigationController id="06y-IW-HQf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Hx-Ck-sFX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FqO-Ci-uWT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pq-iS-LI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1458" y="101"/>
         </scene>
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainVC" title="Main" id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="MainViewController" title="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="WebFeed_Sample" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +53,7 @@
                                 <rect key="frame" x="174.5" y="433" width="65" height="30"/>
                                 <state key="normal" title="WebFeed"/>
                                 <connections>
-                                    <action selector="openWebFeed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVD-FX-8Ii"/>
+                                    <segue destination="4ED-od-AYK" kind="show" id="jtx-M9-7xe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,10 +64,10 @@
                             <constraint firstItem="UIX-AV-Suu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y3X-RU-Eof"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="c3I-Op-fgn"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="104"/>
+            <point key="canvasLocation" x="-643" y="100"/>
         </scene>
     </scenes>
     <resources>
