@@ -20,9 +20,8 @@ allprojects {
         google()
         jcenter()
 
-        maven {
-            url "https://dl.buzzvil.com/public/maven"
-        }
+        // maven { url "https://dl.bintray.com/buzzvil/maven" }
+        maven { url "https://dl.buzzvil.com/public/maven" }
     }
 }
 
