@@ -17,6 +17,8 @@
 > * [FIX] Pop 닫그 버튼(X 버튼) 애니메이션 수정
 > * [UPDATE] dark theme 지원
 > * [NEW] Naverpay 지원
+> ## 2.19.2
+> * [FIX] resource ID가 앱에서 사용하는 ID와 겹치지 않도록 prefix 추가
 
 # 2.17.0
 * [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
