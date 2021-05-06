@@ -190,7 +190,6 @@ public class MainActivity extends AppCompatActivity {
 
     private BuzzAdPush initBuzzAdPush() {
         return new BuzzAdPush(
-                App.UNIT_ID_FEED,
                 CustomNotificationWorker.class,
                 App.getPushDialogConfig()
         );

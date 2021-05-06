@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.sample.publisher"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -34,6 +34,7 @@ dependencies {
         // exclude 처리를 안해서 support library 끼리 버전이 섞이면 AppCompatActivity 에서 runtime exception (NoSuchMethodError) 발생
         exclude group: 'com.android.support'
     }
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
     implementation 'androidx.appcompat:appcompat:1.1.0'

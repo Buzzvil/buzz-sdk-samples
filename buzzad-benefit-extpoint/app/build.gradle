@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.extpoint.sample.publisher"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -42,16 +42,7 @@ android {
 }
 
 dependencies {
-    implementation ("com.buzzvil:buzzad-benefit:2.3.0-extpoint-1.0.1") {
-
-        // (2) 현재 Pop 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
-        exclude group: 'com.buzzvil', module: 'buzzad-benefit-pop'
-        // 현재 Notification 을 연동하고 있지 않다면 아래 코드를 추가해야 합니다.
-        exclude group: 'com.buzzvil', module: 'buzzad-benefit-notification'
-
-        // (3) 다음의 코드가 존재한다면, 제거해야 합니다.
-        // exclude group: 'com.buzzvil', module: 'buzzad-benefit-extauth'
-    }
+    implementation ("com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName")
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

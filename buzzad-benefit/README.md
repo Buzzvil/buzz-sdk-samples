@@ -3,6 +3,22 @@
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK)
 
+# 2.21.0
+* [UPDATE] targetSdkVersion 30 지원
+* [NEW] Feed 에서 Pop 으로 유도하는 기능 추가.
+  > ``` BuzzAdBenefitConfig 에서, optInFeatureList(List(OpInFeature.Pop)) 를 호출한다. ```
+* [NEW] Native 광고 랜딩 후에, Feed로 유도하는 기능 추가.
+  > ``` NativeAdView 에서, enableNativeToFeedOverlay(); 를 호출한다. ```
+* [UPDATE] Pop 종료 버튼의 에니메이션 개선
+* [UPDATE] Feed 종료/만보기 시작에서 나오는 광고의 UI 개선
+* [UPDATE] 단독으로 BuzzAd Push를 사용 가능
+* [CHANGE] Feed 에서 다음 기능들이 디폴트로 활성화 됨. ([링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2048852069/BuzzAd+SDK+2.21.x) 참조)
+  > 상단 탭 UI
+  > 상당 필터 UI
+  > 스크롤 다운 시에 광고 추가 로딩
+* [CHANGE] BuzzAdPush와 NotificationConfig.Builder에서 Unit ID를 받지 않도록 변경
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2014478375/BuzzAd+2.21.x+BuzzScreen+3.24.x) 참조
+
 # 2.19.0
 * [NEW] Feed 지면과 Pop 지면에 배너 타입 광고 서빙
 * [NEW] Feed 지면과 Pop 지면에 연동 가능한 ADN SDK 추가

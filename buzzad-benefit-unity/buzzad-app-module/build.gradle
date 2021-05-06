@@ -4,7 +4,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 30
         multiDexEnabled true        // ADDED BY ALAN
     }
     buildTypes {
@@ -30,19 +30,19 @@ afterEvaluate {                     // ADDED BY ALAN
 }
 
 repositories {
-    maven { url "https://dl.buzzvil.com/public/maven"  }       // ADDED BY ALAN
+    // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
+    maven { url "https://dl.buzzvil.com/public/maven" }
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.17.+'
+    buzzAdBenefitVersionName = '2.21.+'
 }
 
 dependencies {
-    compileOnly fileTree(include: ['*.jar'], dir: 'libs')       // ADDED BY ALAN
-    compileOnly files('libs/classes.jar')                       // ADDED BY ALAN
-
+    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
+    compileOnly files('libs/classes.jar')
     testImplementation 'junit:junit:4.12'
 
-    compileOnly ("com.buzzvil:buzzad-benefit-pop:$buzzAdBenefitVersionName")        // ADDED BY ALAN
-    implementation ("androidx.multidex:multidex:2.0.1")         // ADDED BY ALAN
+    compileOnly ("com.buzzvil:buzzad-benefit:$buzzAdBenefitVersionName")
+    implementation ("androidx.multidex:multidex:2.0.1")
 }

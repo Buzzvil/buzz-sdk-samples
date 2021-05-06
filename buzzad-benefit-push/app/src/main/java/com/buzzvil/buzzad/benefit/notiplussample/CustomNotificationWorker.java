@@ -18,7 +18,7 @@ public class CustomNotificationWorker extends NotificationWorker {
     @Override
     @NonNull
     public NotificationConfig getNotificationConfig() {
-        return new NotificationConfig.Builder(App.UNIT_ID_FEED)
+        return new NotificationConfig.Builder()
                 .build();
     }
 }
