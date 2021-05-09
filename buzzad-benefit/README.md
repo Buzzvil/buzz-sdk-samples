@@ -18,6 +18,8 @@
   > 스크롤 다운 시에 광고 추가 로딩
 * [CHANGE] BuzzAdPush와 NotificationConfig.Builder에서 Unit ID를 받지 않도록 변경
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2014478375/BuzzAd+2.21.x+BuzzScreen+3.24.x) 참조
+> ## 2.21.1
+> * [FIX] Pop 에서 광고가 갱신 안되는 버그 픽스
 
 # 2.19.0
 * [NEW] Feed 지면과 Pop 지면에 배너 타입 광고 서빙
@@ -35,6 +37,8 @@
 > * [NEW] Naverpay 지원
 > ## 2.19.2
 > * [FIX] resource ID가 앱에서 사용하는 ID와 겹치지 않도록 prefix 추가
+> ## 2.19.3
+> * [FIX] Pop 에서 광고가 갱신 안되는 버그 픽스
 
 # 2.17.0
 * [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
