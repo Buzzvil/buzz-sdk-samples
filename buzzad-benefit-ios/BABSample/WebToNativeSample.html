@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>TEST</title>
+</head>
+<body>
+    <input type='button' onClick='showFeed()' value='show feed' />
+    <script type='text/javascript'>
+        const showFeed = () => {
+            var userAgent = navigator.userAgent;
+
+            if (/android/i.test(userAgent)) {
+                BuzzAdBenefit.showFeed()
+            }
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                webkit.messageHandlers.BuzzAdBenefitNative.postMessage('showFeed')
+            }
+        }
+    </script>
+</body>
+</html>

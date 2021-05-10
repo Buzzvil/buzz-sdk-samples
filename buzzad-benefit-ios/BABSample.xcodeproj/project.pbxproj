@@ -19,6 +19,7 @@
 		C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A297572240F06B00F6D677 /* Assets.xcassets */; };
 		C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */; };
 		C4A2975E2240F06B00F6D677 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2975D2240F06B00F6D677 /* main.m */; };
+		D65AC7D226493B3500479161 /* WebToNativeSample.html in Resources */ = {isa = PBXBuildFile; fileRef = D65AC7D126493B3500479161 /* WebToNativeSample.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C4A2975D2240F06B00F6D677 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4A297642240F0D500F6D677 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BABSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D65AC7D126493B3500479161 /* WebToNativeSample.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = WebToNativeSample.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C4A2975D2240F06B00F6D677 /* main.m */,
 				69653573251984C300714D40 /* BrowserViewController.h */,
 				69653574251984D000714D40 /* BrowserViewController.m */,
+				D65AC7D126493B3500479161 /* WebToNativeSample.html */,
 			);
 			path = BABSample;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */,
 				C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */,
 				C4A297562240F06900F6D677 /* Main.storyboard in Resources */,
+				D65AC7D226493B3500479161 /* WebToNativeSample.html in Resources */,
 				C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
