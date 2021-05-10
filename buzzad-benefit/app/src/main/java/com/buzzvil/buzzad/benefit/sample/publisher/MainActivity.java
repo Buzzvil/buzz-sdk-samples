@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Button nativeAdsButton;
     private Button feedButton;
     private Button feedWithTabButton;
+    private Button feedFromWebViewButton;
     private ProgressBar progressBar;
     private Spinner interstitialTypeSpinner;
     private Spinner interstitialCustomizationSpinner;
@@ -109,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
                         .build();
                 final FeedHandler feedHandler = new FeedHandler(feedConfig);
                 feedHandler.startFeedActivity(MainActivity.this);
+            }
+        });
+
+        this.feedFromWebViewButton = findViewById(R.id.feed_from_web_view);
+        feedFromWebViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WebViewActivity.startActivity(MainActivity.this);
             }
         });
 

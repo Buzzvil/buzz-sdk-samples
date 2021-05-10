@@ -57,6 +57,13 @@
                 android:textAllCaps="false" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/feed_from_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Feed from WebView"
+            android:textAllCaps="false" />
+
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
