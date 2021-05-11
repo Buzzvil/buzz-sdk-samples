@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.webkit.JavascriptInterface;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import androidx.annotation.Nullable;
@@ -13,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
 
-public class WebViewActivity extends AppCompatActivity implements BuzzAdBenefitJSBridge {
+public class WebToFeedActivity extends AppCompatActivity implements BuzzAdBenefitJSBridge {
     public static void startActivity(Context context) {
-        final Intent intent = new Intent(context, WebViewActivity.class);
+        final Intent intent = new Intent(context, WebToFeedActivity.class);
         context.startActivity(intent);
     }
 
@@ -24,12 +23,12 @@ public class WebViewActivity extends AppCompatActivity implements BuzzAdBenefitJ
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web_view);
-        webView = findViewById(R.id.webView);
+        setContentView(R.layout.activity_web_to_feed);
+        webView = findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setUseWideViewPort(true);
-        webView.addJavascriptInterface(this, "BuzzAdBenefit");
-        webView.loadUrl("file:///android_asset/webToNativeSample.html");   // now it will not fail here
+        webView.addJavascriptInterface(this, "BuzzAdBenefitJSBridge");
+        webView.loadUrl("file:///android_asset/WebToFeedSample.html");
     }
 
     @Override
@@ -38,7 +37,7 @@ public class WebViewActivity extends AppCompatActivity implements BuzzAdBenefitJ
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                new FeedHandler(getApplicationContext(), "YOUR_FEED_UNIT_ID").startFeedActivity(WebViewActivity.this);
+                new FeedHandler(getApplicationContext(), "YOUR_FEED_UNIT_ID").startFeedActivity(WebToFeedActivity.this);
             }
         });
     }

@@ -58,10 +58,10 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/feed_from_web_view"
+            android:id="@+id/web_to_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Feed from WebView"
+            android:text="Web to Feed"
             android:textAllCaps="false" />
 
         <TextView

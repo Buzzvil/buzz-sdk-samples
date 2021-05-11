@@ -15,6 +15,7 @@
 #import <SafariServices/SafariServices.h>
 #import <Toast/Toast.h>
 #import "WebViewController.h"
+#import "WebToFeedViewController.h"
 #import "CarouselView.h"
 #import "BrowserViewController.h"
 
@@ -134,6 +135,11 @@
   NSString *samplePageUrl = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"BuzzAdBenefitJSSamplePageUrl"];
   webViewController.url = [NSURL URLWithString:samplePageUrl];
   [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (IBAction)loadWebToFeedPage:(id)sender {
+  WebToFeedViewController *webToFeedViewController = [[WebToFeedViewController alloc] init];
+  [self.navigationController pushViewController:webToFeedViewController animated:YES];
 }
 
 - (IBAction)launcherSwitchChanged:(id)sender {
