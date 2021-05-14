@@ -63,31 +63,54 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MainViewController" title="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="WebFeed_Sample" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIX-AV-Suu">
-                                <rect key="frame" x="174.5" y="433" width="65" height="30"/>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIX-AV-Suu">
+                                <rect key="frame" x="173.14285714285711" y="520" width="64.999999999999943" height="30.000000000000114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="WebFeed"/>
                                 <connections>
-                                    <segue destination="4ED-od-AYK" kind="show" id="jtx-M9-7xe"/>
+                                    <action selector="onWebFeedButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-Ir-Yzx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-XN-oUm">
+                                <rect key="frame" x="90" y="318" width="236" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BiN-yi-W19">
+                                <rect key="frame" x="88" y="371" width="236" height="33.999999999999957"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/feed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-Wv-33v">
+                                <rect key="frame" x="90" y="413" width="236" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="UIX-AV-Suu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wkz-YL-JTD"/>
-                            <constraint firstItem="UIX-AV-Suu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y3X-RU-Eof"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c3I-Op-fgn"/>
+                    <connections>
+                        <outlet property="appIdTextField" destination="BiN-yi-W19" id="ftz-Ha-Ji0"/>
+                        <outlet property="pathnameLabel" destination="9Ky-Wv-33v" id="MfW-0I-Cak"/>
+                        <outlet property="serverDomainLabel" destination="TNn-XN-oUm" id="2gu-f5-GIR"/>
+                        <segue destination="4ED-od-AYK" kind="show" identifier="openWebFeed" id="vYe-Kf-Kut"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-643" y="100"/>
+            <point key="canvasLocation" x="-643.47826086956525" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>

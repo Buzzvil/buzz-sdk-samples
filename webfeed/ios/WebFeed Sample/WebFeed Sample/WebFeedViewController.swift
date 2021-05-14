@@ -12,20 +12,27 @@ class WebFeedViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
 
+    var appId: String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Your APP ID
-        let appId = "123";
 
-        let url = "https://webfeed.buzzvil.com/\(appId)/feed"
-        self.load(url: url);
+        let serverUrl = Bundle.main.infoDictionary?["Webfeed Url"] as? String ?? ""
+        if (serverUrl == "") {
+            print("Server URL is invalid")
+            return;
+        }
+        let url = "\(serverUrl)\(self.appId)/feed"
 
         self.webView.allowsBackForwardNavigationGestures = true;
         self.webView.uiDelegate = self;
+
+        self.load(url: url)
     }
 
     func load(url: String) {
         self.webView.load(URLRequest(url: URL(string: url)!));
+        print("WEBFEED: \(url)")
     }
 
     @IBAction func back() {
