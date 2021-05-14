@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.*
+import android.text.TextUtils
 import android.util.Log
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
@@ -19,10 +20,12 @@ import kotlinx.android.synthetic.main.activity_webfeed.*
 class WebFeedActivity : AppCompatActivity() {
     companion object {
         private const val KEY_APP_ID = "KEY_APP_ID"
+        private const val KEY_URL_PARAMS = "KEY_URL_PARAMS"
 
-        fun getIntent(context: Context, appId: String): Intent {
+        fun getIntent(context: Context, appId: String, urlParams: String): Intent {
             return Intent(context, WebFeedActivity::class.java).also {
                 it.putExtra(KEY_APP_ID, appId)
+                it.putExtra(KEY_URL_PARAMS, urlParams)
             }
         }
     }
@@ -100,7 +103,14 @@ class WebFeedActivity : AppCompatActivity() {
 
         // Open WebFeed
         val appId = intent.extras?.get(KEY_APP_ID) ?: ""
-        val webFeedUrl = "${WEBFEED_SERVER_URL}${appId}/feed"
+        val urlParams = (intent.extras?.get(KEY_URL_PARAMS) as String?).let {
+            if (TextUtils.isEmpty(it)) {
+                ""
+            } else {
+                "?$it"
+            }
+        }
+        val webFeedUrl = "${WEBFEED_SERVER_URL}${appId}/feed${urlParams}"
 
         webView.loadUrl(webFeedUrl)
         Log.d("WEBVIEW", webFeedUrl)

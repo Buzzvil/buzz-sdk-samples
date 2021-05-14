@@ -44,7 +44,9 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="0dp"
-            android:hint="123?user_id=test"
+            android:hint="123"
+            android:inputType="text"
+            android:maxLines="1"
             android:paddingTop="0dp"
             android:textSize="15sp" />
 
@@ -58,6 +60,19 @@
             android:layout_marginTop="0dp"
             android:paddingBottom="0dp"
             android:text="/feed"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/urlParamsView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:hint="ex) user_id=test"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingTop="0dp"
             android:textSize="15sp" />
     </LinearLayout>
 
