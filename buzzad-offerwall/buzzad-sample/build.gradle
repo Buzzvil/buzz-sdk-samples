@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 repositories {
+    // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
     maven { url "https://dl.buzzvil.com/public/maven"  }
 }
 
@@ -29,5 +30,5 @@ android {
 }
 
 dependencies {
-    implementation "com.buzzvil:buzzad-offerwall:1.1.5"
+    implementation "com.buzzvil:buzzad-offerwall:1.4.0"
 }
