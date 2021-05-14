@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
-import android.os.Message
+import android.os.*
 import android.util.Log
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
@@ -79,10 +77,21 @@ class WebFeedActivity : AppCompatActivity() {
                 resultMsg: Message
             ): Boolean {
                 val result = view.hitTestResult
-                val data = result.extra
-                Log.d("WEBVIEW", Uri.parse(data).toString())
+                val url = if (result.type == WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE) {
+                    // In this case, result.extra is src of img tag
+                    // To avoid opening images, obtain the link must be opened
+                    val handler = Handler(Looper.getMainLooper())
+                    val message = handler.obtainMessage()
+
+                    webView.requestFocusNodeHref(message)
+                    message.data.getString("url")
+                } else {
+                    result.extra
+                } ?: return false
+
+                Log.d("WEBVIEW", url)
                 val context = view.context
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(data))
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 context.startActivity(browserIntent)
                 return false
             }
