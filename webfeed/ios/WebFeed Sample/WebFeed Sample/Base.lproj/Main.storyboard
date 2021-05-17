@@ -76,15 +76,15 @@
                                     <action selector="onWebFeedButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-Ir-Yzx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-XN-oUm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="https://server.domain/" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-XN-oUm">
                                 <rect key="frame" x="90" y="318" width="236" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BiN-yi-W19">
-                                <rect key="frame" x="88" y="371" width="236" height="33.999999999999957"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BiN-yi-W19">
+                                <rect key="frame" x="89" y="371" width="236" height="33.999999999999957"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -96,6 +96,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex) user_id=test" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyA-ug-z2q">
+                                <rect key="frame" x="89" y="442" width="236" height="33.999999999999957"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onParamsTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="jiV-F6-QOx"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,6 +112,7 @@
                     <navigationItem key="navigationItem" id="c3I-Op-fgn"/>
                     <connections>
                         <outlet property="appIdTextField" destination="BiN-yi-W19" id="ftz-Ha-Ji0"/>
+                        <outlet property="paramsTextField" destination="lyA-ug-z2q" id="h5B-BN-red"/>
                         <outlet property="pathnameLabel" destination="9Ky-Wv-33v" id="MfW-0I-Cak"/>
                         <outlet property="serverDomainLabel" destination="TNn-XN-oUm" id="2gu-f5-GIR"/>
                         <segue destination="4ED-od-AYK" kind="show" identifier="openWebFeed" id="vYe-Kf-Kut"/>

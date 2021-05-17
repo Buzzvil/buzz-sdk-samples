@@ -13,6 +13,7 @@ class WebFeedViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
 
     var appId: String = ""
+    var params: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,8 @@ class WebFeedViewController: UIViewController {
             print("Server URL is invalid")
             return;
         }
-        let url = "\(serverUrl)\(self.appId)/feed"
+        let params = self.getParams()
+        let url = "\(serverUrl)\(self.appId)/feed\(params)"
 
         self.webView.allowsBackForwardNavigationGestures = true;
         self.webView.uiDelegate = self;
@@ -44,6 +46,14 @@ class WebFeedViewController: UIViewController {
     @IBAction func forward() {
         if self.webView.canGoForward {
             self.webView.goForward();
+        }
+    }
+    
+    private func getParams() -> String {
+        if (self.params.isEmpty) {
+            return ""
+        } else {
+            return "?\(self.params)"
         }
     }
 }
