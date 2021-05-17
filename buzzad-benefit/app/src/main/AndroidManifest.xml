@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".WebToFeedActivity" />
         <!-- Caution: Replace `000000000000000` with Your AppKey  -->
         <meta-data
             android:name="com.buzzvil.APP_KEY"
