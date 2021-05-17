@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="06y-IW-HQf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,30 +16,10 @@
                     <view key="view" contentMode="scaleToFill" id="Uta-ku-4FS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf4-jR-9a6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sbr-cR-l2Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Wf4-jR-9a6" firstAttribute="leading" secondItem="sbr-cR-l2Q" secondAttribute="leading" id="CKx-Wn-jrq"/>
-                            <constraint firstItem="Wf4-jR-9a6" firstAttribute="top" secondItem="sbr-cR-l2Q" secondAttribute="top" id="NLu-CO-dTj"/>
-                            <constraint firstItem="Wf4-jR-9a6" firstAttribute="trailing" secondItem="sbr-cR-l2Q" secondAttribute="trailing" id="RD6-De-vKO"/>
-                            <constraint firstItem="Wf4-jR-9a6" firstAttribute="bottom" secondItem="sbr-cR-l2Q" secondAttribute="bottom" id="f9o-Rq-ZJB"/>
-                            <constraint firstItem="sbr-cR-l2Q" firstAttribute="bottom" secondItem="Wf4-jR-9a6" secondAttribute="bottom" id="sv5-tL-VAX"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FuZ-8y-AIZ"/>
-                    <connections>
-                        <outlet property="webView" destination="Wf4-jR-9a6" id="DIa-4d-uge"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSZ-e2-8fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +71,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/feed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-Wv-33v">
-                                <rect key="frame" x="90" y="413" width="236" height="21"/>
+                                <rect key="frame" x="89" y="413" width="236" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
