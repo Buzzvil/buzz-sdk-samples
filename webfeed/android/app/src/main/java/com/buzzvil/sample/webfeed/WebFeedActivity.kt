@@ -8,10 +8,8 @@ import android.os.*
 import android.text.TextUtils
 import android.util.Log
 import android.webkit.WebChromeClient
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.sample.webfeed.App.Companion.WEBFEED_SERVER_URL
 import kotlinx.android.synthetic.main.activity_webfeed.*
@@ -56,20 +54,7 @@ class WebFeedActivity : AppCompatActivity() {
         }
 
         // Open any link in current webview
-        webView.webViewClient = object : WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
-                view.loadUrl(url)
-                return false
-            }
-
-            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-            override fun shouldOverrideUrlLoading(
-                view: WebView,
-                request: WebResourceRequest
-            ): Boolean {
-                return this.shouldOverrideUrlLoading(view, request.url.toString())
-            }
-        }
+        webView.webViewClient = WebViewClient()
 
         // Open any new tab link in the external browser
         webView.webChromeClient = object : WebChromeClient() {
