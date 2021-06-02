@@ -1,7 +1,7 @@
 
 # BuzzAdBenefit SDK for Android
 
-* [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/721256746/BuzzAd+Benefit+2.0+Android+SDK)
+* [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1987346963)
 
 # 2.21.0
 * [UPDATE] targetSdkVersion 30 지원
@@ -76,6 +76,8 @@
 > * [FIX] 특정 비디오 광고에서 minimumTime 관련 NPE 오류 수정
 > ## 2.17.3
 > * [FIX] resource ID가 앱에서 사용하는 ID와 겹치지 않도록 prefix 추가
+> ## 2.17.4
+> * [FIX] 브라우저 기본앱이 지정되지 않았을 경우 포인트가 우선 지급되는 문제 수정
 
 # 2.15.1
 * [NEW] 액션형 광고의 브릿지 페이지(Bottom-sheet)에 애드네트워크 광고 배너를 노출(unit_id를 각각 발급받아 사용해주세요)
