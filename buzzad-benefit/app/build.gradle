@@ -42,4 +42,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
 
     implementation 'androidx.multidex:multidex:2.0.0'
+
+    // implementation "com.buzzvil.mediation:sdk-adfit:$mediationAdfitVersion"
+    // implementation "com.buzzvil.mediation:sdk-igaworks:$mediationIgaworksVersion"
 }

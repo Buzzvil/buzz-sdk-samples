@@ -35,7 +35,7 @@ repositories {
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.21.+'
+    buzzAdBenefitVersionName = '2.23.+'
 }
 
 dependencies {

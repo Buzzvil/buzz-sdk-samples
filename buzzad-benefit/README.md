@@ -3,6 +3,14 @@
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1987346963)
 
+# 2.23.0
+* [NEW] 네이버페이와 연동된 Feed 및 Pop에서 네이버페이 적립 페이지로 이동할 수 있는 snackbar 제공
+* [UPDATE] Pop opt-out 지원
+* [UPDATE] igawork mediation을 사용하는 경우 버전 2.4.4로 업데이트 - click event 수집 목적
+* [UPDATE] Interstitial, Push, Pop지면에서도 다크테마를 지원
+* [UPDATE] Feed에서 Pop Opt-in 버튼을 숨기는 옵션 제공
+* [FIX] 2.19.6, 2.21.4 까지 적용
+
 # 2.21.0
 * [UPDATE] targetSdkVersion 30 지원
 * [NEW] Feed 에서 Pop 으로 유도하는 기능 추가.
