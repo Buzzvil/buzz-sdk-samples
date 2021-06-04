@@ -10,6 +10,9 @@
 * [UPDATE] Interstitial, Push, Pop지면에서도 다크테마를 지원
 * [UPDATE] Feed에서 Pop Opt-in 버튼을 숨기는 옵션 제공
 * [FIX] 2.19.6, 2.21.4 까지 적용
+* NOTICE: Repository 에서 삭제
+> ## 2.23.1
+> * [FIX] Pop/Feed unitId가 같을 경우 Pop 비정상 동작 수정
 
 # 2.21.0
 * [UPDATE] targetSdkVersion 30 지원
