@@ -13,6 +13,8 @@
 * NOTICE: Repository 에서 삭제
 > ## 2.23.1
 > * [FIX] Pop/Feed unitId가 같을 경우 Pop 비정상 동작 수정
+> ## 2.23.2
+> * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 
 # 2.21.0
 * [UPDATE] targetSdkVersion 30 지원
@@ -38,6 +40,8 @@
 > * [NEW] BuzzAppHelper를 통해 특정 액티비티의 Lifecycle 이벤트를 모니터링 할 수 있는 기능 추가
 > ## 2.21.4
 > * [FIX] Pop을 사용하면서 Feed를 별도로 사용하는 경우 비정상 종료되는 버그 수정
+> ## 2.21.5
+> * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 
 # 2.19.0
 * [NEW] Feed 지면과 Pop 지면에 배너 타입 광고 서빙
@@ -64,6 +68,8 @@
 > * [FIX] Pop을 사용하면서 Feed를 별도로 사용하는 경우 비정상 종료되는 버그 수정
 > ## 2.19.6
 > * [FIX] Feed에서 Toolbar를 없앴던 것 revert
+> ## 2.19.7
+> * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 
 # 2.17.0
 * [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
