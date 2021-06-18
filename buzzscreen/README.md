@@ -8,6 +8,8 @@
 
 # 3.27.0
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2014478375/BuzzAd+2.21.x+BuzzScreen+3.24.x) 참조
+> ## 3.27.1
+> * [MINOR] gaslock 용 method 추가
 
 # 3.25.0
 * [UPDATE] targetSdkVersion 30 지원

@@ -15,6 +15,8 @@
 > * [FIX] Pop/Feed unitId가 같을 경우 Pop 비정상 동작 수정
 > ## 2.23.2
 > * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
+> ## 2.23.3
+> * [FIX] Feed bottomsheet에서 커스터마이즈된 toolbar를 사용할 경우, 포인트 총액을 알 수 있는 콜백이 호출되지 않는 버그 수정
 
 # 2.21.0
 * [UPDATE] targetSdkVersion 30 지원
@@ -42,6 +44,8 @@
 > * [FIX] Pop을 사용하면서 Feed를 별도로 사용하는 경우 비정상 종료되는 버그 수정
 > ## 2.21.5
 > * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
+> ## 2.21.6
+> * [FIX] Feed bottomsheet에서 커스터마이즈된 toolbar를 사용할 경우, 포인트 총액을 알 수 있는 콜백이 호출되지 않는 버그 수정
 
 # 2.19.0
 * [NEW] Feed 지면과 Pop 지면에 배너 타입 광고 서빙
@@ -70,6 +74,8 @@
 > * [FIX] Feed에서 Toolbar를 없앴던 것 revert
 > ## 2.19.7
 > * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
+> ## 2.19.8
+> * [FIX] Feed bottomsheet에서 커스터마이즈된 toolbar를 사용할 경우, 포인트 총액을 알 수 있는 콜백이 호출되지 않는 버그 수정
 
 # 2.17.0
 * [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
