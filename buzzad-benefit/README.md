@@ -3,6 +3,14 @@
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1987346963)
 
+# 2.25.0
+* [UPDATE] Pop과 InAppPop의 UnitId 분리 지원
+* [UPDATE] FeedToolbarHolder 에 문의하기 기능
+* [FIX] 기본 설정 중에서 feedFeedbackHandlerClass/htmlEnabled 가 Pop으로 전달되지 않는 버그 수정
+* [FIX] VideoLandingActivity 가 드물게 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
+* [FIX] 2.23.3 까지 적용
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2211218452/BuzzAd+2.25.x+BuzzScreen+3.29.x) 참조
+
 # 2.23.0
 * [NEW] 네이버페이와 연동된 Feed 및 Pop에서 네이버페이 적립 페이지로 이동할 수 있는 snackbar 제공
 * [UPDATE] Pop opt-out 지원
@@ -17,6 +25,7 @@
 > * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 > ## 2.23.3
 > * [FIX] Feed bottomsheet에서 커스터마이즈된 toolbar를 사용할 경우, 포인트 총액을 알 수 있는 콜백이 호출되지 않는 버그 수정
+* 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2101805057/BuzzAd+2.23.x+BuzzScreen+3.27.x) 참조
 
 # 2.21.0
 * [UPDATE] targetSdkVersion 30 지원
