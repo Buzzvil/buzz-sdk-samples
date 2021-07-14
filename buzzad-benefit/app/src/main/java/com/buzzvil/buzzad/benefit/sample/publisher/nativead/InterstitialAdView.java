@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.buzzvil.buzzad.benefit.core.models.Ad;
-import com.buzzvil.buzzad.benefit.core.models.Creative;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
