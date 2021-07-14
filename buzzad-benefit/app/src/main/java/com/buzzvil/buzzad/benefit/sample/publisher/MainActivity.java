@@ -21,16 +21,12 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdConfig;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdHandler;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdHandlerFactory;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdLoader;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomAdsAdapter;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedHeaderViewAdapter;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedToolbarHolder;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
 
@@ -81,35 +77,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // TODO: QUESO, should show these two? 1F4A
         this.feedButton = findViewById(R.id.feed_button);
         feedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
-                        .adsAdapterClass(CustomAdsAdapter.class)
-                        .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
-                        .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
-                        .imageTypeEnabled(true)
-                        .build();
-                final FeedHandler feedHandler = new FeedHandler(feedConfig);
-                feedHandler.startFeedActivity(MainActivity.this);
-            }
-        });
-
-        this.feedWithTabButton = findViewById(R.id.feed_with_tab_button);
-        feedWithTabButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
-                        .adsAdapterClass(CustomAdsAdapter.class)
-                        .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
-                        .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
-                        .imageTypeEnabled(true)
-                        .tabUiEnabled(true)
-                        .filterUiEnabled(true)
-                        .build();
-                final FeedHandler feedHandler = new FeedHandler(feedConfig);
+                final FeedHandler feedHandler = new FeedHandler(MainActivity.this, App.UNIT_ID_FEED);
                 feedHandler.startFeedActivity(MainActivity.this);
             }
         });

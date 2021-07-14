@@ -36,26 +36,12 @@
             android:layout_marginTop="8dp"
             android:text="Feed" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/feed_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/feed_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Feed Activity"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/feed_with_tab_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Feed With Tab"
-                android:textAllCaps="false" />
-        </LinearLayout>
+            android:text="Feed Activity"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/web_to_feed"
