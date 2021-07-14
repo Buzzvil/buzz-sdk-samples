@@ -46,7 +46,6 @@ public class App extends Application {
                 .adsAdapterClass(CustomAdsAdapter.class)
                 .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
                 .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
-                .imageTypeEnabled(true)
                 .tabUiEnabled(true)
                 .filterUiEnabled(true)
                 .build();
