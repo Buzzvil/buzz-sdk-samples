@@ -37,7 +37,7 @@ public class WebToFeedActivity extends AppCompatActivity implements BuzzAdBenefi
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                new FeedHandler(getApplicationContext(), "YOUR_FEED_UNIT_ID").startFeedActivity(WebToFeedActivity.this);
+                new FeedHandler(getApplicationContext(), App.UNIT_ID_FEED).startFeedActivity(WebToFeedActivity.this);
             }
         });
     }

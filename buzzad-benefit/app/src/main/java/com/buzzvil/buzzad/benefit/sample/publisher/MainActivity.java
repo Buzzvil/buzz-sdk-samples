@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // TODO: QUESO, should show these two? 1F4A
         this.feedButton = findViewById(R.id.feed_button);
         feedButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
                                 .layoutBackgroundColor(android.R.color.background_dark)
                                 .textColor(android.R.color.white)
                                 .titleText(getString(R.string.bz_interstitial_title))
-                                .closeText(getString(R.string.bz_interstitial_close)) // For Dialog only
                                 .build(),
                         eventListener);
                 return;
