@@ -9,6 +9,8 @@
 * [FIX] 기본 설정 중에서 feedFeedbackHandlerClass/htmlEnabled 가 Pop으로 전달되지 않는 버그 수정
 * [FIX] VideoLandingActivity 가 드물게 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 * [FIX] 2.23.3 까지 적용
+> ### [2.25.1] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2211218452/BuzzAd+2.25.x+BuzzScreen+3.29.x) 참조
 
 ## [2.23.0] - 2021-06-02
@@ -25,6 +27,8 @@
 > * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 > ### [2.23.3] - 2021-06-18
 > * [FIX] Feed bottomsheet에서 커스터마이즈된 toolbar를 사용할 경우, 포인트 총액을 알 수 있는 콜백이 호출되지 않는 버그 수정
+> ### [2.23.4] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2101805057/BuzzAd+2.23.x+BuzzScreen+3.27.x) 참조
 
 ## [2.21.0] - 2021-05-07
@@ -55,6 +59,8 @@
 > * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 > ### [2.21.6] - 2021-06-18
 > * [FIX] Feed bottomsheet에서 커스터마이즈된 toolbar를 사용할 경우, 포인트 총액을 알 수 있는 콜백이 호출되지 않는 버그 수정
+> ### [2.21.7] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.19.0] - 2021-04-01
 * [NEW] Feed 지면과 Pop 지면에 배너 타입 광고 서빙
@@ -85,6 +91,8 @@
 > * [FIX] Feed를 Fragment로 연동할 경우, Feed fragment가 속한 Activity가 시스템에 의해 재시작될 경우 크래시 발생하는 버그 수정 
 > ### [2.19.8] - 2021-06-18
 > * [FIX] Feed bottomsheet에서 커스터마이즈된 toolbar를 사용할 경우, 포인트 총액을 알 수 있는 콜백이 호출되지 않는 버그 수정
+> ### [2.19.9] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.17.0] - 2021-03-04
 * [NEW] 쇼핑 적립 광고 최저가 조회 기능 추가
@@ -110,6 +118,8 @@
 > * [FIX] resource ID가 앱에서 사용하는 ID와 겹치지 않도록 prefix 추가
 > ### [2.17.4] - 2021-06-02
 > * [FIX] 브라우저 기본앱이 지정되지 않았을 경우 포인트가 우선 지급되는 문제 수정
+> ### [2.17.5] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.15.1] - 2021-02-10
 * [NEW] 액션형 광고의 브릿지 페이지(Bottom-sheet)에 애드네트워크 광고 배너를 노출(unit_id를 각각 발급받아 사용해주세요)
@@ -124,6 +134,8 @@
 > ### [2.15.4] - 2021-04-19
 > * [FIX] CtaView customization 관련 마이너 버그 수정
 > * [FIX] 업데이트 시 Pop 활성화 관련 버그 수정
+> ### [2.15.5] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.13.0] - 2021-01-14
 * 푸시 알림창에 만보기 기능 제공 (Pop 연동 필요)
@@ -139,6 +151,8 @@
 > * [FIX] 2.13.1 이후, ContextThemeWrapper(Dialog) 에 NativeAd 를 붙인 경우 Visibility check가 오동작하는 문제 수정
 > ### [2.13.4] - 2021-02-02
 > * [FIX] buzzad-browser 에서 외부로그인이 필요한 경우(특정 광고 상품) 오동작 수정
+> ### [2.13.5] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.11.0] - 2020-12-03
 * BuzzAdPop에 preloadAndShowFeed interface 추가
@@ -153,6 +167,8 @@
 > * [FIX] AOS11에서, Feed 열린 후 Home으로 나갔다가 앱 재실행 시, 앱이 처음부터 다시 실행되는 문제 수정.
 > ### [2.11.3] - 2021-02-02
 > * [FIX] buzzad-browser 에서 외부로그인이 필요한 경우(특정 광고 상품) 오동작 수정
+> ### [2.11.4] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.9.0] - 2020-11-05
 * [UPDATE] Feed category UI 개선
@@ -171,6 +187,8 @@
 > * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
 > ### [2.9.6] - 2021-02-02
 > * [FIX] buzzad-browser 에서 외부로그인이 필요한 경우(특정 광고 상품) 오동작 수정
+> ### [2.9.8] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.7.0] - 2020-09-25
 * [NEW] Pop 피드백 뷰 (Snackbar / toast) Customize
@@ -191,6 +209,8 @@
 > * [FIX] System.exit(n)으로 앱을 종료시키는 경우 Pop 동작의 안정성 향상
 > ### [2.7.5] - 2020-12-14
 > * [FIX] Resource Not Found Exception 에 대한 Workaround 처리
+> ### [2.7.6] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수
 
 ## [2.5.0] - 2020-09-04
 * [Migration Guide for 2.3.x to 2.5.x](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1102708753/BN+AOS+2.3.x+to+2.5.x)
@@ -208,6 +228,8 @@
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
 > ### [2.5.7] - 2020-12-02
 > * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
+> ### [2.5.8] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수정
 
 ## [2.3.0] - 2020-08-18
 * [NEW] 브리지 포인트 조회 화면
@@ -218,6 +240,8 @@
 > * [FIX] 누락된 Analytics를 위한 파라미터 추가.
 > ### [2.3.2] - 2020-12-02
 > * [FIX] Application 기본 테마가 Old theme 를 사용할 경우, 특정 상황에서 광고 클릭 시 IllegalStateException (You need to use a Theme.AppCompat theme) 발생하는 오류 수정
+> ### [2.3.3] - 2021-07-14
+> * [FIX] 특정 랜딩 페이지에서 TransactionTooLargeException 발생하는 문제 수정
 
 ## [2.2.0] - 2020-06-25
 * [NEW] 인터스티셜에 문의하기 버튼 추가
