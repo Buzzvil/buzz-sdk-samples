@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
@@ -34,7 +35,7 @@ public class WebToFeedActivity extends AppCompatActivity implements BuzzAdBenefi
     @Override
     @JavascriptInterface
     public void showFeed() {
-        new Handler().post(new Runnable() {
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
                 new FeedHandler(getApplicationContext(), App.UNIT_ID_FEED).startFeedActivity(WebToFeedActivity.this);
