@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPop() {
-        buzzAdPop.preloadAndShowPop(MainActivity.this);
+        buzzAdPop.preloadAndShowPop();
 
         // Use this instead of preloadAndShowPop if need to show pop tutorial dialog
         // buzzAdPop.showTutorialPopup(MainActivity.this);
@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
                     .settingsIntent(OverlayPermission.createIntentToRequestOverlayPermission(MainActivity.this))
                     .requestCode(REQUEST_CODE_SHOW_POP)
                     .build());
-
         }
     }
 
