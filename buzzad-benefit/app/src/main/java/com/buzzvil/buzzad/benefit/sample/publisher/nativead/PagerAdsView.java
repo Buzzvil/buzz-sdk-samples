@@ -40,6 +40,7 @@ public class PagerAdsView extends FrameLayout {
 
     private ViewPager pager;
     private TabLayout tabLayoutDots;
+    private NativeAdsAdapter nativeAdsAdapter;
 
     public interface OnCloseClickListener {
         void onCloseClick();
@@ -77,7 +78,8 @@ public class PagerAdsView extends FrameLayout {
     }
 
     public void setNativeAds(Collection<NativeAd> nativeAds) {
-        pager.setAdapter(new NativeAdsAdapter(nativeAds));
+        this.nativeAdsAdapter = new NativeAdsAdapter(nativeAds);
+        pager.setAdapter(nativeAdsAdapter);
     }
 
     private static class NativeAdsAdapter extends PagerAdapter {
