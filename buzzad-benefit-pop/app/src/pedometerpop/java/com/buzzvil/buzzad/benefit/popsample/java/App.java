@@ -117,6 +117,5 @@ public class App extends MultiDexApplication {
 //                .introDescription("YOUR INTRO DESCRIPTION")
 //                .introTitle("YOUR INTRO TITLE")
                 .build();
-
     }
 }
