@@ -5,11 +5,13 @@ import androidx.multidex.MultiDexApplication;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
+import com.buzzvil.buzzad.benefit.pop.DefaultPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
 import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.popsample.R;
 import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomControlService;
+import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 
 public class App extends MultiDexApplication {
@@ -38,6 +40,7 @@ public class App extends MultiDexApplication {
                 // TemplatePopToolbarHolder: Minimum customize, pop feed icon, name, button
                 // CustomPopToolbarHolder: Use layout for toolbar
                 .feedToolbarHolderClass(CustomPopToolbarHolder.class)
+                .feedHeaderViewAdapterClass(DefaultPopHeaderViewAdapter.class)
                 .popNotificationConfig(popNotificationConfig)
                 .build();
 
@@ -69,6 +72,7 @@ public class App extends MultiDexApplication {
                 .build();
         final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
+                .feedHeaderViewAdapterClass(CustomPopHeaderViewAdapter.class)
                 .popNotificationConfig(popNotificationConfig)
                 .build();
 

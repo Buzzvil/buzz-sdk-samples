@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
     private void showPop() {
         pedometerPopSwitch.setChecked(true);
         activatePedometerPop();
-        buzzAdPop.preloadAndShowPop(MainActivity.this);
+        buzzAdPop.preloadAndShowPop();
         // Use this instead of preloadAndShowPop if need to show pop tutorial dialog
         // buzzAdPop.showTutorialPopup(MainActivity.this);
     }
