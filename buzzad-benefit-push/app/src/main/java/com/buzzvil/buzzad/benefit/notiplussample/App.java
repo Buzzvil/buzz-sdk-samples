@@ -5,6 +5,7 @@ import androidx.multidex.MultiDexApplication;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
+import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 import com.buzzvil.buzzad.benefit.presentation.notification.PushDialogConfig;
 import com.buzzvil.buzzad.benefit.presentation.notification.RewardNotificationConfig;
 
@@ -20,8 +21,14 @@ public class App extends MultiDexApplication {
     }
 
     private void initBuzzAdBenefit() {
-        BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
+        final FeedConfig feedConfig = new FeedConfig.Builder(this, UNIT_ID_FEED)
+                .adsAdapterClass(CustomFeedAdsAdapter.class)
                 .build();
+
+        BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
+                .setFeedConfig(feedConfig)
+                .build();
+
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
         // Caution: Replace `SAMPLE_USER_ID` with User's ID
