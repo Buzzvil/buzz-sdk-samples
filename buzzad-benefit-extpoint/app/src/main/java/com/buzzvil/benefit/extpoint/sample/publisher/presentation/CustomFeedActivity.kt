@@ -30,12 +30,7 @@ class CustomFeedActivity : AppCompatActivity() {
     }
 
     private fun initFeed(unitId: String) {
-        val feedConfig = FeedConfig.Builder(this, unitId)
-            .feedHeaderViewAdapterClass(DefaultFeedHeaderViewAdapter::class.java)
-            .articlesEnabled(true)
-            .build()
-        val feedFragment =
-            supportFragmentManager.findFragmentById(R.id.feedFragment) as FeedFragment
-        feedFragment.init(feedConfig)
+        val feedFragment = supportFragmentManager.findFragmentById(R.id.feedFragment) as FeedFragment
+        feedFragment.init(this, unitId)
     }
 }

@@ -7,11 +7,7 @@ import com.buzzvil.buzzad.benefit.presentation.feed.header.DefaultFeedHeaderView
 
 internal class FeedFragmentUseCase {
     operator fun invoke(context: Context, unitId: String) {
-        val feedConfig = FeedConfig.Builder(context, unitId)
-            .feedHeaderViewAdapterClass(DefaultFeedHeaderViewAdapter::class.java)
-            .articlesEnabled(true)
-            .build()
-        val feedHandler = FeedHandler(feedConfig)
+        val feedHandler = FeedHandler(context, unitId)
         feedHandler.startFeedActivity(context)
     }
 }
