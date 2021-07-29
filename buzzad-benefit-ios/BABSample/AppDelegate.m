@@ -17,11 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   BABConfig *config = [[BABConfig alloc] initWithAppId:@"100000044" environment:BABEnvProduction logging:YES];
-  NSString *appGroupId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"AppGroupId"];
-  if (appGroupId != nil) {
-    [config setEnableWidget:YES];
-    [config setAppGroupId:appGroupId];
-  }
   [BuzzAdBenefit initializeWithConfig:config];
 
   BABUserPreference *userPreference = [[BABUserPreference alloc] initWithAutoPlayType:BABVideoAutoPlayOnWifi];
