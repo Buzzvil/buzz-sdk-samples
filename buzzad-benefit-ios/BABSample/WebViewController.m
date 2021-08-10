@@ -1,7 +1,6 @@
 #import <WebKit/WebKit.h>
 #import "WebViewController.h"
 #import <BuzzAdBenefit/BuzzAdBenefit.h>
-#import <BuzzAdBenefitWebInterface/BuzzAdBenefitWebInterface.h>
 
 @interface WebViewController () <WKScriptMessageHandler> {
   WKWebView *_webView;

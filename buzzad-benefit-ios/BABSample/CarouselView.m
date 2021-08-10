@@ -44,7 +44,12 @@ const int CarouselItemAdViewTag = 2222;
   UIView *container = [[NSBundle mainBundle] loadNibNamed:@"CarouselView" owner:self options:nil][0];
   [self addSubview:container];
   [container setTranslatesAutoresizingMaskIntoConstraints:NO];
-  [container edgesToContainer:self];
+  [NSLayoutConstraint activateConstraints:@[
+    [container.widthAnchor constraintEqualToAnchor:self.widthAnchor],
+    [container.heightAnchor constraintEqualToAnchor:self.heightAnchor],
+    [container.topAnchor constraintEqualToAnchor:self.topAnchor],
+    [container.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
+  ]];
 
   [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CarouselItemReuseIdentifier];
 
