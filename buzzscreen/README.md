@@ -6,6 +6,9 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.31.0] - 2021-08-16
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000492856-buzzad-2-27-x-buzzscreen-3-31-x-2021%EB%85%84-8%EC%9B%94-) 참조
+
 ## [3.29.0] - 2021-07-05
 * 자세한 사항은 [링크](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2211218452/BuzzAd+2.25.x+BuzzScreen+3.29.x) 참조
 

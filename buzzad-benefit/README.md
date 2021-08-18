@@ -3,6 +3,19 @@
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/1987346963)
 
+## [2.27.0] - 2021-08-16
+* [NEW] Feed에 Home Tab 적용
+* [FIX] Pop 에서 베이스 리워드 지급시 뜨고있는 snackbar 커스텀이 불가능했던 버그를 수정하였습니다.
+* [FIX] Theme이 중복되는 일이 없도록 Prefix 추가
+* [FIX] Deep link 에 App 마다 독립적으로 동작되도록 host 이름을 package 이름으로 변경
+* [FIX] Feed/Pop 의 Unit ID가 같을 경우, 사용 순서에 따라 크래시 발생할 수 있는 경우에 대해 방어 처리
+* [FIX] InAppPop에 의해 AOS6 일부 기기에서 앱이 종료되는 현상 수정
+* [FIX] SSL checkServerTrusted 미구현 취약점 수정
+* [FIX] Feed 툴바 높이를 변경할 수 없는 버그 수정
+* [CHANGE] InAppPop Interface 변경
+* [FIX] 2.25.1 까지 적용
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000492856-buzzad-2-27-x-buzzscreen-3-31-x-2021%EB%85%84-8%EC%9B%94-) 참조
+
 ## [2.25.0] - 2021-07-05
 * [UPDATE] Pop과 InAppPop의 UnitId 분리 지원
 * [UPDATE] FeedToolbarHolder 에 문의하기 기능
