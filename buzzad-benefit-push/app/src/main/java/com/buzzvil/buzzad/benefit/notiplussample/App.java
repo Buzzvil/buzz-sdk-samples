@@ -39,8 +39,8 @@ public class App extends MultiDexApplication {
         return new PushDialogConfig.Builder()
                 .colorConfirm(R.color.colorAccent)
                 .colorCancel(R.color.colorPrimary)
-//                .imageRegisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
-//                .imageUnregisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
+                .imageRegisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
+                .imageUnregisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
                 .build();
     }
 
