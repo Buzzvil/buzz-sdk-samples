@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/customButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/bzv_space_16"
+    android:paddingBottom="@dimen/bzv_space_16"
+    android:paddingLeft="@dimen/bzv_space_16"
+    android:paddingRight="@dimen/bzv_space_16"
+    android:textAppearance="@style/bzv_h7_bold"/>

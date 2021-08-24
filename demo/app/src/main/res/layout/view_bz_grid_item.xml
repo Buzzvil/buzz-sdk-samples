@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemGrid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/ripple_bz_grid_item"
+    android:paddingTop="@dimen/bzv_space_20"
+    android:paddingBottom="@dimen/bzv_space_20"
+    android:paddingLeft="@dimen/bzv_space_12"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bzv_space_4"
+        android:textAppearance="@style/bzv_h6_bold"
+        android:textColor="@color/bzv_text_base" />
+
+    <TextView
+        android:id="@+id/itemDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bzv_space_4"
+        android:textAppearance="@style/bzv_h9"
+        android:textColor="@color/bzv_text_base" />
+
+</LinearLayout>

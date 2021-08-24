@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/bzv_space_32">
+
+    <ImageView
+        android:id="@+id/buzzvilLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_buzzvil"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/descriptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/bzv_space_20"
+        app:layout_constraintTop_toBottomOf="@+id/buzzvilLogo">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/bzv_h2_bold"
+            android:text="@string/main_fragment_title"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/bzv_h7"
+            android:text="@string/main_fragment_description"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="56dp"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/bzv_space_16"
+            android:textAppearance="@style/bzv_h7"
+            android:text="@string/main_fragment_feed_entry_point_description"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/bzv_space_16">
+
+            <com.buzzvil.buzzad.demo.customized.CustomButton
+                android:id="@+id/feedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/bzv_space_12"
+                android:clickable="true"
+                android:focusable="true"
+                app:text="@string/feed"/>
+
+            <com.buzzvil.buzzad.demo.customized.CustomButton
+                android:id="@+id/popButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/bzv_space_12"
+                app:text="@string/pop"/>
+
+            <com.buzzvil.buzzad.demo.customized.CustomButton
+                android:id="@+id/inAppPopButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/bzv_space_12"
+                app:text="@string/inapppop"/>
+
+            <com.buzzvil.buzzad.demo.customized.CustomButton
+                android:id="@+id/pushAlarmButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:text="@string/push"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/bzv_space_16"
+            android:textAppearance="@style/bzv_h7"
+            android:text="@string/main_fragment_inventory_description"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.buzzvil.buzzad.demo.customized.CustomButton
+                android:id="@+id/interstitialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/bzv_space_12"
+                app:text="@string/interstitial"/>
+
+            <com.buzzvil.buzzad.demo.customized.CustomButton
+                android:id="@+id/nativeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:text="@string/nativead"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.buzzvil.buzzad.demo.customized.CustomButton
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:textBackground="@drawable/button_background_negative"
+        app:textColor="@color/button_text_color_negative"
+        app:text="@string/reset_all"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
