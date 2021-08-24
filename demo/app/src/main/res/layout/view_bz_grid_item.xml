@@ -5,12 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/ripple_bz_grid_item"
     android:paddingTop="@dimen/bzv_space_20"
     android:paddingBottom="@dimen/bzv_space_20"
-    android:paddingLeft="@dimen/bzv_space_12"
-    android:clickable="true"
-    android:focusable="true">
+    android:paddingLeft="@dimen/bzv_space_12">
 
     <ImageView
         android:id="@+id/itemImage"

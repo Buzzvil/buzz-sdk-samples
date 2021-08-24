@@ -26,8 +26,5 @@ class CustomGridItem @JvmOverloads constructor(
             binding.itemDescription.text = attributes.getText(R.styleable.CustomGridItem_itemDescription)
             attributes.recycle()
         }
-        binding.itemGrid.setOnClickListener {
-            this.performClick()
-        }
     }
 }

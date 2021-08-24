@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginRight="@dimen/bzv_space_4"
+            android:background="@drawable/ripple_bz_grid_item"
             app:itemImage="@drawable/icon_bz_chathead"
             app:itemTitle="@string/inapppop"
             app:itemDescription="@string/inapppop_description"/>
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginLeft="@dimen/bzv_space_4"
+            android:background="@drawable/ripple_bz_grid_item"
             app:itemImage="@drawable/icon_bz_push"
             app:itemTitle="@string/push"
             app:itemDescription="@string/push_description"/>
