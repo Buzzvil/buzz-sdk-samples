@@ -1,10 +1,16 @@
 
 ## BuzzScreen SDK for Android
-> [English Version Link](README_EN.md)
-- [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/384860182/BuzzScreen+SDK) 
+
+* [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/718569580/BuzzAd+Benefit)
 
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
+
+## [3.33.0] - 2021-08-26
+* [NEW] 다음에서 설명하는 광고 ID 관련 정책 변경에 대한 대응
+> 시행일: 2021년 10월 4일 
+> Android 광고 ID 사용에 관한 [변경사항](https://support.google.com/googleplay/android-developer/answer/9857753)의 설명을 위해 광고 정책을 업데이트합니다. 새로운 기기에서 사용자가 Android 광고 ID를 삭제하면 광고 식별자는 삭제되고 0으로 된 문자열로 대체됩니다. 
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/66000211176)에서 해당 버전을 참조하세요.
 
 ## [3.31.0] - 2021-08-16
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000492856-buzzad-2-27-x-buzzscreen-3-31-x-2021%EB%85%84-8%EC%9B%94-) 참조
