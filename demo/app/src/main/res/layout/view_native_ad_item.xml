@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nativeAdView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.buzzvil.buzzad.benefit.presentation.feed.navigation.NativeToFeedLayout
+                android:id="@+id/nativeToFeedLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/bzv_space_4"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/bzv_space_4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/bzv_h6"
+                    android:textColor="@color/bz_primary_base"
+                    android:text="더 많은 참여 기회 보기"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bzv_ic_chevron_right"
+                    app:tint="@color/bz_primary_base"/>
+            </com.buzzvil.buzzad.benefit.presentation.feed.navigation.NativeToFeedLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bzv_space_12"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="@dimen/bzv_corner_radius_16">
+
+            <com.buzzvil.buzzad.benefit.presentation.media.MediaView
+                android:id="@+id/mediaView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/bzv_space_4"
+            android:layout_marginTop="@dimen/bzv_space_8"
+            android:layout_marginRight="@dimen/bzv_space_4"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/adIconImage"
+                android:layout_width="@dimen/bzv_space_32"
+                android:layout_height="@dimen/bzv_space_32"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/adTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/bzv_space_8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/bzv_h5_bold"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/adDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/bzv_space_4"
+            android:layout_marginTop="@dimen/bzv_space_8"
+            android:layout_marginRight="@dimen/bzv_space_4"
+            android:layout_marginBottom="@dimen/bzv_space_12"
+            android:ellipsize="end"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp">
+
+            <com.buzzvil.buzzad.benefit.presentation.media.CtaView
+                android:id="@+id/ctaView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/bzv_space_4"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView>

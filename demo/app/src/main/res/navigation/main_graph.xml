@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.buzzvil.buzzad.demo.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/navigate_to_native_ad"
+            app:destination="@+id/nativeAdFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nativeAdFragment"
+        android:name="com.buzzvil.buzzad.demo.NativeAdFragment"
+        android:label="NativeAdFragment"
+        tools:layout="@layout/fragment_native_ad"/>
+</navigation>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DemoApp</string>
+    <string name="main_fragment_title">BuzzAd SDK DemoApp</string>
+    <string name="main_fragment_description">Explore the extensive features provided inside our exclusive BuzzAd SDK.</string>
+    <string name="main_fragment_feed_entry_point_description">Check out how the Feed looks like including the various entry points we offer.</string>
+    <string name="main_fragment_inventory_description">Find out how the flow goes from our other inventories to the feed.</string>
+    <string name="native_ad_fragment_title">Demo App</string>
+    <string name="feed">피드</string>
+    <string name="pop">팝</string>
+    <string name="inapppop">인앱팝</string>
+    <string name="inapppop_description">Show In-App Pop</string>
+    <string name="push">푸시 알람</string>
+    <string name="push_description">Never miss a reward!</string>
+    <string name="push_success_message">Push Alarm subscription success</string>
+    <string name="push_failure_message">Push Alarm subscription failure</string>
+    <string name="interstitial">인터스티셜</string>
+    <string name="nativead">네이티브</string>
+    <string name="reset_all">RESET ALL</string>
+</resources>

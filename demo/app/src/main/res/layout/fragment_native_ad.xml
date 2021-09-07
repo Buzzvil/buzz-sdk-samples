@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/bzv_space_24"
+    android:layout_marginLeft="@dimen/bzv_space_16"
+    android:layout_marginRight="@dimen/bzv_space_16">
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/bzv_h2_bold"
+            android:text="@string/native_ad_fragment_title"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bzv_space_4"
+            android:background="@color/bz_primary_base"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/bzv_space_16"
+        app:layout_constraintTop_toBottomOf="@+id/titleLayout">
+
+        <com.buzzvil.buzzad.demo.customized.CustomGridItem
+            android:id="@+id/inAppPopGrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/bzv_space_4"
+            android:background="@drawable/ripple_bz_grid_item"
+            app:itemImage="@drawable/icon_bz_chathead"
+            app:itemTitle="@string/inapppop"
+            app:itemDescription="@string/inapppop_description"/>
+
+        <com.buzzvil.buzzad.demo.customized.CustomGridItem
+            android:id="@+id/pushGrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/bzv_space_4"
+            android:background="@drawable/ripple_bz_grid_item"
+            app:itemImage="@drawable/icon_bz_push"
+            app:itemTitle="@string/push"
+            app:itemDescription="@string/push_description"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nativeAdContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bzv_space_24"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/nativeAdTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/bzv_h4_bold"
+            android:text="@string/bz_interstitial_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <include
+            layout="@layout/view_native_ad_item"
+            android:id="@+id/nativeAdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/nativeAdTitle"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
