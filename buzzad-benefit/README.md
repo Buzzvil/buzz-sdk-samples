@@ -11,6 +11,10 @@
 > 시행일: 2021년 10월 4일 
 > Android 광고 ID 사용에 관한 [변경사항](https://support.google.com/googleplay/android-developer/answer/9857753)의 설명을 위해 광고 정책을 업데이트합니다. 새로운 기기에서 사용자가 Android 광고 ID를 삭제하면 광고 식별자는 삭제되고 0으로 된 문자열로 대체됩니다. 
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/66000211176)에서 해당 버전을 참조하세요.
+> ### [2.29.1] - 2021-09-08
+> * [NEW] BuzzAdBenefit.isInitialized() 메소드 추가
+> ### [2.29.2] - 2021-09-16
+> * [FIX] 경우에 따라, 불필요한 http request 가 중복되는 문제 수정, SessionReadyBroadcast가 반복되는 문제 수정
 
 ## [2.27.0] - 2021-08-16
 * [NEW] Feed에 Home Tab 적용
