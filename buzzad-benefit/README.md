@@ -15,6 +15,8 @@
 > * [NEW] BuzzAdBenefit.isInitialized() 메소드 추가
 > ### [2.29.2] - 2021-09-16
 > * [FIX] 경우에 따라, 불필요한 http request 가 중복되는 문제 수정, SessionReadyBroadcast가 반복되는 문제 수정
+> ### [2.29.3] - 2021-09-17
+> * [FIX] FeedFragment.init 을 반복해서 호출해도 동작에 문제 없도록 수정 (파트너 요청)
 
 ## [2.27.0] - 2021-08-16
 * [NEW] Feed에 Home Tab 적용
