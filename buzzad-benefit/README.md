@@ -154,6 +154,8 @@
 > * [NEW] 다음에서 설명하는 광고 ID 관련 정책 변경에 대한 대응
 >>  시행일: 2021년 10월 4일 
 >> Android 광고 ID 사용에 관한 [변경사항](https://support.google.com/googleplay/android-developer/answer/9857753)의 설명을 위해 광고 정책을 업데이트합니다. 새로운 기기에서 사용자가 Android 광고 ID를 삭제하면 광고 식별자는 삭제되고 0으로 된 문자열로 대체됩니다. 
+> ### [2.17.7] - 2021-09-30
+> * [FIX] 업데이트 상황에서 FeedActivity에서 'incompatible types for field ...' RuntimeException 발생하는 문제에 대해 방어코드 적용
 
 ## [2.15.1] - 2021-02-10
 * [NEW] 액션형 광고의 브릿지 페이지(Bottom-sheet)에 애드네트워크 광고 배너를 노출(unit_id를 각각 발급받아 사용해주세요)

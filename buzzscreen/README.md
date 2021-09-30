@@ -11,6 +11,8 @@
 > 시행일: 2021년 10월 4일 
 > Android 광고 ID 사용에 관한 [변경사항](https://support.google.com/googleplay/android-developer/answer/9857753)의 설명을 위해 광고 정책을 업데이트합니다. 새로운 기기에서 사용자가 Android 광고 ID를 삭제하면 광고 식별자는 삭제되고 0으로 된 문자열로 대체됩니다. 
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/66000211176)에서 해당 버전을 참조하세요.
+> ### [3.33.1] - 2021-09-30
+> * [MINOR] getActivatedPackageNames, getSnoozedPackageNames 복원
 
 ## [3.31.0] - 2021-08-16
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000492856-buzzad-2-27-x-buzzscreen-3-31-x-2021%EB%85%84-8%EC%9B%94-) 참조
