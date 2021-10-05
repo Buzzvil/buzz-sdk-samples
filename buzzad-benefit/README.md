@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [2.31.0] - 2021-10-05
+* [NEW] Feed 엔트리뷰 기능 추가
+* [CHANGE] Feed 홈탭 기능 제거
+* [FIX] exoplayer 버전 호환이 안될 경우에, 비디오 광고 타잎을 무시하는 방어로직 추가
+* [FIX] Feed/Pop의 유닛아이디가 같을 경우에, FeedToolbarHolder를 Pop에서도 사용하도록 수정
+
 ## [2.29.0] - 2021-08-26
 * [NEW] 다음에서 설명하는 광고 ID 관련 정책 변경에 대한 대응
 > 시행일: 2021년 10월 4일 

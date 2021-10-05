@@ -6,6 +6,9 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.35.0] - 2021-10-08
+* [MINOR] getActivatedPackages 원복
+
 ## [3.33.0] - 2021-08-26
 * [NEW] 다음에서 설명하는 광고 ID 관련 정책 변경에 대한 대응
 > 시행일: 2021년 10월 4일 
