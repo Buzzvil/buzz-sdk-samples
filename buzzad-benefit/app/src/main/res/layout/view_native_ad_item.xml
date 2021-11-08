@@ -59,7 +59,7 @@
             android:textColor="@android:color/black" />
 
 
-        <com.buzzvil.buzzad.benefit.presentation.media.CtaView
+        <com.buzzvil.buzzad.benefit.presentation.media.DefaultCtaView
             android:id="@+id/ad_cta_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
