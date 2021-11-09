@@ -44,11 +44,9 @@ public class MainActivity extends AppCompatActivity {
         btnCustomRegister = findViewById(R.id.btnCustomRegister);
         btnUnregister = findViewById(R.id.btnUnregister);
 
-        BuzzAdPush buzzAdPush = initBuzzAdPush();
+        setListener(BuzzAdPush.getInstance());
 
-        setListener(buzzAdPush);
-
-        switchAdNotiRegister.setChecked(buzzAdPush.isRegistered(getApplicationContext()));
+        switchAdNotiRegister.setChecked(BuzzAdPush.getInstance().isRegistered(getApplicationContext()));
     }
 
     private void setListener(final BuzzAdPush buzzAdPush) {
@@ -186,13 +184,6 @@ public class MainActivity extends AppCompatActivity {
                         );
                     }
                 });
-    }
-
-    private BuzzAdPush initBuzzAdPush() {
-        return new BuzzAdPush(
-                CustomNotificationWorker.class,
-                App.getPushDialogConfig()
-        );
     }
 
     void showPushRegisterDialogStep2(

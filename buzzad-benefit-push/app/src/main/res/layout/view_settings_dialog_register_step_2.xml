@@ -30,7 +30,9 @@
 
             <CheckBox
                 android:id="@+id/checkboxNotiPlusAll"
-                style="@style/BenefitAdNotiPlusCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:textStyle="bold"
                 android:text="@string/benefit_push_settings_dialog_register_step_2_subscribe_all"
                 />
