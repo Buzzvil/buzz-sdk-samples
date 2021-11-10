@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Button feedButton;
     private Button feedWithTabButton;
     private Button webToFeedButton;
+    private Button feedEntryPointButton;
     private ProgressBar progressBar;
     private Spinner interstitialTypeSpinner;
     private Spinner interstitialCustomizationSpinner;
@@ -118,6 +119,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 WebToFeedActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        this.feedEntryPointButton = findViewById(R.id.feed_entry_point);
+        feedEntryPointButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FeedEntryPointActivity.startActivity(MainActivity.this);
             }
         });
 
