@@ -86,13 +86,7 @@ public class MainActivity extends AppCompatActivity {
         feedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
-                        .adsAdapterClass(CustomAdsAdapter.class)
-                        .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
-                        .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
-                        .imageTypeEnabled(true)
-                        .build();
-                final FeedHandler feedHandler = new FeedHandler(feedConfig);
+                final FeedHandler feedHandler = new FeedHandler(MainActivity.this, App.UNIT_ID_FEED);
                 feedHandler.startFeedActivity(MainActivity.this);
             }
         });

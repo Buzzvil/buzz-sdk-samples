@@ -9,14 +9,180 @@
     android:paddingBottom="24dp">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:lineHeight="26dp"
+        android:layout_height="26dp"
         android:text="Custom Entry Point Samples"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/itemNameIcon"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed" />
 
+    <TextView
+        android:id="@+id/itemNameIcon"
+        style="@style/FeedEntryPointItem"
+        android:text="Icon"
+        app:layout_constraintBottom_toTopOf="@+id/itemViewIcon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/itemViewIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buzzvilFeedEntryViewName="entry point icon"
+        app:layout_constraintBottom_toTopOf="@+id/itemNameIconWithMessage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemNameIcon">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/feed_entry_point_icon_1" />
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
+
+    <TextView
+        android:id="@+id/itemNameIconWithMessage"
+        style="@style/FeedEntryPointItem"
+        android:text="Icon + Message"
+        app:layout_constraintBottom_toTopOf="@+id/itemViewIconWithMessage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemViewIcon" />
+
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/itemViewIconWithMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buzzvilFeedEntryViewName="entry point icon with message"
+        app:layout_constraintBottom_toTopOf="@+id/itemNameBanner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemNameIconWithMessage">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/feed_entry_point_icon_2" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/itemViewIconWithMessageBalloon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/feed_entry_point_message_balloon_tail" />
+
+                <TextView
+                    android:id="@+id/textViewIconWithMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/feed_entry_point_message_balloon"
+                    android:padding="4dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
+
+    <TextView
+        android:id="@+id/itemNameBanner"
+        style="@style/FeedEntryPointItem"
+        android:text="Banner"
+        app:layout_constraintBottom_toTopOf="@+id/itemViewBanner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemViewIconWithMessage" />
+
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/itemViewBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buzzvilFeedEntryViewName="entry point banner"
+        app:layout_constraintBottom_toTopOf="@+id/itemNameButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemNameBanner">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/feed_entry_point_banner" />
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
+
+    <TextView
+        android:id="@+id/itemNameButton"
+        style="@style/FeedEntryPointItem"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/itemViewButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemViewBanner" />
+
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/itemViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buzzvilFeedEntryViewName="entry point button"
+        app:layout_constraintBottom_toTopOf="@+id/itemNameFAB"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemNameButton">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1290FF"
+            android:minHeight="0dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="8dp"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
+
+    <TextView
+        android:id="@+id/itemNameFAB"
+        style="@style/FeedEntryPointItem"
+        android:text="Floating Action Button (FAB)"
+        app:layout_constraintBottom_toTopOf="@+id/itemViewFAB"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemViewButton" />
+
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/itemViewFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buzzvilFeedEntryViewName="entry point fab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemNameFAB">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/feed_entry_point_icon_2" />
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
 </androidx.constraintlayout.widget.ConstraintLayout>
