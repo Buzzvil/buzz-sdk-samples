@@ -94,6 +94,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/feed_entry_point_message_balloon"
                     android:padding="4dp"
+                    android:text="@string/feed_entry_point_message_without_points"
                     android:textColor="#FFFFFF"
                     android:textSize="12sp" />
 
@@ -158,6 +159,7 @@
             android:paddingTop="8dp"
             android:paddingRight="10dp"
             android:paddingBottom="8dp"
+            android:text="@string/feed_entry_point_message_without_points"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="12dp" />
