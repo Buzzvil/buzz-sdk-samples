@@ -5,18 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.benefit.extpoint.sample.publisher.R
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedFragment
-import com.buzzvil.buzzad.benefit.presentation.feed.header.DefaultFeedHeaderViewAdapter
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
 
 class CustomFeedActivity : AppCompatActivity() {
     companion object {
-        private val KEY_UNIT_ID = "KEY_UNIT_ID"
-
-        fun getIntent(context: Context, unitId: String): Intent {
-            val intent = Intent(context, CustomFeedActivity::class.java)
-            intent.putExtra(KEY_UNIT_ID, unitId)
-            return intent
+        fun getIntent(context: Context): Intent {
+            return Intent(context, CustomFeedActivity::class.java)
         }
     }
 
@@ -24,18 +18,17 @@ class CustomFeedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
 
-        intent.getStringExtra(KEY_UNIT_ID)?.let {
-            initFeed(it)
-        }
+        initFeed()
     }
 
-    private fun initFeed(unitId: String) {
-        val feedConfig = FeedConfig.Builder(this, unitId)
-            .feedHeaderViewAdapterClass(DefaultFeedHeaderViewAdapter::class.java)
-            .articlesEnabled(true)
-            .build()
-        val feedFragment =
-            supportFragmentManager.findFragmentById(R.id.feedFragment) as FeedFragment
-        feedFragment.init(feedConfig)
+    private fun initFeed() {
+        // 광고를 새로 받기 위해 필요한 부분입니다.
+        val buzzAdFeed = BuzzAdFeed.Builder().build()
+
+        val feedFragment = buzzAdFeed.getFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(android.R.id.content, feedFragment)
+            .commitAllowingStateLoss()
     }
 }

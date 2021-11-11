@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initButtons() {
         runFeedActivityExample.setOnClickListener {
-            feedActivityUseCase(this@MainActivity, BuildConfig.BUZZ_FEED_UNIT_ID)
+            feedActivityUseCase(this@MainActivity)
         }
 
         runFeedFragmentExample.setOnClickListener {
-            feedFragmentUseCase(this@MainActivity, BuildConfig.BUZZ_FEED_UNIT_ID)
+            feedFragmentUseCase(this@MainActivity)
         }
     }
 }

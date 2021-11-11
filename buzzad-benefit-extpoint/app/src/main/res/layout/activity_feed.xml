@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/feedFragment"
-        android:name="com.buzzvil.buzzad.benefit.presentation.feed.FeedFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<!--    <fragment-->
+<!--        android:id="@+id/feedFragment"-->
+<!--        android:name="com.buzzvil.buzzad.benefit.presentation.feed.FeedFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
