@@ -182,9 +182,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameFAB">
 
-        <ImageView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/feed_entry_point_icon_2" />
+            android:layout_gravity="end|bottom"
+            android:layout_margin="12dp"
+            android:contentDescription="@string/feed_entry_point_message_without_points"
+            android:src="@drawable/ic_coin"
+            app:fabSize="mini" />
+
     </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
 </androidx.constraintlayout.widget.ConstraintLayout>
