@@ -113,17 +113,19 @@
 
     <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
         android:id="@+id/itemViewBanner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:buzzvilFeedEntryViewName="entry point banner"
         app:layout_constraintBottom_toTopOf="@+id/itemNameButton"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameBanner">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
             android:src="@drawable/feed_entry_point_banner" />
     </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
 
