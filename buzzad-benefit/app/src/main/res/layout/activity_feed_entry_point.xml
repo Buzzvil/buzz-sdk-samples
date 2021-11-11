@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:buzzvilFeedEntryViewName="entry point icon"
-            app:layout_constraintBottom_toTopOf="@+id/itemNameIconWithMessage"
+            app:layout_constraintBottom_toTopOf="@+id/itemNameIconByCode"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/itemNameIcon">
@@ -53,13 +53,31 @@
         </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
 
         <TextView
+            android:id="@+id/itemNameIconByCode"
+            style="@style/FeedEntryPointItem"
+            android:text="Icon By Code"
+            app:layout_constraintBottom_toTopOf="@+id/itemViewIconByCode"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemViewIcon" />
+
+        <FrameLayout
+            android:id="@+id/itemViewIconByCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/itemNameIconWithMessage"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemNameIconByCode" />
+
+        <TextView
             android:id="@+id/itemNameIconWithMessage"
             style="@style/FeedEntryPointItem"
             android:text="Icon + Message"
             app:layout_constraintBottom_toTopOf="@+id/itemViewIconWithMessage"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemViewIcon" />
+            app:layout_constraintTop_toBottomOf="@+id/itemViewIconByCode" />
 
         <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
             android:id="@+id/itemViewIconWithMessage"

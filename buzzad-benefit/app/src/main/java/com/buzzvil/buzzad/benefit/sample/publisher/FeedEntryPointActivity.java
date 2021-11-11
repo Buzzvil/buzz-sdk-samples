@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
+import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView;
 
 import java.text.DecimalFormat;
 
@@ -34,6 +36,7 @@ public class FeedEntryPointActivity extends AppCompatActivity {
 
         iconWithMessageImageView = findViewById(R.id.textViewIconWithMessage);
         button = findViewById(R.id.button);
+        createEntryPointViewDynamically();
 
         feedHandler = new FeedHandler(this, App.UNIT_ID_FEED);
     }
@@ -53,6 +56,13 @@ public class FeedEntryPointActivity extends AppCompatActivity {
                 updateMessages(0);
             }
         });
+    }
+
+    private void createEntryPointViewDynamically() {
+        final ViewGroup parent = findViewById(R.id.itemViewIconByCode);
+        final FeedEntryView entryView = (FeedEntryView) getLayoutInflater().inflate(R.layout.view_feed_entry_view_icon, null);
+        entryView.setFeedEntryViewName("entry point by code");
+        parent.addView(entryView);
     }
 
     private void updateMessages(final int points) {
