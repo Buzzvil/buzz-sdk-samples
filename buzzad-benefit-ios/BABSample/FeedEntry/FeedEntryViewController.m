@@ -61,10 +61,12 @@ static NSTimeInterval const kAnimationDuration = 0.2;
 - (void)setupView {
   self.view.backgroundColor = UIColor.whiteColor;
   self.navigationItem.title = kNavigationItemTitle;
+  [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.blackColor}];
   
   _iconLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _iconLabel.font = [UIFont boldSystemFontOfSize:14];
   _iconLabel.text = @"Icon";
+  _iconLabel.textColor = UIColor.blackColor;
   [self.view addSubview:_iconLabel];
   
   _feedEntryIcon = [[FeedEntryIcon alloc] initWithFrame:CGRectZero];
@@ -76,6 +78,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   _iconWithMessageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _iconWithMessageLabel.font = [UIFont boldSystemFontOfSize:14];
   _iconWithMessageLabel.text = @"Icon + Message";
+  _iconWithMessageLabel.textColor = UIColor.blackColor;
   [self.view addSubview:_iconWithMessageLabel];
   
   _feedEntryIconWithMessage = [[FeedEntryIconWithMessage alloc] initWithFrame:CGRectZero];
@@ -88,6 +91,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   _bannerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _bannerLabel.font = [UIFont boldSystemFontOfSize:14];
   _bannerLabel.text = @"Banner";
+  _bannerLabel.textColor = UIColor.blackColor;
   [self.view addSubview:_bannerLabel];
   
   _feedEntryBanner = [[FeedEntryBanner alloc] initWithFrame:CGRectZero];
@@ -98,6 +102,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   _buttonLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _buttonLabel.font = [UIFont boldSystemFontOfSize:14];
   _buttonLabel.text = @"Button";
+  _buttonLabel.textColor = UIColor.blackColor;
   [self.view addSubview:_buttonLabel];
   
   _feedEntryButton = [[FeedEntryButton alloc] initWithFrame:CGRectZero];
