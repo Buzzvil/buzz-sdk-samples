@@ -57,12 +57,26 @@
                 android:textAllCaps="false" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/web_to_feed"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Web to Feed"
-            android:textAllCaps="false" />
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/web_to_feed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Web to Feed"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/feed_entry_point"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Feed Entry Point"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Title"

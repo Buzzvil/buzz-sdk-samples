@@ -11,4 +11,7 @@
         <item>Background and Text</item>
         <item>CTA</item>
     </string-array>
+    <string name="feed_entry_point_message_with_highlight"><![CDATA[Get up to <font color="#54aafd">%1$s</font> extra points]]></string>
+    <string name="feed_entry_point_message">Get up to %1$s extra points</string>
+    <string name="feed_entry_point_message_without_points">Get extra points now!</string>
 </resources>
