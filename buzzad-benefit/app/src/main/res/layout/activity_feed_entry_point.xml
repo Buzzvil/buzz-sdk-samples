@@ -214,8 +214,7 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="12dp"
             android:contentDescription="@string/feed_entry_point_message_without_points"
-            android:src="@drawable/ic_coin"
-            app:fabSize="mini" />
+            android:src="@drawable/ic_coin" />
 
     </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
 </androidx.constraintlayout.widget.ConstraintLayout>
