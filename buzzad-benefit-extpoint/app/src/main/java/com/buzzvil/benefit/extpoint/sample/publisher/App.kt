@@ -8,6 +8,9 @@ import com.buzzvil.buzzad.benefit.presentation.BuzzAdTheme
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
 
 class App : Application() {
+    val feedConfig: FeedConfig = FeedConfig.Builder(BuildConfig.BUZZ_FEED_UNIT_ID)
+        .build()
+
     override fun onCreate() {
         super.onCreate()
 
@@ -15,9 +18,6 @@ class App : Application() {
         // ExtauthConfig - (1) AppIcon (2) loginTitle (3) loginDescription 를 변경할 수 있습니다..
         val extauthConfig: ExtauthConfig = ExtauthConfig.Builder(this)
             .setAppIcon(applicationInfo.icon)
-            .build()
-
-        val feedConfig = FeedConfig.Builder(BuildConfig.BUZZ_FEED_UNIT_ID)
             .build()
 
         val buzzAdBenefitConfig: BuzzAdBenefitConfig = BuzzAdBenefitConfig.Builder(this)

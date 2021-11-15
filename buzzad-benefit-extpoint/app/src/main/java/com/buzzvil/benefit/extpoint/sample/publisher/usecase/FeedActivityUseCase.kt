@@ -1,11 +1,10 @@
 package com.buzzvil.benefit.extpoint.sample.publisher.usecase
 
 import android.content.Context
-import com.buzzvil.benefit.extpoint.sample.publisher.presentation.CustomFeedActivity
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
 
 internal class FeedActivityUseCase {
     operator fun invoke(context: Context) {
-        val intent = CustomFeedActivity.getIntent(context)
-        context.startActivity(intent)
+        BuzzAdFeed.Builder().build().show(context)
     }
 }
