@@ -18,6 +18,7 @@
 #import "WebToFeedViewController.h"
 #import "CarouselView.h"
 #import "BrowserViewController.h"
+#import "FeedEntryViewController.h"
 
 @interface ViewController () <BABNativeAdViewDelegate, BABInterstitialAdHandlerDelegate, BABLauncher>
 
@@ -158,6 +159,20 @@
     BABUserProfile *userProfile = [[BABUserProfile alloc] initWithUserId:[NSString stringWithFormat:@"iOS_TEST_%u", arc4random() % 10000] birthYear:1985 gender:BABUserGenderMale];
     [BuzzAdBenefit setUserProfile:userProfile];
   }
+}
+
+- (IBAction)feedEntryButtonTapped:(UIButton *)sender {
+  BABFeedConfig *config = [[BABFeedConfig alloc] initWithUnitId:@"235299148396323"];
+  config.title = @"꿀 피드";
+  config.articlesEnabled = YES;
+//  config.articleCategories = @[BABArticleCategoryNews];
+  config.separatorColor = [UIColor colorWithWhite:0.8 alpha:1];
+  config.separatorHeight = 1 / UIScreen.mainScreen.scale;
+  config.separatorHorizontalMargin = 10;
+  
+  FeedEntryViewController *viewController = [[FeedEntryViewController alloc] init];
+  [viewController setFeedConfig:config];
+  [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - BABLauncher

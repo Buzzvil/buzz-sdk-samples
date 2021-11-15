@@ -19,6 +19,12 @@
 		C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A297572240F06B00F6D677 /* Assets.xcassets */; };
 		C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */; };
 		C4A2975E2240F06B00F6D677 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2975D2240F06B00F6D677 /* main.m */; };
+		D626FB91273E3AF900103555 /* FeedEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB90273E3AF900103555 /* FeedEntryViewController.m */; };
+		D626FB94273E3B0E00103555 /* FeedEntryIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB93273E3B0E00103555 /* FeedEntryIcon.m */; };
+		D626FB97273E3B2900103555 /* FeedEntryIconWithMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB96273E3B2900103555 /* FeedEntryIconWithMessage.m */; };
+		D626FB9A273E3B3F00103555 /* FeedEntryBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB99273E3B3F00103555 /* FeedEntryBanner.m */; };
+		D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB9C273E3B5100103555 /* FeedEntryButton.m */; };
+		D626FBA0273E3B6600103555 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB9F273E3B6600103555 /* MessageView.m */; };
 		D65AC7D226493B3500479161 /* WebToFeedSample.html in Resources */ = {isa = PBXBuildFile; fileRef = D65AC7D126493B3500479161 /* WebToFeedSample.html */; };
 		D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65AC80D264A2DE600479161 /* WebToFeedViewController.m */; };
 /* End PBXBuildFile section */
@@ -46,6 +52,18 @@
 		C4A2975D2240F06B00F6D677 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4A297642240F0D500F6D677 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BABSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D626FB8F273E3AF900103555 /* FeedEntryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedEntryViewController.h; sourceTree = "<group>"; };
+		D626FB90273E3AF900103555 /* FeedEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedEntryViewController.m; sourceTree = "<group>"; };
+		D626FB92273E3B0E00103555 /* FeedEntryIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedEntryIcon.h; sourceTree = "<group>"; };
+		D626FB93273E3B0E00103555 /* FeedEntryIcon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedEntryIcon.m; sourceTree = "<group>"; };
+		D626FB95273E3B2900103555 /* FeedEntryIconWithMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedEntryIconWithMessage.h; sourceTree = "<group>"; };
+		D626FB96273E3B2900103555 /* FeedEntryIconWithMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedEntryIconWithMessage.m; sourceTree = "<group>"; };
+		D626FB98273E3B3F00103555 /* FeedEntryBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedEntryBanner.h; sourceTree = "<group>"; };
+		D626FB99273E3B3F00103555 /* FeedEntryBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedEntryBanner.m; sourceTree = "<group>"; };
+		D626FB9B273E3B5100103555 /* FeedEntryButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedEntryButton.h; sourceTree = "<group>"; };
+		D626FB9C273E3B5100103555 /* FeedEntryButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedEntryButton.m; sourceTree = "<group>"; };
+		D626FB9E273E3B6600103555 /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
+		D626FB9F273E3B6600103555 /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
 		D65AC7D126493B3500479161 /* WebToFeedSample.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = WebToFeedSample.html; sourceTree = "<group>"; };
 		D65AC80C264A2DE600479161 /* WebToFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebToFeedViewController.h; sourceTree = "<group>"; };
 		D65AC80D264A2DE600479161 /* WebToFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebToFeedViewController.m; sourceTree = "<group>"; };
@@ -95,6 +113,7 @@
 		C4A2974D2240F06900F6D677 /* BABSample */ = {
 			isa = PBXGroup;
 			children = (
+				D626FB8D273E3AB300103555 /* FeedEntry */,
 				C4307AAD244D299E00F0C436 /* CarouselView.h */,
 				C4307AAE244D299E00F0C436 /* CarouselView.m */,
 				C4307AB0244D299E00F0C436 /* CarouselView.xib */,
@@ -116,6 +135,25 @@
 				69653574251984D000714D40 /* BrowserViewController.m */,
 			);
 			path = BABSample;
+			sourceTree = "<group>";
+		};
+		D626FB8D273E3AB300103555 /* FeedEntry */ = {
+			isa = PBXGroup;
+			children = (
+				D626FB8F273E3AF900103555 /* FeedEntryViewController.h */,
+				D626FB90273E3AF900103555 /* FeedEntryViewController.m */,
+				D626FB92273E3B0E00103555 /* FeedEntryIcon.h */,
+				D626FB93273E3B0E00103555 /* FeedEntryIcon.m */,
+				D626FB95273E3B2900103555 /* FeedEntryIconWithMessage.h */,
+				D626FB96273E3B2900103555 /* FeedEntryIconWithMessage.m */,
+				D626FB98273E3B3F00103555 /* FeedEntryBanner.h */,
+				D626FB99273E3B3F00103555 /* FeedEntryBanner.m */,
+				D626FB9B273E3B5100103555 /* FeedEntryButton.h */,
+				D626FB9C273E3B5100103555 /* FeedEntryButton.m */,
+				D626FB9E273E3B6600103555 /* MessageView.h */,
+				D626FB9F273E3B6600103555 /* MessageView.m */,
+			);
+			path = FeedEntry;
 			sourceTree = "<group>";
 		};
 		F43C05F5557925D6AF9C17E9 /* Frameworks */ = {
@@ -244,10 +282,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */,
+				D626FB91273E3AF900103555 /* FeedEntryViewController.m in Sources */,
+				D626FB94273E3B0E00103555 /* FeedEntryIcon.m in Sources */,
 				C4A297532240F06900F6D677 /* ViewController.m in Sources */,
+				D626FBA0273E3B6600103555 /* MessageView.m in Sources */,
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
 				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
+				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
 				D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */,
+				D626FB9A273E3B3F00103555 /* FeedEntryBanner.m in Sources */,
+				D626FB97273E3B2900103555 /* FeedEntryIconWithMessage.m in Sources */,
 				C4A297502240F06900F6D677 /* AppDelegate.m in Sources */,
 				69653575251984D000714D40 /* BrowserViewController.m in Sources */,
 			);
