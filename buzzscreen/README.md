@@ -12,6 +12,8 @@
 > * [MINOR] getActivatedPackageNames, getSnoozedPackageNames 복원
 > ### [3.35.2] - 2021-10-20
 > * [MINOR] 릴리즈 빌드 시 OkHttp의 로그를 남기지 않도록 수정
+> ### [3.35.3] - 2021-11-17
+> * [MINOR] privacy policy 관련 업데이트 (방어적 수정)
 
 ## [3.33.0] - 2021-08-26
 * [NEW] 다음에서 설명하는 광고 ID 관련 정책 변경에 대한 대응
@@ -22,6 +24,8 @@
 > * [MINOR] getActivatedPackageNames, getSnoozedPackageNames 복원
 > ### [3.33.2] - 2021-10-20
 > * [MINOR] 릴리즈 빌드 시 OkHttp의 로그를 남기지 않도록 수정
+> ### [3.33.3] - 2021-11-17
+> * [MINOR] privacy policy 관련 업데이트 (방어적 수정)
 
 ## [3.31.0] - 2021-08-16
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000492856-buzzad-2-27-x-buzzscreen-3-31-x-2021%EB%85%84-8%EC%9B%94-) 참조
