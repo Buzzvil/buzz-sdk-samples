@@ -43,7 +43,7 @@ public class App extends MultiDexApplication {
                 .colorResId(R.color.colorPrimary)
                 .notificationId(1021)
                 .build();
-        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), feedConfig)
+        final PopConfig popConfig = new PopConfig.Builder(feedConfig)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .popNotificationConfig(popNotificationConfig)
                 .previewIntervalInMillis(1000) // for test
@@ -74,7 +74,7 @@ public class App extends MultiDexApplication {
                 .notificationId(1021)
                 .build();
 
-        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), feedConfig)
+        final PopConfig popConfig = new PopConfig.Builder(feedConfig)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .controlService(CustomControlService.class)
                 .popNotificationConfig(popNotificationConfig)
