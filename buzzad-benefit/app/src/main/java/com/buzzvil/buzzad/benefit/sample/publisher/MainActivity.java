@@ -20,23 +20,16 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitialTheme;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdListener;
 import com.buzzvil.buzzad.benefit.presentation.nativead.BuzzAdNative;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
-import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdLoader;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRequest;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdsRequest;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomAdsAdapter;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedHeaderViewAdapter;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedToolbarHolder;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
 
-import java.util.Collection;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button feedButton;
     private Button feedWithTabButton;
     private Button webToFeedButton;
+    private Button feedEntryPointButton;
     private ProgressBar progressBar;
     private Spinner interstitialTypeSpinner;
     private Spinner interstitialCustomizationSpinner;
@@ -97,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 WebToFeedActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        this.feedEntryPointButton = findViewById(R.id.feed_entry_point);
+        feedEntryPointButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FeedEntryPointActivity.startActivity(MainActivity.this);
             }
         });
 

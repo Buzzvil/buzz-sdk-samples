@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">PopSample</string>
-    <string name="pop_name">YourPopName</string>
-    <string name="pop_notification_title">깜짝선물 모드가 실행 중입니다</string>
-    <string name="pop_notification_text">아이콘을 다시 띄우려면 클릭하세요</string>
-</resources>
