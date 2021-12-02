@@ -27,14 +27,16 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
+        final FeedConfig feedConfig = new FeedConfig.Builder(App.UNIT_ID_FEED)
                 .adsAdapterClass(CustomAdsAdapter.class)
                 .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
                 .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
                 .imageTypeEnabled(true)
                 .build();
-
-        BuzzAdBenefit.init(this, new BuzzAdBenefitConfig.Builder(this).add(feedConfig).build());
+        BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
+                .setDefaultFeedConfig(feedConfig)
+                .build();
+        BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
         final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")

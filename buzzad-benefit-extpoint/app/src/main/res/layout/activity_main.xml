@@ -13,10 +13,4 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:text="Feed Activity Example" />
-
-    <Button
-        android:id="@+id/runFeedFragmentExample"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:text="Feed Fragment Example" />
 </LinearLayout>

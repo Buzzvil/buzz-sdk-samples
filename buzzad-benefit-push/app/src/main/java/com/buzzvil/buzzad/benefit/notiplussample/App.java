@@ -5,7 +5,10 @@ import androidx.multidex.MultiDexApplication;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
-import com.buzzvil.buzzad.benefit.presentation.notification.PushDialogConfig;
+import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
+import com.buzzvil.buzzad.benefit.presentation.notification.BuzzAdPush;
+import com.buzzvil.buzzad.benefit.presentation.notification.BuzzAdPushTheme;
+import com.buzzvil.buzzad.benefit.presentation.notification.PushConfig;
 import com.buzzvil.buzzad.benefit.presentation.notification.RewardNotificationConfig;
 
 public class App extends MultiDexApplication {
@@ -20,7 +23,12 @@ public class App extends MultiDexApplication {
     }
 
     private void initBuzzAdBenefit() {
+        final FeedConfig feedConfig = new FeedConfig.Builder(UNIT_ID_FEED).build();
+        final PushConfig pushConfig = new PushConfig.Builder()
+                .build();
         BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
+                .setDefaultFeedConfig(feedConfig)
+                .setPushConfig(pushConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
@@ -33,21 +41,10 @@ public class App extends MultiDexApplication {
                 .birthYear(1993)
                 .build();
         BuzzAdBenefit.setUserProfile(userProfile);
-    }
 
-    public static PushDialogConfig getPushDialogConfig() {
-        return new PushDialogConfig.Builder()
+        BuzzAdPushTheme buzzAdPushTheme = BuzzAdPushTheme.getDefault()
                 .colorConfirm(R.color.colorAccent)
-                .colorCancel(R.color.colorPrimary)
-                .imageRegisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
-                .imageUnregisterLogo(R.drawable.benefit_notiplus_dialog_image_logo)
-                .build();
-    }
-
-    public static RewardNotificationConfig getRewardNotificationConfig() {
-        if (rewardNotificationConfig == null) {
-            rewardNotificationConfig = new RewardNotificationConfig.Builder().build();
-        }
-        return rewardNotificationConfig;
+                .colorCancel(R.color.colorPrimary);
+        BuzzAdPush.getInstance().setTheme(buzzAdPushTheme);
     }
 }

@@ -18,17 +18,6 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".RestartReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-            </intent-filter>
-        </receiver>
-
         <!-- Caution: Replace `260318561407891` with Your AppKey  -->
         <meta-data
             android:name="com.buzzvil.APP_KEY"

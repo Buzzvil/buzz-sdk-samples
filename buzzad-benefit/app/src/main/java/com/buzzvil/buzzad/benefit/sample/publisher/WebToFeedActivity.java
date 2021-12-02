@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed;
 
 public class WebToFeedActivity extends AppCompatActivity implements BuzzAdBenefitJSBridge {
     public static void startActivity(Context context) {
@@ -37,7 +37,7 @@ public class WebToFeedActivity extends AppCompatActivity implements BuzzAdBenefi
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                new FeedHandler(getApplicationContext(), "YOUR_FEED_UNIT_ID").startFeedActivity(WebToFeedActivity.this);
+                new BuzzAdFeed.Builder().build().show(WebToFeedActivity.this);
             }
         });
     }

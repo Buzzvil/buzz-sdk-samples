@@ -3,8 +3,6 @@ package com.buzzvil.buzzad.benefit.sample.publisher;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,26 +13,24 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
-import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdConfig;
-import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdHandler;
-import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdHandlerFactory;
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed;
+import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial;
+import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitialTheme;
+import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdListener;
+import com.buzzvil.buzzad.benefit.presentation.nativead.BuzzAdNative;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
-import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdLoader;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomAdsAdapter;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedHeaderViewAdapter;
-import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedToolbarHolder;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRequest;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdsRequest;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
 
-import java.util.Collection;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,25 +82,7 @@ public class MainActivity extends AppCompatActivity {
         feedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final FeedHandler feedHandler = new FeedHandler(MainActivity.this, App.UNIT_ID_FEED);
-                feedHandler.startFeedActivity(MainActivity.this);
-            }
-        });
-
-        this.feedWithTabButton = findViewById(R.id.feed_with_tab_button);
-        feedWithTabButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), App.UNIT_ID_FEED)
-                        .adsAdapterClass(CustomAdsAdapter.class)
-                        .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
-                        .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
-                        .imageTypeEnabled(true)
-                        .tabUiEnabled(true)
-                        .filterUiEnabled(true)
-                        .build();
-                final FeedHandler feedHandler = new FeedHandler(feedConfig);
-                feedHandler.startFeedActivity(MainActivity.this);
+                new BuzzAdFeed.Builder().build().show(MainActivity.this);
             }
         });
 
@@ -145,14 +123,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadNativeAd() {
         progressBar.setVisibility(View.VISIBLE);
-        final NativeAdLoader loader = new NativeAdLoader(App.UNIT_ID_NATIVE_AD);
-        loader.loadAd(new NativeAdLoader.OnAdLoadedListener() {
-            @Override
-            public void onLoadError(@NonNull AdError adError) {
-                progressBar.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this, "Failed to load native ad: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
-            }
 
+        final NativeAdRequest nativeAdRequest = new NativeAdRequest.Builder().build();
+        final BuzzAdNative buzzAdNative = new BuzzAdNative(App.UNIT_ID_NATIVE_AD);
+        buzzAdNative.loadAd(nativeAdRequest, new BuzzAdNative.AdLoadListener() {
             @Override
             public void onAdLoaded(@NonNull NativeAd nativeAd) {
                 progressBar.setVisibility(View.GONE);
@@ -168,21 +142,26 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.adView = interstitialAdView;
                 ((ViewGroup) findViewById(android.R.id.content)).addView(adView);
             }
-        }, true);
+
+            @Override
+            public void onLoadFailed(@NonNull AdError adError) {
+                // 할당된 광고가 없으면 호출됩니다.
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this, "Failed to load native ad: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void loadNativeAds() {
         progressBar.setVisibility(View.VISIBLE);
-        final NativeAdLoader loader = new NativeAdLoader(App.UNIT_ID_NATIVE_AD);
-        loader.loadAds(new NativeAdLoader.OnAdsLoadedListener() {
-            @Override
-            public void onLoadError(@NonNull AdError adError) {
-                progressBar.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this, "Failed to load native ads: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
-            }
 
+        final NativeAdsRequest nativeAdsRequest = new NativeAdsRequest.Builder()
+                .adCount(5)
+                .build();
+        final BuzzAdNative buzzAdNative = new BuzzAdNative(App.UNIT_ID_NATIVE_AD);
+        buzzAdNative.loadAds(nativeAdsRequest, new BuzzAdNative.AdsLoadListener() {
             @Override
-            public void onAdsLoaded(@NonNull Collection<NativeAd> collection) {
+            public void onAdsLoaded(@NonNull List<NativeAd> ads) {
                 progressBar.setVisibility(View.GONE);
 
                 final PagerAdsView pagerAdsView = new PagerAdsView(MainActivity.this);
@@ -192,11 +171,18 @@ public class MainActivity extends AppCompatActivity {
                         closeAdView();
                     }
                 });
-                pagerAdsView.setNativeAds(collection);
+                pagerAdsView.setNativeAds(ads);
                 MainActivity.this.adView = pagerAdsView;
                 ((ViewGroup) findViewById(android.R.id.content)).addView(adView);
             }
-        }, 5);
+
+            @Override
+            public void onLoadFailed(@NonNull AdError adError) {
+                // 할당된 광고가 없으면 호출됩니다.
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this, "Failed to load native ads: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private boolean closeAdView() {
@@ -218,93 +204,61 @@ public class MainActivity extends AppCompatActivity {
 
     public void showInterstitialAd() {
         final int selectedType = interstitialTypeSpinner.getSelectedItemPosition();
-        final InterstitialAdHandler.OnInterstitialAdEventListener eventListener = new InterstitialAdHandler.OnInterstitialAdEventListener() {
+        final BuzzAdInterstitial.Builder buzzAdInterstitialBuilder = new BuzzAdInterstitial.Builder(App.UNIT_ID_NATIVE_AD);
+
+        final int customizationType = interstitialCustomizationSpinner.getSelectedItemPosition();
+        switch (customizationType) {
+            case 1: {
+                final BuzzAdInterstitialTheme theme = BuzzAdInterstitialTheme.getDefault()
+                        .backgroundColor(android.R.color.background_dark)
+                        .textColor(android.R.color.white);
+                buzzAdInterstitialBuilder.theme(theme);
+                break;
+            }
+            case 2: {
+                final BuzzAdInterstitialTheme theme = BuzzAdInterstitialTheme.getDefault()
+                        .ctaBackgroundSelector(R.drawable.bg_interstitial_selector) // CTA 버튼 배경
+                        .ctaTextColorSelector(android.R.color.white) // CTA 텍스트 색상
+                        .ctaTextSize(R.dimen.interstitial_cta_text_size) // CTA 텍스트 크기
+                        .rewardIcon(R.drawable.ic_reward_gray) // CTA 리워드 아이콘
+                        .participatedIcon(R.drawable.ic_participated); // 참여 완료 후 CTA 리워드 아이콘
+
+                buzzAdInterstitialBuilder.theme(theme);
+                break;
+            }
+            case 0:
+            default:
+                break;
+        }
+
+        BuzzAdInterstitial buzzAdInterstitial = null;
+        if (selectedType == 0 || selectedType == Spinner.INVALID_POSITION) {
+            buzzAdInterstitial = buzzAdInterstitialBuilder.buildDialog();
+        } else {
+            buzzAdInterstitial = buzzAdInterstitialBuilder.buildBottomSheet();
+        }
+
+        BuzzAdInterstitial finalBuzzAdInterstitial = buzzAdInterstitial;
+        buzzAdInterstitial.load(new InterstitialAdListener() {
             @Override
-            public void onAdLoadFailed(@NonNull AdError adError) {
+            public void onAdLoaded() {
+                finalBuzzAdInterstitial.show(MainActivity.this);
+            }
+
+            @Override
+            public void onAdLoadFailed(@Nullable AdError adError) {
+                // 광고 호출 실패
                 Toast.makeText(MainActivity.this, "Failed to load ads: " + adError.getErrorType().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onAdLoaded() {
-
+            public void onAdClosed() {
+                super.onAdClosed();
+                // Interstitial 지면이 종료됨
             }
-        };
-
-        final InterstitialAdHandler.Type interstitialType = selectedType == 0 || selectedType == Spinner.INVALID_POSITION
-                ? InterstitialAdHandler.Type.Dialog
-                : InterstitialAdHandler.Type.BottomSheet;
-
-        final InterstitialAdHandler interstitialAdHandler = new InterstitialAdHandlerFactory().create(App.UNIT_ID_NATIVE_AD, interstitialType);
-
-        final int customizationType = interstitialCustomizationSpinner.getSelectedItemPosition();
-        switch (customizationType) {
-            case 1:
-                interstitialAdHandler.show(this,
-                        new InterstitialAdConfig.Builder()
-                                .topIcon(R.drawable.ic_gift_green)
-//                                .topIcon(ContextCompat.getDrawable(this, R.drawable.ic_gift_green))
-                                .build(),
-                        eventListener);
-                return;
-            case 2:
-                interstitialAdHandler.show(this,
-                        new InterstitialAdConfig.Builder()
-                                .layoutBackgroundColor(android.R.color.background_dark)
-                                .textColor(android.R.color.white)
-                                .titleText(getString(R.string.bz_interstitial_title))
-                                .closeText(getString(R.string.bz_interstitial_close)) // For Dialog only
-                                .build(),
-                        eventListener);
-                return;
-            case 3:
-                interstitialAdHandler.show(this,
-                        new InterstitialAdConfig.Builder()
-                                .ctaViewBackgroundColorList(getCtaViewBackgroundColorList())
-                                .ctaViewTextColor(getCtaViewTextColorList())
-                                .ctaRewardDrawable(R.drawable.ic_reward_gray)
-                                .ctaParticipatedDrawable(R.drawable.ic_participated)
-                                .build(),
-                        eventListener);
-                return;
-            case 0:
-            default:
-                // Default Dialog or BottomSheet does not have title and close button text.
-                // It is recommended to provide the strings with translations.
-                interstitialAdHandler.show(this, null, eventListener);
-                break;
-        }
+        });
     }
-
-    private ColorStateList getCtaViewBackgroundColorList() {
-        final int[][] states = new int[][]{
-                new int[]{android.R.attr.state_enabled},
-                new int[]{android.R.attr.state_pressed}
-        };
-
-        final int[] colors = new int[]{
-                ContextCompat.getColor(this, android.R.color.holo_blue_light),  // enabled
-                ContextCompat.getColor(this, android.R.color.holo_blue_dark)   // pressed
-        };
-
-        return new ColorStateList(states, colors);
-
-    }
-
-    private ColorStateList getCtaViewTextColorList() {
-        int[][] states = new int[][]{
-                new int[]{android.R.attr.state_enabled},
-                new int[]{android.R.attr.state_pressed}
-        };
-
-        int[] colors = new int[]{
-                Color.WHITE,  // enabled
-                Color.WHITE   // pressed
-        };
-
-        return new ColorStateList(states, colors);
-
-    }
-
+    
     private void registerSessionReadyReceiver() {
         LocalBroadcastManager.getInstance(this).registerReceiver(sessionReadyReceiver, BuzzAdBenefit.getSessionReadyIntentFilter());
     }

@@ -1,8 +1,6 @@
 package com.buzzvil.buzzad.benefit.sample.publisher.nativead;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,21 +9,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.buzzvil.buzzad.benefit.core.models.Ad;
-import com.buzzvil.buzzad.benefit.core.models.Creative;
-import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdEventListener;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdViewBinder;
 import com.buzzvil.buzzad.benefit.presentation.reward.RewardResult;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoEventListener;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class InterstitialAdView extends FrameLayout {
 
@@ -72,9 +68,47 @@ public class InterstitialAdView extends FrameLayout {
     }
 
     public void populateAd(final NativeAd nativeAd) {
-        final Ad ad = nativeAd.getAd();
+        final NativeAdViewBinder viewBinder = new NativeAdViewBinder.Builder(nativeAdView, mediaView)
+                .titleTextView(titleTextView)
+                .descriptionTextView(descriptionTextView)
+                .iconImageView(iconImageView)
+                .ctaView(ctaView)
+                .build();
+        viewBinder.bind(nativeAd);
 
-        mediaView.setCreative(ad.getCreative());
+        nativeAd.addNativeAdEventListener(new NativeAdEventListener() {
+            @Override
+            public void onImpressed(@NonNull NativeAd nativeAd) {
+                Toast.makeText(getContext(), "onImpressed", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onClicked(@NonNull NativeAd nativeAd) {
+                Toast.makeText(getContext(), "onClicked", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRewardRequested(@NonNull NativeAd nativeAd) {
+                // Called when request has been sent to the server
+                Toast.makeText(getContext(), "onRewardRequested", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRewarded(@NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
+                // Result of Reward Request can be found here
+                // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
+                // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
+                Toast.makeText(getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onParticipated(@NonNull NativeAd nativeAd) {
+                // Called when the Ad has been participated
+                // Redraw UI with update Ad information here
+                Toast.makeText(getContext(), "onParticipated", Toast.LENGTH_SHORT).show();
+                // ctaPresenter.bind(nativeAd);
+            }
+        });
         mediaView.setVideoEventListener(new VideoEventListener() {
             @Override
             public void onVideoStarted() {
@@ -106,79 +140,6 @@ public class InterstitialAdView extends FrameLayout {
 
             @Override
             public void onVideoEnded() {
-            }
-        });
-        /* Optional feature to customize VideoPlayer
-            mediaView.setVideoPlayerOverlayView(new VideoPlayerOverlayMediaView(getContext()));
-            mediaView.setVideoUIConfig(
-                    new VideoUIConfig.Builder()
-                            .fullscreenIcon(R.drawable.bz_ic_fullscreen)
-                            .showFullscreen(false)
-                            .soundIconSelector(R.drawable.bz_ic_volume)
-                            .playButtonIcon(R.drawable.exo_icon_play)
-                            .pauseButtonIcon(R.drawable.exo_icon_pause)
-                            .replayButtonIcon(R.drawable.bz_ic_btn_restart)
-                            .goToButtonIcon(R.drawable.bz_ic_btn_more)
-                            .build()
-            );
-         */
-
-        titleTextView.setText(ad.getTitle());
-        descriptionTextView.setText(ad.getDescription());
-        Glide.with(this).load(ad.getIconUrl()).into(iconImageView);
-        final CtaPresenter ctaPresenter = new CtaPresenter(ctaView);
-        ctaPresenter.bind(nativeAd);
-
-        final Creative.Type creativeType = ad.getCreative() == null ? null : ad.getCreative().getType();
-        if (Creative.Type.IMAGE.equals(creativeType)) {
-            titleLayout.setVisibility(View.GONE);
-            descriptionTextView.setVisibility(View.GONE);
-        } else {
-            titleLayout.setVisibility(View.VISIBLE);
-            descriptionTextView.setVisibility(View.VISIBLE);
-        }
-
-        final List<View> clickableViews = new ArrayList<>();
-        clickableViews.add(ctaView);
-        clickableViews.add(mediaView);
-        clickableViews.add(titleLayout);
-        clickableViews.add(descriptionTextView);
-
-        nativeAdView.setMediaView(mediaView);
-        nativeAdView.setClickableViews(clickableViews);
-        nativeAdView.setNativeAd(nativeAd);
-
-        nativeAdView.addOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
-            @Override
-            public void onImpressed(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                Toast.makeText(getContext(), "onImpressed", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onClicked(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                Toast.makeText(getContext(), "onClicked", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onRewardRequested(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                // Called when request has been sent to the server
-                Toast.makeText(getContext(), "onRewardRequested", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
-                // Result of Reward Request can be found here
-                // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
-                // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
-                Toast.makeText(getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onParticipated(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                // Called when the Ad has been participated
-                // Redraw UI with update Ad information here
-                Toast.makeText(getContext(), "onParticipated", Toast.LENGTH_SHORT).show();
-                ctaPresenter.bind(nativeAd);
             }
         });
     }
