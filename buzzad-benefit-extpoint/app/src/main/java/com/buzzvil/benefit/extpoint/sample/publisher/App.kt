@@ -30,7 +30,7 @@ class App : Application() {
 
         BuzzAdTheme.setGlobalTheme(buzzAdTheme);
 
-        // (3) 초기화
+        // 초기화
         BuzzAdBenefit.init(this, buzzAdBenefitConfig)
 
     }
