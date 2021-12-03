@@ -5,15 +5,13 @@ import androidx.multidex.MultiDexApplication;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
-import com.buzzvil.buzzad.benefit.pop.DefaultPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
-import com.buzzvil.buzzad.benefit.pop.SidePosition;
+import com.buzzvil.buzzad.benefit.pop.popicon.SidePosition;
+import com.buzzvil.buzzad.benefit.pop.presentation.DefaultPopHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.popsample.R;
 import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomControlService;
-import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopHeaderViewAdapter;
-import com.buzzvil.buzzad.benefit.popsample.java.custom.CustomPopToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 
 public class App extends MultiDexApplication {
@@ -30,51 +28,13 @@ public class App extends MultiDexApplication {
     }
 
     private void initBuzzAdBenefit() {
-        final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), UNIT_ID_POP)
+        final FeedConfig feedConfig = new FeedConfig.Builder(UNIT_ID_POP)
                 // DefaultPopToolbarHolder: DefaultToolbar
                 // TemplatePopToolbarHolder: Minimum customize, pop feed icon, name, button
                 // CustomPopToolbarHolder: Use layout for toolbar
-                .feedToolbarHolderClass(CustomPopToolbarHolder.class)
-                .feedHeaderViewAdapterClass(DefaultPopHeaderViewAdapter.class)
-                .articlesEnabled(true)
-                .articleInAppLandingEnabled(true)
-                .build();
-        final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
-                .smallIconResId(R.drawable.ic_notification_pop_gift)
-                .titleResId(R.string.pop_notification_title)
-                .textResId(R.string.pop_notification_text)
-                .colorResId(R.color.colorPrimary)
-                .notificationId(1021)
-                .build();
-        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
-                .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
-                .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
-                .feedConfig(feedConfig)
-                .popNotificationConfig(popNotificationConfig)
-                .previewIntervalInMillis(1000) // for test
-                .build();
-
-        final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
-                .add(popConfig)
-                .build();
-        BuzzAdBenefit.init(this, buzzAdBenefitConfig);
-
-        final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
-                .userId("SAMPLE_USER_ID")
-                .gender(UserProfile.Gender.FEMALE)
-                .birthYear(1993)
-                .build();
-        BuzzAdBenefit.setUserProfile(userProfile);
-    }
-    /**
-     * [CUSTOM_POP_HEADER_VIEW_ADAPTER] Set custom CustomPopHeaderViewAdapter
-     */
-    private void initBuzzAdBenefitWithCustomPopHeaderViewAdapter() {
-        final FeedConfig feedConfig = new FeedConfig.Builder(getApplicationContext(), UNIT_ID_POP)
                 .feedToolbarHolderClass(DefaultPopToolbarHolder.class)
-                .feedHeaderViewAdapterClass(CustomPopHeaderViewAdapter.class)
-                .articlesEnabled(true)
-                .articleInAppLandingEnabled(true)
+                // CustomPopToolbarHolder: Use layout for toolbar
+                .feedHeaderViewAdapterClass(DefaultPopHeaderViewAdapter.class)
                 .build();
         final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
                 .smallIconResId(R.drawable.ic_notification_pop_gift)
@@ -83,22 +43,17 @@ public class App extends MultiDexApplication {
                 .colorResId(R.color.colorPrimary)
                 .notificationId(1021)
                 .build();
-        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
+        final PopConfig popConfig = new PopConfig.Builder(feedConfig)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
-                .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
-                .feedConfig(feedConfig)
                 .popNotificationConfig(popNotificationConfig)
                 .previewIntervalInMillis(1000) // for test
                 .build();
 
         final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
-                .add(popConfig)
+                .setPopConfig(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 
-        // Caution: Replace `SAMPLE_USER_ID` with User's ID
-        // Caution: Replace `UserProfile.Gender.FEMALE` with User's gender
-        // Caution: Replace `1993` with User's BirthYear
         final UserProfile userProfile = new UserProfile.Builder(BuzzAdBenefit.getUserProfile())
                 .userId("SAMPLE_USER_ID")
                 .gender(UserProfile.Gender.FEMALE)
@@ -111,20 +66,22 @@ public class App extends MultiDexApplication {
      * [CUSTOM_POP_CONTROL_SERVICE] Set custom PopControlService
      */
     private void initBuzzAdBenefitWithCustomControlService() {
+        final FeedConfig feedConfig = new FeedConfig.Builder(UNIT_ID_POP)
+                .build();
+
         final PopNotificationConfig popNotificationConfig = new PopNotificationConfig.Builder(getApplicationContext())
                 .smallIconResId(R.drawable.ic_notification_pop_gift)
                 .notificationId(1021)
                 .build();
 
-        final PopConfig popConfig = new PopConfig.Builder(getApplicationContext(), UNIT_ID_POP)
+        final PopConfig popConfig = new PopConfig.Builder(feedConfig)
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
-                .initialPopIdleMode(PopConfig.PopIdleMode.INVISIBLE)
                 .controlService(CustomControlService.class)
                 .popNotificationConfig(popNotificationConfig)
                 .build();
 
         final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
-                .add(popConfig)
+                .setPopConfig(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 

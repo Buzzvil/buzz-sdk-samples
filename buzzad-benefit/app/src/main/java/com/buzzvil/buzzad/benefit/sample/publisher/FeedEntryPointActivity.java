@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedHandler;
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed;
 import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView;
 
 import java.text.DecimalFormat;
@@ -22,7 +22,7 @@ public class FeedEntryPointActivity extends AppCompatActivity {
 
     private TextView iconWithMessageImageView;
     private Button button;
-    private FeedHandler feedHandler;
+    private BuzzAdFeed buzzAdFeed;
 
     public static void startActivity(Context context) {
         final Intent intent = new Intent(context, FeedEntryPointActivity.class);
@@ -38,21 +38,21 @@ public class FeedEntryPointActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         createEntryPointViewDynamically();
 
-        feedHandler = new FeedHandler(this, App.UNIT_ID_FEED);
+        buzzAdFeed = new BuzzAdFeed.Builder().build();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        feedHandler.preload(new FeedHandler.FeedPreloadListener() {
+        buzzAdFeed.load(new BuzzAdFeed.FeedLoadListener() {
             @Override
-            public void onPreloaded() {
-                updateMessages(feedHandler.getTotalReward());
+            public void onSuccess() {
+                updateMessages(buzzAdFeed.getAvailableRewards());
             }
 
             @Override
-            public void onError(AdError adError) {
+            public void onError(@Nullable AdError adError) {
                 updateMessages(0);
             }
         });

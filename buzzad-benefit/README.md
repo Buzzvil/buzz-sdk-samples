@@ -6,6 +6,16 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.0.0] - 2021-12-02
+* [CHANGE] 더 쉽고 빠른 연동을 위해 SDK interface를 더 사용하기 쉬운 형태로 개편
+* [CHANGE] Kotlin 1.5 버전 사용
+* [NEW] 기존에 SDK로 제어하던 기능을 포함한 몇가지 피드 설정을 서버에서 동적으로 설정 (탭의 개수, 탭의 이름, 무한 스크롤 기능, 탭에서 노출할 광고 종류) 
+* [NEW] 앱 충돌 정보를 수집하는 Sentry 연동 인터페이스 추가
+* [FIX] Android 12에서 Pop 아이콘이 표시되었을 때 다른 영역이 터치되지 않는 현상 수정 - Pop 아이콘을 불투명하게 변경
+* [FIX] 개인정보수집 약관 화면에서 사용자가 동의 여부를 선택하지 않고 뒤로가기 버튼을 누르는 경우에 대한 동의 로직 수정
+* [FIX] 광고 동영상에서 자체 구현한 재생 버튼과 SDK의 기본 재생 버튼이 겹쳐 보이는 문제
+* [FIX] setVideoPlayerOverlayView 적용 시 동영상 광고가 올바르게 표시되지 않는 문제
+
 ## [2.31.0] - 2021-10-05
 * [NEW] Feed 엔트리뷰 기능 추가
 * [CHANGE] Feed 홈탭 기능 제거

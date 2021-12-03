@@ -19,25 +19,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
-import com.buzzvil.buzzad.benefit.pop.PopOverlayPermissionConfig;
 import com.buzzvil.buzzad.benefit.pop.pedometer.BuzzAdPopPedometer;
 import com.buzzvil.buzzad.benefit.popsample.BuildConfig;
 import com.buzzvil.buzzad.benefit.popsample.R;
 
-import io.mattcarroll.hover.overlay.OverlayPermission;
-
-import static com.buzzvil.lib.buzzsettingsmonitor.SettingsMonitor.KEY_SETTINGS_REQUEST_CODE;
-import static com.buzzvil.lib.buzzsettingsmonitor.SettingsMonitor.KEY_SETTINGS_RESULT;
-
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    private final static int REQUEST_CODE_SHOW_POP = 100;
     private static final int ACTIVATION_REQUEST_CODE = 2000;
 
     private TextView textAppVersion;
@@ -64,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         BuzzAdBenefit.registerSessionReadyBroadcastReceiver(MainActivity.this, sessionReadyReceiver);
 
-        this.buzzAdPop = new BuzzAdPop(this, App.UNIT_ID_POP);
+        this.buzzAdPop = BuzzAdPop.getInstance();
         this.popSetUserProfile = findViewById(R.id.pop_set_user_profile);
         popSetUserProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!requestActivityRecognitionPermissionIfNeeded(MainActivity.this)) {
-                    showPopOrRequestOverlayPermissionIfNeeded();
+                    showPop();
                 }
             }
         });
@@ -98,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 if (pedometerPopSwitch.isChecked()) {
                     pedometerPopSwitch.setChecked(false);
                     if (!requestActivityRecognitionPermissionIfNeeded(MainActivity.this)) {
-                        showPopOrRequestOverlayPermissionIfNeeded();
+                        showPop();
                     }
                 } else {
                     unregisterPop();
@@ -113,16 +107,6 @@ public class MainActivity extends AppCompatActivity {
                 unregisterPop();
             }
         });
-
-        if (getIntent().getBooleanExtra(KEY_SETTINGS_RESULT, false)
-                && getIntent().getIntExtra(KEY_SETTINGS_REQUEST_CODE, 0) == REQUEST_CODE_SHOW_POP) {
-            if (BuzzAdPop.hasPermission(this)) {
-                buzzAdPop.showTutorialPopup(this);
-                // overlay permission granted
-                // collect event here if necessary
-                activatePedometerPop();
-            }
-        }
     }
 
     @Override
@@ -135,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void unregisterPop() {
         pedometerPopSwitch.setChecked(false);
-        buzzAdPop.removePop(this);
+        buzzAdPop.deactivate(this);
     }
 
     private void setVersionText() {
@@ -147,57 +131,37 @@ public class MainActivity extends AppCompatActivity {
         textSdkSdkVersion.setText(strBenefitSdkVersion);
     }
 
-    private void showPopOrRequestPermissionWithDialog() {
-        if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            showPop();
-        } else {
-            BuzzAdPop.requestPermissionWithDialog(MainActivity.this,
-                    new PopOverlayPermissionConfig.Builder(R.string.pop_name)
-                            .settingsIntent(OverlayPermission.createIntentToRequestOverlayPermission(MainActivity.this))
-                            .requestCode(REQUEST_CODE_SHOW_POP)
-                            .build()
-            );
-        }
-    }
-
     private void showPop() {
         pedometerPopSwitch.setChecked(true);
         activatePedometerPop();
-        buzzAdPop.preloadAndShowPop(MainActivity.this);
-        // Use this instead of preloadAndShowPop if need to show pop tutorial dialog
-        // buzzAdPop.showTutorialPopup(MainActivity.this);
     }
 
     private void activatePedometerPop() {
-        BuzzAdPopPedometer.activate(new BuzzAdPopPedometer.OnActivationListener() {
-            @Override
-            public void onSuccess() {
-                Log.d(TAG, "BuzzAdPopPedometer.activate onSuccess");
+        buzzAdPop.activate(new BuzzAdPop.PopActivateListener() {
+            public void onActivated() {
+                buzzAdPop.show();
+                // Pop 활성화 완료 후, 만보기 기능 활성화
+                BuzzAdPopPedometer.activate(new BuzzAdPopPedometer.OnActivationListener() {
+                    @Override
+                    public void onSuccess() {
+                        Log.d(TAG, "BuzzAdPopPedometer.activate onSuccess");
+                    }
+
+                    @Override
+                    public void onPermissionNotReady() {
+                        Log.w(TAG, "BuzzAdPopPedometer.activate onPermissionNotReady");
+                    }
+
+                    @Override
+                    public void onSensorError() {
+                        Log.w(TAG, "BuzzAdPopPedometer.activate onSensorError");
+                    }
+                });
             }
 
-            @Override
-            public void onPermissionNotReady() {
-                Log.w(TAG, "BuzzAdPopPedometer.activate onPermissionNotReady");
-            }
-
-            @Override
-            public void onSensorError() {
-                Log.w(TAG, "BuzzAdPopPedometer.activate onSensorError");
+            public void onActivationFailed(@Nullable Throwable error) {
             }
         });
-    }
-
-    private void showPopOrRequestOverlayPermissionIfNeeded() {
-        if (BuzzAdPop.hasPermission(MainActivity.this) || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            showPop();
-        } else {
-            BuzzAdPop.requestPermissionWithDialog(MainActivity.this,
-                    new PopOverlayPermissionConfig.Builder(R.string.pop_name)
-                            .settingsIntent(OverlayPermission.createIntentToRequestOverlayPermission(MainActivity.this))
-                            .requestCode(REQUEST_CODE_SHOW_POP)
-                            .build()
-            );
-        }
     }
 
     private boolean requestActivityRecognitionPermissionIfNeeded(Activity activity) {
@@ -234,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case ACTIVATION_REQUEST_CODE: {
                 if ((grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    showPopOrRequestOverlayPermissionIfNeeded();
+                    showPop();
                 } else {
                     pedometerPopSwitch.setChecked(false);
                 }

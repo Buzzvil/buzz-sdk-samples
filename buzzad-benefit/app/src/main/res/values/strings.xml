@@ -7,7 +7,6 @@
     </string-array>
     <string-array name="interstitial_ad_customizable_fields">
         <item>Default</item>
-        <item>Top Icon</item>
         <item>Background and Text</item>
         <item>CTA</item>
     </string-array>

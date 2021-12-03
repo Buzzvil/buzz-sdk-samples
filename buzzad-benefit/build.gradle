@@ -20,7 +20,7 @@ allprojects {
         google()
         jcenter()
 
-        // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
+//        maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
         maven { url "https://dl.buzzvil.com/public/maven" }
     }
 }
@@ -30,7 +30,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.31.+'
+    buzzAdBenefitVersionName = '3.0.+'
 
     mediationAdfitVersion = '3.4.0.1'
     mediationIgaworksVersion = '2.4.4.0'

@@ -1,14 +1,6 @@
 package com.buzzvil.buzzad.benefit.sample.publisher.nativead;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.buzzvil.buzzad.benefit.presentation.reward.RewardResult;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -19,16 +11,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.buzzvil.buzzad.benefit.core.models.Ad;
-import com.buzzvil.buzzad.benefit.presentation.media.CtaPresenter;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView;
+import com.buzzvil.buzzad.benefit.presentation.media.DefaultCtaView;
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdEventListener;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView;
+import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdViewBinder;
+import com.buzzvil.buzzad.benefit.presentation.reward.RewardResult;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoErrorStatus;
 import com.buzzvil.buzzad.benefit.presentation.video.VideoEventListener;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -112,16 +111,53 @@ public class PagerAdsView extends FrameLayout {
         }
 
         private View populateAd(final Context context, final NativeAd nativeAd) {
-            final Ad ad = nativeAd.getAd();
-
             final NativeAdView nativeAdView = (NativeAdView) LayoutInflater.from(context).inflate(R.layout.view_native_ad_item, null, false);
             final MediaView mediaView = nativeAdView.findViewById(R.id.ad_media_view);
             final TextView titleTextView = nativeAdView.findViewById(R.id.ad_title_text);
             final TextView descriptionTextView = nativeAdView.findViewById(R.id.ad_description_text);
             final ImageView iconImageView = nativeAdView.findViewById(R.id.ad_icon_image);
-            final CtaView ctaView = nativeAdView.findViewById(R.id.ad_cta_view);
+            final DefaultCtaView ctaView = nativeAdView.findViewById(R.id.ad_cta_view);
 
-            mediaView.setCreative(ad.getCreative());
+            final NativeAdViewBinder viewBinder = new NativeAdViewBinder.Builder(nativeAdView, mediaView)
+                    .titleTextView(titleTextView)
+                    .descriptionTextView(descriptionTextView)
+                    .iconImageView(iconImageView)
+                    .ctaView(ctaView)
+                    .build();
+            viewBinder.bind(nativeAd);
+
+            nativeAd.addNativeAdEventListener(new NativeAdEventListener() {
+                @Override
+                public void onImpressed(@NonNull NativeAd nativeAd) {
+                    Toast.makeText(nativeAdView.getContext(), "onImpressed", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onClicked(@NonNull NativeAd nativeAd) {
+                    Toast.makeText(nativeAdView.getContext(), "onClicked", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onRewardRequested(@NonNull NativeAd nativeAd) {
+                    // Called when request has been sent to the server
+                    Toast.makeText(nativeAdView.getContext(), "onRewardRequested", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onRewarded(@NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
+                    // Result of Reward Request can be found here
+                    // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
+                    // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
+                    Toast.makeText(nativeAdView.getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onParticipated(@NonNull NativeAd nativeAd) {
+                    // Called when the Ad has been participated
+                    // Redraw UI with update Ad information here
+                    Toast.makeText(nativeAdView.getContext(), "onParticipated", Toast.LENGTH_SHORT).show();
+                }
+            });
             mediaView.setVideoEventListener(new VideoEventListener() {
                 @Override
                 public void onVideoStarted() {
@@ -155,70 +191,6 @@ public class PagerAdsView extends FrameLayout {
                 public void onVideoEnded() {
                 }
             });
-            /* Optional feature to customize VideoPlayer
-                mediaView.setVideoPlayerOverlayView(new VideoPlayerOverlayMediaView(getContext()));
-                mediaView.setVideoUIConfig(
-                        new VideoUIConfig.Builder()
-                                .fullscreenIcon(R.drawable.bz_ic_fullscreen)
-                                .showFullscreen(false)
-                                .soundIconSelector(R.drawable.bz_ic_volume)
-                                .playButtonIcon(R.drawable.exo_icon_play)
-                                .pauseButtonIcon(R.drawable.exo_icon_pause)
-                                .replayButtonIcon(R.drawable.bz_ic_btn_restart)
-                                .goToButtonIcon(R.drawable.bz_ic_btn_more)
-                                .build()
-                );
-             */
-            titleTextView.setText(ad.getTitle());
-            descriptionTextView.setText(ad.getDescription());
-            Glide.with(context).load(ad.getIconUrl()).into(iconImageView);
-            final CtaPresenter ctaPresenter = new CtaPresenter(ctaView);
-            ctaPresenter.bind(nativeAd);
-
-            final List<View> clickableViews = new ArrayList<>();
-            clickableViews.add(ctaView);
-            clickableViews.add(mediaView);
-            clickableViews.add(titleTextView);
-            clickableViews.add(descriptionTextView);
-
-            nativeAdView.setMediaView(mediaView);
-            nativeAdView.setClickableViews(clickableViews);
-            nativeAdView.setNativeAd(nativeAd);
-
-            nativeAdView.addOnNativeAdEventListener(new NativeAdView.OnNativeAdEventListener() {
-                @Override
-                public void onImpressed(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                    Toast.makeText(nativeAdView.getContext(), "onImpressed", Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onClicked(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                    Toast.makeText(nativeAdView.getContext(), "onClicked", Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onRewardRequested(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                    // Called when request has been sent to the server
-                    Toast.makeText(nativeAdView.getContext(), "onRewardRequested", Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onRewarded(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd, @Nullable RewardResult rewardResult) {
-                    // Result of Reward Request can be found here
-                    // If the request result was successful, nativeAdRewardResult == NativeAdRewardResult.SUCCESS
-                    // If it was not successful, refer to the wiki page or NativeAdRewardResult class for Error cases.
-                    Toast.makeText(nativeAdView.getContext(), "onRewarded: " + rewardResult, Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onParticipated(@NonNull NativeAdView nativeAdView, @NonNull NativeAd nativeAd) {
-                    // Called when the Ad has been participated
-                    // Redraw UI with update Ad information here
-                    Toast.makeText(nativeAdView.getContext(), "onParticipated", Toast.LENGTH_SHORT).show();
-                    ctaPresenter.bind(nativeAd);
-                }
-            });
-
             return nativeAdView;
         }
     }
