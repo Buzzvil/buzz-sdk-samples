@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.1.0] - 2021-12-27
+* [NEW] Feed 지면에 BuzzRoulette 기능 추가
+* [DELETE] Feed 내 exit interstitial 지면 제거 
+* [FIX] 피드 광고에 참여해 적립 가능한 총 포인트가 피드의 첫번째 탭에 해당하는 금액만 프리로드되어 적게 표시되는 문제
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000498658) 참조
+
 ## [3.0.0] - 2021-12-02
 * [CHANGE] 더 쉽고 빠른 연동을 위해 SDK interface를 더 사용하기 쉬운 형태로 개편
 * [CHANGE] Kotlin 1.5 버전 사용
