@@ -11,9 +11,7 @@ import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.pop.PopConfig;
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig;
-import com.buzzvil.buzzad.benefit.pop.SidePosition;
-import com.buzzvil.buzzad.benefit.pop.toolbar.DefaultPopToolbarHolder;
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
+import com.buzzvil.buzzad.benefit.pop.popicon.SidePosition;
 
 public class App extends MultiDexApplication {
     static final String TAG = "App";
@@ -43,14 +41,12 @@ public class App extends MultiDexApplication {
                 .colorResId(R.color.colorPrimaryBenefit)
                 .notificationId(1000)
                 .build();
-        final PopConfig popConfig = new PopConfig.Builder(this, UNIT_ID)
+        final PopConfig popConfig = new PopConfig.Builder()
                 .initialSidePosition(new SidePosition(SidePosition.Side.RIGHT, 0.6f))
                 .popNotificationConfig(popNotificationConfig)
-                .iconResId(R.drawable.sample_default_pop_icon)
-                .rewardReadyIconResId(R.drawable.sample_pop_reward_ready_icon_selector)
                 .build();
         final BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
-                .add(popConfig)
+                .setPopConfig(popConfig)
                 .build();
         BuzzAdBenefit.init(this, buzzAdBenefitConfig);
 

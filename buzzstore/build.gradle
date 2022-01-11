@@ -1,25 +1,25 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:4.2.2'
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
 ext {
-    compileSdkVersion = 28
+    compileSdkVersion = 31
 
     minSdkVersion = 14
-    targetSdkVersion = 28
+    targetSdkVersion = 30
 
     supportLibVersion = '26.1.0'
     playServiceAdsLibVersion = "15.0.1"

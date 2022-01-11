@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.sample"
@@ -44,6 +44,13 @@ android {
         exclude 'META-INF/maven/com.google.code.gson/gson/pom.xml'
         exclude 'META-INF/maven/com.google.code.gson/gson/pom.properties'
         exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        // REMOVE THIS after benefit-3.2.+ or higher
+        force group:'com.android.volley', name:'volley', version: '1.2.1'
     }
 }
 

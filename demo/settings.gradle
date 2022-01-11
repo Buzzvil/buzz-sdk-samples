@@ -3,7 +3,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
         maven { url "https://dl.buzzvil.com/public/maven" }
         maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
     }

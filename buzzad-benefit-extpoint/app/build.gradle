@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     /** Apply the correct value you want to test **/
     def buzzAppId = '0123456789'
@@ -38,6 +38,13 @@ android {
 
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        // REMOVE THIS after benefit-3.2.+ or higher
+        force group:'com.android.volley', name:'volley', version: '1.2.1'
     }
 }
 

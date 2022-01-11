@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.buzzvil.buzzad.demo"
@@ -41,6 +41,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        // REMOVE THIS after benefit-3.2.+ or higher
+        force group:'com.android.volley', name:'volley', version: '1.2.1'
     }
 }
 
