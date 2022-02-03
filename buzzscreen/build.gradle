@@ -18,13 +18,13 @@ allprojects {
         google()
         mavenCentral()
 
-        // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
+//        maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
         maven { url "https://dl.buzzvil.com/public/maven" }
     }
 }
 
 ext {
-    buzzscreenVersionName = '3.37.+'
+    buzzscreenVersionName = '3.39.+'
 
     mediationAdfitVersion = '3.4.0.1'
     mediationAdmobVersion = '17.1.1.1'
