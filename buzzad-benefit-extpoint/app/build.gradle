@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     /** Apply the correct value you want to test **/
     def buzzAppId = '0123456789'
