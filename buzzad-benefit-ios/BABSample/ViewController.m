@@ -6,6 +6,7 @@
 #import "Native/NativeViewController.h"
 #import "Web/WebViewController.h"
 #import "WebToFeed/WebToFeedViewController.h"
+#import "CustomBrowserViewController.h"
 #import "UIButton+Custom.h"
 
 @import BuzzAdBenefit;
@@ -17,7 +18,7 @@ static CGFloat const kStackViewSpacing = 8;
 static CGFloat const kStackViewHorizontalMargin = 4;
 static CGFloat const kArrangedSubviewHeight = 48;
 
-@interface ViewController ()
+@interface ViewController () <BZVLauncher>
 
 @property (nonatomic, strong, readonly) UIBarButtonItem *loginButtonItem;
 @property (nonatomic, strong, readonly) UIScrollView *scrollView;
@@ -34,12 +35,17 @@ static CGFloat const kArrangedSubviewHeight = 48;
 
 @implementation ViewController
 
+@synthesize delegate;
+
 - (void)viewDidLoad {
   [super viewDidLoad];
 
   [self setupView];
   [self setupLayout];
   [self setupEvent];
+  
+  // MARK: 7. 광고 참여 방식 변경하기
+//  [BuzzAdBenefit setLauncher:self];
 }
 
 - (void)setupView {
@@ -179,6 +185,17 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)pushWebToFeedViewController:(id)sender {
   WebToFeedViewController *webToFeedViewController = [[WebToFeedViewController alloc] init];
   [self.navigationController pushViewController:webToFeedViewController animated:YES];
+}
+
+#pragma mark - BZVLauncher
+- (void)openWithLaunchInfo:(BZVLaunchInfo *)launchInfo {
+  CustomBrowserViewController *browser = [[CustomBrowserViewController alloc] init];
+  browser.modalPresentationStyle = UIModalPresentationPageSheet;
+  if (self.presentedViewController) {
+    [self.presentedViewController presentViewController:browser animated:YES completion:nil];
+  } else {
+    [self.navigationController presentViewController:browser animated:YES completion:nil];
+  }
 }
 
 @end
