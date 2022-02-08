@@ -2,7 +2,7 @@
 
 #import "Feed/FeedViewController.h"
 #import "FeedEntry/FeedEntryViewController.h"
-//#import "Native/NativeViewController.h"
+#import "Native/NativeViewController.h"
 //#import "Interstitial/InterstitialViewController.h"
 #import "UIButton+Custom.h"
 
@@ -137,8 +137,8 @@ static CGFloat const kArrangedSubviewHeight = 48;
 }
 
 - (void)pushNativeViewController:(id)sender {
-//  NativeViewController *nativeViewController = [[NativeViewController alloc] init];
-//  [self.navigationController pushViewController:nativeViewController animated:YES];
+  NativeViewController *nativeViewController = [[NativeViewController alloc] init];
+  [self.navigationController pushViewController:nativeViewController animated:YES];
 }
 
 - (void)pushInterstitialViewController:(id)sender {
