@@ -26,6 +26,12 @@
 		D626FBA0273E3B6600103555 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB9F273E3B6600103555 /* MessageView.m */; };
 		D65AC7D226493B3500479161 /* WebToFeedSample.html in Resources */ = {isa = PBXBuildFile; fileRef = D65AC7D126493B3500479161 /* WebToFeedSample.html */; };
 		D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65AC80D264A2DE600479161 /* WebToFeedViewController.m */; };
+		D67A47D227B24A6E00C5B4DC /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47D127B24A6E00C5B4DC /* FeedViewController.m */; };
+		D67A47D527B24AA000C5B4DC /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47D427B24AA000C5B4DC /* ContainerViewController.m */; };
+		D67A47D827B24B4A00C5B4DC /* CustomFeedAdViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47D727B24B4A00C5B4DC /* CustomFeedAdViewHolder.m */; };
+		D67A47DB27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47DA27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m */; };
+		D67A47DE27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47DD27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m */; };
+		D67A47E127B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */; };
 		D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05727B22CF40062B597 /* AppConstant.m */; };
 		D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05A27B22F960062B597 /* UIButton+Custom.m */; };
 /* End PBXBuildFile section */
@@ -67,6 +73,18 @@
 		D65AC7D126493B3500479161 /* WebToFeedSample.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = WebToFeedSample.html; sourceTree = "<group>"; };
 		D65AC80C264A2DE600479161 /* WebToFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebToFeedViewController.h; sourceTree = "<group>"; };
 		D65AC80D264A2DE600479161 /* WebToFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebToFeedViewController.m; sourceTree = "<group>"; };
+		D67A47D027B24A6E00C5B4DC /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		D67A47D127B24A6E00C5B4DC /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		D67A47D327B24AA000C5B4DC /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		D67A47D427B24AA000C5B4DC /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		D67A47D627B24B4A00C5B4DC /* CustomFeedAdViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedAdViewHolder.h; sourceTree = "<group>"; };
+		D67A47D727B24B4A00C5B4DC /* CustomFeedAdViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedAdViewHolder.m; sourceTree = "<group>"; };
+		D67A47D927B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedCpsAdViewHolder.h; sourceTree = "<group>"; };
+		D67A47DA27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedCpsAdViewHolder.m; sourceTree = "<group>"; };
+		D67A47DC27B24B9900C5B4DC /* CustomFeedErrorViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedErrorViewHolder.h; sourceTree = "<group>"; };
+		D67A47DD27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedErrorViewHolder.m; sourceTree = "<group>"; };
+		D67A47DF27B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedHeaderViewHolder.h; sourceTree = "<group>"; };
+		D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedHeaderViewHolder.m; sourceTree = "<group>"; };
 		D6E4C05627B22CF40062B597 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		D6E4C05727B22CF40062B597 /* AppConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
 		D6E4C05927B22F960062B597 /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
@@ -117,6 +135,7 @@
 		C4A2974D2240F06900F6D677 /* BABSample */ = {
 			isa = PBXGroup;
 			children = (
+				D67A47CF27B2488200C5B4DC /* Feed */,
 				D6E4C05527B22CDB0062B597 /* Util */,
 				D626FB8D273E3AB300103555 /* FeedEntry */,
 				C4307AAD244D299E00F0C436 /* CarouselView.h */,
@@ -158,6 +177,25 @@
 				D626FB9F273E3B6600103555 /* MessageView.m */,
 			);
 			path = FeedEntry;
+			sourceTree = "<group>";
+		};
+		D67A47CF27B2488200C5B4DC /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				D67A47D327B24AA000C5B4DC /* ContainerViewController.h */,
+				D67A47D427B24AA000C5B4DC /* ContainerViewController.m */,
+				D67A47D627B24B4A00C5B4DC /* CustomFeedAdViewHolder.h */,
+				D67A47D727B24B4A00C5B4DC /* CustomFeedAdViewHolder.m */,
+				D67A47D927B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.h */,
+				D67A47DA27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m */,
+				D67A47DC27B24B9900C5B4DC /* CustomFeedErrorViewHolder.h */,
+				D67A47DD27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m */,
+				D67A47DF27B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.h */,
+				D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */,
+				D67A47D027B24A6E00C5B4DC /* FeedViewController.h */,
+				D67A47D127B24A6E00C5B4DC /* FeedViewController.m */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		D6E4C05527B22CDB0062B597 /* Util */ = {
@@ -297,8 +335,12 @@
 			files = (
 				C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */,
 				D626FB91273E3AF900103555 /* FeedEntryViewController.m in Sources */,
+				D67A47D227B24A6E00C5B4DC /* FeedViewController.m in Sources */,
+				D67A47D527B24AA000C5B4DC /* ContainerViewController.m in Sources */,
+				D67A47E127B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m in Sources */,
 				D626FB94273E3B0E00103555 /* FeedEntryIcon.m in Sources */,
 				C4A297532240F06900F6D677 /* ViewController.m in Sources */,
+				D67A47D827B24B4A00C5B4DC /* CustomFeedAdViewHolder.m in Sources */,
 				D626FBA0273E3B6600103555 /* MessageView.m in Sources */,
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
 				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
@@ -306,7 +348,9 @@
 				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
 				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
 				D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */,
+				D67A47DB27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m in Sources */,
 				D626FB9A273E3B3F00103555 /* FeedEntryBanner.m in Sources */,
+				D67A47DE27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m in Sources */,
 				D626FB97273E3B2900103555 /* FeedEntryIconWithMessage.m in Sources */,
 				C4A297502240F06900F6D677 /* AppDelegate.m in Sources */,
 				69653575251984D000714D40 /* BrowserViewController.m in Sources */,

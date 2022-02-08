@@ -1,6 +1,6 @@
 #import "ViewController.h"
 
-//#import "Feed/FeedViewController.h"
+#import "Feed/FeedViewController.h"
 //#import "FeedEntry/FeedEntryViewController.h"
 //#import "Native/NativeViewController.h"
 //#import "Interstitial/InterstitialViewController.h"
@@ -132,8 +132,8 @@ static CGFloat const kArrangedSubviewHeight = 48;
 }
 
 - (void)pushFeedViewController:(id)sender {
-//  FeedViewController *feedViewController = [[FeedViewController alloc] init];
-//  [self.navigationController pushViewController:feedViewController animated:YES];
+  FeedViewController *feedViewController = [[FeedViewController alloc] init];
+  [self.navigationController pushViewController:feedViewController animated:YES];
 }
 
 - (void)pushNativeViewController:(id)sender {
