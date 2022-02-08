@@ -23,6 +23,7 @@
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   UIImage *image = [UIImage imageNamed:@"ic_apple"];
   _imageView = [[UIImageView alloc] initWithImage:image];

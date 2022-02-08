@@ -32,25 +32,6 @@
   return self;
 }
 
-- (void)setupView {
-  self.alignment = UIStackViewAlignmentCenter;
-  self.axis = UILayoutConstraintAxisHorizontal;
-  self.backgroundColor = UIColor.systemRedColor;
-  self.distribution = UIStackViewDistributionEqualSpacing;
-  self.layer.cornerRadius = 4;
-  self.layoutMargins = UIEdgeInsetsMake(4, 4, 4, 4);
-  [self setLayoutMarginsRelativeArrangement:YES];
-
-  _rewardImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-  [self addArrangedSubview:_rewardImageView];
-
-  _rewardLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-  [self addArrangedSubview:_rewardLabel];
-
-  _ctaLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-  [self addArrangedSubview:_ctaLabel];
-}
-
 #pragma mark - BZVCtaViewProtocol
 - (void)renderRewardNotAvailableViewStateWithCtaText:(NSString *)ctaText {
   // 리워드가 없는 광고에 대한 CTA 뷰 레이아웃을 정의합니다.
@@ -83,6 +64,26 @@
 
   [_rewardImageView setImage:[UIImage imageNamed:@"ic_check"]];
   [_ctaLabel setText:@"YOUR_PARTICIPATED_TEXT"];
+}
+
+#pragma mark - UI setup
+- (void)setupView {
+  self.alignment = UIStackViewAlignmentCenter;
+  self.axis = UILayoutConstraintAxisHorizontal;
+  self.backgroundColor = UIColor.systemRedColor;
+  self.distribution = UIStackViewDistributionEqualSpacing;
+  self.layer.cornerRadius = 4;
+  self.layoutMargins = UIEdgeInsetsMake(4, 4, 4, 4);
+  [self setLayoutMarginsRelativeArrangement:YES];
+
+  _rewardImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+  [self addArrangedSubview:_rewardImageView];
+
+  _rewardLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  [self addArrangedSubview:_rewardLabel];
+
+  _ctaLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  [self addArrangedSubview:_ctaLabel];
 }
 
 @end

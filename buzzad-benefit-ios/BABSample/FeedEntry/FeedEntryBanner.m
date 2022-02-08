@@ -10,6 +10,7 @@
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   _bannerImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"banner_image"]];
   [self addSubview:_bannerImageView];

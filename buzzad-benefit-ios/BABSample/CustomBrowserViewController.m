@@ -14,22 +14,23 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  _browserViewController = [BuzzAdBrowser.sharedInstance browserViewController];
+  [self addChildViewController:_browserViewController];
+  [self.view addSubview:_browserViewController.view];
+  [_browserViewController didMoveToParentViewController:self];
+  
   [self setupView];
   [self setupLayout];
   [self setupEvent];
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   self.view.backgroundColor = UIColor.whiteColor;
 
   _closeButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_closeButton setImage:[UIImage imageNamed:@"ic_close"] forState:UIControlStateNormal];
   [self.view addSubview:_closeButton];
-
-  _browserViewController = [BuzzAdBrowser.sharedInstance browserViewController];
-  [self addChildViewController:_browserViewController];
-  [self.view addSubview:_browserViewController.view];
-  [_browserViewController didMoveToParentViewController:self];
 }
 
 - (void)setupLayout {

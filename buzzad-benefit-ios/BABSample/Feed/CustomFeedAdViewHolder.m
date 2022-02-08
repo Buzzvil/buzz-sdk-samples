@@ -30,6 +30,36 @@
   return self;
 }
 
+- (void)renderAd:(BZVNativeAd *)ad {
+  BZVNativeAdViewBinder *viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
+    builder.nativeAdView = self.nativeAdView;
+    builder.mediaView = self.mediaView;
+    builder.iconImageView = self.iconImageView;
+    builder.titleLabel = self.titleLabel;
+    builder.descriptionLabel = self.descriptionLabel;
+    builder.ctaView = self.ctaView;
+  }];
+  [viewBinder bindWithNativeAd:ad];
+  [ad addNativeAdEventDelegate:self];
+}
+
+#pragma mark - BZVNativeAdEventDelegate
+- (void)didImpressAd:(BZVNativeAd *)nativeAd {
+}
+
+- (void)didClickAd:(BZVNativeAd *)nativeAd {
+}
+
+- (void)didRequestRewardForAd:(BZVNativeAd *)nativeAd {
+}
+
+- (void)didRewardForAd:(BZVNativeAd *)nativeAd withResult:(BZVRewardResult)result {
+}
+
+- (void)didParticipateAd:(BZVNativeAd *)nativeAd {
+}
+
+#pragma mark - UI setup
 - (void)setupView {
   _nativeAdView = [[BZVNativeAdView alloc] initWithFrame:CGRectZero];
   [self addSubview:_nativeAdView];
@@ -94,35 +124,6 @@
     [_ctaView.topAnchor constraintEqualToAnchor:_descriptionLabel.bottomAnchor constant:8],
     [_ctaView.bottomAnchor constraintEqualToAnchor:_nativeAdView.bottomAnchor constant:-8],
   ]];
-}
-
-- (void)renderAd:(BZVNativeAd *)ad {
-  BZVNativeAdViewBinder *viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
-    builder.nativeAdView = self.nativeAdView;
-    builder.mediaView = self.mediaView;
-    builder.iconImageView = self.iconImageView;
-    builder.titleLabel = self.titleLabel;
-    builder.descriptionLabel = self.descriptionLabel;
-    builder.ctaView = self.ctaView;
-  }];
-  [viewBinder bindWithNativeAd:ad];
-  [ad addNativeAdEventDelegate:self];
-}
-
-#pragma mark - BZVNativeAdEventDelegate
-- (void)didImpressAd:(BZVNativeAd *)nativeAd {
-}
-
-- (void)didClickAd:(BZVNativeAd *)nativeAd {
-}
-
-- (void)didRequestRewardForAd:(BZVNativeAd *)nativeAd {
-}
-
-- (void)didRewardForAd:(BZVNativeAd *)nativeAd withResult:(BZVRewardResult)result {
-}
-
-- (void)didParticipateAd:(BZVNativeAd *)nativeAd {
 }
 
 @end

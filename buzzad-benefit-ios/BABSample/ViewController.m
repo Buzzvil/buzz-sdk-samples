@@ -30,7 +30,6 @@ static CGFloat const kArrangedSubviewHeight = 48;
 @property (nonatomic, strong, readonly) UIButton *webButton;
 @property (nonatomic, strong, readonly) UIButton *webToFeedButton;
 
-
 @end
 
 @implementation ViewController
@@ -48,6 +47,35 @@ static CGFloat const kArrangedSubviewHeight = 48;
 //  [BuzzAdBenefit setLauncher:self];
 }
 
+- (void)toggleLogin:(id)sender {
+  // MARK: 2. 로그인 요청하기
+  if (![BuzzAdBenefit isLoggedIn]) {
+    [BuzzAdBenefit loginWithBlock:^(BZVLoginRequestBuilder * _Nonnull builder) {
+      builder.userId = @"USER_ID";
+      builder.birthYear = 1995;
+      builder.gender = BZVUserGenderMale; // 남성 사용자
+    } onSuccess:^{
+      [self.loginButtonItem setTitle:kLogoutText];
+    } onFailure:^(NSError * _Nonnull error) {
+    }];
+  } else {
+    [BuzzAdBenefit logout];
+    [self.loginButtonItem setTitle:kLoginText];
+  }
+}
+
+#pragma mark - BZVLauncher
+- (void)openWithLaunchInfo:(BZVLaunchInfo *)launchInfo {
+  CustomBrowserViewController *browser = [[CustomBrowserViewController alloc] init];
+  browser.modalPresentationStyle = UIModalPresentationPageSheet;
+  if (self.presentedViewController) {
+    [self.presentedViewController presentViewController:browser animated:YES completion:nil];
+  } else {
+    [self.navigationController presentViewController:browser animated:YES completion:nil];
+  }
+}
+
+#pragma mark - UI setup
 - (void)setupView {
   self.navigationItem.title = kNavigationItemTitle;
   self.view.backgroundColor = UIColor.whiteColor;
@@ -138,23 +166,6 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_webToFeedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebToFeedViewController:)]];
 }
 
-- (void)toggleLogin:(id)sender {
-  // MARK: 2. 로그인 요청하기
-  if (![BuzzAdBenefit isLoggedIn]) {
-    [BuzzAdBenefit loginWithBlock:^(BZVLoginRequestBuilder * _Nonnull builder) {
-      builder.userId = @"USER_ID";
-      builder.birthYear = 1995;
-      builder.gender = BZVUserGenderMale; // 남성 사용자
-    } onSuccess:^{
-      [self.loginButtonItem setTitle:kLogoutText];
-    } onFailure:^(NSError * _Nonnull error) {
-    }];
-  } else {
-    [BuzzAdBenefit logout];
-    [self.loginButtonItem setTitle:kLoginText];
-  }
-}
-
 - (void)pushFeedViewController:(id)sender {
   FeedViewController *feedViewController = [[FeedViewController alloc] init];
   [self.navigationController pushViewController:feedViewController animated:YES];
@@ -185,17 +196,6 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)pushWebToFeedViewController:(id)sender {
   WebToFeedViewController *webToFeedViewController = [[WebToFeedViewController alloc] init];
   [self.navigationController pushViewController:webToFeedViewController animated:YES];
-}
-
-#pragma mark - BZVLauncher
-- (void)openWithLaunchInfo:(BZVLaunchInfo *)launchInfo {
-  CustomBrowserViewController *browser = [[CustomBrowserViewController alloc] init];
-  browser.modalPresentationStyle = UIModalPresentationPageSheet;
-  if (self.presentedViewController) {
-    [self.presentedViewController presentViewController:browser animated:YES completion:nil];
-  } else {
-    [self.navigationController presentViewController:browser animated:YES completion:nil];
-  }
 }
 
 @end

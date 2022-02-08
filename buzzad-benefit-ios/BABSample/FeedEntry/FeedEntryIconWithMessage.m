@@ -17,6 +17,7 @@
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   self.backgroundColor = UIColor.clearColor;
 

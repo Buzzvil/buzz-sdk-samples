@@ -21,23 +21,7 @@ static NSString * const kNavigationItemTitle = @"Interstitial";
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.navigationItem.title = kNavigationItemTitle;
-  self.view.backgroundColor = UIColor.whiteColor;
-
-  _loadAdButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [_loadAdButton setTitle:@"Load Ad" forState:UIControlStateNormal];
-  [_loadAdButton applyCustomStyle];
-  [self.view addSubview:_loadAdButton];
-
-  _loadAdButton.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_loadAdButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:8],
-    [_loadAdButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-8],
-    [_loadAdButton.topAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.topAnchor],
-    [_loadAdButton.heightAnchor constraintEqualToConstant:48],
-  ]];
-
-  [_loadAdButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadInterstitial:)]];
+  [self setupView];
 }
 
 - (void)loadInterstitial:(id)sender {
@@ -79,6 +63,27 @@ static NSString * const kNavigationItemTitle = @"Interstitial";
 - (void)BZVBuzzAdInterstitialDidDismiss:(UIViewController *)viewController {
   // Interstitial 지면이 종료되면 호출됩니다.
   // 필요에 따라 추가 기능을 구현하세요.
+}
+
+#pragma mark - UI setup
+- (void)setupView {
+  self.navigationItem.title = kNavigationItemTitle;
+  self.view.backgroundColor = UIColor.whiteColor;
+
+  _loadAdButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_loadAdButton setTitle:@"Load Ad" forState:UIControlStateNormal];
+  [_loadAdButton applyCustomStyle];
+  [self.view addSubview:_loadAdButton];
+
+  _loadAdButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_loadAdButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:8],
+    [_loadAdButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-8],
+    [_loadAdButton.topAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.topAnchor],
+    [_loadAdButton.heightAnchor constraintEqualToConstant:48],
+  ]];
+
+  [_loadAdButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadInterstitial:)]];
 }
 
 @end

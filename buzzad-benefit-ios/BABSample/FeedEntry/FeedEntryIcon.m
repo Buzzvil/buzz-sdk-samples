@@ -10,6 +10,7 @@
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   _iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
   [self addSubview:_iconImageView];

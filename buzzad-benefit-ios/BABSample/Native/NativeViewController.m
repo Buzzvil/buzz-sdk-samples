@@ -26,88 +26,7 @@ static NSString * const kNavigationItemTitle = @"Native";
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.navigationItem.title = kNavigationItemTitle;
-  self.view.backgroundColor = UIColor.whiteColor;
-
-  _loadAdButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [_loadAdButton setTitle:@"Load Ad" forState:UIControlStateNormal];
-  [_loadAdButton applyCustomStyle];
-  [self.view addSubview:_loadAdButton];
-
-  _nativeAdView = [[BZVNativeAdView alloc] initWithFrame:CGRectZero];
-  _nativeAdView.videoDelegate = self;
-  [self.view addSubview:_nativeAdView];
-
-  _mediaView = [[BZVMediaView alloc] initWithFrame:CGRectZero];
-  [_nativeAdView addSubview:_mediaView];
-
-  _iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-  [_nativeAdView addSubview:_iconImageView];
-
-  _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-  [_nativeAdView addSubview:_titleLabel];
-
-  _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-  [_nativeAdView addSubview:_descriptionLabel];
-
-  _ctaView = [[CustomCtaView alloc] initWithFrame:CGRectZero];
-  [_nativeAdView addSubview:_ctaView];
-
-  // LayoutConstraint 설정
-  _loadAdButton.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_loadAdButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:8],
-    [_loadAdButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-8],
-    [_loadAdButton.topAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.topAnchor],
-    [_loadAdButton.heightAnchor constraintEqualToConstant:48],
-  ]];
-
-  _nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_nativeAdView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
-    [_nativeAdView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
-    [_nativeAdView.topAnchor constraintEqualToAnchor:_loadAdButton.bottomAnchor constant:8],
-    [_nativeAdView.heightAnchor constraintGreaterThanOrEqualToConstant:0],
-  ]];
-
-  _mediaView.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_mediaView.leadingAnchor constraintEqualToAnchor:_nativeAdView.leadingAnchor],
-    [_mediaView.trailingAnchor constraintEqualToAnchor:_nativeAdView.trailingAnchor],
-    [_mediaView.topAnchor constraintEqualToAnchor:_nativeAdView.topAnchor],
-    [_mediaView.heightAnchor constraintEqualToAnchor:_mediaView.widthAnchor multiplier:627.0 / 1200.0],
-  ]];
-
-  _iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_iconImageView.widthAnchor constraintEqualToConstant:32],
-    [_iconImageView.heightAnchor constraintEqualToConstant:32],
-    [_iconImageView.leadingAnchor constraintEqualToAnchor:_mediaView.leadingAnchor constant:8],
-    [_iconImageView.topAnchor constraintEqualToAnchor:_mediaView.bottomAnchor constant:8],
-  ]];
-
-  _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_titleLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.trailingAnchor constant:8],
-    [_titleLabel.trailingAnchor constraintEqualToAnchor:_nativeAdView.trailingAnchor constant:-8],
-    [_titleLabel.centerYAnchor constraintEqualToAnchor:_iconImageView.centerYAnchor],
-  ]];
-
-  _descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_descriptionLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.leadingAnchor],
-    [_descriptionLabel.trailingAnchor constraintEqualToAnchor:_titleLabel.trailingAnchor],
-    [_descriptionLabel.topAnchor constraintEqualToAnchor:_iconImageView.bottomAnchor constant:8],
-  ]];
-
-  _ctaView.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_ctaView.trailingAnchor constraintEqualToAnchor:_nativeAdView.trailingAnchor constant:-8],
-    [_ctaView.topAnchor constraintEqualToAnchor:_descriptionLabel.bottomAnchor constant:8],
-    [_ctaView.bottomAnchor constraintEqualToAnchor:_nativeAdView.bottomAnchor constant:-8],
-  ]];
-
-  [_loadAdButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadAd:)]];
+  [self setupView];
 }
 
 // MARK: 4.2. 광고 할당 및 표시하기
@@ -193,6 +112,92 @@ static NSString * const kNavigationItemTitle = @"Native";
 }
 
 - (void)BZVNativeAdView:(BZVNativeAdView *)nativeAdView didFinishPlayingVideoAd:(BZVNativeAd *)nativeAd {
+}
+
+#pragma mark - UI setup
+- (void)setupView {
+  self.navigationItem.title = kNavigationItemTitle;
+  self.view.backgroundColor = UIColor.whiteColor;
+
+  _loadAdButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_loadAdButton setTitle:@"Load Ad" forState:UIControlStateNormal];
+  [_loadAdButton applyCustomStyle];
+  [self.view addSubview:_loadAdButton];
+
+  _nativeAdView = [[BZVNativeAdView alloc] initWithFrame:CGRectZero];
+  _nativeAdView.videoDelegate = self;
+  [self.view addSubview:_nativeAdView];
+
+  _mediaView = [[BZVMediaView alloc] initWithFrame:CGRectZero];
+  [_nativeAdView addSubview:_mediaView];
+
+  _iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+  [_nativeAdView addSubview:_iconImageView];
+
+  _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  [_nativeAdView addSubview:_titleLabel];
+
+  _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  [_nativeAdView addSubview:_descriptionLabel];
+
+  _ctaView = [[CustomCtaView alloc] initWithFrame:CGRectZero];
+  [_nativeAdView addSubview:_ctaView];
+
+  // LayoutConstraint 설정
+  _loadAdButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_loadAdButton.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:8],
+    [_loadAdButton.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-8],
+    [_loadAdButton.topAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.topAnchor],
+    [_loadAdButton.heightAnchor constraintEqualToConstant:48],
+  ]];
+
+  _nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_nativeAdView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+    [_nativeAdView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+    [_nativeAdView.topAnchor constraintEqualToAnchor:_loadAdButton.bottomAnchor constant:8],
+    [_nativeAdView.heightAnchor constraintGreaterThanOrEqualToConstant:0],
+  ]];
+
+  _mediaView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_mediaView.leadingAnchor constraintEqualToAnchor:_nativeAdView.leadingAnchor],
+    [_mediaView.trailingAnchor constraintEqualToAnchor:_nativeAdView.trailingAnchor],
+    [_mediaView.topAnchor constraintEqualToAnchor:_nativeAdView.topAnchor],
+    [_mediaView.heightAnchor constraintEqualToAnchor:_mediaView.widthAnchor multiplier:627.0 / 1200.0],
+  ]];
+
+  _iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_iconImageView.widthAnchor constraintEqualToConstant:32],
+    [_iconImageView.heightAnchor constraintEqualToConstant:32],
+    [_iconImageView.leadingAnchor constraintEqualToAnchor:_mediaView.leadingAnchor constant:8],
+    [_iconImageView.topAnchor constraintEqualToAnchor:_mediaView.bottomAnchor constant:8],
+  ]];
+
+  _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_titleLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.trailingAnchor constant:8],
+    [_titleLabel.trailingAnchor constraintEqualToAnchor:_nativeAdView.trailingAnchor constant:-8],
+    [_titleLabel.centerYAnchor constraintEqualToAnchor:_iconImageView.centerYAnchor],
+  ]];
+
+  _descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_descriptionLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.leadingAnchor],
+    [_descriptionLabel.trailingAnchor constraintEqualToAnchor:_titleLabel.trailingAnchor],
+    [_descriptionLabel.topAnchor constraintEqualToAnchor:_iconImageView.bottomAnchor constant:8],
+  ]];
+
+  _ctaView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_ctaView.trailingAnchor constraintEqualToAnchor:_nativeAdView.trailingAnchor constant:-8],
+    [_ctaView.topAnchor constraintEqualToAnchor:_descriptionLabel.bottomAnchor constant:8],
+    [_ctaView.bottomAnchor constraintEqualToAnchor:_nativeAdView.bottomAnchor constant:-8],
+  ]];
+
+  [_loadAdButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadAd:)]];
 }
 
 @end

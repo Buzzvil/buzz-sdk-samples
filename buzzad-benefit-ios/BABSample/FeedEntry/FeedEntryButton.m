@@ -10,6 +10,7 @@
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   _button = [[UIButton alloc] initWithFrame:CGRectZero];
   _button.backgroundColor = [UIColor colorWithRed:18/255.0 green:144/255.0 blue:255/255.0 alpha:1];

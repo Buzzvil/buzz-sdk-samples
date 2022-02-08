@@ -33,6 +33,45 @@
   return self;
 }
 
+- (void)renderAd:(BZVNativeAd *)ad {
+  BZVNativeAdViewBinder *viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
+    builder.nativeAdView = self.nativeAdView;
+    builder.mediaView = self.mediaView;
+    builder.titleLabel = self.titleLabel;
+    builder.ctaView = self.ctaView;
+    // 부가 기능: 뷰를 클릭할 수 있도록 설정합니다.
+    builder.clickableViews = @[
+      self.mediaView,
+      self.priceLabel,
+      self.originalPriceLabel,
+      self.discountRateLabel,
+      self.ctaView,
+    ];
+  }];
+  [viewBinder bindWithNativeAd:ad];
+
+  BZVNativeAdProduct *product = ad.product;
+  if (product.discountedPrice != 0) {
+    // 할인이 있는 쇼핑 광고
+    _priceLabel.text = [self formattedStringFromNumber:@(product.discountedPrice)];
+    _originalPriceLabel.text = [self formattedStringFromNumber:@(product.price)];
+    CGFloat discountRate = (1 - product.discountedPrice / product.price) * 100;
+    _discountRateLabel.text = [NSString stringWithFormat:@"%.f%%", discountRate];
+  } else {
+    // 할인이 없는 쇼핑 광고
+    _priceLabel.text = [self formattedStringFromNumber:@(product.price)];
+    _originalPriceLabel.text = [self formattedStringFromNumber:@(product.price)];
+    _discountRateLabel.hidden = YES;
+  }
+}
+
+- (NSString *)formattedStringFromNumber:(NSNumber *)number {
+  NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+  formatter.numberStyle = NSNumberFormatterDecimalStyle;
+  return [formatter stringFromNumber:number];
+}
+
+#pragma mark - UI setup
 - (void)setupView {
   // 광고 레이아웃 컴포넌트를 생성합니다.
   _nativeAdView = [[BZVNativeAdView alloc] initWithFrame:CGRectZero];
@@ -125,44 +164,6 @@
     [_discountRateLabel.topAnchor constraintEqualToAnchor:_originalPriceLabel.bottomAnchor constant:8],
     [_discountRateLabel.bottomAnchor constraintEqualToAnchor:_nativeAdView.bottomAnchor constant:-8],
   ]];
-}
-
-- (void)renderAd:(BZVNativeAd *)ad {
-  BZVNativeAdViewBinder *viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
-    builder.nativeAdView = self.nativeAdView;
-    builder.mediaView = self.mediaView;
-    builder.titleLabel = self.titleLabel;
-    builder.ctaView = self.ctaView;
-    // 부가 기능: 뷰를 클릭할 수 있도록 설정합니다.
-    builder.clickableViews = @[
-      self.mediaView,
-      self.priceLabel,
-      self.originalPriceLabel,
-      self.discountRateLabel,
-      self.ctaView,
-    ];
-  }];
-  [viewBinder bindWithNativeAd:ad];
-
-  BZVNativeAdProduct *product = ad.product;
-  if (product.discountedPrice != 0) {
-    // 할인이 있는 쇼핑 광고
-    _priceLabel.text = [self formattedStringFromNumber:@(product.discountedPrice)];
-    _originalPriceLabel.text = [self formattedStringFromNumber:@(product.price)];
-    CGFloat discountRate = (1 - product.discountedPrice / product.price) * 100;
-    _discountRateLabel.text = [NSString stringWithFormat:@"%.f%%", discountRate];
-  } else {
-    // 할인이 없는 쇼핑 광고
-    _priceLabel.text = [self formattedStringFromNumber:@(product.price)];
-    _originalPriceLabel.text = [self formattedStringFromNumber:@(product.price)];
-    _discountRateLabel.hidden = YES;
-  }
-}
-
-- (NSString *)formattedStringFromNumber:(NSNumber *)number {
-  NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-  formatter.numberStyle = NSNumberFormatterDecimalStyle;
-  return [formatter stringFromNumber:number];
 }
 
 @end

@@ -27,6 +27,11 @@
   return self;
 }
 
+- (void)availableRewardDidUpdate:(NSInteger)reward {
+  _headerLabel.text = [NSString stringWithFormat:@"리워드 %ld원", reward];
+}
+
+#pragma mark - UI setup
 - (void)setupView {
   _headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   [self addSubview:_headerLabel];
@@ -39,10 +44,6 @@
     [_headerLabel.topAnchor constraintEqualToAnchor:self.topAnchor],
     [_headerLabel.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
   ]];
-}
-
-- (void)availableRewardDidUpdate:(NSInteger)reward {
-  _headerLabel.text = [NSString stringWithFormat:@"리워드 %ld원", reward];
 }
 
 @end

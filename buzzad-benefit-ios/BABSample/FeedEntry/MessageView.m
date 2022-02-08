@@ -14,6 +14,7 @@ static CGFloat const kMessageCornerRadius = 4;
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   self.backgroundColor = UIColor.clearColor;
 

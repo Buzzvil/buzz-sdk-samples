@@ -26,18 +26,6 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   FeedEntryButton *_feedEntryButton;
 }
 
-- (void)setupView;
-
-- (void)setupLayout;
-
-- (void)preloadFeed;
-
-- (void)updateFeedEntryIconWithMessageTextWithReward:(NSInteger)reward;
-
-- (void)updateFeedEntryButtonTextWithReward:(NSInteger)reward;
-
-- (NSString *)stringFromReward:(NSInteger)reward;
-
 @end
 
 @implementation FeedEntryViewController
@@ -50,7 +38,65 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   [self preloadFeed];
 }
 
-#pragma mark - private
+- (void)preloadFeed {
+  [_feedEntryIconWithMessage.buzzAdFeed loadOnSuccess:^{
+    // Available rewards can be inaccurate after
+    //  1. ads are rewarded
+    //  2. new ads are loaded by scrolling feed
+    [self updateFeedEntryIconWithMessageTextWithReward:self->_feedEntryIconWithMessage.buzzAdFeed.availableRewards];
+  } onFailure:^(NSError * _Nonnull error) {
+  }];
+
+  [_feedEntryButton.buzzAdFeed loadOnSuccess:^{
+    // Available rewards can be inaccurate after
+    //  1. ads are rewarded
+    //  2. new ads are loaded by scrolling feed
+    [self updateFeedEntryButtonTextWithReward:self->_feedEntryButton.buzzAdFeed.availableRewards];
+  } onFailure:^(NSError * _Nonnull error) {
+  }];
+}
+
+- (void)updateFeedEntryIconWithMessageTextWithReward:(NSInteger)reward {
+  NSString *rewardText = [self stringFromReward:reward];
+  NSString *fullText = [NSString stringWithFormat:@"Get up to %@ points", rewardText];
+  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:fullText];
+  [attributedText addAttribute:NSFontAttributeName
+                         value:[UIFont boldSystemFontOfSize:12]
+                         range:[[attributedText string] rangeOfString:rewardText]];
+  [attributedText addAttribute:NSForegroundColorAttributeName
+                         value:[UIColor colorWithRed:87/255.0 green:176/255.0 blue:255/255.0 alpha:1]
+                         range:[[attributedText string] rangeOfString:rewardText]];
+  [UIView transitionWithView:_feedEntryIconWithMessage.messageLabel
+                    duration:kAnimationDuration
+                     options:UIViewAnimationOptionTransitionCrossDissolve
+                  animations:^{
+    [self->_feedEntryIconWithMessage.messageLabel setAttributedText:attributedText];
+  } completion:nil];
+}
+
+- (void)updateFeedEntryButtonTextWithReward:(NSInteger)reward {
+  NSString *rewardText = [self stringFromReward:reward];
+  NSString *fullText = [NSString stringWithFormat:@"Get up to %@ points", rewardText];
+  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:fullText];
+  [attributedText addAttribute:NSFontAttributeName
+                         value:[UIFont boldSystemFontOfSize:12]
+                         range:[[attributedText string] rangeOfString:rewardText]];
+  [UIView transitionWithView:_feedEntryButton.button
+                    duration:kAnimationDuration
+                     options:UIViewAnimationOptionTransitionCrossDissolve
+                  animations:^{
+    [self->_feedEntryButton.button setAttributedTitle:attributedText forState:UIControlStateNormal];
+  } completion:nil];
+}
+
+- (NSString *)stringFromReward:(NSInteger)reward {
+  NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
+  [numberFormatter setFormatterBehavior: NSNumberFormatterBehavior10_4];
+  [numberFormatter setNumberStyle: NSNumberFormatterDecimalStyle];
+  return [numberFormatter stringFromNumber:[NSNumber numberWithInteger:reward]];
+}
+
+#pragma mark - UI setup
 - (void)setupView {
   self.view.backgroundColor = UIColor.whiteColor;
 
@@ -151,64 +197,6 @@ static NSTimeInterval const kAnimationDuration = 0.2;
     [_feedEntryButton.widthAnchor constraintEqualToAnchor:_feedEntryButton.button.widthAnchor],
     [_feedEntryButton.heightAnchor constraintEqualToAnchor:_feedEntryButton.button.heightAnchor],
   ]];
-}
-
-- (void)preloadFeed {
-  [_feedEntryIconWithMessage.buzzAdFeed loadOnSuccess:^{
-    // Available rewards can be inaccurate after
-    //  1. ads are rewarded
-    //  2. new ads are loaded by scrolling feed
-    [self updateFeedEntryIconWithMessageTextWithReward:self->_feedEntryIconWithMessage.buzzAdFeed.availableRewards];
-  } onFailure:^(NSError * _Nonnull error) {
-  }];
-
-  [_feedEntryButton.buzzAdFeed loadOnSuccess:^{
-    // Available rewards can be inaccurate after
-    //  1. ads are rewarded
-    //  2. new ads are loaded by scrolling feed
-    [self updateFeedEntryButtonTextWithReward:self->_feedEntryButton.buzzAdFeed.availableRewards];
-  } onFailure:^(NSError * _Nonnull error) {
-  }];
-}
-
-- (void)updateFeedEntryIconWithMessageTextWithReward:(NSInteger)reward {
-  NSString *rewardText = [self stringFromReward:reward];
-  NSString *fullText = [NSString stringWithFormat:@"Get up to %@ points", rewardText];
-  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:fullText];
-  [attributedText addAttribute:NSFontAttributeName
-                         value:[UIFont boldSystemFontOfSize:12]
-                         range:[[attributedText string] rangeOfString:rewardText]];
-  [attributedText addAttribute:NSForegroundColorAttributeName
-                         value:[UIColor colorWithRed:87/255.0 green:176/255.0 blue:255/255.0 alpha:1]
-                         range:[[attributedText string] rangeOfString:rewardText]];
-  [UIView transitionWithView:_feedEntryIconWithMessage.messageLabel
-                    duration:kAnimationDuration
-                     options:UIViewAnimationOptionTransitionCrossDissolve
-                  animations:^{
-    [self->_feedEntryIconWithMessage.messageLabel setAttributedText:attributedText];
-  } completion:nil];
-}
-
-- (void)updateFeedEntryButtonTextWithReward:(NSInteger)reward {
-  NSString *rewardText = [self stringFromReward:reward];
-  NSString *fullText = [NSString stringWithFormat:@"Get up to %@ points", rewardText];
-  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:fullText];
-  [attributedText addAttribute:NSFontAttributeName
-                         value:[UIFont boldSystemFontOfSize:12]
-                         range:[[attributedText string] rangeOfString:rewardText]];
-  [UIView transitionWithView:_feedEntryButton.button
-                    duration:kAnimationDuration
-                     options:UIViewAnimationOptionTransitionCrossDissolve
-                  animations:^{
-    [self->_feedEntryButton.button setAttributedTitle:attributedText forState:UIControlStateNormal];
-  } completion:nil];
-}
-
-- (NSString *)stringFromReward:(NSInteger)reward {
-  NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
-  [numberFormatter setFormatterBehavior: NSNumberFormatterBehavior10_4];
-  [numberFormatter setNumberStyle: NSNumberFormatterDecimalStyle];
-  return [numberFormatter stringFromNumber:[NSNumber numberWithInteger:reward]];
 }
 
 @end

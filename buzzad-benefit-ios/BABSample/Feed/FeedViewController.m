@@ -38,6 +38,33 @@ static CGFloat const kArrangedSubviewHeight = 48;
   }];
 }
 
+// MARK: 3.1. 피드 지면 표시하기
+- (void)presentFeed:(id)sender {
+  BZVFeedViewController *feedViewController = [_buzzAdFeed viewController];
+  [self presentViewController:feedViewController animated:YES completion:nil];
+
+  // MARK: 3.1. 광고 할당 및 표시하기
+//  [_buzzAdFeed loadOnSuccess:^{
+//    NSInteger feedTotalReward = self.buzzAdFeed.availableRewards; // 적립 가능한 총 포인트 금액
+//
+//    BZVFeedViewController *feedViewController = self.buzzAdFeed.viewController;
+//    [self presentViewController:feedViewController animated:YES completion:nil];
+//  } onFailure:^(NSError * _Nonnull error) {
+//    // 광고가 없을 경우 호출됩니다. error를 통해 원인을 알 수 있습니다.
+//  }];
+}
+
+- (void)pushFeed:(id)sender {
+  BZVFeedViewController *feedViewController = [_buzzAdFeed viewController];
+  [self.navigationController pushViewController:feedViewController animated:YES];
+}
+
+- (void)addFeedToContainer:(id)sender {
+  ContainerViewController *containerViewController = [[ContainerViewController alloc] init];
+  [self.navigationController pushViewController:containerViewController animated:YES];
+}
+
+#pragma mark - UI setup
 - (void)setupView {
   self.navigationItem.title = kNavigationItemTitle;
   self.view.backgroundColor = UIColor.whiteColor;
@@ -102,32 +129,6 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_presentFeedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentFeed:)]];
   [_pushFeedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeed:)]];
   [_addFeedToContainerViewControllerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addFeedToContainer:)]];
-}
-
-// MARK: 3.1. 피드 지면 표시하기
-- (void)presentFeed:(id)sender {
-  BZVFeedViewController *feedViewController = [_buzzAdFeed viewController];
-  [self presentViewController:feedViewController animated:YES completion:nil];
-
-  // MARK: 3.1. 광고 할당 및 표시하기
-//  [_buzzAdFeed loadOnSuccess:^{
-//    NSInteger feedTotalReward = self.buzzAdFeed.availableRewards; // 적립 가능한 총 포인트 금액
-//
-//    BZVFeedViewController *feedViewController = self.buzzAdFeed.viewController;
-//    [self presentViewController:feedViewController animated:YES completion:nil];
-//  } onFailure:^(NSError * _Nonnull error) {
-//    // 광고가 없을 경우 호출됩니다. error를 통해 원인을 알 수 있습니다.
-//  }];
-}
-
-- (void)pushFeed:(id)sender {
-  BZVFeedViewController *feedViewController = [_buzzAdFeed viewController];
-  [self.navigationController pushViewController:feedViewController animated:YES];
-}
-
-- (void)addFeedToContainer:(id)sender {
-  ContainerViewController *containerViewController = [[ContainerViewController alloc] init];
-  [self.navigationController pushViewController:containerViewController animated:YES];
 }
 
 @end
