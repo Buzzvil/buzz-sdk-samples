@@ -61,7 +61,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   [self.view addSubview:_iconLabel];
 
   _feedEntryIcon = [[FeedEntryIcon alloc] initWithFrame:CGRectZero];
-  _feedEntryIcon.iconImageView.image = [UIImage imageNamed:@"point_ico"];
+  _feedEntryIcon.iconImageView.image = [UIImage imageNamed:@"ic_coin"];
   [self.view addSubview:_feedEntryIcon];
 
   _iconWithMessageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -71,7 +71,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   [self.view addSubview:_iconWithMessageLabel];
 
   _feedEntryIconWithMessage = [[FeedEntryIconWithMessage alloc] initWithFrame:CGRectZero];
-  _feedEntryIconWithMessage.iconImageView.image = [UIImage imageNamed:@"point_ico"];
+  _feedEntryIconWithMessage.iconImageView.image = [UIImage imageNamed:@"ic_coin"];
   [_feedEntryIconWithMessage.messageLabel setText:@"Get Extra Points Now!"];
   [self.view addSubview:_feedEntryIconWithMessage];
 

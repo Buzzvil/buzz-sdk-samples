@@ -1,9 +1,9 @@
 #import "AppDelegate.h"
 
-//#import "Feed/CustomFeedHeaderViewHolder.h"
-//#import "Feed/CustomFeedAdViewHolder.h"
-//#import "Feed/CustomFeedCpsAdViewHolder.h"
-//#import "Feed/CustomFeedErrorViewHolder.h"
+#import "Feed/CustomFeedHeaderViewHolder.h"
+#import "Feed/CustomFeedAdViewHolder.h"
+#import "Feed/CustomFeedCpsAdViewHolder.h"
+#import "Feed/CustomFeedErrorViewHolder.h"
 #import "Util/AppConstant.h"
 #import "ViewController.h"
 
