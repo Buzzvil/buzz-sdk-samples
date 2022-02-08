@@ -12,6 +12,7 @@
 
 static NSString * const kLoginText = @"LOGIN";
 static NSString * const kLogoutText = @"LOGOUT";
+static NSString * const kNavigationItemTitle = @"BuzzAdBenefit";
 static CGFloat const kStackViewSpacing = 8;
 static CGFloat const kStackViewHorizontalMargin = 4;
 static CGFloat const kArrangedSubviewHeight = 48;
@@ -42,6 +43,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
 }
 
 - (void)setupView {
+  self.navigationItem.title = kNavigationItemTitle;
   self.view.backgroundColor = UIColor.whiteColor;
 
   _loginButtonItem = [[UIBarButtonItem alloc] initWithTitle:kLoginText style:UIBarButtonItemStylePlain target:nil action:nil];

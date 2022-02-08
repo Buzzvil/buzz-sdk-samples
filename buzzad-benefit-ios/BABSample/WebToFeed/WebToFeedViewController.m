@@ -3,6 +3,8 @@
 @import WebKit;
 @import BuzzAdBenefit;
 
+static NSString * const kNavigationItemTitle = @"Web to Feed";
+
 @interface WebToFeedViewController () <WKScriptMessageHandler> {
   WKWebView *_webView;
 }
@@ -13,6 +15,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  self.navigationItem.title = kNavigationItemTitle;
+  
   WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
   WKUserContentController *contentController = [[WKUserContentController alloc] init];
   [contentController addScriptMessageHandler:self name:@"BuzzAdBenefitJSBridge"];

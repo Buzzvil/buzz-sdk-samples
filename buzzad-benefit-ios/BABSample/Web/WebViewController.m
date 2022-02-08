@@ -3,6 +3,8 @@
 @import WebKit;
 @import BuzzAdBenefit;
 
+static NSString * const kNavigationItemTitle = @"Web";
+
 @interface WebViewController () <WKScriptMessageHandler> {
   WKWebView *_webView;
   BZVWebInterface *_webInterface;
@@ -27,6 +29,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+
+  self.navigationItem.title = kNavigationItemTitle;
 
   if (_url) {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:_url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.0f];
