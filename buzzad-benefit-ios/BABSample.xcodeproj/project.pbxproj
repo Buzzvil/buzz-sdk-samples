@@ -10,8 +10,6 @@
 		696534B22516811E00714D40 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
 		696534F725183A3600714D40 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696534B6251681CE00714D40 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		69653575251984D000714D40 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69653574251984D000714D40 /* BrowserViewController.m */; };
-		C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AAE244D299E00F0C436 /* CarouselView.m */; };
-		C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4307AB0244D299E00F0C436 /* CarouselView.xib */; };
 		C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AB3244D299F00F0C436 /* WebViewController.m */; };
 		C4A297502240F06900F6D677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2974F2240F06900F6D677 /* AppDelegate.m */; };
 		C4A297532240F06900F6D677 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A297522240F06900F6D677 /* ViewController.m */; };
@@ -46,9 +44,6 @@
 		B58C59731E43AC7DA91D8058 /* Pods-BABSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B80A664165F8931FCCCA62FF /* Pods-BABSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.release.xcconfig"; sourceTree = "<group>"; };
 		C4307AAC244D299E00F0C436 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		C4307AAD244D299E00F0C436 /* CarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselView.h; sourceTree = "<group>"; };
-		C4307AAE244D299E00F0C436 /* CarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselView.m; sourceTree = "<group>"; };
-		C4307AB0244D299E00F0C436 /* CarouselView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
 		C4307AB3244D299F00F0C436 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		C4A2974B2240F06900F6D677 /* BABSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BABSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A2974E2240F06900F6D677 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,9 +146,6 @@
 				D6E4C05527B22CDB0062B597 /* Util */,
 				D67A47ED27B250F200C5B4DC /* Web */,
 				D67A47EE27B252B000C5B4DC /* WebToFeed */,
-				C4307AAD244D299E00F0C436 /* CarouselView.h */,
-				C4307AAE244D299E00F0C436 /* CarouselView.m */,
-				C4307AB0244D299E00F0C436 /* CarouselView.xib */,
 				C4A2974E2240F06900F6D677 /* AppDelegate.h */,
 				C4A2974F2240F06900F6D677 /* AppDelegate.m */,
 				C4A297512240F06900F6D677 /* ViewController.h */,
@@ -327,7 +319,6 @@
 				C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */,
 				C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */,
 				D65AC7D226493B3500479161 /* WebToFeedSample.html in Resources */,
-				C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +382,6 @@
 				D626FBA0273E3B6600103555 /* MessageView.m in Sources */,
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
 				D67A47EC27B2502400C5B4DC /* InterstitialViewController.m in Sources */,
-				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
 				D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */,
 				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
 				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
