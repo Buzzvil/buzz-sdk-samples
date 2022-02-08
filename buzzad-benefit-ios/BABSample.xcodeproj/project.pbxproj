@@ -27,6 +27,7 @@
 		D65AC7D226493B3500479161 /* WebToFeedSample.html in Resources */ = {isa = PBXBuildFile; fileRef = D65AC7D126493B3500479161 /* WebToFeedSample.html */; };
 		D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65AC80D264A2DE600479161 /* WebToFeedViewController.m */; };
 		D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05727B22CF40062B597 /* AppConstant.m */; };
+		D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05A27B22F960062B597 /* UIButton+Custom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		D65AC80D264A2DE600479161 /* WebToFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebToFeedViewController.m; sourceTree = "<group>"; };
 		D6E4C05627B22CF40062B597 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		D6E4C05727B22CF40062B597 /* AppConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
+		D6E4C05927B22F960062B597 /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
+		D6E4C05A27B22F960062B597 /* UIButton+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 			children = (
 				D6E4C05627B22CF40062B597 /* AppConstant.h */,
 				D6E4C05727B22CF40062B597 /* AppConstant.m */,
+				D6E4C05927B22F960062B597 /* UIButton+Custom.h */,
+				D6E4C05A27B22F960062B597 /* UIButton+Custom.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
 				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
 				D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */,
+				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
 				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
 				D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */,
 				D626FB9A273E3B3F00103555 /* FeedEntryBanner.m in Sources */,
