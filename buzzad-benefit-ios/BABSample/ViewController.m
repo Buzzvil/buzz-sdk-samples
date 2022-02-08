@@ -5,6 +5,7 @@
 #import "Interstitial/InterstitialViewController.h"
 #import "Native/NativeViewController.h"
 #import "Web/WebViewController.h"
+#import "WebToFeed/WebToFeedViewController.h"
 #import "UIButton+Custom.h"
 
 @import BuzzAdBenefit;
@@ -25,6 +26,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
 @property (nonatomic, strong, readonly) UIButton *feedButton;
 @property (nonatomic, strong, readonly) UIButton *feedEntryButton;
 @property (nonatomic, strong, readonly) UIButton *webButton;
+@property (nonatomic, strong, readonly) UIButton *webToFeedButton;
 
 
 @end
@@ -68,12 +70,17 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_webButton setTitle:@"Web" forState:UIControlStateNormal];
   [_webButton applyCustomStyle];
 
+  _webToFeedButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_webToFeedButton setTitle:@"Web to Feed" forState:UIControlStateNormal];
+  [_webToFeedButton applyCustomStyle];
+
   _stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
     _nativeButton,
     _interstitialButton,
     _feedButton,
     _feedEntryButton,
-    _webButton
+    _webButton,
+    _webToFeedButton,
   ]];
   _stackView.axis = UILayoutConstraintAxisVertical;
   _stackView.spacing = kStackViewSpacing;
@@ -120,6 +127,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_feedEntryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedEntryViewController:)]];
   [_webButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebViewController:)]];
+  [_webToFeedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebToFeedViewController:)]];
 }
 
 - (void)toggleLogin:(id)sender {
@@ -164,6 +172,11 @@ static CGFloat const kArrangedSubviewHeight = 48;
   NSString *samplePageUrl = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"BuzzAdBenefitJSSamplePageUrl"];
   webViewController.url = [NSURL URLWithString:samplePageUrl];
   [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (void)pushWebToFeedViewController:(id)sender {
+  WebToFeedViewController *webToFeedViewController = [[WebToFeedViewController alloc] init];
+  [self.navigationController pushViewController:webToFeedViewController animated:YES];
 }
 
 @end

@@ -150,12 +150,10 @@
 				D67A47E227B24DB300C5B4DC /* Native */,
 				D6E4C05527B22CDB0062B597 /* Util */,
 				D67A47ED27B250F200C5B4DC /* Web */,
+				D67A47EE27B252B000C5B4DC /* WebToFeed */,
 				C4307AAD244D299E00F0C436 /* CarouselView.h */,
 				C4307AAE244D299E00F0C436 /* CarouselView.m */,
 				C4307AB0244D299E00F0C436 /* CarouselView.xib */,
-				D65AC80C264A2DE600479161 /* WebToFeedViewController.h */,
-				D65AC80D264A2DE600479161 /* WebToFeedViewController.m */,
-				D65AC7D126493B3500479161 /* WebToFeedSample.html */,
 				C4A2974E2240F06900F6D677 /* AppDelegate.h */,
 				C4A2974F2240F06900F6D677 /* AppDelegate.m */,
 				C4A297512240F06900F6D677 /* ViewController.h */,
@@ -235,6 +233,16 @@
 				C4307AB3244D299F00F0C436 /* WebViewController.m */,
 			);
 			path = Web;
+			sourceTree = "<group>";
+		};
+		D67A47EE27B252B000C5B4DC /* WebToFeed */ = {
+			isa = PBXGroup;
+			children = (
+				D65AC80C264A2DE600479161 /* WebToFeedViewController.h */,
+				D65AC80D264A2DE600479161 /* WebToFeedViewController.m */,
+				D65AC7D126493B3500479161 /* WebToFeedSample.html */,
+			);
+			path = WebToFeed;
 			sourceTree = "<group>";
 		};
 		D6E4C05527B22CDB0062B597 /* Util */ = {
