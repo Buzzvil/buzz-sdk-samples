@@ -1,7 +1,7 @@
 #import "ViewController.h"
 
 #import "Feed/FeedViewController.h"
-//#import "FeedEntry/FeedEntryViewController.h"
+#import "FeedEntry/FeedEntryViewController.h"
 //#import "Native/NativeViewController.h"
 //#import "Interstitial/InterstitialViewController.h"
 #import "UIButton+Custom.h"
@@ -147,8 +147,8 @@ static CGFloat const kArrangedSubviewHeight = 48;
 }
 
 - (void)pushFeedEntryViewController:(id)sender {
-//  FeedEntryViewController *feedEntryViewController = [[FeedEntryViewController alloc] init];
-//  [self.navigationController pushViewController:feedEntryViewController animated:YES];
+  FeedEntryViewController *feedEntryViewController = [[FeedEntryViewController alloc] init];
+  [self.navigationController pushViewController:feedEntryViewController animated:YES];
 }
 
 @end
