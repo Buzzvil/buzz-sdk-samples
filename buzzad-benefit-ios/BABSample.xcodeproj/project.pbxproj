@@ -149,11 +149,10 @@
 				D67A47E927B2500D00C5B4DC /* Interstitial */,
 				D67A47E227B24DB300C5B4DC /* Native */,
 				D6E4C05527B22CDB0062B597 /* Util */,
+				D67A47ED27B250F200C5B4DC /* Web */,
 				C4307AAD244D299E00F0C436 /* CarouselView.h */,
 				C4307AAE244D299E00F0C436 /* CarouselView.m */,
 				C4307AB0244D299E00F0C436 /* CarouselView.xib */,
-				C4307AAC244D299E00F0C436 /* WebViewController.h */,
-				C4307AB3244D299F00F0C436 /* WebViewController.m */,
 				D65AC80C264A2DE600479161 /* WebToFeedViewController.h */,
 				D65AC80D264A2DE600479161 /* WebToFeedViewController.m */,
 				D65AC7D126493B3500479161 /* WebToFeedSample.html */,
@@ -227,6 +226,15 @@
 				D67A47EB27B2502400C5B4DC /* InterstitialViewController.m */,
 			);
 			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		D67A47ED27B250F200C5B4DC /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				C4307AAC244D299E00F0C436 /* WebViewController.h */,
+				C4307AB3244D299F00F0C436 /* WebViewController.m */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		D6E4C05527B22CDB0062B597 /* Util */ = {

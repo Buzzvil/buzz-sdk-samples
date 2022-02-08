@@ -2,8 +2,9 @@
 
 #import "Feed/FeedViewController.h"
 #import "FeedEntry/FeedEntryViewController.h"
-#import "Native/NativeViewController.h"
 #import "Interstitial/InterstitialViewController.h"
+#import "Native/NativeViewController.h"
+#import "Web/WebViewController.h"
 #import "UIButton+Custom.h"
 
 @import BuzzAdBenefit;
@@ -23,6 +24,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
 @property (nonatomic, strong, readonly) UIButton *interstitialButton;
 @property (nonatomic, strong, readonly) UIButton *feedButton;
 @property (nonatomic, strong, readonly) UIButton *feedEntryButton;
+@property (nonatomic, strong, readonly) UIButton *webButton;
 
 
 @end
@@ -62,11 +64,16 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_feedEntryButton setTitle:@"Feed Entry" forState:UIControlStateNormal];
   [_feedEntryButton applyCustomStyle];
 
+  _webButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_webButton setTitle:@"Web" forState:UIControlStateNormal];
+  [_webButton applyCustomStyle];
+
   _stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
     _nativeButton,
     _interstitialButton,
     _feedButton,
     _feedEntryButton,
+    _webButton
   ]];
   _stackView.axis = UILayoutConstraintAxisVertical;
   _stackView.spacing = kStackViewSpacing;
@@ -112,6 +119,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_nativeButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushNativeViewController:)]];
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_feedEntryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedEntryViewController:)]];
+  [_webButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebViewController:)]];
 }
 
 - (void)toggleLogin:(id)sender {
@@ -149,6 +157,13 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)pushFeedEntryViewController:(id)sender {
   FeedEntryViewController *feedEntryViewController = [[FeedEntryViewController alloc] init];
   [self.navigationController pushViewController:feedEntryViewController animated:YES];
+}
+
+- (void)pushWebViewController:(id)sender {
+  WebViewController *webViewController = [[WebViewController alloc] init];
+  NSString *samplePageUrl = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"BuzzAdBenefitJSSamplePageUrl"];
+  webViewController.url = [NSURL URLWithString:samplePageUrl];
+  [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 @end
