@@ -3,7 +3,7 @@
 #import "Feed/FeedViewController.h"
 #import "FeedEntry/FeedEntryViewController.h"
 #import "Native/NativeViewController.h"
-//#import "Interstitial/InterstitialViewController.h"
+#import "Interstitial/InterstitialViewController.h"
 #import "UIButton+Custom.h"
 
 @import BuzzAdBenefit;
@@ -142,8 +142,8 @@ static CGFloat const kArrangedSubviewHeight = 48;
 }
 
 - (void)pushInterstitialViewController:(id)sender {
-//  InterstitialViewController *interstitialViewController = [[InterstitialViewController alloc] init];
-//  [self.navigationController pushViewController:interstitialViewController animated:YES];
+  InterstitialViewController *interstitialViewController = [[InterstitialViewController alloc] init];
+  [self.navigationController pushViewController:interstitialViewController animated:YES];
 }
 
 - (void)pushFeedEntryViewController:(id)sender {

@@ -34,6 +34,7 @@
 		D67A47E127B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */; };
 		D67A47E527B24DD100C5B4DC /* CustomCtaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47E427B24DD100C5B4DC /* CustomCtaView.m */; };
 		D67A47E827B24F3F00C5B4DC /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47E727B24F3F00C5B4DC /* NativeViewController.m */; };
+		D67A47EC27B2502400C5B4DC /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47EB27B2502400C5B4DC /* InterstitialViewController.m */; };
 		D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05727B22CF40062B597 /* AppConstant.m */; };
 		D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05A27B22F960062B597 /* UIButton+Custom.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,8 @@
 		D67A47E427B24DD100C5B4DC /* CustomCtaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCtaView.m; sourceTree = "<group>"; };
 		D67A47E627B24F3F00C5B4DC /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
 		D67A47E727B24F3F00C5B4DC /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		D67A47EA27B2502400C5B4DC /* InterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
+		D67A47EB27B2502400C5B4DC /* InterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
 		D6E4C05627B22CF40062B597 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
 		D6E4C05727B22CF40062B597 /* AppConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
 		D6E4C05927B22F960062B597 /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 			children = (
 				D67A47CF27B2488200C5B4DC /* Feed */,
 				D626FB8D273E3AB300103555 /* FeedEntry */,
+				D67A47E927B2500D00C5B4DC /* Interstitial */,
 				D67A47E227B24DB300C5B4DC /* Native */,
 				D6E4C05527B22CDB0062B597 /* Util */,
 				C4307AAD244D299E00F0C436 /* CarouselView.h */,
@@ -214,6 +218,15 @@
 				D67A47E727B24F3F00C5B4DC /* NativeViewController.m */,
 			);
 			path = Native;
+			sourceTree = "<group>";
+		};
+		D67A47E927B2500D00C5B4DC /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				D67A47EA27B2502400C5B4DC /* InterstitialViewController.h */,
+				D67A47EB27B2502400C5B4DC /* InterstitialViewController.m */,
+			);
+			path = Interstitial;
 			sourceTree = "<group>";
 		};
 		D6E4C05527B22CDB0062B597 /* Util */ = {
@@ -361,6 +374,7 @@
 				D67A47D827B24B4A00C5B4DC /* CustomFeedAdViewHolder.m in Sources */,
 				D626FBA0273E3B6600103555 /* MessageView.m in Sources */,
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
+				D67A47EC27B2502400C5B4DC /* InterstitialViewController.m in Sources */,
 				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
 				D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */,
 				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
