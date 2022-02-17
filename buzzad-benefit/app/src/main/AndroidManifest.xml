@@ -26,6 +26,7 @@
 
         <activity android:name=".WebToFeedActivity" />
         <activity android:name=".FeedEntryPointActivity" />
+        <activity android:name=".carousel.NativeCarouselActivity" />
         <!-- Caution: Replace `000000000000000` with Your AppKey  -->
         <meta-data
             android:name="com.buzzvil.APP_KEY"
