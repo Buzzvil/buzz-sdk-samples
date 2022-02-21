@@ -14,9 +14,10 @@ static CGFloat const kMessageCornerRadius = 4;
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   self.backgroundColor = UIColor.clearColor;
-  
+
   _textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _textLabel.font = [UIFont systemFontOfSize:12];
   _textLabel.textColor = UIColor.whiteColor;
@@ -40,7 +41,7 @@ static CGFloat const kMessageCornerRadius = 4;
                                                              cornerRadius:kMessageCornerRadius];
   [fillColor setFill];
   [messageBodyPath fill];
-  
+
   UIBezierPath *messageTailPath = [UIBezierPath bezierPath];
   [messageTailPath moveToPoint:CGPointMake(0, height / 2)];
   [messageTailPath addLineToPoint:CGPointMake(kMessageTailWidth, height / 2 - kMessageTailHeight / 2)];

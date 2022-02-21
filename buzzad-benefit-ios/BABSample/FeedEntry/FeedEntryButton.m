@@ -10,6 +10,7 @@
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   _button = [[UIButton alloc] initWithFrame:CGRectZero];
   _button.backgroundColor = [UIColor colorWithRed:18/255.0 green:144/255.0 blue:255/255.0 alpha:1];
@@ -19,6 +20,8 @@
   [_button.titleLabel setTextColor:UIColor.whiteColor];
   [_button setContentEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
   [self addSubview:_button];
+
+  self.clickableViews = @[self.button];
 }
 
 - (void)setupLayout {

@@ -1,29 +1,36 @@
-#import <WebKit/WebKit.h>
 #import "WebViewController.h"
-#import <BuzzAdBenefit/BuzzAdBenefit.h>
+
+@import WebKit;
+@import BuzzAdBenefit;
+
+static NSString * const kNavigationItemTitle = @"Web";
 
 @interface WebViewController () <WKScriptMessageHandler> {
   WKWebView *_webView;
-  BABWebInterface *_webInterface;
+  BZVWebInterface *_webInterface;
 }
 
 @end
 
 @implementation WebViewController
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-
+- (void)loadView {
   WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
   WKUserContentController *contentController = [[WKUserContentController alloc] init];
   [contentController addScriptMessageHandler:self name:BuzzAdBenefitWebInterfaceName];
   config.userContentController = contentController;
 
-  _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
+  _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
   _webView.allowsBackForwardNavigationGestures = YES;
-  [self.view addSubview:_webView];
+  self.view = _webView;
 
-  _webInterface = [[BABWebInterface alloc] initWithWebView:_webView];
+  _webInterface = [[BZVWebInterface alloc] initWithWebView:_webView];
+}
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  self.navigationItem.title = kNavigationItemTitle;
 
   if (_url) {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:_url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.0f];

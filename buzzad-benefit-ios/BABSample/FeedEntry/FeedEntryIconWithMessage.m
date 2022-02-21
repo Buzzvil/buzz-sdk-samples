@@ -17,9 +17,10 @@
   return self;
 }
 
+#pragma mark - UI setup
 - (void)setupView {
   self.backgroundColor = UIColor.clearColor;
-  
+
   _iconBackgoundView = [[UIView alloc] initWithFrame:CGRectZero];
   _iconBackgoundView.backgroundColor = UIColor.whiteColor;
   _iconBackgoundView.layer.cornerRadius = 4;
@@ -30,12 +31,14 @@
   _iconBackgoundView.layer.shouldRasterize = YES;
   _iconBackgoundView.layer.rasterizationScale = UIScreen.mainScreen.scale;
   [self addSubview:_iconBackgoundView];
-  
+
   _iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
   [self addSubview:_iconImageView];
-  
+
   _messageView = [[MessageView alloc] initWithFrame:CGRectZero];
   [self addSubview:_messageView];
+
+  self.clickableViews = @[self.iconBackgoundView, self.iconImageView, self.messageLabel];
 }
 
 - (void)setupLayout {
@@ -46,7 +49,7 @@
     [_iconBackgoundView.widthAnchor constraintEqualToConstant:32],
     [_iconBackgoundView.heightAnchor constraintEqualToConstant:32],
   ]];
-  
+
   _iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
     [_iconImageView.centerXAnchor constraintEqualToAnchor:_iconBackgoundView.centerXAnchor],
@@ -54,7 +57,7 @@
     [_iconImageView.widthAnchor constraintEqualToConstant:24],
     [_iconImageView.heightAnchor constraintEqualToConstant:24],
   ]];
-  
+
   _messageView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
     [_messageView.leadingAnchor constraintEqualToAnchor:_iconBackgoundView.trailingAnchor constant:4],

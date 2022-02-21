@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		696534B22516811E00714D40 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
 		696534F725183A3600714D40 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696534B6251681CE00714D40 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		69653575251984D000714D40 /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69653574251984D000714D40 /* BrowserViewController.m */; };
-		C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AAE244D299E00F0C436 /* CarouselView.m */; };
-		C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4307AB0244D299E00F0C436 /* CarouselView.xib */; };
 		C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AB3244D299F00F0C436 /* WebViewController.m */; };
 		C4A297502240F06900F6D677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2974F2240F06900F6D677 /* AppDelegate.m */; };
 		C4A297532240F06900F6D677 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A297522240F06900F6D677 /* ViewController.m */; };
-		C4A297562240F06900F6D677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A297542240F06900F6D677 /* Main.storyboard */; };
 		C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A297572240F06B00F6D677 /* Assets.xcassets */; };
 		C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */; };
 		C4A2975E2240F06B00F6D677 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2975D2240F06B00F6D677 /* main.m */; };
@@ -27,25 +23,31 @@
 		D626FBA0273E3B6600103555 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D626FB9F273E3B6600103555 /* MessageView.m */; };
 		D65AC7D226493B3500479161 /* WebToFeedSample.html in Resources */ = {isa = PBXBuildFile; fileRef = D65AC7D126493B3500479161 /* WebToFeedSample.html */; };
 		D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65AC80D264A2DE600479161 /* WebToFeedViewController.m */; };
+		D67A47D227B24A6E00C5B4DC /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47D127B24A6E00C5B4DC /* FeedViewController.m */; };
+		D67A47D527B24AA000C5B4DC /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47D427B24AA000C5B4DC /* ContainerViewController.m */; };
+		D67A47D827B24B4A00C5B4DC /* CustomFeedAdViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47D727B24B4A00C5B4DC /* CustomFeedAdViewHolder.m */; };
+		D67A47DB27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47DA27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m */; };
+		D67A47DE27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47DD27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m */; };
+		D67A47E127B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */; };
+		D67A47E527B24DD100C5B4DC /* CustomCtaView.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47E427B24DD100C5B4DC /* CustomCtaView.m */; };
+		D67A47E827B24F3F00C5B4DC /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47E727B24F3F00C5B4DC /* NativeViewController.m */; };
+		D67A47EC27B2502400C5B4DC /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47EB27B2502400C5B4DC /* InterstitialViewController.m */; };
+		D67A47F127B2588300C5B4DC /* CustomBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67A47F027B2588300C5B4DC /* CustomBrowserViewController.m */; };
+		D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05727B22CF40062B597 /* AppConstant.m */; };
+		D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E4C05A27B22F960062B597 /* UIButton+Custom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		696534B6251681CE00714D40 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
-		69653573251984C300714D40 /* BrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
-		69653574251984D000714D40 /* BrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		B58C59731E43AC7DA91D8058 /* Pods-BABSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B80A664165F8931FCCCA62FF /* Pods-BABSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.release.xcconfig"; sourceTree = "<group>"; };
 		C4307AAC244D299E00F0C436 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		C4307AAD244D299E00F0C436 /* CarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselView.h; sourceTree = "<group>"; };
-		C4307AAE244D299E00F0C436 /* CarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselView.m; sourceTree = "<group>"; };
-		C4307AB0244D299E00F0C436 /* CarouselView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
 		C4307AB3244D299F00F0C436 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		C4A2974B2240F06900F6D677 /* BABSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BABSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A2974E2240F06900F6D677 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4A2974F2240F06900F6D677 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C4A297512240F06900F6D677 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C4A297522240F06900F6D677 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C4A297552240F06900F6D677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4A297572240F06B00F6D677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4A2975A2240F06B00F6D677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4A2975C2240F06B00F6D677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +69,30 @@
 		D65AC7D126493B3500479161 /* WebToFeedSample.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = WebToFeedSample.html; sourceTree = "<group>"; };
 		D65AC80C264A2DE600479161 /* WebToFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebToFeedViewController.h; sourceTree = "<group>"; };
 		D65AC80D264A2DE600479161 /* WebToFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebToFeedViewController.m; sourceTree = "<group>"; };
+		D67A47D027B24A6E00C5B4DC /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		D67A47D127B24A6E00C5B4DC /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		D67A47D327B24AA000C5B4DC /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		D67A47D427B24AA000C5B4DC /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		D67A47D627B24B4A00C5B4DC /* CustomFeedAdViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedAdViewHolder.h; sourceTree = "<group>"; };
+		D67A47D727B24B4A00C5B4DC /* CustomFeedAdViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedAdViewHolder.m; sourceTree = "<group>"; };
+		D67A47D927B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedCpsAdViewHolder.h; sourceTree = "<group>"; };
+		D67A47DA27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedCpsAdViewHolder.m; sourceTree = "<group>"; };
+		D67A47DC27B24B9900C5B4DC /* CustomFeedErrorViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedErrorViewHolder.h; sourceTree = "<group>"; };
+		D67A47DD27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedErrorViewHolder.m; sourceTree = "<group>"; };
+		D67A47DF27B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedHeaderViewHolder.h; sourceTree = "<group>"; };
+		D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedHeaderViewHolder.m; sourceTree = "<group>"; };
+		D67A47E327B24DD100C5B4DC /* CustomCtaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCtaView.h; sourceTree = "<group>"; };
+		D67A47E427B24DD100C5B4DC /* CustomCtaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCtaView.m; sourceTree = "<group>"; };
+		D67A47E627B24F3F00C5B4DC /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
+		D67A47E727B24F3F00C5B4DC /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		D67A47EA27B2502400C5B4DC /* InterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
+		D67A47EB27B2502400C5B4DC /* InterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
+		D67A47EF27B2588300C5B4DC /* CustomBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBrowserViewController.h; sourceTree = "<group>"; };
+		D67A47F027B2588300C5B4DC /* CustomBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBrowserViewController.m; sourceTree = "<group>"; };
+		D6E4C05627B22CF40062B597 /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
+		D6E4C05727B22CF40062B597 /* AppConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
+		D6E4C05927B22F960062B597 /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
+		D6E4C05A27B22F960062B597 /* UIButton+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,26 +139,23 @@
 		C4A2974D2240F06900F6D677 /* BABSample */ = {
 			isa = PBXGroup;
 			children = (
+				D67A47CF27B2488200C5B4DC /* Feed */,
 				D626FB8D273E3AB300103555 /* FeedEntry */,
-				C4307AAD244D299E00F0C436 /* CarouselView.h */,
-				C4307AAE244D299E00F0C436 /* CarouselView.m */,
-				C4307AB0244D299E00F0C436 /* CarouselView.xib */,
-				C4307AAC244D299E00F0C436 /* WebViewController.h */,
-				C4307AB3244D299F00F0C436 /* WebViewController.m */,
-				D65AC80C264A2DE600479161 /* WebToFeedViewController.h */,
-				D65AC80D264A2DE600479161 /* WebToFeedViewController.m */,
-				D65AC7D126493B3500479161 /* WebToFeedSample.html */,
+				D67A47E927B2500D00C5B4DC /* Interstitial */,
+				D67A47E227B24DB300C5B4DC /* Native */,
+				D6E4C05527B22CDB0062B597 /* Util */,
+				D67A47ED27B250F200C5B4DC /* Web */,
+				D67A47EE27B252B000C5B4DC /* WebToFeed */,
 				C4A2974E2240F06900F6D677 /* AppDelegate.h */,
 				C4A2974F2240F06900F6D677 /* AppDelegate.m */,
+				D67A47EF27B2588300C5B4DC /* CustomBrowserViewController.h */,
+				D67A47F027B2588300C5B4DC /* CustomBrowserViewController.m */,
 				C4A297512240F06900F6D677 /* ViewController.h */,
 				C4A297522240F06900F6D677 /* ViewController.m */,
-				C4A297542240F06900F6D677 /* Main.storyboard */,
 				C4A297572240F06B00F6D677 /* Assets.xcassets */,
 				C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */,
 				C4A2975C2240F06B00F6D677 /* Info.plist */,
 				C4A2975D2240F06B00F6D677 /* main.m */,
-				69653573251984C300714D40 /* BrowserViewController.h */,
-				69653574251984D000714D40 /* BrowserViewController.m */,
 			);
 			path = BABSample;
 			sourceTree = "<group>";
@@ -154,6 +177,75 @@
 				D626FB9F273E3B6600103555 /* MessageView.m */,
 			);
 			path = FeedEntry;
+			sourceTree = "<group>";
+		};
+		D67A47CF27B2488200C5B4DC /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				D67A47D327B24AA000C5B4DC /* ContainerViewController.h */,
+				D67A47D427B24AA000C5B4DC /* ContainerViewController.m */,
+				D67A47D627B24B4A00C5B4DC /* CustomFeedAdViewHolder.h */,
+				D67A47D727B24B4A00C5B4DC /* CustomFeedAdViewHolder.m */,
+				D67A47D927B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.h */,
+				D67A47DA27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m */,
+				D67A47DC27B24B9900C5B4DC /* CustomFeedErrorViewHolder.h */,
+				D67A47DD27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m */,
+				D67A47DF27B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.h */,
+				D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */,
+				D67A47D027B24A6E00C5B4DC /* FeedViewController.h */,
+				D67A47D127B24A6E00C5B4DC /* FeedViewController.m */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		D67A47E227B24DB300C5B4DC /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				D67A47E327B24DD100C5B4DC /* CustomCtaView.h */,
+				D67A47E427B24DD100C5B4DC /* CustomCtaView.m */,
+				D67A47E627B24F3F00C5B4DC /* NativeViewController.h */,
+				D67A47E727B24F3F00C5B4DC /* NativeViewController.m */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		D67A47E927B2500D00C5B4DC /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				D67A47EA27B2502400C5B4DC /* InterstitialViewController.h */,
+				D67A47EB27B2502400C5B4DC /* InterstitialViewController.m */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		D67A47ED27B250F200C5B4DC /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				C4307AAC244D299E00F0C436 /* WebViewController.h */,
+				C4307AB3244D299F00F0C436 /* WebViewController.m */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		D67A47EE27B252B000C5B4DC /* WebToFeed */ = {
+			isa = PBXGroup;
+			children = (
+				D65AC80C264A2DE600479161 /* WebToFeedViewController.h */,
+				D65AC80D264A2DE600479161 /* WebToFeedViewController.m */,
+				D65AC7D126493B3500479161 /* WebToFeedSample.html */,
+			);
+			path = WebToFeed;
+			sourceTree = "<group>";
+		};
+		D6E4C05527B22CDB0062B597 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D6E4C05627B22CF40062B597 /* AppConstant.h */,
+				D6E4C05727B22CF40062B597 /* AppConstant.m */,
+				D6E4C05927B22F960062B597 /* UIButton+Custom.h */,
+				D6E4C05A27B22F960062B597 /* UIButton+Custom.m */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		F43C05F5557925D6AF9C17E9 /* Frameworks */ = {
@@ -226,9 +318,7 @@
 			files = (
 				C4A2975B2240F06B00F6D677 /* LaunchScreen.storyboard in Resources */,
 				C4A297582240F06B00F6D677 /* Assets.xcassets in Resources */,
-				C4A297562240F06900F6D677 /* Main.storyboard in Resources */,
 				D65AC7D226493B3500479161 /* WebToFeedSample.html in Resources */,
-				C4307AB5244D299F00F0C436 /* CarouselView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,31 +373,33 @@
 			files = (
 				C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */,
 				D626FB91273E3AF900103555 /* FeedEntryViewController.m in Sources */,
+				D67A47D227B24A6E00C5B4DC /* FeedViewController.m in Sources */,
+				D67A47D527B24AA000C5B4DC /* ContainerViewController.m in Sources */,
+				D67A47F127B2588300C5B4DC /* CustomBrowserViewController.m in Sources */,
+				D67A47E127B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m in Sources */,
 				D626FB94273E3B0E00103555 /* FeedEntryIcon.m in Sources */,
 				C4A297532240F06900F6D677 /* ViewController.m in Sources */,
+				D67A47D827B24B4A00C5B4DC /* CustomFeedAdViewHolder.m in Sources */,
 				D626FBA0273E3B6600103555 /* MessageView.m in Sources */,
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
-				C4307AB4244D299F00F0C436 /* CarouselView.m in Sources */,
+				D67A47EC27B2502400C5B4DC /* InterstitialViewController.m in Sources */,
+				D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */,
+				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
 				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
 				D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */,
+				D67A47DB27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m in Sources */,
+				D67A47E527B24DD100C5B4DC /* CustomCtaView.m in Sources */,
+				D67A47E827B24F3F00C5B4DC /* NativeViewController.m in Sources */,
 				D626FB9A273E3B3F00103555 /* FeedEntryBanner.m in Sources */,
+				D67A47DE27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m in Sources */,
 				D626FB97273E3B2900103555 /* FeedEntryIconWithMessage.m in Sources */,
 				C4A297502240F06900F6D677 /* AppDelegate.m in Sources */,
-				69653575251984D000714D40 /* BrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C4A297542240F06900F6D677 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C4A297552240F06900F6D677 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C4A297592240F06B00F6D677 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

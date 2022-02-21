@@ -1,8 +1,9 @@
-@import BuzzAdBenefitFeed;
+@import UIKit;
+@import BuzzAdBenefit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FeedEntryButton: BABFeedEntryView
+@interface FeedEntryButton: BZVFeedEntryView
 
 @property (nonatomic, strong, readonly) UIButton *button;
 
