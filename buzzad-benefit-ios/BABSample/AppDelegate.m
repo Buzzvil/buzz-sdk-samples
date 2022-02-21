@@ -72,7 +72,7 @@
 //    builder.separatorHeight = 10;
 //    builder.separatorHorizontalMargin = 20;
 
-    // MARK: 7.1 Feed 지면의 CTA 버튼 디자인 변경하기
+    // MARK: 3.3 Feed 지면의 CTA 버튼 디자인 변경하기
 //    builder.rewardIcon = [UIImage imageNamed:@"ic_coin"];
 //    builder.participatedIcon = [UIImage imageNamed:@"ic_check"];
 //    builder.ctaTextColor = [BZVControlStateResource resourceWithBlock:^(BZVControlStateResourceBuilder * _Nonnull builder) {

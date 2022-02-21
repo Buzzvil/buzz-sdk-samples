@@ -34,7 +34,7 @@ static NSString * const kNavigationItemTitle = @"Interstitial";
 //      builder.textColor = UIColor.systemBlueColor; // 광고 타이틀과 설명 문구 색상
       // MARK: 5.3. 배경 색상 변경하기
 //      builder.backgroundColor = UIColor.systemOrangeColor; // 지면 배경 색상
-      // MARK: 7.1. Interstitial 지면의 CTA 버튼 디자인 변경하기
+      // MARK: 5.3. Interstitial 지면의 CTA 버튼 디자인 변경하기
 //      builder.rewardIcon = [UIImage imageNamed:@"ic_coin"];
 //      builder.participatedIcon = [UIImage imageNamed:@"ic_check"];
 //      builder.ctaTextColor = [BZVControlStateResource resourceWithBlock:^(BZVControlStateResourceBuilder * _Nonnull builder) {
