@@ -1,10 +1,14 @@
 
 # BuzzAdBenefit SDK for iOS
 
-* [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2481258896/BuzzAd+iOS+SDK+2.4.x)
+* [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2686124049/BuzzAd+iOS+SDK+3.0.x)
 
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
+
+## [3.0.5] - 2022-02-21
+* [CHANGE] 더 쉽고 빠른 연동을 위해 SDK interface를 더 사용하기 쉬운 형태로 개편
+* [NEW] 기존에 SDK로 제어하던 기능을 포함한 몇가지 피드 설정을 서버에서 동적으로 설정 (탭의 개수, 탭의 이름, 무한 스크롤 기능, 탭에서 노출할 광고 종류)
 
 ## [2.4.1] - 2021-10-12
 * [NEW] Feed 엔트리뷰 기능 추가
