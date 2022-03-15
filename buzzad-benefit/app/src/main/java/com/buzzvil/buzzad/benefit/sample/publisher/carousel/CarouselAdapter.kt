@@ -15,7 +15,7 @@ import com.buzzvil.buzzad.benefit.sample.publisher.databinding.ViewItemCarouselB
  * Carousel을 구현하기 위한 Adapter
  * ListAdapter를 상속하여 구현하고 있지만, 원한다면 다른 방식으로 구현할 수도 있다.
  *
- * @param infiniteLoop: 무한 스크롤을 사용할지 설정하는 변수
+ * @param infiniteLoop: 무한 루프를 사용할지 설정하는 변수
  */
 class CarouselAdapter(
         private val infiniteLoop: Boolean,
@@ -49,7 +49,7 @@ class CarouselAdapter(
     override fun getItemCount(): Int {
         val actualItemCount = super.getItemCount()
         if (infiniteLoop && actualItemCount > 0) {
-            // 무한 스크롤을 쉽게 구현하는 방법으로 매우 큰 수를 여기서 반환한다.
+            // 무한 루프를 쉽게 구현하는 방법으로 매우 큰 수를 여기서 반환한다.
             return Integer.MAX_VALUE
         }
         return actualItemCount
@@ -58,7 +58,7 @@ class CarouselAdapter(
     override fun getItem(position: Int): CarouselItem {
         return super.getItem(
                 if (infiniteLoop) {
-                    // 무한 스크롤인 경우의 position은 매우 큰 수이므로 실제 아이템 수로 나눈 나머지를 사용한다.
+                    // 무한 루프인 경우의 position은 매우 큰 수이므로 실제 아이템 수로 나눈 나머지를 사용한다.
                     position % super.getItemCount()
                 } else {
                     position
