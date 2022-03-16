@@ -21,13 +21,13 @@
         <!-- Configuration for BuzzScreen -->
 
         <!--Optional: Opt-in mobvista mediation.-->
-        <meta-data
-            android:name="com.buzzvil.locker.mediation.mobvista.app_id"
-            android:value="__app_id__" />
+<!--        <meta-data-->
+<!--            android:name="com.buzzvil.locker.mediation.mobvista.app_id"-->
+<!--            android:value="__app_id__" />-->
 
-        <meta-data
-            android:name="com.buzzvil.locker.mediation.mobvista.app_key"
-            android:value="__app_key__" />
+<!--        <meta-data-->
+<!--            android:name="com.buzzvil.locker.mediation.mobvista.app_key"-->
+<!--            android:value="__app_key__" />-->
         
         <!--Optional: Opt-in mopub mediation.-->
         <meta-data
