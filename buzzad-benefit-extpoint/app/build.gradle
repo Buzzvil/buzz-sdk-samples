@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId "com.buzzvil.buzzad.benefit.extpoint.sample.publisher"
         minSdkVersion 16
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
