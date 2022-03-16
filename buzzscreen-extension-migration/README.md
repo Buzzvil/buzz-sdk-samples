@@ -1,6 +1,9 @@
 # BuzzScreen Migration SDK 
 - 연동 가이드: https://github.com/Buzzvil/buzzscreen-sdk-publisher-migration/wiki
 
+## [1.7.0] - 2022-03-17
+* [UPDATE] targetSdkVersion 31 지원
+
 ## [1.5.0] - 2021-08-04
 * [UPDATE] targetSdkVersion 30 지원
 > Benefit 2.21.x, BuzzScreen 3.25.x 이상을 연동할 경우 업데이트 불필요.
