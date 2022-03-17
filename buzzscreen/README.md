@@ -9,7 +9,7 @@
 ## [4.0.0] - 2022-03-17
 * [UPDATE] targetSdkVersion 31 지원
 * [NEW] 룰렛 게임을 통해 광고 참여율을 높이는 버즈룰렛(BuzzRoulette) 기능 추가 
-* 자세한 사항은 [링크](TBD) 참조
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000501796) 참조
   
 ## [3.39.0] - 2022-02-03
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000500483) 참조
