@@ -48,6 +48,20 @@ public class IntroActivity extends AppCompatActivity {
         btLogin = (Button) findViewById(R.id.login_button);
         llLogin = findViewById(R.id.login_layout);
         etUserId = findViewById(R.id.login_user_id);
+
+        BuzzScreen.getInstance().showOverlayPermissionGuideDialogIfNeeded(new BuzzScreen.OverlayPermissionListener() {
+            @Override
+            public void onGranted() {
+                Toast.makeText(IntroActivity.this, "Permission has been granted.", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailed(Throwable error) {
+                BuzzScreen.getInstance().deactivate();
+
+                Toast.makeText(IntroActivity.this, "Getting permission has been failed.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

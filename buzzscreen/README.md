@@ -7,11 +7,10 @@
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
 ## [4.0.0] - 2022-03-17
-* [NEW] 룰렛 게임을 통해 광고 참여율을 높이는 버즈룰렛(BuzzRoulette)
-* [CHANGE] Android 12의 targetSdkVersion 31 업데이트 대응
-* [CHANGE] 다른 앱 위에 표시 권한을 얻기 위한 다이얼로그 메소드의 인터페이스 변경
+* [UPDATE] targetSdkVersion 31 지원
+* [NEW] 룰렛 게임을 통해 광고 참여율을 높이는 버즈룰렛(BuzzRoulette) 기능 추가 
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000501796) 참조
-
+  
 ## [3.39.0] - 2022-02-03
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000500483) 참조
 

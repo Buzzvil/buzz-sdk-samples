@@ -45,26 +45,36 @@ public class MainActivity extends Activity {
                 // userProfile.setFavoriteCategories(Arrays.asList(new String[] {"news", "sports"}));
 
                 // 버즈스크린 활성화
-                if (Constants.useGDPR) {
-                    BuzzScreen.getInstance().activateIfConsent(MainActivity.this, new BuzzScreen.OnActivateListener() {
-                        @Override
-                        public void onActivated() {
-                            Toast.makeText(MainActivity.this, "Activated", Toast.LENGTH_SHORT).show();
-                        }
+                BuzzScreen.getInstance().showOverlayPermissionGuideDialogIfNeeded(new BuzzScreen.OverlayPermissionListener() {
+                    @Override
+                    public void onGranted() {
+                        if (Constants.useGDPR) {
+                            BuzzScreen.getInstance().activateIfConsent(MainActivity.this, new BuzzScreen.OnActivateListener() {
+                                @Override
+                                public void onActivated() {
+                                    Toast.makeText(MainActivity.this, "Activated", Toast.LENGTH_SHORT).show();
+                                }
 
-                        @Override
-                        public void onCancelledByUser() {
-                            Toast.makeText(MainActivity.this, "Cancelled", Toast.LENGTH_SHORT).show();
-                        }
+                                @Override
+                                public void onCancelledByUser() {
+                                    Toast.makeText(MainActivity.this, "Cancelled", Toast.LENGTH_SHORT).show();
+                                }
 
-                        @Override
-                        public void onNetworkError() {
-                            Toast.makeText(MainActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
+                                @Override
+                                public void onNetworkError() {
+                                    Toast.makeText(MainActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        } else {
+                            BuzzScreen.getInstance().activate();
                         }
-                    });
-                } else {
-                    BuzzScreen.getInstance().activate();
-                }
+                    }
+
+                    @Override
+                    public void onFailed(Throwable error) {
+                        Toast.makeText(MainActivity.this, "Activation has been canceled.", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
@@ -141,7 +151,19 @@ public class MainActivity extends Activity {
             findViewById(R.id.layout_security).setVisibility(View.GONE);
         }
 
-        BuzzScreen.getInstance().showOverlayPermissionGuideDialogIfNeeded(MainActivity.this);
+        BuzzScreen.getInstance().showOverlayPermissionGuideDialogIfNeeded(new BuzzScreen.OverlayPermissionListener() {
+            @Override
+            public void onGranted() {
+                Toast.makeText(MainActivity.this, "Permission has been granted.", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailed(Throwable error) {
+                BuzzScreen.getInstance().deactivate();
+
+                Toast.makeText(MainActivity.this, "Getting permission has been failed.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.buzzvil.buzzscreen.migration.MigrationClient;
 import com.buzzvil.buzzscreen.sdk.BuzzScreen;
@@ -93,6 +94,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         BuzzScreen.getInstance().launch();
+
+        BuzzScreen.getInstance().showOverlayPermissionGuideDialogIfNeeded(new BuzzScreen.OverlayPermissionListener() {
+            @Override
+            public void onGranted() {
+                Toast.makeText(MainActivity.this, "Permission has been granted.", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailed(Throwable error) {
+                BuzzScreen.getInstance().deactivate();
+
+                Toast.makeText(MainActivity.this, "Getting permission has been failed.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

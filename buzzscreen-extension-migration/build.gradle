@@ -42,8 +42,8 @@ configurations.all {
 }
 
 ext {
-    buzzscreenExtentionVersionName = '1.6.0'
-    buzzscreenVersionName = '3.19.0'
+    buzzscreenExtentionVersionName = '1.7.0'
+    buzzscreenVersionName = '3.41.+'
 
     compileSdkVersion = 31
     targetSdkVersion = 30
