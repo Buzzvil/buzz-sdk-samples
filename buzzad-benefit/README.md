@@ -6,6 +6,15 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.5.0] - 2022-03-17
+* [NEW] 캐러셀(Carousel) 형태로 네이티브 지면을 구현할 수 있는 가이드 제공
+* [CHANGE] Android 12의 targetSdkVersion 31 업데이트 대응
+* [FIX] 동영상 광고의 썸네일을 그리는 과정에서 간헐적으로 앱이 비정상적으로 종료되는 문제 해결
+* [FIX] Custom WebView를 반복적으로 실행하면 앱이 비정상적으로 종료되는 문제 해결
+* [FIX] ExternalAuth 사용 중 액티비티를 실행할 수 없는 경우 앱이 비정상적으로 종료되는 문제 해결
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000501796) 참조
+
+
 ## [3.3.0] - 2022-02-03
 * [CHANGE] 피드 기본 적립 포인트 알림 팝업에서 포인트 값을 눈에 띄게 개선
 * [CHANGE] CTA 버튼의 리워드 값을 원하는 대로 변경할 수 있도록 개선
