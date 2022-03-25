@@ -26,3 +26,5 @@
 > * [FIX] Xcode 13에서 Manage Version and Build Number 옵션으로 빌드 했을 때 참여형 광고가 할당되지 않는 이슈 수정
 > ### [2.4.5] - 2022-03-22
 > * [FIX] Feed의 필터 UI가 광고 UI를 덮는 버그 수정
+> ### [2.4.6] - 2022-03-24
+> * [FIX] Web iOS SDK에서 액션형 광고가 할당되지 않는 버그 수정
