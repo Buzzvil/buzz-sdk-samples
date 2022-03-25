@@ -14,6 +14,7 @@
 @property (nonatomic, strong, readonly) UILabel *priceLabel;
 @property (nonatomic, strong, readonly) UILabel *originalPriceLabel;
 @property (nonatomic, strong, readonly) UILabel *discountRateLabel;
+@property (nonatomic, strong, readonly) BZVNativeAdViewBinder *viewBinder;
 
 @end
 
@@ -34,21 +35,7 @@
 }
 
 - (void)renderAd:(BZVNativeAd *)ad {
-  BZVNativeAdViewBinder *viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
-    builder.nativeAdView = self.nativeAdView;
-    builder.mediaView = self.mediaView;
-    builder.titleLabel = self.titleLabel;
-    builder.ctaView = self.ctaView;
-    // 부가 기능: 뷰를 클릭할 수 있도록 설정합니다.
-    builder.clickableViews = @[
-      self.mediaView,
-      self.priceLabel,
-      self.originalPriceLabel,
-      self.discountRateLabel,
-      self.ctaView,
-    ];
-  }];
-  [viewBinder bindWithNativeAd:ad];
+  [_viewBinder bindWithNativeAd:ad];
 
   BZVNativeAdProduct *product = ad.product;
   if (product.discountedPrice != 0) {
@@ -101,6 +88,21 @@
   _discountRateLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   [_nativeAdView addSubview:_discountRateLabel];
 
+  _viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
+    builder.nativeAdView = self.nativeAdView;
+    builder.mediaView = self.mediaView;
+    builder.titleLabel = self.titleLabel;
+    builder.ctaView = self.ctaView;
+    // 부가 기능: 뷰를 클릭할 수 있도록 설정합니다.
+    builder.clickableViews = @[
+      self.mediaView,
+      self.priceLabel,
+      self.originalPriceLabel,
+      self.discountRateLabel,
+      self.ctaView,
+    ];
+  }];
+  
   // LayoutConstraint 설정
   _nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
