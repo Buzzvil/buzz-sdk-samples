@@ -7,8 +7,8 @@ class ViewController: UIViewController {
   var scrollView: UIScrollView!
   var sendEventButton: UIButton!
   var loginButton: UIButton!
-  var logoutButton: UIButton!
   var stackView: UIStackView!
+  var login: Bool = false;
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,16 +21,16 @@ class ViewController: UIViewController {
   func setupView() {
     self.navigationItem.title = "BuzzBooster Sample";
     sendEventButton = UIButton.init(type: .system)
+    sendEventButton.setTitle("Send Event", for: .normal)
+    setButtonAttributes(button: sendEventButton)
+    
     loginButton = UIButton.init(type: .system)
-    logoutButton = UIButton.init(type: .system)
-    setButtonAttributes(button: sendEventButton, buttonTitle: "Send Event")
-    setButtonAttributes(button: loginButton, buttonTitle: "Login")
-    setButtonAttributes(button: logoutButton, buttonTitle: "Logout")
+    loginButton.setTitle("Login", for: .normal)
+    setButtonAttributes(button: loginButton)
     
     stackView = UIStackView.init(arrangedSubviews: [
       sendEventButton,
-      loginButton,
-      logoutButton,
+      loginButton
     ])
     stackView.axis = .vertical
     stackView.spacing = 8
@@ -42,8 +42,7 @@ class ViewController: UIViewController {
     view.addSubview(scrollView)
   }
   
-  func setButtonAttributes(button: UIButton, buttonTitle: String) {
-    button.setTitle(buttonTitle, for: .normal)
+  func setButtonAttributes(button: UIButton) {
     button.backgroundColor = .blue
     button.layer.cornerRadius = 8
     button.setTitleColor(.white, for: .normal)
@@ -83,7 +82,6 @@ class ViewController: UIViewController {
   func bindEvent() {
     registerSendEventButtonAction()
     registerLoginButtonAction()
-    registerLogoutButtonAction()
   }
   
   func registerSendEventButtonAction() {
@@ -96,16 +94,14 @@ class ViewController: UIViewController {
   
   func registerLoginButtonAction() {
     loginButton.rac_command = RACCommand.init(signal: {_ in
-      BuzzBooster.setUserId(AppDelegate.USER_ID)
-      self.view.window?.makeToast("Login")
-      return RACSignal.empty()
-    })
-  }
-  
-  func registerLogoutButtonAction() {
-    logoutButton.rac_command = RACCommand.init(signal: {_ in
-      BuzzBooster.setUserId(nil)
-      self.view.window?.makeToast("Logout")
+      if (self.login) {
+        BuzzBooster.setUserId(nil)
+        self.view.window?.makeToast("Logout")
+      } else {
+        BuzzBooster.setUserId(AppDelegate.USER_ID)
+        self.view.window?.makeToast("Login")
+      }
+      self.login = !self.login;
       return RACSignal.empty()
     })
   }

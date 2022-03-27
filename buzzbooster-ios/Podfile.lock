@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzBooster (0.1.2):
+  - BuzzBooster (1.0.0):
     - AFNetworking (~> 4.0)
     - BuzzLogger (~> 0.4.0)
     - BuzzMutator (~> 0.4.0)
@@ -28,29 +28,28 @@ PODS:
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (= 0.1.2)
+  - BuzzBooster (= 1.0.0)
   - Toast (= 4.0.0)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs:
+  trunk:
+    - AFNetworking
     - BuzzBooster
     - BuzzLogger
     - BuzzMutator
     - BuzzServiceApi
-  trunk:
-    - AFNetworking
     - ReactiveObjC
     - Toast
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BuzzBooster: 218ffacb7987df67fd8d0811bfedb2756f4ed6b5
+  BuzzBooster: 35e30b47b5d4cbaf6d9904c97315046a95bdb1df
   BuzzLogger: 64a2aa958b011a97ced2eb1190a51f42d4261cf9
   BuzzMutator: ba566b4c47ab49da9f081138eaa68609ab57b452
-  BuzzServiceApi: 31154e2ea8bdf7f731e836dbc511acb43e9dc0c2
+  BuzzServiceApi: cbd670ae51a5b368ac9b365b54fa9e978c9fb399
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 8c08d3437006c6183d7e3528125d455ed1077130
+PODFILE CHECKSUM: 2236397fe0470fb07d1c80939790f1cd25172648
 
 COCOAPODS: 1.11.2
