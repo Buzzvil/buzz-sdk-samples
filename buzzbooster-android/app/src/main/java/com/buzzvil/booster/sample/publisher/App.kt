@@ -6,8 +6,8 @@ import com.buzzvil.booster.external.BuzzBoosterConfig
 
 class App: Application() {
     companion object {
-        const val USER_ID = "BuzzBoosterTestUser"
-        private const val APP_KEY = "177243762300368"
+        const val USER_ID = "BuzzBoosterAndroidTestUser"
+        private const val APP_KEY = "0d944ac8a05b"
     }
 
     override fun onCreate() {

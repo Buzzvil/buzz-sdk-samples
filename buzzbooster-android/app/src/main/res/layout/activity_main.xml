@@ -25,15 +25,6 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
-        android:id="@+id/logoutButton"
-        android:text="로그아웃"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        app:layout_constraintLeft_toRightOf="@+id/loginButton"/>
-
-    <Button
         android:id="@+id/sendEventButton"
         android:text="이벤트 전송"
         android:layout_width="wrap_content"
@@ -41,7 +32,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        app:layout_constraintLeft_toRightOf="@+id/logoutButton"
+        app:layout_constraintLeft_toRightOf="@+id/loginButton"
         app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
