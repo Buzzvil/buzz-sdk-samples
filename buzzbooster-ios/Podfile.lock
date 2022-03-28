@@ -1,0 +1,55 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - BuzzBooster (1.0.0):
+    - AFNetworking (~> 4.0)
+    - BuzzLogger (~> 0.4.0)
+    - BuzzMutator (~> 0.4.0)
+    - BuzzServiceApi (~> 0.4.0)
+    - ReactiveObjC (~> 3.1.1)
+  - BuzzLogger (0.4.0)
+  - BuzzMutator (0.4.0)
+  - BuzzServiceApi (0.4.1):
+    - ReactiveObjC (~> 3.1.1)
+  - ReactiveObjC (3.1.1)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - BuzzBooster (= 1.0.0)
+  - Toast (= 4.0.0)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - BuzzBooster
+    - BuzzLogger
+    - BuzzMutator
+    - BuzzServiceApi
+    - ReactiveObjC
+    - Toast
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  BuzzBooster: 35e30b47b5d4cbaf6d9904c97315046a95bdb1df
+  BuzzLogger: 64a2aa958b011a97ced2eb1190a51f42d4261cf9
+  BuzzMutator: ba566b4c47ab49da9f081138eaa68609ab57b452
+  BuzzServiceApi: cbd670ae51a5b368ac9b365b54fa9e978c9fb399
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: 2236397fe0470fb07d1c80939790f1cd25172648
+
+COCOAPODS: 1.11.2
