@@ -34,7 +34,6 @@ class ViewController: UIViewController {
     ])
     stackView.axis = .vertical
     stackView.spacing = 8
-    
 
     scrollView = UIScrollView(frame: .zero)
     scrollView.showsVerticalScrollIndicator = false
@@ -50,7 +49,7 @@ class ViewController: UIViewController {
   
   func setupLayout() {
     scrollView.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint .activate([
+    NSLayoutConstraint.activate([
       scrollView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
       scrollView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
       scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
@@ -58,7 +57,7 @@ class ViewController: UIViewController {
     ])
     
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint .activate([
+    NSLayoutConstraint.activate([
       stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
       stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
       stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
