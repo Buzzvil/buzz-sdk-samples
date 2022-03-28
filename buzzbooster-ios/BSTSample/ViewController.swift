@@ -8,6 +8,7 @@ class ViewController: UIViewController {
   var loginButton: UIButton!
   var stackView: UIStackView!
   var login: Bool = false
+  var count: Int = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -85,7 +86,8 @@ class ViewController: UIViewController {
   @objc func sendButtonAction(button: UIButton!) {
     // 로그인 후, 이벤트 발생 3회 이상부터 리워드 지급
     BuzzBooster.sendEvent(withEventName: "integration")
-    self.view.window?.makeToast("test event")
+    count+=1
+    self.view.window?.makeToast("send event \(count)")
   }
   
   @objc func loginButtonAction(button: UIButton!) {
