@@ -27,6 +27,7 @@ class MainActivity: AppCompatActivity() {
 
     private fun registerSendEventAction() {
         activityMainBinding.sendEventButton.setOnClickListener {
+            //// 이벤트 발생 3회 이상부터 리워드 지급
             buzzBooster.sendEvent("integration")
         }
     }
