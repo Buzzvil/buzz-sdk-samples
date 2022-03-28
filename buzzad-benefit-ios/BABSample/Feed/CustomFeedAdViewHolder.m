@@ -11,6 +11,7 @@
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UILabel *descriptionLabel;
 @property (nonatomic, strong, readonly) CustomCtaView *ctaView;
+@property (nonatomic, strong, readonly) BZVNativeAdViewBinder *viewBinder;
 
 @end
 
@@ -31,15 +32,7 @@
 }
 
 - (void)renderAd:(BZVNativeAd *)ad {
-  BZVNativeAdViewBinder *viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
-    builder.nativeAdView = self.nativeAdView;
-    builder.mediaView = self.mediaView;
-    builder.iconImageView = self.iconImageView;
-    builder.titleLabel = self.titleLabel;
-    builder.descriptionLabel = self.descriptionLabel;
-    builder.ctaView = self.ctaView;
-  }];
-  [viewBinder bindWithNativeAd:ad];
+  [_viewBinder bindWithNativeAd:ad];
   [ad addNativeAdEventDelegate:self];
 }
 
@@ -78,6 +71,15 @@
 
   _ctaView = [[CustomCtaView alloc] initWithFrame:CGRectZero];
   [_nativeAdView addSubview:_ctaView];
+  
+  _viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
+    builder.nativeAdView = self.nativeAdView;
+    builder.mediaView = self.mediaView;
+    builder.iconImageView = self.iconImageView;
+    builder.titleLabel = self.titleLabel;
+    builder.descriptionLabel = self.descriptionLabel;
+    builder.ctaView = self.ctaView;
+  }];
 
   // LayoutConstraint 설정
   _nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
