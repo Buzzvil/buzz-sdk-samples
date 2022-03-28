@@ -1,5 +1,4 @@
 import UIKit
-import ReactiveObjC
 import BuzzBooster
 import Toast
 
@@ -79,31 +78,25 @@ class ViewController: UIViewController {
   }
   
   func bindEvent() {
-    registerSendEventButtonAction()
-    registerLoginButtonAction()
+    loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+    sendEventButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
   }
   
-  func registerSendEventButtonAction() {
-    sendEventButton.rac_command = RACCommand.init(signal: {_ in
-      //이벤트 발생 3회 이상부터 리워드 지급
-      BuzzBooster.sendEvent(withEventName: "integration")
-      self.view.window?.makeToast("test event")
-      return RACSignal.empty()
-    })
+  @objc func sendButtonAction(button: UIButton!) {
+    //이벤트 발생 3회 이상부터 리워드 지급
+    BuzzBooster.sendEvent(withEventName: "integration")
+    self.view.window?.makeToast("test event")
   }
   
-  func registerLoginButtonAction() {
-    loginButton.rac_command = RACCommand.init(signal: {_ in
-      if (self.login) {
-        BuzzBooster.setUserId(nil)
-        self.view.window?.makeToast("Logout")
-      } else {
-        BuzzBooster.setUserId(AppDelegate.USER_ID)
-        self.view.window?.makeToast("Login")
-      }
-      self.login = !self.login
-      return RACSignal.empty()
-    })
+  @objc func loginButtonAction(button: UIButton!) {
+    if (self.login) {
+      BuzzBooster.setUserId(nil)
+      self.view.window?.makeToast("Logout")
+    } else {
+      BuzzBooster.setUserId(AppDelegate.USER_ID)
+      self.view.window?.makeToast("Login")
+    }
+    self.login = !self.login
   }
 }
 
