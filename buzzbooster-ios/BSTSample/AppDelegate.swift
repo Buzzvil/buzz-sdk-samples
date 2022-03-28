@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    UNUserNotificationCenter.current().delegate = self;
+    UNUserNotificationCenter.current().delegate = self
     let notificationOptions = BSTNotificationOptions { builder in
       builder.userInfo = ["sample_key":"sample_value"]
       builder.categoryIdentifier = "sample_category"

@@ -8,7 +8,7 @@ class ViewController: UIViewController {
   var sendEventButton: UIButton!
   var loginButton: UIButton!
   var stackView: UIStackView!
-  var login: Bool = false;
+  var login: Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
   }
   
   func setupView() {
-    self.navigationItem.title = "BuzzBooster Sample";
+    self.navigationItem.title = "BuzzBooster Sample"
     sendEventButton = UIButton.init(type: .system)
     sendEventButton.setTitle("Send Event", for: .normal)
     setButtonAttributes(button: sendEventButton)
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
 
     scrollView = UIScrollView.init(frame: .zero)
-    scrollView.showsVerticalScrollIndicator = false;
+    scrollView.showsVerticalScrollIndicator = false
     scrollView.addSubview(stackView)
     view.addSubview(scrollView)
   }
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
   }
   
   func setupSizeConstraintsOfArrangedSubview(view: UIView) {
-    view.translatesAutoresizingMaskIntoConstraints = false;
+    view.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       view.widthAnchor.constraint(equalTo: stackView.widthAnchor),
       view.heightAnchor.constraint(equalToConstant: 48)
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
         BuzzBooster.setUserId(AppDelegate.USER_ID)
         self.view.window?.makeToast("Login")
       }
-      self.login = !self.login;
+      self.login = !self.login
       return RACSignal.empty()
     })
   }
