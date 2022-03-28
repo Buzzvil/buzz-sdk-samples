@@ -83,7 +83,7 @@ class ViewController: UIViewController {
   }
   
   @objc func sendButtonAction(button: UIButton!) {
-    //이벤트 발생 3회 이상부터 리워드 지급
+    // 로그인 후, 이벤트 발생 3회 이상부터 리워드 지급
     BuzzBooster.sendEvent(withEventName: "integration")
     self.view.window?.makeToast("test event")
   }
