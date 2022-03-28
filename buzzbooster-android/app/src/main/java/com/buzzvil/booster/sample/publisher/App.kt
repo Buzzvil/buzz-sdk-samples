@@ -3,10 +3,11 @@ package com.buzzvil.booster.sample.publisher
 import android.app.Application
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterConfig
+import java.util.*
 
 class App: Application() {
     companion object {
-        const val USER_ID = "AndroidTestUser"
+        val USER_ID = UUID.randomUUID().toString()
         private const val APP_KEY = "0d944ac8a05b"
     }
 
