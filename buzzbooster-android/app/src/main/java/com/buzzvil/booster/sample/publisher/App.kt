@@ -8,7 +8,7 @@ import java.util.*
 class App: Application() {
     companion object {
         val USER_ID = UUID.randomUUID().toString()
-        private const val APP_KEY = "0d944ac8a05b"
+        private const val APP_KEY = "177243762300368"
     }
 
     override fun onCreate() {

@@ -2,6 +2,7 @@ package com.buzzvil.booster.sample.publisher
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.sample.publisher.databinding.ActivityMainBinding
@@ -10,6 +11,8 @@ class MainActivity: AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private lateinit var buzzBooster: BuzzBooster
     private var login: Boolean = false
+    private var count: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -27,8 +30,9 @@ class MainActivity: AppCompatActivity() {
 
     private fun registerSendEventAction() {
         activityMainBinding.sendEventButton.setOnClickListener {
-            // 이벤트 발생 3회 이상부터 리워드 지급
+            // 로그인 후, 이벤트 발생 3회 이상부터 리워드 지급
             buzzBooster.sendEvent("integration")
+            Toast.makeText(applicationContext, "send event ($count) times", Toast.LENGTH_SHORT).show()
         }
     }
 
