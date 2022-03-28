@@ -86,7 +86,7 @@ class ViewController: UIViewController {
   
   func registerSendEventButtonAction() {
     sendEventButton.rac_command = RACCommand.init(signal: {_ in
-      BuzzBooster.sendEvent(withEventName: "test event")
+      BuzzBooster.sendEvent(withEventName: "integration")
       self.view.window?.makeToast("test event")
       return RACSignal.empty()
     })
