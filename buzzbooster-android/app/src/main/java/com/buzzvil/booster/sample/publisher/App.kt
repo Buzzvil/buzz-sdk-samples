@@ -6,7 +6,7 @@ import com.buzzvil.booster.external.BuzzBoosterConfig
 
 class App: Application() {
     companion object {
-        const val USER_ID = "BuzzBoosterAndroidTestUser"
+        const val USER_ID = "AndroidTestUser"
         private const val APP_KEY = "0d944ac8a05b"
     }
 
