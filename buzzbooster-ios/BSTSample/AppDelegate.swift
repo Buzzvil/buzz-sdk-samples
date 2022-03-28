@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     BuzzBooster.startService()
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    let navigationViewController = UINavigationController.init(rootViewController: ViewController())
+    let navigationViewController = UINavigationController(rootViewController: ViewController())
     window?.rootViewController = navigationViewController
     window?.makeKeyAndVisible()
     return true

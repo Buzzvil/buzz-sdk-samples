@@ -20,15 +20,15 @@ class ViewController: UIViewController {
   
   func setupView() {
     self.navigationItem.title = "BuzzBooster Sample"
-    sendEventButton = UIButton.init(type: .system)
+    sendEventButton = UIButton(type: .system)
     sendEventButton.setTitle("Send Event", for: .normal)
     setButtonAttributes(button: sendEventButton)
     
-    loginButton = UIButton.init(type: .system)
+    loginButton = UIButton(type: .system)
     loginButton.setTitle("Login", for: .normal)
     setButtonAttributes(button: loginButton)
     
-    stackView = UIStackView.init(arrangedSubviews: [
+    stackView = UIStackView(arrangedSubviews: [
       sendEventButton,
       loginButton
     ])
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     stackView.spacing = 8
     
 
-    scrollView = UIScrollView.init(frame: .zero)
+    scrollView = UIScrollView(frame: .zero)
     scrollView.showsVerticalScrollIndicator = false
     scrollView.addSubview(stackView)
     view.addSubview(scrollView)
