@@ -86,6 +86,7 @@ class ViewController: UIViewController {
   
   func registerSendEventButtonAction() {
     sendEventButton.rac_command = RACCommand.init(signal: {_ in
+      //이벤트 발생 3회 이상부터 리워드 지급
       BuzzBooster.sendEvent(withEventName: "integration")
       self.view.window?.makeToast("test event")
       return RACSignal.empty()
