@@ -91,10 +91,10 @@ class ViewController: UIViewController {
   @objc func loginButtonAction(button: UIButton!) {
     if (self.login) {
       BuzzBooster.setUserId(nil)
-      self.view.window?.makeToast("Logout")
+      loginButton.setTitle("Login", for: .normal)
     } else {
       BuzzBooster.setUserId(AppDelegate.USER_ID)
-      self.view.window?.makeToast("Login")
+      loginButton.setTitle("Logout", for: .normal)
     }
     self.login = !self.login
   }
