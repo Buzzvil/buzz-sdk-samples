@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bz_background_base">
+
+    <TextView
+        android:id="@+id/nativeCarouselTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/bzv_space_16"
+        android:text="Native Carousel Example"
+        android:textAppearance="@style/bzv_h3_bold"
+        android:textColor="@color/bz_text_base"
+        app:layout_constraintBottom_toTopOf="@+id/carousel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- carousel과 toFeedLink의 visibility를 한 번에 다루기 위한 Group -->
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/placement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="carousel,toFeedLink" />
+
+    <!-- 광고를 표시할 Carousel -->
+    <!-- clipToPadding,  paddingHorizontal: 이전과 이후 아이템을 살짝 보여주기 위해 설정 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/toFeedLink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nativeCarouselTitle" />
+
+    <!-- Carousel To Feed Link -->
+    <!-- Carousel 하단에서 Feed를 열 수 있게 하는 링크 -->
+    <!-- buzzvilFeedEntryViewName의 값은 여기 예시와 같은 값을 사용한다. -->
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/toFeedLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
+        app:buzzvilFeedEntryViewName="carousel_to_feed_link"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carousel">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NativeCarouselToFeedLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="포인트 더 받으러 가기" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_chevron_right" />
+        </LinearLayout>
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

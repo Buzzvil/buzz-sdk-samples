@@ -17,12 +17,12 @@ PODS:
   - BuzzAd (0.3.0):
     - BuzzServiceApi (~> 0.3.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefit (3.0.5):
-    - BuzzAdBenefitBase (~> 3.0.5)
-    - BuzzAdBenefitFeed (~> 3.0.5)
-    - BuzzAdBenefitInterstitial (~> 3.0.5)
-    - BuzzAdBenefitNative (~> 3.0.5)
-  - BuzzAdBenefitBase (3.0.5):
+  - BuzzAdBenefit (3.0.6):
+    - BuzzAdBenefitBase (~> 3.0.6)
+    - BuzzAdBenefitFeed (~> 3.0.6)
+    - BuzzAdBenefitInterstitial (~> 3.0.6)
+    - BuzzAdBenefitNative (~> 3.0.6)
+  - BuzzAdBenefitBase (3.0.6):
     - AFNetworking (~> 4.0)
     - BuzzAd (~> 0.3.0)
     - BuzzBaseReward (~> 0.3.0)
@@ -32,21 +32,21 @@ PODS:
     - BuzzServiceApi (~> 0.3.0)
     - BuzzUnit (~> 0.3.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitFeed (3.0.5):
-    - BuzzAdBenefitBase (~> 3.0.5)
-    - BuzzAdBenefitNative (~> 3.0.5)
+  - BuzzAdBenefitFeed (3.0.6):
+    - BuzzAdBenefitBase (~> 3.0.6)
+    - BuzzAdBenefitNative (~> 3.0.6)
     - BuzzImage (~> 0.3.0)
     - BuzzResource (~> 0.3.0)
     - BuzzServiceApi (~> 0.3.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitInterstitial (3.0.5):
-    - BuzzAdBenefitBase (~> 3.0.5)
-    - BuzzAdBenefitNative (~> 3.0.5)
+  - BuzzAdBenefitInterstitial (3.0.6):
+    - BuzzAdBenefitBase (~> 3.0.6)
+    - BuzzAdBenefitNative (~> 3.0.6)
     - BuzzImage (~> 0.3.0)
     - BuzzResource (~> 0.3.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitNative (3.0.5):
-    - BuzzAdBenefitBase (~> 3.0.5)
+  - BuzzAdBenefitNative (3.0.6):
+    - BuzzAdBenefitBase (~> 3.0.6)
     - BuzzImage (~> 0.3.0)
     - BuzzResource (~> 0.3.0)
     - GoogleAds-IMA-iOS-SDK (~> 3.12)
@@ -79,20 +79,23 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.1)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.12.3):
-    - SDWebImage/Core (= 5.12.3)
-  - SDWebImage/Core (5.12.3)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - SDWebImageWebPCoder (0.8.4):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.10)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzAdBenefit (~> 3.0.5)
+  - BuzzAdBenefit (~> 3.0.6)
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - Toast
+  trunk:
+    - AFNetworking
     - BuzzAd
     - BuzzAdBenefit
     - BuzzAdBenefitBase
@@ -106,23 +109,20 @@ SPEC REPOS:
     - BuzzResource
     - BuzzServiceApi
     - BuzzUnit
-  https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
     - GoogleAds-IMA-iOS-SDK
     - libwebp
     - ReactiveObjC
     - SDWebImage
     - SDWebImageWebPCoder
-    - Toast
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   BuzzAd: aa483ab45f331d8a6ef4528239529014ed465348
-  BuzzAdBenefit: 116cb2a466f0872db3633144df62e8cde228d0e0
-  BuzzAdBenefitBase: b16b1c28d438f05cbccd347db54fa24c1aaa0d88
-  BuzzAdBenefitFeed: c4513f011411d84b11fc8690079d59b8c4a80ac6
-  BuzzAdBenefitInterstitial: 6d70a0ee87d527c0794603082341302e4f60ec1f
-  BuzzAdBenefitNative: 392734ab42d8e5382dedb2a697d33f00990e6551
+  BuzzAdBenefit: e8f970dcb7d72b98efdb4e75cdbd34ad0776404b
+  BuzzAdBenefitBase: 1d3631a68932f5ca3d643056def54445bc366fe0
+  BuzzAdBenefitFeed: e3dc52dfd65d16394b783e0fec93ae4d15ac1af7
+  BuzzAdBenefitInterstitial: 6c7c78ee56b798f67520ee0eae409b60f75b2ccc
+  BuzzAdBenefitNative: a1cfb3bf8592152eae5c18f63996ef566b27520d
   BuzzBaseReward: d74d7e36fe421be7b3aac82dbdb0cbecae346ea4
   BuzzConfig: 2ced01ccbadd2f2763051bbda24d4b5fb42940cc
   BuzzImage: 311100651b05d030cbe14b7f0f3d8ecf65a948f8
@@ -133,10 +133,10 @@ SPEC CHECKSUMS:
   GoogleAds-IMA-iOS-SDK: 2a9b7b14bda4993306f05287f952dce41b5be4ad
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 3d6f1eb57c591f64090edaeed1a7b3c465518f9a
+PODFILE CHECKSUM: b01ebbd1e9c5a3546124f03fce6622fcea9c027c
 
 COCOAPODS: 1.11.2
