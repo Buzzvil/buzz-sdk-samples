@@ -32,7 +32,7 @@ class MainActivity: AppCompatActivity() {
         activityMainBinding.sendEventButton.setOnClickListener {
             // 로그인 후, 이벤트 발생 3회 이상부터 리워드 지급
             buzzBooster.sendEvent("integration")
-            Toast.makeText(applicationContext, "send event ($count) times", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "send event ${++count} times", Toast.LENGTH_SHORT).show()
         }
     }
 
