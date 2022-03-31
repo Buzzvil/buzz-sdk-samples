@@ -1,6 +1,7 @@
 package com.buzzvil.booster.sample.publisher
 
 import android.app.Application
+import android.util.Log
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterConfig
 import java.util.*
