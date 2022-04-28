@@ -39,18 +39,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    packagingOptions {  // related with exoplayer2 (BS publisher have to write this settings)
-        exclude 'META-INF/maven/com.google.code.gson/gson/pom.xml'
-        exclude 'META-INF/maven/com.google.code.gson/gson/pom.properties'
-        exclude 'META-INF/proguard/androidx-annotations.pro'
+    packagingOptions {
+        resources {
+            excludes += [
+                    'META-INF/maven/com.google.code.gson/gson/pom.xml',
+                    'META-INF/maven/com.google.code.gson/gson/pom.properties',
+                    'META-INF/proguard/androidx-annotations.pro'
+            ]
+        }
     }
+
 }
 
 configurations.all {
     resolutionStrategy {
         // REMOVE THIS after benefit-3.2.+ or higher
-        force group:'com.android.volley', name:'volley', version: '1.2.1'
+        force group: 'com.android.volley', name: 'volley', version: '1.2.1'
     }
 }
 

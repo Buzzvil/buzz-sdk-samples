@@ -31,6 +31,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:$androidXAppcompatVersion"
+    implementation "androidx.multidex:multidex:$androidXMultidexVersion"
 
     implementation "com.buzzvil.buzzscreen.ext:migration-client:$buzzscreenExtentionVersionName"
     implementation "com.buzzvil:buzzscreen:$buzzscreenVersionName"
