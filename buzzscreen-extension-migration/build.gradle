@@ -50,4 +50,5 @@ ext {
     minSdkVersion = 16
 
     androidXAppcompatVersion = '1.1.0'
+    androidXMultidexVersion = '2.0.1'
 }
