@@ -6,6 +6,13 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.7.0] - 2022-04-28
+* [NEW] 인앱 브라우저의 수명 주기에 맞춘 동작이 실행되도록 개선
+* [UPDATE] BuzzRoulette의 광고 라이브러리를 최신 버전으로 업데이트
+* [FIX] 기기 화면의 전체 영역을 차지하던 반투명 팝(Pop) 버튼의 투명도를 제거하고 View 크기를 버튼의 실제 크기만을 차지하도록 수정
+* [FIX] 프래그먼트로 피드 지면을 연동 시 일부 경우에 과도하게 넓은 상단 여백이 발생하는 문제 해결
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000504042) 참조
+
 ## [3.5.0] - 2022-03-17
 * [UPDATE] targetSdkVersion 31 지원
 * [NEW] 캐러셀(Carousel) 형태로 네이티브 지면을 구현할 수 있는 가이드 제공
