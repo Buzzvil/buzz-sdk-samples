@@ -108,6 +108,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
 
   _feedEntryIcon = [[FeedEntryIcon alloc] initWithFrame:CGRectZero];
   _feedEntryIcon.iconImageView.image = [UIImage imageNamed:@"ic_coin"];
+  [_feedEntryIcon setEntryName:@"icon"];
   [self.view addSubview:_feedEntryIcon];
 
   _iconWithMessageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -119,6 +120,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   _feedEntryIconWithMessage = [[FeedEntryIconWithMessage alloc] initWithFrame:CGRectZero];
   _feedEntryIconWithMessage.iconImageView.image = [UIImage imageNamed:@"ic_coin"];
   [_feedEntryIconWithMessage.messageLabel setText:@"Get Extra Points Now!"];
+  [_feedEntryIconWithMessage setEntryName:@"icon_with_message"];
   [self.view addSubview:_feedEntryIconWithMessage];
 
   _bannerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -128,6 +130,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
   [self.view addSubview:_bannerLabel];
 
   _feedEntryBanner = [[FeedEntryBanner alloc] initWithFrame:CGRectZero];
+  [_feedEntryBanner setEntryName:@"banner"];
   [self.view addSubview:_feedEntryBanner];
 
   _buttonLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -138,6 +141,7 @@ static NSTimeInterval const kAnimationDuration = 0.2;
 
   _feedEntryButton = [[FeedEntryButton alloc] initWithFrame:CGRectZero];
   [_feedEntryButton.button setTitle:@"Get extra points now!" forState:UIControlStateNormal];
+  [_feedEntryButton setEntryName:@"button"];
   [self.view addSubview:_feedEntryButton];
 }
 
