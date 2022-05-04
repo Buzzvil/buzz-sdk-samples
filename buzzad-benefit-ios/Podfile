@@ -1,12 +1,14 @@
 platform :ios, '10.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
+# TODO: Remove private source after public release
+source 'https://github.com/Buzzvil/Specs.git'
 
 use_frameworks!
 inhibit_all_warnings!
 
 target 'BABSample' do
-  pod 'BuzzAdBenefit', '~> 3.1.2'
+  pod 'BuzzAdBenefit', '~> 3.2.1'
   pod 'Toast', '~> 4.0.0'
 end
 
