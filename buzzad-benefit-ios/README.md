@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.2.1] - 2022-05-06
+* [NEW] Feed 기본 적립 포인트 알림 팝업 자체 구현 기능 추가
+* [FIX] Feed 지면 진입 시 미리 불러온 광고가 존재하는 경우 광고를 다시 요청하지 않도록 수정
+
 ## [3.1.2] - 2022-03-31
 * [NEW] Feed 엔트리뷰에 이름을 설정하여 사용자 반응을 추적하는 기능 추가
 * [CHANGE] 프리로드 시에 모든 탭에 대한 광고를 로드하게 끔 수정
