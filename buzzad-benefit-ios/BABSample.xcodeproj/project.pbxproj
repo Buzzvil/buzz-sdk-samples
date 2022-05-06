@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		696534B22516811E00714D40 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
 		696534F725183A3600714D40 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696534B6251681CE00714D40 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6B9435E328223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9435E228223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m */; };
 		C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4307AB3244D299F00F0C436 /* WebViewController.m */; };
 		C4A297502240F06900F6D677 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A2974F2240F06900F6D677 /* AppDelegate.m */; };
 		C4A297532240F06900F6D677 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A297522240F06900F6D677 /* ViewController.m */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		696534B6251681CE00714D40 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		6B9435E128223B2900E79DBE /* CustomFeedBaseRewardViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedBaseRewardViewHolder.h; sourceTree = "<group>"; };
+		6B9435E228223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedBaseRewardViewHolder.m; sourceTree = "<group>"; };
 		B58C59731E43AC7DA91D8058 /* Pods-BABSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B80A664165F8931FCCCA62FF /* Pods-BABSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BABSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-BABSample/Pods-BABSample.release.xcconfig"; sourceTree = "<group>"; };
 		C4307AAC244D299E00F0C436 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				D67A47DD27B24B9900C5B4DC /* CustomFeedErrorViewHolder.m */,
 				D67A47DF27B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.h */,
 				D67A47E027B24BBD00C5B4DC /* CustomFeedHeaderViewHolder.m */,
+				6B9435E128223B2900E79DBE /* CustomFeedBaseRewardViewHolder.h */,
+				6B9435E228223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m */,
 				D67A47D027B24A6E00C5B4DC /* FeedViewController.h */,
 				D67A47D127B24A6E00C5B4DC /* FeedViewController.m */,
 			);
@@ -385,6 +390,7 @@
 				D67A47EC27B2502400C5B4DC /* InterstitialViewController.m in Sources */,
 				D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */,
 				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
+				6B9435E328223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m in Sources */,
 				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
 				D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */,
 				D67A47DB27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m in Sources */,

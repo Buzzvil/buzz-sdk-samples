@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import "Feed/CustomFeedHeaderViewHolder.h"
+#import "Feed/CustomFeedBaseRewardViewHolder.h"
 #import "Feed/CustomFeedAdViewHolder.h"
 #import "Feed/CustomFeedCpsAdViewHolder.h"
 #import "Feed/CustomFeedErrorViewHolder.h"
@@ -34,6 +35,8 @@
 
       // MARK: 3.2. 헤더 영역 자체 구현하기
 //      builder.headerViewHolderClass = [CustomFeedHeaderViewHolder class];
+      // MARK: 3.2. 기본 적립 포인트 알림 팝업 자체 구현하기
+//      builder.baseRewardViewHolderClass = [CustomFeedBaseRewardViewHolder class];
       // MARK: 3.2. 일반 광고 디자인 자체 구현하기
 //      builder.adViewHolderClass = [CustomFeedAdViewHolder class];
       // MARK: 3.2. 쇼핑 적립 광고 디자인 자체 구현하기
