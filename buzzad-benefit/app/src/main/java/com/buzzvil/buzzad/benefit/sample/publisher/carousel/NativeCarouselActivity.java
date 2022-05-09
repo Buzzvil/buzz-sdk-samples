@@ -161,9 +161,9 @@ public class NativeCarouselActivity extends AppCompatActivity {
         final List<CarouselItem> items = buildCarouselItems(nativeAds);
         adapter.submitList(items);
         if (infiniteLoop) {
-            // To show item before first item
             final RecyclerView.LayoutManager layoutManager = binding.carousel.getLayoutManager();
             if (layoutManager != null) {
+                // 첫번째 광고 앞에 마지막 아이템의 부분적으로 노출하기
                 layoutManager.scrollToPosition(items.size() * 10000);
             }
         }
