@@ -42,19 +42,19 @@ public class NativeCarouselActivity extends AppCompatActivity {
     private CarouselAdapter adapter;
 
     // Carousel 지면에서 사용할 Unit ID
-    private String unitId = App.UNIT_ID_NATIVE_AD;
+    private final String unitId = App.UNIT_ID_NATIVE_AD;
 
     // 무한 스크롤을 사용할지 설정
     private boolean infiniteLoop = true;
 
     // Carousel 아이템 간의 사이 간격
-    private int itemPaddingDp = 16;
+    private final int itemPaddingDp = 16;
 
     // 화면 폭에 대한 Carousel 아이템의 폭 비율
-    private float itemWidthPercentOfScreen = 0.8f;
+    private final float itemWidthPercentOfScreen = 0.8f;
 
     // LinearLayoutManager를 사용하고 HORIZONTAL로 설정하여 수평으로 일렬로 정렬된 레이아웃을 사용한다.
-    private LinearLayoutManager layoutManager = new LinearLayoutManager(
+    private final LinearLayoutManager layoutManager = new LinearLayoutManager(
             this,
             HORIZONTAL,
             false
@@ -67,7 +67,7 @@ public class NativeCarouselActivity extends AppCompatActivity {
         }
     };
 
-    private NativeAdLoader.OnAdsLoadedListener adsLoadedListener = new NativeAdLoader.OnAdsLoadedListener() {
+    private final NativeAdLoader.OnAdsLoadedListener adsLoadedListener = new NativeAdLoader.OnAdsLoadedListener() {
 
         @Override
         public void onLoadError(final AdError error) {
@@ -84,7 +84,7 @@ public class NativeCarouselActivity extends AppCompatActivity {
         }
     };
 
-    private NativeAdEventListener nativeAdEventListener = new NativeAdEventListener() {
+    private final NativeAdEventListener nativeAdEventListener = new NativeAdEventListener() {
         @Override
         public void onImpressed(final NativeAd nativeAd) {
         }
