@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     private void registerSessionReadyReceiver() {
         LocalBroadcastManager.getInstance(this).registerReceiver(sessionReadyReceiver, BuzzAdBenefit.getSessionReadyIntentFilter());
     }
