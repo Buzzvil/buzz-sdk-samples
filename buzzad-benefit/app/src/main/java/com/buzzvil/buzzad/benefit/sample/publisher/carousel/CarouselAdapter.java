@@ -19,14 +19,14 @@ import com.buzzvil.buzzad.benefit.sample.publisher.databinding.ViewItemCarouselB
  */
 class CarouselAdapter extends ListAdapter<CarouselItem, CarouselAdapter.ViewHolder> {
 
-    private final boolean infiniteLoop;
+    private final boolean isInfiniteLoopEnabled;
 
     /**
-     * @param infiniteLoop: 무한 루프를 사용할지 설정하는 변수
+     * @param isInfiniteLoopEnabled: 무한 루프를 사용할지 설정하는 변수
      */
-    public CarouselAdapter(final boolean infiniteLoop) {
+    public CarouselAdapter(final boolean isInfiniteLoopEnabled) {
         super(new CarouselDiff());
-        this.infiniteLoop = infiniteLoop;
+        this.isInfiniteLoopEnabled = isInfiniteLoopEnabled;
     }
 
     @Override
@@ -57,7 +57,7 @@ class CarouselAdapter extends ListAdapter<CarouselItem, CarouselAdapter.ViewHold
     @Override
     public int getItemCount() {
         final int actualItemCount = super.getItemCount();
-        if (infiniteLoop && actualItemCount > 0) {
+        if (isInfiniteLoopEnabled && actualItemCount > 0) {
             // 무한 루프를 쉽게 구현하는 방법으로 매우 큰 수를 여기서 반환한다.
             return Integer.MAX_VALUE;
         }
@@ -67,7 +67,7 @@ class CarouselAdapter extends ListAdapter<CarouselItem, CarouselAdapter.ViewHold
     @Override
     public CarouselItem getItem(final int position) {
         int newPosition;
-        if (infiniteLoop) {
+        if (isInfiniteLoopEnabled) {
             // 무한 루프인 경우의 position은 매우 큰 수이므로 실제 아이템 수로 나눈 나머지를 사용한다.
             newPosition = position % super.getItemCount();
         } else {

@@ -45,7 +45,7 @@ public class NativeCarouselActivity extends AppCompatActivity {
     private final String unitId = App.UNIT_ID_NATIVE_AD;
 
     // 무한 스크롤을 사용할지 설정
-    private boolean infiniteLoop = true;
+    private boolean isInfiniteLoopEnabled = true;
 
     // Carousel 아이템 간의 사이 간격
     private final int itemPaddingDp = 16;
@@ -115,7 +115,7 @@ public class NativeCarouselActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityNativeCarouselBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        adapter = new CarouselAdapter(infiniteLoop);
+        adapter = new CarouselAdapter(isInfiniteLoopEnabled);
         initCarousel();
         loadAds();
     }
@@ -160,7 +160,7 @@ public class NativeCarouselActivity extends AppCompatActivity {
 
         final List<CarouselItem> items = buildCarouselItems(nativeAds);
         adapter.submitList(items);
-        if (infiniteLoop) {
+        if (isInfiniteLoopEnabled) {
             final RecyclerView.LayoutManager layoutManager = binding.carousel.getLayoutManager();
             if (layoutManager != null) {
                 // item.size(): 첫번째 광고가 보이고, 그 앞에 마지막 아이템이 살짝 보이기 위해 이 값을 기준으로 한다.
