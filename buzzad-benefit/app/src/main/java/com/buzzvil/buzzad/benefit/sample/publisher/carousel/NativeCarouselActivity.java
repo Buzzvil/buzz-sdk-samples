@@ -163,7 +163,8 @@ public class NativeCarouselActivity extends AppCompatActivity {
         if (infiniteLoop) {
             final RecyclerView.LayoutManager layoutManager = binding.carousel.getLayoutManager();
             if (layoutManager != null) {
-                // 첫번째 광고 앞에 마지막 아이템의 부분적으로 노출하기
+                // item.size(): 첫번째 광고가 보이고, 그 앞에 마지막 아이템이 살짝 보이기 위해 이 값을 기준으로 한다.
+                // 10000: 사용자가 앞으로 계속 스크롤을 하여도 무한루프인 것처럼 느낄 수 있도록 적당히 큰 수를 곱한다.
                 layoutManager.scrollToPosition(items.size() * 10000);
             }
         }
