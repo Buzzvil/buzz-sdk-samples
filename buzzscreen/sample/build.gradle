@@ -67,10 +67,6 @@ dependencies {
     customImplementation "com.buzzvil:buzzscreen:$buzzscreenVersionName"
 
     // implementation "com.buzzvil.mediation:sdk-adfit:$mediationAdfitVersion"
-    // implementation "com.buzzvil.mediation:sdk-admob:$mediationAdmobVersion"
-    // implementation "com.buzzvil.mediation:sdk-altamob:$mediationAltamobVersion"
-    // implementation "com.buzzvil.mediation:sdk-mobvista:$mediationMobvistaVersion"
     // implementation "com.buzzvil.mediation:sdk-mopub:$mediationMopubVersion"
-    // implementation "com.buzzvil.mediation:sdk-mytarget:$mediationMytargetVersion"
-    // implementation "com.buzzvil.mediation:sdk-outbrain:$mediationOutbrainVersion"
+    // implementation "com.buzzvil.mediation:sdk-adfit:mediationIgaworksVersion"
 }
