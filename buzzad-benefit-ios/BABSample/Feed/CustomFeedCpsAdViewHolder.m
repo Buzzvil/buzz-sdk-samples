@@ -1,7 +1,5 @@
 #import "CustomFeedCpsAdViewHolder.h"
 
-#import "CustomCtaView.h"
-
 // MARK: 3.2. 쇼핑 적립 광고 디자인 자체 구현하기
 @interface CustomFeedCpsAdViewHolder ()
 
@@ -10,7 +8,7 @@
 @property (nonatomic, strong, readonly) UIImageView *iconImageView;
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UILabel *descriptionLabel;
-@property (nonatomic, strong, readonly) CustomCtaView *ctaView;
+@property (nonatomic, strong, readonly) BZVDefaultCtaView *ctaView;
 @property (nonatomic, strong, readonly) UILabel *priceLabel;
 @property (nonatomic, strong, readonly) UILabel *originalPriceLabel;
 @property (nonatomic, strong, readonly) UILabel *discountRateLabel;
@@ -76,7 +74,7 @@
   _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   [_nativeAdView addSubview:_descriptionLabel];
 
-  _ctaView = [[CustomCtaView alloc] initWithFrame:CGRectZero];
+  _ctaView = [[BZVDefaultCtaView alloc] initWithFrame:CGRectZero];
   [_nativeAdView addSubview:_ctaView];
 
   _priceLabel = [[UILabel alloc] initWithFrame:CGRectZero];

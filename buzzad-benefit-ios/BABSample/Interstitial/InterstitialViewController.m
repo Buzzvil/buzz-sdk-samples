@@ -3,7 +3,6 @@
 @import BuzzAdBenefit;
 
 #import "AppConstant.h"
-#import "CustomCtaView.h"
 #import "UIButton+Custom.h"
 
 static NSString * const kNavigationItemTitle = @"Interstitial";

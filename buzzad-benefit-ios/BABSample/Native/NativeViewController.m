@@ -3,7 +3,6 @@
 @import BuzzAdBenefit;
 
 #import "AppConstant.h"
-#import "CustomCtaView.h"
 #import "UIButton+Custom.h"
 
 static NSString * const kNavigationItemTitle = @"Native";
@@ -17,7 +16,7 @@ static NSString * const kNavigationItemTitle = @"Native";
 @property (nonatomic, strong, readonly) UIImageView *iconImageView;
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UILabel *descriptionLabel;
-@property (nonatomic, strong, readonly) CustomCtaView *ctaView;
+@property (nonatomic, strong, readonly) BZVDefaultCtaView *ctaView;
 @property (nonatomic, strong, readonly) BZVNativeAdViewBinder *viewBinder;
 
 @end
@@ -133,7 +132,7 @@ static NSString * const kNavigationItemTitle = @"Native";
   _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   [_nativeAdView addSubview:_descriptionLabel];
 
-  _ctaView = [[CustomCtaView alloc] initWithFrame:CGRectZero];
+  _ctaView = [[BZVDefaultCtaView alloc] initWithFrame:CGRectZero];
   [_nativeAdView addSubview:_ctaView];
   
   _viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
