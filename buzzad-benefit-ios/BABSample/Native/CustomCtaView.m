@@ -1,10 +1,3 @@
-//
-//  CustomCtaView.m
-//  BABIntegrationQAObjC
-//
-//  Created by Hyunsu Park on 2022/01/24.
-//
-
 #import "CustomCtaView.h"
 
 // MARK: 4.2. CTA 버튼 자체 구현하기
