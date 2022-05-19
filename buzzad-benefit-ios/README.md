@@ -6,6 +6,9 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.3.0] - 2022-05-19
+* [NEW] 편리한 CTA 버튼 커스터마이징을 위해 기본 CTA 뷰 클래스 제공
+
 ## [3.2.1] - 2022-05-06
 * [NEW] Feed 기본 적립 포인트 알림 팝업 자체 구현 기능 추가
 * [FIX] Feed 지면 진입 시 미리 불러온 광고가 존재하는 경우 광고를 다시 요청하지 않도록 수정
