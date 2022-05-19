@@ -6,10 +6,10 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
+import com.buzzvil.buzzad.benefit.presentation.feed.toolbar.DefaultFeedToolbarHolder;
 import com.buzzvil.buzzad.benefit.presentation.feed.toolbar.FeedActivityToolbar;
-import com.buzzvil.buzzad.benefit.presentation.feed.toolbar.FeedToolbarHolder;
 
-public class CustomFeedToolbarHolder implements FeedToolbarHolder {
+public class CustomFeedToolbarHolder extends DefaultFeedToolbarHolder {
     private FeedActivityToolbar toolbar;
 
     @Override

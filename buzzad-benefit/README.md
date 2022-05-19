@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.9.0] - 2022-05-19
+* [UPDATE] 피드에 직접 구현한 툴바를 사용할 때에도 버즈룰렛을 연동할 수 있도록 개선
+* [UPDATE] 피드 지면의 사용자 개인 정보 수집 동의 UI 개선
+* [FIX] 사용자가 개인 정보 수집에 동의하지 않아 룰렛 참여를 할 수 없음에도 피드 지면의 툴바 영역에 룰렛 아이콘이 노출되는 문제 해결
+* 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000504677) 참조
+
 ## [3.7.0] - 2022-04-28
 * [NEW] 인앱 브라우저의 수명 주기에 맞춘 동작이 실행되도록 개선
 * [UPDATE] BuzzRoulette의 광고 라이브러리를 최신 버전으로 업데이트
