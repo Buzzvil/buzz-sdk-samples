@@ -12,7 +12,7 @@
 * [UPDATE] 포또 당첨 확률 공시
 * [FIX] BuzzAd 피드 지면을 전체 화면(`FeedFullscreenActivity`)으로 띄울 때 노티피케이션 바를 투명하게 만드는 동작으로 인해 상태 아이콘이 보이지 않는 문제 해결
 * [FIX] BuzzAd의 피드 액티비티 전환 애니메이션을 제거하여 피드 지면을 열고 닫을 때 노티피케이션 바 쪽에 나타나던 어색한 시각 효과 문제 해결
-* 자세한 사항은 [링크](TBD) 참조
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.11-buzzscreen4.5/) 참조
 
 ## [3.9.0] - 2022-05-19
 * [UPDATE] 피드에 직접 구현한 툴바를 사용할 때에도 버즈룰렛을 연동할 수 있도록 개선
