@@ -22,7 +22,7 @@ public class TemplatePopToolbarHolder extends DefaultPopToolbarHolder {
         toolbar.setTitle("TemplatePopToolbarHolder");
         toolbar.setBackgroundColor(Color.LTGRAY);
 
-        addInquiryMenuItemView(activity, App.UNIT_ID_POP);
+        addInquiryMenuItemView(activity);
         addRightMenuItemView1(activity);
         return toolbar;
     }
