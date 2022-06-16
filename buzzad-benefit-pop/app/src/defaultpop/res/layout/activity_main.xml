@@ -75,12 +75,6 @@
                 android:layout_height="wrap_content"
                 android:text="Show pop" />
 
-            <Switch
-                android:id="@+id/pedometer_pop_switch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Enable Pedometer Pop" />
-
             <Button
                 android:id="@+id/pop_unregister_button"
                 android:layout_width="match_parent"

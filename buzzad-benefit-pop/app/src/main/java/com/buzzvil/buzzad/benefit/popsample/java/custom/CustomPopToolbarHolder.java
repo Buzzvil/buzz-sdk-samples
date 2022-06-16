@@ -20,7 +20,7 @@ public class CustomPopToolbarHolder extends DefaultPopToolbarHolder {
         buttonInquiry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showInquiry(activity);
+                showInquiry(activity, App.UNIT_ID_POP);
             }
         });
         return root;
