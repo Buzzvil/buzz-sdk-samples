@@ -1,17 +1,17 @@
 package com.buzzvil.booster.sample.publisher
 
 import android.os.Bundle
-import android.util.Log
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.booster.external.BuzzBooster
+import com.buzzvil.booster.external.campaign.CampaignEntryView
 import com.buzzvil.booster.sample.publisher.databinding.ActivityMainBinding
 
 class MainActivity: AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private lateinit var buzzBooster: BuzzBooster
     private var login: Boolean = false
-    private var count: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,19 +21,11 @@ class MainActivity: AppCompatActivity() {
         buzzBooster = BuzzBooster.getInstance()
 
         registerViewEvent()
+        addCustomEntryViewDynamically()
     }
 
     private fun registerViewEvent() {
-        registerSendEventAction()
         registerLoginAction()
-    }
-
-    private fun registerSendEventAction() {
-        activityMainBinding.sendEventButton.setOnClickListener {
-            // 로그인 후, 이벤트 발생 3회 이상부터 리워드 지급
-            buzzBooster.sendEvent("integration")
-            Toast.makeText(applicationContext, "send event ${++count} times", Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun registerLoginAction() {
@@ -47,5 +39,12 @@ class MainActivity: AppCompatActivity() {
             }
             login = !login
         }
+    }
+
+    private fun addCustomEntryViewDynamically() {
+        val parent = findViewById<ViewGroup>(R.id.entryPointPlaceholder)
+        val entryView: CampaignEntryView = layoutInflater.inflate(R.layout.campaign_entry_point, null) as CampaignEntryView
+        entryView.setEntryName("your_custom_entry_point_1")
+        parent.addView(entryView)
     }
 }
