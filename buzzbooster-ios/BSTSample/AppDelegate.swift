@@ -5,7 +5,7 @@ import Toast
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-  static var APP_KEY: String = "91411494538491"
+  static var APP_KEY: String = "279753136766115"
   static var USER_ID: String = NSUUID().uuidString
 
   var window: UIWindow?

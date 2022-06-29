@@ -97,6 +97,7 @@ class ViewController: UIViewController {
       loginButton.setTitle("Login", for: .normal)
     } else {
       BuzzBooster.setUserId(AppDelegate.USER_ID)
+      BuzzBooster.showInAppMessage(withRootViewController: self)
       loginButton.setTitle("Logout", for: .normal)
     }
     self.login = !self.login
