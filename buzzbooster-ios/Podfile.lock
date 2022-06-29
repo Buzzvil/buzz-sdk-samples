@@ -14,13 +14,13 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzBooster (1.3.2):
+  - BuzzBooster (1.4.0):
     - AFNetworking (~> 4.0)
-    - BuzzMutator (~> 0.9.0)
+    - BuzzMutator (~> 0.10.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzMutator (0.9.0)
+  - BuzzMutator (0.10.0)
   - libwebp (1.2.1):
     - libwebp/demux (= 1.2.1)
     - libwebp/mux (= 1.2.1)
@@ -31,23 +31,24 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.1)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.12.6):
-    - SDWebImage/Core (= 5.12.6)
-  - SDWebImage/Core (5.12.6)
-  - SDWebImageWebPCoder (0.8.4):
+  - SDWebImage (5.13.0):
+    - SDWebImage/Core (= 5.13.0)
+  - SDWebImage/Core (5.13.0)
+  - SDWebImageWebPCoder (0.8.5):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.10)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (~> 1.3.2)
+  - BuzzBooster (~> 1.4.0)
   - Toast (= 4.0.0)
 
 SPEC REPOS:
-  trunk:
-    - AFNetworking
+  https://github.com/Buzzvil/Specs:
     - BuzzBooster
     - BuzzMutator
+  trunk:
+    - AFNetworking
     - libwebp
     - ReactiveObjC
     - SDWebImage
@@ -56,14 +57,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BuzzBooster: 3e5255940405f145bb3d266b3a911d6588c090bf
-  BuzzMutator: 9249c84363fc337191dcd634a5a78447baccdbf8
+  BuzzBooster: ca8a1da8676196ddaf59c22507e04cf3ed374592
+  BuzzMutator: 799eddc48963f25cf04f3896e9de018922634b94
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: a47aea9e3d8816015db4e523daff50cfd294499d
-  SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
+  SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
+  SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 4f7cef8b271b50fca59d13641c1829cf1799316e
+PODFILE CHECKSUM: b5c151e25a34f368846914994afe4d1c4e1f914d
 
 COCOAPODS: 1.11.2
