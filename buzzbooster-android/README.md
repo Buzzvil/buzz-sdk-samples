@@ -18,3 +18,5 @@
 > * [NEW] 출석체크 캠페인 지원
 > * [NEW] Floating Action Button으로 캠페인 진입 지점 구현 가능
 > * [NEW] Custom Entry View로 캠페인 진입 지점 구현 가능
+> ### [1.3.1] - 2022-06-23
+> * [UPDATE] 진행 중인 캠페인이 없을 때 이를 안내하기 위한 메시지 추가
