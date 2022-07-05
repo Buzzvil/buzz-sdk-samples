@@ -35,6 +35,7 @@ class MainActivity: AppCompatActivity() {
                 activityMainBinding.loginButton.text = "login"
             } else {
                 BuzzBooster.setUserId(App.USER_ID)
+                BuzzBooster.getInstance().showInAppMessage(this)
                 activityMainBinding.loginButton.text = "logout"
             }
             login = !login
