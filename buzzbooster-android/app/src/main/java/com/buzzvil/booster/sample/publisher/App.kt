@@ -14,10 +14,7 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        val buzzBoosterConfig = BuzzBoosterConfig(
-            appKey = APP_KEY,
-            notificationPendingActivityClass = MainActivity::class.java
-        )
+        val buzzBoosterConfig = BuzzBoosterConfig(appKey = APP_KEY)
         BuzzBooster.init(this, buzzBoosterConfig)
     }
 }
