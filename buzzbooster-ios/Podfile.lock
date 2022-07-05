@@ -14,42 +14,57 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzBooster (1.0.0):
+  - BuzzBooster (1.4.0):
     - AFNetworking (~> 4.0)
-    - BuzzLogger (~> 0.4.0)
-    - BuzzMutator (~> 0.4.0)
-    - BuzzServiceApi (~> 0.4.0)
+    - BuzzMutator (~> 0.10.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzLogger (0.4.0)
-  - BuzzMutator (0.4.0)
-  - BuzzServiceApi (0.4.1):
-    - ReactiveObjC (~> 3.1.1)
+    - SDWebImage (~> 5.0)
+    - SDWebImageWebPCoder
+  - BuzzMutator (0.10.0)
+  - libwebp (1.2.1):
+    - libwebp/demux (= 1.2.1)
+    - libwebp/mux (= 1.2.1)
+    - libwebp/webp (= 1.2.1)
+  - libwebp/demux (1.2.1):
+    - libwebp/webp
+  - libwebp/mux (1.2.1):
+    - libwebp/demux
+  - libwebp/webp (1.2.1)
   - ReactiveObjC (3.1.1)
+  - SDWebImage (5.13.0):
+    - SDWebImage/Core (= 5.13.0)
+  - SDWebImage/Core (5.13.0)
+  - SDWebImageWebPCoder (0.8.5):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.10)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (= 1.0.0)
+  - BuzzBooster (~> 1.4.0)
   - Toast (= 4.0.0)
 
 SPEC REPOS:
+  https://github.com/Buzzvil/Specs:
+    - BuzzBooster
+    - BuzzMutator
   trunk:
     - AFNetworking
-    - BuzzBooster
-    - BuzzLogger
-    - BuzzMutator
-    - BuzzServiceApi
+    - libwebp
     - ReactiveObjC
+    - SDWebImage
+    - SDWebImageWebPCoder
     - Toast
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BuzzBooster: 35e30b47b5d4cbaf6d9904c97315046a95bdb1df
-  BuzzLogger: 64a2aa958b011a97ced2eb1190a51f42d4261cf9
-  BuzzMutator: ba566b4c47ab49da9f081138eaa68609ab57b452
-  BuzzServiceApi: cbd670ae51a5b368ac9b365b54fa9e978c9fb399
+  BuzzBooster: ca8a1da8676196ddaf59c22507e04cf3ed374592
+  BuzzMutator: 799eddc48963f25cf04f3896e9de018922634b94
+  libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
+  SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 2236397fe0470fb07d1c80939790f1cd25172648
+PODFILE CHECKSUM: b5c151e25a34f368846914994afe4d1c4e1f914d
 
 COCOAPODS: 1.11.2

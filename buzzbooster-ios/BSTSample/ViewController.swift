@@ -4,15 +4,18 @@ import Toast
 
 class ViewController: UIViewController {
   var scrollView: UIScrollView!
-  var sendEventButton: UIButton!
   var loginButton: UIButton!
   var stackView: UIStackView!
   var login: Bool = false
-  var count: Int = 0
+  var campaignFloatingActionButton: BSTCampaignFloatingActionButton!
+  private lazy var customEntryPointButton: CustomEntryPointButton = {
+    let view = CustomEntryPointButton(frame: .zero)
+    view.setEntryName("your_custom_entry_point_1")
+    return view
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
     setupView()
     setupLayout()
     bindEvent()
@@ -20,29 +23,28 @@ class ViewController: UIViewController {
   
   func setupView() {
     self.navigationItem.title = "BuzzBooster Sample"
-    sendEventButton = UIButton(type: .system)
-    sendEventButton.setTitle("Send Event", for: .normal)
-    setButtonAttributes(button: sendEventButton)
-    
     loginButton = UIButton(type: .system)
     loginButton.setTitle("Login", for: .normal)
     setButtonAttributes(button: loginButton)
     
     stackView = UIStackView(arrangedSubviews: [
-      sendEventButton,
-      loginButton
+      loginButton,
+      customEntryPointButton
     ])
     stackView.axis = .vertical
     stackView.spacing = 8
-
+    
+    campaignFloatingActionButton = BSTCampaignFloatingActionButton()
+    
     scrollView = UIScrollView(frame: .zero)
     scrollView.showsVerticalScrollIndicator = false
     scrollView.addSubview(stackView)
     view.addSubview(scrollView)
+    view.addSubview(campaignFloatingActionButton)
   }
   
   func setButtonAttributes(button: UIButton) {
-    button.backgroundColor = .blue
+    button.backgroundColor = .systemBlue
     button.layer.cornerRadius = 8
     button.setTitleColor(.white, for: .normal)
   }
@@ -56,6 +58,13 @@ class ViewController: UIViewController {
       scrollView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
     ])
     
+    campaignFloatingActionButton.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      campaignFloatingActionButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
+      campaignFloatingActionButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
+      campaignFloatingActionButton.heightAnchor.constraint(equalToConstant: 50),
+      campaignFloatingActionButton.widthAnchor.constraint(equalToConstant: 50)
+    ])
     stackView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -80,14 +89,6 @@ class ViewController: UIViewController {
   
   func bindEvent() {
     loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
-    sendEventButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
-  }
-  
-  @objc func sendButtonAction(button: UIButton!) {
-    // 로그인 후, 이벤트 발생 3회 이상부터 리워드 지급
-    BuzzBooster.sendEvent(withEventName: "integration")
-    count+=1
-    self.view.window?.makeToast("send event \(count)")
   }
   
   @objc func loginButtonAction(button: UIButton!) {
@@ -96,6 +97,7 @@ class ViewController: UIViewController {
       loginButton.setTitle("Login", for: .normal)
     } else {
       BuzzBooster.setUserId(AppDelegate.USER_ID)
+      BuzzBooster.showInAppMessage(withRootViewController: self)
       loginButton.setTitle("Logout", for: .normal)
     }
     self.login = !self.login
