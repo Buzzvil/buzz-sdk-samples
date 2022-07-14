@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.13.0] - 2022-07-14
+* [UPDATE] 개인정보 처리에 대한 사용자 주권 강화
+* [UPDATE] 만보기 기능 제거
+* [FIX] BuzzRoulette에서 사용하지 않는 주요 이벤트 알림용 기기의 진동 기능 권한 제거
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.13-buzzscreen4.7/) 참조
+
 ## [3.11.0] - 2022-06-16
 * [UPDATE] 피드에서 원하는 영역 어디에서나 버즈룰렛을 연동할 수 있도록 개선
 * [UPDATE] 팝 지면 툴바 구현을 위한 퍼블릭 메서드 추가 (핫픽스: 3.0.x 이상)
