@@ -6,6 +6,9 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.7.6] - 2022-07-14
+* [NEW] 개인정보를 제공하지 않는 사용자가 피드 지면에 진입하면 개인정보 수집 동의 팝업을 띄우는 기능을 추가
+
 ## [3.5.1] - 2022-06-16
 * [FIX] 피드 지면의 광고 미할당 안내 이미지 개선
 * [FIX] 광고의 impression 발생 여부 확인 로직 개선
