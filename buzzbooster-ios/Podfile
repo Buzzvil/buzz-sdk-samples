@@ -6,6 +6,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'BSTSample' do
-  pod 'BuzzBooster', '~> 1.4.0'
+  pod 'BuzzBooster', '~> 1.4.4'
   pod 'Toast', '=4.0.0'
 end
