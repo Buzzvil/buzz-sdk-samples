@@ -14,58 +14,52 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzAdBenefit (3.9.1):
-    - BuzzAdBenefitBase (~> 3.9.1)
-    - BuzzAdBenefitFeed (~> 3.9.1)
-    - BuzzAdBenefitInterstitial (~> 3.9.1)
-    - BuzzAdBenefitNative (~> 3.9.1)
-  - BuzzAdBenefitBase (3.9.1):
+  - BuzzAdBenefit (3.11.3):
+    - BuzzAdBenefitBase (~> 3.11.3)
+    - BuzzAdBenefitFeed (~> 3.11.3)
+    - BuzzAdBenefitInterstitial (~> 3.11.3)
+    - BuzzAdBenefitNative (~> 3.11.3)
+  - BuzzAdBenefitBase (3.11.3):
     - AFNetworking (~> 4.0)
-    - BuzzBaseReward (~> 0.13.0)
-    - BuzzBaseRewardSwift (~> 0.13.0)
-    - BuzzInsight (~> 0.13.0)
-    - BuzzLogger (~> 0.13.0)
-    - BuzzResource (~> 0.13.0)
-    - BuzzServiceApi (~> 0.13.0)
-    - BuzzUnit (~> 0.13.0)
+    - BuzzBaseRewardSwift (~> 0.15.0)
+    - BuzzInsight (~> 0.15.0)
+    - BuzzLogger (~> 0.15.0)
+    - BuzzResource (~> 0.15.1)
+    - BuzzServiceApi (~> 0.15.0)
+    - BuzzUnit (~> 0.15.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitFeed (3.9.1):
-    - BuzzAdBenefitBase (~> 3.9.1)
-    - BuzzAdBenefitNative (~> 3.9.1)
-    - BuzzImage (~> 0.13.0)
-    - BuzzResource (~> 0.13.0)
-    - BuzzServiceApi (~> 0.13.0)
+  - BuzzAdBenefitFeed (3.11.3):
+    - BuzzAdBenefitBase (~> 3.11.3)
+    - BuzzAdBenefitNative (~> 3.11.3)
+    - BuzzImage (~> 0.15.0)
+    - BuzzResource (~> 0.15.1)
+    - BuzzServiceApi (~> 0.15.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitInterstitial (3.9.1):
-    - BuzzAdBenefitBase (~> 3.9.1)
-    - BuzzAdBenefitNative (~> 3.9.1)
-    - BuzzImage (~> 0.13.0)
-    - BuzzResource (~> 0.13.0)
+  - BuzzAdBenefitInterstitial (3.11.3):
+    - BuzzAdBenefitBase (~> 3.11.3)
+    - BuzzAdBenefitNative (~> 3.11.3)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitNative (3.9.1):
-    - BuzzAdBenefitBase (~> 3.9.1)
-    - BuzzImage (~> 0.13.0)
-    - BuzzResource (~> 0.13.0)
+  - BuzzAdBenefitNative (3.11.3):
+    - BuzzAdBenefitBase (~> 3.11.3)
+    - BuzzImage (~> 0.15.0)
+    - BuzzResource (~> 0.15.1)
     - GoogleAds-IMA-iOS-SDK (~> 3.12)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzBaseReward (0.13.0):
-    - BuzzServiceApi (~> 0.13.0)
-    - ReactiveObjC (~> 3.1.1)
-  - BuzzBaseRewardSwift (0.13.0):
+  - BuzzBaseRewardSwift (0.15.0):
     - BuzzRxSwift (~> 6.5.0)
-  - BuzzImage (0.13.0):
+  - BuzzImage (0.15.0):
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzInsight (0.13.0):
-    - BuzzLogger (~> 0.13.0)
+  - BuzzInsight (0.15.0):
+    - BuzzLogger (~> 0.15.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzLogger (0.13.0)
-  - BuzzResource (0.13.0)
+  - BuzzLogger (0.15.0)
+  - BuzzResource (0.15.1)
   - BuzzRxSwift (6.5.0)
-  - BuzzServiceApi (0.13.0):
+  - BuzzServiceApi (0.15.0):
     - ReactiveObjC (~> 3.1.1)
-  - BuzzUnit (0.13.0):
-    - BuzzServiceApi (~> 0.13.0)
+  - BuzzUnit (0.15.0):
+    - BuzzServiceApi (~> 0.15.0)
     - ReactiveObjC (~> 3.1.1)
   - GoogleAds-IMA-iOS-SDK (3.14.3)
   - libwebp (1.2.3):
@@ -87,7 +81,7 @@ PODS:
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzAdBenefit (~> 3.9.1)
+  - BuzzAdBenefit (~> 3.11.3)
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
@@ -98,7 +92,6 @@ SPEC REPOS:
     - BuzzAdBenefitFeed
     - BuzzAdBenefitInterstitial
     - BuzzAdBenefitNative
-    - BuzzBaseReward
     - BuzzBaseRewardSwift
     - BuzzImage
     - BuzzInsight
@@ -116,20 +109,19 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BuzzAdBenefit: b06424b917e89ce1432a56e2cb632e6164d54770
-  BuzzAdBenefitBase: 93ccc376d3fd725a97913686584a685cde220b95
-  BuzzAdBenefitFeed: eb6ac62e1e4173493364a14088e0a3ff370957ab
-  BuzzAdBenefitInterstitial: cfa8415507dda16b4f08cae2f5270820d9ab77c6
-  BuzzAdBenefitNative: a85b24268b9a4ef6157af7dfac7ff740238d8f94
-  BuzzBaseReward: ca3de50c4b8beba7214e25aa83dc73e66f36626b
-  BuzzBaseRewardSwift: 7c22be29c8951e30e44b2b277af688d39a457619
-  BuzzImage: e07855463e7595a000a755f129a833f11e6dbbab
-  BuzzInsight: e7bff9157645114c98a390136d7826ad7889876d
-  BuzzLogger: 6adcd7a250ee8d6c84a2f9e8483c8434057179c0
-  BuzzResource: e09df42dc1c8da5f93cc0276faf8aec13bcfbf75
+  BuzzAdBenefit: 372ca458d4be0ff3518b2e63640f38d3cd54fd55
+  BuzzAdBenefitBase: 675a37c8e26923d2988c577cfc9ba991ec2935ae
+  BuzzAdBenefitFeed: 3b85ea0c4407e9c98f34702ed2a6854fa5ac64b2
+  BuzzAdBenefitInterstitial: 079e434ad9f92d57a2bbf30f7461a043ab034c05
+  BuzzAdBenefitNative: d4cd2c6a47c18fceef8bc75aedab07e2d7ba19fe
+  BuzzBaseRewardSwift: 4aa5530dbae1713bbcbce6fe18888bdfa39128e0
+  BuzzImage: 675c21ec92bf1fe625151b580aa8236b79297bfc
+  BuzzInsight: 63ad85ade55a62fa9381e1c68e4f86e2149a0c87
+  BuzzLogger: 39c16229fb979660f38fc12b5ba020c073943b03
+  BuzzResource: 6d011b891acf1f1ceb21b1cdc17baab4cf6db586
   BuzzRxSwift: 01dc0bdf32a917d373076926b01125f3d801695d
-  BuzzServiceApi: 32c38cf384b06f8cba7aa07a26b58d228be8f489
-  BuzzUnit: 0139ad13c98682949001a0742548e4a8268549bc
+  BuzzServiceApi: 088d66b56d114828b8dcd1491bccc0d58cd4214a
+  BuzzUnit: dc0a6e86433d6a75689ccd2127935b099ae9d5dd
   GoogleAds-IMA-iOS-SDK: 2a9b7b14bda4993306f05287f952dce41b5be4ad
   libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
@@ -137,6 +129,6 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: 3dc350894112feab5375cfba9ce0986544a66a69
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 9909e0622e10a819126b8fd984634bd8e31ed3c7
+PODFILE CHECKSUM: a812e998881d7b7cb713458fc526cb840e3ab338
 
 COCOAPODS: 1.11.3
