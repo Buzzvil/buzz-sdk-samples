@@ -37,4 +37,8 @@
   ]];
 }
 
+- (void)updateViewWithError:(NSError *)error {
+  // error에 따라 UI를 업데이트 할 수 있는 코드 작성
+}
+
 @end
