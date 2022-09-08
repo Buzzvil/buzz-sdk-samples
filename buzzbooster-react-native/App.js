@@ -1,12 +1,12 @@
 import React from 'react';
 import * as BuzzBooster from 'react-native-buzz-booster';
 import {
-  SafeAreaView,
   ScrollView,
   StatusBar,
   useColorScheme,
   Button,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors,Header } from 'react-native/Libraries/NewAppScreen';
 import './EventView'
 
