@@ -38,7 +38,7 @@ export default StyleSheet.create({
     flexDirection: 'column'
   },
   title: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 16
   }
 });
