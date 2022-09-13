@@ -55,13 +55,7 @@ export default () => {
           if (eventKey3.length !== 0 && eventValue3.length !== 0) {
             eventValues[eventKey3] = eventValue3
           }
-  
-          if (Object.keys(eventValues).length === 0) {
-            BuzzBooster.sendEvent(eventName)
-          } else {
-            BuzzBooster.sendEvent(eventName, eventValues)
-          }
-  
+          BuzzBooster.sendEvent(eventName, eventValues)
         }} />
       </SafeAreaView >
     );
