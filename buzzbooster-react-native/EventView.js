@@ -25,7 +25,7 @@ const EventTextInput = ({setEventKey, setEventValue}) => {
     );
 };
 
-export default EventView = () => {
+export default () => {
     const [eventName, setEventName] = React.useState("");
     const [eventKey1, setEventKey1] = React.useState("");
     const [eventValue1, setEventValue1] = React.useState("");
