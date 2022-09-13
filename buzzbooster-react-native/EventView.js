@@ -46,17 +46,17 @@ export default () => {
         <EventTextInput setEventKey={setEventKey3} setEventValue={setEventValue3} />
         <Button title="Send" onPress={() => {
           let eventValues = {}
-          if (eventKey1.length != 0 && eventValue1.length != 0) {
+          if (eventKey1.length !== 0 && eventValue1.length !== 0) {
             eventValues[eventKey1] = eventValue1
           }
-          if (eventKey2.length != 0 && eventValue2.length != 0) {
+          if (eventKey2.length !== 0 && eventValue2.length !== 0) {
             eventValues[eventKey2] = eventValue2
           }
-          if (eventKey3.length != 0 && eventValue3.length != 0) {
+          if (eventKey3.length !== 0 && eventValue3.length !== 0) {
             eventValues[eventKey3] = eventValue3
           }
   
-          if (Object.keys(eventValues).length == 0) {
+          if (Object.keys(eventValues).length === 0) {
             BuzzBooster.sendEvent(eventName)
           } else {
             BuzzBooster.sendEvent(eventName, eventValues)
