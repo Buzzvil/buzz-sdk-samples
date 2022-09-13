@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Colors,Header } from 'react-native/Libraries/NewAppScreen';
+import { Colors, Header } from 'react-native/Libraries/NewAppScreen';
 import EventView from './EventView'
 
 const App = () => {
@@ -48,8 +48,5 @@ const App = () => {
     </SafeAreaView>
   );
 };
-
-
-
 
 export default App;
