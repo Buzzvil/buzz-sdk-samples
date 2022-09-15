@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [4.11.0] - 2022-09-15
+* [FIX] 버그 수정
+* 자세한 사항은 [링크]( ) 참조
+
 ## [4.9.0] - 2022-08-11
 * [FIX] 버그 수정
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.15-buzzscreen4.9/) 참조
