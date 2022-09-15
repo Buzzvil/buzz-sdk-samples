@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.17.0] - 2022-09-15
+* 
+* 
+* 
+* 자세한 사항은 [링크]( ) 참조
+
 ## [3.15.0] - 2022-08-11
 * [UPDATE] 코드 추가가 필요없는 BuzzRoulette 탑재로 더 쉬워진 수익화
 * [UPDATE] 광고 식별자 수집 공지 추가
