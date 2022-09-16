@@ -23,7 +23,7 @@
 * [FIX] 버그 수정
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.11-buzzscreen4.5/) 참조
 
-## [4.3.0] - 2022-04-28
+## [4.3.0] - 2022-05-19
 * [FIX] 버그 수정
 * 자세한 사항은 [링크](https://care.buzzvil.com/ko/support/solutions/articles/66000504677) 참조
 
