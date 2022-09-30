@@ -1,6 +1,6 @@
 # Communication Utils Guide
-- Extension SDK 에서는 M앱과 L앱 사이의 통신을 위한 유틸리티를 제공합니다.
-> `extension-client`, `extension-host` SDK 버전 1.8.0 이상부터 지원됩니다.
+- BuzzScreen Extension SDK 에서는 M앱과 L앱 사이의 통신을 위한 유틸리티를 제공합니다.
+> `buzzscreen-host`, `buzzscreen-client` SDK 버전 1.8.0 이상부터 지원됩니다.
 
 - 이 유틸리티를 사용하면 M앱과 L앱은 서로를 통신의 엔드포인트로 등록을 하며, [protectionLevel="signature" 인 커스텀 퍼미션](https://developer.android.com/guide/topics/manifest/permission-element.html#plevel)을 사용하여 보안상 안전한 통신이 가능합니다.
 - 총 3종류의 상황에 적합한 유틸리티를 제공합니다.
@@ -14,7 +14,7 @@
 - 두 앱 사이에 공유되는 데이터 저장소가 필요한 경우 사용합니다.
 - 저장소에서는 key-value 구조로 데이터를 관리합니다.
 
-> Extension SDK에서는 L앱의 잠금화면이 활성화 되어 있는지 여부를 확인할 때 사용하고 있습니다. L앱에서 잠금화면이 활성화 되거나 비활성화 될 때마다 DataStorage 에 값을 업데이트 시키며, M앱에서는 L앱의 상태를 확인하고 싶을 때 DataStorage 로부터 값을 읽습니다.
+> BuzzScreen Extension SDK에서는 L앱의 잠금화면이 활성화 되어 있는지 여부를 확인할 때 사용하고 있습니다. L앱에서 잠금화면이 활성화 되거나 비활성화 될 때마다 DataStorage 에 값을 업데이트 시키며, M앱에서는 L앱의 상태를 확인하고 싶을 때 DataStorage 로부터 값을 읽습니다.
 
 ### 사용 방법
 
@@ -60,7 +60,7 @@ BuzzScreenClient.getDataStorage().getAsync("SHARED_CONFIG_KEY", new DataStorage.
 - 각 이벤트의 이름이 키가 되므로 Sender 와 Receiver 모두 하나의 이벤트에 대해 동일한 이벤트 이름을 사용해야 합니다.
 - 이벤트 전달시 추가적으로 넣을 정보는 Bundle 을 이용합니다.
 
-> Extension SDK에서는 M앱에서 L앱의 잠금화면을 비활성화 시킬 때 사용하고 있습니다(BuzzScreenHost의 requestDeactivation()). L앱이 Receiver 로서 잠금화면을 비활성화시키는 로직을 구현해서 이벤트로 등록해 두고, M앱이 Sender 로서 해당 이벤트를 전송합니다.
+> BuzzScreen Extension SDK에서는 M앱에서 L앱의 잠금화면을 비활성화 시킬 때 사용하고 있습니다(BuzzScreenHost의 requestDeactivation()). L앱이 Receiver 로서 잠금화면을 비활성화시키는 로직을 구현해서 이벤트로 등록해 두고, M앱이 Sender 로서 해당 이벤트를 전송합니다.
 
 ### 사용 방법
 
@@ -108,7 +108,7 @@ BuzzScreenClient.getEventHandler().registerEventListener("SAMPLE_EVENT", new Eve
 - 각 요청과 응답 쌍은 request code 를 통해 구별이 되므로 서버와 클라이언트 모두 같은 request code를 사용해야 합니다.
 - 요청과 응답 시 주고받는 데이터는 Bundle 을 이용합니다.
 
-> Extension SDK에서는 L앱에서 M앱의 버즈스크린 사용 정보를 가지고 올 때 사용하고 있습니다(BuzzScreenClient의 checkAvailability()). L앱이 클라이언트로서 M앱에 버즈스크린 사용 정보를 요청하며, M앱은 서버로서 이 요청을 받으면 버즈스크린 사용 정보를 담아 응답합니다. L앱은 이 응답을 통해 잠금화면을 활성화하는 등의 로직을 처리합니다.
+> BuzzScreen Extension SDK에서는 L앱에서 M앱의 버즈스크린 사용 정보를 가지고 올 때 사용하고 있습니다(BuzzScreenClient의 checkAvailability()). L앱이 클라이언트로서 M앱에 버즈스크린 사용 정보를 요청하며, M앱은 서버로서 이 요청을 받으면 버즈스크린 사용 정보를 담아 응답합니다. L앱은 이 응답을 통해 잠금화면을 활성화하는 등의 로직을 처리합니다.
 
 ### 사용 방법
 
