@@ -6,6 +6,13 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.13.1] - 2022-10-06
+* [NEW] iOS 16을 위한 대응
+* [NEW] revenueType에 새로운 액션형 광고 유형 추가
+* [NEW] 다양한 기획을 지원하기 위한 광고 유형 확인 함수 추가
+* [FIX] 피드 지면에서 진입한 광고 페이지 웹뷰와 브라우저 상단의 내비게이션이 겹쳐서 보여지는 문제 해결
+* [FIX] 유저가 개인정보 수집에 동의한 다음 앱을 삭제 후 재설치 시 간헐적으로 발생하는 크래시 오류 해결
+
 ## [3.11.3] - 2022-09-08
 * [UPDATE] Feed 지면에서 광고가 할당되지 않을 때 표시되는 UI 개선
 * [UPDATE] Feed 광고 분류 탭의 인디케이터 색상의 커스터마이징 기능 추가
