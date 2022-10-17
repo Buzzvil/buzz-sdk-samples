@@ -14,41 +14,40 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzBooster (1.4.0):
+  - BuzzBooster (1.11.3):
     - AFNetworking (~> 4.0)
-    - BuzzMutator (~> 0.10.0)
+    - BuzzMutator (~> 0.17.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzMutator (0.10.0)
-  - libwebp (1.2.1):
-    - libwebp/demux (= 1.2.1)
-    - libwebp/mux (= 1.2.1)
-    - libwebp/webp (= 1.2.1)
-  - libwebp/demux (1.2.1):
+  - BuzzMutator (0.17.0)
+  - libwebp (1.2.3):
+    - libwebp/demux (= 1.2.3)
+    - libwebp/mux (= 1.2.3)
+    - libwebp/webp (= 1.2.3)
+  - libwebp/demux (1.2.3):
     - libwebp/webp
-  - libwebp/mux (1.2.1):
+  - libwebp/mux (1.2.3):
     - libwebp/demux
-  - libwebp/webp (1.2.1)
+  - libwebp/webp (1.2.3)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.13.0):
-    - SDWebImage/Core (= 5.13.0)
-  - SDWebImage/Core (5.13.0)
-  - SDWebImageWebPCoder (0.8.5):
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
+  - SDWebImageWebPCoder (0.9.1):
     - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.10)
+    - SDWebImage/Core (~> 5.13)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (~> 1.4.0)
+  - BuzzBooster (~> 1.11.3)
   - Toast (= 4.0.0)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs:
-    - BuzzBooster
-    - BuzzMutator
   trunk:
     - AFNetworking
+    - BuzzBooster
+    - BuzzMutator
     - libwebp
     - ReactiveObjC
     - SDWebImage
@@ -57,14 +56,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BuzzBooster: ca8a1da8676196ddaf59c22507e04cf3ed374592
-  BuzzMutator: 799eddc48963f25cf04f3896e9de018922634b94
-  libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
+  BuzzBooster: bd7464b9c7c5a9406b84374406eb221f8391c814
+  BuzzMutator: cea44992fbd4028338ef71dbf1194ed8a7ec0b6a
+  libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
-  SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: b5c151e25a34f368846914994afe4d1c4e1f914d
+PODFILE CHECKSUM: 19a59f4f4784c91a4d9aab385af142162279d145
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
