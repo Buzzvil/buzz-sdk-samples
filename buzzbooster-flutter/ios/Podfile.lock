@@ -1,0 +1,98 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - buzz_booster (1.11.6):
+    - BuzzBooster (= 1.11.7)
+    - Flutter
+  - BuzzBooster (1.11.7):
+    - AFNetworking (~> 4.0)
+    - BuzzBoosterSwift (~> 1.11.7)
+    - BuzzMutator (~> 0.17.0)
+    - ReactiveObjC (~> 3.1.1)
+    - SDWebImage (~> 5.0)
+    - SDWebImageWebPCoder
+  - BuzzBoosterSwift (1.11.7):
+    - BuzzRxSwift (~> 6.5.0)
+    - SDWebImage (~> 5.0)
+    - SDWebImageWebPCoder
+  - BuzzMutator (0.17.0)
+  - BuzzRxSwift (6.5.0)
+  - Flutter (1.0.0)
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - libwebp (1.2.3):
+    - libwebp/demux (= 1.2.3)
+    - libwebp/mux (= 1.2.3)
+    - libwebp/webp (= 1.2.3)
+  - libwebp/demux (1.2.3):
+    - libwebp/webp
+  - libwebp/mux (1.2.3):
+    - libwebp/demux
+  - libwebp/webp (1.2.3)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (5.13.5):
+    - SDWebImage/Core (= 5.13.5)
+  - SDWebImage/Core (5.13.5)
+  - SDWebImageWebPCoder (0.9.1):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.13)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - buzz_booster (from `.symlinks/plugins/buzz_booster/ios`)
+  - Flutter (from `Flutter`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - BuzzBooster
+    - BuzzBoosterSwift
+    - BuzzMutator
+    - BuzzRxSwift
+    - libwebp
+    - ReactiveObjC
+    - SDWebImage
+    - SDWebImageWebPCoder
+    - Toast
+
+EXTERNAL SOURCES:
+  buzz_booster:
+    :path: ".symlinks/plugins/buzz_booster/ios"
+  Flutter:
+    :path: Flutter
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  buzz_booster: db8ac7c8a61e7b19f658e248e2b39a6d431933ff
+  BuzzBooster: c15952d56205c7f2c98cacff65ec823de19415a6
+  BuzzBoosterSwift: c2845ac91ffcaa8335d5feadd3d882a4fd328d6a
+  BuzzMutator: cea44992fbd4028338ef71dbf1194ed8a7ec0b6a
+  BuzzRxSwift: 01dc0bdf32a917d373076926b01125f3d801695d
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  fluttertoast: 74526702fea2c060ea55dde75895b7e1bde1c86b
+  libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 23d714cd599354ee7906dbae26dff89b421c4370
+  SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: 54c92ae724292d2039df4b5b1bbeb7d8176aec1d
+
+COCOAPODS: 1.11.3

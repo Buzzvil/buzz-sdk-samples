@@ -1,0 +1,23 @@
+name: buzz_booster_flutter
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  buzz_booster: ^1.11.4
+  fluttertoast: ^8.1.1
+  uuid: ^3.0.6
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
