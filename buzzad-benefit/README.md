@@ -6,6 +6,30 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.19.0] - 2022-10-06
+* [NEW] 룰렛(BuzzRoulette) 푸시 알림의 동작을 커스터마이징할 수 있는 API 추가
+* [FIX] Android 7.0에서 유저에게 룰렛 티켓을 제공한 후 앱이 종료되는 문제 해결
+* [FIX] BuzzScreen Extension SDK를 연동한 앱의 간헐적인 크래시 오류 해결
+* [FIX] BuzzScreen의 간헐적인 크래시 오류 해결
+* [FIX] 사용자의 유튜브 좋아요 + 구독하기 광고 참여 상태가 CTA 버튼에 업데이트되지 않는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.19-buzzscreen4.13/) 참조
+
+## [3.17.0] - 2022-09-15
+* [NEW] 룰렛(BuzzRoulette) 푸시 알림을 커스터마이징하여 제공할 수 있는 API 추가
+* [NEW] revenueType에 새로운 액션형 광고 유형 추가
+* [NEW] 다양한 기획을 지원하기 위한 광고 유형 확인 함수 추가
+* [UPDATE] 광고가 할당되지 않을 때 표시되는 UI 개선
+* [UPDATE] 피드 광고 분류 탭의 인디케이터 커스터마이징 기능 추가
+* [FIX] 간헐적으로 룰렛 아이콘이 나타나지 않는 문제 해결
+* [FIX] 화면을 가로 모드에서 세로 모드로 전환하면 브릿지 페이지가 정상적으로 나타나지 않는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.17-buzzscreen4.11/) 참조
+
+## [3.15.0] - 2022-08-11
+* [UPDATE] 코드 추가가 필요없는 BuzzRoulette 탑재로 더 쉬워진 수익화
+* [UPDATE] 광고 식별자 수집 공지 추가
+* [FIX] BuzzRoulette 실행 시 나타나던 불필요한 광고 식별자 수집 동의 UI 제거
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.15-buzzscreen4.9/) 참조
+
 ## [3.13.0] - 2022-07-14
 * [UPDATE] 개인정보 처리에 대한 사용자 주권 강화
 * [UPDATE] 만보기 기능 제거

@@ -58,7 +58,10 @@
 //      [builder setValue:UIColor.blueColor forState:BZVControlStateNormal];
 //      [builder setValue:UIColor.redColor forState:BZVControlStateHighlight];
 //    }];
-//    builder.tabIndicatorColor = UIColor.grayColor;
+//    builder.tabIndicatorColors = [BZVControlStateResource resourceWithBlock:^(BZVControlStateResourceBuilder * _Nonnull builder) {
+//      [builder setValue:UIColor.clearColor forState:BZVControlStateNormal];
+//      [builder setValue:UIColor.grayColor forState:BZVControlStateHighlight];
+//    }];
 
     // MARK: 3.3. 필터 디자인 변경하기
 //    builder.filterBackgroundColor = [BZVControlStateResource resourceWithBlock:^(BZVControlStateResourceBuilder * _Nonnull builder) {
