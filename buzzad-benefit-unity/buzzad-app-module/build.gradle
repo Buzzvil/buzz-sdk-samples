@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library' // ADDED BY ALAN
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 30
+        targetSdkVersion 31
         multiDexEnabled true        // ADDED BY ALAN
     }
     buildTypes {
@@ -30,12 +30,12 @@ afterEvaluate {                     // ADDED BY ALAN
 }
 
 repositories {
-    // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
+    maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
     maven { url "https://dl.buzzvil.com/public/maven" }
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.25.+'
+    buzzAdBenefitVersionName = '2.33.0-rc.7'
 }
 
 dependencies {

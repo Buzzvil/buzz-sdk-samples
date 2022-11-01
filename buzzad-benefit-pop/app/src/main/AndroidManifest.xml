@@ -12,7 +12,8 @@
             android:theme="@style/AppTheme">
 
         <!-- [CUSTOM_POP_CONTROL_SERVICE] Only need to add this service when use custom pop control service, otherwise don't need to add this service -->
-        <service android:name=".java.custom.CustomControlService" />
+        <service android:name=".java.custom.CustomControlService"
+            android:exported="true"/>
 
         <!-- Caution: Replace `260318561407891` with Your AppKey  -->
         <meta-data

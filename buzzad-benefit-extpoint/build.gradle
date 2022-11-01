@@ -19,13 +19,13 @@ allprojects {
         google()
         jcenter()
 
-        // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
+        maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
         maven { url "https://dl.buzzvil.com/public/maven" }
     }
 }
 
 ext {
-    buzzAdBenefitVersionName = '2.25.+'
+    buzzAdBenefitVersionName = '2.33.0-rc.7'
 }
 
 task clean(type: Delete) {
