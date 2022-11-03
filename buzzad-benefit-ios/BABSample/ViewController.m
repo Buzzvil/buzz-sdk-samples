@@ -4,6 +4,7 @@
 #import "FeedEntry/FeedEntryViewController.h"
 #import "Interstitial/InterstitialViewController.h"
 #import "Native/NativeViewController.h"
+#import "Native2/Native2ViewController.h"
 #import "Web/WebViewController.h"
 #import "WebToFeed/WebToFeedViewController.h"
 #import "CustomBrowserViewController.h"
@@ -24,6 +25,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
 @property (nonatomic, strong, readonly) UIScrollView *scrollView;
 @property (nonatomic, strong, readonly) UIStackView *stackView;
 @property (nonatomic, strong, readonly) UIButton *nativeButton;
+@property (nonatomic, strong, readonly) UIButton *native2Button;
 @property (nonatomic, strong, readonly) UIButton *interstitialButton;
 @property (nonatomic, strong, readonly) UIButton *feedButton;
 @property (nonatomic, strong, readonly) UIButton *feedEntryButton;
@@ -38,7 +40,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+  
   [self setupView];
   [self setupLayout];
   [self setupEvent];
@@ -79,39 +81,44 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)setupView {
   self.navigationItem.title = kNavigationItemTitle;
   self.view.backgroundColor = UIColor.whiteColor;
-
+  
   _loginButtonItem = [[UIBarButtonItem alloc] initWithTitle:kLoginText style:UIBarButtonItemStylePlain target:nil action:nil];
   self.navigationItem.leftBarButtonItem = _loginButtonItem;
-
+  
   _scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
   [self.view addSubview:_scrollView];
-
+  
   _nativeButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_nativeButton setTitle:@"Native" forState:UIControlStateNormal];
   [_nativeButton applyCustomStyle];
-
+  
+  _native2Button = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_native2Button setTitle:@"Native 2.0" forState:UIControlStateNormal];
+  [_native2Button applyCustomStyle];
+  
   _interstitialButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_interstitialButton setTitle:@"Interstitial" forState:UIControlStateNormal];
   [_interstitialButton applyCustomStyle];
-
+  
   _feedButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_feedButton setTitle:@"Feed" forState:UIControlStateNormal];
   [_feedButton applyCustomStyle];
-
+  
   _feedEntryButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_feedEntryButton setTitle:@"Feed Entry" forState:UIControlStateNormal];
   [_feedEntryButton applyCustomStyle];
-
+  
   _webButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_webButton setTitle:@"Web" forState:UIControlStateNormal];
   [_webButton applyCustomStyle];
-
+  
   _webToFeedButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_webToFeedButton setTitle:@"Web to Feed" forState:UIControlStateNormal];
   [_webToFeedButton applyCustomStyle];
-
+  
   _stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
     _nativeButton,
+    _native2Button,
     _interstitialButton,
     _feedButton,
     _feedEntryButton,
@@ -131,7 +138,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
     [_scrollView.topAnchor constraintEqualToAnchor:self.view.layoutMarginsGuide.topAnchor],
     [_scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
   ]];
-
+  
   _stackView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
     [_stackView.leadingAnchor constraintEqualToAnchor:_scrollView.leadingAnchor],
@@ -140,7 +147,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
     [_stackView.bottomAnchor constraintEqualToAnchor:_scrollView.bottomAnchor],
     [_stackView.widthAnchor constraintEqualToAnchor:_scrollView.widthAnchor constant:-kStackViewHorizontalMargin*2],
   ]];
-
+  
   for (UIView *arrangedSubview in _stackView.arrangedSubviews) {
     [self setupSizeConstraintsOfArrangedSubview:arrangedSubview];
   }
@@ -157,9 +164,10 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)setupEvent {
   _loginButtonItem.target = self;
   _loginButtonItem.action = @selector(toggleLogin:);
-
+  
   [_feedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedViewController:)]];
   [_nativeButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushNativeViewController:)]];
+  [_native2Button addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushNative2ViewController:)]];
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_feedEntryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedEntryViewController:)]];
   [_webButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebViewController:)]];
@@ -174,6 +182,11 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)pushNativeViewController:(id)sender {
   NativeViewController *nativeViewController = [[NativeViewController alloc] init];
   [self.navigationController pushViewController:nativeViewController animated:YES];
+}
+
+- (void)pushNative2ViewController:(id)sender {
+  Native2ViewController *native2ViewController = [[Native2ViewController alloc] init];
+  [self.navigationController pushViewController:native2ViewController animated:YES];
 }
 
 - (void)pushInterstitialViewController:(id)sender {
