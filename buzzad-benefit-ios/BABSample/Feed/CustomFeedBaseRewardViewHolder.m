@@ -1,6 +1,6 @@
 #import "CustomFeedBaseRewardViewHolder.h"
 
-// MARK: 3.2. 기본 적립 포인트 알림 팝업 자체 구현하기
+// MARK: 피드 고급 설정 - 기본 적립 포인트 알림 팝업 자체 구현하기
 @interface CustomFeedBaseRewardViewHolder ()
 
 @property (nonatomic, strong, readonly) UILabel *baseRewardLabel;

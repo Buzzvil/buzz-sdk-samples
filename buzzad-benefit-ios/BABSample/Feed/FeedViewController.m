@@ -31,19 +31,19 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [self setupEvent];
 
   _buzzAdFeed = [BZVBuzzAdFeed feedWithBlock:^(BZVBuzzAdFeedBuilder * _Nonnull builder) {
-    // MARK: 3.1. 기본 설정 이외의 Feed 표시하기
+    // MARK: 피드 기본 설정 - 기본 설정 이외의 Feed 표시하기
 //    builder.config = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
 //      builder.unitId = @"SECOND_FEED_UNIT_ID";
 //    }];
   }];
 }
 
-// MARK: 3.1. 피드 지면 표시하기
+// MARK: 피드 기본 설정 - 피드 지면 표시하기
 - (void)presentFeed:(id)sender {
   BZVFeedViewController *feedViewController = [_buzzAdFeed viewController];
   [self presentViewController:feedViewController animated:YES completion:nil];
 
-  // MARK: 3.1. 광고 할당 및 표시하기
+  // MARK: 피드 기본 설정 - 광고 할당 및 표시하기
 //  [_buzzAdFeed loadOnSuccess:^{
 //    NSInteger feedTotalReward = self.buzzAdFeed.availableRewards; // 적립 가능한 총 포인트 금액
 //

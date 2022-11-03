@@ -7,7 +7,7 @@
 
 static NSString * const kNavigationItemTitle = @"Interstitial";
 
-// MARK: 5.1. 광고 할당 및 표시하기
+// MARK: 인터스티셜 기본 설정 - 광고 할당 및 표시하기
 @interface InterstitialViewController () <BZVBuzzAdInterstitialDelegate>
 
 @property (nonatomic, strong, readonly) UIButton *loadAdButton;
@@ -29,11 +29,11 @@ static NSString * const kNavigationItemTitle = @"Interstitial";
     builder.type = BZVBuzzAdInterstitialDialog;
 
     builder.theme = [BZVBuzzAdInterstitialTheme themeWithBlock:^(BZVBuzzAdInterstitialThemeBuilder * _Nonnull builder) {
-      // MARK: 5.3. 텍스트 색상 변경하기
+      // MARK: 인터스티셜 디자인 커스터마이징 - 텍스트 색상 변경하기
 //      builder.textColor = UIColor.systemBlueColor; // 광고 타이틀과 설명 문구 색상
-      // MARK: 5.3. 배경 색상 변경하기
+      // MARK: 인터스티셜 디자인 커스터마이징 - 배경 색상 변경하기
 //      builder.backgroundColor = UIColor.systemOrangeColor; // 지면 배경 색상
-      // MARK: 5.3. Interstitial 지면의 CTA 버튼 디자인 변경하기
+      // MARK: 인터스티셜 디자인 커스터마이징 - Interstitial 지면의 CTA 버튼 디자인 변경하기
 //      builder.rewardIcon = [UIImage imageNamed:@"ic_coin"];
 //      builder.participatedIcon = [UIImage imageNamed:@"ic_check"];
 //      builder.ctaTextColor = [BZVControlStateResource resourceWithBlock:^(BZVControlStateResourceBuilder * _Nonnull builder) {

@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.15.4] - 2022-11-03
+* [NEW] 네이티브 2.0, 자동으로 다음 광고를 불러오는 진화한 네이티브 지면
+* [FIX] 뷰 생명주기에 따라 사라져야 하는 인스턴스가 메모리에 잔존하여 발생하는 불필요한 메모리 누수 현상 해결
+
 ## [3.13.1] - 2022-10-06
 * [NEW] iOS 16을 위한 대응
 * [NEW] revenueType에 새로운 액션형 광고 유형 추가
