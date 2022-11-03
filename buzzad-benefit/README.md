@@ -8,7 +8,6 @@
 
 ## [3.21.0] - 2022-11-03
 * [NEW] 네이티브 2.0, 자동으로 다음 광고를 불러오는 진화한 네이티브 지면
-* [UPDATE] 룰렛(BuzzRoulette) 푸시 알림의 동작을 커스터마이징할 수 있는 API 추가
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.21-buzzscreen4.15/) 참조
 
 ## [3.19.0] - 2022-10-06
