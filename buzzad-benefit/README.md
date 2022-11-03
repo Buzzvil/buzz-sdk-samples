@@ -6,6 +6,11 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.21.0] - 2022-11-03
+* [NEW] 네이티브 2.0, 자동으로 다음 광고를 불러오는 진화한 네이티브 지면
+* [UPDATE] 룰렛(BuzzRoulette) 푸시 알림의 동작을 커스터마이징할 수 있는 API 추가
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.21-buzzscreen4.15/) 참조
+
 ## [3.19.0] - 2022-10-06
 * [NEW] 룰렛(BuzzRoulette) 푸시 알림의 동작을 커스터마이징할 수 있는 API 추가
 * [FIX] Android 7.0에서 유저에게 룰렛 티켓을 제공한 후 앱이 종료되는 문제 해결
