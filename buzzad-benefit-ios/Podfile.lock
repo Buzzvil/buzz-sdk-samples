@@ -87,7 +87,8 @@ DEPENDENCIES:
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
     - BuzzAdBenefit
     - BuzzAdBenefitBase
     - BuzzAdBenefitFeed
@@ -98,11 +99,9 @@ SPEC REPOS:
     - BuzzInsight
     - BuzzLogger
     - BuzzResource
+    - BuzzRxSwift
     - BuzzServiceApi
     - BuzzUnit
-  https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
-    - BuzzRxSwift
     - GoogleAds-IMA-iOS-SDK
     - libwebp
     - ReactiveObjC
@@ -132,6 +131,6 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 02c90447deb1c8038189eff6d4a2a8dba29c2e3b
+PODFILE CHECKSUM: 6e657cbad352395918c239b3d6eb250dc68b8188
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
