@@ -7,7 +7,7 @@
 
 static NSString * const kNavigationItemTitle = @"Native";
 
-// MARK: 4.1. 광고 레이아웃 구성하기
+// MARK: 네이티브 기본 설정 - 광고 레이아웃 구성하기
 @interface NativeViewController () <BZVNativeAdEventDelegate, BZVNativeAdViewVideoDelegate>
 
 @property (nonatomic, strong, readonly) UIButton *loadAdButton;
@@ -29,7 +29,7 @@ static NSString * const kNavigationItemTitle = @"Native";
   [self setupView];
 }
 
-// MARK: 4.2. 광고 할당 및 표시하기
+// MARK: 네이티브 기본 설정 - 광고 할당 및 표시하기
 - (void)loadAd:(id)sender {
   BZVNativeAdRequest *adRequest = [[BZVNativeAdRequest alloc] init];
   BZVBuzzAdNative *buzzAdNative = [BZVBuzzAdNative nativeWithUnitId:NATIVE_UNIT_ID];
@@ -51,7 +51,7 @@ static NSString * const kNavigationItemTitle = @"Native";
   [ad addNativeAdEventDelegate:self];
 }
 
-// MARK: 4.2. 한 번에 여러 개의 광고 로드하기
+// MARK: 네이티브 고급 설정 - 한 번에 여러 개의 광고 로드하기
 - (void)loadAds:(id)sender {
   BZVNativeAdsRequest *adsRequest = [BZVNativeAdsRequest requestWithBlock:^(BZVNativeAdsRequestBuilder * _Nonnull builder) {
     builder.adCount = @(10); // 한 번에 로드할 광고 개수를 설정합니다.
@@ -67,7 +67,7 @@ static NSString * const kNavigationItemTitle = @"Native";
   }];
 }
 
-// MARK: 4.2. 광고 이벤트 리스너 등록하기
+// MARK: 네이티브 고급 설정 - 광고 이벤트 리스너 등록하기
 #pragma mark - BZVNativeAdEventDelegate
 - (void)didImpressAd:(BZVNativeAd *)nativeAd {
 // Native 광고가 유저에게 노출되었을 때 호출됩니다.
@@ -89,7 +89,7 @@ static NSString * const kNavigationItemTitle = @"Native";
 // 광고 참여가 완료되었을 때 호출됩니다.
 }
 
-// MARK: 4.2. 비디오 광고 리스너 등록하기
+// MARK: 네이티브 고급 설정 - 비디오 광고 리스너 등록하기
 #pragma mark - BZVNativeAdViewVideoDelegate
 - (void)BZVNativeAdView:(BZVNativeAdView *)nativeAdView willStartPlayingVideoAd:(BZVNativeAd *)nativeAd {
 }

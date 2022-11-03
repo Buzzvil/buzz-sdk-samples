@@ -2,7 +2,7 @@
 
 @import BuzzAdBenefit;
 
-// MARK: 3.2. 하위 뷰 컨트롤러로 Feed 연동하기
+// MARK: 피드 고급 설정 - 하위 뷰 컨트롤러로 Feed 연동하기
 @interface ContainerViewController ()
 
 @property (nonatomic, strong, readonly) BZVBuzzAdFeed *buzzAdFeed;

@@ -1,6 +1,6 @@
 #import "CustomFeedAdViewHolder.h"
 
-// MARK: 3.2. 일반 광고 디자인 자체 구현하기
+// MARK: 피드 고급 설정 - 일반 광고 디자인 자체 구현하기
 @interface CustomFeedAdViewHolder () <BZVNativeAdEventDelegate>
 
 @property (nonatomic, strong, readonly) BZVNativeAdView *nativeAdView;

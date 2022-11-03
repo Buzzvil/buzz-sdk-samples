@@ -45,12 +45,12 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [self setupLayout];
   [self setupEvent];
   
-  // MARK: 7. 광고 참여 방식 변경하기
+  // MARK: 커스텀 인앱 브라우저 - 커스텀 런처 설정하기
 //  [BuzzAdBenefit setLauncher:self];
 }
 
 - (void)toggleLogin:(id)sender {
-  // MARK: 2. 로그인 요청하기
+  // MARK: 시작하기 - 로그인 요청하기
   if (![BuzzAdBenefit isLoggedIn]) {
     [BuzzAdBenefit loginWithBlock:^(BZVLoginRequestBuilder * _Nonnull builder) {
       builder.userId = @"USER_ID";

@@ -1,6 +1,6 @@
 #import "CustomFeedErrorViewHolder.h"
 
-// MARK: 3.2. 광고 미할당 안내 디자인 자체 구현하기
+// MARK: 피드 고급 설정 - 광고 미할당 안내 디자인 자체 구현하기
 @interface CustomFeedErrorViewHolder ()
 
 @property (nonatomic, strong, readonly) UIImageView *imageView;

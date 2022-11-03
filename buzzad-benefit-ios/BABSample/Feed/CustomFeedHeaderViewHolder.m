@@ -1,6 +1,6 @@
 #import "CustomFeedHeaderViewHolder.h"
 
-// MARK: 3.2. 헤더 영역 자체 구현하기
+// MARK: 피드 고급 설정 - 헤더 영역 자체 구현하기
 @interface CustomFeedHeaderViewHolder ()
 
 @property (nonatomic, strong, readonly) UILabel *headerLabel;
