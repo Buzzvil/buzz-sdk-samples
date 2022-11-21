@@ -1,4 +1,4 @@
-## BuzzBooster SDK for React Native
+## BuzzBooster SDK for Flutter
 
 * [개발 가이드](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/2885845036/BuzzBooster+Flutter+SDK)
 
