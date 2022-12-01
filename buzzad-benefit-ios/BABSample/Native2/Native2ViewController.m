@@ -151,6 +151,38 @@ static NSString * const kNavigationItemTitle = @"Native2";
 
 // MARK: 네이티브 2.0 기본 설정 - 광고 보여주기
 - (void)start {
+  [self subscribeEvents];
+  [self subscribeAdEvents];
+  [_viewBinder bind];
+}
+
+- (void)subscribeEvents {
+  __weak typeof(self) weakSelf = self;
+  [_viewBinder subscribeEventsOnRequest:^{
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.indicatorView startAnimating];
+    }
+  } onNext:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.indicatorView stopAnimating];
+    }
+  } onError:^(NSError * _Nonnull error) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.indicatorView stopAnimating];
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
+    }
+  } onCompleted:^{
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.indicatorView stopAnimating];
+    }
+  }];
+}
+
+- (void)subscribeAdEvents {
   __weak typeof(self) weakSelf = self;
   [_viewBinder subscribeAdEventsOnImpressed:^(BZVNativeAd2 * _Nonnull nativeAd) {
     __strong typeof(self) strongSelf = weakSelf;
@@ -178,31 +210,6 @@ static NSString * const kNavigationItemTitle = @"Native2";
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad participated: %@", nativeAd.title]];
     }
   }];
-  
-  [_viewBinder subscribeEventsOnRequest:^{
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      [strongSelf.indicatorView startAnimating];
-    }
-  } onNext:^(BZVNativeAd2 * _Nonnull nativeAd) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      [strongSelf.indicatorView stopAnimating];
-    }
-  } onError:^(NSError * _Nonnull error) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      [strongSelf.indicatorView stopAnimating];
-      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
-    }
-  } onCompleted:^{
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      [strongSelf.indicatorView stopAnimating];
-    }
-  }];
-  
-  [_viewBinder bind];
 }
 
 // MARK: 네이티브 2.0 고급 설정 - 동영상 광고 리스너 등록하기
