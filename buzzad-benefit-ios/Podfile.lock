@@ -14,13 +14,13 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzAdBenefit (3.17.7):
-    - BuzzAdBenefitBase (~> 3.17.7)
-    - BuzzAdBenefitFeed (~> 3.17.7)
-    - BuzzAdBenefitInterstitial (~> 3.17.7)
-    - BuzzAdBenefitNative (~> 3.17.7)
+  - BuzzAdBenefit (3.17.8):
+    - BuzzAdBenefitBase (~> 3.17.8)
+    - BuzzAdBenefitFeed (~> 3.17.8)
+    - BuzzAdBenefitInterstitial (~> 3.17.8)
+    - BuzzAdBenefitNative (~> 3.17.8)
     - BuzzCore (~> 0.21.0)
-  - BuzzAdBenefitBase (3.17.7):
+  - BuzzAdBenefitBase (3.17.8):
     - AFNetworking (~> 4.0)
     - BuzzBaseRewardSwift (~> 0.21.0)
     - BuzzCore (~> 0.21.0)
@@ -31,21 +31,21 @@ PODS:
     - BuzzServiceApi (~> 0.21.0)
     - BuzzUnit (~> 0.21.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitFeed (3.17.7):
-    - BuzzAdBenefitBase (~> 3.17.7)
-    - BuzzAdBenefitNative (~> 3.17.7)
+  - BuzzAdBenefitFeed (3.17.8):
+    - BuzzAdBenefitBase (~> 3.17.8)
+    - BuzzAdBenefitNative (~> 3.17.8)
     - BuzzCore (~> 0.21.0)
     - BuzzImage (~> 0.21.0)
     - BuzzResource (~> 0.21.0)
     - BuzzRxSwift (~> 6.5.0)
     - BuzzServiceApi (~> 0.21.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitInterstitial (3.17.7):
-    - BuzzAdBenefitBase (~> 3.17.7)
-    - BuzzAdBenefitNative (~> 3.17.7)
+  - BuzzAdBenefitInterstitial (3.17.8):
+    - BuzzAdBenefitBase (~> 3.17.8)
+    - BuzzAdBenefitNative (~> 3.17.8)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitNative (3.17.7):
-    - BuzzAdBenefitBase (~> 3.17.7)
+  - BuzzAdBenefitNative (3.17.8):
+    - BuzzAdBenefitBase (~> 3.17.8)
     - BuzzImage (~> 0.21.0)
     - BuzzResource (~> 0.21.0)
     - BuzzRxSwift (~> 6.5.0)
@@ -91,7 +91,7 @@ PODS:
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzAdBenefit (~> 3.17.7)
+  - BuzzAdBenefit (~> 3.17.8)
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
@@ -120,11 +120,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BuzzAdBenefit: b9325c66044bc73eac200b84b389a6e721fefa3c
-  BuzzAdBenefitBase: 8f59143207c61397a930d4a1f6ecedb20905ec06
-  BuzzAdBenefitFeed: 50a65f9f7ef4a3a9d3cad50a2d297081f366b5e9
-  BuzzAdBenefitInterstitial: 70a374742236d01ade8090e590f87463f1226586
-  BuzzAdBenefitNative: 8d85e93631d9dd0eda231c31dd261587b7828114
+  BuzzAdBenefit: 3a384f372dec3fd862d1e9b1a51982e9a9d7c603
+  BuzzAdBenefitBase: 4000871105bcdc4f6699dfef6da34474937c21cd
+  BuzzAdBenefitFeed: 2d5c27bc323744c72984f831efaf6f670b5a7c85
+  BuzzAdBenefitInterstitial: e628ad79a92de2e9532dfd6cef39c5fdb5b9722c
+  BuzzAdBenefitNative: b1288013162eefdf94aeeb9793553c65fa5515c6
   BuzzBaseRewardSwift: 92b54eb8ca2a5e00c4238e726f5a7b0b4f9dc868
   BuzzCore: 5c3b318962c6cabc1801f717286acf8ce6c587ec
   BuzzImage: 915cb79cdc1e076c25367d3ea06549671192ca18
@@ -141,6 +141,6 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 1b16b6790969b12432c3ad3387662ee0f91042f5
+PODFILE CHECKSUM: ac2a96e65c033719f89ea6d22163af00ddf65079
 
 COCOAPODS: 1.11.3

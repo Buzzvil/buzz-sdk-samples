@@ -6,7 +6,7 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
-## [3.17.7] - 2022-12-01
+## [3.17.8] - 2022-12-01
 * [NEW] 네이티브 2.0에 광고 참여 이벤트를 수신할 수 있는 리스너 추가
 * [NEW] 피드 필터 스크롤 뷰의 좌우로 움직일 때 부드럽게 동작하는 페이딩 엣지(fading edge) 적용
 * [NEW] 유저가 이미 선택한 탭을 다시 선택해서 전체 탭이 선택될 때, 피드 필터 스크롤 뷰가 왼쪽으로 자동으로 스크롤되는 기능 추가
