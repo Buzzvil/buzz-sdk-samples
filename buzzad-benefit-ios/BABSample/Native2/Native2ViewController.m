@@ -153,28 +153,37 @@ static NSString * const kNavigationItemTitle = @"Native2";
 - (void)start {
   [self subscribeEvents];
   [self subscribeAdEvents];
+  
+  // 광고 할당 및 표시를 자동으로 수행합니다.
   [_viewBinder bind];
 }
 
+// MARK: 네이티브 2.0 기본 설정 - 광고 보여주기
 - (void)subscribeEvents {
+  // Warning: 반드시 bind 함수를 호출하기 전에 호출해주세요.
+  // Warning: retain cycle 방지를 위해 weak self를 사용해주세요.
   __weak typeof(self) weakSelf = self;
   [_viewBinder subscribeEventsOnRequest:^{
+    // 광고 할당을 요청하면 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.indicatorView startAnimating];
     }
   } onNext:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    // 광고 할당에 성공하면 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.indicatorView stopAnimating];
     }
   } onError:^(NSError * _Nonnull error) {
+    // 최초 광고 할당에 실패하면 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.indicatorView stopAnimating];
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
     }
   } onCompleted:^{
+    // 더 이상 갱신할 수 있는 광고가 없을 때 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.indicatorView stopAnimating];
@@ -182,29 +191,37 @@ static NSString * const kNavigationItemTitle = @"Native2";
   }];
 }
 
+// MARK: 네이티브 2.0 고급 설정 - 광고 이벤트 리스너 등록하기
 - (void)subscribeAdEvents {
+  // Warning: 반드시 bind 함수를 호출하기 전에 호출해주세요.
+  // Warning: retain cycle 방지를 위해 closure 내에서 반드시 weak self를 사용해주세요.
   __weak typeof(self) weakSelf = self;
   [_viewBinder subscribeAdEventsOnImpressed:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    // Native 광고가 유저에게 노출되었을 때 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad impressed: %@", nativeAd.title]];
     }
   } onClicked:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    // 유저가 Native 광고를 클릭했을 때 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad clicked: %@", nativeAd.title]];
     }
   } onRewardRequested:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    // 리워드 적립 요청시에 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad requested reward: %@", nativeAd.title]];
     }
   } onRewarded:^(BZVNativeAd2 * _Nonnull nativeAd, BZVRewardResult result) {
+    // 리워드 적립의 결과를 수신했을 때 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad received reward result: %@", nativeAd.title]];
     }
   } onParticipated:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    // 광고 참여가 완료되었을 때 호출됩니다.
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad participated: %@", nativeAd.title]];
