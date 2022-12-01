@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.23.0] - 2022-12-01
+* [NEW] 네이티브 2.0에 광고 참여 이벤트를 수신할 수 있는 리스너 추가
+* [UPDATE] Kotlin으로 구현한 네이티브 2.0의 Java 지원을 위해 인터페이스 개선
+* [FIX] 네이티브 2.0에서 새로 호출되어 유저가 아직 참여하지 않은 광고의 CTA 버튼이 “참여 완료“로 표시되는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.23-buzzscreen4.17/) 참조
+
 ## [3.21.0] - 2022-11-03
 * [NEW] 네이티브 2.0, 자동으로 다음 광고를 불러오는 진화한 네이티브 지면
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.21-buzzscreen4.15/) 참조
