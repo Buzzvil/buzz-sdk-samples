@@ -152,6 +152,33 @@ static NSString * const kNavigationItemTitle = @"Native2";
 // MARK: 네이티브 2.0 기본 설정 - 광고 보여주기
 - (void)start {
   __weak typeof(self) weakSelf = self;
+  [_viewBinder subscribeAdEventsOnImpressed:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad impressed: %@", nativeAd.title]];
+    }
+  } onClicked:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad clicked: %@", nativeAd.title]];
+    }
+  } onRewardRequested:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad requested reward: %@", nativeAd.title]];
+    }
+  } onRewarded:^(BZVNativeAd2 * _Nonnull nativeAd, BZVRewardResult result) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad received reward result: %@", nativeAd.title]];
+    }
+  } onParticipated:^(BZVNativeAd2 * _Nonnull nativeAd) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Ad participated: %@", nativeAd.title]];
+    }
+  }];
+  
   [_viewBinder subscribeEventsOnRequest:^{
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
