@@ -95,12 +95,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        this.nativeAd2CarouselButton = findViewById(R.id.native_ad_2_carousel_button);
-        nativeAd2CarouselButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, NativeAd2CarouselActivity.class);
-            startActivity(intent);
-        });
-
         this.feedButton = findViewById(R.id.feed_button);
         feedButton.setOnClickListener(new View.OnClickListener() {
             @Override
