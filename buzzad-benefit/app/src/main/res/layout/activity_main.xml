@@ -43,6 +43,13 @@
             android:text="Native 2.0"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/native_ad_2_carousel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Native 2.0 Carousel"
+            android:textAllCaps="false" />
+
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
