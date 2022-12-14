@@ -14,40 +14,49 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzBooster (1.4.4):
+  - BuzzBooster (1.11.7):
     - AFNetworking (~> 4.0)
-    - BuzzMutator (~> 0.10.0)
+    - BuzzBoosterSwift (~> 1.11.7)
+    - BuzzMutator (~> 0.17.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzMutator (0.10.0)
-  - libwebp (1.2.1):
-    - libwebp/demux (= 1.2.1)
-    - libwebp/mux (= 1.2.1)
-    - libwebp/webp (= 1.2.1)
-  - libwebp/demux (1.2.1):
+  - BuzzBoosterSwift (1.11.7):
+    - BuzzRxSwift (~> 6.5.0)
+    - SDWebImage (~> 5.0)
+    - SDWebImageWebPCoder
+  - BuzzMutator (0.17.0)
+  - BuzzRxSwift (6.5.0)
+  - libwebp (1.2.3):
+    - libwebp/demux (= 1.2.3)
+    - libwebp/mux (= 1.2.3)
+    - libwebp/webp (= 1.2.3)
+  - libwebp/demux (1.2.3):
     - libwebp/webp
-  - libwebp/mux (1.2.1):
+  - libwebp/mux (1.2.3):
     - libwebp/demux
-  - libwebp/webp (1.2.1)
+  - libwebp/webp (1.2.3)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.13.1):
-    - SDWebImage/Core (= 5.13.1)
-  - SDWebImage/Core (5.13.1)
-  - SDWebImageWebPCoder (0.9.0):
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
+  - SDWebImageWebPCoder (0.9.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.13)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (~> 1.4.4)
+  - BuzzBooster (~> 1.11.7)
   - Toast (= 4.0.0)
 
 SPEC REPOS:
+  https://github.com/Buzzvil/Specs:
+    - BuzzBooster
+    - BuzzBoosterSwift
   trunk:
     - AFNetworking
-    - BuzzBooster
     - BuzzMutator
+    - BuzzRxSwift
     - libwebp
     - ReactiveObjC
     - SDWebImage
@@ -56,14 +65,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BuzzBooster: 54bee479966b2ca9178ba4f4a3ddafb6d50922d5
-  BuzzMutator: 0d9120c15e5d797bf83a7f8ca8a8ea527f5cec13
-  libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
+  BuzzBooster: c15952d56205c7f2c98cacff65ec823de19415a6
+  BuzzBoosterSwift: c2845ac91ffcaa8335d5feadd3d882a4fd328d6a
+  BuzzMutator: cea44992fbd4028338ef71dbf1194ed8a7ec0b6a
+  BuzzRxSwift: 01dc0bdf32a917d373076926b01125f3d801695d
+  libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: fb26a455eeda4c7a55e4dcb6172dbb258af7a4ca
-  SDWebImageWebPCoder: 3dc350894112feab5375cfba9ce0986544a66a69
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: c224d7b720a95e0e2eba9e60c4ec7fe7574330c8
+PODFILE CHECKSUM: 6290d23ae87cb0f7e8d2445a13c71e8c8e45ed0e
 
 COCOAPODS: 1.11.3

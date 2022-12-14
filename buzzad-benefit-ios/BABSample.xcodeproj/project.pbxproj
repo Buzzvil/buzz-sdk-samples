@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65FDA0732910F91200DF170F /* Native2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FDA0722910F91200DF170F /* Native2ViewController.m */; };
 		696534B22516811E00714D40 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
 		696534F725183A3600714D40 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696534B6251681CE00714D40 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6B9435E328223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9435E228223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m */; };
@@ -39,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65FDA0712910F91200DF170F /* Native2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Native2ViewController.h; sourceTree = "<group>"; };
+		65FDA0722910F91200DF170F /* Native2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Native2ViewController.m; sourceTree = "<group>"; };
 		696534B6251681CE00714D40 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		6B9435E128223B2900E79DBE /* CustomFeedBaseRewardViewHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedBaseRewardViewHolder.h; sourceTree = "<group>"; };
 		6B9435E228223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedBaseRewardViewHolder.m; sourceTree = "<group>"; };
@@ -111,6 +114,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65FDA0702910F72400DF170F /* Native2 */ = {
+			isa = PBXGroup;
+			children = (
+				D67A47E327B24DD100C5B4DC /* CustomCtaView.h */,
+				D67A47E427B24DD100C5B4DC /* CustomCtaView.m */,
+				65FDA0712910F91200DF170F /* Native2ViewController.h */,
+				65FDA0722910F91200DF170F /* Native2ViewController.m */,
+			);
+			path = Native2;
+			sourceTree = "<group>";
+		};
 		8B121751F2413E60149EBBB0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,11 +158,12 @@
 			children = (
 				D67A47CF27B2488200C5B4DC /* Feed */,
 				D626FB8D273E3AB300103555 /* FeedEntry */,
-				D67A47E927B2500D00C5B4DC /* Interstitial */,
 				D67A47E227B24DB300C5B4DC /* Native */,
-				D6E4C05527B22CDB0062B597 /* Util */,
+				65FDA0702910F72400DF170F /* Native2 */,
+				D67A47E927B2500D00C5B4DC /* Interstitial */,
 				D67A47ED27B250F200C5B4DC /* Web */,
 				D67A47EE27B252B000C5B4DC /* WebToFeed */,
+				D6E4C05527B22CDB0062B597 /* Util */,
 				C4A2974E2240F06900F6D677 /* AppDelegate.h */,
 				C4A2974F2240F06900F6D677 /* AppDelegate.m */,
 				D67A47EF27B2588300C5B4DC /* CustomBrowserViewController.h */,
@@ -206,8 +221,6 @@
 		D67A47E227B24DB300C5B4DC /* Native */ = {
 			isa = PBXGroup;
 			children = (
-				D67A47E327B24DD100C5B4DC /* CustomCtaView.h */,
-				D67A47E427B24DD100C5B4DC /* CustomCtaView.m */,
 				D67A47E627B24F3F00C5B4DC /* NativeViewController.h */,
 				D67A47E727B24F3F00C5B4DC /* NativeViewController.m */,
 			);
@@ -392,6 +405,7 @@
 				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
 				6B9435E328223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m in Sources */,
 				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
+				65FDA0732910F91200DF170F /* Native2ViewController.m in Sources */,
 				D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */,
 				D67A47DB27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m in Sources */,
 				D67A47E527B24DD100C5B4DC /* CustomCtaView.m in Sources */,
