@@ -8,10 +8,5 @@
     android:orientation="vertical"
     tools:context=".nativead2.NativeAd2Activity">
 
-    <TextView
-        android:id="@+id/stateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <include layout="@layout/view_native_ad2_item" />
 </LinearLayout>
