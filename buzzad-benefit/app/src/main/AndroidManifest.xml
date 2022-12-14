@@ -28,7 +28,6 @@
         <activity android:name=".FeedEntryPointActivity" />
         <activity android:name=".carousel.NativeCarouselActivity" />
         <activity android:name=".nativead2.NativeAd2Activity" />
-        <activity android:name=".nativead2.carousel.NativeAd2CarouselActivity" />
 
         <!-- Caution: Replace `000000000000000` with Your AppKey -->
         <meta-data
