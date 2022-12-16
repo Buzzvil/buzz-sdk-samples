@@ -42,14 +42,7 @@ public class NativeAd2Activity extends AppCompatActivity {
         final View loadingView = findViewById(R.id.loadingView);
 
         // 광고 레이아웃을 설정합니다.
-        final NativeAd2ViewBinder binder = new NativeAd2ViewBinder.Builder()
-                .nativeAd2View(nativeAd2View)
-                .mediaView(mediaView)
-                .titleTextView(titleTextView)
-                .iconImageView(iconImageView)
-                .descriptionTextView(descriptionTextView)
-                .ctaView(ctaView)
-                .build(unitId);
+        final NativeAd2ViewBinder binder = new NativeAd2ViewBinder.Builder().nativeAd2View(nativeAd2View).mediaView(mediaView).titleTextView(titleTextView).iconImageView(iconImageView).descriptionTextView(descriptionTextView).ctaView(ctaView).build(unitId);
 
         // (Optional) 광고 요청 상태에 따른 UI를 구현합니다.
         binder.addNativeAd2StateChangedListener(new NativeAd2StateChangedListener() {
@@ -90,6 +83,7 @@ public class NativeAd2Activity extends AppCompatActivity {
             }
         });
 
+        // (Optional) 광고 참여 이벤트를 받아오는 리스너를 등록합니다.
         binder.addNativeAd2EventListener(new NativeAd2EventListener() {
             @Override
             public void onImpressed(@NonNull NativeAd2 nativeAd2) {
