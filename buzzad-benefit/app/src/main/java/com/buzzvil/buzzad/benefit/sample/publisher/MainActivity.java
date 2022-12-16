@@ -31,7 +31,6 @@ import com.buzzvil.buzzad.benefit.sample.publisher.carousel.NativeCarouselActivi
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead2.NativeAd2Activity;
-import com.buzzvil.buzzad.benefit.sample.publisher.nativead2.carousel.NativeAd2CarouselActivity;
 
 import java.util.List;
 
@@ -41,9 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Button nativeAdsButton;
     private Button nativeCarouselButton;
     private Button nativeAd2Button;
-    private Button nativeAd2CarouselButton;
     private Button feedButton;
-    private Button feedWithTabButton;
     private Button webToFeedButton;
     private Button feedEntryPointButton;
     private ProgressBar progressBar;
