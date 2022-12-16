@@ -30,6 +30,7 @@ import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdsRequest;
 import com.buzzvil.buzzad.benefit.sample.publisher.carousel.NativeCarouselActivity;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
+import com.buzzvil.buzzad.benefit.sample.publisher.nativead2.NativeAd2Activity;
 
 import java.util.List;
 
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private Button nativeAdButton;
     private Button nativeAdsButton;
     private Button nativeCarouselButton;
+    private Button nativeAd2Button;
     private Button feedButton;
-    private Button feedWithTabButton;
     private Button webToFeedButton;
     private Button feedEntryPointButton;
     private ProgressBar progressBar;
@@ -83,6 +84,15 @@ public class MainActivity extends AppCompatActivity {
         this.nativeCarouselButton = findViewById(R.id.native_carousel_button);
         nativeCarouselButton.setOnClickListener(v -> {
             NativeCarouselActivity.startActivity(MainActivity.this);
+        });
+
+        this.nativeAd2Button = findViewById(R.id.native_ad_2_button);
+        nativeAd2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NativeAd2Activity.class);
+                startActivity(intent);
+            }
         });
 
         this.feedButton = findViewById(R.id.feed_button);
@@ -265,7 +275,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     private void registerSessionReadyReceiver() {
         LocalBroadcastManager.getInstance(this).registerReceiver(sessionReadyReceiver, BuzzAdBenefit.getSessionReadyIntentFilter());
     }
