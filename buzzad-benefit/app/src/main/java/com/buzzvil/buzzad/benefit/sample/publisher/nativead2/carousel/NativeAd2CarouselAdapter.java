@@ -55,10 +55,11 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
 
     @Override
     public void onViewRecycled(NativeAd2CarouselViewHolder holder) {
-        int itemPosition = holder.getAdapterPosition() % list.size();
-        holder.unbind(itemPosition);
-
         super.onViewRecycled(holder);
+        int itemPosition = holder.getAdapterPosition() % list.size();
+
+        // unbind를 반드시 호출하여 뷰를 재사용할 때 문제가 발생하지 않게 합니다.
+        holder.unbind(itemPosition);
     }
 
 
@@ -66,10 +67,9 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
     public int getItemCount() {
         int actualItemCount = list.size();
         if (infiniteLoop && actualItemCount > 0) {
-            // 무한 루프를 쉽게 구현하는 방법으로 매우 큰 수를 여기서 반환한다.
+            // 무한 루프를 쉽게 구현하는 방법으로 매우 큰 수를 여기서 반환합니다.
             return Integer.MAX_VALUE;
         }
         return actualItemCount;
     }
-
 }

@@ -16,7 +16,7 @@
         tools:text="carouselPool state: onLoaded" />
 
     <!-- 광고를 표시할 Carousel -->
-    <!-- clipToPadding,  paddingHorizontal: 이전과 이후 아이템을 살짝 보여주기 위해 설정 -->
+    <!-- clipToPadding, paddingHorizontal: 이전과 이후 아이템을 살짝 보여주기 위해 설정 -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/carouselRecyclerView"
         android:layout_width="match_parent"

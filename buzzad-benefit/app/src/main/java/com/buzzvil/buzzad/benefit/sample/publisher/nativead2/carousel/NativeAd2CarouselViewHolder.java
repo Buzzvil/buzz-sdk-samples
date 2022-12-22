@@ -44,6 +44,7 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
         TextView textDescription = nativeAd2View.findViewById(R.id.textDescription);
         DefaultCtaView ctaView = nativeAd2View.findViewById(R.id.ctaView);
 
+        // NativeAd2View와 하위 컴포넌트를 바인드합니다.
         nativeAd2ViewBinder = new NativeAd2ViewBinder.Builder()
                 .nativeAd2View(nativeAd2View)
                 .mediaView(mediaView)
@@ -53,6 +54,7 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
                 .ctaView(ctaView)
                 .build(unitId);
 
+        // 필요에 따라 광고 갱신 상태를 받아올 수 있는 NativeAd2StateChangedListener를 설정하세요.
         nativeAd2ViewBinder.addNativeAd2StateChangedListener(new NativeAd2StateChangedListener() {
             @Override
             public void onRequested() {
@@ -75,6 +77,7 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
+        // 필요에 따라 광고 이벤트 상태를 받아올 수 있는 NativeAd2EventListener를 설정하세요.
         nativeAd2ViewBinder.addNativeAd2EventListener(new NativeAd2EventListener() {
             @Override
             public void onImpressed(@NonNull NativeAd2 nativeAd2) {
@@ -102,6 +105,7 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
+        // CarouselToFeedSlideItem을 위한 바인더를 빌드합니다.
         carouselToFeedViewBinder = new FeedPromotionViewBinder.Builder(nativeAd2View, mediaView)
                 .titleTextView(textTitle)
                 .descriptionTextView(textDescription)
@@ -111,22 +115,28 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setPool(NativeAd2Pool carouselPool, int adKey) {
+        // 해당 position(adKey)에 해당하는 NativeAd2ViewBinder가 carouselPool을 사용하도록 합니다.
         nativeAd2ViewBinder.setPool(adKey, carouselPool);
     }
 
     public void bind(int position) {
         positionTextView.setText("position: " + position);
         setLoadingView(false);
+
+        // NativeAd2ViewBinder의 bind()를 호출하면 광고 할당 및 갱신이 자동으로 수행됩니다.
         nativeAd2ViewBinder.bind(position);
     }
 
     public void bind(int position, FeedPromotion feedPromotion) {
         positionTextView.setText("position: " + position);
         setLoadingView(false);
+
+        // FeedPromotion 객체를 뷰에 바인드합니다.
         carouselToFeedViewBinder.bind(feedPromotion);
     }
 
     public void unbind(int position) {
+        // unbind를 반드시 호출하여 뷰를 재사용할 때 문제가 발생하지 않게 합니다.
         nativeAd2ViewBinder.unbind(position);
         carouselToFeedViewBinder.unbind();
     }
