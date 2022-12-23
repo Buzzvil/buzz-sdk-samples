@@ -1,6 +1,7 @@
 package com.buzzvil.buzzad.benefit.sample.publisher.nativead2.carousel;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
 import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2Pool;
 import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2PoolInitListener;
+import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView;
 import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedPromotionFactory;
 import com.buzzvil.buzzad.benefit.sample.publisher.App;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
@@ -26,10 +28,11 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
     private final int REQUEST_AD_COUNT = 5;
 
     // 무한 스크롤을 적용합니다.
-    boolean infiniteLoop = true;
+    boolean isInfiniteLoopEnabled = true;
 
     private TextView carouselStateTextView;
     private RecyclerView carouselRecyclerView;
+    private FeedEntryView toFeedLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
 
         carouselStateTextView = findViewById(R.id.carouselStateTextView);
         carouselRecyclerView = findViewById(R.id.carouselRecyclerView);
+        toFeedLink = findViewById(R.id.toFeedLink);
 
         initCarousel();
     }
@@ -50,6 +54,7 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
             @Override
             public void onLoaded(int adCount) {
                 carouselStateTextView.setText("carouselPool state: onLoaded (adCount: " + adCount + ")");
+                toFeedLink.setVisibility(View.VISIBLE);
 
                 // 할당 받은 광고 갯수(adCount)만큼 아이템 리스트를 만들어 RecyclerView 어댑터를 초기화 합니다.
                 initAdapter(adCount, carouselPool);
@@ -59,6 +64,7 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
             public void onError(@NonNull AdError adError) {
                 // 광고 레이아웃을 숨김 처리 하는 등 적절한 에러 처리를 할 수 있습니다.
                 carouselStateTextView.setText("carouselPool state: onError (" + adError.getAdErrorType().name() + ")");
+                toFeedLink.setVisibility(View.GONE);
             }
         });
     }
@@ -75,10 +81,10 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
         List<NativeAd2CarouselItem> list = buildCarouselItems(adCount);
 
         // 어댑터를 설정합니다.
-        NativeAd2CarouselAdapter adapter = new NativeAd2CarouselAdapter(unitId, list, carouselPool, infiniteLoop);
+        NativeAd2CarouselAdapter adapter = new NativeAd2CarouselAdapter(unitId, list, carouselPool, isInfiniteLoopEnabled);
         carouselRecyclerView.setAdapter(adapter);
 
-        if (infiniteLoop) {
+        if (isInfiniteLoopEnabled) {
             // 적당히 큰 수의 position으로 이동하여 무한 스크롤 효과를 구현합니다.
             carouselRecyclerView.getLayoutManager().scrollToPosition(list.size() * 10000);
         }

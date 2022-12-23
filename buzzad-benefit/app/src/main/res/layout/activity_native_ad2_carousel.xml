@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,4 +25,37 @@
         android:paddingHorizontal="32dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/view_native_ad2_item" />
+
+    <!-- Carousel To Feed Link -->
+    <!-- Carousel 하단에서 Feed를 열 수 있게 하는 링크 -->
+    <!-- buzzvilFeedEntryViewName의 값은 "carousel_to_feed_link"를 사용해야 합니다. -->
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/toFeedLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:visibility="gone"
+        app:buzzvilFeedEntryViewName="carousel_to_feed_link">
+
+        <!-- 내부 레이아웃은 자유롭게 설정합니다. -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NativeCarouselToFeedLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="포인트 더 받으러 가기" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_chevron_right" />
+        </LinearLayout>
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
 </LinearLayout>

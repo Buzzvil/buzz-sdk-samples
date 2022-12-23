@@ -16,13 +16,13 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
     private String unitId;
     private List<NativeAd2CarouselItem> list;
     private NativeAd2Pool carouselPool;
-    private Boolean infiniteLoop;
+    private Boolean isInfiniteLoopEnabled;
 
-    public NativeAd2CarouselAdapter(String unitId, List<NativeAd2CarouselItem> list, NativeAd2Pool carouselPool, Boolean infiniteLoop) {
+    public NativeAd2CarouselAdapter(String unitId, List<NativeAd2CarouselItem> list, NativeAd2Pool carouselPool, Boolean isInfiniteLoopEnabled) {
         this.unitId = unitId;
         this.list = list;
         this.carouselPool = carouselPool;
-        this.infiniteLoop = infiniteLoop;
+        this.isInfiniteLoopEnabled = isInfiniteLoopEnabled;
     }
 
     @NonNull
@@ -34,12 +34,7 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
 
     @Override
     public void onBindViewHolder(@NonNull NativeAd2CarouselViewHolder holder, int position) {
-        int itemPosition;
-        if (infiniteLoop) {
-            itemPosition = position % list.size();
-        } else {
-            itemPosition = position;
-        }
+        int itemPosition = getItemPosition(position);
 
         // 해당 position에 해당하는 NativeAd2ViewBinder가 carouselPool을 사용하도록 합니다.
         holder.setPool(carouselPool, itemPosition);
@@ -56,7 +51,7 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
     @Override
     public void onViewRecycled(NativeAd2CarouselViewHolder holder) {
         super.onViewRecycled(holder);
-        int itemPosition = holder.getAdapterPosition() % list.size();
+        int itemPosition = getItemPosition(holder.getAdapterPosition());
 
         // unbind를 반드시 호출하여 뷰를 재사용할 때 문제가 발생하지 않게 합니다.
         holder.unbind(itemPosition);
@@ -66,10 +61,18 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
     @Override
     public int getItemCount() {
         int actualItemCount = list.size();
-        if (infiniteLoop && actualItemCount > 0) {
+        if (isInfiniteLoopEnabled && actualItemCount > 0) {
             // 무한 루프를 쉽게 구현하는 방법으로 매우 큰 수를 여기서 반환합니다.
             return Integer.MAX_VALUE;
         }
         return actualItemCount;
+    }
+
+    private int getItemPosition(int position) {
+        if (isInfiniteLoopEnabled) {
+            return position % list.size();
+        } else {
+            return position;
+        }
     }
 }
