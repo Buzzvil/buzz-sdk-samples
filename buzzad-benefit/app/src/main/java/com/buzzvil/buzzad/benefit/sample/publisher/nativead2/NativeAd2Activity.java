@@ -90,6 +90,7 @@ public class NativeAd2Activity extends AppCompatActivity {
             }
         });
 
+        // (Optional) 광고 참여 이벤트를 받아오는 리스너를 등록합니다.
         binder.addNativeAd2EventListener(new NativeAd2EventListener() {
             @Override
             public void onImpressed(@NonNull NativeAd2 nativeAd2) {
