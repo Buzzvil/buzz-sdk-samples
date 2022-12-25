@@ -39,6 +39,7 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
         // 해당 position에 해당하는 NativeAd2ViewBinder가 carouselPool을 사용하도록 합니다.
         holder.setPool(carouselPool, itemPosition);
 
+        // 아이템의 타입을 구분하여 적절한 bind() 함수를 호출합니다.
         NativeAd2CarouselItem item = list.get(itemPosition);
 
         if (item instanceof NativeAd2CarouselItem.NativeAd2Item) {

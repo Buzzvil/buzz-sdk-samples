@@ -26,8 +26,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/view_native_ad2_item" />
 
-    <!-- Carousel To Feed Link -->
-    <!-- Carousel 하단에서 Feed를 열 수 있게 하는 링크 -->
+    <!-- Carousel 하단에서 Feed를 열 수 있게 하는 Carousel To Feed Link -->
     <!-- buzzvilFeedEntryViewName의 값은 "carousel_to_feed_link"를 사용해야 합니다. -->
     <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
         android:id="@+id/toFeedLink"
@@ -36,10 +35,9 @@
         android:layout_gravity="right"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="36dp"
-        android:visibility="gone"
         app:buzzvilFeedEntryViewName="carousel_to_feed_link">
 
-        <!-- 내부 레이아웃은 자유롭게 설정합니다. -->
+        <!-- 내부 레이아웃은 자유롭게 설정할 수 있습니다. 아래는 LinearLayout으로 구현한 예시입니다. -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

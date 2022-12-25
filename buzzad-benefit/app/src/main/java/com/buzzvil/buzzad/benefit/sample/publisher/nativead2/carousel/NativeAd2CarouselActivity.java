@@ -16,7 +16,6 @@ import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView;
 import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedPromotionFactory;
 import com.buzzvil.buzzad.benefit.sample.publisher.App;
 import com.buzzvil.buzzad.benefit.sample.publisher.R;
-import com.buzzvil.buzzad.benefit.sample.publisher.carousel.PaddingDividerDecoration;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +23,7 @@ import java.util.List;
 public class NativeAd2CarouselActivity extends AppCompatActivity {
     private final String unitId = App.UNIT_ID_NATIVE_AD;
 
-    // 최대 10개의 광고를 한 번에 요청할 수 있습니다.
+    // 최대 10개의 광고를 요청할 수 있습니다.
     private final int REQUEST_AD_COUNT = 5;
 
     // 무한 스크롤을 적용합니다.
@@ -47,16 +46,21 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
     }
 
     private void initCarousel() {
+        carouselRecyclerView.setVisibility(View.GONE);
+        toFeedLink.setVisibility(View.GONE);
+
         // 광고 중복 할당을 막기 위해 하나의 캐러셀에 하나의 NativeAd2Pool 인스턴스를 생성하여 사용합니다.
         NativeAd2Pool carouselPool = new NativeAd2Pool(unitId);
 
+        // 현재 할당 받을 수 있는 광고의 갯수를 확인합니다.
         carouselPool.init(REQUEST_AD_COUNT, new NativeAd2PoolInitListener() {
             @Override
             public void onLoaded(int adCount) {
                 carouselStateTextView.setText("carouselPool state: onLoaded (adCount: " + adCount + ")");
+                carouselRecyclerView.setVisibility(View.VISIBLE);
                 toFeedLink.setVisibility(View.VISIBLE);
 
-                // 할당 받은 광고 갯수(adCount)만큼 아이템 리스트를 만들어 RecyclerView 어댑터를 초기화 합니다.
+                // 어댑터를 초기화합니다.
                 initAdapter(adCount, carouselPool);
             }
 
@@ -64,6 +68,7 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
             public void onError(@NonNull AdError adError) {
                 // 광고 레이아웃을 숨김 처리 하는 등 적절한 에러 처리를 할 수 있습니다.
                 carouselStateTextView.setText("carouselPool state: onError (" + adError.getAdErrorType().name() + ")");
+                carouselRecyclerView.setVisibility(View.GONE);
                 toFeedLink.setVisibility(View.GONE);
             }
         });
@@ -77,11 +82,11 @@ public class NativeAd2CarouselActivity extends AppCompatActivity {
         // 뷰페이저 처럼 아이템 위치를 중앙에 고정할 수 있도록 PagerSnapHelper를 사용합니다.
         new PagerSnapHelper().attachToRecyclerView(carouselRecyclerView);
 
-        // 캐러셀에 보여줄 아이템 리스트를 생성합니다.
+        // 할당 받은 광고 갯수(adCount) 크기의 아이템 리스트를 만들어 NativeAd2CarouselAdapter를 생성합니다.
         List<NativeAd2CarouselItem> list = buildCarouselItems(adCount);
-
-        // 어댑터를 설정합니다.
         NativeAd2CarouselAdapter adapter = new NativeAd2CarouselAdapter(unitId, list, carouselPool, isInfiniteLoopEnabled);
+
+        // RecyclerView에 어댑터를 설정합니다.
         carouselRecyclerView.setAdapter(adapter);
 
         if (isInfiniteLoopEnabled) {

@@ -31,6 +31,7 @@ public class NativeAd2Activity extends AppCompatActivity {
 
         TextView stateTextView = findViewById(R.id.stateTextView);
         TextView eventTextView = findViewById(R.id.eventTextView);
+        View loadingView = findViewById(R.id.loadingView);
 
         // 네이티브 2.0을 단독으로 사용하는 예제입니다.
         NativeAd2View nativeAd2View = findViewById(R.id.nativeAd2View);
@@ -39,7 +40,6 @@ public class NativeAd2Activity extends AppCompatActivity {
         ImageView iconImageView = findViewById(R.id.imageIcon);
         TextView descriptionTextView = findViewById(R.id.textDescription);
         DefaultCtaView ctaView = findViewById(R.id.ctaView);
-        View loadingView = findViewById(R.id.loadingView);
 
         // 광고 레이아웃을 설정합니다.
         NativeAd2ViewBinder binder = new NativeAd2ViewBinder.Builder()

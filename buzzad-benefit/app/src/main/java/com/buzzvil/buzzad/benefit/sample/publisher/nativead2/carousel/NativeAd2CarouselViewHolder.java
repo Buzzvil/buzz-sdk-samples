@@ -59,25 +59,30 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onRequested() {
                 stateTextView.setText("state: onRequested");
+                setLoadingView(true);
             }
 
             @Override
             public void onNext(@NonNull NativeAd2 nativeAd2) {
                 stateTextView.setText("state: onNext");
+                setLoadingView(false);
             }
 
             @Override
             public void onComplete() {
                 stateTextView.setText("state: onComplete");
+                setLoadingView(false);
             }
 
             @Override
             public void onError(@NonNull AdError adError) {
                 stateTextView.setText("state: onError(" + adError.getAdErrorType().name() + ")");
+                setLoadingView(false);
             }
         });
 
         // 필요에 따라 광고 이벤트 상태를 받아올 수 있는 NativeAd2EventListener를 설정하세요.
+        // 로그 기록, 단순 알림 외에 다른 동작을 추가하는 것을 권장하지 않습니다. 자동 갱신 등 네이티브 2.0의 기능과 직접 구현한 동작이 충돌할 수 있습니다.
         nativeAd2ViewBinder.addNativeAd2EventListener(new NativeAd2EventListener() {
             @Override
             public void onImpressed(@NonNull NativeAd2 nativeAd2) {
@@ -121,7 +126,6 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(int position) {
         positionTextView.setText("position: " + position);
-        setLoadingView(false);
 
         // NativeAd2ViewBinder의 bind()를 호출하면 광고 할당 및 갱신이 자동으로 수행됩니다.
         nativeAd2ViewBinder.bind(position);
@@ -129,10 +133,12 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(int position, FeedPromotion feedPromotion) {
         positionTextView.setText("position: " + position);
-        setLoadingView(false);
 
         // FeedPromotion 객체를 뷰에 바인드합니다.
         carouselToFeedViewBinder.bind(feedPromotion);
+
+        // 피드 진입 슬라이드는 로딩 뷰가 필요 없기 때문에 false로 설정합니다.
+        setLoadingView(false);
     }
 
     public void unbind(int position) {
