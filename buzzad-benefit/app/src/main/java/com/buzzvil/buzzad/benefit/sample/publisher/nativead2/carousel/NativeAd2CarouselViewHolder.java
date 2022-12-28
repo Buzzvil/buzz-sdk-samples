@@ -30,7 +30,7 @@ public class NativeAd2CarouselViewHolder extends RecyclerView.ViewHolder {
     private NativeAd2ViewBinder nativeAd2ViewBinder;
     private FeedPromotionViewBinder carouselToFeedViewBinder;
 
-    NativeAd2CarouselViewHolder(String unitId, NativeAd2View nativeAd2View) {
+    public NativeAd2CarouselViewHolder(String unitId, NativeAd2View nativeAd2View) {
         super(nativeAd2View);
 
         positionTextView = nativeAd2View.findViewById(R.id.positionTextView);

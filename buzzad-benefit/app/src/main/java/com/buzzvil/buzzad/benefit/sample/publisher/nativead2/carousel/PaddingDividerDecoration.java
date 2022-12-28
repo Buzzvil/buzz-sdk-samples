@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class PaddingDividerDecoration extends RecyclerView.ItemDecoration {
     private final int paddingDp;
 
-    PaddingDividerDecoration(int paddingDp) {
+    public PaddingDividerDecoration(int paddingDp) {
         this.paddingDp = paddingDp;
     }
 

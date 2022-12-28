@@ -16,9 +16,9 @@ public class NativeAd2CarouselAdapter extends RecyclerView.Adapter<NativeAd2Caro
     private String unitId;
     private List<NativeAd2CarouselItem> list;
     private NativeAd2Pool carouselPool;
-    private Boolean isInfiniteLoopEnabled;
+    private boolean isInfiniteLoopEnabled;
 
-    public NativeAd2CarouselAdapter(String unitId, List<NativeAd2CarouselItem> list, NativeAd2Pool carouselPool, Boolean isInfiniteLoopEnabled) {
+    public NativeAd2CarouselAdapter(String unitId, List<NativeAd2CarouselItem> list, NativeAd2Pool carouselPool, boolean isInfiniteLoopEnabled) {
         this.unitId = unitId;
         this.list = list;
         this.carouselPool = carouselPool;
