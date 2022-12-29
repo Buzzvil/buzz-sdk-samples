@@ -29,20 +29,20 @@ public class NativeAd2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_native_ad2);
 
-        final TextView stateTextView = findViewById(R.id.stateTextView);
-        final TextView eventTextView = findViewById(R.id.eventTextView);
+        TextView stateTextView = findViewById(R.id.stateTextView);
+        TextView eventTextView = findViewById(R.id.eventTextView);
+        View loadingView = findViewById(R.id.loadingView);
 
         // 네이티브 2.0을 단독으로 사용하는 예제입니다.
-        final NativeAd2View nativeAd2View = findViewById(R.id.nativeAd2View);
-        final MediaView mediaView = findViewById(R.id.mediaView);
-        final TextView titleTextView = findViewById(R.id.textTitle);
-        final ImageView iconImageView = findViewById(R.id.imageIcon);
-        final TextView descriptionTextView = findViewById(R.id.textDescription);
-        final DefaultCtaView ctaView = findViewById(R.id.ctaView);
-        final View loadingView = findViewById(R.id.loadingView);
+        NativeAd2View nativeAd2View = findViewById(R.id.nativeAd2View);
+        MediaView mediaView = findViewById(R.id.mediaView);
+        TextView titleTextView = findViewById(R.id.textTitle);
+        ImageView iconImageView = findViewById(R.id.imageIcon);
+        TextView descriptionTextView = findViewById(R.id.textDescription);
+        DefaultCtaView ctaView = findViewById(R.id.ctaView);
 
         // 광고 레이아웃을 설정합니다.
-        final NativeAd2ViewBinder binder = new NativeAd2ViewBinder.Builder()
+        NativeAd2ViewBinder binder = new NativeAd2ViewBinder.Builder()
                 .nativeAd2View(nativeAd2View)
                 .mediaView(mediaView)
                 .titleTextView(titleTextView)
