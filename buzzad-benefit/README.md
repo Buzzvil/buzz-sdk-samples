@@ -6,6 +6,19 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.25.0] - 2022-12-29
+* [NEW] 피드와 브릿지 페이지에 새로운 광고 배너 버즈배너(BuzzBanner) 추가
+* [NEW] 캐러셀(Carousel) 형태로 네이티브 2.0 지면을 구현할 수 있는 가이드 제공
+* [UPDATE] 피드 광고 분류 필터를 다시 탭하면 전체 광고 필터로 이동하는 동작 수정
+* [UPDATE] 개인정보 수집 동의 창에서 뒤로가기 버튼으로 창을 종료할 수 있도록 개선
+* [UPDATE] 팝 버튼의 좌우 여백을 커스터마이징할 수 있도록 개선
+* [FIX] WebView를 연동하지 않는 경우 간헐적으로 발생하는 크래시 문제 해결
+* [FIX] 팝 피드를 열면 기기 상단의 알림바가 가려지는 문제 해결
+* [FIX] 팝 버튼을 누르면 팝 피드가 나타나기 전 화면 하단 중앙에 닫기 아이콘(ExitView)가 나타나는 현상 해결
+* [FIX] 동영상 광고 재생 시 ExoPlayer 버전 충돌로 인해 발생하는 앱 빌드 오류를 방지하기 위해 ExoPlayer 버전 체크를 할 수 있도록 ExoPlayerLibraryInfo를 난독화에서 제외
+* [FIX] 버즈빌 광고 참여 문의 페이지의 프로토콜을 보안상 더 안전한 HTTPS로 변경
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.25-buzzscreen4.19/) 참조
+
 ## [3.23.0] - 2022-12-01
 * [NEW] 네이티브 2.0에 광고 참여 이벤트를 수신할 수 있는 리스너 추가
 * [UPDATE] Kotlin으로 구현한 네이티브 2.0의 Java 지원을 위해 인터페이스 개선
