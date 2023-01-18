@@ -52,6 +52,9 @@
   [BuzzAdBenefit initializeWithConfig:config];
 
   BZVBuzzAdFeedTheme *buzzAdFeedTheme = [BZVBuzzAdFeedTheme themeWithBlock:^(BZVBuzzAdFeedThemeBuilder * _Nonnull builder) {
+    // MARK: 피드 디자인 커스터마이징 - 피드 디자인 변경하기
+//    builder.feedBackgroundColor = UIColor.whiteColor;
+    
     // MARK: 피드 디자인 커스터마이징 - 탭 디자인 변경하기
 //    builder.tabBackgroundColor = UIColor.orangeColor;
 //    builder.tabTextColor = [BZVControlStateResource resourceWithBlock:^(BZVControlStateResourceBuilder * _Nonnull builder) {
