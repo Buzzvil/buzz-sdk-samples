@@ -3,4 +3,8 @@
     <color name="colorPrimary">#1290FF</color>
     <color name="colorPrimaryDark">#2176da</color>
     <color name="colorAccent">#1290FF</color>
+    <color name="YOUR_TEXT_COLOR">#990000</color>
+    <color name="YOUR_BACKGROUND_COLOR">#009900</color>
+    <color name="YOUR_SELECTED_COLOR">#000099</color>
+    <color name="YOUR_UNSELECTED_COLOR">#999900</color>
 </resources>
