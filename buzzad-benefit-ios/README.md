@@ -6,6 +6,14 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.21.2] - 2023-01-26
+* [CHANGE] Xcode 14에서 BuzzAd iOS SDK를 사용할 때 Warning이 발생하지 않도록 Minimum deployment target을 11로 상향
+* [NEW] 커스텀 인앱 브라우저 사용 시 딥링크 광고 여부를 확인하는 인터페이스 추가
+* [NEW] 네이티브, 피드, 인터스티셜 다크 모드 지원
+* [NEW] revenueType에 새로운 액션형 광고 유형 추가​
+* [NEW] 피드 배경 색상을 커스터마이징하는 인터페이스 추가
+* [UPDATE] 광고 분류 탭과 필터 비활성화 기능 추가
+
 ## [3.19.0] - 2022-12-28
 * [NEW] 피드 상단으로 바로 이동할 수 있는 맨위로가기 버튼 추가
 * [UPDATE] 광고 프리로드 중복 요청에 대한 오류 코드 추가
