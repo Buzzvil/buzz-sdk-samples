@@ -51,6 +51,9 @@
   }];
   [BuzzAdBenefit initializeWithConfig:config];
 
+  // MARK: 시작하기 - 다크 모드 설정하기
+//  [BuzzAdBenefit setUserInterfaceStyle:BZVUserInterfaceStyleSystem];
+  
   BZVBuzzAdFeedTheme *buzzAdFeedTheme = [BZVBuzzAdFeedTheme themeWithBlock:^(BZVBuzzAdFeedThemeBuilder * _Nonnull builder) {
     // MARK: 피드 디자인 커스터마이징 - 피드 디자인 변경하기
 //    builder.feedBackgroundColor = UIColor.greenColor;
