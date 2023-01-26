@@ -15,7 +15,7 @@
 * [UPDATE] 개인정보 수집 동의 UI를 웹뷰로 변경하여 다크 모드가 적용되도록 개선
 * [FIX] 버즈배너가 노출되지 않는 동작 오류, 미세한 UI 색상 등의 문제 해결
 * [FIX] 다크 모드에서 피드 광고 분류 탭을 다른 탭으로 전환하면 잠시 흰색으로 탭 색상이 노출되는 문제 해결
-* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.25-buzzscreen4.19/) 참조
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.27-buzzscreen4.21/) 참조
 
 ## [3.25.0] - 2022-12-29
 * [NEW] 피드와 브릿지 페이지에 새로운 광고 배너 버즈배너(BuzzBanner) 추가
