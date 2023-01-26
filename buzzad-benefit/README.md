@@ -6,6 +6,17 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.27.0] - 2022-01-26
+* [new] 개인정보 수집 동의 UI 표시 여부를 서버로 제어하는 기능 추가
+* [new] revenueType에 새로운 액션형 광고 유형 추가
+* [new] 피드 배경 색상을 커스터마이징하는 인터페이스 추가
+* [new] 피드 광고 분류 탭을 좌우로 스와이프하여 전환하는 기능 추가
+* [UPDATE] 유저 프로필 입력 UI 개선
+* [UPDATE] 개인정보 수집 동의 UI를 웹뷰로 변경하여 다크 모드가 적용되도록 개선
+* [FIX] 버즈배너가 노출되지 않는 동작 오류, 미세한 UI 색상 등의 문제 해결
+* [FIX] 다크 모드에서 피드 광고 분류 탭을 다른 탭으로 전환하면 잠시 흰색으로 탭 색상이 노출되는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.25-buzzscreen4.19/) 참조
+
 ## [3.25.0] - 2022-12-29
 * [NEW] 피드와 브릿지 페이지에 새로운 광고 배너 버즈배너(BuzzBanner) 추가
 * [NEW] 캐러셀(Carousel) 형태로 네이티브 2.0 지면을 구현할 수 있는 가이드 제공
