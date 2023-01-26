@@ -6,7 +6,7 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
-## [3.27.0] - 2022-01-26
+## [3.27.0] - 2023-01-26
 * [new] 개인정보 수집 동의 UI 표시 여부를 서버로 제어하는 기능 추가
 * [new] revenueType에 새로운 액션형 광고 유형 추가
 * [new] 피드 배경 색상을 커스터마이징하는 인터페이스 추가
