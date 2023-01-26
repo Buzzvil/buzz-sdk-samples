@@ -8,6 +8,8 @@ import androidx.multidex.MultiDex;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig;
 import com.buzzvil.buzzad.benefit.core.models.UserProfile;
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed;
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeedTheme;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
 import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomAdsAdapter;
 import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedHeaderViewAdapter;
@@ -44,6 +46,21 @@ public class App extends Application {
                 .birthYear(1985)
                 .build();
 
+        setFeedTheme();
+
         BuzzAdBenefit.setUserProfile(userProfile);
+    }
+
+    private void setFeedTheme() {
+        // BuzzAdFeedTheme 설정을 통해 색상 등 UI 구성 요소를 변경할 수 있습니다.
+        final BuzzAdFeedTheme buzzAdFeedTheme =
+                BuzzAdFeedTheme.getDefault();
+
+        buzzAdFeedTheme.backgroundColor(R.color.YOUR_BACKGROUND_COLOR);
+
+        buzzAdFeedTheme.tabTextColorSelector(R.color.YOUR_TEXT_COLOR) // 탭의 텍스트 색상(state_selected 필수 적용)
+                .tabBackgroundColor(R.color.YOUR_BACKGROUND_COLOR) // 탭의 배경 색상
+                .tabIndicatorSelector(R.drawable.custom_tab_indicator_seletor); // 탭의 인디케이터에 대한 Selector
+        BuzzAdFeed.setDefaultTheme(buzzAdFeedTheme);
     }
 }
