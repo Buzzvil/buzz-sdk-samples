@@ -48,7 +48,7 @@ static NSString * const kNavigationItemTitle = @"Native";
 
   // Optional: Native 광고 이벤트 처리를 위한 delegate을 등록하고 각 이벤트에 따라 필요한 기능을 구현합니다.
   // 주의: 반드시 bindWithNativeAd 함수를 호출한 이후에 리스너 등록을 해야합니다.
-  [ad addNativeAdEventDelegate:self];
+  ad.delegate = self;
 }
 
 // MARK: 네이티브 고급 설정 - 한 번에 여러 개의 광고 로드하기

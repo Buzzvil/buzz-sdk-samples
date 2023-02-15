@@ -31,7 +31,7 @@
 
 - (void)renderAd:(BZVNativeAd *)ad {
   [_viewBinder bindWithNativeAd:ad];
-  [ad addNativeAdEventDelegate:self];
+  ad.delegate = self;
 }
 
 #pragma mark - BZVNativeAdEventDelegate
