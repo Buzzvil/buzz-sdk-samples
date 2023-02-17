@@ -12,17 +12,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     UNUserNotificationCenter.current().delegate = self
-    let notificationOptions = BSTNotificationOptions { builder in
-      builder.userInfo = ["sample_key":"sample_value"]
-      builder.categoryIdentifier = "sample_category"
-    }
     let config = BSTConfig { builder in
       builder.appKey = AppDelegate.APP_KEY
-      builder.notificationOptions = notificationOptions
     }
     BuzzBooster.initialize(with: config)
     BuzzBooster.startService()
-    
+    BuzzBooster.setCustomCampaignDelegate(self)
+    BuzzBooster.setOptInMarketingCampaignDelegate(self)
     window = UIWindow(frame: UIScreen.main.bounds)
     let navigationViewController = UINavigationController(rootViewController: ViewController())
     window?.rootViewController = navigationViewController
@@ -58,3 +54,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
 }
 
+extension AppDelegate: BSTCustomCampaignDelegate, BSTOptInMarketingCampaignDelegate {
+  func onMoveButtonClicked() {
+    print("Move To OptInMarketing Page")
+  }
+  
+  func onMoveButtonClicked(withUrl url: String!) {
+    print("Move To Event Page")
+  }
+}
