@@ -97,3 +97,10 @@
 > * [UPDATE] 친구초대 누적 현황 UI 추가
 > * [FIX] Network Crash Log 제거
 > * [FIX] iOS에서 출석체크 리워드 지급 메시지 버튼 텍스트 오류 수정
+> ### [2.0.2] - 2023-02-17
+> * [NEW] 룰렛 캠페인 추가
+> * [NEW] 후지급 결과 페이지 추가
+> * [UPDATE] 구버전 캠페인이 나타날 경우 업데이트 유도
+> * [UPDATE] 친구초대 누적 현황 UI 추가
+> * [FIX] CampaignEntryView를 Objective-C에서 상속할 수 없는 문제 해결
+> * [FIX] 커스텀 캠페인 레이아웃 경고 제거
