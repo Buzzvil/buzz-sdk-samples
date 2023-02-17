@@ -10,10 +10,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.4",
+    "@react-navigation/native-stack": "^6.9.10",
+    "@react-navigation/stack": "^6.3.14",
     "react": "18.0.0",
     "react-native": "0.69.5",
     "react-native-buzz-booster": "^1.11.6",
-    "react-native-safe-area-context": "^4.3.3"
+    "react-native-safe-area-context": "^4.5.0",
+    "react-native-screens": "^3.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
