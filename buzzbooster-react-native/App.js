@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import * as BuzzBooster from 'react-native-buzz-booster';
+import { BuzzBooster } from 'react-native-buzz-booster';
 import { AppRegistry, StatusBar } from 'react-native';
 import LinkPage from './Page/LinkPage';
 import HomePage from './Page/HomePage';

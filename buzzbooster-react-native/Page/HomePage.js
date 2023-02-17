@@ -1,5 +1,5 @@
 import React from 'react';
-import * as BuzzBooster from 'react-native-buzz-booster';
+import { BuzzBooster, CampaignType, UserBuilder } from 'react-native-buzz-booster';
 import {
   ScrollView,
   StatusBar,
@@ -20,8 +20,11 @@ export default function HomePage({ route, navigation }) {
 
     React.useEffect(() => {
       async function setup() {
-          BuzzBooster.setOnCustomCampaignActionButtonClickListener((url) => {
+          BuzzBooster.setCustomCampaignActionButtonClickListener((url) => {
               navigation.navigate("LinkPage", { url: url })
+          })
+          BuzzBooster.setOptInMarketingCampaignMoveButtonClickListener(() => {
+              navigation.navigate("LinkPage", { url: "opt-in-marketing" })
           })
       }
       setup()
@@ -35,15 +38,19 @@ export default function HomePage({ route, navigation }) {
             style={backgroundStyle}>
             <Header />
             <Button title='Login' onPress={() => {
-              const userId='Damon1'
-              BuzzBooster.setUserId(userId);
+              const userId = 'Damon1'
+              let user = new UserBuilder(userId)
+                .setOptInMarketing(true)
+                .addProperty("login_type", "sns(Facebook)")
+                .build()
+              BuzzBooster.setUser(user)
               BuzzBooster.showInAppMessage();
             }} />
             <Button title='Campaign' onPress={() => {
               BuzzBooster.showCampaign();
             }} />
             <Button title='Attendance Campaign' onPress={() => {
-              BuzzBooster.showSpecificCampaign(BuzzBooster.CampaignType.Attendance);
+              BuzzBooster.showSpecificCampaign(CampaignType.Attendance);
             }} />
             <EventView />
           </ScrollView>
