@@ -61,3 +61,11 @@
 > * [NEW] 마케팅 수신 동의 유도 캠페인이 추가됐습니다.
 > * [NEW] 네이버 포인트 전환 플러그인이 추가됐습니다.
 > * [UPDATE] 일부 SDK API를 더 명확하게 수정했습니다.
+> ### [2.0.3] - 2023-02-17
+> * [UPDATE] Push 기능 개선
+> * [UPDATE] Targert SDK Version을 33으로 조정
+> * [UPDATE] 친구초대 누적 현황 UI 추가
+> * [FIX] 마케팅 수신 동의 스크롤이 끝까지 되지 않는 현상 수정
+> * [FIX] Notification 클릭 시 발생하는 메모리 누수 제거
+> * [FIX] FCM으로 받은 Push Message 처리가 중복으로 되던 문제 해결
+> * [FIX] FCM Notification 채널 설정
