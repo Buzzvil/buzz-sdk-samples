@@ -14,18 +14,18 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - buzz_booster (2.0.0):
-    - BuzzBooster (= 2.0.0)
+  - buzz_booster (2.0.1):
+    - BuzzBooster (= 2.0.1)
     - Flutter
-  - BuzzBooster (2.0.0):
+  - BuzzBooster (2.0.1):
     - AFNetworking (~> 4.0)
-    - BuzzBoosterSwift (~> 2.0.0)
+    - BuzzBoosterSwift (~> 2.0.1)
     - BuzzMutator (~> 0.23.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzBoosterSwift (2.0.0):
-    - BuzzRxSwift (~> 6.5.0)
+  - BuzzBoosterSwift (2.0.1):
+    - BuzzRxSwift (~> 6.5.1)
     - BuzzSentry
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
@@ -85,9 +85,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  buzz_booster: f3346a0f991f20feb9d3e457be29d0adcc1f3f99
-  BuzzBooster: cc096dc54b7a0679ff7be0c05b89f214211ddc10
-  BuzzBoosterSwift: bc9199f0f061643ba9b352ed8c5ef870fadc1d2e
+  buzz_booster: f0aea8573bebe73dbbfd38e456d6b4530e534dac
+  BuzzBooster: 7b7ad438a50bc56db8387d2627fa9b50b048d707
+  BuzzBoosterSwift: 8c74d6b053e17100146380da09d62ad81cfbd0ba
   BuzzMutator: 54945e8ba227b4d72295d493edb63c22eeb5cd0d
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   BuzzSentry: 32959eb816c684e49116e55f684fe8a18d39b8f2
@@ -99,6 +99,6 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 54c92ae724292d2039df4b5b1bbeb7d8176aec1d
+PODFILE CHECKSUM: 985e5b058f26709dc81f9ae74ea2b2775bdbcefe
 
 COCOAPODS: 1.11.3
