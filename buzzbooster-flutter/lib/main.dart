@@ -37,12 +37,15 @@ class _MyAppState extends State<MyApp> {
     );
     await buzzBooster.startService();
 
-    linkStream.listen((url) async {
-      if (url != null) {
-        showToast("move to url");
-        // await Navigator.push(context, MaterialPageRoute(builder: (context) {}));
-      }
-    });
+    buzzBooster.customCampaignMoveButtonClickedCallback = (String url) async {
+      showToast("move to url");
+      // await Navigator.push(context, MaterialPageRoute(builder: (context) {}));
+    };
+
+    buzzBooster.optInMarketingCampaignMoveButtonClickedCallback = () async {
+      showToast("move to opt in marketing page");
+      // await Navigator.push(context, MaterialPageRoute(builder: (context) {}));
+    };
     return Future.value();
   }
 
@@ -99,7 +102,11 @@ class _MyAppState extends State<MyApp> {
                 String userId = const Uuid().v4();
                 if (userId.isNotEmpty) {
                   showToast("login");
-                  await buzzBooster.setUserId(userId);
+                  User user  = UserBuilder(userId)
+                    .setOptInMarketing(false)
+                    .addProperty("key", "value")
+                    .build();
+                  await buzzBooster.setUser(user);
                   await buzzBooster.showInAppMessage();
                 }
               },
@@ -108,7 +115,7 @@ class _MyAppState extends State<MyApp> {
             OutlinedButton(
               onPressed: () async {
                 showToast("logout");
-                await buzzBooster.setUserId(null);
+                await buzzBooster.setUser(null);
               },
               child: const Text("Logout"),
             ),

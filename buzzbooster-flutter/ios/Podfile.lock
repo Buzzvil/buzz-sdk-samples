@@ -14,42 +14,46 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - buzz_booster (1.11.6):
-    - BuzzBooster (= 1.11.7)
+  - buzz_booster (2.0.1):
+    - BuzzBooster (= 2.0.1)
     - Flutter
-  - BuzzBooster (1.11.7):
+  - BuzzBooster (2.0.1):
     - AFNetworking (~> 4.0)
-    - BuzzBoosterSwift (~> 1.11.7)
-    - BuzzMutator (~> 0.17.0)
+    - BuzzBoosterSwift (~> 2.0.1)
+    - BuzzMutator (~> 0.23.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzBoosterSwift (1.11.7):
-    - BuzzRxSwift (~> 6.5.0)
+  - BuzzBoosterSwift (2.0.1):
+    - BuzzRxSwift (~> 6.5.1)
+    - BuzzSentry
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzMutator (0.17.0)
-  - BuzzRxSwift (6.5.0)
+  - BuzzMutator (0.23.0)
+  - BuzzRxSwift (6.5.1)
+  - BuzzSentry (0.0.4):
+    - BuzzSentry/Core (= 0.0.4)
+  - BuzzSentry/Core (0.0.4)
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
-  - libwebp (1.2.3):
-    - libwebp/demux (= 1.2.3)
-    - libwebp/mux (= 1.2.3)
-    - libwebp/webp (= 1.2.3)
-  - libwebp/demux (1.2.3):
+  - libwebp (1.2.4):
+    - libwebp/demux (= 1.2.4)
+    - libwebp/mux (= 1.2.4)
+    - libwebp/webp (= 1.2.4)
+  - libwebp/demux (1.2.4):
     - libwebp/webp
-  - libwebp/mux (1.2.3):
+  - libwebp/mux (1.2.4):
     - libwebp/demux
-  - libwebp/webp (1.2.3)
+  - libwebp/webp (1.2.4)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.13.5):
-    - SDWebImage/Core (= 5.13.5)
-  - SDWebImage/Core (5.13.5)
-  - SDWebImageWebPCoder (0.9.1):
+  - SDWebImage (5.15.2):
+    - SDWebImage/Core (= 5.15.2)
+  - SDWebImage/Core (5.15.2)
+  - SDWebImageWebPCoder (0.10.1):
     - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.13)
+    - SDWebImage/Core (~> 5.15)
   - Toast (4.0.0)
 
 DEPENDENCIES:
@@ -64,6 +68,7 @@ SPEC REPOS:
     - BuzzBoosterSwift
     - BuzzMutator
     - BuzzRxSwift
+    - BuzzSentry
     - libwebp
     - ReactiveObjC
     - SDWebImage
@@ -79,20 +84,21 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/fluttertoast/ios"
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  buzz_booster: db8ac7c8a61e7b19f658e248e2b39a6d431933ff
-  BuzzBooster: c15952d56205c7f2c98cacff65ec823de19415a6
-  BuzzBoosterSwift: c2845ac91ffcaa8335d5feadd3d882a4fd328d6a
-  BuzzMutator: cea44992fbd4028338ef71dbf1194ed8a7ec0b6a
-  BuzzRxSwift: 01dc0bdf32a917d373076926b01125f3d801695d
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  buzz_booster: f0aea8573bebe73dbbfd38e456d6b4530e534dac
+  BuzzBooster: 7b7ad438a50bc56db8387d2627fa9b50b048d707
+  BuzzBoosterSwift: 8c74d6b053e17100146380da09d62ad81cfbd0ba
+  BuzzMutator: 54945e8ba227b4d72295d493edb63c22eeb5cd0d
+  BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
+  BuzzSentry: 32959eb816c684e49116e55f684fe8a18d39b8f2
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   fluttertoast: 74526702fea2c060ea55dde75895b7e1bde1c86b
-  libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
+  libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 23d714cd599354ee7906dbae26dff89b421c4370
-  SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
+  SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
+  SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 54c92ae724292d2039df4b5b1bbeb7d8176aec1d
+PODFILE CHECKSUM: 985e5b058f26709dc81f9ae74ea2b2775bdbcefe
 
 COCOAPODS: 1.11.3
