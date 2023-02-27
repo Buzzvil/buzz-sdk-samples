@@ -93,11 +93,16 @@ class ViewController: UIViewController {
   
   @objc func loginButtonAction(button: UIButton!) {
     if (self.login) {
-      BuzzBooster.setUserId(nil)
+      BuzzBooster.setUser(nil)
       loginButton.setTitle("Login", for: .normal)
     } else {
-      BuzzBooster.setUserId(AppDelegate.USER_ID)
-      BuzzBooster.showInAppMessage(withRootViewController: self)
+      let user = BSTUser { builder in
+        builder.userId = AppDelegate.USER_ID as NSString
+        builder.marketingStatus = .optIn
+        builder.properties = ["login_type": "sns(Facebook)"]
+      }
+      BuzzBooster.setUser(user)
+      BuzzBooster.showInAppMessage(with: self)
       loginButton.setTitle("Logout", for: .normal)
     }
     self.login = !self.login

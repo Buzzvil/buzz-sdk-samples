@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     UNUserNotificationCenter.current().delegate = self
+    UIApplication.shared.registerForRemoteNotifications()
     let notificationOptions = BSTNotificationOptions { builder in
       builder.userInfo = ["sample_key":"sample_value"]
       builder.categoryIdentifier = "sample_category"
@@ -35,8 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func userNotificationCenter(
     _ center: UNUserNotificationCenter,
     didReceive response: UNNotificationResponse,
-    withCompletionHandler completionHandler: @escaping () -> Void) {
-      completionHandler()
+    withCompletionHandler completionHandler: @escaping () -> Void)
+  {
+    BuzzBooster.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    completionHandler()
   }
   
   // The method will be called on the delegate only if the application is in the foreground. If the method is not implemented or the handler is not called in a timely manner then the notification will not be presented. The application can choose to have the notification presented as a sound, badge, alert and/or in the notification list. This decision should be based on whether the information in the notification is otherwise visible to the user.
@@ -58,3 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
 }
 
+//MARK: Push Notification
+extension AppDelegate {
+  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    BuzzBooster.setDeviceToken(deviceToken)
+  }
+}

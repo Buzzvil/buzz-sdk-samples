@@ -50,6 +50,7 @@
 		4B2614F527E8934F0052F1FB /* BSTSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4BA7D8A9286070E600DE8631 /* CustomEntryPointButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEntryPointButton.swift; sourceTree = "<group>"; };
 		65A0D0EFF5EC92C2DD05925A /* Pods_BSTSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSTSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E493AB9C29AC7E3000303492 /* BSTSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BSTSample.entitlements; sourceTree = "<group>"; };
 		F10215CE3BFD003F51F4E79B /* Pods-BSTSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSTSample.release.xcconfig"; path = "Target Support Files/Pods-BSTSample/Pods-BSTSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +105,7 @@
 		4B2614D127E8934D0052F1FB /* BSTSample */ = {
 			isa = PBXGroup;
 			children = (
+				E493AB9C29AC7E3000303492 /* BSTSample.entitlements */,
 				4B2614D227E8934D0052F1FB /* AppDelegate.swift */,
 				4B2614D627E8934D0052F1FB /* ViewController.swift */,
 				4B2614DB27E8934E0052F1FB /* Assets.xcassets */,
@@ -494,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BSTSample/BSTSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67369282ZY;
@@ -503,7 +506,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BSTSample/BSTSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 67369282ZY;
@@ -532,7 +536,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
