@@ -97,3 +97,15 @@
 > * [UPDATE] 친구초대 누적 현황 UI 추가
 > * [FIX] Network Crash Log 제거
 > * [FIX] iOS에서 출석체크 리워드 지급 메시지 버튼 텍스트 오류 수정
+> ### [2.0.2] - 2023-02-17
+> * [FIX] Campaign 한 개가 잘못되어도 Campaign List가 안보이는 문제 해결
+> * [FIX] CampaignEntryView를 상속할 수 없던 문제 해결
+> * [FIX] Custom Campaign 레이아웃 경고 제거
+> ### [2.0.3] - 2023-02-23
+> * [NEW] 긁는 복권 캠페인 추가
+> * [UPDATE] 당첨 결과 페이지에서 팝업 노출
+> * [FIX] 룰렛을 회전 시키고 백그라운드로 나갈 경우 멈춰있는 문제 해결
+> * [UPDATE] SDK 사이즈 최적화 
+> * [FIX] 라이브러리 충돌 문제로 BuzzSentry 제거
+> ### [2.0.4] - 2023-02-24
+> * [FIX] 이벤트가 서버에 저장되지 않던 문제 해결
