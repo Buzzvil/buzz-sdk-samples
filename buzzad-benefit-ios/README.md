@@ -6,6 +6,16 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.23.3] - 2023-02-28
+* [NEW] 피드에 캐러셀 배너 영역 추가
+* [UPDATE] 활동 추적 권한 허용을 유도하는 배너 디자인 개선
+* [FIX] 대시에서 피드 광고 분류 탭을 비활성화한 상태에서 광고 분류 필터만 활성화하면 발생하는 문제 해결
+  * 필터가 제대로 나타나지 않아 유저가 참여하고 싶은 광고의 세부 유형을 선택할 수 없는 문제 해결
+  * 광고 프리로드를 실패하는 문제 해결
+* [FIX] 광고 뷰를 자체 구현한 경우 발생하는 UI 오류 해결 (예: 유저의 광고 참여 상태에 따라 CTA 뷰가 업데이트되지 않은 문제)
+* [FIX] CTA 버튼 커스터마이징이 잘 동작하지 않는 버그 수정
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzad3.23/) 참조
+
 ## [3.21.2] - 2023-01-26
 * [CHANGE] Xcode 14에서 BuzzAd iOS SDK를 사용할 때 Warning이 발생하지 않도록 Minimum deployment target을 11로 상향
 * [NEW] 커스텀 인앱 브라우저 사용 시 딥링크 광고 여부를 확인하는 인터페이스 추가
