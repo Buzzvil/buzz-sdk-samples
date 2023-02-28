@@ -7,9 +7,9 @@
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
 ## [3.29.0] - 2023-02-28
-* [new] Android 13(targetsdkversion 33)을 대응하기 위한 검토와 조치가 완료되었습니다.
+* [IMPORTANT] Android 13(targetsdkversion 33)을 대응하기 위한 검토와 조치 완료
 * [UPDATE] 동영상 광고 서빙 시스템 업데이트
-* [FIX] BuzzAd Push 가 간헐적으로 비활성화되는 문제 해결
+* [FIX] BuzzAd Push가 간헐적으로 비활성화되는 문제 해결
 * [FIX] BuzzvilBottomSheet 사용 시 다크모드가 실시간으로 반영되지 않는 문제 해결
 * [FIX] 버즈배너(BuzzBanner) 초기화 시점에 간헐적으로 오류가 발생하는 현상 해결
 * [FIX] 개인정보 수집 동의 UI 표시를 위한 서버 통신을 실패해도 피드에서 광고를 할당하도록 수정
