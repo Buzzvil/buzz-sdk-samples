@@ -2,6 +2,7 @@ package com.buzzvil.buzzad.benefit.sample.publisher.buzzbanner;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,9 @@ public class BuzzBannerActivity extends AppCompatActivity {
     private BuzzBannerView buzzBannerViewWithXml;
     private BuzzBannerView buzzBannerViewWithCode;
 
+    private TextView buzzBannerViewWithXmlState;
+    private TextView buzzBannerViewWithCodeState;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,9 @@ public class BuzzBannerActivity extends AppCompatActivity {
 
         buzzBannerViewWithXml = findViewById(R.id.buzzBannerViewWithXml);
         buzzBannerViewWithCode = findViewById(R.id.buzzBannerViewWithCode);
+
+        buzzBannerViewWithXmlState = findViewById(R.id.buzzBannerViewWithXmlState);
+        buzzBannerViewWithCodeState = findViewById(R.id.buzzBannerViewWithCodeState);
 
         setBuzzBannerConfig();
         setBuzzBannerListener();
@@ -45,34 +52,40 @@ public class BuzzBannerActivity extends AppCompatActivity {
         buzzBannerViewWithXml.setBuzzBannerViewListener(new BuzzBannerViewListener() {
             @Override
             public void onClicked() {
-                Log.d(TAG, "buzzBannerViewWithXml onClicked");
+                Log.d(TAG, "buzzBannerViewWithXml state: onClicked");
+                buzzBannerViewWithXmlState.setText("buzzBannerViewWithXml state: onClicked");
             }
 
             @Override
             public void onFailed(@NonNull AdError adError) {
-                Log.d(TAG, "buzzBannerViewWithXml onFailed. error: " + adError);
+                Log.d(TAG, "buzzBannerViewWithXml state: onFailed, error: " + adError);
+                buzzBannerViewWithXmlState.setText("buzzBannerViewWithXml state: onFailed, error: " + adError);
             }
 
             @Override
             public void onLoaded() {
-                Log.d(TAG, "buzzBannerViewWithXml onLoaded");
+                Log.d(TAG, "buzzBannerViewWithXml state: onLoaded");
+                buzzBannerViewWithXmlState.setText("buzzBannerViewWithXml state: onLoaded");
             }
         });
 
         buzzBannerViewWithCode.setBuzzBannerViewListener(new BuzzBannerViewListener() {
             @Override
             public void onClicked() {
-                Log.d(TAG, "buzzBannerViewWithCode onClicked");
+                Log.d(TAG, "buzzBannerViewWithCode state: onClicked");
+                buzzBannerViewWithXmlState.setText("buzzBannerViewWithCode state: onClicked");
             }
 
             @Override
             public void onFailed(@NonNull AdError adError) {
-                Log.d(TAG, "buzzBannerViewWithCode onFailed. error: " + adError);
+                Log.d(TAG, "buzzBannerViewWithCode state: onFailed, error: " + adError);
+                buzzBannerViewWithXmlState.setText("buzzBannerViewWithCode state: onFailed, error: " + adError);
             }
 
             @Override
             public void onLoaded() {
-                Log.d(TAG, "buzzBannerViewWithCode onLoaded");
+                Log.d(TAG, "buzzBannerViewWithCode state: onLoaded");
+                buzzBannerViewWithXmlState.setText("buzzBannerViewWithCode state: onLoaded");
             }
         });
     }

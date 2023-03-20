@@ -10,9 +10,10 @@
     tools:context=".buzzbanner.BuzzBannerActivity">
 
     <TextView
+        android:id="@+id/buzzBannerViewWithXmlState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BuzzBanner with xml" />
+        android:text="buzzBannerViewWithXml state: null" />
 
     <!-- xml 속성으로 BuzzBanner를 설정하는 방법입니다. -->
     <com.buzzvil.buzzbanner.BuzzBannerView
@@ -23,10 +24,11 @@
         app:bz_placement_id="YOUR_NATIVE_AD_UNIT_ID" />
 
     <TextView
+        android:id="@+id/buzzBannerViewWithCodeState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="BuzzBanner with code" />
+        android:text="buzzBannerViewWithCode state: null" />
 
     <!-- 소스 코드에서 BuzzBanner를 설정해야 합니다. -->
     <com.buzzvil.buzzbanner.BuzzBannerView
