@@ -19,36 +19,31 @@
             android:id="@+id/native_ad_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Single - Interstitial Ad"
-            android:textAllCaps="false" />
+            android:text="Single - Interstitial Ad" />
 
         <Button
             android:id="@+id/native_ads_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Multiple - Pager Ads"
-            android:textAllCaps="false" />
+            android:text="Multiple - Pager Ads" />
 
         <Button
             android:id="@+id/native_carousel_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Native Carousel"
-            android:textAllCaps="false" />
+            android:text="Native Carousel" />
 
         <Button
             android:id="@+id/native_ad_2_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Native 2.0"
-            android:textAllCaps="false" />
+            android:text="Native 2.0" />
 
         <Button
             android:id="@+id/native_ad_2_carousel_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Native 2.0 Carousel"
-            android:textAllCaps="false" />
+            android:text="Native 2.0 Carousel" />
 
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Title"
@@ -67,8 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Feed Activity"
-                android:textAllCaps="false" />
+                android:text="Feed Activity" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,16 +75,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Web to Feed"
-                android:textAllCaps="false" />
+                android:text="Web to Feed" />
 
             <Button
                 android:id="@+id/feed_entry_point"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Feed Entry Point"
-                android:textAllCaps="false" />
+                android:text="Feed Entry Point" />
         </LinearLayout>
 
         <TextView
@@ -127,11 +119,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Show"
-                android:textAllCaps="false" />
+                android:text="Show" />
 
         </LinearLayout>
 
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BuzzBanner" />
+
+        <Button
+            android:id="@+id/buzz_banner_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BuzzBanner" />
     </LinearLayout>
 
     <ProgressBar
