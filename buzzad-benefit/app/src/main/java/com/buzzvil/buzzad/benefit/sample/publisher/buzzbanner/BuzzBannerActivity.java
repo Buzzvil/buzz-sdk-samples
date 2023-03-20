@@ -16,7 +16,7 @@ import com.buzzvil.buzzbanner.BuzzBannerViewListener;
 
 public class BuzzBannerActivity extends AppCompatActivity {
     private static final String TAG = "BuzzBannerActivity";
-    private static final String BANNER_PLACEMENT_ID = "YOUR_NATIVE_AD_UNIT_ID";
+    private static final String BANNER_PLACEMENT_ID = "YOUR_BANNER_PLACEMENT_ID";
 
     private BuzzBannerView buzzBannerViewWithXml;
     private BuzzBannerView buzzBannerViewWithCode;
@@ -73,19 +73,19 @@ public class BuzzBannerActivity extends AppCompatActivity {
             @Override
             public void onClicked() {
                 Log.d(TAG, "buzzBannerViewWithCode state: onClicked");
-                buzzBannerViewWithXmlState.setText("buzzBannerViewWithCode state: onClicked");
+                buzzBannerViewWithCodeState.setText("buzzBannerViewWithCode state: onClicked");
             }
 
             @Override
             public void onFailed(@NonNull AdError adError) {
                 Log.d(TAG, "buzzBannerViewWithCode state: onFailed, error: " + adError);
-                buzzBannerViewWithXmlState.setText("buzzBannerViewWithCode state: onFailed, error: " + adError);
+                buzzBannerViewWithCodeState.setText("buzzBannerViewWithCode state: onFailed, error: " + adError);
             }
 
             @Override
             public void onLoaded() {
                 Log.d(TAG, "buzzBannerViewWithCode state: onLoaded");
-                buzzBannerViewWithXmlState.setText("buzzBannerViewWithCode state: onLoaded");
+                buzzBannerViewWithCodeState.setText("buzzBannerViewWithCode state: onLoaded");
             }
         });
     }

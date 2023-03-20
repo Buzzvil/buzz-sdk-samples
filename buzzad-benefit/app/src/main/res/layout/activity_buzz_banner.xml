@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:bz_banner_size="size_320x50"
-        app:bz_placement_id="YOUR_NATIVE_AD_UNIT_ID" />
+        app:bz_placement_id="YOUR_BANNER_PLACEMENT_ID" />
 
     <TextView
         android:id="@+id/buzzBannerViewWithCodeState"
