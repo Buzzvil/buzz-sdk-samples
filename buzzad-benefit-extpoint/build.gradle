@@ -25,7 +25,7 @@ allprojects {
 }
 
 ext {
-    buzzAdBenefitVersionName = '3.29.+'
+    buzzAdBenefitVersionName = '3.31.+'
 }
 
 task clean(type: Delete) {
