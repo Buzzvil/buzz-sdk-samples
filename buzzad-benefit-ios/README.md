@@ -6,6 +6,11 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.25.0] - 2023-03-23
+* [FIX] 피드의 개별 광고 사이 영역의 높이를 0으로 설정해도 여전히 표시되는 문제 해결
+* [FIX] 3.17.x 이상부터 발생했던 하위 뷰 컨트롤러로 피드 연동 시 피드 최상단의 툴바가 보여지는 문제 해결
+* [FIX] 피드에서 간헐적으로 발생하는 UIPageViewController 관련 충돌 문제 해결
+
 ## [3.23.3] - 2023-02-28
 * [NEW] 피드에 캐러셀 배너 영역 추가
 * [UPDATE] 활동 추적 권한 허용을 유도하는 배너 디자인 개선
