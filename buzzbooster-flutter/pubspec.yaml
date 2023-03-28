@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  buzz_booster: ^2.0.1
+  buzz_booster: ^2.0.4
   fluttertoast: ^8.1.1
   uuid: ^3.0.6
   
