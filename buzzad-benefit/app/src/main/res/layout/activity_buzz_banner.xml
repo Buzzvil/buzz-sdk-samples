@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".buzzbanner.BuzzBannerActivity">
+
+    <TextView
+        android:id="@+id/buzzBannerViewWithXmlState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="buzzBannerViewWithXml state: null" />
+
+    <!-- xml 속성으로 BuzzBanner를 설정하는 방법입니다. -->
+    <com.buzzvil.buzzbanner.BuzzBannerView
+        android:id="@+id/buzzBannerViewWithXml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bz_banner_size="size_320x50"
+        app:bz_placement_id="YOUR_BANNER_PLACEMENT_ID" />
+
+    <TextView
+        android:id="@+id/buzzBannerViewWithCodeState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="buzzBannerViewWithCode state: null" />
+
+    <!-- 소스 코드에서 BuzzBanner를 설정해야 합니다. -->
+    <com.buzzvil.buzzbanner.BuzzBannerView
+        android:id="@+id/buzzBannerViewWithCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

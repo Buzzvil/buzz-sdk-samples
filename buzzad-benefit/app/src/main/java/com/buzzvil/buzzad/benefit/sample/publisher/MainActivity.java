@@ -27,6 +27,7 @@ import com.buzzvil.buzzad.benefit.presentation.nativead.BuzzAdNative;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRequest;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdsRequest;
+import com.buzzvil.buzzad.benefit.sample.publisher.buzzbanner.BuzzBannerActivity;
 import com.buzzvil.buzzad.benefit.sample.publisher.carousel.NativeCarouselActivity;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.PagerAdsView;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Button nativeCarouselButton;
     private Button nativeAd2Button;
     private Button nativeAd2CarouselButton;
+    private Button buzzBannerButton;
     private Button feedButton;
     private Button feedWithTabButton;
     private Button webToFeedButton;
@@ -98,6 +100,12 @@ public class MainActivity extends AppCompatActivity {
         this.nativeAd2CarouselButton = findViewById(R.id.native_ad_2_carousel_button);
         nativeAd2CarouselButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, NativeAd2CarouselActivity.class);
+            startActivity(intent);
+        });
+
+        this.buzzBannerButton = findViewById(R.id.buzz_banner_button);
+        buzzBannerButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, BuzzBannerActivity.class);
             startActivity(intent);
         });
 
