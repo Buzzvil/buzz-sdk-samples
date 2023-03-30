@@ -34,3 +34,9 @@
     > Android Studio, Gradle	
 - Development Guide	
     > [Development Guide - BuzzScreen Javascript for Web Login](https://buzzvil.atlassian.net/wiki/spaces/BDG/pages/386924671/BuzzScreen+Migration+SDK)
+
+## 7. buzzbooster
+- Requirements
+    >
+- Development Guide
+    > [Development Guide - BuzzBooster](https://buzzvilwiki.notion.site/4074be38187a4ab5a9dd991a592b3855)
