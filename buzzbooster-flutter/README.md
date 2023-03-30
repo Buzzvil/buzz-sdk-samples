@@ -1,6 +1,6 @@
 ## BuzzBooster SDK for Flutter
 
-* [개발 가이드](https://buzzvilwiki.notion.site/Flutter-SDK-b88f5a861910483b8baa512d508eead9)
+* [연동 가이드](https://buzzvilwiki.notion.site/Flutter-SDK-b88f5a861910483b8baa512d508eead9)
 
 ## Quick Start
 ```sh

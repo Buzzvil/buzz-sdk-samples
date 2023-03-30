@@ -1,6 +1,6 @@
 ## BuzzBooster SDK for React Native
 
-* [개발 가이드](https://buzzvilwiki.notion.site/React-Native-SDK-afb7be1b3dd149898f983d5ef1a5dcc6)
+* [연동 가이드](https://buzzvilwiki.notion.site/React-Native-SDK-afb7be1b3dd149898f983d5ef1a5dcc6)
 
 ## Quick Start
 ```sh
