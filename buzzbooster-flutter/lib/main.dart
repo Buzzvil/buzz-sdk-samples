@@ -4,6 +4,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:uuid/uuid.dart';
 
 final buzzBooster = BuzzBooster();
+final androidAppKey = '307117684877774';
+final iosAppKey = '279753136766115';
 
 void main() async {
   runApp(
@@ -32,8 +34,8 @@ class _MyAppState extends State<MyApp> {
   Future<void> doAsyncStuff() async {
     setState(() { });
     await buzzBooster.init(
-      androidAppKey: '307117684877774',
-      iosAppKey: '279753136766115',
+      androidAppKey: androidAppKey,
+      iosAppKey: iosAppKey,
     );
     await buzzBooster.startService();
 

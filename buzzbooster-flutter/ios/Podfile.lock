@@ -14,26 +14,22 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - buzz_booster (2.0.1):
-    - BuzzBooster (= 2.0.1)
+  - buzz_booster (2.0.7):
+    - BuzzBooster (= 2.0.7)
     - Flutter
-  - BuzzBooster (2.0.1):
+  - BuzzBooster (2.0.7):
     - AFNetworking (~> 4.0)
-    - BuzzBoosterSwift (~> 2.0.1)
+    - BuzzBoosterSwift (~> 2.0.7)
     - BuzzMutator (~> 0.23.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzBoosterSwift (2.0.1):
+  - BuzzBoosterSwift (2.0.7):
     - BuzzRxSwift (~> 6.5.1)
-    - BuzzSentry
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
   - BuzzMutator (0.23.0)
   - BuzzRxSwift (6.5.1)
-  - BuzzSentry (0.0.4):
-    - BuzzSentry/Core (= 0.0.4)
-  - BuzzSentry/Core (0.0.4)
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
@@ -48,10 +44,10 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.4)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.15.2):
-    - SDWebImage/Core (= 5.15.2)
-  - SDWebImage/Core (5.15.2)
-  - SDWebImageWebPCoder (0.10.1):
+  - SDWebImage (5.15.5):
+    - SDWebImage/Core (= 5.15.5)
+  - SDWebImage/Core (5.15.5)
+  - SDWebImageWebPCoder (0.11.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
   - Toast (4.0.0)
@@ -68,7 +64,6 @@ SPEC REPOS:
     - BuzzBoosterSwift
     - BuzzMutator
     - BuzzRxSwift
-    - BuzzSentry
     - libwebp
     - ReactiveObjC
     - SDWebImage
@@ -85,18 +80,17 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  buzz_booster: f0aea8573bebe73dbbfd38e456d6b4530e534dac
-  BuzzBooster: 7b7ad438a50bc56db8387d2627fa9b50b048d707
-  BuzzBoosterSwift: 8c74d6b053e17100146380da09d62ad81cfbd0ba
+  buzz_booster: 8dad394d53327ee1c5bf8e3e669f0b5487c1898f
+  BuzzBooster: 237b03568e62fac47f10a72485419c081cdbe499
+  BuzzBoosterSwift: 36f30a452d6b37447a6a5210ed3719c6789d0da1
   BuzzMutator: 54945e8ba227b4d72295d493edb63c22eeb5cd0d
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
-  BuzzSentry: 32959eb816c684e49116e55f684fe8a18d39b8f2
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   fluttertoast: 74526702fea2c060ea55dde75895b7e1bde1c86b
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
-  SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
+  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+  SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
 PODFILE CHECKSUM: 985e5b058f26709dc81f9ae74ea2b2775bdbcefe

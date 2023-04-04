@@ -2,6 +2,9 @@
 
 * [연동 가이드](https://buzzvilwiki.notion.site/Flutter-SDK-b88f5a861910483b8baa512d508eead9)
 
+## Sample App
+`lib/main.dart` 파일을 열어서 `androidAppKey`와 `iosAppKey`를 원하는 app key로 변경할 수 있습니다.
+
 ## Quick Start
 ```sh
 flutter run
