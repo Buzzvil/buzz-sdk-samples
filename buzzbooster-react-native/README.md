@@ -2,6 +2,9 @@
 
 * [연동 가이드](https://buzzvilwiki.notion.site/React-Native-SDK-afb7be1b3dd149898f983d5ef1a5dcc6)
 
+## Sample App
+`App.js` 파일을 열어서 `androidAppKey`와 `iosAppKey`를 원하는 app key로 변경할 수 있습니다.
+
 ## Quick Start
 ```sh
 npm install .
