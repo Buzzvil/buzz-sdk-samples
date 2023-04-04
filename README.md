@@ -40,3 +40,4 @@
     >
 - Development Guide
     > [Development Guide - BuzzBooster](https://buzzvilwiki.notion.site/4074be38187a4ab5a9dd991a592b3855)
+- [BuzzBooster](https://buzzbooster.io) is a SDK that helps you to boost your app's user engagement.
