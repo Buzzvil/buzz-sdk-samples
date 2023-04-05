@@ -15,23 +15,19 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - boost (1.76.0)
-  - BuzzBooster (2.0.1):
+  - BuzzBooster (2.0.7):
     - AFNetworking (~> 4.0)
-    - BuzzBoosterSwift (~> 2.0.1)
+    - BuzzBoosterSwift (~> 2.0.7)
     - BuzzMutator (~> 0.23.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzBoosterSwift (2.0.1):
+  - BuzzBoosterSwift (2.0.7):
     - BuzzRxSwift (~> 6.5.1)
-    - BuzzSentry
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
   - BuzzMutator (0.23.0)
   - BuzzRxSwift (6.5.1)
-  - BuzzSentry (0.0.4):
-    - BuzzSentry/Core (= 0.0.4)
-  - BuzzSentry/Core (0.0.4)
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.69.5)
@@ -398,16 +394,16 @@ PODS:
     - React-logger (= 0.69.5)
     - React-perflogger (= 0.69.5)
   - ReactiveObjC (3.1.1)
-  - RNBuzzBooster (2.0.1):
-    - BuzzBooster (= 2.0.1)
+  - RNBuzzBooster (2.0.2):
+    - BuzzBooster (= 2.0.7)
     - React-Core
   - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
-  - SDWebImage (5.15.2):
-    - SDWebImage/Core (= 5.15.2)
-  - SDWebImage/Core (5.15.2)
-  - SDWebImageWebPCoder (0.10.1):
+  - SDWebImage (5.15.5):
+    - SDWebImage/Core (= 5.15.5)
+  - SDWebImage/Core (5.15.5)
+  - SDWebImageWebPCoder (0.11.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
   - SocketRocket (0.6.0)
@@ -483,7 +479,6 @@ SPEC REPOS:
     - BuzzBoosterSwift
     - BuzzMutator
     - BuzzRxSwift
-    - BuzzSentry
     - CocoaAsyncSocket
     - Flipper
     - Flipper-Boost-iOSX
@@ -579,11 +574,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   boost: a7c83b31436843459a1961bfd74b96033dc77234
-  BuzzBooster: 7b7ad438a50bc56db8387d2627fa9b50b048d707
-  BuzzBoosterSwift: 8c74d6b053e17100146380da09d62ad81cfbd0ba
+  BuzzBooster: 237b03568e62fac47f10a72485419c081cdbe499
+  BuzzBoosterSwift: 36f30a452d6b37447a6a5210ed3719c6789d0da1
   BuzzMutator: 54945e8ba227b4d72295d493edb63c22eeb5cd0d
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
-  BuzzSentry: 32959eb816c684e49116e55f684fe8a18d39b8f2
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 0045cf98ca4a48af3bf7108d85b1c243740fa289
@@ -630,10 +624,10 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: c778439c3c430a5719d027d3c67423b390a221fe
   ReactCommon: ab1003b81be740fecd82509c370a45b1a7dda0c1
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  RNBuzzBooster: 8cf9596dd2c0ac721ada17a021a1031b5ef34664
+  RNBuzzBooster: 8e390cd3c47c955041e5dcacad63eca55860504b
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
-  SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
-  SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
+  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+  SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: c2b1f2494060865ac1f27e49639e72371b1205fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
