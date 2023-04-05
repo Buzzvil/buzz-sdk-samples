@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterUser
 import com.buzzvil.booster.external.campaign.CampaignEntryView
+import com.buzzvil.booster.external.campaign.CampaignType
 import com.buzzvil.booster.sample.publisher.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +27,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun registerViewEvent() {
         registerLoginAction()
+        registerShowInAppMessageAction()
+        registerShowCampaignListAction()
+        registerShowAttendanceCampaignAction()
+        registerLikeButtonAction()
+        registerCommentButtonAction()
+        registerPostButtonAction()
     }
 
     private fun registerLoginAction() {
@@ -42,10 +49,49 @@ class MainActivity : AppCompatActivity() {
                     .setProperty("Age", "20")
                     .build()
                 BuzzBooster.setUser(user)
-                BuzzBooster.getInstance().showInAppMessage(this)
                 activityMainBinding.loginButton.text = "logout"
             }
             login = !login
+        }
+    }
+
+    private fun registerShowInAppMessageAction() {
+        activityMainBinding.showInAppMessageButton.setOnClickListener {
+            BuzzBooster.getInstance().showInAppMessage(this)
+        }
+    }
+
+    private fun registerShowCampaignListAction() {
+        activityMainBinding.showCampaignListButton.setOnClickListener {
+            BuzzBooster.getInstance().showCampaign(this)
+        }
+    }
+
+    private fun registerShowAttendanceCampaignAction() {
+        activityMainBinding.showAttendanceCampaignButton.setOnClickListener {
+            BuzzBooster.getInstance().showCampaign(this, CampaignType.Attendance)
+        }
+    }
+
+    private fun registerLikeButtonAction() {
+        activityMainBinding.likeButton.setOnClickListener {
+            BuzzBooster.getInstance().sendEvent("bb_like", mapOf("liked_content_id" to "post_1"))
+        }
+    }
+
+    private fun registerCommentButtonAction() {
+        activityMainBinding.commentButton.setOnClickListener {
+            BuzzBooster.getInstance().sendEvent(
+                "bb_comment",
+                mapOf("commented_content_id" to "post_2", "comment" to "Great post!")
+            )
+        }
+    }
+
+    private fun registerPostButtonAction() {
+        activityMainBinding.postButton.setOnClickListener {
+            BuzzBooster.getInstance()
+                .sendEvent("bb_posting_content", mapOf("posted_content_id" to "post_3"))
         }
     }
 
