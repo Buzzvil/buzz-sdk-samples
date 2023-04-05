@@ -8,27 +8,31 @@ final androidAppKey = '307117684877774';
 final iosAppKey = '279753136766115';
 
 void main() async {
-  runApp(
-    const MaterialApp(home: MyApp()),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  final eventNameTextController = TextEditingController();
-  final eventValuesKeyTextController = TextEditingController();
-  final eventValuesValueTextController = TextEditingController();
-
   @override
   void initState() {
     super.initState();
     doAsyncStuff();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'BuzzBooster Example App',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeRoute(),
+        '/optInMarketing': (context) => OptInMarketingRoute(),
+      },
+    );
   }
 
   Future<void> doAsyncStuff() async {
@@ -39,20 +43,16 @@ class _MyAppState extends State<MyApp> {
     );
     await buzzBooster.startService();
 
-    buzzBooster.customCampaignMoveButtonClickedCallback = (String url) async {
-      showToast("move to url");
-      // await Navigator.push(context, MaterialPageRoute(builder: (context) {}));
-    };
-
-    buzzBooster.optInMarketingCampaignMoveButtonClickedCallback = () async {
-      showToast("move to opt in marketing page");
-      // await Navigator.push(context, MaterialPageRoute(builder: (context) {}));
-    };
     return Future.value();
   }
+}
 
+class HomeRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    buzzBooster.optInMarketingCampaignMoveButtonClickedCallback = () async {
+      Navigator.pushNamed(context, '/optInMarketing');
+    };
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -66,7 +66,18 @@ class _MyAppState extends State<MyApp> {
               const SizedBox(
                 height: 10,
               ),
-              eventWidget(),
+              OutlinedButton(
+                onPressed: () async {
+                  await buzzBooster.showInAppMessage();
+                },
+                child: const Text("Show In-app Message"),
+              ),
+              OutlinedButton(
+                onPressed: () async {
+                  await buzzBooster.showCampaign();
+                },
+                child: const Text("Campaign List"),
+              ),
               OutlinedButton(
                 onPressed: () async {
                   await buzzBooster.showSpecificCampaign(CampaignType.attendance);
@@ -79,6 +90,7 @@ class _MyAppState extends State<MyApp> {
                 },
                 child: const Text("Referral Campaign"),
               ),
+              eventWidget(),
             ],
           ),
         ),
@@ -101,23 +113,13 @@ class _MyAppState extends State<MyApp> {
           children: [
             OutlinedButton(
               onPressed: () async {
-                String userId = const Uuid().v4();
-                if (userId.isNotEmpty) {
-                  showToast("login");
-                  User user  = UserBuilder(userId)
-                    .setOptInMarketing(false)
-                    .addProperty("key", "value")
-                    .build();
-                  await buzzBooster.setUser(user);
-                  await buzzBooster.showInAppMessage();
-                }
+                login();
               },
               child: const Text("Login"),
             ),
             OutlinedButton(
               onPressed: () async {
-                showToast("logout");
-                await buzzBooster.setUser(null);
+                logout();
               },
               child: const Text("Logout"),
             ),
@@ -128,58 +130,49 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget eventWidget() {
-    return Column(children: [
-      const Text("Send Event"),
-      TextField(
-        controller: eventNameTextController,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'event name',
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        OutlinedButton(
+          onPressed: () async {
+            await buzzBooster.sendEvent("bb_like", {"liked_content_id": "post_1"});
+            showToast("Like: You liked post_1");
+          },
+          child: const Text("Like"),
         ),
-      ),
-      TextField(
-        controller: eventValuesKeyTextController,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'event values key',
+        OutlinedButton(
+          onPressed: () async {
+            await buzzBooster.sendEvent("bb_comment", {"commented_content_id": "post_2", "commnet": "Greate Post!"});
+            showToast("Comment: You commented post_2 with Greate Post!");
+          },
+          child: const Text("Comment"),
         ),
-      ),
-      TextField(
-        controller: eventValuesValueTextController,
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'event values value',
+        OutlinedButton(
+          onPressed: () async {
+            await buzzBooster.sendEvent("bb_posting_content", {"posted_content_id": "post_3"});
+            showToast("Post: You posted post_3");
+          },
+          child: const Text("Post"),
         ),
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          OutlinedButton(
-            onPressed: () async {
-              String eventName = eventNameTextController.text;
-              String eventValuesKey = eventValuesKeyTextController.text;
-              String eventValuesValue = eventValuesValueTextController.text;
-              if (eventName.isNotEmpty) {
-                await buzzBooster
-                    .sendEvent(eventName, {eventValuesKey: eventValuesValue});
-                showToast("send event: ${eventName}");
-              } else {
-                showToast("event name is required");
-              }
-            },
-            child: const Text("Send Event"),
-          ),
-          OutlinedButton(
-            onPressed: () async {
-              eventNameTextController.clear();
-              eventValuesKeyTextController.clear();
-              eventValuesValueTextController.clear();
-            },
-            child: const Text("Clear Event"),
-          ),
-        ],
-      ),
-    ]);
+      ],
+    );
+  }
+
+  void login() async {
+    String userId = const Uuid().v4();
+    if (userId.isNotEmpty) {
+      showToast("login");
+      User user  = UserBuilder(userId)
+        .setOptInMarketing(false)
+        .addProperty("login_type", "sns(Facebook)")
+        .build();
+      await buzzBooster.setUser(user);
+    }
+  }
+
+  void logout() async {
+    showToast("logout");
+    await buzzBooster.setUser(null);
   }
 
   void showToast(String message) {
@@ -191,5 +184,63 @@ class _MyAppState extends State<MyApp> {
         backgroundColor: Colors.black45,
         textColor: Colors.white,
         fontSize: 16.0);
+  }
+}
+
+class OptInMarketingRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('BuzzBooster Example App'),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              Text("Toggle to Opt In Marketing"),
+              OptInMarketingSwitch(),
+              OutlinedButton(
+                onPressed: () async {
+                  await buzzBooster.showCampaign();
+                },
+                child: const Text("Go to see point achieved"),
+              ),
+              OutlinedButton(
+                onPressed: () async {
+                  Navigator.pop(context);
+                },
+                child: const Text("Back"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class OptInMarketingSwitch extends StatefulWidget {
+  const OptInMarketingSwitch({Key? key}) : super(key: key);
+
+  @override
+  _OptInMarketingSwitchState createState() => _OptInMarketingSwitchState();
+}
+
+class _OptInMarketingSwitchState extends State<OptInMarketingSwitch> {
+  bool optInMarketing = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: optInMarketing,
+      activeColor: Colors.red,
+      onChanged: (bool value) {
+        setState(() {
+          optInMarketing = value;
+          buzzBooster.sendEvent("bb_opt_in_marketing", {});
+        });
+      },
+    );
   }
 }
