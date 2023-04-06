@@ -5,6 +5,13 @@ import Toast
 class ViewController: UIViewController {
   var scrollView: UIScrollView!
   var loginButton: UIButton!
+  var showInAppMessageButton: UIButton!
+  var showCampaignButton: UIButton!
+  var showAttendanceCampaignButton: UIButton!
+  var likeButton: UIButton!
+  var commentButton: UIButton!
+  var postButton: UIButton!
+  var stampActionStackView: UIStackView!
   var stackView: UIStackView!
   var login: Bool = false
   var campaignFloatingActionButton: BSTCampaignFloatingActionButton!
@@ -27,9 +34,45 @@ class ViewController: UIViewController {
     loginButton.setTitle("Login", for: .normal)
     setButtonAttributes(button: loginButton)
     
+    showInAppMessageButton = UIButton(type: .system)
+    showInAppMessageButton.setTitle("showInAppMessage", for: .normal)
+    setButtonAttributes(button: showInAppMessageButton)
+    
+    showCampaignButton = UIButton(type: .system)
+    showCampaignButton.setTitle("showCampaign", for: .normal)
+    setButtonAttributes(button: showCampaignButton)
+    
+    showAttendanceCampaignButton = UIButton(type: .system)
+    showAttendanceCampaignButton.setTitle("showAttendanceCampaign", for: .normal)
+    setButtonAttributes(button: showAttendanceCampaignButton)
+    
+    likeButton = UIButton(type: .system)
+    likeButton.setTitle("like", for: .normal)
+    setButtonAttributes(button: likeButton)
+    
+    postButton = UIButton(type: .system)
+    postButton.setTitle("post", for: .normal)
+    setButtonAttributes(button: postButton)
+    
+    commentButton = UIButton(type: .system)
+    commentButton.setTitle("comment", for: .normal)
+    setButtonAttributes(button: commentButton)
+    
+    stampActionStackView = UIStackView(arrangedSubviews: [
+      likeButton,
+      postButton,
+      commentButton,
+    ])
+    stampActionStackView.axis = .horizontal
+    stampActionStackView.distribution = .fillEqually
+    stampActionStackView.spacing = 5
+    
     stackView = UIStackView(arrangedSubviews: [
       loginButton,
-      customEntryPointButton
+      showInAppMessageButton,
+      showCampaignButton,
+      showAttendanceCampaignButton,
+      stampActionStackView,
     ])
     stackView.axis = .vertical
     stackView.spacing = 8
@@ -65,6 +108,7 @@ class ViewController: UIViewController {
       campaignFloatingActionButton.heightAnchor.constraint(equalToConstant: 50),
       campaignFloatingActionButton.widthAnchor.constraint(equalToConstant: 50)
     ])
+    
     stackView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -89,6 +133,11 @@ class ViewController: UIViewController {
   
   func bindEvent() {
     loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+    showInAppMessageButton.addTarget(self, action: #selector(showInAppMessageButtonAction), for: .touchUpInside)
+    showCampaignButton.addTarget(self, action: #selector(showCampaignButtonAction), for: .touchUpInside)
+    likeButton.addTarget(self, action: #selector(likeButtonAction), for: .touchUpInside)
+    postButton.addTarget(self, action: #selector(postButtonAction), for: .touchUpInside)
+    commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
   }
   
   @objc func loginButtonAction(button: UIButton!) {
@@ -107,5 +156,43 @@ class ViewController: UIViewController {
     }
     self.login = !self.login
   }
+  
+  @objc func showInAppMessageButtonAction() {
+    BuzzBooster.showInAppMessage(with: self)
+  }
+  
+  @objc func showCampaignButtonAction() {
+    BuzzBooster.showCampaign(with: self)
+  }
+  
+  @objc func showAttendanceCampaignListButtonAction() {
+    BuzzBooster.showCampaign(with: self, type: .attendance)
+  }
+  
+  @objc func likeButtonAction() {
+    BuzzBooster.sendEvent(
+      withEventName: "bb_like",
+      eventValues: [
+        "like_comment_id": "post_1"
+      ]
+    )
+  }
+  
+  @objc func commentButtonAction() {
+    BuzzBooster.sendEvent(
+      withEventName: "bb_comment",
+      eventValues: [
+        "commented_content_id": "1",
+        "comment": "Great Post!",
+      ]
+    )
+  }
+  
+  @objc func postButtonAction() {
+    BuzzBooster.sendEvent(
+      withEventName: "bb_posting_content",
+      eventValues: [
+        "posted_content_id": "1",
+      ])
+  }
 }
-
