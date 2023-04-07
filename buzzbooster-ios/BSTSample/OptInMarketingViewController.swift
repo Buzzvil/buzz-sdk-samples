@@ -4,6 +4,7 @@ import Toast
 
 final class OptInMarketingViewController: UIViewController {
   var stackView: UIStackView!
+  var textView: UILabel!
   var optInMarketingButton: UIButton!
   var backButton: UIButton!
   
@@ -24,6 +25,10 @@ final class OptInMarketingViewController: UIViewController {
   }
   
   func setupView() {
+    textView = UILabel()
+    textView.text = "This is Sample App's Opt In Marketing Page"
+    textView.textColor = .systemBlue
+    
     optInMarketingButton = UIButton(type: .system)
     optInMarketingButton.setTitle("Opt In Marketing? Click this.", for: .normal)
     setButtonAttributes(button: optInMarketingButton)
@@ -32,6 +37,7 @@ final class OptInMarketingViewController: UIViewController {
     backButton.setTitle("Go Back", for: .normal)
     setButtonAttributes(button: backButton)
 
+    view.addSubview(textView)
     view.addSubview(optInMarketingButton)
     view.addSubview(backButton)
   }
@@ -43,11 +49,19 @@ final class OptInMarketingViewController: UIViewController {
   }
   
   func setupLayout() {
+    textView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      textView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+      textView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+      textView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+      textView.heightAnchor.constraint(equalToConstant: 48)
+    ])
+      
     optInMarketingButton.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       optInMarketingButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
       optInMarketingButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-      optInMarketingButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+      optInMarketingButton.topAnchor.constraint(equalTo: textView.bottomAnchor),
       optInMarketingButton.heightAnchor.constraint(equalToConstant: 48)
     ])
     
