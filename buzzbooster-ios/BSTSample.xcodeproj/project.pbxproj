@@ -13,6 +13,7 @@
 		4B2614DF27E8934E0052F1FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2614DD27E8934E0052F1FB /* LaunchScreen.storyboard */; };
 		4BA7D8AA286070E600DE8631 /* CustomEntryPointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7D8A9286070E600DE8631 /* CustomEntryPointButton.swift */; };
 		9A3F7C175D0CF39F9775B5CB /* Pods_BSTSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A0D0EFF5EC92C2DD05925A /* Pods_BSTSample.framework */; };
+		E477155B29DE682D0055F412 /* OptInMarketingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E477155A29DE682D0055F412 /* OptInMarketingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4B2614EF27E8934F0052F1FB /* BSTSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BSTSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BA7D8A9286070E600DE8631 /* CustomEntryPointButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEntryPointButton.swift; sourceTree = "<group>"; };
 		65A0D0EFF5EC92C2DD05925A /* Pods_BSTSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSTSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E477155A29DE682D0055F412 /* OptInMarketingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptInMarketingViewController.swift; sourceTree = "<group>"; };
 		E493AB9C29AC7E3000303492 /* BSTSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BSTSample.entitlements; sourceTree = "<group>"; };
 		F10215CE3BFD003F51F4E79B /* Pods-BSTSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSTSample.release.xcconfig"; path = "Target Support Files/Pods-BSTSample/Pods-BSTSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				4B2614DD27E8934E0052F1FB /* LaunchScreen.storyboard */,
 				4B2614E027E8934E0052F1FB /* Info.plist */,
 				4BA7D8A9286070E600DE8631 /* CustomEntryPointButton.swift */,
+				E477155A29DE682D0055F412 /* OptInMarketingViewController.swift */,
 			);
 			path = BSTSample;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E477155B29DE682D0055F412 /* OptInMarketingViewController.swift in Sources */,
 				4BA7D8AA286070E600DE8631 /* CustomEntryPointButton.swift in Sources */,
 				4B2614D727E8934D0052F1FB /* ViewController.swift in Sources */,
 				4B2614D327E8934D0052F1FB /* AppDelegate.swift in Sources */,

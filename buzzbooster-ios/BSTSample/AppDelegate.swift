@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     BuzzBooster.initialize(with: config)
     BuzzBooster.startService()
+    BuzzBooster.setOptInMarketingCampaignDelegate(self)
     
     window = UIWindow(frame: UIScreen.main.bounds)
     let navigationViewController = UINavigationController(rootViewController: ViewController())
@@ -30,15 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     window?.makeKeyAndVisible()
     return true
   }
-
+  
   // The method will be called on the delegate when the user responded to the notification by opening the application,
   // dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from application:didFinishLaunchingWithOptions:.
   func userNotificationCenter(
     _ center: UNUserNotificationCenter,
     didReceive response: UNNotificationResponse,
-    withCompletionHandler completionHandler: @escaping () -> Void)
-  {
-    BuzzBooster.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    withCompletionHandler completionHandler: @escaping () -> Void
+  ) {
+    BuzzBooster.userNotificationCenter(
+      center,
+      didReceive: response,
+      withCompletionHandler: completionHandler
+    )
     completionHandler()
   }
   
@@ -46,11 +51,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func userNotificationCenter(
     _ center: UNUserNotificationCenter,
     willPresent notification: UNNotification,
-    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-      completionHandler([.alert, .sound])
+    withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+  ) {
+    completionHandler([.alert, .sound])
   }
   
-  func showToastIfAuthorizationDenied(center: UNUserNotificationCenter, content: UNNotificationContent) {
+  func showToastIfAuthorizationDenied(
+    center: UNUserNotificationCenter,
+    content: UNNotificationContent
+  ) {
     center.getNotificationSettings { settings in
       if (settings.authorizationStatus == UNAuthorizationStatus.denied) {
         DispatchQueue.main.async {
@@ -61,9 +70,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
 }
 
-//MARK: Push Notification
+// MARK: Push Notification
 extension AppDelegate {
-  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+  func application(
+    _ application: UIApplication,
+    didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+  ) {
     BuzzBooster.setDeviceToken(deviceToken)
+  }
+}
+
+// Mark: Move to your OptInMarketingPage in this Delegate
+extension AppDelegate: BSTOptInMarketingCampaignDelegate {
+  func onMoveButtonClicked() {
+    guard let rootViewController = window?.rootViewController else {
+      return
+    }
+    var currentController = rootViewController
+    while let presentedController = currentController.presentedViewController {
+      currentController = presentedController
+    }
+    let yourOptInMarketingViewController = OptInMarketingViewController()
+    currentController.present(yourOptInMarketingViewController, animated: true)
   }
 }

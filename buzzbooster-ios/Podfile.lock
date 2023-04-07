@@ -14,14 +14,14 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzBooster (2.0.4):
+  - BuzzBooster (2.0.7):
     - AFNetworking (~> 4.0)
-    - BuzzBoosterSwift (~> 2.0.4)
+    - BuzzBoosterSwift (~> 2.0.7)
     - BuzzMutator (~> 0.23.0)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzBoosterSwift (2.0.4):
+  - BuzzBoosterSwift (2.0.7):
     - BuzzRxSwift (~> 6.5.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
@@ -43,16 +43,16 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - SDWebImage (5.15.4):
-    - SDWebImage/Core (= 5.15.4)
-  - SDWebImage/Core (5.15.4)
-  - SDWebImageWebPCoder (0.10.1):
+  - SDWebImage (5.15.5):
+    - SDWebImage/Core (= 5.15.5)
+  - SDWebImage/Core (5.15.5)
+  - SDWebImageWebPCoder (0.11.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (~> 2.0.4)
+  - BuzzBooster (~> 2.0.7)
   - RxCocoa
   - RxSwift
   - Toast (= 4.0.0)
@@ -75,8 +75,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  BuzzBooster: 99b1bc22afb5c1d3fcc9b29f768b251998ff992c
-  BuzzBoosterSwift: 06562173cf3b31de3cc0bbc3968ff86f1475c9af
+  BuzzBooster: 237b03568e62fac47f10a72485419c081cdbe499
+  BuzzBoosterSwift: 36f30a452d6b37447a6a5210ed3719c6789d0da1
   BuzzMutator: 54945e8ba227b4d72295d493edb63c22eeb5cd0d
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
@@ -84,10 +84,10 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: 1c39de67663e5eebb2f41324d5d580eeea12dd4c
-  SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
+  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+  SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 9fd7c5c21d876ea014796c3ce6f2f2dba3f98012
+PODFILE CHECKSUM: 5962ec6d512f293b3c634ba91646b13a0d280175
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
