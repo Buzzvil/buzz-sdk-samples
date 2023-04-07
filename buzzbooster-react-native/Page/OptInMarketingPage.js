@@ -13,6 +13,7 @@ export default function OptInMarketingPage({ route, navigation }) {
     }
     return (
         <ScrollView style={styles.container}>
+            <Text>{"This is Sample App's Opt In Marketing Page"}</Text>
             <Text>{"수신동의 하시겠습니까?"}</Text>
             <Switch
                 trackColor={{ false: '#767577', true: '#81b0ff' }}

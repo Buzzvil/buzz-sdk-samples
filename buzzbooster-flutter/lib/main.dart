@@ -198,6 +198,7 @@ class OptInMarketingRoute extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
+              Text("This is Sample App's Opt In Marketing Page"),
               Text("Toggle to Opt In Marketing"),
               OptInMarketingSwitch(),
               OutlinedButton(
