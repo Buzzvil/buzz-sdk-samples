@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:buzz_booster/buzz_booster.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:uuid/uuid.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 final buzzBooster = BuzzBooster();
 final androidAppKey = '307117684877774';
 final iosAppKey = '279753136766115';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -41,7 +48,32 @@ class _MyAppState extends State<MyApp> {
       androidAppKey: androidAppKey,
       iosAppKey: iosAppKey,
     );
-    await buzzBooster.startService();
+    
+    final String? token = await FirebaseMessaging.instance.getToken();
+    if (token != null) {
+      await buzzBooster.setPushToken(token);
+    }
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
+      final data = message.data;
+      if (await buzzBooster.isBuzzBoosterNotification(data)) {
+        await buzzBooster.handleNotification(data);
+      }
+    });
+
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) async { 
+      final data = message.data;
+      if (await buzzBooster.isBuzzBoosterNotification(data)) {
+        await buzzBooster.handleOnMessageOpenedApp(data);
+      }
+    });
+
+    RemoteMessage? message = await FirebaseMessaging.instance.getInitialMessage();
+    if (message != null) {
+      if (await buzzBooster.isBuzzBoosterNotification(message.data)) {
+        await buzzBooster.handleInitialMessage(message.data);
+      }
+    }
 
     return Future.value();
   }
