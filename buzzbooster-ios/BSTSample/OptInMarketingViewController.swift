@@ -66,12 +66,7 @@ final class OptInMarketingViewController: UIViewController {
   }
   
   @objc func optInMarketingButtonAction() {
-    BuzzBooster.sendEvent(
-      withEventName: "bb_opt_in_marketing",
-      eventValues: [
-        "user_id": AppDelegate.USER_ID
-      ]
-    )
+    BuzzBooster.sendEvent(withEventName: "bb_opt_in_marketing")
   }
   
   @objc func backButtonAction() {
