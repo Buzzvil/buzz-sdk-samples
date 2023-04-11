@@ -140,7 +140,9 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void (^)(void))completionHandler {
-  completionHandler();
+  [RNBuzzBooster userNotificationCenter:center
+         didReceiveNotificationResponse:response
+                  withCompletionHandler:completionHandler];
 }
 
 @end

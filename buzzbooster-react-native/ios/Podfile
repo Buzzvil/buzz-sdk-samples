@@ -28,8 +28,11 @@ target 'SampleBuzzBooster' do
     # Pods for testing
   end
   
-
-  dynamic_frameworks = ['AFNetworking', 'ReactiveObjC', 'SDWebImage', 'SDWebImageWebPCoder', 'libwebp', 'Firebase', 'BuzzSentry']
+  pod 'Firebase', :modular_headers => true
+  pod 'FirebaseCoreInternal', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+  
+  dynamic_frameworks = ['AFNetworking', 'ReactiveObjC', 'SDWebImage', 'SDWebImageWebPCoder', 'libwebp', 'Firebase']
   pre_install do |installer|
     installer.pod_targets.each do |pod|
       if dynamic_frameworks.include?(pod.name)

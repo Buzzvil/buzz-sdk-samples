@@ -13,6 +13,8 @@ dependencies:
   buzz_booster: ^2.0.4
   fluttertoast: ^8.1.1
   uuid: ^3.0.6
+  firebase_messaging: ^14.3.0
+  firebase_core: ^2.8.0
   
 dev_dependencies:
   flutter_test:
