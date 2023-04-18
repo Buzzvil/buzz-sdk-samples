@@ -1,4 +1,4 @@
-package com.sample;
+package com.custom;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import com.buzzvil.buzzscreen.sdk.BaseLockerActivity;
 import com.buzzvil.buzzscreen.sdk.Campaign;
 import com.buzzvil.buzzscreen.sdk.widget.Slider;
 import com.buzzvil.buzzscreen.sdk.widget.SliderIcon;
+import com.sample.custom.R;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;

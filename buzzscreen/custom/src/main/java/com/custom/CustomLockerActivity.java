@@ -1,4 +1,4 @@
-package com.sample;
+package com.custom;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -17,6 +17,7 @@ import com.buzzvil.buzzscreen.sdk.widget.Slider;
 import com.buzzvil.buzzscreen.sdk.widget.SliderIcon;
 import com.buzzvil.locker.AutoplayState;
 import com.google.android.material.snackbar.Snackbar;
+import com.sample.custom.R;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
