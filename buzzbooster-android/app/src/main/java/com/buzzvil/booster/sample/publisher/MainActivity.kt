@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         registerLikeButtonAction()
         registerCommentButtonAction()
         registerPostButtonAction()
+        registerUploadReviewButtonAction()
+        registerPageVisitButtonAction()
     }
 
     private fun registerLoginAction() {
@@ -92,6 +94,20 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.postButton.setOnClickListener {
             BuzzBooster.getInstance()
                 .sendEvent("bb_posting_content", mapOf("posted_content_id" to "post_3"))
+        }
+    }
+
+    private fun registerUploadReviewButtonAction() {
+        activityMainBinding.reviewButton.setOnClickListener {
+            BuzzBooster.getInstance()
+                .sendEvent("bb_review_upload", mapOf("uploaded_review_id" to "review_1"))
+        }
+    }
+
+    private fun registerPageVisitButtonAction() {
+        activityMainBinding.visitPageButton.setOnClickListener {
+            BuzzBooster.getInstance()
+                .sendEvent("bb_page_visit", mapOf("visited_page_id" to "page_1"))
         }
     }
 
