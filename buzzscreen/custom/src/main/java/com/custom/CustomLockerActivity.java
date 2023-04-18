@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.buzzvil.buzzscreen.sdk.BaseLockerActivity;
 import com.buzzvil.buzzscreen.sdk.Campaign;
-import com.buzzvil.buzzscreen.sdk.widget.Slider;
-import com.buzzvil.buzzscreen.sdk.widget.SliderIcon;
+import com.buzzvil.buzzscreen.sdk.widget.ImageViewSlider;
+import com.buzzvil.buzzscreen.sdk.widget.OnSelectListener;
 import com.buzzvil.locker.AutoplayState;
 import com.google.android.material.snackbar.Snackbar;
 import com.sample.custom.R;
@@ -28,7 +28,7 @@ public class CustomLockerActivity extends BaseLockerActivity {
 
     // 화면 하단 슬라이더
     // Slider UI for unlocking the lock screen
-    Slider slider;
+    ImageViewSlider slider;
 
     // 시계
     // Clock UI
@@ -45,27 +45,27 @@ public class CustomLockerActivity extends BaseLockerActivity {
     }
 
     private void initUI() {
-        tvTime = (TextView)findViewById(R.id.locker_time);
-        tvAmPm = (TextView)findViewById(R.id.locker_am_pm);
-        tvDate = (TextView)findViewById(R.id.locker_date);
+        tvTime = (TextView) findViewById(R.id.locker_time);
+        tvAmPm = (TextView) findViewById(R.id.locker_am_pm);
+        tvDate = (TextView) findViewById(R.id.locker_date);
         tvTime.setTypeface(Typeface.create("sans-serif-thin", Typeface.NORMAL));
 
-        slider = (Slider)findViewById(R.id.locker_slider);
+        slider = (ImageViewSlider) findViewById(R.id.locker_slider);
 
-        // 슬라이더에서 왼쪽 아이콘이 선택(왼쪽 아이콘 위치에서 터치 업)되었을 때 호출되는 리스너
-        // Listner that is called when the icon on the left of the Slider is selected (on touchUp)
-        slider.setLeftOnSelectListener(new SliderIcon.OnSelectListener() {
+        slider.getLeftIconImageView().setBackgroundResource(R.drawable.locker_landing);
+        slider.getRightIconImageView().setBackgroundResource(R.drawable.locker_unlock);
+        slider.getPointerImageView().setBackgroundResource(R.drawable.locker_slider_normal);
+        slider.getLeftTextView().setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+        slider.getRightTextView().setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+
+        slider.setOnSelectListener(new OnSelectListener() {
             @Override
-            public void onSelect() {
+            public void onSelectLeft() {
                 landing();
             }
-        });
 
-        // 슬라이더에서 오른쪽 아이콘이 선택(오른쪽 아이콘 위치에서 터치 업)되었을 때 호출되는 리스너
-        // Listner that is called when the icon on the right of the Slider is selected (on touchUp)
-        slider.setRightOnSelectListener(new SliderIcon.OnSelectListener() {
             @Override
-            public void onSelect() {
+            public void onSelectRight() {
                 unlock();
             }
         });
@@ -111,15 +111,15 @@ public class CustomLockerActivity extends BaseLockerActivity {
         int unlockPoints = campaign.getUnlockPoints();
 
         if (landingPoints > 0) {
-            slider.setLeftText(String.format("+ %d", campaign.getLandingPoints()));
+            slider.getLeftTextView().setText(String.format("+ %d", campaign.getLandingPoints()));
         } else {
-            slider.setLeftText("");
+            slider.getLeftTextView().setText("");
         }
 
         if (unlockPoints > 0) {
-            slider.setRightText(String.format("+ %d", campaign.getUnlockPoints()));
+            slider.getRightTextView().setText(String.format("+ %d", campaign.getUnlockPoints()));
         } else {
-            slider.setRightText("");
+            slider.getRightTextView().setText("");
         }
     }
 
@@ -161,10 +161,10 @@ public class CustomLockerActivity extends BaseLockerActivity {
         final View snackBarView = snackbar.getView();
 
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        int marginBottom = (int)(0.2f * displayMetrics.heightPixels);
+        int marginBottom = (int) (0.2f * displayMetrics.heightPixels);
         int marginSide = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 46, displayMetrics);
 
-        FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)snackBarView.getLayoutParams();
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) snackBarView.getLayoutParams();
         params.setMargins(marginSide, 0, marginSide, marginBottom);
         snackBarView.setLayoutParams(params);
 
