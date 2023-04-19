@@ -8,6 +8,7 @@
 
 ## [4.27.0] - 2023-04-20
 * [FIX] 버그 수정
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.33-buzzscreen4.27/) 참조
  
 ## [4.25.0] - 2023-03-23
 * [FIX] 버그 수정
