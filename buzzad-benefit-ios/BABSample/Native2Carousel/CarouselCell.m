@@ -5,6 +5,7 @@
 
 #import "AppConstant.h"
 
+// MARK: 네이티브 2.0 캐러셀 구현 - UICollectionViewCell 구현하기
 @interface CarouselCell ()
 
 @property (nonatomic, strong, readonly) BZVNativeAd2View *nativeAd2View;
@@ -13,7 +14,6 @@
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UILabel *descriptionLabel;
 @property (nonatomic, strong, readonly) BZVDefaultCtaView *ctaView;
-//CarouselFeedEntryView *_feedEntryView;
 @property (nonatomic, strong, readonly) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong, readonly) BZVNativeAd2ViewBinder *viewBinder;
 
@@ -61,8 +61,6 @@
   _ctaView = [[BZVDefaultCtaView alloc] initWithFrame:CGRectZero];
   [_nativeAd2View addSubview:_ctaView];
   
-  //_feedEntryView = [[CarouselFeedEntryView alloc] initWithFrame:CGRectZero];
-  
   _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectZero];
   _activityIndicatorView.hidesWhenStopped = YES;
   [self.contentView addSubview:_activityIndicatorView];
@@ -81,11 +79,11 @@
 - (void)setupLayout {
   _nativeAd2View.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
-      [_nativeAd2View.topAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.topAnchor],
-      [_nativeAd2View.leadingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.leadingAnchor constant:16],
-      [_nativeAd2View.trailingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.trailingAnchor constant:-16],
-      [_nativeAd2View.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
-    ]];
+    [_nativeAd2View.topAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.topAnchor],
+    [_nativeAd2View.leadingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.leadingAnchor constant:16],
+    [_nativeAd2View.trailingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.trailingAnchor constant:-16],
+    [_nativeAd2View.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
+  ]];
   
   _mediaView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[

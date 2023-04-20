@@ -9,11 +9,13 @@
 
 static NSString * const kNavigationItemTitle = @"Carousel";
 
+// MARK: 네이티브 2.0 캐러셀 구현 - UICollectionView 구현하기
 @interface CarouselViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, assign, readonly) NSInteger adRequestCount;
 @property (nonatomic, assign, readwrite) NSInteger loadedAdCount;
 @property (nonatomic, strong, readonly) UICollectionView *carouselCollectionView;
+// MARK: 네이티브 2.0 캐러셀 구현 - UIPageControl 구현하기
 @property (nonatomic, strong, readonly) UIPageControl *pageControl;
 // MARK: 네이티브 2.0 캐러셀 구현 - 피드 엔트리 포인트
 @property (nonatomic, strong, readonly) CarouselFeedEntryView *feedEntryView;
@@ -55,6 +57,8 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   _pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
   _pageControl.currentPage = 0;
   _pageControl.userInteractionEnabled = NO;
+  _pageControl.pageIndicatorTintColor = UIColor.lightGrayColor;
+  _pageControl.currentPageIndicatorTintColor = UIColor.grayColor;
   [self.view addSubview:self.pageControl];
   
   _feedEntryView = [[CarouselFeedEntryView alloc] initWithFrame:CGRectZero];
@@ -67,12 +71,12 @@ static NSString * const kNavigationItemTitle = @"Carousel";
     [_carouselCollectionView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:16],
     [_carouselCollectionView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
     [_carouselCollectionView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
-    [_carouselCollectionView.heightAnchor constraintEqualToAnchor:self.carouselCollectionView.widthAnchor multiplier:0.65],
+    [_carouselCollectionView.heightAnchor constraintEqualToAnchor:self.carouselCollectionView.widthAnchor multiplier:0.85],
   ]];
   
   _pageControl.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
-    [_pageControl.topAnchor constraintEqualToAnchor:_carouselCollectionView.bottomAnchor constant:16],
+    [_pageControl.topAnchor constraintEqualToAnchor:_feedEntryView.bottomAnchor constant:16],
     [_pageControl.centerXAnchor constraintEqualToAnchor:_carouselCollectionView.centerXAnchor],
   ]];
   
