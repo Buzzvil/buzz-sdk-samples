@@ -4,7 +4,7 @@
 @import Toast;
 
 #import "AppConstant.h"
-//#import "CarouselCell.h"
+#import "CarouselCell.h"
 
 static NSString * const kNavigationItemTitle = @"Carousel";
 
@@ -36,8 +36,13 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   self.navigationItem.title = kNavigationItemTitle;
   self.view.backgroundColor = UIColor.whiteColor;
   
-  _carouselCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero];
-  //[_carouselCollectionView registerClass:[CarouselCell class] forCellWithReuseIdentifier:@"CarouselCell"];
+  UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+  flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+  flowLayout.minimumLineSpacing = 0;
+  flowLayout.minimumInteritemSpacing = 0;
+  
+  _carouselCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+  [_carouselCollectionView registerClass:[CarouselCell class] forCellWithReuseIdentifier:@"CarouselCell"];
   _carouselCollectionView.delegate = self;
   _carouselCollectionView.dataSource = self;
   _carouselCollectionView.showsHorizontalScrollIndicator = NO;
@@ -110,8 +115,10 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  //CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
-  return [[UICollectionViewCell alloc] initWithFrame:CGRectZero];
+  CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
+  [cell setPool:_pool forAdKey:indexPath.item];
+  [cell bind];
+  return cell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
