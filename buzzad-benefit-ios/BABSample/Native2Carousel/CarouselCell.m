@@ -184,32 +184,16 @@
 }
 
 - (void)setupEventListeners {
-  __weak typeof(self) weakSelf = self;
   [_viewBinder subscribeAdEventsOnImpressed:^(BZVNativeAd2 * _Nonnull ad) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      NSLog(@"impressed: %@", ad.title);
-    }
+    NSLog(@"impressed: %@", ad.title);
   } onClicked:^(BZVNativeAd2 * _Nonnull ad) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      NSLog(@"clicked: %@", ad.title);
-    }
+    NSLog(@"clicked: %@", ad.title);
   } onRewardRequested:^(BZVNativeAd2 * _Nonnull ad) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      NSLog(@"requested reward: %@", ad.title);
-    }
+    NSLog(@"requested reward: %@", ad.title);
   } onRewarded:^(BZVNativeAd2 * _Nonnull ad, BZVRewardResult result) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      NSLog(@"received reward result: %@", ad.title);
-    }
+    NSLog(@"received reward result: %@", ad.title);
   } onParticipated:^(BZVNativeAd2 * _Nonnull ad) {
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-      NSLog(@"participated: %@", ad.title);
-    }
+    NSLog(@"participated: %@", ad.title);
   }];
 }
 
