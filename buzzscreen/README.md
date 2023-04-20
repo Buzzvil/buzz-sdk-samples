@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [4.27.0] - 2023-04-20
+* [NEW] 잠금화면 UI에서 GIF 지원
+  * 이제 잠금화면을 해제하는 슬라이더의 가운데 버튼에 GIF 포맷을 지원합니다. 움직이는 GIF를 적용해서 유저에게 매력적인 인터랙션과 UI를 제공할 수 있습니다.
+* [FIX] 버그 수정
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.33-buzzscreen4.27/) 참조
+ 
 ## [4.25.0] - 2023-03-23
 * [FIX] 버그 수정
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.31-buzzscreen4.25/) 참조

@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
 repositories {
-    // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
     maven { url "https://dl.buzzvil.com/public/maven"  }
 }
 
