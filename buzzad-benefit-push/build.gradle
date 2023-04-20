@@ -19,7 +19,6 @@ allprojects {
         google()
         mavenCentral()
 
-//        maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
         maven { url "https://dl.buzzvil.com/public/maven" }
     }
 }

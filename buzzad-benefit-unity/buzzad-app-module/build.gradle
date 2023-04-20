@@ -30,7 +30,6 @@ afterEvaluate {                     // ADDED BY ALAN
 }
 
 repositories {
-    // maven { url "https://dl.cloudsmith.io/public/buzzvil/maven-rc/maven/" }
     maven { url "https://dl.buzzvil.com/public/maven" }
 }
 
