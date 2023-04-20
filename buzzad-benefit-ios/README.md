@@ -6,6 +6,11 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.27.4] - 2023-04-20
+* [NEW] 캐러셀(Carousel) 형태로 네이티브 2.0 지면을 구현할 수 있는 가이드 제공
+* [NEW] 더 높은 단가의 리워드 지급형 뉴스 콘텐츠(Rewarded Contents) 탑재
+* [FIX] 리워드 지급형 뉴스 콘텐츠의 CTA 버튼이 간헐적으로 참여완료로 변경되지 않는 문제 해결
+
 ## [3.25.0] - 2023-03-23
 * [FIX] 피드의 개별 광고 사이 영역의 높이를 0으로 설정해도 여전히 표시되는 문제 해결
 * [FIX] 3.17.x 이상부터 발생했던 하위 뷰 컨트롤러로 피드 연동 시 피드 최상단의 툴바가 보여지는 문제 해결

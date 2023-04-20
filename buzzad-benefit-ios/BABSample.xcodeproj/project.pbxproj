@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650CC82629E9623D0059A92D /* CarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650CC82529E9623D0059A92D /* CarouselViewController.m */; };
+		650CC82929EE971E0059A92D /* CarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 650CC82829EE971E0059A92D /* CarouselCell.m */; };
+		6567783F29F0D38F006D4E90 /* CarouselFeedEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6567783E29F0D38F006D4E90 /* CarouselFeedEntryView.m */; };
 		65FDA0732910F91200DF170F /* Native2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FDA0722910F91200DF170F /* Native2ViewController.m */; };
 		696534B22516811E00714D40 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA37D5B9821373A74D4E1DAE /* Pods_BABSample.framework */; };
 		696534F725183A3600714D40 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696534B6251681CE00714D40 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -40,6 +43,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650CC82429E9623D0059A92D /* CarouselViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselViewController.h; sourceTree = "<group>"; };
+		650CC82529E9623D0059A92D /* CarouselViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselViewController.m; sourceTree = "<group>"; };
+		650CC82729EE971E0059A92D /* CarouselCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselCell.h; sourceTree = "<group>"; };
+		650CC82829EE971E0059A92D /* CarouselCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselCell.m; sourceTree = "<group>"; };
+		6567783D29F0D38F006D4E90 /* CarouselFeedEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselFeedEntryView.h; sourceTree = "<group>"; };
+		6567783E29F0D38F006D4E90 /* CarouselFeedEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselFeedEntryView.m; sourceTree = "<group>"; };
 		65FDA0712910F91200DF170F /* Native2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Native2ViewController.h; sourceTree = "<group>"; };
 		65FDA0722910F91200DF170F /* Native2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Native2ViewController.m; sourceTree = "<group>"; };
 		696534B6251681CE00714D40 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
@@ -114,6 +123,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650CC82329E9621E0059A92D /* Native2Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				650CC82729EE971E0059A92D /* CarouselCell.h */,
+				650CC82829EE971E0059A92D /* CarouselCell.m */,
+				6567783D29F0D38F006D4E90 /* CarouselFeedEntryView.h */,
+				6567783E29F0D38F006D4E90 /* CarouselFeedEntryView.m */,
+				650CC82429E9623D0059A92D /* CarouselViewController.h */,
+				650CC82529E9623D0059A92D /* CarouselViewController.m */,
+			);
+			path = Native2Carousel;
+			sourceTree = "<group>";
+		};
 		65FDA0702910F72400DF170F /* Native2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +182,7 @@
 				D626FB8D273E3AB300103555 /* FeedEntry */,
 				D67A47E227B24DB300C5B4DC /* Native */,
 				65FDA0702910F72400DF170F /* Native2 */,
+				650CC82329E9621E0059A92D /* Native2Carousel */,
 				D67A47E927B2500D00C5B4DC /* Interstitial */,
 				D67A47ED27B250F200C5B4DC /* Web */,
 				D67A47EE27B252B000C5B4DC /* WebToFeed */,
@@ -391,6 +414,7 @@
 			files = (
 				C4307AB8244D299F00F0C436 /* WebViewController.m in Sources */,
 				D626FB91273E3AF900103555 /* FeedEntryViewController.m in Sources */,
+				650CC82929EE971E0059A92D /* CarouselCell.m in Sources */,
 				D67A47D227B24A6E00C5B4DC /* FeedViewController.m in Sources */,
 				D67A47D527B24AA000C5B4DC /* ContainerViewController.m in Sources */,
 				D67A47F127B2588300C5B4DC /* CustomBrowserViewController.m in Sources */,
@@ -405,6 +429,8 @@
 				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
 				6B9435E328223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m in Sources */,
 				D626FB9D273E3B5100103555 /* FeedEntryButton.m in Sources */,
+				6567783F29F0D38F006D4E90 /* CarouselFeedEntryView.m in Sources */,
+				650CC82629E9623D0059A92D /* CarouselViewController.m in Sources */,
 				65FDA0732910F91200DF170F /* Native2ViewController.m in Sources */,
 				D65AC80E264A2DE600479161 /* WebToFeedViewController.m in Sources */,
 				D67A47DB27B24B7900C5B4DC /* CustomFeedCpsAdViewHolder.m in Sources */,

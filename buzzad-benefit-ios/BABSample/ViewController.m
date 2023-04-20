@@ -5,6 +5,7 @@
 #import "Interstitial/InterstitialViewController.h"
 #import "Native/NativeViewController.h"
 #import "Native2/Native2ViewController.h"
+#import "Native2Carousel/CarouselViewController.h"
 #import "Web/WebViewController.h"
 #import "WebToFeed/WebToFeedViewController.h"
 #import "CustomBrowserViewController.h"
@@ -26,6 +27,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
 @property (nonatomic, strong, readonly) UIStackView *stackView;
 @property (nonatomic, strong, readonly) UIButton *nativeButton;
 @property (nonatomic, strong, readonly) UIButton *native2Button;
+@property (nonatomic, strong, readonly) UIButton *carouselButton;
 @property (nonatomic, strong, readonly) UIButton *interstitialButton;
 @property (nonatomic, strong, readonly) UIButton *feedButton;
 @property (nonatomic, strong, readonly) UIButton *feedEntryButton;
@@ -96,6 +98,10 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_native2Button setTitle:@"Native 2.0" forState:UIControlStateNormal];
   [_native2Button applyCustomStyle];
   
+  _carouselButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_carouselButton setTitle:@"Native 2.0 Carousel" forState:UIControlStateNormal];
+  [_carouselButton applyCustomStyle];
+  
   _interstitialButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_interstitialButton setTitle:@"Interstitial" forState:UIControlStateNormal];
   [_interstitialButton applyCustomStyle];
@@ -119,6 +125,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
   _stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
     _nativeButton,
     _native2Button,
+    _carouselButton,
     _interstitialButton,
     _feedButton,
     _feedEntryButton,
@@ -168,6 +175,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_feedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedViewController:)]];
   [_nativeButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushNativeViewController:)]];
   [_native2Button addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushNative2ViewController:)]];
+  [_carouselButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushCarouselViewController:)]];
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_feedEntryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedEntryViewController:)]];
   [_webButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebViewController:)]];
@@ -187,6 +195,11 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)pushNative2ViewController:(id)sender {
   Native2ViewController *native2ViewController = [[Native2ViewController alloc] init];
   [self.navigationController pushViewController:native2ViewController animated:YES];
+}
+
+- (void)pushCarouselViewController:(id)sender {
+  CarouselViewController *carouselViewController = [[CarouselViewController alloc] init];
+  [self.navigationController pushViewController:carouselViewController animated:YES];
 }
 
 - (void)pushInterstitialViewController:(id)sender {
