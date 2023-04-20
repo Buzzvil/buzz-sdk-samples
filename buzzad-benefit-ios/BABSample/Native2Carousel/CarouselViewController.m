@@ -5,6 +5,7 @@
 
 #import "AppConstant.h"
 #import "CarouselCell.h"
+#import "CarouselFeedEntryView.h"
 
 static NSString * const kNavigationItemTitle = @"Carousel";
 
@@ -14,6 +15,8 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 @property (nonatomic, assign, readwrite) NSInteger loadedAdCount;
 @property (nonatomic, strong, readonly) UICollectionView *carouselCollectionView;
 @property (nonatomic, strong, readonly) UIPageControl *pageControl;
+// MARK: 네이티브 2.0 캐러셀 구현 - 피드 엔트리 포인트
+@property (nonatomic, strong, readonly) CarouselFeedEntryView *feedEntryView;
 @property (nonatomic, strong, readonly) BZVNativeAd2Pool *pool;
 
 @end
@@ -53,6 +56,9 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   _pageControl.currentPage = 0;
   _pageControl.userInteractionEnabled = NO;
   [self.view addSubview:self.pageControl];
+  
+  _feedEntryView = [[CarouselFeedEntryView alloc] initWithFrame:CGRectZero];
+  [self.view addSubview:self.feedEntryView];
 }
 
 - (void)setupLayout {
@@ -68,6 +74,12 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   [NSLayoutConstraint activateConstraints:@[
     [_pageControl.topAnchor constraintEqualToAnchor:_carouselCollectionView.bottomAnchor constant:16],
     [_pageControl.centerXAnchor constraintEqualToAnchor:_carouselCollectionView.centerXAnchor],
+  ]];
+  
+  _feedEntryView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_feedEntryView.topAnchor constraintEqualToAnchor:_carouselCollectionView.bottomAnchor constant:8],
+    [_feedEntryView.centerXAnchor constraintEqualToAnchor:_carouselCollectionView.centerXAnchor],
   ]];
 }
 
@@ -85,6 +97,8 @@ static NSString * const kNavigationItemTitle = @"Carousel";
     __strong typeof(self) strongSelf = weakSelf;
     if (strongSelf) {
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
+      strongSelf.carouselCollectionView.hidden = YES;
+      strongSelf.feedEntryView.hidden = YES;
     }
   }];
 }
