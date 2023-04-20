@@ -64,6 +64,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.0'
 
     basicImplementation "com.buzzvil:buzzscreen:$buzzscreenVersionName"
+    customImplementation "com.buzzvil:buzzscreen:$buzzscreenVersionName"
 
     // implementation "com.buzzvil.mediation:sdk-adfit:$mediationAdfitVersion"
     // implementation "com.buzzvil.mediation:sdk-mopub:$mediationMopubVersion"
