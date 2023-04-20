@@ -25,6 +25,10 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 
 @implementation CarouselViewController
 
+- (NSInteger)infiniteItemCount {
+  return _loadedAdCount * 1000;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -95,7 +99,8 @@ static NSString * const kNavigationItemTitle = @"Carousel";
       strongSelf.loadedAdCount = adCount;
       strongSelf.pageControl.numberOfPages = adCount;
       [strongSelf.carouselCollectionView reloadData];
-      [strongSelf setCollectionViewInitialPosition];
+      // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
+//      [strongSelf moveCarouselToMiddle];
     }
   } errorHandler:^(NSError * _Nonnull error) {
     __strong typeof(self) strongSelf = weakSelf;
@@ -107,11 +112,11 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   }];
 }
 
-- (void)setCollectionViewInitialPosition {
-  NSInteger middleIndex = (_loadedAdCount/2) % _loadedAdCount;
+- (void)moveCarouselToMiddle {
+  NSInteger middleIndex = ((self.loadedAdCount * 1000) / 2) % _loadedAdCount;
   NSIndexPath *indexPath = [NSIndexPath indexPathForItem:middleIndex inSection:0];
-  [self.carouselCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally) animated:NO];
-  self.pageControl.currentPage = indexPath.item;
+  [self.carouselCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically | UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+  _pageControl.currentPage = indexPath.item;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -130,11 +135,24 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
   return _loadedAdCount;
+  
+  // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
+//  return [self infiniteItemCount];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
+  
+  // MARK: 네이티브 2.0 캐러셀 구현 - 로딩 화면 구현하기
+//  [cell setupLoading];
+  
+  // MARK: 네이티브 2.0 캐러셀 구현 - 광고 이벤트 리스너 등록하기
+//  [cell setupEventListeners];
+  
   [cell setPool:_pool forAdKey:indexPath.item];
+  // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
+//  [cell setPool:_pool forIndex:indexPath.item % self.loadedAdCount];
+  
   [cell bind];
   return cell;
 }

@@ -7,6 +7,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setPool:(BZVNativeAd2Pool *)pool forAdKey:(NSInteger)adKey;
 - (void)bind;
+- (void)setupLoading;
+- (void)setupEventListeners;
 
 @end
 

@@ -143,7 +143,7 @@
   [_viewBinder bind];
 }
 
-- (void)setupActivityIndicator {
+- (void)setupLoading {
   __weak typeof(self) weakSelf = self;
   [_viewBinder subscribeEventsOnRequest:^{
     __strong typeof(self) strongSelf = weakSelf;
