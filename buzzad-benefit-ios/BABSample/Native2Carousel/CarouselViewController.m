@@ -25,8 +25,15 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 
 @implementation CarouselViewController
 
+// MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
 - (NSInteger)infiniteItemCount {
   return _loadedAdCount * 1000;
+}
+
+// MARK: 네이티브 2.0 캐러셀 구현 - 앞뒤 광고 아이템을 부분적으로 노출하기
+- (NSInteger)spacing {
+  // MARK: 네이티브 2.0 캐러셀 구현 - 광고 아이템 사이의 여백 조절하기
+  return 8;
 }
 
 - (void)viewDidLoad {
@@ -48,6 +55,8 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
   flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
   flowLayout.minimumLineSpacing = 0;
+  // MARK: 네이티브 2.0 캐러셀 구현 - 앞뒤 광고 아이템을 부분적으로 노출하기
+//  flowLayout.minimumLineSpacing = [self spacing];
   flowLayout.minimumInteritemSpacing = 0;
   
   _carouselCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
@@ -56,6 +65,10 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   _carouselCollectionView.dataSource = self;
   _carouselCollectionView.showsHorizontalScrollIndicator = NO;
   _carouselCollectionView.pagingEnabled = YES;
+  // MARK: 네이티브 2.0 캐러셀 구현 - 앞뒤 광고 아이템을 부분적으로 노출하기
+//  _carouselCollectionView.pagingEnabled = NO;
+//  _carouselCollectionView.decelerationRate = UIScrollViewDecelerationRateFast;
+//  _carouselCollectionView.contentInset = UIEdgeInsetsMake(0, 2 * [self spacing], 0, 2 * [self spacing]);
   [self.view addSubview:_carouselCollectionView];
   
   _pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
@@ -131,6 +144,29 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   _pageControl.currentPage = (NSInteger)centerOffsetX / (NSInteger)pageWidth;
 }
 
+// MARK: 네이티브 2.0 캐러셀 구현 - 앞뒤 광고 아이템을 부분적으로 노출하기
+//
+// TODO: Remove `(void)scrollViewDidScroll:(UIScrollView *)scrollView`
+//
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+//  CGFloat cellWidth = scrollView.frame.size.width - (4 * [self spacing]);
+//  CGFloat cellWidthWithSpace = cellWidth + [self spacing];
+//  CGFloat estimatedIndex = scrollView.contentOffset.x / cellWidthWithSpace;
+//  NSInteger index;
+//
+//  if (velocity.x > 0) {
+//    index = (NSInteger)ceil(estimatedIndex);
+//  } else if (velocity.x < 0) {
+//    index = (NSInteger)floor(estimatedIndex);
+//  } else {
+//    index = (NSInteger)round(estimatedIndex);
+//  }
+//  _pageControl.currentPage = index;
+//
+//  targetContentOffset->x = index * cellWidthWithSpace - (2 * [self spacing]);
+//  targetContentOffset->y = 0;
+//}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -162,5 +198,10 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
   return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.height);
 }
+
+// MARK: 네이티브 2.0 캐러셀 구현 - 앞뒤 광고 아이템을 부분적으로 노출하기
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//  return CGSizeMake(collectionView.frame.size.width - (4 * [self spacing]), collectionView.frame.size.height);
+//}
 
 @end

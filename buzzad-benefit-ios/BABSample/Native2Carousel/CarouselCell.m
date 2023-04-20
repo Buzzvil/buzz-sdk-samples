@@ -85,6 +85,15 @@
     [_nativeAd2View.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
   ]];
   
+  // MARK: 네이티브 2.0 캐러셀 구현 - 앞뒤 광고 아이템을 부분적으로 노출하기
+//  _nativeAd2View.translatesAutoresizingMaskIntoConstraints = NO;
+//  [NSLayoutConstraint activateConstraints:@[
+//    [_nativeAd2View.topAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.topAnchor],
+//    [_nativeAd2View.leadingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.leadingAnchor],
+//    [_nativeAd2View.trailingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.trailingAnchor],
+//    [_nativeAd2View.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
+//  ]];
+  
   _mediaView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
     [_mediaView.topAnchor constraintEqualToAnchor:_nativeAd2View.topAnchor],
