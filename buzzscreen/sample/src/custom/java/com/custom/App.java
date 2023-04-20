@@ -28,13 +28,13 @@ public class App extends Application {
         BuzzScreen.init("419318955785795", this, CustomLockerActivity.class, R.drawable.default_bg);
 
         BuzzScreen.getInstance().setSecurityConfiguration(
-                new SecurityConfiguration.Builder().
-                        backgroundResourceId(R.drawable.image_stu_center).
-                        backgroundImageScaleType(ImageView.ScaleType.FIT_CENTER).
-                        backgroundColor(Color.WHITE).
-                        backgroundDimAlpha(0.7f).
-                        showClock(true).
-                        showDescription(true).
-                        build());
+                new SecurityConfiguration.Builder()
+                        .backgroundResourceId(R.drawable.image_stu_center)
+                        .backgroundImageScaleType(ImageView.ScaleType.FIT_CENTER)
+                        .backgroundColor(Color.WHITE)
+                        .backgroundDimAlpha(0.7f)
+                        .showClock(true)
+                        .showDescription(true)
+                        .build());
     }
 }
