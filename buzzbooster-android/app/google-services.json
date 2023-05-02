@@ -22,24 +22,7 @@
         {
           "current_key": "AIzaSyBvjYfLIKbpqxISMLR8kd76hlb5AjTlPsI"
         }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "85060254161-c6pug5v0t51dsmq7u32e7op1mhsgsrtv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "85060254161-3tiuigsog3n5o1rvctg7bec5ht2dgg14.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.buzzvil.BuzzBooster"
-              }
-            }
-          ]
-        }
-      }
+      ]
     }
   ],
   "configuration_version": "1"
