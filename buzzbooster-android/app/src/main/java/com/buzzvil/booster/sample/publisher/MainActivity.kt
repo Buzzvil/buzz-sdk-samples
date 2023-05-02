@@ -11,15 +11,15 @@ import com.buzzvil.booster.sample.publisher.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
-    private lateinit var buzzBooster: BuzzBooster
     private var login: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (BuzzBooster.hasUnhandledNotificationClick(this)) {
+            BuzzBooster.handleNotification(this)
+        }
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
-
-        buzzBooster = BuzzBooster.getInstance()
 
         registerViewEvent()
         addCustomEntryViewDynamically()
