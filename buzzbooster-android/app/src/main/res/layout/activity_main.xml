@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="PARTNER APP"
+        android:textSize="40sp"
+        android:textColor="#0F000000"
+        android:gravity="center"
+        android:background="#00FFFFFF"/>
+
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
