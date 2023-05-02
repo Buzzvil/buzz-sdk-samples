@@ -5,6 +5,7 @@ import android.content.Intent
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterConfig
 import com.buzzvil.booster.external.campaign.OptInMarketingCampaignMoveButtonClickListener
+import com.google.firebase.messaging.FirebaseMessaging
 import java.util.UUID
 
 class App : Application() {
@@ -26,5 +27,9 @@ class App : Application() {
                 startActivity(intent)
             }
         })
+
+        FirebaseMessaging.getInstance().token.addOnSuccessListener {
+            BuzzBooster.setFCMToken(it)
+        }
     }
 }
