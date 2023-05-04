@@ -4,8 +4,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:uuid/uuid.dart';
 
 final buzzBooster = BuzzBooster();
-final androidAppKey = '307117684877774';
-final iosAppKey = '279753136766115';
+const androidAppKey = '307117684877774';
+const iosAppKey = '279753136766115';
 
 void main() async {
   runApp(MyApp());
@@ -36,13 +36,16 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> doAsyncStuff() async {
-    setState(() { });
+    setState(() {});
     await buzzBooster.init(
       androidAppKey: androidAppKey,
       iosAppKey: iosAppKey,
     );
     await buzzBooster.startService();
-
+    buzzBooster.userEventChannel =
+        (String userEventName, Map<String, dynamic>? userEventValues) async {
+      print("userEventDidOccur: $userEventName $userEventValues");
+    };
     return Future.value();
   }
 }
@@ -80,7 +83,8 @@ class HomeRoute extends StatelessWidget {
               ),
               OutlinedButton(
                 onPressed: () async {
-                  await buzzBooster.showSpecificCampaign(CampaignType.attendance);
+                  await buzzBooster
+                      .showSpecificCampaign(CampaignType.attendance);
                 },
                 child: const Text("Attendance Campaign"),
               ),
@@ -135,21 +139,24 @@ class HomeRoute extends StatelessWidget {
       children: [
         OutlinedButton(
           onPressed: () async {
-            await buzzBooster.sendEvent("bb_like", {"liked_content_id": "post_1"});
+            await buzzBooster
+                .sendEvent("bb_like", {"liked_content_id": "post_1"});
             showToast("Like: You liked post_1");
           },
           child: const Text("Like"),
         ),
         OutlinedButton(
           onPressed: () async {
-            await buzzBooster.sendEvent("bb_comment", {"commented_content_id": "post_2", "commnet": "Greate Post!"});
+            await buzzBooster.sendEvent("bb_comment",
+                {"commented_content_id": "post_2", "commnet": "Greate Post!"});
             showToast("Comment: You commented post_2 with Greate Post!");
           },
           child: const Text("Comment"),
         ),
         OutlinedButton(
           onPressed: () async {
-            await buzzBooster.sendEvent("bb_posting_content", {"posted_content_id": "post_3"});
+            await buzzBooster.sendEvent(
+                "bb_posting_content", {"posted_content_id": "post_3"});
             showToast("Post: You posted post_3");
           },
           child: const Text("Post"),
@@ -162,10 +169,10 @@ class HomeRoute extends StatelessWidget {
     String userId = const Uuid().v4();
     if (userId.isNotEmpty) {
       showToast("login");
-      User user  = UserBuilder(userId)
-        .setOptInMarketing(false)
-        .addProperty("login_type", "sns(Facebook)")
-        .build();
+      User user = UserBuilder(userId)
+          .setOptInMarketing(false)
+          .addProperty("login_type", "sns(Facebook)")
+          .build();
       await buzzBooster.setUser(user);
     }
   }

@@ -1,31 +1,12 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
-    - AFNetworking/NSURLSession
-  - BuzzBooster (2.0.7):
-    - AFNetworking (~> 4.0)
-    - BuzzBoosterSwift (~> 2.0.7)
-    - BuzzMutator (~> 0.23.0)
-    - ReactiveObjC (~> 3.1.1)
-    - SDWebImage (~> 5.0)
-    - SDWebImageWebPCoder
-  - BuzzBoosterSwift (2.0.7):
+  - BuzzBooster (2.2.0):
+    - BuzzBoosterSwift (~> 2.2.0)
+  - BuzzBoosterSwift (2.2.0):
+    - BuzzMutator (~> 0.24.0)
     - BuzzRxSwift (~> 6.5.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzMutator (0.23.0)
+  - BuzzMutator (0.24.1)
   - BuzzRxSwift (6.5.1)
   - libwebp (1.2.4):
     - libwebp/demux (= 1.2.4)
@@ -36,36 +17,34 @@ PODS:
   - libwebp/mux (1.2.4):
     - libwebp/demux
   - libwebp/webp (1.2.4)
-  - ReactiveObjC (3.1.1)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - SDWebImage (5.15.5):
-    - SDWebImage/Core (= 5.15.5)
-  - SDWebImage/Core (5.15.5)
+  - SDWebImage (5.15.6):
+    - SDWebImage/Core (= 5.15.6)
+  - SDWebImage/Core (5.15.6)
   - SDWebImageWebPCoder (0.11.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (~> 2.0.7)
+  - BuzzBooster (~> 2.2.0)
   - RxCocoa
   - RxSwift
   - Toast (= 4.0.0)
 
 SPEC REPOS:
+  https://github.com/Buzzvil/Specs:
+    - BuzzMutator
   trunk:
-    - AFNetworking
     - BuzzBooster
     - BuzzBoosterSwift
-    - BuzzMutator
     - BuzzRxSwift
     - libwebp
-    - ReactiveObjC
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -74,20 +53,18 @@ SPEC REPOS:
     - Toast
 
 SPEC CHECKSUMS:
-  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  BuzzBooster: 237b03568e62fac47f10a72485419c081cdbe499
-  BuzzBoosterSwift: 36f30a452d6b37447a6a5210ed3719c6789d0da1
-  BuzzMutator: 54945e8ba227b4d72295d493edb63c22eeb5cd0d
+  BuzzBooster: 4b34c0256c3ecdb15fe57875851d47dcf1eb89d6
+  BuzzBoosterSwift: e44c8ce170b0832695f81d9553ded2f6499c276a
+  BuzzMutator: 21bd565671244d8300b9bdec831d8dc5e87e3eef
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
-  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+  SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
   SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 5962ec6d512f293b3c634ba91646b13a0d280175
+PODFILE CHECKSUM: f2f9bf9f226968c6adaccafdf6c21ae0a6cdad16
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

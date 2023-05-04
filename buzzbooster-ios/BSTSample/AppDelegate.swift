@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     BuzzBooster.initialize(with: config)
     BuzzBooster.startService()
     BuzzBooster.setOptInMarketingCampaignDelegate(self)
-    
+    BuzzBooster.userEventDelegate = self
     window = UIWindow(frame: UIScreen.main.bounds)
     let navigationViewController = UINavigationController(rootViewController: ViewController())
     window?.rootViewController = navigationViewController
@@ -92,5 +92,11 @@ extension AppDelegate: BSTOptInMarketingCampaignDelegate {
     }
     let yourOptInMarketingViewController = OptInMarketingViewController()
     currentController.present(yourOptInMarketingViewController, animated: true)
+  }
+}
+
+extension AppDelegate: BSTUserEventDelegate {
+  func userEventDidOccur(_ userEvent: BSTUserEvent) {
+    print("userEventDidOccur: \(userEvent.name) \(String(describing: userEvent.values))")
   }
 }

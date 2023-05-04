@@ -2,8 +2,11 @@ package com.buzzvil.booster.sample.publisher
 
 import android.app.Application
 import android.content.Intent
+import android.util.Log
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterConfig
+import com.buzzvil.booster.external.UserEvent
+import com.buzzvil.booster.external.UserEventListener
 import com.buzzvil.booster.external.campaign.OptInMarketingCampaignMoveButtonClickListener
 import com.google.firebase.messaging.FirebaseMessaging
 import java.util.UUID
@@ -31,5 +34,11 @@ class App : Application() {
         FirebaseMessaging.getInstance().token.addOnSuccessListener {
             BuzzBooster.setFCMToken(it)
         }
+
+        BuzzBooster.getInstance().setUserEventListener(object : UserEventListener {
+            override fun onUserEvent(userEvent: UserEvent) {
+                Log.d("asdf", "onUserEvent: $userEvent")
+            }
+        })
     }
 }

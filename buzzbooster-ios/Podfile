@@ -9,6 +9,6 @@ inhibit_all_warnings!
 target 'BSTSample' do
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'BuzzBooster', '~> 2.0.7'
+  pod 'BuzzBooster', '~> 2.2.0'
   pod 'Toast', '=4.0.0'
 end

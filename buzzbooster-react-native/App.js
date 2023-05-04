@@ -17,18 +17,23 @@ export default function App() {
       androidAppKey: '307117684877774',
       iosAppKey: '279753136766115',
     });
+    BuzzBooster.setUserEventChannel((eventName, eventValues) => {
+      console.log(
+        `eventName: ${eventName}, eventValues: ${JSON.stringify(eventValues)}`,
+      );
+    });
   }, []);
 
   return (
     <>
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomePage">
-        <Stack.Screen name="HomePage" component={HomePage} />
-        <Stack.Screen name="LinkPage" component={LinkPage} />
-        <Stack.Screen name="OptInMarketingPage" component={OptInMarketingPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
-    <StatusBar />
-  </>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomePage">
+          <Stack.Screen name="HomePage" component={HomePage} />
+          <Stack.Screen name="LinkPage" component={LinkPage} />
+          <Stack.Screen name="OptInMarketingPage" component={OptInMarketingPage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <StatusBar />
+    </>
   );
 }
