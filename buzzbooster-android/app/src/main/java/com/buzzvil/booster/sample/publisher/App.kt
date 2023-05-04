@@ -37,7 +37,7 @@ class App : Application() {
 
         BuzzBooster.getInstance().setUserEventListener(object : UserEventListener {
             override fun onUserEvent(userEvent: UserEvent) {
-                Log.d("asdf", "onUserEvent: $userEvent")
+                Log.d("App", "onUserEvent: $userEvent")
             }
         })
     }
