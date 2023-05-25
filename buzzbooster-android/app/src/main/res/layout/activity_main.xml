@@ -42,7 +42,7 @@
         android:id="@+id/likeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="like"
+        android:text="프딩뉴스보기"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/showAttendanceCampaignButton" />
 
@@ -50,7 +50,7 @@
         android:id="@+id/commentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="comment"
+        android:text="선물하기"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/likeButton" />
 
@@ -58,9 +58,17 @@
         android:id="@+id/postButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="post"
+        android:text="숏펀영상보기"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/commentButton" />
+
+    <Button
+        android:id="@+id/ticketButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="응모권 지급"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postButton" />
 
     <FrameLayout
         android:id="@+id/entryPointPlaceholder"

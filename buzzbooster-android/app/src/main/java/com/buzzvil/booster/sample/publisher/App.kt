@@ -10,7 +10,7 @@ import java.util.UUID
 class App : Application() {
     companion object {
         val USER_ID = UUID.randomUUID().toString()
-        private const val APP_KEY = "307117684877774"
+        private const val APP_KEY = "404581383723425"
     }
 
     override fun onCreate() {

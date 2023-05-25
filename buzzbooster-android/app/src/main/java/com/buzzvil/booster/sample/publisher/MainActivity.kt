@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         registerLikeButtonAction()
         registerCommentButtonAction()
         registerPostButtonAction()
+        registerTicketButtonAction()
     }
 
     private fun registerLoginAction() {
@@ -92,6 +93,13 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.postButton.setOnClickListener {
             BuzzBooster.getInstance()
                 .sendEvent("bb_posting_content", mapOf("posted_content_id" to "post_3"))
+        }
+    }
+
+    private fun registerTicketButtonAction() {
+        activityMainBinding.ticketButton.setOnClickListener {
+            BuzzBooster.getInstance()
+                .sendEvent("ticket")
         }
     }
 
