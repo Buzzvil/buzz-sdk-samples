@@ -15,6 +15,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        ResetManager.reset(this)
         val buzzBoosterConfig = BuzzBoosterConfig(appKey = APP_KEY)
         BuzzBooster.init(this, buzzBoosterConfig)
 
