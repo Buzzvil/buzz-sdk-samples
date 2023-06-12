@@ -8,6 +8,7 @@ import com.buzzvil.booster.external.BuzzBoosterUser
 import com.buzzvil.booster.external.campaign.CampaignEntryView
 import com.buzzvil.booster.external.campaign.CampaignType
 import com.buzzvil.booster.sample.publisher.databinding.ActivityMainBinding
+import kotlin.coroutines.coroutineContext
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
