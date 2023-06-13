@@ -27,6 +27,7 @@ import com.buzzvil.buzzad.benefit.presentation.nativead.BuzzAdNative;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAd;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdRequest;
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdsRequest;
+import com.buzzvil.buzzad.benefit.privacy.PrivacyPolicyEventListener;
 import com.buzzvil.buzzad.benefit.sample.publisher.buzzbanner.BuzzBannerActivity;
 import com.buzzvil.buzzad.benefit.sample.publisher.carousel.NativeCarouselActivity;
 import com.buzzvil.buzzad.benefit.sample.publisher.nativead.InterstitialAdView;
@@ -130,6 +131,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FeedEntryPointActivity.startActivity(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.privacy_consent_ui).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BuzzAdBenefit.getPrivacyPolicyManager().showConsentUI(MainActivity.this, new PrivacyPolicyEventListener() {
+                    @Override
+                    public void onUpdated(boolean accepted) {
+                        Toast.makeText(MainActivity.this, "Consent updated: " + accepted, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        findViewById(R.id.grant_privacy_consent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BuzzAdBenefit.getPrivacyPolicyManager().grantConsent();
+                Toast.makeText(MainActivity.this, "Consent granted: " + BuzzAdBenefit.getPrivacyPolicyManager().isConsentGranted(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.revoke_privacy_consent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BuzzAdBenefit.getPrivacyPolicyManager().revokeConsent();
+                Toast.makeText(MainActivity.this, "Consent granted: " + BuzzAdBenefit.getPrivacyPolicyManager().isConsentGranted(), Toast.LENGTH_SHORT).show();
             }
         });
 

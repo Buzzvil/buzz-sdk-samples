@@ -1,146 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NativeAd" />
-
-        <Button
-            android:id="@+id/native_ad_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Single - Interstitial Ad" />
-
-        <Button
-            android:id="@+id/native_ads_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Multiple - Pager Ads" />
-
-        <Button
-            android:id="@+id/native_carousel_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Native Carousel" />
-
-        <Button
-            android:id="@+id/native_ad_2_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Native 2.0" />
-
-        <Button
-            android:id="@+id/native_ad_2_carousel_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Native 2.0 Carousel" />
-
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Feed" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Native Ad -->
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NativeAd" />
+
+            <Button
+                android:id="@+id/native_ad_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Single - Interstitial Ad" />
+
+            <Button
+                android:id="@+id/native_ads_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Multiple - Pager Ads" />
+
+            <Button
+                android:id="@+id/native_carousel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Native Carousel" />
+
+            <Button
+                android:id="@+id/native_ad_2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Native 2.0" />
+
+            <Button
+                android:id="@+id/native_ad_2_carousel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Native 2.0 Carousel" />
+
+            <!-- Feed -->
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Feed" />
 
             <Button
                 android:id="@+id/feed_button"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Feed Activity" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/web_to_feed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Web to Feed" />
+
+                <Button
+                    android:id="@+id/feed_entry_point"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Feed Entry Point" />
+            </LinearLayout>
 
             <Button
-                android:id="@+id/web_to_feed"
-                android:layout_width="0dp"
+                android:id="@+id/privacy_consent_ui"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Web to Feed" />
+                android:text="Show Privacy Consent UI" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/grant_privacy_consent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Grant Privacy" />
+
+                <Button
+                    android:id="@+id/revoke_privacy_consent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Revoke Privacy" />
+            </LinearLayout>
+
+            <!-- Interstitial Ad -->
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="InterstitialAd" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/type_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="2"
+                    android:entries="@array/interstitial_ad_types" />
+
+                <Spinner
+                    android:id="@+id/customization_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="3"
+                    android:entries="@array/interstitial_ad_customizable_fields" />
+
+                <Button
+                    android:id="@+id/interstitial_ad_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Show" />
+
+            </LinearLayout>
+
+            <!-- BuzzBanner -->
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BuzzBanner" />
 
             <Button
-                android:id="@+id/feed_entry_point"
-                android:layout_width="0dp"
+                android:id="@+id/buzz_banner_button"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Feed Entry Point" />
+                android:text="BuzzBanner" />
         </LinearLayout>
-
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="InterstitialAd" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/type_spinner"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
-                android:layout_weight="2"
-                android:entries="@array/interstitial_ad_types" />
-
-            <Spinner
-                android:id="@+id/customization_spinner"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
-                android:layout_weight="3"
-                android:entries="@array/interstitial_ad_customizable_fields" />
-
-            <Button
-                android:id="@+id/interstitial_ad_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Show" />
-
-        </LinearLayout>
-
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BuzzBanner" />
-
-        <Button
-            android:id="@+id/buzz_banner_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BuzzBanner" />
-    </LinearLayout>
+    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="gone" />
-
-</RelativeLayout>
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
