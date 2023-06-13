@@ -5,6 +5,7 @@
 
 #import "AppConstant.h"
 #import "CarouselCell.h"
+#import "FeedPromotionCell.h"
 #import "CarouselFeedEntryView.h"
 
 static NSString * const kNavigationItemTitle = @"Carousel";
@@ -14,6 +15,7 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 
 @property (nonatomic, assign, readonly) NSInteger adRequestCount;
 @property (nonatomic, assign, readwrite) NSInteger loadedAdCount;
+@property (nonatomic, assign, readonly) NSInteger feedPromotionSlideCount;
 @property (nonatomic, strong, readonly) UICollectionView *carouselCollectionView;
 // MARK: 네이티브 2.0 캐러셀 구현 - UIPageControl 구현하기
 @property (nonatomic, strong, readonly) UIPageControl *pageControl;
@@ -40,6 +42,7 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   [super viewDidLoad];
   
   _adRequestCount = 5;
+  _feedPromotionSlideCount = 1;
   _loadedAdCount = 0;
   _pool = [[BZVNativeAd2Pool alloc] initWithUnitId:FEED_UNIT_ID];
   
@@ -61,6 +64,7 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   
   _carouselCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
   [_carouselCollectionView registerClass:[CarouselCell class] forCellWithReuseIdentifier:@"CarouselCell"];
+  [_carouselCollectionView registerClass:[FeedPromotionCell class] forCellWithReuseIdentifier:@"FeedPromotionCell"];
   _carouselCollectionView.delegate = self;
   _carouselCollectionView.dataSource = self;
   _carouselCollectionView.showsHorizontalScrollIndicator = NO;
@@ -114,6 +118,9 @@ static NSString * const kNavigationItemTitle = @"Carousel";
       [strongSelf.carouselCollectionView reloadData];
       // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
 //      [strongSelf moveCarouselToMiddle];
+      // 실제로 할당받은 광고의 개수(adCount)에 피드 진입 슬라이드 개수(feedPromotionSlideCount)를 업데이트합니다.
+      strongSelf.loadedAdCount = adCount + strongSelf.feedPromotionSlideCount;
+      [strongSelf.carouselCollectionView reloadData];
     }
   } errorHandler:^(NSError * _Nonnull error) {
     __strong typeof(self) strongSelf = weakSelf;
@@ -121,6 +128,9 @@ static NSString * const kNavigationItemTitle = @"Carousel";
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"Error: %@", error.localizedDescription]];
       strongSelf.carouselCollectionView.hidden = YES;
       strongSelf.feedEntryView.hidden = YES;
+      // 광고 할당이 실패했을 때, 피드 진입 슬라이드 1개가 보이도록 구성합니다.
+      strongSelf.loadedAdCount = strongSelf.feedPromotionSlideCount;
+      [strongSelf.carouselCollectionView reloadData];
     }
   }];
 }
@@ -177,17 +187,30 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  if ((indexPath.item % _loadedAdCount) == _loadedAdCount - 1) {
+      // last index인 경우 FeedPromotionCell을 반환합니다.
+      FeedPromotionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedPromotionCell" forIndexPath:indexPath];
+      [cell bind];
+      return cell;
+    } else {
+      // last index가 아닌 경우 CarouselCell을 반환합니다.
+      CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
+      [cell setPool:_pool forAdKey:indexPath.item];
+      [cell bind];
+      return cell;
+    }
   CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
   
   // MARK: 네이티브 2.0 캐러셀 구현 - 로딩 화면 구현하기
-//  [cell setupLoading];
+  //  [cell setupLoading];
   
   // MARK: 네이티브 2.0 캐러셀 구현 - 광고 이벤트 리스너 등록하기
-//  [cell setupEventListeners];
+  //  [cell setupEventListeners];
   
   [cell setPool:_pool forAdKey:indexPath.item];
   // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
-//  [cell setPool:_pool forIndex:indexPath.item % self.loadedAdCount];
+  //  [cell setPool:_pool forIndex:indexPath.item % self.loadedAdCount];
+  
   
   [cell bind];
   return cell;
