@@ -1,8 +1,3 @@
-//
-//  FeedPromotionCell.m
-//  BABSample
-//
-
 #import "FeedPromotionCell.h"
 @import BuzzAdBenefit;
 
@@ -35,7 +30,6 @@
   _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _ctaView = [[BZVDefaultCtaView alloc] initWithFrame:CGRectZero];
   
-  
   [self.contentView addSubview:self.feedPromotionView];
   [self.feedPromotionView addSubview:self.creativeView];
   [self.feedPromotionView addSubview:self.iconImageView];
@@ -56,6 +50,13 @@
 - (void)setupLayout {
   // AutoLayout Constraints를 설정하세요.
   // ...
+  _feedPromotionView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_feedPromotionView.topAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.topAnchor],
+    [_feedPromotionView.leadingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.leadingAnchor constant:16],
+    [_feedPromotionView.trailingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.trailingAnchor constant:-16],
+    [_feedPromotionView.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
+  ]];
 }
 
 - (void)prepareForReuse {
