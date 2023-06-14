@@ -13,6 +13,7 @@ import java.util.UUID
 
 class App : Application() {
     companion object {
+        var campaignId: String? = null
         val USER_ID = UUID.randomUUID().toString()
         private const val APP_KEY = "404581383723425"
     }
@@ -35,6 +36,8 @@ class App : Application() {
             val user = BuzzBoosterUser(userId)
             BuzzBooster.setUser(user)
         }
+
+        campaignId = prefs.getString("campaignId", null)
 
         BuzzBooster.getInstance().setOptInMarketingCampaignMoveButtonClickListener(object :
             OptInMarketingCampaignMoveButtonClickListener {

@@ -1,19 +1,24 @@
 package com.buzzvil.booster.sample.publisher
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterUser
+import com.buzzvil.booster.external.campaign.BuzzBoosterActivityTag
 import com.buzzvil.booster.external.campaign.CampaignEntryView
 import com.buzzvil.booster.external.campaign.CampaignType
 import com.buzzvil.booster.sample.publisher.databinding.ActivityMainBinding
-import kotlin.coroutines.coroutineContext
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private lateinit var buzzBooster: BuzzBooster
     private var login: Boolean = false
+    private var handler: Handler? = null
+    private var runnable: Runnable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +29,26 @@ class MainActivity : AppCompatActivity() {
 
         registerViewEvent()
         addCustomEntryViewDynamically()
+
+        if (App.campaignId != null) {
+            handler = Handler(Looper.getMainLooper())
+            runnable = object : Runnable {
+                override fun run() {
+                    BuzzBooster.getInstance()
+                        .finishActivity(this@MainActivity, BuzzBoosterActivityTag.CAMPAIGN_DETAIL)
+                    BuzzBooster.getInstance().showCampaign(this@MainActivity, App.campaignId!!)
+                    handler!!.postDelayed(this, 3000)
+                }
+            }
+            handler!!.post(runnable!!) // 핸들러에 첫 번째 실행을 예약합니다.
+        }
+    }
+
+    override fun onDestroy() {
+        runnable?.let {
+            handler?.removeCallbacks(it)
+        }
+        super.onDestroy()
     }
 
     private fun registerViewEvent() {
@@ -49,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                     .setProperty("LoginType", "Social(Google)")
                     .setProperty("Gender", "Male")
                     .setProperty("Age", "20")
+                    .setProperty("IsTest", "true")
                     .build()
                 BuzzBooster.setUser(user)
                 activityMainBinding.loginButton.text = "logout"
