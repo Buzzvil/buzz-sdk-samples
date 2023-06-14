@@ -188,18 +188,17 @@ static NSString * const kNavigationItemTitle = @"Carousel";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   if ((indexPath.item % _loadedAdCount) == _loadedAdCount - 1) {
-      // last index인 경우 FeedPromotionCell을 반환합니다.
-      FeedPromotionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedPromotionCell" forIndexPath:indexPath];
-      [cell bind];
-      return cell;
-    } else {
-      // last index가 아닌 경우 CarouselCell을 반환합니다.
-      CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
-      [cell setPool:_pool forAdKey:indexPath.item];
-      [cell bind];
-      return cell;
-    }
-  CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
+    // last index인 경우 FeedPromotionCell을 반환합니다.
+    FeedPromotionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedPromotionCell" forIndexPath:indexPath];
+    [cell bind];
+    return cell;
+  } else {
+    // last index가 아닌 경우 CarouselCell을 반환합니다.
+    CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
+    [cell setPool:_pool forAdKey:indexPath.item];
+    [cell bind];
+    return cell;
+  }
   
   // MARK: 네이티브 2.0 캐러셀 구현 - 로딩 화면 구현하기
   //  [cell setupLoading];
@@ -210,10 +209,6 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   [cell setPool:_pool forAdKey:indexPath.item];
   // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
   //  [cell setPool:_pool forIndex:indexPath.item % self.loadedAdCount];
-  
-  
-  [cell bind];
-  return cell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
