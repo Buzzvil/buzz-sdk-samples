@@ -1,6 +1,7 @@
 #import "FeedViewController.h"
 
 @import BuzzAdBenefit;
+@import Toast;
 
 #import "ContainerViewController.h"
 #import "UIButton+Custom.h"
@@ -17,6 +18,9 @@ static CGFloat const kArrangedSubviewHeight = 48;
 @property (nonatomic, strong, readonly) UIButton *presentFeedButton;
 @property (nonatomic, strong, readonly) UIButton *pushFeedButton;
 @property (nonatomic, strong, readonly) UIButton *addFeedToContainerViewControllerButton;
+@property (nonatomic, strong, readonly) UIButton *showPrivacyPolicyUiButton;
+@property (nonatomic, strong, readonly) UIButton *grantPrivacyPolicyButton;
+@property (nonatomic, strong, readonly) UIButton *revokePrivacyPolicyButton;
 @property (nonatomic, strong, readonly) BZVBuzzAdFeed *buzzAdFeed;
 
 @end
@@ -64,6 +68,37 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [self.navigationController pushViewController:containerViewController animated:YES];
 }
 
+
+- (void)showPrivacyPolicyUi:(id)sender {
+  BZVPrivacyPolicyManager *privacyPolicyManager = [BuzzAdBenefit privacyPolicyManager];
+  
+  // 만약 Feed 이외의 화면에서 개인정보 수집 동의 UI 를 노출하고 싶을 경우 아래와 같이 사용할 수 있습니다.
+  __weak typeof(self) weakSelf = self;
+  [privacyPolicyManager presentConsentFormOnViewController:self onComplete:^(BOOL isAccepted) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (isAccepted) {
+      // 개인정보 수집동의 UI 에서 동의한 경우
+      
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"PrivacyPolicy is accepted"]];
+    } else {
+      // 개인정보 수집동의 UI 에서 거절한 경우
+      [strongSelf.view.window makeToast:[NSString stringWithFormat:@"PrivacyPolicy is not accepted"]];
+    }
+  }];
+}
+
+- (void)grantPrivacyPolicy:(id)sender {
+  BZVPrivacyPolicyManager *privacyPolicyManager = [BuzzAdBenefit privacyPolicyManager];
+  [privacyPolicyManager grantConsent];
+  [self.view.window makeToast:[NSString stringWithFormat:@"grantPrivacyPolicy"]];
+}
+
+- (void)revokePrivacyPolicy:(id)sender {
+  BZVPrivacyPolicyManager *privacyPolicyManager = [BuzzAdBenefit privacyPolicyManager];
+  [privacyPolicyManager revokeConsent];
+  [self.view.window makeToast:[NSString stringWithFormat:@"revokePrivacyPolicy"]];
+}
+
 #pragma mark - UI setup
 - (void)setupView {
   self.navigationItem.title = kNavigationItemTitle;
@@ -79,6 +114,18 @@ static CGFloat const kArrangedSubviewHeight = 48;
   _pushFeedButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_pushFeedButton setTitle:@"Push Feed" forState:UIControlStateNormal];
   [_pushFeedButton applyCustomStyle];
+  
+  _showPrivacyPolicyUiButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_showPrivacyPolicyUiButton setTitle:@"Show PrivacyPolicy UI" forState:UIControlStateNormal];
+  [_showPrivacyPolicyUiButton applyCustomStyle];
+  
+  _grantPrivacyPolicyButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_grantPrivacyPolicyButton setTitle:@"Grant PrivacyPolicy" forState:UIControlStateNormal];
+  [_grantPrivacyPolicyButton applyCustomStyle];
+  
+  _revokePrivacyPolicyButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_revokePrivacyPolicyButton setTitle:@"Revoke PrivacyPolicy" forState:UIControlStateNormal];
+  [_revokePrivacyPolicyButton applyCustomStyle];
 
   _addFeedToContainerViewControllerButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_addFeedToContainerViewControllerButton setTitle:@"Add Feed To Container" forState:UIControlStateNormal];
@@ -87,6 +134,9 @@ static CGFloat const kArrangedSubviewHeight = 48;
   _stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
     _presentFeedButton,
     _pushFeedButton,
+    _showPrivacyPolicyUiButton,
+    _grantPrivacyPolicyButton,
+    _revokePrivacyPolicyButton,
     _addFeedToContainerViewControllerButton,
   ]];
   _stackView.axis = UILayoutConstraintAxisVertical;
@@ -128,6 +178,9 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)setupEvent {
   [_presentFeedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentFeed:)]];
   [_pushFeedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeed:)]];
+  [_showPrivacyPolicyUiButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPrivacyPolicyUi:)]];
+  [_grantPrivacyPolicyButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(grantPrivacyPolicy:)]];
+  [_revokePrivacyPolicyButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(revokePrivacyPolicy:)]];
   [_addFeedToContainerViewControllerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addFeedToContainer:)]];
 }
 

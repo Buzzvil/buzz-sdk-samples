@@ -206,7 +206,7 @@ static NSString * const kNavigationItemTitle = @"Carousel";
   // MARK: 네이티브 2.0 캐러셀 구현 - 광고 이벤트 리스너 등록하기
   //  [cell setupEventListeners];
   
-  [cell setPool:_pool forAdKey:indexPath.item];
+  //  [cell setPool:_pool forAdKey:indexPath.item];
   // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
   //  [cell setPool:_pool forIndex:indexPath.item % self.loadedAdCount];
 }
