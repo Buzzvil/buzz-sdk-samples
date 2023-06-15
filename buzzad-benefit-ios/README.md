@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.31.1] - 2023-06-15
+* [NEW] 네이티브 캐러셀에서 애드허브(피드)로의 진입점을 주목도 높은 카드로 제공
+* [UPDATE] 애드허브 이용 비율을 대폭 끌어올릴 수 있도록 개인정보 제3자 제공 동의 UX 개선
+
 ## [3.27.4] - 2023-04-20
 * [NEW] 캐러셀(Carousel) 형태로 네이티브 2.0 지면을 구현할 수 있는 가이드 제공
 * [NEW] 새로운 리워드 지급형 뉴스 콘텐츠 시스템 탑재
