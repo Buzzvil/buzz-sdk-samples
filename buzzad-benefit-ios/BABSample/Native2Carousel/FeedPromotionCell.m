@@ -1,6 +1,8 @@
 #import "FeedPromotionCell.h"
 @import BuzzAdBenefit;
 
+#import "AppConstant.h"
+
 @interface FeedPromotionCell ()
 
 @property (nonatomic, strong, readonly) BZVFeedPromotionView *feedPromotionView;
@@ -15,8 +17,7 @@
 @implementation FeedPromotionCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
-  self = [super initWithFrame:frame];
-  if (self) {
+  if (self = [super initWithFrame:frame]) {
     [self setupView];
     [self setupLayout];
   }
@@ -38,7 +39,7 @@
   
   // NativeAd2View와 하위 컴포넌트를 연결합니다.
   _viewBinder = [BZVFeedPromotionViewBinder viewBinderWithBlock:^(BZVFeedPromotionViewBinderBuilder * _Nonnull builder) {
-    builder.unitId = @"YOUR_NATIVE_UNIT_ID";
+    builder.unitId = NATIVE_UNIT_ID;
     builder.feedPromotionView = self.feedPromotionView;
     builder.creativeView = self.creativeView;
     builder.iconImageView = self.iconImageView;

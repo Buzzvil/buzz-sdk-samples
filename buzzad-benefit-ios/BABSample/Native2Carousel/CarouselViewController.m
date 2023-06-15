@@ -118,7 +118,7 @@ static NSString * const kNavigationItemTitle = @"Carousel";
       [strongSelf.carouselCollectionView reloadData];
       // MARK: 네이티브 2.0 캐러셀 구현 - 무한 루프 구현하기
 //      [strongSelf moveCarouselToMiddle];
-      // 실제로 할당받은 광고의 개수(adCount)에 피드 진입 슬라이드 개수(feedPromotionSlideCount)를 업데이트합니다.
+      // 실제로 할당받은 광고의 개수(adCount)에 피드 진입 슬라이드 개수(feedPromotionSlideCount)를 더해서 cell 개수(loadedAdCount)를 설정합니다.
       strongSelf.loadedAdCount = adCount + strongSelf.feedPromotionSlideCount;
       [strongSelf.carouselCollectionView reloadData];
     }
