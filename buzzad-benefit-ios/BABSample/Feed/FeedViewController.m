@@ -78,7 +78,6 @@ static CGFloat const kArrangedSubviewHeight = 48;
     __strong typeof(self) strongSelf = weakSelf;
     if (isAccepted) {
       // 개인정보 수집동의 UI 에서 동의한 경우
-      
       [strongSelf.view.window makeToast:[NSString stringWithFormat:@"PrivacyPolicy is accepted"]];
     } else {
       // 개인정보 수집동의 UI 에서 거절한 경우
