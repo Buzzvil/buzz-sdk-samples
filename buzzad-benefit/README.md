@@ -6,6 +6,13 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.37.0] - 2023-06-15
+* [UPDATE] 애드허브 이용 비율을 대폭 끌어올릴 수 있도록 개인정보 제3자 제공 동의 UX & UI 개선
+* [UPDATE] 애드허브 광고 미할당 UX & UI 개선
+* [UPDATE] 절전 모드(Power save mode)로 인한 광고 적립 실패 이유 제공
+* [FIX] 간헐적으로 버즈배너(BuzzBanner)가 노출되지 않는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.37-buzzscreen4.31/) 참조
+
 ## [3.35.0] - 2023-05-18
 * [UPDATE] 문의하기 아이콘 업데이트
   * 사용자가 버즈빌의 광고 인벤토리 참여 중 발생하는 궁금증을 해결하기 위해 제공하는 문의하기 아이콘을 직관적인 디자인으로 업데이트했습니다.
