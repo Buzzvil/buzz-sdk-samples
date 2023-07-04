@@ -1,6 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.buzzvil.buzzad.benefit.sample.publisher">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-sdk tools:overrideLibrary="com.google.android.exoplayer2.core,
             com.google.android.exoplayer2.ext.ima,
@@ -34,6 +33,6 @@
         <!-- Caution: Replace `000000000000000` with Your AppKey -->
         <meta-data
             android:name="com.buzzvil.APP_KEY"
-            android:value="app-pub-000000000000000" />
+            android:value="app-pub-100000043" />
     </application>
 </manifest>

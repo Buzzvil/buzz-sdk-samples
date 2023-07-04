@@ -16,8 +16,8 @@ import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedHeaderViewAdap
 import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedToolbarHolder;
 
 public class App extends Application {
-    public static final String UNIT_ID_NATIVE_AD = "YOUR_NATIVE_AD_UNIT_ID";
-    public static final String UNIT_ID_FEED = "YOUR_FEED_UNIT_ID";
+    public static final String UNIT_ID_NATIVE_AD = "166467299612761";
+    public static final String UNIT_ID_FEED = "213865591634697";
 
     @Override
     protected void attachBaseContext(Context base) {

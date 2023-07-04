@@ -56,17 +56,18 @@ public class CustomAdsAdapter extends AdsAdapter<AdsAdapter.NativeAdViewHolder> 
     @Override
     public AdsAdapter.NativeAdViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final NativeAdView feedAdView = (NativeAdView) inflater.inflate(R.layout.bz_view_feed_ad, parent, false);
+        final NativeAdView feedAdView = (NativeAdView) inflater.inflate(com.buzzvil.buzzad.benefit.R.layout.bz_view_feed_ad, parent, false);
         return new NativeAdViewHolder(feedAdView);
     }
 
     @Override
     public void onBindViewHolder(NativeAdViewHolder holder, NativeAd nativeAd) {
+        super.onBindViewHolder(holder, nativeAd);
         this.view = (NativeAdView) holder.itemView;
         nativeAd.addNativeAdEventListener(nativeAdEventListener);
 
         final MediaView mediaView = view.findViewById(R.id.mediaView);
-        final LinearLayout titleLayout = view.findViewById(R.id.titleLayout);
+        final LinearLayout titleLayout = view.findViewById(com.buzzvil.buzzad.benefit.R.id.titleLayout);
         final TextView titleView = view.findViewById(R.id.textTitle);
         final ImageView iconView = view.findViewById(R.id.imageIcon);
         final TextView descriptionView = view.findViewById(R.id.textDescription);
