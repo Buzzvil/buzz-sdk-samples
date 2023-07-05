@@ -1,12 +1,8 @@
 PODS:
-  - BuzzBooster (2.3.7):
-    - BuzzBoosterSwift (~> 2.3.7)
-  - BuzzBoosterSwift (2.3.7):
-    - BuzzMutator (~> 0.24.0)
+  - BuzzBoosterSDK (3.0.0):
     - BuzzRxSwift (~> 6.5.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzMutator (0.24.1)
   - BuzzRxSwift (6.5.1)
   - libwebp (1.2.4):
     - libwebp/demux (= 1.2.4)
@@ -32,17 +28,14 @@ PODS:
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBooster (~> 2.3.7)
+  - BuzzBoosterSDK (~> 3.0.0)
   - RxCocoa
   - RxSwift
   - Toast (= 4.0.0)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs:
-    - BuzzMutator
   trunk:
-    - BuzzBooster
-    - BuzzBoosterSwift
+    - BuzzBoosterSDK
     - BuzzRxSwift
     - libwebp
     - RxCocoa
@@ -53,9 +46,7 @@ SPEC REPOS:
     - Toast
 
 SPEC CHECKSUMS:
-  BuzzBooster: a60b6617437c2d7d3eebc4f374162425c93effe8
-  BuzzBoosterSwift: 7faa26d7fc43350cf1b026cca8c646982d9257ff
-  BuzzMutator: 21bd565671244d8300b9bdec831d8dc5e87e3eef
+  BuzzBoosterSDK: 703940292b945da1a8790a8fa3259d6e35cd8da8
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -65,6 +56,6 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: f0f287cee4cd96a59937fbf3c77a8cfda9ba67b0
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: bd0498775592a58009999fcdaab9196caa6551d1
+PODFILE CHECKSUM: 99f25ffc3154d52c4e111554d52e945a2044bf0b
 
 COCOAPODS: 1.12.1

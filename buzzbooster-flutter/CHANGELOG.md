@@ -1,3 +1,13 @@
+## [3.0.0] - 2023-07-05
+> * [UPDATE] `sendEvent(name, value)` 및 `UserBuilder.addProperty(key, value)`에서 value 타입으로 number, string, bool이 가능하게 변경
+> * [UPDATE] `showCampaign()` 메소드를 `showHome()`으로 변경
+> * [UPDATE] `showSpecificCampaign(type:)` 메소드를 `showCampaignWithType(:type)`으로 변경
+> * [UPDATE] 캠페인 이동에 룰렛과 긁는 복권 지원
+> * [UPDATE] `startService()` 메소드 제거
+> * [UPDATE] Custom Campaign 제거
+> * [UPDATE] iOS SDK가 BuzzBooster, BuzzBoosterSwift, BuzzMutator에서 BuzzBoosterSDK로 간소화
+> * [FIX] 플러그인 이미지 해상도 개선
+
 ## [2.3.1] - 2023-06-22
 > * [NEW] Web Campaign 지원
 > * [FIX] 친구초대 인증 버튼 UserEvent 오탈자 수정

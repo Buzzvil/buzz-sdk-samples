@@ -1,3 +1,14 @@
+## [3.0.0] - 2023-07-05
+> * [UPDATE] SDK를 BuzzBooster에서 BuzzBoosterSDK로 변경
+> * [UPDATE] BuzzBooster, BuzzBoosterSwift, BuzzMutator에서 BuzzBoosterSDK로 간소화
+> * [UPDATE] `sendEvent(name, value)` 및 `BSTUser.properties`에서 value 타입으로 number, string, bool이 가능하게 변경
+> * [UPDATE] `showCampaign(with:)` 메소드를 `showHome(with:)`으로 변경
+> * [UPDATE] `sendEvent(withEventName:eventValues)` 메소드를 `sendEvent(_:values)`으로 변경
+> * [UPDATE] 캠페인 이동에 룰렛과 긁는 복권 지원
+> * [UPDATE] `startService()` 메소드 제거
+> * [UPDATE] Custom Campaign 제거
+> * [FIX] 플러그인 이미지 해상도 개선
+
 ## [2.3.7] - 2023-06-22
 > * [FIX] UIButton에 대한 throttle 처리 추가
 

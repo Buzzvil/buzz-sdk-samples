@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private fun registerViewEvent() {
         registerLoginAction()
         registerShowInAppMessageAction()
-        registerShowCampaignListAction()
+        registerShowHomeAction()
         registerShowAttendanceCampaignAction()
         registerLikeButtonAction()
         registerCommentButtonAction()
@@ -63,9 +63,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun registerShowCampaignListAction() {
-        activityMainBinding.showCampaignListButton.setOnClickListener {
-            BuzzBooster.getInstance().showCampaign(this)
+    private fun registerShowHomeAction() {
+        activityMainBinding.showHomeButton.setOnClickListener {
+            BuzzBooster.getInstance().showHome(this)
         }
     }
 

@@ -1,13 +1,9 @@
 PODS:
   - boost (1.76.0)
-  - BuzzBooster (2.3.7):
-    - BuzzBoosterSwift (~> 2.3.7)
-  - BuzzBoosterSwift (2.3.7):
-    - BuzzMutator (~> 0.24.0)
+  - BuzzBoosterSDK (3.0.0):
     - BuzzRxSwift (~> 6.5.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzMutator (0.24.0)
   - BuzzRxSwift (6.5.1)
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
@@ -374,9 +370,8 @@ PODS:
     - React-jsi (= 0.69.5)
     - React-logger (= 0.69.5)
     - React-perflogger (= 0.69.5)
-  - RNBuzzBooster (2.3.7):
-    - BuzzBooster (= 2.3.7)
-    - BuzzBoosterSwift (= 2.3.7)
+  - RNBuzzBooster (3.0.0):
+    - BuzzBoosterSDK (= 3.0.0)
     - React-Core
   - RNScreens (3.20.0):
     - React-Core
@@ -387,7 +382,7 @@ PODS:
   - SDWebImageWebPCoder (0.12.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.16)
-  - SocketRocket (0.6.0)
+  - SocketRocket (0.6.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -455,9 +450,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - BuzzBooster
-    - BuzzBoosterSwift
-    - BuzzMutator
+    - BuzzBoosterSDK
     - BuzzRxSwift
     - CocoaAsyncSocket
     - Flipper
@@ -552,9 +545,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: a7c83b31436843459a1961bfd74b96033dc77234
-  BuzzBooster: a60b6617437c2d7d3eebc4f374162425c93effe8
-  BuzzBoosterSwift: 7faa26d7fc43350cf1b026cca8c646982d9257ff
-  BuzzMutator: afeb63644047fa315ec41a67bec154e4eefe1433
+  BuzzBoosterSDK: 703940292b945da1a8790a8fa3259d6e35cd8da8
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -601,11 +592,11 @@ SPEC CHECKSUMS:
   React-RCTVibration: 42b34fde72e42446d9b08d2b9a3ddc2fa9ac6189
   React-runtimeexecutor: c778439c3c430a5719d027d3c67423b390a221fe
   ReactCommon: ab1003b81be740fecd82509c370a45b1a7dda0c1
-  RNBuzzBooster: 058ce996b5767a30840bf5aaa8e3775cb2a43fa6
+  RNBuzzBooster: df0c83be6e1b38b1388f827fca06eb7445c79777
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
   SDWebImageWebPCoder: f0f287cee4cd96a59937fbf3c77a8cfda9ba67b0
-  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: c2b1f2494060865ac1f27e49639e72371b1205fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

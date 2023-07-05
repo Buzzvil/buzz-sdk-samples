@@ -1,3 +1,11 @@
+## [3.0.0] - 2023-07-05
+> * [UPDATE] `sendEvent(name, value)` 및 `BuzzBoosterUser.Builder:addProperty(key, value)`에서 value 타입으로 number, string, bool이 가능하게 변경
+> * [UPDATE] `showCampaign` 메소드를 `showHome`으로 변경
+> * [UPDATE] 캠페인 이동에 룰렛과 긁는 복권 지원
+> * [UPDATE] `startService()` 메소드 제거
+> * [UPDATE] Custom Campaign 제거
+> * [FIX] 플러그인 이미지 해상도 개선
+
 ## [2.3.7] - 2023-06-22
 > * [FIX] 친구초대를 여러번 참여하는 문제 수정
 
