@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         maven { url "https://dl.buzzvil.com/public/maven" }
     }
 }
-rootProject.name = "CashButtonSample"
+rootProject.name = "BenefitSample"
 include ':app'

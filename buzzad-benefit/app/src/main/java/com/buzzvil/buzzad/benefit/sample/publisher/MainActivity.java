@@ -19,6 +19,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit;
 import com.buzzvil.buzzad.benefit.core.ad.AdError;
+import com.buzzvil.buzzad.benefit.pop.BuzzAdPop;
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial;
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitialTheme;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private Button nativeAd2CarouselButton;
     private Button buzzBannerButton;
     private Button feedButton;
+    private Button popButton;
     private Button feedWithTabButton;
     private Button webToFeedButton;
     private Button feedEntryPointButton;
@@ -114,6 +116,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new BuzzAdFeed.Builder().build().show(MainActivity.this);
+            }
+        });
+
+        this.popButton = findViewById(R.id.pop_button);
+        popButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BuzzAdPop.getInstance().activate(new BuzzAdPop.PopActivateListener() {
+                    public void onActivated() {
+                        // 정상적으로 Pop이 활성화 되었을 때 호출됩니다.
+                        // 유저 화면에 바로 Pop을 표시합니다.
+                        BuzzAdPop.getInstance().show();
+                    }
+
+                    public void onActivationFailed(@Nullable Throwable error) {
+                        // Pop 활성화가 실패하면 호출됩니다.
+                    }
+                });
             }
         });
 

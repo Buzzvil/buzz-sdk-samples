@@ -11,9 +11,13 @@ import com.buzzvil.buzzad.benefit.core.models.UserProfile;
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed;
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeedTheme;
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig;
+import com.buzzvil.buzzad.benefit.presentation.feed.config.OptInFeature;
 import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomAdsAdapter;
 import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedHeaderViewAdapter;
 import com.buzzvil.buzzad.benefit.sample.publisher.feed.CustomFeedToolbarHolder;
+
+import java.util.Collection;
+import java.util.Collections;
 
 public class App extends Application {
     public static final String UNIT_ID_NATIVE_AD = "166467299612761";
@@ -33,6 +37,7 @@ public class App extends Application {
                 .adsAdapterClass(CustomAdsAdapter.class)
                 .feedToolbarHolderClass(CustomFeedToolbarHolder.class)
                 .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter.class)
+                .optInFeatureList(Collections.singletonList(OptInFeature.Pop))
                 .imageTypeEnabled(true)
                 .build();
         BuzzAdBenefitConfig buzzAdBenefitConfig = new BuzzAdBenefitConfig.Builder(this)
