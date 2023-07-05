@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
                 val user = BuzzBoosterUser.Builder()
                     .setUserId(App.USER_ID)
                     .setOptInMarketing(false)
-                    .setProperty("LoginType", "Social(Google)")
-                    .setProperty("Gender", "Male")
-                    .setProperty("Age", "20")
+                    .addProperty("LoginType", "Social(Google)")
+                    .addProperty("Gender", "Male")
+                    .addProperty("Age", "20")
                     .build()
                 BuzzBooster.setUser(user)
                 activityMainBinding.loginButton.text = "logout"
