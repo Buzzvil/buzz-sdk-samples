@@ -41,7 +41,6 @@ class _MyAppState extends State<MyApp> {
       androidAppKey: androidAppKey,
       iosAppKey: iosAppKey,
     );
-    await buzzBooster.startService();
     buzzBooster.userEventChannel =
         (String userEventName, Map<String, dynamic>? userEventValues) async {
       print("userEventDidOccur: $userEventName $userEventValues");
@@ -77,20 +76,20 @@ class HomeRoute extends StatelessWidget {
               ),
               OutlinedButton(
                 onPressed: () async {
-                  await buzzBooster.showCampaign();
+                  await buzzBooster.showHome();
                 },
-                child: const Text("Campaign List"),
+                child: const Text("Home"),
               ),
               OutlinedButton(
                 onPressed: () async {
                   await buzzBooster
-                      .showSpecificCampaign(CampaignType.attendance);
+                      .showCampaignWithType(CampaignType.attendance);
                 },
                 child: const Text("Attendance Campaign"),
               ),
               OutlinedButton(
                 onPressed: () async {
-                  await buzzBooster.showSpecificCampaign(CampaignType.referral);
+                  await buzzBooster.showCampaignWithType(CampaignType.referral);
                 },
                 child: const Text("Referral Campaign"),
               ),
@@ -100,7 +99,7 @@ class HomeRoute extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
-            await buzzBooster.showCampaign();
+            await buzzBooster.showHome();
           },
           backgroundColor: Colors.deepPurple,
           child: const Icon(Icons.gif_box),
@@ -210,7 +209,7 @@ class OptInMarketingRoute extends StatelessWidget {
               OptInMarketingSwitch(),
               OutlinedButton(
                 onPressed: () async {
-                  await buzzBooster.showCampaign();
+                  await buzzBooster.showHome();
                 },
                 child: const Text("Go to see point achieved"),
               ),

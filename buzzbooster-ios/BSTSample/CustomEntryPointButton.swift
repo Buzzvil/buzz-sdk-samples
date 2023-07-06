@@ -1,5 +1,5 @@
 import UIKit
-import BuzzBooster
+import BuzzBoosterSDK
 
 final class CustomEntryPointButton: BSTCampaignEntryView {
   let button = UIButton(frame: .zero)

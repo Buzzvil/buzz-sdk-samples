@@ -1,5 +1,5 @@
 import UIKit
-import BuzzBooster
+import BuzzBoosterSDK
 import Toast
 
 final class OptInMarketingViewController: UIViewController {
@@ -80,7 +80,7 @@ final class OptInMarketingViewController: UIViewController {
   }
   
   @objc func optInMarketingButtonAction() {
-    BuzzBooster.sendEvent(withEventName: "bb_opt_in_marketing")
+    BuzzBooster.sendEvent("bb_opt_in_marketing")
   }
   
   @objc func backButtonAction() {

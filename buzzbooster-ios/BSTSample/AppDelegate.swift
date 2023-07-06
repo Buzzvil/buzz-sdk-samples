@@ -1,5 +1,5 @@
 import UIKit
-import BuzzBooster
+import BuzzBoosterSDK
 import UserNotifications
 import Toast
 
@@ -13,17 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     UNUserNotificationCenter.current().delegate = self
     UIApplication.shared.registerForRemoteNotifications()
-    let notificationOptions = BSTNotificationOptions { builder in
-      builder.userInfo = ["sample_key":"sample_value"]
-      builder.categoryIdentifier = "sample_category"
-    }
     let config = BSTConfig { builder in
       builder.appKey = AppDelegate.APP_KEY
-      builder.notificationOptions = notificationOptions
     }
     BuzzBooster.initialize(with: config)
-    BuzzBooster.startService()
-    BuzzBooster.setOptInMarketingCampaignDelegate(self)
+    BuzzBooster.optInMarketingCampaignDelegate = self
     BuzzBooster.userEventDelegate = self
     window = UIWindow(frame: UIScreen.main.bounds)
     let navigationViewController = UINavigationController(rootViewController: ViewController())
@@ -82,16 +76,9 @@ extension AppDelegate {
 
 // Mark: Move to your OptInMarketingPage in this Delegate
 extension AppDelegate: BSTOptInMarketingCampaignDelegate {
-  func onMoveButtonClicked() {
-    guard let rootViewController = window?.rootViewController else {
-      return
-    }
-    var currentController = rootViewController
-    while let presentedController = currentController.presentedViewController {
-      currentController = presentedController
-    }
+  func onMoveButtonTapped(in viewController: UIViewController) {
     let yourOptInMarketingViewController = OptInMarketingViewController()
-    currentController.present(yourOptInMarketingViewController, animated: true)
+    viewController.present(yourOptInMarketingViewController, animated: true)
   }
 }
 

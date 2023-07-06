@@ -1,12 +1,12 @@
 import UIKit
-import BuzzBooster
+import BuzzBoosterSDK
 import Toast
 
 class ViewController: UIViewController {
   var scrollView: UIScrollView!
   var loginButton: UIButton!
   var showInAppMessageButton: UIButton!
-  var showCampaignButton: UIButton!
+  var showHomeButton: UIButton!
   var showAttendanceCampaignButton: UIButton!
   var likeButton: UIButton!
   var commentButton: UIButton!
@@ -38,9 +38,9 @@ class ViewController: UIViewController {
     showInAppMessageButton.setTitle("showInAppMessage", for: .normal)
     setButtonAttributes(button: showInAppMessageButton)
     
-    showCampaignButton = UIButton(type: .system)
-    showCampaignButton.setTitle("showCampaign", for: .normal)
-    setButtonAttributes(button: showCampaignButton)
+    showHomeButton = UIButton(type: .system)
+    showHomeButton.setTitle("showCampaign", for: .normal)
+    setButtonAttributes(button: showHomeButton)
     
     showAttendanceCampaignButton = UIButton(type: .system)
     showAttendanceCampaignButton.setTitle("showAttendanceCampaign", for: .normal)
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
     stackView = UIStackView(arrangedSubviews: [
       loginButton,
       showInAppMessageButton,
-      showCampaignButton,
+      showHomeButton,
       showAttendanceCampaignButton,
       stampActionStackView,
     ])
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
   func bindEvent() {
     loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
     showInAppMessageButton.addTarget(self, action: #selector(showInAppMessageButtonAction), for: .touchUpInside)
-    showCampaignButton.addTarget(self, action: #selector(showCampaignButtonAction), for: .touchUpInside)
+    showHomeButton.addTarget(self, action: #selector(showHomeButtonAction), for: .touchUpInside)
     likeButton.addTarget(self, action: #selector(likeButtonAction), for: .touchUpInside)
     postButton.addTarget(self, action: #selector(postButtonAction), for: .touchUpInside)
     commentButton.addTarget(self, action: #selector(commentButtonAction), for: .touchUpInside)
@@ -146,7 +146,7 @@ class ViewController: UIViewController {
       loginButton.setTitle("Login", for: .normal)
     } else {
       let user = BSTUser { builder in
-        builder.userId = AppDelegate.USER_ID as NSString
+        builder.userId = AppDelegate.USER_ID
         builder.marketingStatus = .optIn
         builder.properties = ["login_type": "sns(Facebook)"]
       }
@@ -161,18 +161,18 @@ class ViewController: UIViewController {
     BuzzBooster.showInAppMessage(with: self)
   }
   
-  @objc func showCampaignButtonAction() {
-    BuzzBooster.showCampaign(with: self)
+  @objc func showHomeButtonAction() {
+    BuzzBooster.showHome(with: self)
   }
   
   @objc func showAttendanceCampaignListButtonAction() {
-    BuzzBooster.showCampaign(with: self, type: .attendance)
+    BuzzBooster.showCampaign(by: .attendance, with: self)
   }
   
   @objc func likeButtonAction() {
     BuzzBooster.sendEvent(
-      withEventName: "bb_like",
-      eventValues: [
+      "bb_like",
+      values: [
         "like_comment_id": "post_1"
       ]
     )
@@ -180,8 +180,8 @@ class ViewController: UIViewController {
   
   @objc func commentButtonAction() {
     BuzzBooster.sendEvent(
-      withEventName: "bb_comment",
-      eventValues: [
+      "bb_comment",
+      values: [
         "commented_content_id": "1",
         "comment": "Great Post!",
       ]
@@ -190,8 +190,8 @@ class ViewController: UIViewController {
   
   @objc func postButtonAction() {
     BuzzBooster.sendEvent(
-      withEventName: "bb_posting_content",
-      eventValues: [
+      "bb_posting_content",
+      values: [
         "posted_content_id": "1",
       ])
   }

@@ -22,9 +22,6 @@ export default function HomePage({ route, navigation }) {
 
   React.useEffect(() => {
     async function setup() {
-      BuzzBooster.setCustomCampaignActionButtonClickListener((url) => {
-        navigation.navigate("LinkPage", { url: url })
-      })
       BuzzBooster.setOptInMarketingCampaignMoveButtonClickListener(() => {
         navigation.navigate("OptInMarketingPage")
       })
@@ -40,7 +37,7 @@ export default function HomePage({ route, navigation }) {
         style={backgroundStyle}>
         <Button title='Login' onPress={login} />
         <Button title='InAppMessage' onPress={showInAppMessage} />
-        <Button title='Campaign' onPress={showCampaign} />
+        <Button title='Campaign' onPress={showHome} />
         <Button title='Attendance Campaign' onPress={showAttendanceCampaign} />
         <EventView />
       </ScrollView>
@@ -69,10 +66,10 @@ function showInAppMessage() {
   BuzzBooster.showInAppMessage();
 }
 
-function showCampaign() {
-  BuzzBooster.showCampaign();
+function showHome() {
+  BuzzBooster.showHome();
 }
 
 function showAttendanceCampaign() {
-  BuzzBooster.showSpecificCampaign(CampaignType.Attendance);
+  BuzzBooster.showCampaignWithType(CampaignType.Attendance);
 }
