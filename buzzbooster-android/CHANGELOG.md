@@ -2,7 +2,7 @@
 > * [UPDATE] `sendEvent(name, value)` 및 `BuzzBoosterUser.Builder:addProperty(key, value)`에서 value 타입으로 number, string, bool이 가능하게 변경
 > * [UPDATE] `showCampaign` 메소드를 `showHome`으로 변경
 > * [UPDATE] 캠페인 이동에 룰렛과 긁는 복권 지원
-> * [UPDATE] `startService()` 메소드 제거
+> * [UPDATE] `BuzzBoosterUser.Builder`의 `setProperty`를 `addProperty`로 변경
 > * [UPDATE] Custom Campaign 제거
 > * [FIX] 플러그인 이미지 해상도 개선
 
