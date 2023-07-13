@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.33.1] - 2023-07-13
+* [FIX] 동영상 광고 재생이 완료된 후 나타나는 “더보기“ 버튼의 URL이 호출되지 않는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzad3.33/) 참조
+
 ## [3.31.1] - 2023-06-15
 * [NEW] 네이티브 캐러셀에서 애드허브(피드)로의 진입점을 주목도 높은 카드로 제공
 * [UPDATE] 애드허브 이용 비율을 대폭 끌어올릴 수 있도록 개인정보 제3자 제공 동의 UX 개선
