@@ -1,3 +1,10 @@
+## [3.1.0] - 2023-08-17
+> * [NEW] UI/UX가 변경된 친구초대 캠페인 추가
+> * [UPDATE] iOS bitcode 옵션 제거
+> * [UPDATE] iOS SDWebImage 관련 종속성을 제거
+> * [FIX] Android의 포인트 히스토리 UI 개선
+> * [FIX] Android의 InAppMessageActivity의 launchMode를 singleTask로 수정
+
 ## [3.0.0] - 2023-07-05
 > * [UPDATE] `sendEvent(name, value)` 및 `UserBuilder.addProperty(key, value)`에서 value 타입으로 number, string, bool이 가능하게 변경
 > * [UPDATE] `showCampaign()` 메소드를 `showHome()`으로 변경
