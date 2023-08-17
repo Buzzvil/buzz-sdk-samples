@@ -6,6 +6,11 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [4.35.0] - 2023-08-17
+* [UPDATE] 버즈스크린 SDK 광고 할당에 대한 유저 경험 개선
+* [FIX] 버즈스크린 SDK에서 이미지 로드에 실패했을 때 에러 화면이 보이지 않는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.41-buzzscreen4.35/) 참조
+
 ## [4.33.0] - 2023-07-13
 * [FIX] 버그 수정
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.39-buzzscreen4.33/) 참조

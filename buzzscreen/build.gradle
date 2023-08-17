@@ -23,7 +23,7 @@ allprojects {
 }
 
 ext {
-    buzzscreenVersionName = '4.33.+'
+    buzzscreenVersionName = '4.35.+'
 
     mediationAdfitVersion = '3.4.0.1'
     mediationMopubVersion = '5.18.0.5'
