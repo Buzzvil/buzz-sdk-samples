@@ -1,3 +1,11 @@
+## [3.1.0] - 2023-08-17
+> * [NEW] UI/UX가 변경된 친구초대 캠페인 추가
+> * [UPDATE] bitcode 옵션 제거
+> * [UPDATE] SDWebImage 관련 종속성을 제거
+> * [UPDATE] arm architecture를 지원
+> * [FIX] Android의 포인트 히스토리 UI 개선
+> * [FIX] Android의 InAppMessageActivity의 launchMode를 singleTask로 수정
+
 ## [3.0.0] - 2023-07-05
 > * [UPDATE] SDK를 BuzzBooster에서 BuzzBoosterSDK로 변경
 > * [UPDATE] BuzzBooster, BuzzBoosterSwift, BuzzMutator에서 BuzzBoosterSDK로 간소화
