@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.43.0] - 2023-09-07
+* [FIX] 간헐적으로 발생하던 NPE 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.43-buzzscreen4.37/) 참조
+
 ## [3.41.0] - 2023-08-17
 * [NEW] 애드허브 유저 리텐션 증대를 위한 출석체크 기능 “데일리 리워드” 출시
 * [UPDATE] 논리워드 광고 “버즈배너“에 eCPM 증대를 위한 다양한 사이즈 추가
