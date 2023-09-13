@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.37.1] - 2023-09-07
+* [NEW] 애드허브 유저 리텐션 증대를 위한 출석체크 기능 “데일리 리워드” 출시
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzad3.37/) 참조
+
 ## [3.35.5] - 2023-08-17
 * [UPDATE] 애드허브 광고 미할당 UX & UI 개선​
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzad3.35/) 참조

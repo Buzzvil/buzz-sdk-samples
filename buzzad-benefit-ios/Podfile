@@ -8,7 +8,7 @@ inhibit_all_warnings!
 deployment_target = '11.0'
 
 target 'BABSample' do
-  pod 'BuzzAdBenefit', '~> 3.35.5'
+  pod 'BuzzAdBenefit', '~> 3.37.1'
   pod 'Toast', '~> 4.0.0'
 end
 
