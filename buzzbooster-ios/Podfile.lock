@@ -1,5 +1,5 @@
 PODS:
-  - BuzzBoosterSDK (3.1.0):
+  - BuzzBoosterSDK (3.1.5):
     - BuzzRxSwift (~> 6.5.1)
   - BuzzRxSwift (6.5.1)
   - RxCocoa (6.5.0):
@@ -11,7 +11,7 @@ PODS:
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzBoosterSDK (~> 3.1.0)
+  - BuzzBoosterSDK (~> 3.1.5)
   - RxCocoa
   - RxSwift
   - Toast (= 4.0.0)
@@ -26,13 +26,13 @@ SPEC REPOS:
     - Toast
 
 SPEC CHECKSUMS:
-  BuzzBoosterSDK: 1c34327445c62a820c02b51713deb6f10f1966ec
+  BuzzBoosterSDK: 63b90f2689b75c1c4d3a4260e8570b9b27dfaffd
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 7978f87bf53d9ce44c7e48ce2199096d7e3a3c3d
+PODFILE CHECKSUM: 951f1ff511df50fd0525fb6d968fc668ff28efb8
 
 COCOAPODS: 1.12.1

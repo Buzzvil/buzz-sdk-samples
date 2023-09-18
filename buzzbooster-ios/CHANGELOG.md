@@ -1,10 +1,28 @@
+## [3.1.5] - 2023-09-15
+> * [NEW] 출석체크 캠페인 과거 기록 조회 기능 추가
+> * [NEW] Swift Documentation 추가
+> * [UPDATE] 40자 이상으로 길거나, 이메일로 된 User ID를 사용할 수 없도록 변경
+> * [UPDATE] 스탬프 사이즈 조정
+> * [FIX] Floating action button이 깜빡거리는 현상 수정
+
+## [3.1.4] - 2023-09-08
+> * [FIX] BottomSheet가 어느 곳에서도 참조되지 않아 delegateㅇ이 nil이 되는 문제 수정
+> * [FIX] BottomSheet의 불필요한 마진 제거
+
+## [3.1.3] - 2023-09-07
+> * [FIX] 타이밍 이슈로 iOS 14/15에서 출석체크 v2 진입 시 초기에 로딩이 안되는 문제 수정
+
+## [3.1.2] - 2023-09-06
+> * [FIX] BottomSheet 리워드 안내를 NavigationController에서도 UX에 문제 없게 처리되도록 수정
+
+## [3.1.1] - 2023-08-24
+> * [FIX] 출석체크 v2 관련 UI/UX 수정
+
 ## [3.1.0] - 2023-08-17
 > * [NEW] UI/UX가 변경된 친구초대 캠페인 추가
 > * [UPDATE] bitcode 옵션 제거
 > * [UPDATE] SDWebImage 관련 종속성을 제거
 > * [UPDATE] arm architecture를 지원
-> * [FIX] Android의 포인트 히스토리 UI 개선
-> * [FIX] Android의 InAppMessageActivity의 launchMode를 singleTask로 수정
 
 ## [3.0.0] - 2023-07-05
 > * [UPDATE] SDK를 BuzzBooster에서 BuzzBoosterSDK로 변경
