@@ -1,10 +1,16 @@
+## [3.1.5] - 2023-09-15
+> * [NEW] 출석체크 캠페인 과거 기록 조회 기능 추가
+> * [NEW] Swift Documentation 추가
+> * [UPDATE] 40자 이상으로 길거나, 이메일로 된 User ID를 사용할 수 없도록 변경
+> * [FIX] 바텀시트가 페이지 이동시에도 계속 나타나는 버그 수정
+> * [FIX] Floating action button이 깜빡거리는 현상 수정
+> * [FIX] 캠페인 페이지 로딩이 첫 번째 진입시 되지 않는 현상 수정
+
 ## [3.1.0] - 2023-08-17
 > * [NEW] UI/UX가 변경된 친구초대 캠페인 추가
 > * [UPDATE] bitcode 옵션 제거
 > * [UPDATE] SDWebImage 관련 종속성을 제거
 > * [UPDATE] arm architecture를 지원
-> * [FIX] Android의 포인트 히스토리 UI 개선
-> * [FIX] Android의 InAppMessageActivity의 launchMode를 singleTask로 수정
 
 ## [3.0.0] - 2023-07-05
 > * [UPDATE] SDK를 BuzzBooster에서 BuzzBoosterSDK로 변경

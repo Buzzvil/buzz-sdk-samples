@@ -1,3 +1,16 @@
+## [3.1.1] - 2023-09-15
+> * [NEW] 출석체크 캠페인 과거 기록 조회 기능 추가
+> * [NEW] iOS Swift Documentation 추가
+> * [UPDATE] 40자 이상으로 길거나, 이메일로 된 User ID를 사용할 수 없도록 변경
+> * [UPDATE] Android Notification 권한 획득 로직 제거
+> * [FIX] iOS 바텀시트 페이지가 이동시에도 계속 나타나는 버그 수정
+> * [FIX] iOS Floating action button이 깜빡거리는 현상 수정
+> * [FIX] iOS 캠페인 페이지 로딩이 첫 번째 진입시 되지 않는 현상 수정
+> * [FIX] Android 캠페인 상세페이지 이미지의 비율이 유지되지 않는 문제 수정
+> * [FIX] Android Picasso 라이브러리의 충돌 문제 해결
+> * [FIX] Android 캠페인 상세페이지에서 발생하는 크래시 수정
+> * [FIX] Android 잘못된 딥링크를 사용할 경우 발생하는 크래시 수정
+
 ## [3.1.0] - 2023-08-17
 > * [NEW] UI/UX가 변경된 친구초대 캠페인 추가
 > * [UPDATE] iOS bitcode 옵션 제거
