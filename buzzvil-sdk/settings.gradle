@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BuzzBenefitSdkSample"
+rootProject.name = "BuzzvilSdkSample"
 include ':app'
