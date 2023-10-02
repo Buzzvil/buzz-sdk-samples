@@ -10,8 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://dl.buzzvil.com/public/maven" }
     }
 }
 
-rootProject.name = "BuzzvilSdkSample"
-include(":app")
+rootProject.name = "BuzzBenefitSdkSample"
+include ':app'
