@@ -14,57 +14,57 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzAdBenefit (3.37.1):
-    - BuzzAdBenefitBase (~> 3.37.1)
-    - BuzzAdBenefitFeed (~> 3.37.1)
-    - BuzzAdBenefitInterstitial (~> 3.37.1)
-    - BuzzAdBenefitNative (~> 3.37.1)
-  - BuzzAdBenefitBase (3.37.1):
+  - BuzzAdBenefit (3.39.1):
+    - BuzzAdBenefitBase (~> 3.39.1)
+    - BuzzAdBenefitFeed (~> 3.39.1)
+    - BuzzAdBenefitInterstitial (~> 3.39.1)
+    - BuzzAdBenefitNative (~> 3.39.1)
+  - BuzzAdBenefitBase (3.39.1):
     - AFNetworking (~> 4.0)
     - BuzzRxSwift (~> 6.5.1)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzAdBenefitFeed (3.37.1):
-    - BuzzAdBenefitBase (~> 3.37.1)
-    - BuzzAdBenefitInterstitial (~> 3.37.1)
-    - BuzzAdBenefitNative (~> 3.37.1)
+  - BuzzAdBenefitFeed (3.39.1):
+    - BuzzAdBenefitBase (~> 3.39.1)
+    - BuzzAdBenefitInterstitial (~> 3.39.1)
+    - BuzzAdBenefitNative (~> 3.39.1)
     - BuzzRxSwift (~> 6.5.1)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitInterstitial (3.37.1):
-    - BuzzAdBenefitBase (~> 3.37.1)
-    - BuzzAdBenefitNative (~> 3.37.1)
+  - BuzzAdBenefitInterstitial (3.39.1):
+    - BuzzAdBenefitBase (~> 3.39.1)
+    - BuzzAdBenefitNative (~> 3.39.1)
     - BuzzRxSwift (~> 6.5.1)
-  - BuzzAdBenefitNative (3.37.1):
-    - BuzzAdBenefitBase (~> 3.37.1)
+  - BuzzAdBenefitNative (3.39.1):
+    - BuzzAdBenefitBase (~> 3.39.1)
     - BuzzRxSwift (~> 6.5.1)
     - GoogleAds-IMA-iOS-SDK (~> 3.12)
     - ReactiveObjC (~> 3.1.1)
   - BuzzRxSwift (6.5.1)
   - GoogleAds-IMA-iOS-SDK (3.19.2)
-  - libwebp (1.3.1):
-    - libwebp/demux (= 1.3.1)
-    - libwebp/mux (= 1.3.1)
-    - libwebp/sharpyuv (= 1.3.1)
-    - libwebp/webp (= 1.3.1)
-  - libwebp/demux (1.3.1):
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
     - libwebp/webp
-  - libwebp/mux (1.3.1):
+  - libwebp/mux (1.3.2):
     - libwebp/demux
-  - libwebp/sharpyuv (1.3.1)
-  - libwebp/webp (1.3.1):
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.18.0):
-    - SDWebImage/Core (= 5.18.0)
-  - SDWebImage/Core (5.18.0)
+  - SDWebImage (5.18.2):
+    - SDWebImage/Core (= 5.18.2)
+  - SDWebImage/Core (5.18.2)
   - SDWebImageWebPCoder (0.13.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.17)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzAdBenefit (~> 3.37.1)
+  - BuzzAdBenefit (~> 3.39.1)
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
@@ -85,19 +85,19 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  BuzzAdBenefit: 6db15aa0ae7740d0776f97b052e01a4d0cd3df4c
-  BuzzAdBenefitBase: 4025a410aab3283251cdd4d956a31e75f9ade840
-  BuzzAdBenefitFeed: b0d0aa76feffcf21093ec8784bf61c04a3156f92
-  BuzzAdBenefitInterstitial: 5694fe74345686083b0bf2582a813f9b3082f193
-  BuzzAdBenefitNative: 34ba544c5444135eb4ba31591756dd97a0fa4481
+  BuzzAdBenefit: 5625f4620ec076a1a919c088d1898d458657c48d
+  BuzzAdBenefitBase: a897ca5b772e4cf4076a11da3db76d32c4cc0e48
+  BuzzAdBenefitFeed: 321582a211bdd2afd9f5d1162163a183b02660e7
+  BuzzAdBenefitInterstitial: 86cfbfa9612e9c1de85eb150f539c90311a962fe
+  BuzzAdBenefitNative: 93539855ee38a8cf58eccc2096127ec9b78d7cb0
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   GoogleAds-IMA-iOS-SDK: 0e817c05ab26f1b9285c80f4a75e1350a916d50b
-  libwebp: 33dc822fbbf4503668d09f7885bbfedc76c45e96
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 182830bcddc30cde95fbc60dfe4badc3553d94ba
+  SDWebImage: c0de394d7cf7f9838aed1fd6bb6037654a4572e4
   SDWebImageWebPCoder: af09429398d99d524cae2fe00f6f0f6e491ed102
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 216f2d26488b10ea1d2476fdd30e60b4233ddeb7
+PODFILE CHECKSUM: 3a74dd1c5ad86461af541a73a9641d1e4fdd614a
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0
