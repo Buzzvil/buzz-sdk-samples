@@ -1,3 +1,12 @@
+## [3.1.5] - 2023-10-13
+> * [UPDATE] BottomSheet UI/UX 개선
+> * [UPDATE] 일부 아이콘 수정
+> * [UPDATE] `showHome`이 플러그인 유무에 상관 없이 항상 Home으로 이동되게 수정
+> * [UPDATE] 스탬프 캠페인 시작하기 버튼 추가
+> * [FIX] 긁는 복권 캠페인 UX 개선
+> * [FIX] Xcode15에서 발생하는 warning 제거
+> * [FIX] 간헐적으로 Buzz-UUID가 의도치 않게 여러번 생성되는 문제 수정
+
 ## [3.1.5] - 2023-09-15
 > * [NEW] 출석체크 캠페인 과거 기록 조회 기능 추가
 > * [NEW] Swift Documentation 추가

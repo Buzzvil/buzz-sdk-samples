@@ -1,6 +1,5 @@
 import UIKit
 import BuzzBoosterSDK
-import Toast
 
 class ViewController: UIViewController {
   var scrollView: UIScrollView!
@@ -14,13 +13,7 @@ class ViewController: UIViewController {
   var stampActionStackView: UIStackView!
   var stackView: UIStackView!
   var login: Bool = false
-  var campaignFloatingActionButton: BSTCampaignFloatingActionButton!
-  private lazy var customEntryPointButton: CustomEntryPointButton = {
-    let view = CustomEntryPointButton(frame: .zero)
-    view.setEntryName("your_custom_entry_point_1")
-    return view
-  }()
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
@@ -77,13 +70,10 @@ class ViewController: UIViewController {
     stackView.axis = .vertical
     stackView.spacing = 8
     
-    campaignFloatingActionButton = BSTCampaignFloatingActionButton()
-    
     scrollView = UIScrollView(frame: .zero)
     scrollView.showsVerticalScrollIndicator = false
     scrollView.addSubview(stackView)
     view.addSubview(scrollView)
-    view.addSubview(campaignFloatingActionButton)
   }
   
   func setButtonAttributes(button: UIButton) {
@@ -100,15 +90,7 @@ class ViewController: UIViewController {
       scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
       scrollView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
     ])
-    
-    campaignFloatingActionButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      campaignFloatingActionButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
-      campaignFloatingActionButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
-      campaignFloatingActionButton.heightAnchor.constraint(equalToConstant: 50),
-      campaignFloatingActionButton.widthAnchor.constraint(equalToConstant: 50)
-    ])
-    
+
     stackView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),

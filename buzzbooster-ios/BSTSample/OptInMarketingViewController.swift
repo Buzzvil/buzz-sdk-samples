@@ -1,6 +1,5 @@
 import UIKit
 import BuzzBoosterSDK
-import Toast
 
 final class OptInMarketingViewController: UIViewController {
   var stackView: UIStackView!

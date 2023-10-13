@@ -1,5 +1,5 @@
-platform :ios, '11.0'
-
+platform :ios, '12.0'
+source "https://github.com/Buzzvil/Specs"
 source 'https://cdn.cocoapods.org/'
 
 use_frameworks!
@@ -8,6 +8,5 @@ inhibit_all_warnings!
 target 'BSTSample' do
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'BuzzBoosterSDK', '~> 3.1.5'
-  pod 'Toast', '=4.0.0'
+  pod 'BuzzBoosterSDK', '~> 3.1.6'
 end

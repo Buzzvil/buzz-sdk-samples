@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterUser
-import com.buzzvil.booster.external.campaign.CampaignEntryView
 import com.buzzvil.booster.external.campaign.CampaignType
 import com.buzzvil.booster.sample.publisher.databinding.ActivityMainBinding
 
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(activityMainBinding.root)
 
         registerViewEvent()
-        addCustomEntryViewDynamically()
     }
 
     private fun registerViewEvent() {
@@ -109,13 +107,5 @@ class MainActivity : AppCompatActivity() {
             BuzzBooster.getInstance()
                 .sendEvent("bb_page_visit", mapOf("visited_page_id" to "page_1"))
         }
-    }
-
-    private fun addCustomEntryViewDynamically() {
-        val parent = findViewById<ViewGroup>(R.id.entryPointPlaceholder)
-        val entryView: CampaignEntryView =
-            layoutInflater.inflate(R.layout.campaign_entry_point, null) as CampaignEntryView
-        entryView.setEntryName("your_custom_entry_point_1")
-        parent.addView(entryView)
     }
 }
