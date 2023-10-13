@@ -103,24 +103,4 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <com.buzzvil.booster.external.campaign.CampaignEntryView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entryPointPlaceholder">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="커스텀 엔트리 포인트" />
-    </com.buzzvil.booster.external.campaign.CampaignEntryView>
-
-    <com.buzzvil.booster.external.campaign.CampaignFloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
