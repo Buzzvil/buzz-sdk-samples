@@ -2,6 +2,7 @@
 > * [UPDATE] BottomSheet UI/UX 개선
 > * [UPDATE] 일부 아이콘 수정
 > * [UPDATE] `showHome`이 플러그인 유무에 상관 없이 항상 Home으로 이동되게 수정
+> * [UPDATE] 스탬프 캠페인 시작하기 버튼 추가
 > * [FIX] 캘린더 디자인 수정
 > * [FIX] 특정 Event가 너무 많이 처리되던 문제 수정
 > * [FIX] SDK 예외 추적 로직 개선
