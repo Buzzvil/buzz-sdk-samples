@@ -1,7 +1,6 @@
 import UIKit
 import BuzzBoosterSDK
 import UserNotifications
-import Toast
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -48,19 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
   ) {
     completionHandler([.alert, .sound])
-  }
-  
-  func showToastIfAuthorizationDenied(
-    center: UNUserNotificationCenter,
-    content: UNNotificationContent
-  ) {
-    center.getNotificationSettings { settings in
-      if (settings.authorizationStatus == UNAuthorizationStatus.denied) {
-        DispatchQueue.main.async {
-          self.window?.makeToast(content.body)
-        }
-      }
-    }
   }
 }
 
