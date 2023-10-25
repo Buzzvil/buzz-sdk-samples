@@ -10,6 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://dl.buzzvil.com/public/maven" } // 버즈빌 저장소
     }
 }
 
