@@ -7,41 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00AF60CB2AF0DA2D00242DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF60CA2AF0DA2D00242DD6 /* AppDelegate.swift */; };
-		00AF60CD2AF0DA2D00242DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF60CC2AF0DA2D00242DD6 /* SceneDelegate.swift */; };
-		00AF60CF2AF0DA2D00242DD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF60CE2AF0DA2D00242DD6 /* ViewController.swift */; };
-		00AF60D42AF0DA2E00242DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00AF60D32AF0DA2E00242DD6 /* Assets.xcassets */; };
-		215A0631D6B39A48D2366E7E /* Pods_buzzvil_sdk_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462A899B4FD625AB65315987 /* Pods_buzzvil_sdk_ios.framework */; };
+		004850832AF100D600CD6D64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850822AF100D600CD6D64 /* AppDelegate.m */; };
+		004850862AF100D600CD6D64 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850852AF100D600CD6D64 /* SceneDelegate.m */; };
+		004850892AF100D600CD6D64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850882AF100D600CD6D64 /* ViewController.m */; };
+		0048508C2AF100D700CD6D64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0048508A2AF100D700CD6D64 /* Main.storyboard */; };
+		0048508E2AF100D800CD6D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0048508D2AF100D800CD6D64 /* Assets.xcassets */; };
+		004850912AF100D800CD6D64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0048508F2AF100D800CD6D64 /* LaunchScreen.storyboard */; };
+		004850942AF100D800CD6D64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850932AF100D800CD6D64 /* main.m */; };
+		0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048509E2AF1023600CD6D64 /* AppDelegate.swift */; };
+		004850A12AF1023600CD6D64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850A02AF1023600CD6D64 /* SceneDelegate.swift */; };
+		004850A32AF1023600CD6D64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850A22AF1023600CD6D64 /* ViewController.swift */; };
+		004850A62AF1023600CD6D64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004850A42AF1023600CD6D64 /* Main.storyboard */; };
+		004850A82AF1023800CD6D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004850A72AF1023800CD6D64 /* Assets.xcassets */; };
+		004850AB2AF1023800CD6D64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004850A92AF1023800CD6D64 /* LaunchScreen.storyboard */; };
+		004850B12AF1038000CD6D64 /* BenefitHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */; };
+		1612FB6118DEFD09C07E45D6 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A87C7F858727B70B72BD29 /* Pods_buzzvil_sdk_ios_swift.framework */; };
+		BF849AC5937D3F0F63EE4BFD /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B481659B157D50D1E6E2F1 /* Pods_buzzvil_sdk_ios_objc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00AF60C72AF0DA2D00242DD6 /* buzzvil-sdk-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00AF60CA2AF0DA2D00242DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00AF60CC2AF0DA2D00242DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		00AF60CE2AF0DA2D00242DD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		00AF60D32AF0DA2E00242DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		00AF60D82AF0DA2E00242DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DF00887F3469EC7AE27E689 /* Pods-buzzvil-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
-		130314B800426B33578AB215 /* Pods-buzzvil-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		462A899B4FD625AB65315987 /* Pods_buzzvil_sdk_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0048507F2AF100D600CD6D64 /* buzzvil-sdk-ios-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		004850812AF100D600CD6D64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		004850822AF100D600CD6D64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		004850842AF100D600CD6D64 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		004850852AF100D600CD6D64 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		004850872AF100D600CD6D64 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		004850882AF100D600CD6D64 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0048508B2AF100D700CD6D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0048508D2AF100D800CD6D64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		004850902AF100D800CD6D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		004850922AF100D800CD6D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		004850932AF100D800CD6D64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0048509C2AF1023600CD6D64 /* buzzvil-sdk-ios-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0048509E2AF1023600CD6D64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		004850A02AF1023600CD6D64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		004850A22AF1023600CD6D64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		004850A52AF1023600CD6D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		004850A72AF1023800CD6D64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		004850AA2AF1023800CD6D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		004850AC2AF1023800CD6D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubViewController.swift; sourceTree = "<group>"; };
+		1447D86BA22E7F77A3348109 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		31B2EB1619B034FDBD96B173 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
+		56F167CAC7E92C9B4BBB8F46 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
+		91C70CC2DCD3102BB06D2B47 /* Pods-buzzvil-sdk-ios-objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.debug.xcconfig"; sourceTree = "<group>"; };
+		99A87C7F858727B70B72BD29 /* Pods_buzzvil_sdk_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4B481659B157D50D1E6E2F1 /* Pods_buzzvil_sdk_ios_objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00AF60C42AF0DA2D00242DD6 /* Frameworks */ = {
+		0048507C2AF100D600CD6D64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				215A0631D6B39A48D2366E7E /* Pods_buzzvil_sdk_ios.framework in Frameworks */,
+				BF849AC5937D3F0F63EE4BFD /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004850992AF1023600CD6D64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1612FB6118DEFD09C07E45D6 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004850802AF100D600CD6D64 /* buzzvil-sdk-ios-objc */ = {
+			isa = PBXGroup;
+			children = (
+				004850812AF100D600CD6D64 /* AppDelegate.h */,
+				004850822AF100D600CD6D64 /* AppDelegate.m */,
+				004850842AF100D600CD6D64 /* SceneDelegate.h */,
+				004850852AF100D600CD6D64 /* SceneDelegate.m */,
+				004850872AF100D600CD6D64 /* ViewController.h */,
+				004850882AF100D600CD6D64 /* ViewController.m */,
+				0048508A2AF100D700CD6D64 /* Main.storyboard */,
+				0048508D2AF100D800CD6D64 /* Assets.xcassets */,
+				0048508F2AF100D800CD6D64 /* LaunchScreen.storyboard */,
+				004850922AF100D800CD6D64 /* Info.plist */,
+				004850932AF100D800CD6D64 /* main.m */,
+			);
+			path = "buzzvil-sdk-ios-objc";
+			sourceTree = "<group>";
+		};
+		0048509D2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */ = {
+			isa = PBXGroup;
+			children = (
+				0048509E2AF1023600CD6D64 /* AppDelegate.swift */,
+				004850A02AF1023600CD6D64 /* SceneDelegate.swift */,
+				004850A22AF1023600CD6D64 /* ViewController.swift */,
+				004850A42AF1023600CD6D64 /* Main.storyboard */,
+				004850A72AF1023800CD6D64 /* Assets.xcassets */,
+				004850A92AF1023800CD6D64 /* LaunchScreen.storyboard */,
+				004850AC2AF1023800CD6D64 /* Info.plist */,
+				004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */,
+			);
+			path = "buzzvil-sdk-ios-swift";
+			sourceTree = "<group>";
+		};
 		00AF60BE2AF0DA2D00242DD6 = {
 			isa = PBXGroup;
 			children = (
-				00AF60C92AF0DA2D00242DD6 /* buzzvil-sdk-ios */,
+				004850802AF100D600CD6D64 /* buzzvil-sdk-ios-objc */,
+				0048509D2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */,
 				00AF60C82AF0DA2D00242DD6 /* Products */,
 				FBE0B93D40B0A523C6A241C0 /* Pods */,
 				C6365966141F6AE84A10961F /* Frameworks */,
@@ -51,27 +122,17 @@
 		00AF60C82AF0DA2D00242DD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				00AF60C72AF0DA2D00242DD6 /* buzzvil-sdk-ios.app */,
+				0048507F2AF100D600CD6D64 /* buzzvil-sdk-ios-objc.app */,
+				0048509C2AF1023600CD6D64 /* buzzvil-sdk-ios-swift.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		00AF60C92AF0DA2D00242DD6 /* buzzvil-sdk-ios */ = {
-			isa = PBXGroup;
-			children = (
-				00AF60CA2AF0DA2D00242DD6 /* AppDelegate.swift */,
-				00AF60CC2AF0DA2D00242DD6 /* SceneDelegate.swift */,
-				00AF60CE2AF0DA2D00242DD6 /* ViewController.swift */,
-				00AF60D32AF0DA2E00242DD6 /* Assets.xcassets */,
-				00AF60D82AF0DA2E00242DD6 /* Info.plist */,
-			);
-			path = "buzzvil-sdk-ios";
 			sourceTree = "<group>";
 		};
 		C6365966141F6AE84A10961F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				462A899B4FD625AB65315987 /* Pods_buzzvil_sdk_ios.framework */,
+				C4B481659B157D50D1E6E2F1 /* Pods_buzzvil_sdk_ios_objc.framework */,
+				99A87C7F858727B70B72BD29 /* Pods_buzzvil_sdk_ios_swift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -79,33 +140,53 @@
 		FBE0B93D40B0A523C6A241C0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				130314B800426B33578AB215 /* Pods-buzzvil-sdk-ios.debug.xcconfig */,
-				0DF00887F3469EC7AE27E689 /* Pods-buzzvil-sdk-ios.release.xcconfig */,
+				91C70CC2DCD3102BB06D2B47 /* Pods-buzzvil-sdk-ios-objc.debug.xcconfig */,
+				56F167CAC7E92C9B4BBB8F46 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */,
+				1447D86BA22E7F77A3348109 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */,
+				31B2EB1619B034FDBD96B173 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00AF60C62AF0DA2D00242DD6 /* buzzvil-sdk-ios */ = {
+		0048507E2AF100D600CD6D64 /* buzzvil-sdk-ios-objc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00AF60DB2AF0DA2E00242DD6 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios" */;
+			buildConfigurationList = 004850952AF100D800CD6D64 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-objc" */;
 			buildPhases = (
-				38D29928BD215AB9DF100C91 /* [CP] Check Pods Manifest.lock */,
-				00AF60C32AF0DA2D00242DD6 /* Sources */,
-				00AF60C42AF0DA2D00242DD6 /* Frameworks */,
-				00AF60C52AF0DA2D00242DD6 /* Resources */,
-				5D9B74983F85C064470376E6 /* [CP] Embed Pods Frameworks */,
+				2180B997DF89DB2297291983 /* [CP] Check Pods Manifest.lock */,
+				0048507B2AF100D600CD6D64 /* Sources */,
+				0048507C2AF100D600CD6D64 /* Frameworks */,
+				0048507D2AF100D600CD6D64 /* Resources */,
+				CB579AF34BC5047472374E7D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "buzzvil-sdk-ios";
-			productName = "buzzvil-sdk-ios";
-			productReference = 00AF60C72AF0DA2D00242DD6 /* buzzvil-sdk-ios.app */;
+			name = "buzzvil-sdk-ios-objc";
+			productName = "buzzvil-sdk-ios-objc";
+			productReference = 0048507F2AF100D600CD6D64 /* buzzvil-sdk-ios-objc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0048509B2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 004850AD2AF1023800CD6D64 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-swift" */;
+			buildPhases = (
+				48FB5F8A8FAED90CE4E88538 /* [CP] Check Pods Manifest.lock */,
+				004850982AF1023600CD6D64 /* Sources */,
+				004850992AF1023600CD6D64 /* Frameworks */,
+				0048509A2AF1023600CD6D64 /* Resources */,
+				F0E9B6851894929B30784D40 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "buzzvil-sdk-ios-swift";
+			productName = "buzzvil-sdk-ios-swift";
+			productReference = 0048509C2AF1023600CD6D64 /* buzzvil-sdk-ios-swift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +199,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					00AF60C62AF0DA2D00242DD6 = {
+					0048507E2AF100D600CD6D64 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					0048509B2AF1023600CD6D64 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -136,24 +220,37 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				00AF60C62AF0DA2D00242DD6 /* buzzvil-sdk-ios */,
+				0048507E2AF100D600CD6D64 /* buzzvil-sdk-ios-objc */,
+				0048509B2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		00AF60C52AF0DA2D00242DD6 /* Resources */ = {
+		0048507D2AF100D600CD6D64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00AF60D42AF0DA2E00242DD6 /* Assets.xcassets in Resources */,
+				004850912AF100D800CD6D64 /* LaunchScreen.storyboard in Resources */,
+				0048508E2AF100D800CD6D64 /* Assets.xcassets in Resources */,
+				0048508C2AF100D700CD6D64 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0048509A2AF1023600CD6D64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004850AB2AF1023800CD6D64 /* LaunchScreen.storyboard in Resources */,
+				004850A82AF1023800CD6D64 /* Assets.xcassets in Resources */,
+				004850A62AF1023600CD6D64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38D29928BD215AB9DF100C91 /* [CP] Check Pods Manifest.lock */ = {
+		2180B997DF89DB2297291983 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -168,46 +265,254 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-buzzvil-sdk-ios-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-buzzvil-sdk-ios-objc-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5D9B74983F85C064470376E6 /* [CP] Embed Pods Frameworks */ = {
+		48FB5F8A8FAED90CE4E88538 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-buzzvil-sdk-ios-swift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB579AF34BC5047472374E7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E9B6851894929B30784D40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		00AF60C32AF0DA2D00242DD6 /* Sources */ = {
+		0048507B2AF100D600CD6D64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00AF60CF2AF0DA2D00242DD6 /* ViewController.swift in Sources */,
-				00AF60CB2AF0DA2D00242DD6 /* AppDelegate.swift in Sources */,
-				00AF60CD2AF0DA2D00242DD6 /* SceneDelegate.swift in Sources */,
+				004850892AF100D600CD6D64 /* ViewController.m in Sources */,
+				004850832AF100D600CD6D64 /* AppDelegate.m in Sources */,
+				004850942AF100D800CD6D64 /* main.m in Sources */,
+				004850862AF100D600CD6D64 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		004850982AF1023600CD6D64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004850B12AF1038000CD6D64 /* BenefitHubViewController.swift in Sources */,
+				004850A32AF1023600CD6D64 /* ViewController.swift in Sources */,
+				0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */,
+				004850A12AF1023600CD6D64 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		0048508A2AF100D700CD6D64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0048508B2AF100D700CD6D64 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0048508F2AF100D800CD6D64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				004850902AF100D800CD6D64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		004850A42AF1023600CD6D64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				004850A52AF1023600CD6D64 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		004850A92AF1023800CD6D64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				004850AA2AF1023800CD6D64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		004850962AF100D800CD6D64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91C70CC2DCD3102BB06D2B47 /* Pods-buzzvil-sdk-ios-objc.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-objc/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios-objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		004850972AF100D800CD6D64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56F167CAC7E92C9B4BBB8F46 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-objc/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios-objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		004850AE2AF1023800CD6D64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1447D86BA22E7F77A3348109 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-swift/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		004850AF2AF1023800CD6D64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31B2EB1619B034FDBD96B173 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-swift/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		00AF60D92AF0DA2E00242DD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -260,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -317,7 +622,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -327,81 +632,32 @@
 			};
 			name = Release;
 		};
-		00AF60DC2AF0DA2E00242DD6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 130314B800426B33578AB215 /* Pods-buzzvil-sdk-ios.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67369282ZY;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "buzzvil-sdk-ios/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		00AF60DD2AF0DA2E00242DD6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DF00887F3469EC7AE27E689 /* Pods-buzzvil-sdk-ios.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67369282ZY;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "buzzvil-sdk-ios/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		004850952AF100D800CD6D64 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				004850962AF100D800CD6D64 /* Debug */,
+				004850972AF100D800CD6D64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		004850AD2AF1023800CD6D64 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				004850AE2AF1023800CD6D64 /* Debug */,
+				004850AF2AF1023800CD6D64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		00AF60C22AF0DA2D00242DD6 /* Build configuration list for PBXProject "buzzvil-sdk-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00AF60D92AF0DA2E00242DD6 /* Debug */,
 				00AF60DA2AF0DA2E00242DD6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		00AF60DB2AF0DA2E00242DD6 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00AF60DC2AF0DA2E00242DD6 /* Debug */,
-				00AF60DD2AF0DA2E00242DD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

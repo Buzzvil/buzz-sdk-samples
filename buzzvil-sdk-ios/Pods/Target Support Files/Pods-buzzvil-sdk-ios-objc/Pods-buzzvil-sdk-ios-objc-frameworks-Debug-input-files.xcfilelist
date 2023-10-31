@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

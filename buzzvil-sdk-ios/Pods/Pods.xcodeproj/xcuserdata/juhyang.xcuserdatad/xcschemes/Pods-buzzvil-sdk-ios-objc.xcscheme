@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73B811855EACE62BF9AA98D65220D4C5"
-               BuildableName = "Pods_buzzvil_sdk_ios.framework"
-               BlueprintName = "Pods-buzzvil-sdk-ios"
+               BlueprintIdentifier = "8ECFAF6890C63FF00784D59696FBAABE"
+               BuildableName = "Pods_buzzvil_sdk_ios_objc.framework"
+               BlueprintName = "Pods-buzzvil-sdk-ios-objc"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

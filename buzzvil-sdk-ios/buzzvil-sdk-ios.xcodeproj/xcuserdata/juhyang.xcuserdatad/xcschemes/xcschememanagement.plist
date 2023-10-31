@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>buzzvil-sdk-ios.xcscheme_^#shared#^_</key>
+		<key>buzzvil-sdk-ios-objc.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>17</integer>
+		</dict>
+		<key>buzzvil-sdk-ios-swift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
 		</dict>
 	</dict>
 </dict>

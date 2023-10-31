@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_buzzvil_sdk_iosVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_buzzvil_sdk_iosVersionString[];
+FOUNDATION_EXPORT double Pods_buzzvil_sdk_ios_objcVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_buzzvil_sdk_ios_objcVersionString[];
 
