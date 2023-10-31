@@ -1,0 +1,4 @@
+framework module BuzzvilSDK {
+  header "BuzzvilSDK-Swift.h"
+  requires objc
+}

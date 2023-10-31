@@ -1,0 +1,138 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzvilSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import BuzzAdBenefitBase
+import BuzzAdBenefitNative
+import BuzzAdBenefitSDK
+import BuzzBoosterSDK
+import BuzzRxSwift
+import DeveloperToolsSupport
+import Foundation
+import ObjectiveC
+import SafariServices
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class BZVBenefitHubConfig : ObjectiveC.NSObject {
+  @objc final public let unitID: Swift.String
+  @objc deinit
+}
+public typealias BZVBenefitHubConfigBuilderBlock = (BuzzvilSDK.BZVBenefitHubConfigBuilder) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers public class BZVBenefitHubConfigBuilder : ObjectiveC.NSObject {
+  @objc public var unitID: Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension BuzzvilSDK.BZVBenefitHubConfig {
+  @objc public static func config(block: (BuzzvilSDK.BZVBenefitHubConfigBuilder) -> Swift.Void) -> BuzzvilSDK.BZVBenefitHubConfig
+  @objc convenience dynamic public init(block: (BuzzvilSDK.BZVBenefitHubConfigBuilder) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class BZVBenefitHubTheme : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefitConfig : ObjectiveC.NSObject {
+  @objc final public let appID: Swift.String
+  @objc final public let benefitHubConfig: BuzzvilSDK.BZVBenefitHubConfig?
+  @objc deinit
+}
+extension BuzzvilSDK.BuzzBenefitConfig {
+  final public class Builder {
+    public init(appID: Swift.String)
+    @objc deinit
+  }
+}
+extension BuzzvilSDK.BuzzBenefitConfig.Builder {
+  @discardableResult
+  final public func setDefaultBenefitHubConfig(_ config: BuzzvilSDK.BZVBenefitHubConfig) -> Self
+  final public func build() -> BuzzvilSDK.BuzzBenefitConfig
+}
+public typealias BuzzBenefitConfigBuilderBlock = (BuzzvilSDK.BuzzBenefitConfigBuilder) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers final public class BuzzBenefitConfigBuilder : ObjectiveC.NSObject {
+  @objc final public var appID: Swift.String?
+  @objc final public var benefitHubConfig: BuzzvilSDK.BZVBenefitHubConfig?
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension BuzzvilSDK.BuzzBenefitConfig {
+  @objc public static func config(block: (BuzzvilSDK.BuzzBenefitConfigBuilder) -> Swift.Void) -> BuzzvilSDK.BuzzBenefitConfig
+  @objc convenience dynamic public init(block: (BuzzvilSDK.BuzzBenefitConfigBuilder) -> Swift.Void)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class BZVBenefitHub : ObjectiveC.NSObject {
+  @objc public var config: BuzzvilSDK.BZVBenefitHubConfig {
+    @objc get
+  }
+  @objc public var viewController: BuzzvilSDK.BZVBenefitHubViewController {
+    @objc get
+  }
+  @objc public func show(on viewController: UIKit.UIViewController)
+  @objc public func load(onSuccess: @escaping ((Swift.Int) -> Swift.Void), onFailure: @escaping ((Foundation.NSError) -> Swift.Void))
+  @objc public func reset()
+  @objc deinit
+}
+public typealias BZVBenefitHubBuilderBlock = (BuzzvilSDK.BZVBenefitHubBuilder) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers public class BZVBenefitHubBuilder : ObjectiveC.NSObject {
+  @objc public var config: BuzzvilSDK.BZVBenefitHubConfig?
+  @objc public var theme: BuzzvilSDK.BZVBenefitHubTheme?
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension BuzzvilSDK.BZVBenefitHub {
+  @objc public static func benefitHub(block: (BuzzvilSDK.BZVBenefitHubBuilder) -> Swift.Void) -> BuzzvilSDK.BZVBenefitHub
+  @objc convenience dynamic public init(block: (BuzzvilSDK.BZVBenefitHubBuilder) -> Swift.Void)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class BZVBenefitHubViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc deinit
+}
+extension BuzzvilSDK.BZVBenefitHubViewController : UIKit.UICollectionViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+}
+extension BuzzvilSDK.BZVBenefitHubViewController : UIKit.UICollectionViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc final public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, viewForSupplementaryElementOfKind kind: Swift.String, at indexPath: Foundation.IndexPath) -> UIKit.UICollectionReusableView
+}
+extension BuzzvilSDK.BZVBenefitHubViewController : UIKit.UICollectionViewDataSourcePrefetching {
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, prefetchItemsAt indexPaths: [Foundation.IndexPath])
+}
+extension BuzzvilSDK.BZVBenefitHubViewController : UIKit.UICollectionViewDelegateFlowLayout {
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, insetForSectionAt section: Swift.Int) -> UIKit.UIEdgeInsets
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, minimumLineSpacingForSectionAt section: Swift.Int) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, referenceSizeForHeaderInSection section: Swift.Int) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, referenceSizeForFooterInSection section: Swift.Int) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+}
+extension BuzzvilSDK.BZVBenefitHubViewController : BuzzBoosterSDK.CampaignBannerViewControllerDelegate {
+  @_Concurrency.MainActor(unsafe) final public func campaignBannerViewController(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController, didOccur error: any Swift.Error)
+  @_Concurrency.MainActor(unsafe) final public func campaignBannerViewControllerLoadingDidStart(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
+  @_Concurrency.MainActor(unsafe) final public func campaignBannerViewControllerLoadingDidEnd(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
+}
+extension UIKit.UIScrollView : BuzzRxSwift.ReactiveCompatible {
+  public typealias ReactiveBase = UIKit.UIScrollView
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefit : ObjectiveC.NSObject {
+  @objc public static let shared: BuzzvilSDK.BuzzBenefit
+  @objc final public var config: BuzzvilSDK.BuzzBenefitConfig? {
+    @objc get
+  }
+  @objc final public func initialize(with config: BuzzvilSDK.BuzzBenefitConfig)
+  @objc final public func setUserInterfaceStyle(_ style: BuzzAdBenefitBase.BZVUserInterfaceStyle)
+  @objc final public func login(with user: BuzzvilSDK.BuzzBenefitUser, onSuccess: (() -> Swift.Void)?, onFailure: ((any Swift.Error) -> Swift.Void)?)
+  @objc final public func isLoggedIn() -> Swift.Bool
+  @objc final public func logout()
+  @objc deinit
+}
+@objc @objcMembers final public class BuzzBenefitUser : ObjectiveC.NSObject {
+  @objc final public let userID: Swift.String
+  @objc final public let gender: BuzzAdBenefitSDK.BZVUserGender
+  @objc final public let birthYear: Swift.Int
+  public init(userID: Swift.String, gender: BuzzAdBenefitSDK.BZVUserGender?, birthYear: Swift.Int?)
+  @objc deinit
+}

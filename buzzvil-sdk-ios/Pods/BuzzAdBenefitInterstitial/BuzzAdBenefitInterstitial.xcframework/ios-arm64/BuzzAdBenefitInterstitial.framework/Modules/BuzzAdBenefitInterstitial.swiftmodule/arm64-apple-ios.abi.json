@@ -1,0 +1,1460 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitNative",
+        "printedName": "BuzzAdBenefitNative",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzRxSwift",
+        "printedName": "BuzzRxSwift",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitNative",
+        "printedName": "BuzzAdBenefitNative",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BZVBuzzAdInterstitialBuilder",
+        "printedName": "BZVBuzzAdInterstitialBuilder",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "unitId",
+            "printedName": "unitId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(py)unitId",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC6unitIdSSSgvp",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)unitId",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC6unitIdSSSgvg",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)setUnitId:",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC6unitIdSSSgvs",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC6unitIdSSSgvM",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC6unitIdSSSgvM",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVBuzzAdInterstitialType",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialType",
+                "usr": "c:@E@BZVBuzzAdInterstitialType"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(py)type",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC4typeSo0ebD4TypeVvp",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVBuzzAdInterstitialType",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialType",
+                    "usr": "c:@E@BZVBuzzAdInterstitialType"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)type",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC4typeSo0ebD4TypeVvg",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVBuzzAdInterstitialType",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialType",
+                    "usr": "c:@E@BZVBuzzAdInterstitialType"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)setType:",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC4typeSo0ebD4TypeVvs",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC4typeSo0ebD4TypeVvM",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC4typeSo0ebD4TypeVvM",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "theme",
+            "printedName": "theme",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialTheme?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVBuzzAdInterstitialTheme",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialTheme",
+                    "usr": "c:objc(cs)BZVBuzzAdInterstitialTheme"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(py)theme",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC5themeSo0ebD5ThemeCSgvp",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialTheme?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BZVBuzzAdInterstitialTheme",
+                        "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialTheme",
+                        "usr": "c:objc(cs)BZVBuzzAdInterstitialTheme"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)theme",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC5themeSo0ebD5ThemeCSgvg",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialTheme?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BZVBuzzAdInterstitialTheme",
+                        "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialTheme",
+                        "usr": "c:objc(cs)BZVBuzzAdInterstitialTheme"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)setTheme:",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC5themeSo0ebD5ThemeCSgvs",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC5themeSo0ebD5ThemeCSgvM",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC5themeSo0ebD5ThemeCSgvM",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "inquiryButtonHidden",
+            "printedName": "inquiryButtonHidden",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(py)inquiryButtonHidden",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC19inquiryButtonHiddenSbvp",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)inquiryButtonHidden",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC19inquiryButtonHiddenSbvg",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)setInquiryButtonHidden:",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC19inquiryButtonHiddenSbvs",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC19inquiryButtonHiddenSbvM",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC19inquiryButtonHiddenSbvM",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVBuzzAdInterstitialBuilder",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder(im)init",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderCACycfc",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder",
+        "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD7BuilderC",
+        "moduleName": "BuzzAdBenefitInterstitial",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitNative",
+        "printedName": "BuzzAdBenefitNative",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzRxSwift",
+        "printedName": "BuzzRxSwift",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BZVBuzzAdInterstitialDelegate",
+        "printedName": "BZVBuzzAdInterstitialDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "bzvBuzzAdInterstitialDidLoadAd",
+            "printedName": "bzvBuzzAdInterstitialDidLoadAd(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BZVBuzzAdInterstitial",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(pl)BZVBuzzAdInterstitialDelegate(im)BZVBuzzAdInterstitialDidLoadAd:",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD8DelegateP03bzvabd7DidLoadB0yyAA0ebD0CF",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "genericSig": "<τ_0_0 where τ_0_0 : BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate>",
+            "sugared_genericSig": "<Self where Self : BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate>",
+            "protocolReq": true,
+            "objc_name": "BZVBuzzAdInterstitialDidLoadAd:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bzvBuzzAdInterstitialDidFail",
+            "printedName": "bzvBuzzAdInterstitialDidFail(toLoadAd:withError:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BZVBuzzAdInterstitial",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(pl)BZVBuzzAdInterstitialDelegate(im)BZVBuzzAdInterstitialDidFailToLoadAd:withError:",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD8DelegateP03bzvabD7DidFail06toLoadB09withErroryAA0ebD0C_s0M0_ptF",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "genericSig": "<τ_0_0 where τ_0_0 : BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate>",
+            "sugared_genericSig": "<Self where Self : BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate>",
+            "protocolReq": true,
+            "objc_name": "BZVBuzzAdInterstitialDidFailToLoadAd:withError:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "bzvBuzzAdInterstitialDidDismiss",
+            "printedName": "bzvBuzzAdInterstitialDidDismiss(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(pl)BZVBuzzAdInterstitialDelegate(im)BZVBuzzAdInterstitialDidDismiss:",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD8DelegateP03bzvabD10DidDismissyySo16UIViewControllerCF",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "genericSig": "<τ_0_0 where τ_0_0 : BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate>",
+            "sugared_genericSig": "<Self where Self : BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate>",
+            "protocolReq": true,
+            "objc_name": "BZVBuzzAdInterstitialDidDismiss:",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "c:@M@BuzzAdBenefitInterstitial@objc(pl)BZVBuzzAdInterstitialDelegate",
+        "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD8DelegateP",
+        "moduleName": "BuzzAdBenefitInterstitial",
+        "genericSig": "<τ_0_0 : ObjectiveC.NSObjectProtocol>",
+        "sugared_genericSig": "<Self : ObjectiveC.NSObjectProtocol>",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BZVBuzzAdInterstitial",
+        "printedName": "BZVBuzzAdInterstitial",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(py)delegate",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C8delegateAA0ebD8Delegate_pSgvp",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "ObjC"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BZVBuzzAdInterstitialDelegate",
+                        "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate",
+                        "usr": "c:@M@BuzzAdBenefitInterstitial@objc(pl)BZVBuzzAdInterstitialDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(im)delegate",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C8delegateAA0ebD8Delegate_pSgvg",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BZVBuzzAdInterstitialDelegate",
+                        "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate",
+                        "usr": "c:@M@BuzzAdBenefitInterstitial@objc(pl)BZVBuzzAdInterstitialDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(im)setDelegate:",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C8delegateAA0ebD8Delegate_pSgvs",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:25BuzzAdBenefitInterstitial07BZVBuzzbD0C8delegateAA0ebD8Delegate_pSgvM",
+                "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C8delegateAA0ebD8Delegate_pSgvM",
+                "moduleName": "BuzzAdBenefitInterstitial",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "load",
+            "printedName": "load()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(im)load",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C4loadyyF",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(on:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(im)presentOnViewController:",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C7present2onySo16UIViewControllerC_tF",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "objc_name": "presentOnViewController:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVBuzzAdInterstitial",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(im)init",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0CACycfc",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "interstitial",
+            "printedName": "interstitial(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVBuzzAdInterstitial",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVBuzzAdInterstitialBuilder",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder",
+                    "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(cm)interstitialWithBlock:",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C12interstitial4withACyAA0ebD7BuilderCXE_tFZ",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "static": true,
+            "objc_name": "interstitialWithBlock:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(block:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVBuzzAdInterstitial",
+                "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial",
+                "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVBuzzAdInterstitialBuilder",
+                    "printedName": "BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder",
+                    "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitialBuilder"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@CM@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(im)initWithBlock:",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C5blockACyAA0ebD7BuilderCXE_tcfc",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "objc_name": "initWithBlock:",
+            "declAttributes": [
+              "Dynamic",
+              "Convenience",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Convenience"
+          },
+          {
+            "kind": "Function",
+            "name": "interstitialViewControllerDidFinish",
+            "printedName": "interstitialViewControllerDidFinish(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial(im)interstitialViewControllerDidFinish:",
+            "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C35interstitialViewControllerDidFinishyySo06UIViewH0CF",
+            "moduleName": "BuzzAdBenefitInterstitial",
+            "declAttributes": [
+              "Dynamic",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitInterstitial@objc(cs)BZVBuzzAdInterstitial",
+        "mangledName": "$s25BuzzAdBenefitInterstitial07BZVBuzzbD0C",
+        "moduleName": "BuzzAdBenefitInterstitial",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitNative",
+        "printedName": "BuzzAdBenefitNative",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitNative",
+        "printedName": "BuzzAdBenefitNative",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitNative",
+        "printedName": "BuzzAdBenefitNative",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitInterstitial"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/BZVBuzzAdInterstitialBuilder.swift",
+      "kind": "BooleanLiteral",
+      "offset": 399,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 588,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 627,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 791,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 829,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 986,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1016,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1496,
+      "length": 2,
+      "value": "14"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/UI\/Cell\/InterstitialBottomSheetAdCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1526,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/BZVBuzzAdInterstitial.swift",
+      "kind": "StringLiteral",
+      "offset": 673,
+      "length": 21,
+      "value": "\"BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial\""
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 573,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 615,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 923,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 965,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1126,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1156,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialDialogViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 72,
+      "length": 32,
+      "value": "\"BuzzAdBenefitInterstitial.InterstitialDialogViewController\""
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 648,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 687,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 869,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 902,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 936,
+      "length": 4,
+      "value": "0.25"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1287,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1325,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1482,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1512,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2122,
+      "length": 2,
+      "value": "14"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2152,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialLandscapeDialogViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 72,
+      "length": 41,
+      "value": "\"BuzzAdBenefitInterstitial.InterstitialLandscapeDialogViewController\""
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialBottomSheetViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 175,
+      "length": 4,
+      "value": "\"ad\""
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialBottomSheetViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 236,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialBottomSheetViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 283,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialBottomSheetViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 468,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialBottomSheetViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1000,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitInterstitial\/ViewController\/InterstitialBottomSheetViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 72,
+      "length": 37,
+      "value": "\"BuzzAdBenefitInterstitial.InterstitialBottomSheetViewController\""
+    }
+  ]
+}

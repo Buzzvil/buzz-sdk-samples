@@ -1,0 +1,11 @@
+framework module BuzzAdBenefitInterstitial {
+  umbrella header "BuzzAdBenefitInterstitial.h"
+  export *
+
+  module * { export * }
+}
+
+module BuzzAdBenefitInterstitial.Swift {
+  header "BuzzAdBenefitInterstitial-Swift.h"
+  requires objc
+}

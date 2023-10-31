@@ -1,0 +1,857 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzAdBenefitBase
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AdSupport
+import AppTrackingTransparency
+@_exported import BuzzAdBenefitBase
+import BuzzRxSwift
+import DeveloperToolsSupport
+import Foundation
+import SDWebImage
+import Swift
+import SwiftUI
+import UIKit
+import WidgetKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc(BABBaseRewardEventType) public enum BaseRewardEventType : Swift.Int {
+  case landed
+  case action
+  case walked
+  case won
+  case opened
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(BABUserGenderDTO) public enum UserGenderDTO : Swift.Int {
+  case unknown
+  case male
+  case female
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class RemoteConfigService {
+  public init(userDefaults: Foundation.UserDefaults)
+  public func listConfigs(unitId: Swift.String) -> BuzzRxSwift.Single<BuzzAdBenefitBase.ConfigList>
+  public func getBooleanConfig(forKey key: BuzzAdBenefitBase.ConfigKey, unitId: Swift.String) -> BuzzRxSwift.Single<Swift.Bool>
+  public func getIntegerConfig(forKey key: BuzzAdBenefitBase.ConfigKey, unitId: Swift.String) -> BuzzRxSwift.Single<Swift.Int>
+  public func getStringConfig(forKey key: BuzzAdBenefitBase.ConfigKey, unitId: Swift.String) -> BuzzRxSwift.Single<Swift.String>
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(BABDeepLinkParser) public class DeepLinkParser : ObjectiveC.NSObject {
+  @objc public func parse(url: Foundation.URL) throws -> BuzzAdBenefitBase.DeepLink
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(BABUserInterfaceStyleOverridable) public protocol UserInterfaceStyleOverridable {
+  @objc func bab_needsUpdateCGColors(previousTraitCollection: UIKit.UITraitCollection?) -> Swift.Bool
+  @objc func bab_overrideUserInterfaceStyle()
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func bab_presentAlert(config: BuzzAdBenefitBase.AlertConfig)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(BABDevice) final public class Device : ObjectiveC.NSObject {
+  @objc public static let shared: BuzzAdBenefitBase.Device
+  @objc final public var advertisingIdentifier: Swift.String {
+    @objc get
+  }
+  @objc final public var identifierForVender: Swift.String? {
+    @objc get
+  }
+  @objc final public func toDictionary() -> [Swift.String : Swift.String]
+  @objc deinit
+}
+@objc(BABDeepLinkSource) public enum DeepLinkSource : Swift.Int, Swift.RawRepresentable {
+  case widget
+  public typealias RawValue = Swift.String
+  public var rawValue: BuzzAdBenefitBase.DeepLinkSource.RawValue {
+    get
+  }
+  public init?(rawValue: BuzzAdBenefitBase.DeepLinkSource.RawValue)
+}
+extension Foundation.NSAttributedString {
+  public static func bab_attributedString(format: Foundation.NSAttributedString, args: Foundation.NSAttributedString...) -> Foundation.NSAttributedString
+}
+extension BuzzRxSwift.PrimitiveSequence where Trait == BuzzRxSwift.SingleTrait, Element == BuzzAdBenefitBase.Response {
+  public static func createResponse(from urlRequest: Foundation.URLRequest) -> BuzzRxSwift.Single<BuzzAdBenefitBase.Response>
+  public func filter<R>(statusCodes: R) -> BuzzRxSwift.Single<Element> where R : Swift.RangeExpression, R.Bound == Swift.Int
+  public func filterSuccessfulStatusCodes() -> BuzzRxSwift.Single<Element>
+}
+@objc(BABBIEventTracker) public protocol BIEventTracker {
+  @objc func track(_ event: any BuzzAdBenefitBase.BIEvent)
+  @objc func track(_ event: any BuzzAdBenefitBase.BIEvent, unitId: Swift.String)
+}
+extension UIKit.UIImage {
+  @objc public static func bab_dynamicImage(light: UIKit.UIImage, dark: UIKit.UIImage) -> UIKit.UIImage
+}
+public protocol WidgetInstallChecker {
+  func isInstalled(_ kind: BuzzAdBenefitBase.WidgetKind) -> BuzzRxSwift.Observable<Swift.Bool>
+}
+extension UIKit.UIView : BuzzAdBenefitBase.UserInterfaceStyleOverridable {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func bab_overrideUserInterfaceStyle()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func bab_needsUpdateCGColors(previousTraitCollection: UIKit.UITraitCollection?) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(BABImageLoader) public class ImageLoader : ObjectiveC.NSObject {
+  public static func loadImage(from urlString: Swift.String) -> BuzzRxSwift.Observable<UIKit.UIImage>
+  public static func loadImage(from url: Foundation.URL) -> BuzzRxSwift.Observable<UIKit.UIImage>
+  @objc(loadImageFromURL:onImageView:) public static func loadImage(from url: Foundation.URL, on imageView: UIKit.UIImageView)
+  @objc deinit
+}
+@objc(BABBaseRewardResourceType) public enum BaseRewardResourceType : Swift.Int {
+  case ad
+  case article
+  case pedometer
+  case lottery
+  case feed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+final public class URLRequestBuilder {
+  public enum ContentType : Swift.String {
+    case json
+    case urlEncoded
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum Method : Swift.String {
+    case post
+    case get
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init()
+  final public func withMethod(_ method: BuzzAdBenefitBase.URLRequestBuilder.Method) -> BuzzAdBenefitBase.URLRequestBuilder
+  final public func withBaseUrl(_ baseUrl: Swift.String) -> Self
+  final public func withHeaders(_ headers: [Swift.String : Swift.String]) -> Self
+  final public func withPath(_ path: Swift.String) -> Self
+  final public func withQueryItems(_ queryItems: [Foundation.URLQueryItem]) -> Self
+  final public func withBody<T>(_ body: T, contentType: BuzzAdBenefitBase.URLRequestBuilder.ContentType) -> Self where T : Swift.Encodable
+  final public func build() throws -> Foundation.URLRequest
+  @objc deinit
+}
+extension BuzzAdBenefitBase.BABImage {
+  @objc public static var arrow_left: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var arrow_up: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var check: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var checkbox_checked: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var checkbox_unchecked: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var chevron_left: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var chevron_right: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var close: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var close_circle: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var empty: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var gift: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var help: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var screen_full: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var tooltip: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var volume_mute: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var volume_on: UIKit.UIImage {
+    @objc get
+  }
+}
+extension UIKit.UIWindow {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func bab_topViewController() -> UIKit.UIViewController?
+}
+extension BuzzAdBenefitBase.BABImage {
+  @objc public static var article: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var calendar_active: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var calendar_inactive: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var coin: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var coin_check: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var coin_empty: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var error: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var feed_daily_reward_point: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var feed_empty: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var feed_empty_privacy: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var feed_promotion_creative: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var feed_promotion_icon: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var gift_box_closed: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var gift_box_opened: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var gift_with_coin: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var learn_more: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var pause: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var play: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var replay: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var shining_coins: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var total_reward_widget: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var widget_tutorial_step1: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var widget_tutorial_step2: UIKit.UIImage {
+    @objc get
+  }
+  @objc public static var widget_tutorial_step3: UIKit.UIImage {
+    @objc get
+  }
+}
+@objc(BABUserProfileDTO) public class UserProfileDTO : ObjectiveC.NSObject {
+  @objc final public let userId: Swift.String
+  @objc final public let gender: BuzzAdBenefitBase.UserGenderDTO
+  @objc final public let birthYear: Swift.Int
+  @objc public init(userId: Swift.String, gender: BuzzAdBenefitBase.UserGenderDTO, birthYear: Swift.Int)
+  @objc public func toDictionary() -> [Swift.String : Swift.String]
+  @objc deinit
+}
+public protocol DailyRewardService {
+  func getState(unitId: Swift.String) -> BuzzRxSwift.Observable<BuzzAdBenefitBase.DailyRewardPageDTO>
+  func claimReward(unitId: Swift.String, rewardPath: Swift.String) -> BuzzRxSwift.Observable<BuzzAdBenefitBase.DailyRewardPageDTO>
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func bab_presentWidgetTutorial(config: BuzzAdBenefitBase.WidgetTutorialViewConfig, delegate: (any BuzzAdBenefitBase.WidgetTutorialViewControllerDelegate)?)
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func bab_aspectRatio() -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public func bab_reverseAspectRatio() -> CoreFoundation.CGFloat
+}
+@objc(BABBottomSheetPresentable) public protocol BottomSheetPresentable {
+  @objc func allowsDragToDismiss() -> Swift.Bool
+  @objc func allowsTapToDismiss() -> Swift.Bool
+  @objc(shouldRespondToPanGestureRecognizer:) func shouldRespond(to panGestureRecognizer: UIKit.UIPanGestureRecognizer) -> Swift.Bool
+  @objc func portraitHeightRatio() -> CoreFoundation.CGFloat
+  @objc func landscapeHeightRatio() -> CoreFoundation.CGFloat
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var bab_parentViewController: UIKit.UIViewController? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func bab_allSubviews<T>(ofType type: T.Type) -> [T] where T : UIKit.UIView
+}
+@_inheritsConvenienceInitializers @objc public class BABString : ObjectiveC.NSObject {
+  @objc public static func localizedString(forKey key: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct Shadow {
+  public init(color: CoreGraphics.CGColor, offset: CoreFoundation.CGSize, opacity: Swift.Float, radius: CoreFoundation.CGFloat)
+}
+@_hasMissingDesignatedInitializers @objc(BABBaseBIEvent) public class BaseBIEvent : ObjectiveC.NSObject, BuzzAdBenefitBase.BIEvent {
+  @objc final public let type: Swift.String
+  @objc final public let name: Swift.String
+  @objc final public let attributes: [Swift.String : Swift.String]
+  @objc deinit
+}
+public enum ImageError : Swift.Error {
+  case invalidUrl
+  case downloadFailure
+  public static func == (a: BuzzAdBenefitBase.ImageError, b: BuzzAdBenefitBase.ImageError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ObjectStorageError : Swift.Error {
+  case encodingFailed
+  case decodingFailed
+  case objectNotFound
+  public static func == (a: BuzzAdBenefitBase.ObjectStorageError, b: BuzzAdBenefitBase.ObjectStorageError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Foundation.UserDefaults {
+  public func bab_setObject<Object>(_ object: Object, forKey key: Swift.String) throws where Object : Swift.Encodable
+  public func bab_getObject<Object>(forKey: Swift.String, castTo type: Object.Type) throws -> Object where Object : Swift.Decodable
+}
+extension CoreGraphics.CGColor {
+  public static let bab_opaque: CoreGraphics.CGColor
+  public static let bab_transparent: CoreGraphics.CGColor
+}
+public struct AlertConfig {
+  public init(image: UIKit.UIImage?, titleText: Swift.String, bodyText: Swift.String, confirmText: Swift.String, confirmTextColor: UIKit.UIColor, cancelText: Swift.String, cancelTextColor: UIKit.UIColor, onConfirm: @escaping () -> Swift.Void = {}, onCancel: @escaping () -> Swift.Void = {})
+}
+extension Swift.String {
+  public static func bab_feedSuiteName(for unitId: Swift.String) -> Swift.String
+}
+public struct Config : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum RemoteConfigError : Swift.Error {
+  case invalidRequest
+  case configNotFound
+  case invalidResponse
+  public static func == (a: BuzzAdBenefitBase.RemoteConfigError, b: BuzzAdBenefitBase.RemoteConfigError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ColorParser {
+  public init()
+  public func parse(rawHex: Swift.String) throws -> UIKit.UIColor
+}
+public protocol UnitManager {
+  func fetchAndCacheSettings(with unitId: Swift.String) -> BuzzRxSwift.Observable<BuzzAdBenefitBase.UnitSettings>
+  func getCachedSettings(with unitId: Swift.String) -> BuzzAdBenefitBase.UnitSettings
+}
+extension BuzzAdBenefitBase.BaseBIEvent {
+  @objc public static func initSDK() -> any BuzzAdBenefitBase.BIEvent
+  @objc public static func enterForeground() -> any BuzzAdBenefitBase.BIEvent
+  @objc public static func showPrivacyPolicy() -> any BuzzAdBenefitBase.BIEvent
+  @objc public static func agreePrivacyPolicy() -> any BuzzAdBenefitBase.BIEvent
+  @objc public static func disagreePrivacyPolicy() -> any BuzzAdBenefitBase.BIEvent
+  @objc public static func enterPrivacyPolicyWebPage() -> any BuzzAdBenefitBase.BIEvent
+  @objc public static func clickWidget() -> any BuzzAdBenefitBase.BIEvent
+}
+public protocol WidgetTutorialViewControllerDelegate : AnyObject {
+  func widgetTutorialViewControllerDidCancel(_ viewController: UIKit.UIViewController)
+  func widgetTutorialViewControllerDidConfirm(_ viewController: UIKit.UIViewController)
+}
+extension BuzzAdBenefitBase.TrackingAuthorizer {
+  public func requestAuthorization() -> BuzzRxSwift.Observable<BuzzAdBenefitBase.TrackingAuthorizationStatus>
+}
+@objc(BABBaseRewardError) public enum BaseRewardError : Swift.Int, Swift.Error {
+  case resourceNotFound
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum DailyRewardAPIError : Swift.Error {
+  case networkRequestFailure
+  case invalidHttpStatusCode
+  public static func == (a: BuzzAdBenefitBase.DailyRewardAPIError, b: BuzzAdBenefitBase.DailyRewardAPIError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIViewController : BuzzAdBenefitBase.UserInterfaceStyleOverridable {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func bab_overrideUserInterfaceStyle()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func bab_needsUpdateCGColors(previousTraitCollection: UIKit.UITraitCollection?) -> Swift.Bool
+}
+@objc(BABTrackingAuthorizationStatus) public enum TrackingAuthorizationStatus : Swift.Int {
+  case authorized
+  case denied
+  case notDetermined
+  case restricted
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIColor {
+  @objc public static func bab_dynamicColor(light: UIKit.UIColor, dark: UIKit.UIColor) -> UIKit.UIColor
+}
+public struct DailyRewardPageDTO : Swift.Decodable {
+  public let pageType: Swift.String
+  public let pageId: Swift.String
+  public let pageDetail: BuzzAdBenefitBase.DailyRewardDTO
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc(BABDeepLinkDestination) public enum DeepLinkDestination : Swift.Int, Swift.RawRepresentable {
+  case feed
+  public typealias RawValue = Swift.String
+  public var rawValue: BuzzAdBenefitBase.DeepLinkDestination.RawValue {
+    get
+  }
+  public init?(rawValue: BuzzAdBenefitBase.DeepLinkDestination.RawValue)
+}
+extension BuzzAdBenefitBase.Color {
+  @objc public static var gray_lightest: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var gray_light: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var gray_darkest: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black005: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black012: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black015: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black033: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black040: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black055: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black070: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black087: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var black100: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var white005: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var white015: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var white033: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var white040: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var white070: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var white100: UIKit.UIColor {
+    @objc get
+  }
+}
+@objc(BABDeepLink) public class DeepLink : ObjectiveC.NSObject {
+  @objc final public let source: BuzzAdBenefitBase.DeepLinkSource
+  @objc final public let destination: BuzzAdBenefitBase.DeepLinkDestination
+  @objc public init(source: BuzzAdBenefitBase.DeepLinkSource, destination: BuzzAdBenefitBase.DeepLinkDestination)
+  public func toURL() throws -> Foundation.URL
+  @objc deinit
+}
+extension UIKit.UIScrollView {
+  @_Concurrency.MainActor(unsafe) public func bab_isScrolledToLeft() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func bab_isScrolledToRight() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func bab_isScrolledToTop() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func bab_isScrolledToBottom() -> Swift.Bool
+}
+@objc(BABBIEvent) public protocol BIEvent {
+  @objc var type: Swift.String { get }
+  @objc var name: Swift.String { get }
+  @objc var attributes: [Swift.String : Swift.String] { get }
+}
+extension UIKit.UIImage {
+  @objc dynamic public func bab_tint(_ color: UIKit.UIColor) -> UIKit.UIImage
+}
+public enum ColorError : Swift.Error {
+  case invalidRawHex
+  public static func == (a: BuzzAdBenefitBase.ColorError, b: BuzzAdBenefitBase.ColorError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Response : Swift.Equatable {
+  public let data: Foundation.Data
+  public let httpResponse: Foundation.HTTPURLResponse
+  public static func == (a: BuzzAdBenefitBase.Response, b: BuzzAdBenefitBase.Response) -> Swift.Bool
+}
+public struct DailyRewardDTO : Swift.Decodable {
+  public let isAttendedToday: Swift.Bool
+  public let entryDescription: Swift.String
+  public let tooltipMessage: Swift.String
+  public let rewardCallback: Swift.String
+  public let notice: [Swift.String]
+  public let attendedDays: Swift.Int
+  public let maxAttendableDays: Swift.Int
+  public let rewardPointAmount: Swift.Int
+  public let toastMessage: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var bab_isVisible: Swift.Bool {
+    @objc get
+  }
+}
+public enum NetworkError : Swift.Error {
+  case buildURLRequestFailed
+  case invalidHttpStatusCode
+  case nonHttpResponse
+  case parseStringFailed
+  public static func == (a: BuzzAdBenefitBase.NetworkError, b: BuzzAdBenefitBase.NetworkError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc(BABSessionDTO) public class SessionDTO : ObjectiveC.NSObject {
+  @objc final public let deviceId: Swift.String
+  @objc final public let isNewDevice: Swift.Bool
+  @objc final public let key: Swift.String
+  @objc public func toDictionary() -> [Swift.String : Swift.String]
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class BABImage : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(BABLogger) public class Logger : ObjectiveC.NSObject {
+  @objc public static func enable(subsystem: Swift.String)
+  @objc public static func log(_ message: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Swift.KeyedDecodingContainer {
+  public func bab_decode(_ type: [Swift.String : Any].Type, forKey key: K) throws -> [Swift.String : Any]
+  public func bab_decodeIfPresent(_ type: [Swift.String : Any].Type, forKey key: K) throws -> [Swift.String : Any]?
+  public func bab_decode(_ type: [Any].Type, forKey key: K) throws -> [Any]
+  public func bab_decodeIfPresent(_ type: [Any].Type, forKey key: K) throws -> [Any]?
+}
+@_inheritsConvenienceInitializers @objc(BABColor) @objcMembers public class Color : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct WidgetTutorialViewConfig {
+  public init(buttonBackgroundColor: UIKit.UIColor, buttonTextColor: UIKit.UIColor)
+}
+@_inheritsConvenienceInitializers @objc(BABServer) final public class Server : ObjectiveC.NSObject {
+  @objc(BABServerEnvironment) public enum Environment : Swift.Int {
+    case prod
+    case prodmini
+    case dev
+    case staging
+    case stagingQA
+    case stagingQA2
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc(BABService) public enum Service : Swift.Int {
+    case ad
+    case auth
+    case insight
+    case screen
+    case buzzbooster
+    case base
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc final public func setEnvironment(to environment: BuzzAdBenefitBase.Server.Environment)
+  @objc final public func getBaseUrl(of service: BuzzAdBenefitBase.Server.Service) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum WidgetKind : Swift.String {
+  case totalReward
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension BuzzAdBenefitBase.Color {
+  @objc public static var status_best: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var status_success: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var status_warning: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var status_error: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var status_alert: UIKit.UIColor {
+    @objc get
+  }
+}
+extension BuzzAdBenefitBase.Color {
+  @objc public static var text_base: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var text_emphasis: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var text_description: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var text_assistive: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var text_disabled: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var text_overlay: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var text_deem: UIKit.UIColor {
+    @objc get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(BABBaseRewardManager) final public class BaseRewardManager : ObjectiveC.NSObject {
+  @objc convenience override dynamic public init()
+  @objc final public func getBaseRewardAmount(with unitId: Swift.String, eventType: BuzzAdBenefitBase.BaseRewardEventType, resourceType: BuzzAdBenefitBase.BaseRewardResourceType, onSuccess: @escaping (Swift.Int) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
+  @objc final public func claimBaseReward(with unitId: Swift.String, eventType: BuzzAdBenefitBase.BaseRewardEventType, resourceType: BuzzAdBenefitBase.BaseRewardResourceType, onSuccess: @escaping (Swift.Int) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
+  @objc deinit
+}
+public enum ConfigKey : Swift.String {
+  case appPrivacyPolicyUIEnabled
+  case nativeAutoRefreshEnabled
+  case feedDailyRewardEnabled
+  case dailyRewardInterstitialUnitId
+  case appTrackingTransparencyEnabled
+  case buzzBenefitHeaderEnabled
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(BABSDKCore) final public class SDKCore : ObjectiveC.NSObject {
+  @objc public static let shared: BuzzAdBenefitBase.SDKCore
+  @objc final public var authManager: any BuzzAdBenefitBase.AuthManager {
+    @objc get
+    @objc set
+  }
+  @objc final public var biEventTracker: any BuzzAdBenefitBase.BIEventTracker {
+    @objc get
+    @objc set
+  }
+  final public var dailyRewardService: any BuzzAdBenefitBase.DailyRewardService {
+    get
+    set
+  }
+  @objc final public let baseRewardManager: BuzzAdBenefitBase.BaseRewardManager
+  @objc final public let server: BuzzAdBenefitBase.Server
+  @objc final public let trackingAuthorizer: any BuzzAdBenefitBase.TrackingAuthorizer
+  final public let unitManager: any BuzzAdBenefitBase.UnitManager
+  final public let widgetInstallChecker: any BuzzAdBenefitBase.WidgetInstallChecker
+  @objc final public var userInterfaceStyle: BuzzAdBenefitBase.BZVUserInterfaceStyle
+  @objc deinit
+}
+extension BuzzAdBenefitBase.Color {
+  @objc public static var primary_dark: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var primary_base: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var primary_light: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var primary_lighter: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var primary_lightest: UIKit.UIColor {
+    @objc get
+  }
+}
+extension BuzzAdBenefitBase.Color {
+  @objc public static var background_base: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_emphasis: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_separator: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_elevation: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_modal: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_overlay_drastic: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_overlay_ripple: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_overlay_light: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var background_overlay_lightest: UIKit.UIColor {
+    @objc get
+  }
+}
+public struct ConfigList {
+}
+extension BuzzAdBenefitBase.ConfigList : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@objc(BABAuthManagerSwift) public protocol AuthManager {
+  @objc func isLoggedIn() -> Swift.Bool
+  @objc func loadBuzzUUIDString() -> Swift.String
+  @objc func loadSession() -> BuzzAdBenefitBase.SessionDTO?
+  @objc func loadToken() -> Swift.String?
+  @objc func loadUserProfile() -> BuzzAdBenefitBase.UserProfileDTO?
+  @objc func login(with userProfile: BuzzAdBenefitBase.UserProfileDTO, onSuccess: @escaping (BuzzAdBenefitBase.SessionDTO) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
+  @objc func logout()
+}
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func bab_presentBottomSheet(_ viewControllerToPresent: UIKit.UIViewController, completion: (() -> Swift.Void)? = nil)
+}
+@objc(BABTrackingAuthorizer) public protocol TrackingAuthorizer {
+  @objc func canGuideAuthorization() -> Swift.Bool
+  @objc func canRequestAuthorization() -> Swift.Bool
+  @objc func loadAuthorizationGuideURL() -> Foundation.URL
+  @objc func requestAuthorization(onSuccess: @escaping (BuzzAdBenefitBase.TrackingAuthorizationStatus) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
+}
+extension BuzzAdBenefitBase.Color {
+  @objc public static var dimmer_base: UIKit.UIColor {
+    @objc get
+  }
+  @objc public static var dimmer_drastic: UIKit.UIColor {
+    @objc get
+  }
+}
+public struct UnitSettings : Swift.Decodable, Swift.Equatable {
+  public let feedRatio: BuzzAdBenefitBase.FeedRatio
+  public init(feedRatio: BuzzAdBenefitBase.FeedRatio)
+  public static func == (a: BuzzAdBenefitBase.UnitSettings, b: BuzzAdBenefitBase.UnitSettings) -> Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FeedRatio : Swift.Decodable, Swift.Equatable {
+  public let ad: Swift.Int
+  public let content: Swift.Int
+  public init(ad: Swift.Int, content: Swift.Int)
+  public static func == (a: BuzzAdBenefitBase.FeedRatio, b: BuzzAdBenefitBase.FeedRatio) -> Swift.Bool
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIColor {
+  @objc dynamic public func bab_isEqual(_ other: UIKit.UIColor) -> Swift.Bool
+}
+extension BuzzAdBenefitBase.BaseRewardEventType : Swift.Equatable {}
+extension BuzzAdBenefitBase.BaseRewardEventType : Swift.Hashable {}
+extension BuzzAdBenefitBase.BaseRewardEventType : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.UserGenderDTO : Swift.Equatable {}
+extension BuzzAdBenefitBase.UserGenderDTO : Swift.Hashable {}
+extension BuzzAdBenefitBase.UserGenderDTO : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.DeepLinkSource : Swift.Equatable {}
+extension BuzzAdBenefitBase.DeepLinkSource : Swift.Hashable {}
+extension BuzzAdBenefitBase.BaseRewardResourceType : Swift.Equatable {}
+extension BuzzAdBenefitBase.BaseRewardResourceType : Swift.Hashable {}
+extension BuzzAdBenefitBase.BaseRewardResourceType : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.URLRequestBuilder.ContentType : Swift.Equatable {}
+extension BuzzAdBenefitBase.URLRequestBuilder.ContentType : Swift.Hashable {}
+extension BuzzAdBenefitBase.URLRequestBuilder.ContentType : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.URLRequestBuilder.Method : Swift.Equatable {}
+extension BuzzAdBenefitBase.URLRequestBuilder.Method : Swift.Hashable {}
+extension BuzzAdBenefitBase.URLRequestBuilder.Method : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.ImageError : Swift.Equatable {}
+extension BuzzAdBenefitBase.ImageError : Swift.Hashable {}
+extension BuzzAdBenefitBase.ObjectStorageError : Swift.Equatable {}
+extension BuzzAdBenefitBase.ObjectStorageError : Swift.Hashable {}
+extension BuzzAdBenefitBase.RemoteConfigError : Swift.Equatable {}
+extension BuzzAdBenefitBase.RemoteConfigError : Swift.Hashable {}
+extension BuzzAdBenefitBase.BaseRewardError : Swift.Equatable {}
+extension BuzzAdBenefitBase.BaseRewardError : Swift.Hashable {}
+extension BuzzAdBenefitBase.BaseRewardError : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.DailyRewardAPIError : Swift.Equatable {}
+extension BuzzAdBenefitBase.DailyRewardAPIError : Swift.Hashable {}
+extension BuzzAdBenefitBase.TrackingAuthorizationStatus : Swift.Equatable {}
+extension BuzzAdBenefitBase.TrackingAuthorizationStatus : Swift.Hashable {}
+extension BuzzAdBenefitBase.TrackingAuthorizationStatus : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.DeepLinkDestination : Swift.Equatable {}
+extension BuzzAdBenefitBase.DeepLinkDestination : Swift.Hashable {}
+extension BuzzAdBenefitBase.ColorError : Swift.Equatable {}
+extension BuzzAdBenefitBase.ColorError : Swift.Hashable {}
+extension BuzzAdBenefitBase.NetworkError : Swift.Equatable {}
+extension BuzzAdBenefitBase.NetworkError : Swift.Hashable {}
+extension BuzzAdBenefitBase.Server.Environment : Swift.Equatable {}
+extension BuzzAdBenefitBase.Server.Environment : Swift.Hashable {}
+extension BuzzAdBenefitBase.Server.Environment : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.Server.Service : Swift.Equatable {}
+extension BuzzAdBenefitBase.Server.Service : Swift.Hashable {}
+extension BuzzAdBenefitBase.Server.Service : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.WidgetKind : Swift.Equatable {}
+extension BuzzAdBenefitBase.WidgetKind : Swift.Hashable {}
+extension BuzzAdBenefitBase.WidgetKind : Swift.RawRepresentable {}
+extension BuzzAdBenefitBase.ConfigKey : Swift.Equatable {}
+extension BuzzAdBenefitBase.ConfigKey : Swift.Hashable {}
+extension BuzzAdBenefitBase.ConfigKey : Swift.RawRepresentable {}

@@ -1,0 +1,1359 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitFeed",
+        "printedName": "BuzzAdBenefitFeed",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BABDeepLinkNavigator",
+        "printedName": "BABDeepLinkNavigator",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "navigate",
+            "printedName": "navigate(deepLink:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DeepLink",
+                "printedName": "BuzzAdBenefitBase.DeepLink",
+                "usr": "c:@M@BuzzAdBenefitBase@objc(cs)BABDeepLink"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkNavigator(im)navigateWithDeepLink:",
+            "mangledName": "$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC8navigate04deepF0y0abC4Base04DeepF0C_tF",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "navigateWithDeepLink:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABDeepLinkNavigator",
+                "printedName": "BuzzAdBenefitSDK.BABDeepLinkNavigator",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkNavigator"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkNavigator(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkNavigator",
+        "mangledName": "$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BZVUserPreferences",
+        "printedName": "BZVUserPreferences",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVUserPreferences",
+                "printedName": "BuzzAdBenefitSDK.BZVUserPreferences",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK18BZVUserPreferencesCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "userPreferences",
+            "printedName": "userPreferences(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVUserPreferences",
+                "printedName": "BuzzAdBenefitSDK.BZVUserPreferences",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BuzzAdBenefitSDK.BZVUserPreferencesBuilder) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVUserPreferencesBuilder",
+                    "printedName": "BuzzAdBenefitSDK.BZVUserPreferencesBuilder",
+                    "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences(cm)userPreferencesWithBlock:",
+            "mangledName": "$s16BuzzAdBenefitSDK18BZVUserPreferencesC04userF04withACyAA0eF7BuilderCXE_tFZ",
+            "moduleName": "BuzzAdBenefitSDK",
+            "static": true,
+            "objc_name": "userPreferencesWithBlock:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(block:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVUserPreferences",
+                "printedName": "BuzzAdBenefitSDK.BZVUserPreferences",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(BuzzAdBenefitSDK.BZVUserPreferencesBuilder) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVUserPreferencesBuilder",
+                    "printedName": "BuzzAdBenefitSDK.BZVUserPreferencesBuilder",
+                    "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@CM@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences(im)initWithBlock:",
+            "mangledName": "$s16BuzzAdBenefitSDK18BZVUserPreferencesC5blockACyAA0eF7BuilderCXE_tcfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "initWithBlock:",
+            "declAttributes": [
+              "Dynamic",
+              "Convenience",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "init_kind": "Convenience"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences",
+        "mangledName": "$s16BuzzAdBenefitSDK18BZVUserPreferencesC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BZVWebInterface",
+        "printedName": "BZVWebInterface",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(webView:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVWebInterface",
+                "printedName": "BuzzAdBenefitSDK.BZVWebInterface",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVWebInterface"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "WebKit.WKWebView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WKWebView",
+                    "printedName": "WebKit.WKWebView",
+                    "usr": "c:objc(cs)WKWebView"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVWebInterface(im)initWithWebView:",
+            "mangledName": "$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewACSo05WKWebH0CSg_tcfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "initWithWebView:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKScriptMessage",
+                "printedName": "WebKit.WKScriptMessage",
+                "usr": "c:objc(cs)WKScriptMessage"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVWebInterface(im)handleScriptMessage:",
+            "mangledName": "$s16BuzzAdBenefitSDK15BZVWebInterfaceC6handleyySo15WKScriptMessageCF",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "handleScriptMessage:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVWebInterface",
+                "printedName": "BuzzAdBenefitSDK.BZVWebInterface",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVWebInterface"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVWebInterface(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK15BZVWebInterfaceCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVWebInterface",
+        "mangledName": "$s16BuzzAdBenefitSDK15BZVWebInterfaceC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitFeed",
+        "printedName": "BuzzAdBenefitFeed",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BABDeepLinkTracker",
+        "printedName": "BABDeepLinkTracker",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(eventTracker:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABDeepLinkTracker",
+                "printedName": "BuzzAdBenefitSDK.BABDeepLinkTracker",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkTracker"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BIEventTracker",
+                "printedName": "BuzzAdBenefitBase.BIEventTracker",
+                "usr": "c:@M@BuzzAdBenefitBase@objc(pl)BABBIEventTracker"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkTracker(im)initWithEventTracker:",
+            "mangledName": "$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC05eventG0AC0abC4Base07BIEventG0_p_tcfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "initWithEventTracker:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "track",
+            "printedName": "track(deepLink:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DeepLink",
+                "printedName": "BuzzAdBenefitBase.DeepLink",
+                "usr": "c:@M@BuzzAdBenefitBase@objc(cs)BABDeepLink"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkTracker(im)trackWithDeepLink:",
+            "mangledName": "$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC5track04deepF0y0abC4Base04DeepF0C_tF",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "trackWithDeepLink:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABDeepLinkTracker",
+                "printedName": "BuzzAdBenefitSDK.BABDeepLinkTracker",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkTracker"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkTracker(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK18BABDeepLinkTrackerCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABDeepLinkTracker",
+        "mangledName": "$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BABUserProfileMapper",
+        "printedName": "BABUserProfileMapper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "transform",
+            "printedName": "transform(loginRequest:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UserProfileDTO",
+                "printedName": "BuzzAdBenefitBase.UserProfileDTO",
+                "usr": "c:@M@BuzzAdBenefitBase@objc(cs)BABUserProfileDTO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BZVLoginRequest",
+                "printedName": "BuzzAdBenefitSDK.BZVLoginRequest",
+                "usr": "c:objc(cs)BZVLoginRequest"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserProfileMapper(im)transformWithLoginRequest:",
+            "mangledName": "$s16BuzzAdBenefitSDK20BABUserProfileMapperC9transform12loginRequest0abC4Base04UserF3DTOCSo08BZVLoginJ0C_tF",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "transformWithLoginRequest:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABUserProfileMapper",
+                "printedName": "BuzzAdBenefitSDK.BABUserProfileMapper",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserProfileMapper"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserProfileMapper(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK20BABUserProfileMapperCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserProfileMapper",
+        "mangledName": "$s16BuzzAdBenefitSDK20BABUserProfileMapperC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BZVUserPreferencesBuilder",
+        "printedName": "BZVUserPreferencesBuilder",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "autoPlayType",
+            "printedName": "autoPlayType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVVideoAutoPlayType",
+                "printedName": "BuzzAdBenefitSDK.BZVVideoAutoPlayType",
+                "usr": "c:@E@BZVVideoAutoPlayType"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder(py)autoPlayType",
+            "mangledName": "$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0Vvp",
+            "moduleName": "BuzzAdBenefitSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVVideoAutoPlayType",
+                    "printedName": "BuzzAdBenefitSDK.BZVVideoAutoPlayType",
+                    "usr": "c:@E@BZVVideoAutoPlayType"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder(im)autoPlayType",
+                "mangledName": "$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0Vvg",
+                "moduleName": "BuzzAdBenefitSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BZVVideoAutoPlayType",
+                    "printedName": "BuzzAdBenefitSDK.BZVVideoAutoPlayType",
+                    "usr": "c:@E@BZVVideoAutoPlayType"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder(im)setAutoPlayType:",
+                "mangledName": "$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0Vvs",
+                "moduleName": "BuzzAdBenefitSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvM",
+                "mangledName": "$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvM",
+                "moduleName": "BuzzAdBenefitSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BZVUserPreferencesBuilder",
+                "printedName": "BuzzAdBenefitSDK.BZVUserPreferencesBuilder",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferencesBuilder",
+        "mangledName": "$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BABConfigMapper",
+        "printedName": "BABConfigMapper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "transform",
+            "printedName": "transform(config:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABConfig",
+                "printedName": "BuzzAdBenefitBase.BABConfig",
+                "usr": "c:objc(cs)BABConfig"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BZVConfig",
+                "printedName": "BuzzAdBenefitSDK.BZVConfig",
+                "usr": "c:objc(cs)BZVConfig"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABConfigMapper(im)transformWithConfig:",
+            "mangledName": "$s16BuzzAdBenefitSDK15BABConfigMapperC9transform6configSo0E0CSo9BZVConfigC_tF",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "transformWithConfig:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABConfigMapper",
+                "printedName": "BuzzAdBenefitSDK.BABConfigMapper",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABConfigMapper"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABConfigMapper(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK15BABConfigMapperCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABConfigMapper",
+        "mangledName": "$s16BuzzAdBenefitSDK15BABConfigMapperC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitBase",
+        "printedName": "BuzzAdBenefitBase",
+        "declKind": "Import",
+        "moduleName": "BuzzAdBenefitSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BABUserPreferencesMapper",
+        "printedName": "BABUserPreferencesMapper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "transform",
+            "printedName": "transform(userPreferences:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABUserPreference",
+                "printedName": "BuzzAdBenefitBase.BABUserPreference",
+                "usr": "c:objc(cs)BABUserPreference"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "BZVUserPreferences",
+                "printedName": "BuzzAdBenefitSDK.BZVUserPreferences",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVUserPreferences"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserPreferencesMapper(im)transformWithUserPreferences:",
+            "mangledName": "$s16BuzzAdBenefitSDK24BABUserPreferencesMapperC9transform04userF0So0E10PreferenceCAA07BZVUserF0C_tF",
+            "moduleName": "BuzzAdBenefitSDK",
+            "objc_name": "transformWithUserPreferences:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BABUserPreferencesMapper",
+                "printedName": "BuzzAdBenefitSDK.BABUserPreferencesMapper",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserPreferencesMapper"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserPreferencesMapper(im)init",
+            "mangledName": "$s16BuzzAdBenefitSDK24BABUserPreferencesMapperCACycfc",
+            "moduleName": "BuzzAdBenefitSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BABUserPreferencesMapper",
+        "mangledName": "$s16BuzzAdBenefitSDK24BABUserPreferencesMapperC",
+        "moduleName": "BuzzAdBenefitSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitSDK\/Model\/BZVUserPreferences.swift",
+      "kind": "StringLiteral",
+      "offset": 68,
+      "length": 18,
+      "value": "\"BuzzAdBenefitSDK.BZVUserPreferences\""
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitSDK\/Model\/BZVWebInterface.swift",
+      "kind": "StringLiteral",
+      "offset": 85,
+      "length": 15,
+      "value": "\"BuzzAdBenefitSDK.BZVWebInterface\""
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzAdBenefit\/BuzzAdBenefitSDK\/Model\/BABDeepLinkTracker.swift",
+      "kind": "StringLiteral",
+      "offset": 96,
+      "length": 18,
+      "value": "\"BuzzAdBenefitSDK.BABDeepLinkTracker\""
+    }
+  ]
+}

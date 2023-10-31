@@ -1,0 +1,11 @@
+framework module BuzzAdBenefitBase {
+  umbrella header "BuzzAdBenefitBase.h"
+  export *
+
+  module * { export * }
+}
+
+module BuzzAdBenefitBase.Swift {
+  header "BuzzAdBenefitBase-Swift.h"
+  requires objc
+}

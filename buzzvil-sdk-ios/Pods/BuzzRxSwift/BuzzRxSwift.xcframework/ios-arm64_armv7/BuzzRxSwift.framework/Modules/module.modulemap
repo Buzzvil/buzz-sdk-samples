@@ -1,0 +1,4 @@
+framework module BuzzRxSwift {
+  header "BuzzRxSwift-Swift.h"
+  requires objc
+}

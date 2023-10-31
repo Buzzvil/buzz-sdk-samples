@@ -1,0 +1,5 @@
+framework module GoogleInteractiveMediaAds {
+  umbrella header "GoogleInteractiveMediaAds.h"
+  export *
+  module * { export * }
+}

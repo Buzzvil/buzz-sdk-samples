@@ -1,3 +1,6 @@
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/Buzzvil/Specs.git'
+
 deployment_target = '11.0'
 
 platform :ios, deployment_target
@@ -7,5 +10,6 @@ target 'buzzvil-sdk-ios' do
   use_frameworks!
 
   # Pods for buzzvil-sdk-ios
+  pod 'BuzzvilSDK', '= 5.0.0-rc.1'
 
 end

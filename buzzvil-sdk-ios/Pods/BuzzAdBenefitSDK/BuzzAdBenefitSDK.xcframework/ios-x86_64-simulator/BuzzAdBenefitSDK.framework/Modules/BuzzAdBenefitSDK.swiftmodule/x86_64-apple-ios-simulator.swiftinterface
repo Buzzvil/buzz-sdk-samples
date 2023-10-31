@@ -1,0 +1,57 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzAdBenefitSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import BuzzAdBenefitBase
+import BuzzAdBenefitFeed
+@_exported import BuzzAdBenefitSDK
+import Foundation
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers @objcMembers public class BABDeepLinkNavigator : ObjectiveC.NSObject {
+  @objc public func navigate(deepLink: BuzzAdBenefitBase.DeepLink)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class BZVUserPreferences : ObjectiveC.NSObject {
+  @objc deinit
+}
+@objc @objcMembers public class BZVWebInterface : ObjectiveC.NSObject {
+  @objc public init(webView: WebKit.WKWebView?)
+  @objc(handleScriptMessage:) public func handle(_ scriptMessage: WebKit.WKScriptMessage)
+  @objc deinit
+}
+@objc @objcMembers public class BABDeepLinkTracker : ObjectiveC.NSObject {
+  @objc public init(eventTracker: any BuzzAdBenefitBase.BIEventTracker)
+  @objc public func track(deepLink: BuzzAdBenefitBase.DeepLink)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class BABUserProfileMapper : ObjectiveC.NSObject {
+  @objc public func transform(loginRequest: BuzzAdBenefitSDK.BZVLoginRequest) -> BuzzAdBenefitBase.UserProfileDTO
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias BZVUserPreferencesBuilderBlock = (BuzzAdBenefitSDK.BZVUserPreferencesBuilder) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers public class BZVUserPreferencesBuilder : ObjectiveC.NSObject {
+  @objc public var autoPlayType: BuzzAdBenefitSDK.BZVVideoAutoPlayType
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension BuzzAdBenefitSDK.BZVUserPreferences {
+  @objc(userPreferencesWithBlock:) public static func userPreferences(with block: (BuzzAdBenefitSDK.BZVUserPreferencesBuilder) -> Swift.Void) -> BuzzAdBenefitSDK.BZVUserPreferences
+  @objc convenience dynamic public init(block: (BuzzAdBenefitSDK.BZVUserPreferencesBuilder) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class BABConfigMapper : ObjectiveC.NSObject {
+  @objc public func transform(config: BuzzAdBenefitSDK.BZVConfig) -> BuzzAdBenefitBase.BABConfig
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class BABUserPreferencesMapper : ObjectiveC.NSObject {
+  @objc public func transform(userPreferences: BuzzAdBenefitSDK.BZVUserPreferences) -> BuzzAdBenefitBase.BABUserPreference
+  @objc override dynamic public init()
+  @objc deinit
+}

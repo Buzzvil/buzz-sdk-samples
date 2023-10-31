@@ -1,0 +1,17 @@
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/BuzzAdBenefitSDK
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImageWebPCoder" "${PODS_CONFIGURATION_BUILD_DIR}/libwebp" "${PODS_ROOT}/BuzzAdBenefitBase" "${PODS_ROOT}/BuzzAdBenefitFeed" "${PODS_ROOT}/BuzzAdBenefitInterstitial" "${PODS_ROOT}/BuzzAdBenefitNative" "${PODS_ROOT}/BuzzAdBenefitSDK" "${PODS_ROOT}/BuzzRxSwift" "${PODS_ROOT}/GoogleAds-IMA-iOS-SDK" "${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitBase" "${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitFeed" "${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitInterstitial" "${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitNative" "${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitSDK" "${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzRxSwift" "${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAds-IMA-iOS-SDK"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LIBRARY_SEARCH_PATHS = $(inherited) "${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
+OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "AdSupport" -framework "AudioToolbox" -framework "BuzzAdBenefitBase" -framework "BuzzAdBenefitFeed" -framework "BuzzAdBenefitInterstitial" -framework "BuzzAdBenefitNative" -framework "BuzzRxSwift" -framework "CoreFoundation" -framework "CoreGraphics" -framework "CoreMedia" -framework "GoogleInteractiveMediaAds" -framework "MessageUI" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "WebKit"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_DEVELOPMENT_LANGUAGE = ${DEVELOPMENT_LANGUAGE}
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/BuzzAdBenefitSDK
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

@@ -1,0 +1,15 @@
+${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework
+${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitBase/BuzzAdBenefitBase.framework/BuzzAdBenefitBase
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitFeed/BuzzAdBenefitFeed.framework/BuzzAdBenefitFeed
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitInterstitial/BuzzAdBenefitInterstitial.framework/BuzzAdBenefitInterstitial
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitNative/BuzzAdBenefitNative.framework/BuzzAdBenefitNative
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitSDK/BuzzAdBenefitSDK.framework/BuzzAdBenefitSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzBoosterSDK/BuzzBoosterSDK.framework/BuzzBoosterSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzRxSwift/BuzzRxSwift.framework/BuzzRxSwift
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzvilSDK/BuzzvilSDK.framework/BuzzvilSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework/GoogleInteractiveMediaAds

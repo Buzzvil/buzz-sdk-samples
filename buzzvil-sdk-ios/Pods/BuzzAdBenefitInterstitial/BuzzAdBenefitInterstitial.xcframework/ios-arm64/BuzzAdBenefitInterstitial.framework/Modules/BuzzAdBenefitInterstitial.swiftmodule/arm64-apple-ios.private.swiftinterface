@@ -1,0 +1,40 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzAdBenefitInterstitial
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import BuzzAdBenefitBase
+@_exported import BuzzAdBenefitInterstitial
+import BuzzAdBenefitNative
+import BuzzRxSwift
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public typealias BZVBuzzAdInterstitialBuilderBlock = (BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers public class BZVBuzzAdInterstitialBuilder : ObjectiveC.NSObject {
+  @objc public var unitId: Swift.String?
+  @objc public var type: BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialType
+  @objc public var theme: BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialTheme?
+  @objc public var inquiryButtonHidden: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial {
+  @objc(interstitialWithBlock:) public static func interstitial(with block: (BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder) -> Swift.Void) -> BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial
+  @objc convenience dynamic public init(block: (BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialBuilder) -> Swift.Void)
+}
+@objc public protocol BZVBuzzAdInterstitialDelegate : ObjectiveC.NSObjectProtocol {
+  @objc(BZVBuzzAdInterstitialDidLoadAd:) func bzvBuzzAdInterstitialDidLoadAd(_ interstitial: BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial)
+  @objc(BZVBuzzAdInterstitialDidFailToLoadAd:withError:) func bzvBuzzAdInterstitialDidFail(toLoadAd interstitial: BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial, withError: any Swift.Error)
+  @objc(BZVBuzzAdInterstitialDidDismiss:) func bzvBuzzAdInterstitialDidDismiss(_ viewController: UIKit.UIViewController)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class BZVBuzzAdInterstitial : ObjectiveC.NSObject {
+  @objc weak public var delegate: (any BuzzAdBenefitInterstitial.BZVBuzzAdInterstitialDelegate)?
+  @objc public func load()
+  @objc(presentOnViewController:) public func present(on viewController: UIKit.UIViewController)
+  @objc deinit
+}
+extension BuzzAdBenefitInterstitial.BZVBuzzAdInterstitial {
+  @objc dynamic public func interstitialViewControllerDidFinish(_ viewController: UIKit.UIViewController)
+}

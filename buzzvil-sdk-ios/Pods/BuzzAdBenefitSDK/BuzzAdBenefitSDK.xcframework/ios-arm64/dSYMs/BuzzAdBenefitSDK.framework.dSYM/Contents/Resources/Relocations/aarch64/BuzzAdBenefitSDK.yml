@@ -1,0 +1,231 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/distiller/project/DerivedData/Build/Intermediates.noindex/ArchiveIntermediates/BuzzAdBenefitSDK/InstallationBuildProductsLocation/Library/Frameworks/BuzzAdBenefitSDK.framework/BuzzAdBenefitSDK'
+relocations:
+  - { offsetInCU: 0x34, offset: 0xE6419, size: 0x8, addend: 0x0, symName: _BuzzAdBenefitSDKVersionString, symObjAddr: 0x0, symBinAddr: 0xA260, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0xE644E, size: 0x8, addend: 0x0, symName: _BuzzAdBenefitSDKVersionNumber, symObjAddr: 0x40, symBinAddr: 0xA2A0, symSize: 0x0 }
+  - { offsetInCU: 0x27, offset: 0xE648B, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequest userId]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x8 }
+  - { offsetInCU: 0x17A, offset: 0xE65DE, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequest userId]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x8 }
+  - { offsetInCU: 0x1B1, offset: 0xE6615, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequest birthYear]', symObjAddr: 0x8, symBinAddr: 0x4008, symSize: 0x8 }
+  - { offsetInCU: 0x1E8, offset: 0xE664C, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequest gender]', symObjAddr: 0x10, symBinAddr: 0x4010, symSize: 0x8 }
+  - { offsetInCU: 0x21F, offset: 0xE6683, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequest showAppTrackingTransparencyDialog]', symObjAddr: 0x18, symBinAddr: 0x4018, symSize: 0x8 }
+  - { offsetInCU: 0x256, offset: 0xE66BA, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequest .cxx_destruct]', symObjAddr: 0x20, symBinAddr: 0x4020, symSize: 0xC }
+  - { offsetInCU: 0x289, offset: 0xE66ED, size: 0x8, addend: 0x0, symName: '+[BZVLoginRequest(Builder) requestWithBlock:]', symObjAddr: 0x2C, symBinAddr: 0x402C, symSize: 0x74 }
+  - { offsetInCU: 0x2F7, offset: 0xE675B, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequest(Builder) initWithUserId:birthYeaar:gender:showAppTrackingTransparencyDialog:]', symObjAddr: 0xA0, symBinAddr: 0x40A0, symSize: 0x78 }
+  - { offsetInCU: 0x36E, offset: 0xE67D2, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder build]', symObjAddr: 0x118, symBinAddr: 0x4118, symSize: 0x38 }
+  - { offsetInCU: 0x3A5, offset: 0xE6809, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder userId]', symObjAddr: 0x150, symBinAddr: 0x4150, symSize: 0x8 }
+  - { offsetInCU: 0x3DC, offset: 0xE6840, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder setUserId:]', symObjAddr: 0x158, symBinAddr: 0x4158, symSize: 0x8 }
+  - { offsetInCU: 0x41B, offset: 0xE687F, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder birthYear]', symObjAddr: 0x160, symBinAddr: 0x4160, symSize: 0x8 }
+  - { offsetInCU: 0x452, offset: 0xE68B6, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder setBirthYear:]', symObjAddr: 0x168, symBinAddr: 0x4168, symSize: 0x8 }
+  - { offsetInCU: 0x48F, offset: 0xE68F3, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder gender]', symObjAddr: 0x170, symBinAddr: 0x4170, symSize: 0x8 }
+  - { offsetInCU: 0x4C6, offset: 0xE692A, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder setGender:]', symObjAddr: 0x178, symBinAddr: 0x4178, symSize: 0x8 }
+  - { offsetInCU: 0x503, offset: 0xE6967, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder showAppTrackingTransparencyDialog]', symObjAddr: 0x180, symBinAddr: 0x4180, symSize: 0x8 }
+  - { offsetInCU: 0x53A, offset: 0xE699E, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder setShowAppTrackingTransparencyDialog:]', symObjAddr: 0x188, symBinAddr: 0x4188, symSize: 0x8 }
+  - { offsetInCU: 0x575, offset: 0xE69D9, size: 0x8, addend: 0x0, symName: '-[BZVLoginRequestBuilder .cxx_destruct]', symObjAddr: 0x190, symBinAddr: 0x4190, symSize: 0xC }
+  - { offsetInCU: 0x27, offset: 0xE6B14, size: 0x8, addend: 0x0, symName: '-[BZVConfig initWithAppId:logging:defaultFeedConfig:]', symObjAddr: 0x0, symBinAddr: 0x419C, symSize: 0x98 }
+  - { offsetInCU: 0x1A4, offset: 0xE6C91, size: 0x8, addend: 0x0, symName: '-[BZVConfig initWithAppId:logging:defaultFeedConfig:]', symObjAddr: 0x0, symBinAddr: 0x419C, symSize: 0x98 }
+  - { offsetInCU: 0x20B, offset: 0xE6CF8, size: 0x8, addend: 0x0, symName: '-[BZVConfig appId]', symObjAddr: 0x98, symBinAddr: 0x4234, symSize: 0x8 }
+  - { offsetInCU: 0x242, offset: 0xE6D2F, size: 0x8, addend: 0x0, symName: '-[BZVConfig logging]', symObjAddr: 0xA0, symBinAddr: 0x423C, symSize: 0x8 }
+  - { offsetInCU: 0x279, offset: 0xE6D66, size: 0x8, addend: 0x0, symName: '-[BZVConfig defaultFeedConfig]', symObjAddr: 0xA8, symBinAddr: 0x4244, symSize: 0x8 }
+  - { offsetInCU: 0x2B0, offset: 0xE6D9D, size: 0x8, addend: 0x0, symName: '-[BZVConfig .cxx_destruct]', symObjAddr: 0xB0, symBinAddr: 0x424C, symSize: 0x30 }
+  - { offsetInCU: 0x2E3, offset: 0xE6DD0, size: 0x8, addend: 0x0, symName: '+[BZVConfig(Builder) configWithBlock:]', symObjAddr: 0xE0, symBinAddr: 0x427C, symSize: 0x74 }
+  - { offsetInCU: 0x351, offset: 0xE6E3E, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder build]', symObjAddr: 0x154, symBinAddr: 0x42F0, symSize: 0x34 }
+  - { offsetInCU: 0x388, offset: 0xE6E75, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder appId]', symObjAddr: 0x188, symBinAddr: 0x4324, symSize: 0x8 }
+  - { offsetInCU: 0x3BF, offset: 0xE6EAC, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder setAppId:]', symObjAddr: 0x190, symBinAddr: 0x432C, symSize: 0x8 }
+  - { offsetInCU: 0x3FE, offset: 0xE6EEB, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder logging]', symObjAddr: 0x198, symBinAddr: 0x4334, symSize: 0x8 }
+  - { offsetInCU: 0x435, offset: 0xE6F22, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder setLogging:]', symObjAddr: 0x1A0, symBinAddr: 0x433C, symSize: 0x8 }
+  - { offsetInCU: 0x470, offset: 0xE6F5D, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder defaultFeedConfig]', symObjAddr: 0x1A8, symBinAddr: 0x4344, symSize: 0x8 }
+  - { offsetInCU: 0x4A7, offset: 0xE6F94, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder setDefaultFeedConfig:]', symObjAddr: 0x1B0, symBinAddr: 0x434C, symSize: 0xC }
+  - { offsetInCU: 0x4E8, offset: 0xE6FD5, size: 0x8, addend: 0x0, symName: '-[BZVConfigBuilder .cxx_destruct]', symObjAddr: 0x1BC, symBinAddr: 0x4358, symSize: 0x30 }
+  - { offsetInCU: 0x27, offset: 0xE7117, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit sharedInstance]', symObjAddr: 0x0, symBinAddr: 0x4388, symSize: 0x74 }
+  - { offsetInCU: 0x4B, offset: 0xE713B, size: 0x8, addend: 0x0, symName: _BuzzAdBenefitWebInterfaceName, symObjAddr: 0x11D0, symBinAddr: 0x10308, symSize: 0x0 }
+  - { offsetInCU: 0x55, offset: 0xE7145, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit sharedInstance]', symObjAddr: 0x0, symBinAddr: 0x4388, symSize: 0x74 }
+  - { offsetInCU: 0x7F, offset: 0xE716F, size: 0x8, addend: 0x0, symName: _sharedInstance.sharedInstance, symObjAddr: 0x9540, symBinAddr: 0x12FA0, symSize: 0x0 }
+  - { offsetInCU: 0x95, offset: 0xE7185, size: 0x8, addend: 0x0, symName: _sharedInstance.initOnceToken, symObjAddr: 0x9548, symBinAddr: 0x12FA8, symSize: 0x0 }
+  - { offsetInCU: 0x437, offset: 0xE7527, size: 0x8, addend: 0x0, symName: '___31+[BuzzAdBenefit sharedInstance]_block_invoke', symObjAddr: 0x74, symBinAddr: 0x43FC, symSize: 0xFC }
+  - { offsetInCU: 0x476, offset: 0xE7566, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit config]', symObjAddr: 0x170, symBinAddr: 0x44F8, symSize: 0x8 }
+  - { offsetInCU: 0x4AD, offset: 0xE759D, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setConfig:]', symObjAddr: 0x178, symBinAddr: 0x4500, symSize: 0xC }
+  - { offsetInCU: 0x4EE, offset: 0xE75DE, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit userPreferences]', symObjAddr: 0x184, symBinAddr: 0x450C, symSize: 0x8 }
+  - { offsetInCU: 0x525, offset: 0xE7615, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setUserPreferences:]', symObjAddr: 0x18C, symBinAddr: 0x4514, symSize: 0xC }
+  - { offsetInCU: 0x566, offset: 0xE7656, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit launcher]', symObjAddr: 0x198, symBinAddr: 0x4520, symSize: 0x8 }
+  - { offsetInCU: 0x59D, offset: 0xE768D, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setLauncher:]', symObjAddr: 0x1A0, symBinAddr: 0x4528, symSize: 0xC }
+  - { offsetInCU: 0x5DE, offset: 0xE76CE, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit configMapper]', symObjAddr: 0x1AC, symBinAddr: 0x4534, symSize: 0x8 }
+  - { offsetInCU: 0x615, offset: 0xE7705, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setConfigMapper:]', symObjAddr: 0x1B4, symBinAddr: 0x453C, symSize: 0xC }
+  - { offsetInCU: 0x656, offset: 0xE7746, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit deepLinkNavigator]', symObjAddr: 0x1C0, symBinAddr: 0x4548, symSize: 0x8 }
+  - { offsetInCU: 0x68D, offset: 0xE777D, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setDeepLinkNavigator:]', symObjAddr: 0x1C8, symBinAddr: 0x4550, symSize: 0xC }
+  - { offsetInCU: 0x6CE, offset: 0xE77BE, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit deepLinkTracker]', symObjAddr: 0x1D4, symBinAddr: 0x455C, symSize: 0x8 }
+  - { offsetInCU: 0x705, offset: 0xE77F5, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setDeepLinkTracker:]', symObjAddr: 0x1DC, symBinAddr: 0x4564, symSize: 0xC }
+  - { offsetInCU: 0x746, offset: 0xE7836, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit deepLinkParser]', symObjAddr: 0x1E8, symBinAddr: 0x4570, symSize: 0x8 }
+  - { offsetInCU: 0x77D, offset: 0xE786D, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setDeepLinkParser:]', symObjAddr: 0x1F0, symBinAddr: 0x4578, symSize: 0xC }
+  - { offsetInCU: 0x7BE, offset: 0xE78AE, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit userProfileMapper]', symObjAddr: 0x1FC, symBinAddr: 0x4584, symSize: 0x8 }
+  - { offsetInCU: 0x7F5, offset: 0xE78E5, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setUserProfileMapper:]', symObjAddr: 0x204, symBinAddr: 0x458C, symSize: 0xC }
+  - { offsetInCU: 0x836, offset: 0xE7926, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit userPreferencesMapper]', symObjAddr: 0x210, symBinAddr: 0x4598, symSize: 0x8 }
+  - { offsetInCU: 0x86D, offset: 0xE795D, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit setUserPreferencesMapper:]', symObjAddr: 0x218, symBinAddr: 0x45A0, symSize: 0xC }
+  - { offsetInCU: 0x8AE, offset: 0xE799E, size: 0x8, addend: 0x0, symName: '-[BuzzAdBenefit .cxx_destruct]', symObjAddr: 0x224, symBinAddr: 0x45AC, symSize: 0x84 }
+  - { offsetInCU: 0x8E1, offset: 0xE79D1, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) initializeWithConfig:]', symObjAddr: 0x2A8, symBinAddr: 0x4630, symSize: 0x1FC }
+  - { offsetInCU: 0x930, offset: 0xE7A20, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) config]', symObjAddr: 0x4A4, symBinAddr: 0x482C, symSize: 0x4C }
+  - { offsetInCU: 0x963, offset: 0xE7A53, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) loginWithBlock:onSuccess:onFailure:]', symObjAddr: 0x4F0, symBinAddr: 0x4878, symSize: 0x27C }
+  - { offsetInCU: 0x9E6, offset: 0xE7AD6, size: 0x8, addend: 0x0, symName: '___67+[BuzzAdBenefit(Configuration) loginWithBlock:onSuccess:onFailure:]_block_invoke', symObjAddr: 0x76C, symBinAddr: 0x4AF4, symSize: 0x10 }
+  - { offsetInCU: 0xA61, offset: 0xE7B51, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40b48b, symObjAddr: 0x77C, symBinAddr: 0x4B04, symSize: 0x44 }
+  - { offsetInCU: 0xA8A, offset: 0xE7B7A, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40s48s, symObjAddr: 0x7C0, symBinAddr: 0x4B48, symSize: 0x30 }
+  - { offsetInCU: 0xAA9, offset: 0xE7B99, size: 0x8, addend: 0x0, symName: '___67+[BuzzAdBenefit(Configuration) loginWithBlock:onSuccess:onFailure:]_block_invoke.117', symObjAddr: 0x7F0, symBinAddr: 0x4B78, symSize: 0x10 }
+  - { offsetInCU: 0xB24, offset: 0xE7C14, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) loginWithUserProfile:onSuccess:onFailure:]', symObjAddr: 0x800, symBinAddr: 0x4B88, symSize: 0x138 }
+  - { offsetInCU: 0xB83, offset: 0xE7C73, size: 0x8, addend: 0x0, symName: '___73+[BuzzAdBenefit(Configuration) loginWithUserProfile:onSuccess:onFailure:]_block_invoke', symObjAddr: 0x938, symBinAddr: 0x4CC0, symSize: 0x74 }
+  - { offsetInCU: 0xBDA, offset: 0xE7CCA, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32b, symObjAddr: 0x9AC, symBinAddr: 0x4D34, symSize: 0x10 }
+  - { offsetInCU: 0xC03, offset: 0xE7CF3, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s, symObjAddr: 0x9BC, symBinAddr: 0x4D44, symSize: 0x8 }
+  - { offsetInCU: 0xC22, offset: 0xE7D12, size: 0x8, addend: 0x0, symName: '___73+[BuzzAdBenefit(Configuration) loginWithUserProfile:onSuccess:onFailure:]_block_invoke.120', symObjAddr: 0x9C4, symBinAddr: 0x4D4C, symSize: 0xC }
+  - { offsetInCU: 0xC80, offset: 0xE7D70, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) logout]', symObjAddr: 0x9D0, symBinAddr: 0x4D58, symSize: 0x50 }
+  - { offsetInCU: 0xCAF, offset: 0xE7D9F, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) isLoggedIn]', symObjAddr: 0xA20, symBinAddr: 0x4DA8, symSize: 0x64 }
+  - { offsetInCU: 0xCE2, offset: 0xE7DD2, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) setUserInterfaceStyle:]', symObjAddr: 0xA84, symBinAddr: 0x4E0C, symSize: 0x40 }
+  - { offsetInCU: 0xD21, offset: 0xE7E11, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) userInterfaceStyle]', symObjAddr: 0xAC4, symBinAddr: 0x4E4C, symSize: 0x44 }
+  - { offsetInCU: 0xD54, offset: 0xE7E44, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) setUserPreferences:]', symObjAddr: 0xB08, symBinAddr: 0x4E90, symSize: 0xDC }
+  - { offsetInCU: 0xDA3, offset: 0xE7E93, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) userPreferences]', symObjAddr: 0xBE4, symBinAddr: 0x4F6C, symSize: 0x4C }
+  - { offsetInCU: 0xDD6, offset: 0xE7EC6, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) setLauncher:]', symObjAddr: 0xC30, symBinAddr: 0x4FB8, symSize: 0x54 }
+  - { offsetInCU: 0xE15, offset: 0xE7F05, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(Configuration) launcher]', symObjAddr: 0xC84, symBinAddr: 0x500C, symSize: 0x4C }
+  - { offsetInCU: 0xE48, offset: 0xE7F38, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(InquiryPage) presentInquiryPageOnViewController:]', symObjAddr: 0xCD0, symBinAddr: 0x5058, symSize: 0x10 }
+  - { offsetInCU: 0xE85, offset: 0xE7F75, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(InquiryPage) presentInquiryPageOnViewController:unitId:]', symObjAddr: 0xCE0, symBinAddr: 0x5068, symSize: 0x78 }
+  - { offsetInCU: 0xED4, offset: 0xE7FC4, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(BaseReward) getAvailableFeedBaseRewardForUnitId:onComplete:]', symObjAddr: 0xD58, symBinAddr: 0x50E0, symSize: 0x12C }
+  - { offsetInCU: 0xF23, offset: 0xE8013, size: 0x8, addend: 0x0, symName: '___76+[BuzzAdBenefit(BaseReward) getAvailableFeedBaseRewardForUnitId:onComplete:]_block_invoke', symObjAddr: 0xE84, symBinAddr: 0x520C, symSize: 0xC }
+  - { offsetInCU: 0xF81, offset: 0xE8071, size: 0x8, addend: 0x0, symName: '___76+[BuzzAdBenefit(BaseReward) getAvailableFeedBaseRewardForUnitId:onComplete:]_block_invoke.138', symObjAddr: 0xE90, symBinAddr: 0x5218, symSize: 0x10 }
+  - { offsetInCU: 0xFDB, offset: 0xE80CB, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(PrivacyPolicy) privacyPolicyManager]', symObjAddr: 0xEA0, symBinAddr: 0x5228, symSize: 0x4C }
+  - { offsetInCU: 0x100E, offset: 0xE80FE, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(DeepLink) isBuzzAdDeepLink:]', symObjAddr: 0xEEC, symBinAddr: 0x5274, symSize: 0x9C }
+  - { offsetInCU: 0x1061, offset: 0xE8151, size: 0x8, addend: 0x0, symName: '+[BuzzAdBenefit(DeepLink) openBuzzAdDeepLink:]', symObjAddr: 0xF88, symBinAddr: 0x5310, symSize: 0x168 }
+  - { offsetInCU: 0x4B, offset: 0xE872C, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC8navigate04deepF0y0abC4Base04DeepF0C_tF', symObjAddr: 0x0, symBinAddr: 0x5478, symSize: 0x80 }
+  - { offsetInCU: 0xD3, offset: 0xE87B4, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC8navigate04deepF0y0abC4Base04DeepF0C_tFTo', symObjAddr: 0x80, symBinAddr: 0x54F8, symSize: 0xA8 }
+  - { offsetInCU: 0x129, offset: 0xE880A, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC20createFeedEntryPoint04deepF0So07BABFeedjK0C0abC4Base04DeepF0C_tF', symObjAddr: 0x128, symBinAddr: 0x55A0, symSize: 0x94 }
+  - { offsetInCU: 0x19E, offset: 0xE887F, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC20createFeedEntryPoint04deepF0So07BABFeedjK0C0abC4Base04DeepF0C_tFTo', symObjAddr: 0x1BC, symBinAddr: 0x5634, symSize: 0xCC }
+  - { offsetInCU: 0x1FF, offset: 0xE88E0, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC14navigateToFeed10entryPointySo012BABFeedEntryL0C_tF', symObjAddr: 0x288, symBinAddr: 0x5700, symSize: 0x340 }
+  - { offsetInCU: 0x2FD, offset: 0xE89DE, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC14navigateToFeed10entryPointySo012BABFeedEntryL0C_tFys5Error_pcfU0_', symObjAddr: 0x710, symBinAddr: 0x5B88, symSize: 0x4 }
+  - { offsetInCU: 0x325, offset: 0xE8A06, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC14navigateToFeed10entryPointySo012BABFeedEntryL0C_tFTo', symObjAddr: 0x764, symBinAddr: 0x5BDC, symSize: 0x50 }
+  - { offsetInCU: 0x341, offset: 0xE8A22, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC11visibleFeed14viewController0abcI0011BZVFeedViewK0CSgSo06UIViewK0C_tF', symObjAddr: 0x7B4, symBinAddr: 0x5C2C, symSize: 0x4 }
+  - { offsetInCU: 0x364, offset: 0xE8A45, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC11visibleFeed14viewController0abcI0011BZVFeedViewK0CSgSo06UIViewK0C_tFTo', symObjAddr: 0x7B8, symBinAddr: 0x5C30, symSize: 0x58 }
+  - { offsetInCU: 0x396, offset: 0xE8A77, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC11presentFeed14viewController10entryPointySo06UIViewK0C_So012BABFeedEntryM0CtF', symObjAddr: 0x810, symBinAddr: 0x5C88, symSize: 0x8C }
+  - { offsetInCU: 0x3F2, offset: 0xE8AD3, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC11presentFeed14viewController10entryPointySo06UIViewK0C_So012BABFeedEntryM0CtFy0abcI007BZVBuzzbI7BuilderCXEfU_', symObjAddr: 0x89C, symBinAddr: 0x5D14, symSize: 0x4 }
+  - { offsetInCU: 0x48C, offset: 0xE8B6D, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC11presentFeed14viewController10entryPointySo06UIViewK0C_So012BABFeedEntryM0CtFTo', symObjAddr: 0x8A0, symBinAddr: 0x5D18, symSize: 0xD8 }
+  - { offsetInCU: 0x503, offset: 0xE8BE4, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorCACycfC', symObjAddr: 0x978, symBinAddr: 0x5DF0, symSize: 0x20 }
+  - { offsetInCU: 0x521, offset: 0xE8C02, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorCACycfc', symObjAddr: 0x998, symBinAddr: 0x5E10, symSize: 0x30 }
+  - { offsetInCU: 0x55C, offset: 0xE8C3D, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorCACycfcTo', symObjAddr: 0x9C8, symBinAddr: 0x5E40, symSize: 0x3C }
+  - { offsetInCU: 0x597, offset: 0xE8C78, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorCfD', symObjAddr: 0xA04, symBinAddr: 0x5E7C, symSize: 0x30 }
+  - { offsetInCU: 0x5C4, offset: 0xE8CA5, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC11visibleFeed14viewController0abcI0011BZVFeedViewK0CSgSo06UIViewK0C_tFTf4nd_n', symObjAddr: 0xC34, symBinAddr: 0x60AC, symSize: 0x1C8 }
+  - { offsetInCU: 0x735, offset: 0xE8E16, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorC14navigateToFeed10entryPointySo012BABFeedEntryL0C_tFy0abC4Base10SessionDTOCcfU_TA', symObjAddr: 0x620, symBinAddr: 0x5A98, symSize: 0x88 }
+  - { offsetInCU: 0x794, offset: 0xE8E75, size: 0x8, addend: 0x0, symName: '_$s17BuzzAdBenefitBase10SessionDTOCIegg_ACIeyBy_TR', symObjAddr: 0x6A8, symBinAddr: 0x5B20, symSize: 0x50 }
+  - { offsetInCU: 0x7AC, offset: 0xE8E8D, size: 0x8, addend: 0x0, symName: _block_copy_helper, symObjAddr: 0x6F8, symBinAddr: 0x5B70, symSize: 0x10 }
+  - { offsetInCU: 0x7C0, offset: 0xE8EA1, size: 0x8, addend: 0x0, symName: _block_destroy_helper, symObjAddr: 0x708, symBinAddr: 0x5B80, symSize: 0x8 }
+  - { offsetInCU: 0x7D4, offset: 0xE8EB5, size: 0x8, addend: 0x0, symName: '_$ss5Error_pIegg_So7NSErrorCIeyBy_TR', symObjAddr: 0x714, symBinAddr: 0x5B8C, symSize: 0x50 }
+  - { offsetInCU: 0x8A7, offset: 0xE8F88, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABDeepLinkNavigatorCMa', symObjAddr: 0xDFC, symBinAddr: 0x6274, symSize: 0x20 }
+  - { offsetInCU: 0x8BB, offset: 0xE8F9C, size: 0x8, addend: 0x0, symName: '_$sSo16UIViewControllerCMa', symObjAddr: 0xE44, symBinAddr: 0x62BC, symSize: 0x3C }
+  - { offsetInCU: 0x90F, offset: 0xE8FF0, size: 0x8, addend: 0x0, symName: '_$ss12_ArrayBufferV19_getElementSlowPathyyXlSiFSo16UIViewControllerC_Tg5', symObjAddr: 0xA34, symBinAddr: 0x5EAC, symSize: 0x200 }
+  - { offsetInCU: 0x69, offset: 0xE935E, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC12autoPlayTypeSo012BZVVideoAutohI0VvgTo', symObjAddr: 0x0, symBinAddr: 0x6300, symSize: 0x10 }
+  - { offsetInCU: 0x89, offset: 0xE937E, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC12autoPlayTypeSo012BZVVideoAutohI0VvgTo', symObjAddr: 0x0, symBinAddr: 0x6300, symSize: 0x10 }
+  - { offsetInCU: 0xDB, offset: 0xE93D0, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC12autoPlayTypeACSo012BZVVideoAutohI0V_tcfC', symObjAddr: 0x20, symBinAddr: 0x6310, symSize: 0x4C }
+  - { offsetInCU: 0x135, offset: 0xE942A, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC12autoPlayTypeACSo012BZVVideoAutohI0V_tcfcTo', symObjAddr: 0xC8, symBinAddr: 0x637C, symSize: 0x48 }
+  - { offsetInCU: 0x17A, offset: 0xE946F, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesCACycfC', symObjAddr: 0x110, symBinAddr: 0x63C4, symSize: 0x20 }
+  - { offsetInCU: 0x198, offset: 0xE948D, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesCACycfc', symObjAddr: 0x130, symBinAddr: 0x63E4, symSize: 0x2C }
+  - { offsetInCU: 0x1FB, offset: 0xE94F0, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesCACycfcTo', symObjAddr: 0x15C, symBinAddr: 0x6410, symSize: 0x2C }
+  - { offsetInCU: 0x258, offset: 0xE954D, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesCfD', symObjAddr: 0x188, symBinAddr: 0x643C, symSize: 0x30 }
+  - { offsetInCU: 0x286, offset: 0xE957B, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesCMa', symObjAddr: 0xA8, symBinAddr: 0x635C, symSize: 0x20 }
+  - { offsetInCU: 0x2B0, offset: 0xE95A5, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVMa', symObjAddr: 0x1C4, symBinAddr: 0x6478, symSize: 0x54 }
+  - { offsetInCU: 0x6D, offset: 0xE9749, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewSo05WKWebH0CSgvgTo', symObjAddr: 0x8, symBinAddr: 0x64CC, symSize: 0x48 }
+  - { offsetInCU: 0xAA, offset: 0xE9786, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewSo05WKWebH0CSgvg', symObjAddr: 0x50, symBinAddr: 0x6514, symSize: 0x50 }
+  - { offsetInCU: 0xF3, offset: 0xE97CF, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewSo05WKWebH0CSgvsTo', symObjAddr: 0xA0, symBinAddr: 0x6564, symSize: 0x64 }
+  - { offsetInCU: 0x138, offset: 0xE9814, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewSo05WKWebH0CSgvs', symObjAddr: 0x104, symBinAddr: 0x65C8, symSize: 0x50 }
+  - { offsetInCU: 0x161, offset: 0xE983D, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewSo05WKWebH0CSgvM', symObjAddr: 0x154, symBinAddr: 0x6618, symSize: 0x44 }
+  - { offsetInCU: 0x190, offset: 0xE986C, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewSo05WKWebH0CSgvM.resume.0', symObjAddr: 0x198, symBinAddr: 0x665C, symSize: 0x4 }
+  - { offsetInCU: 0x1E3, offset: 0xE98BF, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewACSo05WKWebH0CSg_tcfC', symObjAddr: 0x19C, symBinAddr: 0x6660, symSize: 0xE8 }
+  - { offsetInCU: 0x262, offset: 0xE993E, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewACSo05WKWebH0CSg_tcfc', symObjAddr: 0x284, symBinAddr: 0x6748, symSize: 0x30 }
+  - { offsetInCU: 0x283, offset: 0xE995F, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewACSo05WKWebH0CSg_tcfcTo', symObjAddr: 0x2B4, symBinAddr: 0x6778, symSize: 0x4C }
+  - { offsetInCU: 0x2D3, offset: 0xE99AF, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC6handleyySo15WKScriptMessageCF', symObjAddr: 0x300, symBinAddr: 0x67C4, symSize: 0x1C }
+  - { offsetInCU: 0x342, offset: 0xE9A1E, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC6handleyySo15WKScriptMessageCFTo', symObjAddr: 0x31C, symBinAddr: 0x67E0, symSize: 0x18 }
+  - { offsetInCU: 0x362, offset: 0xE9A3E, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC6handleyySo15WKScriptMessageCFTo', symObjAddr: 0x31C, symBinAddr: 0x67E0, symSize: 0x18 }
+  - { offsetInCU: 0x389, offset: 0xE9A65, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC6handleyySo15WKScriptMessageCFTo', symObjAddr: 0x31C, symBinAddr: 0x67E0, symSize: 0x18 }
+  - { offsetInCU: 0x3A5, offset: 0xE9A81, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceCACycfC', symObjAddr: 0x334, symBinAddr: 0x67F8, symSize: 0x20 }
+  - { offsetInCU: 0x3C3, offset: 0xE9A9F, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceCACycfc', symObjAddr: 0x354, symBinAddr: 0x6818, symSize: 0x2C }
+  - { offsetInCU: 0x426, offset: 0xE9B02, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceCACycfcTo', symObjAddr: 0x380, symBinAddr: 0x6844, symSize: 0x2C }
+  - { offsetInCU: 0x483, offset: 0xE9B5F, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceCfD', symObjAddr: 0x3AC, symBinAddr: 0x6870, symSize: 0x30 }
+  - { offsetInCU: 0x4B0, offset: 0xE9B8C, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceC7webViewACSo05WKWebH0CSg_tcfcTf4gn_n', symObjAddr: 0x414, symBinAddr: 0x68D8, symSize: 0xC4 }
+  - { offsetInCU: 0x544, offset: 0xE9C20, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceCfETo', symObjAddr: 0x3DC, symBinAddr: 0x68A0, symSize: 0x38 }
+  - { offsetInCU: 0x573, offset: 0xE9C4F, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BZVWebInterfaceCMa', symObjAddr: 0x4D8, symBinAddr: 0x699C, symSize: 0x20 }
+  - { offsetInCU: 0x2B, offset: 0xE9E35, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC05eventG0AC0abC4Base07BIEventG0_p_tcfC', symObjAddr: 0x0, symBinAddr: 0x69EC, symSize: 0x4C }
+  - { offsetInCU: 0x79, offset: 0xE9E83, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC05eventG0AC0abC4Base07BIEventG0_p_tcfC', symObjAddr: 0x0, symBinAddr: 0x69EC, symSize: 0x4C }
+  - { offsetInCU: 0xC0, offset: 0xE9ECA, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC05eventG0AC0abC4Base07BIEventG0_p_tcfc', symObjAddr: 0x4C, symBinAddr: 0x6A38, symSize: 0x3C }
+  - { offsetInCU: 0xE7, offset: 0xE9EF1, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC05eventG0AC0abC4Base07BIEventG0_p_tcfcTo', symObjAddr: 0xA8, symBinAddr: 0x6A94, symSize: 0x58 }
+  - { offsetInCU: 0x160, offset: 0xE9F6A, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC5track04deepF0y0abC4Base04DeepF0C_tF', symObjAddr: 0x100, symBinAddr: 0x6AEC, symSize: 0x150 }
+  - { offsetInCU: 0x1CA, offset: 0xE9FD4, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerC5track04deepF0y0abC4Base04DeepF0C_tFTo', symObjAddr: 0x250, symBinAddr: 0x6C3C, symSize: 0x50 }
+  - { offsetInCU: 0x1E6, offset: 0xE9FF0, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerCACycfC', symObjAddr: 0x2A0, symBinAddr: 0x6C8C, symSize: 0x20 }
+  - { offsetInCU: 0x204, offset: 0xEA00E, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerCACycfc', symObjAddr: 0x2C0, symBinAddr: 0x6CAC, symSize: 0x2C }
+  - { offsetInCU: 0x267, offset: 0xEA071, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerCACycfcTo', symObjAddr: 0x2EC, symBinAddr: 0x6CD8, symSize: 0x2C }
+  - { offsetInCU: 0x2C4, offset: 0xEA0CE, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerCfD', symObjAddr: 0x318, symBinAddr: 0x6D04, symSize: 0x30 }
+  - { offsetInCU: 0x2F2, offset: 0xEA0FC, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerCMa', symObjAddr: 0x88, symBinAddr: 0x6A74, symSize: 0x20 }
+  - { offsetInCU: 0x31C, offset: 0xEA126, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BABDeepLinkTrackerCfETo', symObjAddr: 0x348, symBinAddr: 0x6D34, symSize: 0x10 }
+  - { offsetInCU: 0x64, offset: 0xEA2EF, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledName, symObjAddr: 0x70, symBinAddr: 0x6D74, symSize: 0x40 }
+  - { offsetInCU: 0xAE, offset: 0xEA339, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperC9transform12loginRequest0abC4Base04UserF3DTOCSo08BZVLoginJ0C_tF', symObjAddr: 0xB0, symBinAddr: 0x6DB4, symSize: 0xD0 }
+  - { offsetInCU: 0x156, offset: 0xEA3E1, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperC9transform12loginRequest0abC4Base04UserF3DTOCSo08BZVLoginJ0C_tFTo', symObjAddr: 0x180, symBinAddr: 0x6E84, symSize: 0x5C }
+  - { offsetInCU: 0x172, offset: 0xEA3FD, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperCACycfC', symObjAddr: 0x1DC, symBinAddr: 0x6EE0, symSize: 0x20 }
+  - { offsetInCU: 0x190, offset: 0xEA41B, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperCACycfc', symObjAddr: 0x1FC, symBinAddr: 0x6F00, symSize: 0x98 }
+  - { offsetInCU: 0x228, offset: 0xEA4B3, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperCACycfcTo', symObjAddr: 0x294, symBinAddr: 0x6F98, symSize: 0x20 }
+  - { offsetInCU: 0x244, offset: 0xEA4CF, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperCfD', symObjAddr: 0x2B4, symBinAddr: 0x6FB8, symSize: 0x30 }
+  - { offsetInCU: 0x27D, offset: 0xEA508, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperCfETo', symObjAddr: 0x2E4, symBinAddr: 0x6FE8, symSize: 0x10 }
+  - { offsetInCU: 0x2CD, offset: 0xEA558, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4findys10_HashTableV6BucketV6bucket_Sb5foundtxSHRzlFSo13BZVUserGenderV_Tg5', symObjAddr: 0x3D0, symBinAddr: 0x70D4, symSize: 0x58 }
+  - { offsetInCU: 0x363, offset: 0xEA5EE, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4find_9hashValues10_HashTableV6BucketV6bucket_Sb5foundtx_SitSHRzlFSo13BZVUserGenderV_Tg5', symObjAddr: 0x428, symBinAddr: 0x712C, symSize: 0x9C }
+  - { offsetInCU: 0x428, offset: 0xEA6B3, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK20BABUserProfileMapperCMa', symObjAddr: 0x5A0, symBinAddr: 0x72A4, symSize: 0x20 }
+  - { offsetInCU: 0x43C, offset: 0xEA6C7, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVMa', symObjAddr: 0x5E8, symBinAddr: 0x72EC, symSize: 0x54 }
+  - { offsetInCU: 0x450, offset: 0xEA6DB, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVSHSCSQWb', symObjAddr: 0x63C, symBinAddr: 0x7340, symSize: 0x4 }
+  - { offsetInCU: 0x464, offset: 0xEA6EF, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVABSQSCWl', symObjAddr: 0x640, symBinAddr: 0x7344, symSize: 0x48 }
+  - { offsetInCU: 0x522, offset: 0xEA7AD, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVSHSCSH9hashValueSivgTW', symObjAddr: 0x2F4, symBinAddr: 0x6FF8, symSize: 0x44 }
+  - { offsetInCU: 0x5D1, offset: 0xEA85C, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVSHSCSH4hash4intoys6HasherVz_tFTW', symObjAddr: 0x338, symBinAddr: 0x703C, symSize: 0x28 }
+  - { offsetInCU: 0x624, offset: 0xEA8AF, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVSHSCSH13_rawHashValue4seedS2i_tFTW', symObjAddr: 0x360, symBinAddr: 0x7064, symSize: 0x40 }
+  - { offsetInCU: 0x6B6, offset: 0xEA941, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVSQSCSQ2eeoiySbx_xtFZTW', symObjAddr: 0x3A0, symBinAddr: 0x70A4, symSize: 0x14 }
+  - { offsetInCU: 0x70F, offset: 0xEA99A, size: 0x8, addend: 0x0, symName: '_$sSD17dictionaryLiteralSDyxq_Gx_q_td_tcfCSo13BZVUserGenderV_17BuzzAdBenefitBase04UserD3DTOOTg5Tf4gd_n', symObjAddr: 0x4C4, symBinAddr: 0x71C8, symSize: 0xDC }
+  - { offsetInCU: 0x8D0, offset: 0xEAB5B, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVSYSCSY8rawValuexSg03RawD0Qz_tcfCTW', symObjAddr: 0x3B4, symBinAddr: 0x70B8, symSize: 0x10 }
+  - { offsetInCU: 0x8EC, offset: 0xEAB77, size: 0x8, addend: 0x0, symName: '_$sSo13BZVUserGenderVSYSCSY8rawValue03RawD0QzvgTW', symObjAddr: 0x3C4, symBinAddr: 0x70C8, symSize: 0xC }
+  - { offsetInCU: 0x69, offset: 0xEACD6, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvgTo', symObjAddr: 0x8, symBinAddr: 0x738C, symSize: 0x44 }
+  - { offsetInCU: 0xA6, offset: 0xEAD13, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0Vvg', symObjAddr: 0x4C, symBinAddr: 0x73D0, symSize: 0x44 }
+  - { offsetInCU: 0xEF, offset: 0xEAD5C, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvsTo', symObjAddr: 0x90, symBinAddr: 0x7414, symSize: 0x48 }
+  - { offsetInCU: 0x134, offset: 0xEADA1, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0Vvs', symObjAddr: 0xD8, symBinAddr: 0x745C, symSize: 0x48 }
+  - { offsetInCU: 0x15D, offset: 0xEADCA, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvM', symObjAddr: 0x19C, symBinAddr: 0x7520, symSize: 0x44 }
+  - { offsetInCU: 0x18C, offset: 0xEADF9, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvM.resume.0', symObjAddr: 0x1E0, symBinAddr: 0x7564, symSize: 0x4 }
+  - { offsetInCU: 0x1B7, offset: 0xEAE24, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCACycfC', symObjAddr: 0x1E4, symBinAddr: 0x7568, symSize: 0x20 }
+  - { offsetInCU: 0x1CB, offset: 0xEAE38, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCACycfc', symObjAddr: 0x204, symBinAddr: 0x7588, symSize: 0x40 }
+  - { offsetInCU: 0x206, offset: 0xEAE73, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCACycfcTo', symObjAddr: 0x264, symBinAddr: 0x75E8, symSize: 0x4C }
+  - { offsetInCU: 0x241, offset: 0xEAEAE, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCfD', symObjAddr: 0x2B0, symBinAddr: 0x7634, symSize: 0x30 }
+  - { offsetInCU: 0x280, offset: 0xEAEED, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvpACTK', symObjAddr: 0x120, symBinAddr: 0x74A4, symSize: 0x40 }
+  - { offsetInCU: 0x298, offset: 0xEAF05, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderC12autoPlayTypeSo012BZVVideoAutoiJ0VvpACTk', symObjAddr: 0x160, symBinAddr: 0x74E4, symSize: 0x3C }
+  - { offsetInCU: 0x2B0, offset: 0xEAF1D, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCMa', symObjAddr: 0x244, symBinAddr: 0x75C8, symSize: 0x20 }
+  - { offsetInCU: 0x2D5, offset: 0xEAF42, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC04userF04withACyAA0eF7BuilderCXE_tFZ', symObjAddr: 0x2E0, symBinAddr: 0x7664, symSize: 0x10C }
+  - { offsetInCU: 0x31C, offset: 0xEAF89, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC5blockACyAA0eF7BuilderCXE_tcfC', symObjAddr: 0x3EC, symBinAddr: 0x7770, symSize: 0x108 }
+  - { offsetInCU: 0x36F, offset: 0xEAFDC, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC04userF04withACyAA0eF7BuilderCXE_tFZTo', symObjAddr: 0x4F4, symBinAddr: 0x7878, symSize: 0x130 }
+  - { offsetInCU: 0x3D1, offset: 0xEB03E, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCIgg_ACIegg_TRTA', symObjAddr: 0x634, symBinAddr: 0x79B8, symSize: 0x20 }
+  - { offsetInCU: 0x3FA, offset: 0xEB067, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCIegg_ACIyBy_TR', symObjAddr: 0x654, symBinAddr: 0x79D8, symSize: 0x40 }
+  - { offsetInCU: 0x412, offset: 0xEB07F, size: 0x8, addend: 0x0, symName: _block_copy_helper, symObjAddr: 0x694, symBinAddr: 0x7A18, symSize: 0x10 }
+  - { offsetInCU: 0x426, offset: 0xEB093, size: 0x8, addend: 0x0, symName: _block_destroy_helper, symObjAddr: 0x6A4, symBinAddr: 0x7A28, symSize: 0x8 }
+  - { offsetInCU: 0x43A, offset: 0xEB0A7, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC5blockACyAA0eF7BuilderCXE_tcfc', symObjAddr: 0x6BC, symBinAddr: 0x7A40, symSize: 0x8C }
+  - { offsetInCU: 0x4F2, offset: 0xEB15F, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK18BZVUserPreferencesC5blockACyAA0eF7BuilderCXE_tcfcTo', symObjAddr: 0x7A8, symBinAddr: 0x7B2C, symSize: 0xA0 }
+  - { offsetInCU: 0x56E, offset: 0xEB1DB, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK25BZVUserPreferencesBuilderCIyBy_ACIegg_TRTA', symObjAddr: 0x89C, symBinAddr: 0x7BCC, symSize: 0x10 }
+  - { offsetInCU: 0x27, offset: 0xEB37C, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperC9transform6configSo0E0CSo9BZVConfigC_tF', symObjAddr: 0x0, symBinAddr: 0x7C04, symSize: 0xB8 }
+  - { offsetInCU: 0x4B, offset: 0xEB3A0, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperC9transform6configSo0E0CSo9BZVConfigC_tF', symObjAddr: 0x0, symBinAddr: 0x7C04, symSize: 0xB8 }
+  - { offsetInCU: 0xC4, offset: 0xEB419, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperC9transform6configSo0E0CSo9BZVConfigC_tFTo', symObjAddr: 0xB8, symBinAddr: 0x7CBC, symSize: 0xE8 }
+  - { offsetInCU: 0x123, offset: 0xEB478, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperCACycfC', symObjAddr: 0x1A0, symBinAddr: 0x7DA4, symSize: 0x20 }
+  - { offsetInCU: 0x141, offset: 0xEB496, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperCACycfc', symObjAddr: 0x1C0, symBinAddr: 0x7DC4, symSize: 0x30 }
+  - { offsetInCU: 0x17C, offset: 0xEB4D1, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperCACycfcTo', symObjAddr: 0x210, symBinAddr: 0x7E14, symSize: 0x3C }
+  - { offsetInCU: 0x1B7, offset: 0xEB50C, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperCfD', symObjAddr: 0x24C, symBinAddr: 0x7E50, symSize: 0x30 }
+  - { offsetInCU: 0x1E5, offset: 0xEB53A, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK15BABConfigMapperCMa', symObjAddr: 0x1F0, symBinAddr: 0x7DF4, symSize: 0x20 }
+  - { offsetInCU: 0x89, offset: 0xEB72C, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperC9transform04userF0So0E10PreferenceCAA07BZVUserF0C_tF', symObjAddr: 0xCC, symBinAddr: 0x7EA8, symSize: 0x6C }
+  - { offsetInCU: 0x133, offset: 0xEB7D6, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperC9transform04userF0So0E10PreferenceCAA07BZVUserF0C_tFTo', symObjAddr: 0x138, symBinAddr: 0x7F14, symSize: 0x5C }
+  - { offsetInCU: 0x14F, offset: 0xEB7F2, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperCACycfC', symObjAddr: 0x194, symBinAddr: 0x7F70, symSize: 0x20 }
+  - { offsetInCU: 0x16D, offset: 0xEB810, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperCACycfc', symObjAddr: 0x1B4, symBinAddr: 0x7F90, symSize: 0xA4 }
+  - { offsetInCU: 0x205, offset: 0xEB8A8, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperCACycfcTo', symObjAddr: 0x258, symBinAddr: 0x8034, symSize: 0x20 }
+  - { offsetInCU: 0x221, offset: 0xEB8C4, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperCfD', symObjAddr: 0x278, symBinAddr: 0x8054, symSize: 0x30 }
+  - { offsetInCU: 0x25A, offset: 0xEB8FD, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperCfETo', symObjAddr: 0x2A8, symBinAddr: 0x8084, symSize: 0x10 }
+  - { offsetInCU: 0x2AA, offset: 0xEB94D, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4findys10_HashTableV6BucketV6bucket_Sb5foundtxSHRzlFSo20BZVVideoAutoPlayTypeV_Tg5', symObjAddr: 0x394, symBinAddr: 0x8170, symSize: 0x58 }
+  - { offsetInCU: 0x340, offset: 0xEB9E3, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4find_9hashValues10_HashTableV6BucketV6bucket_Sb5foundtx_SitSHRzlFSo20BZVVideoAutoPlayTypeV_Tg5', symObjAddr: 0x3EC, symBinAddr: 0x81C8, symSize: 0x9C }
+  - { offsetInCU: 0x405, offset: 0xEBAA8, size: 0x8, addend: 0x0, symName: '_$s16BuzzAdBenefitSDK24BABUserPreferencesMapperCMa', symObjAddr: 0x564, symBinAddr: 0x8340, symSize: 0x20 }
+  - { offsetInCU: 0x419, offset: 0xEBABC, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVSHSCSQWb', symObjAddr: 0x618, symBinAddr: 0x83E0, symSize: 0x4 }
+  - { offsetInCU: 0x42D, offset: 0xEBAD0, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVABSQSCWl', symObjAddr: 0x61C, symBinAddr: 0x83E4, symSize: 0x48 }
+  - { offsetInCU: 0x4EB, offset: 0xEBB8E, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVSHSCSH9hashValueSivgTW', symObjAddr: 0x2B8, symBinAddr: 0x8094, symSize: 0x44 }
+  - { offsetInCU: 0x59A, offset: 0xEBC3D, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVSHSCSH4hash4intoys6HasherVz_tFTW', symObjAddr: 0x2FC, symBinAddr: 0x80D8, symSize: 0x28 }
+  - { offsetInCU: 0x5ED, offset: 0xEBC90, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVSHSCSH13_rawHashValue4seedS2i_tFTW', symObjAddr: 0x324, symBinAddr: 0x8100, symSize: 0x40 }
+  - { offsetInCU: 0x67F, offset: 0xEBD22, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVSQSCSQ2eeoiySbx_xtFZTW', symObjAddr: 0x364, symBinAddr: 0x8140, symSize: 0x14 }
+  - { offsetInCU: 0x6D8, offset: 0xEBD7B, size: 0x8, addend: 0x0, symName: '_$sSD17dictionaryLiteralSDyxq_Gx_q_td_tcfCSo20BZVVideoAutoPlayTypeV_So08BABVideodeF0VTg5Tf4gd_n', symObjAddr: 0x488, symBinAddr: 0x8264, symSize: 0xDC }
+  - { offsetInCU: 0x8AC, offset: 0xEBF4F, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVSYSCSY8rawValuexSg03RawF0Qz_tcfCTW', symObjAddr: 0x378, symBinAddr: 0x8154, symSize: 0x10 }
+  - { offsetInCU: 0x8C8, offset: 0xEBF6B, size: 0x8, addend: 0x0, symName: '_$sSo20BZVVideoAutoPlayTypeVSYSCSY8rawValue03RawF0QzvgTW', symObjAddr: 0x388, symBinAddr: 0x8164, symSize: 0xC }
+...
