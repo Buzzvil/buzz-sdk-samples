@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00AF60CB2AF0DA2D00242DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF60CA2AF0DA2D00242DD6 /* AppDelegate.swift */; };
+		00AF60CD2AF0DA2D00242DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF60CC2AF0DA2D00242DD6 /* SceneDelegate.swift */; };
+		00AF60CF2AF0DA2D00242DD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF60CE2AF0DA2D00242DD6 /* ViewController.swift */; };
+		00AF60D42AF0DA2E00242DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00AF60D32AF0DA2E00242DD6 /* Assets.xcassets */; };
+		215A0631D6B39A48D2366E7E /* Pods_buzzvil_sdk_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462A899B4FD625AB65315987 /* Pods_buzzvil_sdk_ios.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00AF60C72AF0DA2D00242DD6 /* buzzvil-sdk-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00AF60CA2AF0DA2D00242DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00AF60CC2AF0DA2D00242DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		00AF60CE2AF0DA2D00242DD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00AF60D32AF0DA2E00242DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00AF60D82AF0DA2E00242DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DF00887F3469EC7AE27E689 /* Pods-buzzvil-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
+		130314B800426B33578AB215 /* Pods-buzzvil-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios/Pods-buzzvil-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		462A899B4FD625AB65315987 /* Pods_buzzvil_sdk_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00AF60C42AF0DA2D00242DD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				215A0631D6B39A48D2366E7E /* Pods_buzzvil_sdk_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00AF60BE2AF0DA2D00242DD6 = {
+			isa = PBXGroup;
+			children = (
+				00AF60C92AF0DA2D00242DD6 /* buzzvil-sdk-ios */,
+				00AF60C82AF0DA2D00242DD6 /* Products */,
+				FBE0B93D40B0A523C6A241C0 /* Pods */,
+				C6365966141F6AE84A10961F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		00AF60C82AF0DA2D00242DD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00AF60C72AF0DA2D00242DD6 /* buzzvil-sdk-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00AF60C92AF0DA2D00242DD6 /* buzzvil-sdk-ios */ = {
+			isa = PBXGroup;
+			children = (
+				00AF60CA2AF0DA2D00242DD6 /* AppDelegate.swift */,
+				00AF60CC2AF0DA2D00242DD6 /* SceneDelegate.swift */,
+				00AF60CE2AF0DA2D00242DD6 /* ViewController.swift */,
+				00AF60D32AF0DA2E00242DD6 /* Assets.xcassets */,
+				00AF60D82AF0DA2E00242DD6 /* Info.plist */,
+			);
+			path = "buzzvil-sdk-ios";
+			sourceTree = "<group>";
+		};
+		C6365966141F6AE84A10961F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				462A899B4FD625AB65315987 /* Pods_buzzvil_sdk_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBE0B93D40B0A523C6A241C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				130314B800426B33578AB215 /* Pods-buzzvil-sdk-ios.debug.xcconfig */,
+				0DF00887F3469EC7AE27E689 /* Pods-buzzvil-sdk-ios.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00AF60C62AF0DA2D00242DD6 /* buzzvil-sdk-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00AF60DB2AF0DA2E00242DD6 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios" */;
+			buildPhases = (
+				38D29928BD215AB9DF100C91 /* [CP] Check Pods Manifest.lock */,
+				00AF60C32AF0DA2D00242DD6 /* Sources */,
+				00AF60C42AF0DA2D00242DD6 /* Frameworks */,
+				00AF60C52AF0DA2D00242DD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "buzzvil-sdk-ios";
+			productName = "buzzvil-sdk-ios";
+			productReference = 00AF60C72AF0DA2D00242DD6 /* buzzvil-sdk-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00AF60BF2AF0DA2D00242DD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					00AF60C62AF0DA2D00242DD6 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 00AF60C22AF0DA2D00242DD6 /* Build configuration list for PBXProject "buzzvil-sdk-ios" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00AF60BE2AF0DA2D00242DD6;
+			productRefGroup = 00AF60C82AF0DA2D00242DD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00AF60C62AF0DA2D00242DD6 /* buzzvil-sdk-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00AF60C52AF0DA2D00242DD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AF60D42AF0DA2E00242DD6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38D29928BD215AB9DF100C91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-buzzvil-sdk-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00AF60C32AF0DA2D00242DD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00AF60CF2AF0DA2D00242DD6 /* ViewController.swift in Sources */,
+				00AF60CB2AF0DA2D00242DD6 /* AppDelegate.swift in Sources */,
+				00AF60CD2AF0DA2D00242DD6 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		00AF60D92AF0DA2E00242DD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00AF60DA2AF0DA2E00242DD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00AF60DC2AF0DA2E00242DD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 130314B800426B33578AB215 /* Pods-buzzvil-sdk-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00AF60DD2AF0DA2E00242DD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DF00887F3469EC7AE27E689 /* Pods-buzzvil-sdk-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "buzzvil.buzzvil-sdk-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00AF60C22AF0DA2D00242DD6 /* Build configuration list for PBXProject "buzzvil-sdk-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00AF60D92AF0DA2E00242DD6 /* Debug */,
+				00AF60DA2AF0DA2E00242DD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00AF60DB2AF0DA2E00242DD6 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00AF60DC2AF0DA2E00242DD6 /* Debug */,
+				00AF60DD2AF0DA2E00242DD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00AF60BF2AF0DA2D00242DD6 /* Project object */;
+}
