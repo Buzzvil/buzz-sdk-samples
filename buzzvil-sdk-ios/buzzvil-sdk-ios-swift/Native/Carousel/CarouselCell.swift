@@ -80,7 +80,7 @@ class CarouselCell: UICollectionViewCell {
 //      nativeAd2View.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
 //      nativeAd2View.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 //    ])
-//    
+//
 //    // ...
 //  }
   
