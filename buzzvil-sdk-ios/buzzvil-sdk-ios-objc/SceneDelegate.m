@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.m
-//  buzzvil-sdk-ios-objc
-//
-//  Created by 주향이 on 10/31/23.
-//
-
 #import "SceneDelegate.h"
 
 @interface SceneDelegate ()

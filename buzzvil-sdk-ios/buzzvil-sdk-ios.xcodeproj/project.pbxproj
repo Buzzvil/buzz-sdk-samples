@@ -21,6 +21,19 @@
 		004850A82AF1023800CD6D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004850A72AF1023800CD6D64 /* Assets.xcassets */; };
 		004850AB2AF1023800CD6D64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004850A92AF1023800CD6D64 /* LaunchScreen.storyboard */; };
 		004850B12AF1038000CD6D64 /* BenefitHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */; };
+		005266D32AF1D4780080C392 /* BenefitHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266D22AF1D4780080C392 /* BenefitHubViewController.m */; };
+		005266D52AF1DB890080C392 /* BenefitHubContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266D42AF1DB890080C392 /* BenefitHubContainerViewController.swift */; };
+		005266DA2AF1DBEA0080C392 /* BenefitHubContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266D92AF1DBEA0080C392 /* BenefitHubContainerViewController.m */; };
+		005266DD2AF1E73B0080C392 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266DC2AF1E73B0080C392 /* NativeViewController.swift */; };
+		005266DF2AF1E82E0080C392 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266DE2AF1E82E0080C392 /* CarouselViewController.swift */; };
+		005266E32AF1E8740080C392 /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266E22AF1E8740080C392 /* NativeViewController.m */; };
+		005266E62AF1E9C20080C392 /* CarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266E52AF1E9C20080C392 /* CarouselViewController.m */; };
+		005266EA2AF1EB5F0080C392 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266E92AF1EB5F0080C392 /* CarouselCell.swift */; };
+		005266ED2AF1EBAA0080C392 /* CarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266EC2AF1EBAA0080C392 /* CarouselCell.m */; };
+		005266EF2AF1F0E50080C392 /* FeedPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266EE2AF1F0E50080C392 /* FeedPromotionCell.swift */; };
+		005266F22AF1F10A0080C392 /* FeedPromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266F12AF1F10A0080C392 /* FeedPromotionCell.m */; };
+		005266F42AF1F3CA0080C392 /* CarouselFeedEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266F32AF1F3CA0080C392 /* CarouselFeedEntryView.swift */; };
+		005266F72AF1F4150080C392 /* CarouselFeedEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266F62AF1F4150080C392 /* CarouselFeedEntryView.m */; };
 		1612FB6118DEFD09C07E45D6 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A87C7F858727B70B72BD29 /* Pods_buzzvil_sdk_ios_swift.framework */; };
 		BF849AC5937D3F0F63EE4BFD /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B481659B157D50D1E6E2F1 /* Pods_buzzvil_sdk_ios_objc.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +60,26 @@
 		004850AA2AF1023800CD6D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004850AC2AF1023800CD6D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubViewController.swift; sourceTree = "<group>"; };
+		005266D12AF1D4780080C392 /* BenefitHubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BenefitHubViewController.h; sourceTree = "<group>"; };
+		005266D22AF1D4780080C392 /* BenefitHubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BenefitHubViewController.m; sourceTree = "<group>"; };
+		005266D42AF1DB890080C392 /* BenefitHubContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubContainerViewController.swift; sourceTree = "<group>"; };
+		005266D82AF1DBEA0080C392 /* BenefitHubContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BenefitHubContainerViewController.h; sourceTree = "<group>"; };
+		005266D92AF1DBEA0080C392 /* BenefitHubContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BenefitHubContainerViewController.m; sourceTree = "<group>"; };
+		005266DC2AF1E73B0080C392 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
+		005266DE2AF1E82E0080C392 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		005266E12AF1E8740080C392 /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
+		005266E22AF1E8740080C392 /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		005266E42AF1E9C20080C392 /* CarouselViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselViewController.h; sourceTree = "<group>"; };
+		005266E52AF1E9C20080C392 /* CarouselViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselViewController.m; sourceTree = "<group>"; };
+		005266E92AF1EB5F0080C392 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		005266EB2AF1EBAA0080C392 /* CarouselCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselCell.h; sourceTree = "<group>"; };
+		005266EC2AF1EBAA0080C392 /* CarouselCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselCell.m; sourceTree = "<group>"; };
+		005266EE2AF1F0E50080C392 /* FeedPromotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPromotionCell.swift; sourceTree = "<group>"; };
+		005266F02AF1F10A0080C392 /* FeedPromotionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedPromotionCell.h; sourceTree = "<group>"; };
+		005266F12AF1F10A0080C392 /* FeedPromotionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedPromotionCell.m; sourceTree = "<group>"; };
+		005266F32AF1F3CA0080C392 /* CarouselFeedEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFeedEntryView.swift; sourceTree = "<group>"; };
+		005266F52AF1F4150080C392 /* CarouselFeedEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselFeedEntryView.h; sourceTree = "<group>"; };
+		005266F62AF1F4150080C392 /* CarouselFeedEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselFeedEntryView.m; sourceTree = "<group>"; };
 		1447D86BA22E7F77A3348109 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		31B2EB1619B034FDBD96B173 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
 		56F167CAC7E92C9B4BBB8F46 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +117,8 @@
 				004850852AF100D600CD6D64 /* SceneDelegate.m */,
 				004850872AF100D600CD6D64 /* ViewController.h */,
 				004850882AF100D600CD6D64 /* ViewController.m */,
+				005266E02AF1E8610080C392 /* Native */,
+				005266D72AF1DBCB0080C392 /* BenefitHub */,
 				0048508A2AF100D700CD6D64 /* Main.storyboard */,
 				0048508D2AF100D800CD6D64 /* Assets.xcassets */,
 				0048508F2AF100D800CD6D64 /* LaunchScreen.storyboard */,
@@ -96,6 +131,8 @@
 		0048509D2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */ = {
 			isa = PBXGroup;
 			children = (
+				005266DB2AF1E72D0080C392 /* Native */,
+				005266D62AF1DB8D0080C392 /* BenefitHub */,
 				0048509E2AF1023600CD6D64 /* AppDelegate.swift */,
 				004850A02AF1023600CD6D64 /* SceneDelegate.swift */,
 				004850A22AF1023600CD6D64 /* ViewController.swift */,
@@ -103,9 +140,73 @@
 				004850A72AF1023800CD6D64 /* Assets.xcassets */,
 				004850A92AF1023800CD6D64 /* LaunchScreen.storyboard */,
 				004850AC2AF1023800CD6D64 /* Info.plist */,
-				004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */,
 			);
 			path = "buzzvil-sdk-ios-swift";
+			sourceTree = "<group>";
+		};
+		005266D62AF1DB8D0080C392 /* BenefitHub */ = {
+			isa = PBXGroup;
+			children = (
+				004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */,
+				005266D42AF1DB890080C392 /* BenefitHubContainerViewController.swift */,
+			);
+			path = BenefitHub;
+			sourceTree = "<group>";
+		};
+		005266D72AF1DBCB0080C392 /* BenefitHub */ = {
+			isa = PBXGroup;
+			children = (
+				005266D12AF1D4780080C392 /* BenefitHubViewController.h */,
+				005266D22AF1D4780080C392 /* BenefitHubViewController.m */,
+				005266D82AF1DBEA0080C392 /* BenefitHubContainerViewController.h */,
+				005266D92AF1DBEA0080C392 /* BenefitHubContainerViewController.m */,
+			);
+			path = BenefitHub;
+			sourceTree = "<group>";
+		};
+		005266DB2AF1E72D0080C392 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				005266E82AF1EB3C0080C392 /* Carousel */,
+				005266DC2AF1E73B0080C392 /* NativeViewController.swift */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		005266E02AF1E8610080C392 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				005266E72AF1EB360080C392 /* Carousel */,
+				005266E12AF1E8740080C392 /* NativeViewController.h */,
+				005266E22AF1E8740080C392 /* NativeViewController.m */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		005266E72AF1EB360080C392 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				005266E42AF1E9C20080C392 /* CarouselViewController.h */,
+				005266E52AF1E9C20080C392 /* CarouselViewController.m */,
+				005266F52AF1F4150080C392 /* CarouselFeedEntryView.h */,
+				005266F62AF1F4150080C392 /* CarouselFeedEntryView.m */,
+				005266EB2AF1EBAA0080C392 /* CarouselCell.h */,
+				005266EC2AF1EBAA0080C392 /* CarouselCell.m */,
+				005266F02AF1F10A0080C392 /* FeedPromotionCell.h */,
+				005266F12AF1F10A0080C392 /* FeedPromotionCell.m */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		005266E82AF1EB3C0080C392 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				005266DE2AF1E82E0080C392 /* CarouselViewController.swift */,
+				005266E92AF1EB5F0080C392 /* CarouselCell.swift */,
+				005266EE2AF1F0E50080C392 /* FeedPromotionCell.swift */,
+				005266F32AF1F3CA0080C392 /* CarouselFeedEntryView.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 		00AF60BE2AF0DA2D00242DD6 = {
@@ -335,10 +436,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005266E62AF1E9C20080C392 /* CarouselViewController.m in Sources */,
 				004850892AF100D600CD6D64 /* ViewController.m in Sources */,
+				005266ED2AF1EBAA0080C392 /* CarouselCell.m in Sources */,
 				004850832AF100D600CD6D64 /* AppDelegate.m in Sources */,
+				005266D32AF1D4780080C392 /* BenefitHubViewController.m in Sources */,
 				004850942AF100D800CD6D64 /* main.m in Sources */,
+				005266DA2AF1DBEA0080C392 /* BenefitHubContainerViewController.m in Sources */,
+				005266E32AF1E8740080C392 /* NativeViewController.m in Sources */,
+				005266F72AF1F4150080C392 /* CarouselFeedEntryView.m in Sources */,
 				004850862AF100D600CD6D64 /* SceneDelegate.m in Sources */,
+				005266F22AF1F10A0080C392 /* FeedPromotionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,9 +455,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				004850B12AF1038000CD6D64 /* BenefitHubViewController.swift in Sources */,
+				005266DF2AF1E82E0080C392 /* CarouselViewController.swift in Sources */,
 				004850A32AF1023600CD6D64 /* ViewController.swift in Sources */,
+				005266EA2AF1EB5F0080C392 /* CarouselCell.swift in Sources */,
+				005266EF2AF1F0E50080C392 /* FeedPromotionCell.swift in Sources */,
 				0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */,
+				005266DD2AF1E73B0080C392 /* NativeViewController.swift in Sources */,
+				005266D52AF1DB890080C392 /* BenefitHubContainerViewController.swift in Sources */,
 				004850A12AF1023600CD6D64 /* SceneDelegate.swift in Sources */,
+				005266F42AF1F3CA0080C392 /* CarouselFeedEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

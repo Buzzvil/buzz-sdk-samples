@@ -72,7 +72,7 @@ DEPENDENCIES:
   - BuzzvilSDK (= 5.0.0-rc.1)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs.git:
+  https://github.com/Buzzvil/Specs:
     - BuzzAdBenefitBase
     - BuzzAdBenefitFeed
     - BuzzAdBenefitInterstitial
@@ -107,4 +107,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 8027aa74cd9a8395d1e6a5f6c42b6900d7774e49
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.13.0
