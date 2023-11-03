@@ -7,8 +7,9 @@
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
 ## [3.47.0] - 2023-11-02
+* [FIX] 서드파티 라이브러리의 리소스명과 충돌하는 내부 리소스 (bannerAdViewPlacementId / bannerAdViewSize )이름 변경
 * [FIX] 버그 수정
-* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzad3.47-buzzscreen4.41/) 참조
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.0-buzzad3.47-buzzscreen4.41) 참조
 
 ## [3.45.0] - 2023-10-05
 * [FIX] 연동과정에서 APP ID / Unit ID 가 잘못 표기되었을 경우의 오류 화면 누락에 대한 버그 수정
