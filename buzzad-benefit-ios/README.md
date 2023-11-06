@@ -6,6 +6,10 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](docs/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzzscreen-sdk-publisher/blob/master/docs/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.41.0] - 2023-11-02
+* [FIX] 버그 수정
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzad3.41/) 참조
+
 ## [3.39.1] - 2023-10-05
 * [FIX] 서드파티 라이브러리의 모듈명과 충돌하는 베이스 이미지(BABImage) 이름 변경
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzad3.39/) 참조
