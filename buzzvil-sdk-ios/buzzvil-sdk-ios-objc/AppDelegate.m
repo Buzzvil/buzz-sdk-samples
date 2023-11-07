@@ -21,24 +21,22 @@
   [[BuzzBenefit shared] initializeWith:config];
   
   // 다크모드 설정하기 TODO
-  // ##ARTHUR
-  //  [[BuzzBenefit shared] setUserInterfaceStyle:BZVUserInterfaceStyleSystem];
-  //  [[BuzzBenefit shared] setUserInterfaceStyle:BZVUserInterfaceStyleLight];
-  //  [[BuzzBenefit shared] setUserInterfaceStyle:BZVUserInterfaceStyleDark];
+  [[BuzzBenefit shared] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleSystem];
+  [[BuzzBenefit shared] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleLight];
+  [[BuzzBenefit shared] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleDark];
   
   return YES;
 }
 
 // ##ARTHUR
 - (void)buzzBenefitLoginLogout {
-  //  BuzzBenefitUser benefitUser = [[BuzzBenefitUser alloc] initWithUserId:]
-  //  [BuzzBenefit loginWithBlock:^(BZVLoginRequestBuilder * _Nonnull builder) {
-  //    builder.userId = @"USER_ID";
-  //    builder.gender = BZVUserGenderMale; // 남성 사용자
-  //    builder.birthYear = YYYY;
-  //  } onSuccess:^{
-  //  } onFailure:^(NSError * _Nonnull error) {
-  //  }];
+//  [BuzzBenefit loginWithBlock:^(BZVLoginRequestBuilder * _Nonnull builder) {
+//    builder.userId = @"USER_ID";
+//    builder.gender = BZVUserGenderMale; // 남성 사용자
+//    builder.birthYear = YYYY;
+//  } onSuccess:^{
+//  } onFailure:^(NSError * _Nonnull error) {
+//  }];
   
   // 로그인 상태를 확인하는 코드입니다.
   [[BuzzBenefit shared] isLoggedIn];

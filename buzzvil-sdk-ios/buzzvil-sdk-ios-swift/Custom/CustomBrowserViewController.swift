@@ -1,5 +1,5 @@
 import UIKit
-import BuzzAdBenefitSDK
+import BuzzvilSDK
 
 class CustomBrowserViewController: UIViewController {
   private lazy var browserViewController: UIViewController = {

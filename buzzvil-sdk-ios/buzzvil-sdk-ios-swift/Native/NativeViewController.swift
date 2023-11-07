@@ -1,4 +1,4 @@
-import BuzzAdBenefitSDK
+import BuzzvilSDK
 import UIKit
 
 class NativeViewController: UIViewController {

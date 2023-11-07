@@ -277,7 +277,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import BuzzAdBenefitBase;
 @import BuzzAdBenefitSDK;
 @import CoreFoundation;
 @import Foundation;
@@ -303,39 +302,62 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-@class BZVBenefitHubConfig;
-@class BZVBenefitHubViewController;
-@class UIViewController;
-@class NSError;
 
-/// A class that provides a set of features to present a vertical list of ads.
 SWIFT_CLASS("_TtC10BuzzvilSDK13BZVBenefitHub")
 @interface BZVBenefitHub : NSObject
-/// Configuration of this feed.
-@property (nonatomic, readonly, strong) BZVBenefitHubConfig * _Nonnull config;
-/// Creates and returns an instance of <code>BenefitHubViewController</code> with given configuration and theme.
-@property (nonatomic, readonly, strong) BZVBenefitHubViewController * _Nonnull viewController;
-- (void)showOn:(UIViewController * _Nonnull)viewController;
-/// Loads ads.
-/// You can use this method to load ads prior to presenting feed to users.
-- (void)loadOnSuccess:(void (^ _Nonnull)(NSInteger))onSuccess onFailure:(void (^ _Nonnull)(NSError * _Nonnull))onFailure;
-/// Clears loaded ads.
-- (void)reset;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class BZVBenefitHubConfig;
+
+@interface BZVBenefitHub (SWIFT_EXTENSION(BuzzvilSDK))
+@property (nonatomic, readonly, strong) BZVBenefitHubConfig * _Nonnull config;
 @end
 
 @class BZVBenefitHubBuilder;
 
 @interface BZVBenefitHub (SWIFT_EXTENSION(BuzzvilSDK))
-/// Constructs a feed from a block.
 + (BZVBenefitHub * _Nonnull)benefitHubWithBlock:(SWIFT_NOESCAPE void (^ _Nonnull)(BZVBenefitHubBuilder * _Nonnull))block SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithBlock:(SWIFT_NOESCAPE void (^ _Nonnull)(BZVBenefitHubBuilder * _Nonnull))block;
 @end
 
+@class BZVBenefitHubViewController;
+@class UIViewController;
+
+@interface BZVBenefitHub (SWIFT_EXTENSION(BuzzvilSDK))
+@property (nonatomic, readonly, strong) BZVBenefitHubViewController * _Nonnull viewController;
+- (void)showOn:(UIViewController * _Nonnull)viewController;
+@end
+
 @class BZVBenefitHubTheme;
 
-/// A class that constructs a feed.
+@interface BZVBenefitHub (SWIFT_EXTENSION(BuzzvilSDK))
+@property (nonatomic, readonly, strong) BZVBenefitHubTheme * _Nonnull theme;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BZVBenefitHubTheme * _Nonnull defaultTheme;)
++ (BZVBenefitHubTheme * _Nonnull)defaultTheme SWIFT_WARN_UNUSED_RESULT;
++ (void)setDefaultTheme:(BZVBenefitHubTheme * _Nonnull)theme;
+@end
+
+@class NSError;
+
+@interface BZVBenefitHub (SWIFT_EXTENSION(BuzzvilSDK))
+@property (nonatomic, readonly) NSInteger availableRewards;
+- (void)loadOnSuccess:(void (^ _Nonnull)(void))onSuccess onFailure:(void (^ _Nonnull)(NSError * _Nonnull))onFailure;
+- (void)reset;
+@end
+
+@class BZVNativeAd;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10BuzzvilSDK19BZVBenefitHubAdView")
+@interface BZVBenefitHubAdView : UIView
+- (void)renderWithAd:(BZVNativeAd * _Nonnull)ad;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC10BuzzvilSDK20BZVBenefitHubBuilder")
 @interface BZVBenefitHubBuilder : NSObject
 @property (nonatomic, strong) BZVBenefitHubConfig * _Nullable config;
@@ -344,10 +366,14 @@ SWIFT_CLASS("_TtC10BuzzvilSDK20BZVBenefitHubBuilder")
 @end
 
 @class NSString;
+@class BZVBenefitHubHeaderView;
 
 SWIFT_CLASS("_TtC10BuzzvilSDK19BZVBenefitHubConfig")
 @interface BZVBenefitHubConfig : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull unitID;
+@property (nonatomic, readonly) SWIFT_METATYPE(BZVBenefitHubHeaderView) _Nonnull headerViewClass;
+@property (nonatomic, readonly) SWIFT_METATYPE(BZVBenefitHubAdView) _Nonnull adViewClass;
+@property (nonatomic, readonly) SWIFT_METATYPE(BZVBenefitHubAdView) _Nonnull cpsAdViewClass;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -363,16 +389,80 @@ SWIFT_CLASS("_TtC10BuzzvilSDK19BZVBenefitHubConfig")
 SWIFT_CLASS("_TtC10BuzzvilSDK26BZVBenefitHubConfigBuilder")
 @interface BZVBenefitHubConfigBuilder : NSObject
 @property (nonatomic, copy) NSString * _Nullable unitID;
+@property (nonatomic, readonly) Class _Nullable headerViewClass;
+@property (nonatomic, readonly) Class _Nullable adViewClass;
+@property (nonatomic, readonly) Class _Nullable cpsAdViewClass;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC10BuzzvilSDK22BZVBenefitHubEntryView")
+@interface BZVBenefitHubEntryView : UIView
+@property (nonatomic, copy) NSArray<UIView *> * _Nonnull clickableViews;
+- (void)didMoveToWindow;
+- (void)setEntryNameTo:(NSString * _Nonnull)name;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface BZVBenefitHubEntryView (SWIFT_EXTENSION(BuzzvilSDK)) <BABImpressionTrackableView>
+- (BOOL)shouldTrackImpression SWIFT_WARN_UNUSED_RESULT;
+- (void)viewDidImpressed;
+@end
+
+
+SWIFT_CLASS("_TtC10BuzzvilSDK23BZVBenefitHubHeaderView")
+@interface BZVBenefitHubHeaderView : UIView
+- (NSInteger)desiredHeight SWIFT_WARN_UNUSED_RESULT;
+- (void)availableRewardDidUpdateWithReward:(NSInteger)reward;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 SWIFT_CLASS("_TtC10BuzzvilSDK18BZVBenefitHubTheme")
 @interface BZVBenefitHubTheme : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@class BZVBenefitHubThemeBuilder;
+
+@interface BZVBenefitHubTheme (SWIFT_EXTENSION(BuzzvilSDK))
++ (BZVBenefitHubTheme * _Nonnull)themeWithBlock:(SWIFT_NOESCAPE void (^ _Nonnull)(BZVBenefitHubThemeBuilder * _Nonnull))block SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithBlock:(SWIFT_NOESCAPE void (^ _Nonnull)(BZVBenefitHubThemeBuilder * _Nonnull))block;
+@end
+
+@class UIImage;
+
+SWIFT_CLASS("_TtC10BuzzvilSDK25BZVBenefitHubThemeBuilder")
+@interface BZVBenefitHubThemeBuilder : NSObject
+@property (nonatomic, copy) NSString * _Nullable navigationBarTitle;
+@property (nonatomic, strong) UIImage * _Nullable noFillErrorImage;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorTitle;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorDescription1st;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorDescription2nd;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorDescription3rd;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorDescriptionFinalAllFilter;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorDescriptionFinalOtherFilters;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorButton1st;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorButton2nd;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorButton3rd;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorButtonFinalAllFilter;
+@property (nonatomic, copy) NSString * _Nullable noFillErrorButtonFinalOtherFilters;
+@property (nonatomic, strong) UIImage * _Nullable userProfileErrorImage;
+@property (nonatomic, copy) NSString * _Nullable userProfileErrorTitle;
+@property (nonatomic, copy) NSString * _Nullable userProfileErrorDescription;
+@property (nonatomic, strong) UIImage * _Nullable privacyPolicyErrorImage;
+@property (nonatomic, strong) UIImage * _Nullable agePolicyErrorImage;
+@property (nonatomic, strong) UIImage * _Nullable networkErrorImage;
+@property (nonatomic, strong) UIImage * _Nullable unknownErrorImage;
+@property (nonatomic, strong) UIImage * _Nullable appTrackingTransparencyGuideModalImage;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSCoder;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC10BuzzvilSDK27BZVBenefitHubViewController")
@@ -423,17 +513,30 @@ SWIFT_CLASS("_TtC10BuzzvilSDK27BZVBenefitHubViewController")
 
 
 @class BuzzBenefitConfig;
-@class BuzzBenefitUser;
 
 SWIFT_CLASS("_TtC10BuzzvilSDK11BuzzBenefit")
 @interface BuzzBenefit : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BuzzBenefit * _Nonnull shared;)
 + (BuzzBenefit * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, readonly, strong) BuzzBenefitConfig * _Nullable config;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@property (nonatomic, readonly, strong) BuzzBenefitConfig * _Nullable config;
+@end
+
+
+@interface BuzzBenefit (SWIFT_EXTENSION(BuzzvilSDK))
 - (void)initializeWith:(BuzzBenefitConfig * _Nonnull)config;
-- (void)setUserInterfaceStyle:(BZVUserInterfaceStyle)style;
+@end
+
+enum BuzzBenefitUserInterfaceStyle : NSInteger;
+
+@interface BuzzBenefit (SWIFT_EXTENSION(BuzzvilSDK))
+- (void)setUserInterfaceStyle:(enum BuzzBenefitUserInterfaceStyle)style;
+@end
+
+@class BuzzBenefitUser;
+
+@interface BuzzBenefit (SWIFT_EXTENSION(BuzzvilSDK))
 - (void)loginWith:(BuzzBenefitUser * _Nonnull)user onSuccess:(void (^ _Nullable)(void))onSuccess onFailure:(void (^ _Nullable)(NSError * _Nonnull))onFailure;
 - (BOOL)isLoggedIn SWIFT_WARN_UNUSED_RESULT;
 - (void)logout;
@@ -442,8 +545,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BuzzBenefit 
 
 SWIFT_CLASS("_TtC10BuzzvilSDK17BuzzBenefitConfig")
 @interface BuzzBenefitConfig : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull appID;
-@property (nonatomic, readonly, strong) BZVBenefitHubConfig * _Nullable benefitHubConfig;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -467,12 +568,37 @@ SWIFT_CLASS("_TtC10BuzzvilSDK24BuzzBenefitConfigBuilder")
 
 SWIFT_CLASS("_TtC10BuzzvilSDK15BuzzBenefitUser")
 @interface BuzzBenefitUser : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull userID;
-@property (nonatomic, readonly) BZVUserGender gender;
-@property (nonatomic, readonly) NSInteger birthYear;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+@class BuzzBenefitUserBuilder;
+
+@interface BuzzBenefitUser (SWIFT_EXTENSION(BuzzvilSDK))
++ (BuzzBenefitUser * _Nonnull)configWithBlock:(SWIFT_NOESCAPE void (^ _Nonnull)(BuzzBenefitUserBuilder * _Nonnull))block SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithBlock:(SWIFT_NOESCAPE void (^ _Nonnull)(BuzzBenefitUserBuilder * _Nonnull))block;
+@end
+
+
+SWIFT_CLASS("_TtC10BuzzvilSDK22BuzzBenefitUserBuilder")
+@interface BuzzBenefitUserBuilder : NSObject
+@property (nonatomic, copy) NSString * _Nullable userID;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, BuzzBenefitUserGender, open) {
+  BuzzBenefitUserGenderMale = 0,
+  BuzzBenefitUserGenderFemale = 1,
+  BuzzBenefitUserGenderUnknown = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, BuzzBenefitUserInterfaceStyle, open) {
+  BuzzBenefitUserInterfaceStyleSystem = 0,
+  BuzzBenefitUserInterfaceStyleLight = 1,
+  BuzzBenefitUserInterfaceStyleDark = 2,
+};
+
 
 
 

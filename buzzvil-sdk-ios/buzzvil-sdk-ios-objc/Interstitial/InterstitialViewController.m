@@ -1,4 +1,4 @@
-@import BuzzAdBenefitSDK;
+@import BuzzvilSDK;
 #import "InterstitialViewController.h"
 
 @interface InterstitialViewController () <BZVBuzzAdInterstitialDelegate>

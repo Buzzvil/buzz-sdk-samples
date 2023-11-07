@@ -1,5 +1,5 @@
 #import "CustomBrowserViewController.h"
-@import BuzzAdBenefitSDK;
+@import BuzzvilSDK;
 
 @interface CustomBrowserViewController ()
 

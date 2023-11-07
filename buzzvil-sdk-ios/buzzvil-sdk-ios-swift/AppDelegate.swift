@@ -26,9 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // 로그인 요청하기
   func buzzBenefitLoginLogout() {
     // 로그인을 요청하는 코드입니다.
-    let benefitUser = BuzzBenefitUser(userID: "USER_ID", gender: .male, birthYear: 1996)
+    let buzzBenefitUser = BuzzBenefitUser.Builder(userID: "USER_ID")
+      .setGender(.male)
+      .setBirthYear(1996)
+      .build()
+    
     BuzzBenefit.shared.login(
-      with: benefitUser,
+      with: buzzBenefitUser,
       onSuccess: {
         
       },

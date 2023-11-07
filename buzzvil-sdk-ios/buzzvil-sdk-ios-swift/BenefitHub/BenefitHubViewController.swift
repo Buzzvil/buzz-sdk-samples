@@ -25,14 +25,15 @@ class BenefitHubViewController: UIViewController {
   
   // 적립 가능한 포인트 표시하기
   func getAvailiableReward() {
-    let benefitHub = BZVBenefitHub { _ in }
-    benefitHub.load(
-        onSuccess: { availableReward in
-            // 적립 가능한 포인트를 직접 구현한 UI에 업데이트합니다.
-        },
-        onFailure: { error in
-            // 적립 가능한 포인트를 가져올 수 없는 경우
-        }
-    )
+    // ##ARTHUR
+//    let benefitHub = BZVBenefitHub { _ in }
+//    benefitHub.load(
+//        onSuccess: { availableReward in
+//            // 적립 가능한 포인트를 직접 구현한 UI에 업데이트합니다.
+//        },
+//        onFailure: { error in
+//            // 적립 가능한 포인트를 가져올 수 없는 경우
+//        }
+//    )
   }
 }

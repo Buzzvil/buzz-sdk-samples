@@ -1,5 +1,5 @@
 import UIKit
-import BuzzAdBenefitSDK
+import BuzzvilSDK
 
 class CarouselCell: UICollectionViewCell {
   private lazy var nativeAd2View = BZVNativeAd2View(frame: .zero)

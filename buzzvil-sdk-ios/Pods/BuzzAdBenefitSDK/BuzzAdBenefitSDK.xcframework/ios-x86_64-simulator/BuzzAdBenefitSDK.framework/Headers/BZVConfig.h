@@ -1,7 +1,6 @@
 @import Foundation;
 
 @class BZVConfigBuilder;
-@class BZVFeedConfig;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -11,7 +10,6 @@ typedef void(^BZVConfigBuilderBlock)(BZVConfigBuilder *builder);
 
 @property (nonatomic, copy, readonly) NSString *appId;
 @property (nonatomic, assign, readonly) BOOL logging;
-@property (nonatomic, strong, readonly, nullable) BZVFeedConfig *defaultFeedConfig;
 
 @end
 
@@ -25,7 +23,6 @@ typedef void(^BZVConfigBuilderBlock)(BZVConfigBuilder *builder);
 
 @property (nonatomic, copy, readwrite) NSString *appId;
 @property (nonatomic, assign, readwrite) BOOL logging;
-@property (nonatomic, strong, readwrite, nullable) BZVFeedConfig *defaultFeedConfig;
 
 - (BZVConfig *)build;
 

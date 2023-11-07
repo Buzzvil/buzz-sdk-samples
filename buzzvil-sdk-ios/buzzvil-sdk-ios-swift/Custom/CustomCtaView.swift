@@ -1,5 +1,5 @@
 import UIKit
-import BuzzAdBenefitSDK
+import BuzzvilSDK
 
 final class CustomCtaView: UIStackView, BZVCtaViewProtocol {
   let rewardImageView = UIImageView(frame: .zero)

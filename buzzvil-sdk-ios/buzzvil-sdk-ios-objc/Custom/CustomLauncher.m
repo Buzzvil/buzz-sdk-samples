@@ -15,7 +15,7 @@
 
   // Custom Browser 실행
   CustomBrowserViewController *customBrowserViewController = [[CustomBrowserViewController alloc] init];
-  [YOUR_ROOT_VIEW_CONTROLLER.presentedViewController presentViewController:customBrowserViewController animated:YES completion:nil];
+//  [YOUR_ROOT_VIEW_CONTROLLER.presentedViewController presentViewController:customBrowserViewController animated:YES completion:nil];
 }
 
 @end

@@ -1,7 +1,7 @@
-import BuzzAdBenefitSDK
+import BuzzvilSDK
 import UIKit
 
-final class CarouselFeedEntryView: BZVFeedEntryView {
+final class CarouselFeedEntryView: BZVBenefitHubEntryView {
   private lazy var button: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("포인트 더 받으러 가기", for: .normal)

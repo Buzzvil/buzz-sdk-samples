@@ -2,11 +2,10 @@
 // swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzvilSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
-import BuzzAdBenefitBase
-import BuzzAdBenefitNative
 import BuzzAdBenefitSDK
 import BuzzBoosterSDK
 import BuzzRxSwift
+@_exported import BuzzvilSDK
 import DeveloperToolsSupport
 import Foundation
 import ObjectiveC
@@ -19,11 +18,17 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class BZVBenefitHubConfig : ObjectiveC.NSObject {
   @objc final public let unitID: Swift.String
+  @objc final public let headerViewClass: BuzzvilSDK.BZVBenefitHubHeaderView.Type
+  @objc final public let adViewClass: BuzzvilSDK.BZVBenefitHubAdView.Type
+  @objc final public let cpsAdViewClass: BuzzvilSDK.BZVBenefitHubAdView.Type
   @objc deinit
 }
 public typealias BZVBenefitHubConfigBuilderBlock = (BuzzvilSDK.BZVBenefitHubConfigBuilder) -> Swift.Void
 @objc @_inheritsConvenienceInitializers @objcMembers public class BZVBenefitHubConfigBuilder : ObjectiveC.NSObject {
   @objc public var unitID: Swift.String?
+  @objc final public let headerViewClass: Swift.AnyClass?
+  @objc final public let adViewClass: Swift.AnyClass?
+  @objc final public let cpsAdViewClass: Swift.AnyClass?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -31,13 +36,41 @@ extension BuzzvilSDK.BZVBenefitHubConfig {
   @objc public static func config(block: (BuzzvilSDK.BZVBenefitHubConfigBuilder) -> Swift.Void) -> BuzzvilSDK.BZVBenefitHubConfig
   @objc convenience dynamic public init(block: (BuzzvilSDK.BZVBenefitHubConfigBuilder) -> Swift.Void)
 }
-@objc @_inheritsConvenienceInitializers @objcMembers final public class BZVBenefitHubTheme : ObjectiveC.NSObject {
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class BZVBenefitHubTheme : ObjectiveC.NSObject {
+  @objc deinit
+}
+public typealias BZVBenefitHubThemeBuilderBlock = (BuzzvilSDK.BZVBenefitHubThemeBuilder) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers public class BZVBenefitHubThemeBuilder : ObjectiveC.NSObject {
+  @objc public var navigationBarTitle: Swift.String?
+  public var usePrimaryColorInFilter: Swift.Bool?
+  @objc public var noFillErrorImage: UIKit.UIImage?
+  @objc public var noFillErrorTitle: Swift.String?
+  @objc public var noFillErrorDescription1st: Swift.String?
+  @objc public var noFillErrorDescription2nd: Swift.String?
+  @objc public var noFillErrorDescription3rd: Swift.String?
+  @objc public var noFillErrorDescriptionFinalAllFilter: Swift.String?
+  @objc public var noFillErrorDescriptionFinalOtherFilters: Swift.String?
+  @objc public var noFillErrorButton1st: Swift.String?
+  @objc public var noFillErrorButton2nd: Swift.String?
+  @objc public var noFillErrorButton3rd: Swift.String?
+  @objc public var noFillErrorButtonFinalAllFilter: Swift.String?
+  @objc public var noFillErrorButtonFinalOtherFilters: Swift.String?
+  @objc public var userProfileErrorImage: UIKit.UIImage?
+  @objc public var userProfileErrorTitle: Swift.String?
+  @objc public var userProfileErrorDescription: Swift.String?
+  @objc public var privacyPolicyErrorImage: UIKit.UIImage?
+  @objc public var agePolicyErrorImage: UIKit.UIImage?
+  @objc public var networkErrorImage: UIKit.UIImage?
+  @objc public var unknownErrorImage: UIKit.UIImage?
+  @objc public var appTrackingTransparencyGuideModalImage: UIKit.UIImage?
   @objc override dynamic public init()
   @objc deinit
 }
+extension BuzzvilSDK.BZVBenefitHubTheme {
+  @objc public static func theme(block: (BuzzvilSDK.BZVBenefitHubThemeBuilder) -> Swift.Void) -> BuzzvilSDK.BZVBenefitHubTheme
+  @objc convenience dynamic public init(block: (BuzzvilSDK.BZVBenefitHubThemeBuilder) -> Swift.Void)
+}
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefitConfig : ObjectiveC.NSObject {
-  @objc final public let appID: Swift.String
-  @objc final public let benefitHubConfig: BuzzvilSDK.BZVBenefitHubConfig?
   @objc deinit
 }
 extension BuzzvilSDK.BuzzBenefitConfig {
@@ -62,17 +95,42 @@ extension BuzzvilSDK.BuzzBenefitConfig {
   @objc public static func config(block: (BuzzvilSDK.BuzzBenefitConfigBuilder) -> Swift.Void) -> BuzzvilSDK.BuzzBenefitConfig
   @objc convenience dynamic public init(block: (BuzzvilSDK.BuzzBenefitConfigBuilder) -> Swift.Void)
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class BZVBenefitHub : ObjectiveC.NSObject {
-  @objc public var config: BuzzvilSDK.BZVBenefitHubConfig {
-    @objc get
-  }
-  @objc public var viewController: BuzzvilSDK.BZVBenefitHubViewController {
-    @objc get
-  }
-  @objc public func show(on viewController: UIKit.UIViewController)
-  @objc public func load(onSuccess: @escaping ((Swift.Int) -> Swift.Void), onFailure: @escaping ((Foundation.NSError) -> Swift.Void))
-  @objc public func reset()
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) open class BZVBenefitHubHeaderView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) open func desiredHeight() -> Swift.Int
+  @objc @_Concurrency.MainActor(unsafe) open func availableRewardDidUpdate(reward: Swift.Int)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class BZVBenefitHub : ObjectiveC.NSObject {
+  @objc deinit
+}
+extension BuzzvilSDK.BZVBenefitHub {
+  @objc dynamic public var config: BuzzvilSDK.BZVBenefitHubConfig {
+    @objc get
+  }
+}
+extension BuzzvilSDK.BZVBenefitHub {
+  @objc dynamic public var theme: BuzzvilSDK.BZVBenefitHubTheme {
+    @objc get
+  }
+  @objc public static var defaultTheme: BuzzvilSDK.BZVBenefitHubTheme {
+    @objc get
+  }
+  @objc public static func setDefaultTheme(_ theme: BuzzvilSDK.BZVBenefitHubTheme)
+}
+extension BuzzvilSDK.BZVBenefitHub {
+  @objc dynamic public var viewController: BuzzvilSDK.BZVBenefitHubViewController {
+    @objc get
+  }
+  @objc dynamic public func show(on viewController: UIKit.UIViewController)
+}
+extension BuzzvilSDK.BZVBenefitHub {
+  @objc dynamic public var availableRewards: Swift.Int {
+    @objc get
+  }
+  @objc dynamic public func load(onSuccess: @escaping (() -> Swift.Void), onFailure: @escaping ((Foundation.NSError) -> Swift.Void))
+  @objc dynamic public func reset()
 }
 public typealias BZVBenefitHubBuilderBlock = (BuzzvilSDK.BZVBenefitHubBuilder) -> Swift.Void
 @objc @_inheritsConvenienceInitializers @objcMembers public class BZVBenefitHubBuilder : ObjectiveC.NSObject {
@@ -114,25 +172,112 @@ extension BuzzvilSDK.BZVBenefitHubViewController : BuzzBoosterSDK.CampaignBanner
   @_Concurrency.MainActor(unsafe) final public func campaignBannerViewControllerLoadingDidStart(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
   @_Concurrency.MainActor(unsafe) final public func campaignBannerViewControllerLoadingDidEnd(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
 }
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) open class BZVBenefitHubAdView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) open func render(ad: BuzzAdBenefitSDK.BZVNativeAd)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public enum BuzzBenefitUserGender : Swift.Int {
+  case male
+  case female
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objcMembers final public class BuzzBenefitTheme {
+  @objc public init()
+  @discardableResult
+  final public func setPrimaryColor(_ color: UIKit.UIColor) -> BuzzvilSDK.BuzzBenefitTheme
+  @discardableResult
+  final public func setPrimaryLightColor(_ color: UIKit.UIColor) -> BuzzvilSDK.BuzzBenefitTheme
+  @discardableResult
+  final public func setRewardIcon(_ icon: UIKit.UIImage) -> BuzzvilSDK.BuzzBenefitTheme
+  @discardableResult
+  final public func setParticipatedIcon(_ icon: UIKit.UIImage) -> BuzzvilSDK.BuzzBenefitTheme
+  public static func setGlobalTheme(_ theme: BuzzvilSDK.BuzzBenefitTheme)
+  @objc deinit
+}
 extension UIKit.UIScrollView : BuzzRxSwift.ReactiveCompatible {
   public typealias ReactiveBase = UIKit.UIScrollView
+}
+@objc public enum BuzzBenefitUserInterfaceStyle : Swift.Int {
+  case system
+  case light
+  case dark
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) open class BZVBenefitHubEntryView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) public var clickableViews: [UIKit.UIView] {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToWindow()
+  @objc @_Concurrency.MainActor(unsafe) public func setEntryName(to name: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension BuzzvilSDK.BZVBenefitHubEntryView : BuzzAdBenefitSDK.BABImpressionTrackableView {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func shouldTrackImpression() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func viewDidImpressed()
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefit : ObjectiveC.NSObject {
   @objc public static let shared: BuzzvilSDK.BuzzBenefit
   @objc final public var config: BuzzvilSDK.BuzzBenefitConfig? {
     @objc get
   }
+  @objc deinit
+}
+extension BuzzvilSDK.BuzzBenefit {
   @objc final public func initialize(with config: BuzzvilSDK.BuzzBenefitConfig)
-  @objc final public func setUserInterfaceStyle(_ style: BuzzAdBenefitBase.BZVUserInterfaceStyle)
+}
+extension BuzzvilSDK.BuzzBenefit {
   @objc final public func login(with user: BuzzvilSDK.BuzzBenefitUser, onSuccess: (() -> Swift.Void)?, onFailure: ((any Swift.Error) -> Swift.Void)?)
   @objc final public func isLoggedIn() -> Swift.Bool
   @objc final public func logout()
+}
+extension BuzzvilSDK.BuzzBenefit {
+  @objc final public func setUserInterfaceStyle(_ style: BuzzvilSDK.BuzzBenefitUserInterfaceStyle)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefitUser : ObjectiveC.NSObject {
   @objc deinit
 }
-@objc @objcMembers final public class BuzzBenefitUser : ObjectiveC.NSObject {
-  @objc final public let userID: Swift.String
-  @objc final public let gender: BuzzAdBenefitSDK.BZVUserGender
-  @objc final public let birthYear: Swift.Int
-  public init(userID: Swift.String, gender: BuzzAdBenefitSDK.BZVUserGender?, birthYear: Swift.Int?)
+extension BuzzvilSDK.BuzzBenefitUser {
+  final public class Builder {
+    public init(userID: Swift.String)
+    @objc deinit
+  }
+}
+extension BuzzvilSDK.BuzzBenefitUser.Builder {
+  @discardableResult
+  final public func setGender(_ gender: BuzzvilSDK.BuzzBenefitUserGender) -> Self
+  @discardableResult
+  final public func setBirthYear(_ birthYear: Swift.Int) -> Self
+  final public func build() -> BuzzvilSDK.BuzzBenefitUser
+}
+public typealias BuzzBenefitUserBuilderBlock = (BuzzvilSDK.BuzzBenefitUserBuilder) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @objcMembers final public class BuzzBenefitUserBuilder : ObjectiveC.NSObject {
+  @objc final public var userID: Swift.String?
+  final public var gender: BuzzvilSDK.BuzzBenefitUserGender?
+  final public var birthYear: Swift.Int?
+  @objc override dynamic public init()
   @objc deinit
 }
+extension BuzzvilSDK.BuzzBenefitUser {
+  @objc public static func config(block: (BuzzvilSDK.BuzzBenefitUserBuilder) -> Swift.Void) -> BuzzvilSDK.BuzzBenefitUser
+  @objc convenience dynamic public init(block: (BuzzvilSDK.BuzzBenefitUserBuilder) -> Swift.Void)
+}
+extension BuzzvilSDK.BuzzBenefitUserGender : Swift.Equatable {}
+extension BuzzvilSDK.BuzzBenefitUserGender : Swift.Hashable {}
+extension BuzzvilSDK.BuzzBenefitUserGender : Swift.RawRepresentable {}
+extension BuzzvilSDK.BuzzBenefitUserInterfaceStyle : Swift.Equatable {}
+extension BuzzvilSDK.BuzzBenefitUserInterfaceStyle : Swift.Hashable {}
+extension BuzzvilSDK.BuzzBenefitUserInterfaceStyle : Swift.RawRepresentable {}

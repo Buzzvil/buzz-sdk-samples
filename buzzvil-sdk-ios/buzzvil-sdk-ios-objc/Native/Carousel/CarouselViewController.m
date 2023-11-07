@@ -1,4 +1,4 @@
-@import BuzzAdBenefitSDK;
+@import BuzzvilSDK;
 #import "CarouselViewController.h"
 #import "CarouselCell.h"
 #import "FeedPromotionCell.h"
@@ -25,7 +25,7 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
 
 @property (nonatomic, strong, readonly) UIPageControl *pageControl;
 
-@property (nonatomic, strong, readonly) CarouselFeedEntryView *feedEntryView;
+//@property (nonatomic, strong, readonly) CarouselFeedEntryView *feedEntryView;
 
 @end
 
@@ -103,8 +103,9 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
   _pageControl.userInteractionEnabled = NO;
   [self.view addSubview:self.pageControl];
   
-  _feedEntryView = [[CarouselFeedEntryView alloc] initWithFrame:CGRectZero];
-  [self.view addSubview:self.feedEntryView];
+  // ##ARTHUR
+//  _feedEntryView = [[CarouselFeedEntryView alloc] initWithFrame:CGRectZero];
+//  [self.view addSubview:self.feedEntryView];
 }
 
 - (void)setupLayout {
@@ -148,12 +149,13 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  if ((indexPath.item % _loadedAdCount) == _loadedAdCount - 1) {
+    // ##ARTHUR
+//  if ((indexPath.item % _loadedAdCount) == _loadedAdCount - 1) {
     // last index인 경우 FeedPromotionCell을 반환합니다.
-    FeedPromotionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedPromotionCell" forIndexPath:indexPath];
-    [cell bind];
-    return cell;
-  } else {
+//    FeedPromotionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FeedPromotionCell" forIndexPath:indexPath];
+//    [cell bind];
+//    return cell;
+//  } else {
     // last index가 아닌 경우 CarouselCell을 반환합니다.
     CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
     
@@ -167,7 +169,7 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
     [cell bind];
 
     return cell;
-  }
+//  }
 }
 
 // 무한루프 구현 시

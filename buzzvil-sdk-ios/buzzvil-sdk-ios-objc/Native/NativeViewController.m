@@ -1,4 +1,4 @@
-@import BuzzAdBenefitSDK;
+@import BuzzvilSDK;
 #import "NativeViewController.h"
 
 @interface NativeViewController ()  <BZVNativeAdViewVideoDelegate>

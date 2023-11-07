@@ -6,19 +6,39 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		YuPJNvv/1V+8tsx+GZxZRcORY6I=
+		xmbZt9CtyPWkotz2XR8axp2xWX8=
+		</data>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/Assets.car</key>
+		<data>
+		wptd5nmQn1xk+aGgO8Tk6+fW+Qg=
+		</data>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/BABInquiry.storyboardc/8yv-XB-mQm-view-jut-aL-Ebd.nib</key>
+		<data>
+		PvtFHKP3iTFMU7SxMtxXIcf9G3o=
+		</data>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/BABInquiry.storyboardc/BABInquiryViewController.nib</key>
+		<data>
+		XAkRJ5erkYQImGKgo37IhypadXI=
+		</data>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/BABInquiry.storyboardc/Info.plist</key>
+		<data>
+		2FsfHRV75cI3263tswdtbuWDcp0=
 		</data>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/BuzzAdBenefitSDK</key>
 		<data>
-		AIcGVrjGtvjjSE9JrX1Bx10UcPQ=
+		dvtOca3Kh653ROJkKpC7ScxvORw=
 		</data>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/Info.plist</key>
 		<data>
-		xADDi907JQdvKCnvi4b/k0nh3YE=
+		wL7oUFrsGBREhWwcLVHAro1IiI4=
+		</data>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/Localizable.strings</key>
+		<data>
+		a0JBBGA74vFo7HvxEC2bXtdWVAM=
 		</data>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		5SCNRID+ynP93nHA3CGTCh3NCX4=
+		ytqkr50rm5+Hy2RBu5c4G1YtiVY=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/Assets.car</key>
 		<data>
@@ -42,15 +62,15 @@
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/BuzzBoosterSDK</key>
 		<data>
-		JfANqQjRuNSj0IcJqHo1U69VnUk=
+		BeYZb3Kk0S0ziwP4VvUVUdchZQU=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/Info.plist</key>
 		<data>
-		Xgdxs0rbleZ7JjXxX/1lwMx659c=
+		SXYcf8VEsu/la8zmusMv9j91TSo=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		kHEGN0ezMsC8qGW8lxyimHJr4R4=
+		Kh0ORCdpgJ9rBAurcFxa/X/BKn4=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/bst_ic_confetti.gif</key>
 		<data>
@@ -58,35 +78,39 @@
 		</data>
 		<key>Headers/BuzzvilSDK-Swift.h</key>
 		<data>
-		yOnE4I8Tn6HAFCN6kR8c2Kz0rkk=
+		7KVmVVDALcR0AxqYcvxygjHN/x0=
+		</data>
+		<key>Headers/BuzzvilSDK.h</key>
+		<data>
+		BPgvXLGDaJfyF7nkjJoFmkU/Auc=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		z+F1zZAeYvl0WtDdB1cHkJ4YUSs=
+		UMIaP+HhazurSwgXxrlHEn2HdFw=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		BD3PVtk3kUAThEahO+UMfkkeQXw=
+		HrFFYdRf4pj7hqClGq7g2vAs9Ag=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		YLu7jPV0WcAqFGYZab0mssEHBAE=
+		0aypdxHPyNLN504cW3D9W93x0A4=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		U2om0TQmzoPk6mVXiukt9lF3VC4=
+		84YD6g5Dwh930UzjRKQ5NcHaQbg=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		YLu7jPV0WcAqFGYZab0mssEHBAE=
+		0aypdxHPyNLN504cW3D9W93x0A4=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		8QxdAkw7RIYxYbgdAxRfxpKaYBg=
+		a46JCsQj51g/6vWhimSLWkNk77U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		4z4dwH3FfCLYaJnTu7vD5Pp8KrA=
+		3PuDVn8fVWbRgM0g5D2j0RutGpE=
 		</data>
 		<key>Pretendard-Bold.otf</key>
 		<data>
@@ -107,28 +131,63 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VvKGUnSB/Aqg5xfWBlQ4jnHLWvpypTajJjYRgt2IEj8=
+			g0MbmJYnonrRYll4K19K/ZuNnRRteyu1CCPBA5yR5KU=
+			</data>
+		</dict>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rwzMn90ZTT0wOw1R49MvEll7vY1m/PfzpqP+RUSpM3U=
+			</data>
+		</dict>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/BABInquiry.storyboardc/8yv-XB-mQm-view-jut-aL-Ebd.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3YY7wd4i59s+JBfqhhXF42rAH/kv/431lv0AYVGJBZg=
+			</data>
+		</dict>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/BABInquiry.storyboardc/BABInquiryViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fEzOEFAnUpOjfBMb0nbiHssskePQO01nCNNQnXYmwZw=
+			</data>
+		</dict>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/BABInquiry.storyboardc/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IjyU3fPk2GHr9DZROsvXc2OQX5yosebHwRjZvZFUvK4=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/BuzzAdBenefitSDK</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FNkMUJgZ6hBNS2fHqgpTzdMUPjxLsqXUC0PF7cdTOr0=
+			ksV9QP4W/SaHbzf4hEj/QBEue2gSmHru19+ZjIHaBYc=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AIk+jcu0DHerABVM1WPYR5t9lb8Yb9g34TfEgVeOGY0=
+			gOkqkmtpQ8gUJGA0I7Q0Iy4e7ExUkeNhD6eU5/jjKGk=
+			</data>
+		</dict>
+		<key>Frameworks/BuzzAdBenefitSDK.framework/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/GNIzRTiyJ+lPlE41w2TxBAeyeDRFw1WOOaS1fO/SYE=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4y7lE6chuCMZT8nu1fsiDEwCt0K4jdK5M1ihtKiQGFA=
+			Ec2/vufw24Fi1I6sBb6dlB3N+H1qiX+rdfky2+BCctc=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/Assets.car</key>
@@ -170,21 +229,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yh2yT0OXoSSGotWZV3t/6zhXRCu5xdU247AAV/6kzw0=
+			8sw5eZyVPWg2Jfitf5zgOMICnKOeUCj+7Untgek0fbs=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PSIghZf5DXUWR3CI7PNd/wHEyQrgNSQ59nqgzsvNKsE=
+			9dQJ1AtG3KfVwQrGSSEcjVjgN/o2oC4cS6OFWI/B8Yw=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			giGQMRTgd2Jwc7sDjQFRxgzGszF/kRxodHWRzywxSI0=
+			yGuwPJvhdMyWVATPz5SAU5WH5ysIAeKO6OdWWtQJhWE=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/bst_ic_confetti.gif</key>
@@ -198,49 +257,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TyWRphWd4x4jpA8PNH3grtxYV7VfqhgGsOEyyleK0DY=
+			DSVgi986N1L7+7uHQ+MNSgAqOVzNEXV7Yhyv0n/MPUY=
+			</data>
+		</dict>
+		<key>Headers/BuzzvilSDK.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O9yilYaLmHkdufhBDVvBUqEVaTwLvpGvITFijdUtsGA=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c+0EANJkjq/fvmOqVwY5caV6nh364TqWHOXceaJRAZs=
+			oKUxZI3dsaJ/GrUD7WVIRZ79U0/XNetRG6eHir/n6Bk=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AAVawWooxAqWLlh/fxWqIJoPFes9/uEC4NZEljGBL6E=
+			bEr3aoDDDNeSDjfFA1PNQvlGV9URAoVYY8FLdYc+iic=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BzXYY/AW7iAOOAp1PgSuIk6cK/n/3r/Xo8LlFoywZxs=
+			8YIqGOR97MmoGCqNsxr3Jet5M4ofSFimHqV4Ytq8jiE=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AAVawWooxAqWLlh/fxWqIJoPFes9/uEC4NZEljGBL6E=
+			bEr3aoDDDNeSDjfFA1PNQvlGV9URAoVYY8FLdYc+iic=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9z5hwUCpJ95HgHkT9WP/jMERTjOiXpy0tIJbHV+kj1I=
+			JxYlyr6xMdDEbiYi7Z3J97J4gdo3ypujGchdJjYc//w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZIKkGJzf1O3qVxPqXWLE+GyzAhb24zNXAKVYbwddE1A=
+			b0ptHBmyIoqOm/6oz4nw+bwnE/z+SlEJglNyfZvtZIs=
 			</data>
 		</dict>
 		<key>Pretendard-Bold.otf</key>

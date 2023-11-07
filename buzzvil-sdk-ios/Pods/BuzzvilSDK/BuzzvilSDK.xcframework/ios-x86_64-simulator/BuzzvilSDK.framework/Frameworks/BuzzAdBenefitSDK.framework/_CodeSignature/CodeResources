@@ -4,13 +4,69 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Assets.car</key>
+		<data>
+		wptd5nmQn1xk+aGgO8Tk6+fW+Qg=
+		</data>
+		<key>BABInquiry.storyboardc/8yv-XB-mQm-view-jut-aL-Ebd.nib</key>
+		<data>
+		PvtFHKP3iTFMU7SxMtxXIcf9G3o=
+		</data>
+		<key>BABInquiry.storyboardc/BABInquiryViewController.nib</key>
+		<data>
+		XAkRJ5erkYQImGKgo37IhypadXI=
+		</data>
+		<key>BABInquiry.storyboardc/Info.plist</key>
+		<data>
+		2FsfHRV75cI3263tswdtbuWDcp0=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		xADDi907JQdvKCnvi4b/k0nh3YE=
+		wL7oUFrsGBREhWwcLVHAro1IiI4=
+		</data>
+		<key>Localizable.strings</key>
+		<data>
+		a0JBBGA74vFo7HvxEC2bXtdWVAM=
 		</data>
 	</dict>
 	<key>files2</key>
-	<dict/>
+	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rwzMn90ZTT0wOw1R49MvEll7vY1m/PfzpqP+RUSpM3U=
+			</data>
+		</dict>
+		<key>BABInquiry.storyboardc/8yv-XB-mQm-view-jut-aL-Ebd.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3YY7wd4i59s+JBfqhhXF42rAH/kv/431lv0AYVGJBZg=
+			</data>
+		</dict>
+		<key>BABInquiry.storyboardc/BABInquiryViewController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fEzOEFAnUpOjfBMb0nbiHssskePQO01nCNNQnXYmwZw=
+			</data>
+		</dict>
+		<key>BABInquiry.storyboardc/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IjyU3fPk2GHr9DZROsvXc2OQX5yosebHwRjZvZFUvK4=
+			</data>
+		</dict>
+		<key>Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/GNIzRTiyJ+lPlE41w2TxBAeyeDRFw1WOOaS1fO/SYE=
+			</data>
+		</dict>
+	</dict>
 	<key>rules</key>
 	<dict>
 		<key>^.*</key>

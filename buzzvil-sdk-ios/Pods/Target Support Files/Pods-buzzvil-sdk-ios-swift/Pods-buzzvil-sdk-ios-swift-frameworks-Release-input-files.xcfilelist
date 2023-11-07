@@ -4,10 +4,6 @@ ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework
 ${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework
-${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitBase/BuzzAdBenefitBase.framework/BuzzAdBenefitBase
-${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitFeed/BuzzAdBenefitFeed.framework/BuzzAdBenefitFeed
-${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitInterstitial/BuzzAdBenefitInterstitial.framework/BuzzAdBenefitInterstitial
-${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitNative/BuzzAdBenefitNative.framework/BuzzAdBenefitNative
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzAdBenefitSDK/BuzzAdBenefitSDK.framework/BuzzAdBenefitSDK
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzBoosterSDK/BuzzBoosterSDK.framework/BuzzBoosterSDK
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/BuzzRxSwift/BuzzRxSwift.framework/BuzzRxSwift
