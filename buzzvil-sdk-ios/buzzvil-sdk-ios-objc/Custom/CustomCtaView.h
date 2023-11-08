@@ -1,8 +1,7 @@
-#import <UIKit/UIKit.h>
+@import UIKit;
 @import BuzzvilSDK;
 
 NS_ASSUME_NONNULL_BEGIN
-
 
 @interface CustomCtaView : UIStackView <BZVCtaViewProtocol>
 

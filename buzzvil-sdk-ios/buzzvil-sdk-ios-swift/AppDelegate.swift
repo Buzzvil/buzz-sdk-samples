@@ -34,10 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     BuzzBenefit.shared.login(
       with: buzzBenefitUser,
       onSuccess: {
-        
+        // 로그인이 성공한 경우 호출됩니다.
       },
       onFailure: { error in
-      })
+        // 로그인이 실패한 경우 호출됩니다.
+      }
+    )
     
     // 로그인 상태를 확인하는 코드입니다.
     BuzzBenefit.shared.isLoggedIn()

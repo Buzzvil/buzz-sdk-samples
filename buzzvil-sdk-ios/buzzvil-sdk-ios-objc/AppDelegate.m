@@ -28,19 +28,17 @@
   return YES;
 }
 
-// ##ARTHUR
 - (void)buzzBenefitLoginLogout {
-  BuzzBenefitUser *benefitUser = [[BuzzBenefitUser alloc] initWithBlock:^(BuzzBenefitUserBuilder * _Nonnull builder) {
+  BuzzBenefitUser *buzzBenefitUser = [BuzzBenefitUser userWithBlock:^(BuzzBenefitUserBuilder * _Nonnull builder) {
     builder.userID = @"USER_ID";
-//    builder.gender = BZVUserGenderMale;
-//    builder.birthYear = 1996;
+    builder.gender = BuzzBenefitUserGenderMale;
+    builder.birthYear = 1996;
   }];
-  [[BuzzBenefit sharedInstance] 
-   loginWithUser:benefitUser
-   onSuccess:^{
-    
-  }
-   onFailure:^(NSError * _Nonnull) {
+  
+  [[BuzzBenefit sharedInstance] loginWithUser:buzzBenefitUser onSuccess:^{
+    // 로그인이 성공한 경우 호출됩니다.
+  } onFailure:^(NSError * _Nonnull error) {
+    // 로그인이 실패한 경우 호출됩니다.
   }];
   
   // 로그인 상태를 확인하는 코드입니다.
@@ -49,6 +47,5 @@
   // 로그아웃하는 코드입니다.
   [[BuzzBenefit sharedInstance] logout];
 }
-
 
 @end
