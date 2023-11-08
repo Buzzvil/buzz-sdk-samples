@@ -1,21 +1,18 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzBoosterSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 @_exported import BuzzBoosterSDK
 import BuzzRxSwift
 import CoreData
 import CryptoKit
-import DeveloperToolsSupport
 import Foundation
 import ImageIO
 import Swift
-import SwiftUI
 import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
-import _SwiftConcurrencyShims
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BSTUIViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var title: Swift.String? {
     @objc get
@@ -71,13 +68,13 @@ extension BuzzBoosterSDK.BBSEventLocalDto {
   @objc deinit
 }
 extension BuzzRxSwift.ObservableType {
-  public func bind<Observer>(to observers: Observer...) -> any BuzzRxSwift.Disposable where Observer : BuzzRxSwift.ObserverType, Self.Element == Observer.Element
-  public func bind<Observer>(to observers: Observer...) -> any BuzzRxSwift.Disposable where Observer : BuzzRxSwift.ObserverType, Observer.Element == Self.Element?
+  public func bind<Observer>(to observers: Observer...) -> BuzzRxSwift.Disposable where Observer : BuzzRxSwift.ObserverType, Self.Element == Observer.Element
+  public func bind<Observer>(to observers: Observer...) -> BuzzRxSwift.Disposable where Observer : BuzzRxSwift.ObserverType, Observer.Element == Self.Element?
   public func bind<Result>(to binder: (Self) -> Result) -> Result
   public func bind<R1, R2>(to binder: (Self) -> (R1) -> R2, curriedArgument: R1) -> R2
-  public func bind<Object>(with object: Object, onNext: @escaping (Object, Self.Element) -> Swift.Void) -> any BuzzRxSwift.Disposable where Object : AnyObject
-  public func bind(onNext: @escaping (Self.Element) -> Swift.Void) -> any BuzzRxSwift.Disposable
-  public func catchAndNextError(with elementFactory: @escaping (any Swift.Error) -> Self.Element) -> BuzzRxSwift.Observable<Self.Element>
+  public func bind<Object>(with object: Object, onNext: @escaping (Object, Self.Element) -> Swift.Void) -> BuzzRxSwift.Disposable where Object : AnyObject
+  public func bind(onNext: @escaping (Self.Element) -> Swift.Void) -> BuzzRxSwift.Disposable
+  public func catchAndNextError(with elementFactory: @escaping (Swift.Error) -> Self.Element) -> BuzzRxSwift.Observable<Self.Element>
 }
 @_inheritsConvenienceInitializers @objc(BBSEventLocalDto) public class BBSEventLocalDto : CoreData.NSManagedObject {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
@@ -160,8 +157,8 @@ extension BuzzBoosterSDK.BuzzBooster {
   @objc public static func setPushToken(_ token: Swift.String)
   @objc public static func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
   @objc public static func application(_ application: UIKit.UIApplication, didReceiveRemoteNotification userInfo: [Swift.AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void)
-  @objc public static func addUserEventDelegate(_ delegate: any BuzzBoosterSDK.BSTUserEventDelegate)
-  @objc public static func removeUserEventDelegate(_ delegate: any BuzzBoosterSDK.BSTUserEventDelegate)
+  @objc public static func addUserEventDelegate(_ delegate: BuzzBoosterSDK.BSTUserEventDelegate)
+  @objc public static func removeUserEventDelegate(_ delegate: BuzzBoosterSDK.BSTUserEventDelegate)
 }
 infix operator >>> : AdditionPrecedence
 @objc public enum BSTMarketingStatus : Swift.Int {
@@ -180,12 +177,12 @@ infix operator >>> : AdditionPrecedence
   @objc deinit
 }
 public protocol CampaignBannerViewControllerDelegate : AnyObject {
-  func campaignBannerViewController(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController, didOccur error: any Swift.Error)
+  func campaignBannerViewController(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController, didOccur error: Swift.Error)
   func campaignBannerViewControllerLoadingDidStart(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
   func campaignBannerViewControllerLoadingDidEnd(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CampaignBannerViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: (any BuzzBoosterSDK.CampaignBannerViewControllerDelegate)?
+  @_Concurrency.MainActor(unsafe) weak public var delegate: BuzzBoosterSDK.CampaignBannerViewControllerDelegate?
   @_Concurrency.MainActor(unsafe) @objc dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -213,7 +210,7 @@ public typealias BSTConfigBuilderBlock = (BuzzBoosterSDK.BSTConfigBuilder) -> Sw
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class BuzzBooster : ObjectiveC.NSObject {
-  @objc weak public static var optInMarketingCampaignDelegate: (any BuzzBoosterSDK.BSTOptInMarketingCampaignDelegate)?
+  @objc weak public static var optInMarketingCampaignDelegate: BuzzBoosterSDK.BSTOptInMarketingCampaignDelegate?
   @objc deinit
 }
 @objc public protocol BSTOptInMarketingCampaignDelegate {

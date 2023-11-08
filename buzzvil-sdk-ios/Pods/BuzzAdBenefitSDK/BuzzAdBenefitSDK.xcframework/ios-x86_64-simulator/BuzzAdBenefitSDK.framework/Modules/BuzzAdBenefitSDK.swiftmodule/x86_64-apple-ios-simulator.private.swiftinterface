@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzAdBenefitSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -7,17 +7,14 @@ import AdSupport
 import AppTrackingTransparency
 @_exported import BuzzAdBenefitSDK
 import BuzzRxSwift
-import DeveloperToolsSupport
 import Foundation
 import SDWebImage
 import Swift
-import SwiftUI
 import UIKit
 import WebKit
 import WidgetKit
 import _Concurrency
 import _StringProcessing
-import _SwiftConcurrencyShims
 @objc(BABBaseRewardEventType) public enum BaseRewardEventType : Swift.Int {
   case landed
   case action
@@ -32,11 +29,11 @@ import _SwiftConcurrencyShims
 }
 @objc public protocol BZVBuzzAdInterstitialDelegate : ObjectiveC.NSObjectProtocol {
   @objc(BZVBuzzAdInterstitialDidLoadAd:) func bzvBuzzAdInterstitialDidLoadAd(_ interstitial: BuzzAdBenefitSDK.BZVBuzzAdInterstitial)
-  @objc(BZVBuzzAdInterstitialDidFailToLoadAd:withError:) func bzvBuzzAdInterstitialDidFail(toLoadAd interstitial: BuzzAdBenefitSDK.BZVBuzzAdInterstitial, withError: any Swift.Error)
+  @objc(BZVBuzzAdInterstitialDidFailToLoadAd:withError:) func bzvBuzzAdInterstitialDidFail(toLoadAd interstitial: BuzzAdBenefitSDK.BZVBuzzAdInterstitial, withError: Swift.Error)
   @objc(BZVBuzzAdInterstitialDidDismiss:) func bzvBuzzAdInterstitialDidDismiss(_ viewController: UIKit.UIViewController)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class BZVBuzzAdInterstitial : ObjectiveC.NSObject {
-  @objc weak public var delegate: (any BuzzAdBenefitSDK.BZVBuzzAdInterstitialDelegate)?
+  @objc weak public var delegate: BuzzAdBenefitSDK.BZVBuzzAdInterstitialDelegate?
   @objc public func load()
   @objc(presentOnViewController:) public func present(on viewController: UIKit.UIViewController)
   @objc deinit
@@ -76,7 +73,7 @@ public typealias BZVNativeAdViewBinderBlock = (BuzzAdBenefitSDK.BZVNativeAdViewB
 @objc @_inheritsConvenienceInitializers @objcMembers public class BZVNativeAdViewBinderBuilder : ObjectiveC.NSObject {
   @objc public var nativeAdView: BuzzAdBenefitSDK.BZVNativeAdView?
   @objc public var mediaView: BuzzAdBenefitSDK.BZVMediaView?
-  @objc public var ctaView: (any UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol)?
+  @objc public var ctaView: (UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol)?
   @objc public var titleLabel: UIKit.UILabel?
   @objc public var descriptionLabel: UIKit.UILabel?
   @objc public var iconImageView: UIKit.UIImageView?
@@ -115,10 +112,10 @@ extension UIKit.UIViewController {
   public init?(rawValue: BuzzAdBenefitSDK.DeepLinkSource.RawValue)
 }
 @objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) public class BZVNativeAdView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) weak public var videoDelegate: (any BuzzAdBenefitSDK.BZVNativeAdViewVideoDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) weak public var videoDelegate: BuzzAdBenefitSDK.BZVNativeAdViewVideoDelegate?
   @objc @_Concurrency.MainActor(unsafe) public var mediaView: BuzzAdBenefitSDK.BZVMediaView?
   @objc @_Concurrency.MainActor(unsafe) public var clickableViews: [UIKit.UIView]
-  @objc @_Concurrency.MainActor(unsafe) public func setEventSessionProvider(_ eventSessionProvider: any BuzzAdBenefitSDK.BZVNativeAdEventSessionProvider)
+  @objc @_Concurrency.MainActor(unsafe) public func setEventSessionProvider(_ eventSessionProvider: BuzzAdBenefitSDK.BZVNativeAdEventSessionProvider)
   @objc(setNativeAd:) @_Concurrency.MainActor(unsafe) public func setNativeAd(nativeAd: BuzzAdBenefitSDK.BZVNativeAd)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
@@ -191,8 +188,8 @@ extension BuzzAdBenefitSDK.BZVNativeAd2ViewBinder {
   dynamic public func bind(onRequest: @escaping () -> Swift.Void = {}, onSuccess: @escaping () -> Swift.Void = {}, onFailure: @escaping (_ error: Foundation.NSError) -> Swift.Void = { _ in })
 }
 @objc(BABBIEventTracker) public protocol BIEventTracker {
-  @objc func track(_ event: any BuzzAdBenefitSDK.BIEvent)
-  @objc func track(_ event: any BuzzAdBenefitSDK.BIEvent, unitId: Swift.String)
+  @objc func track(_ event: BuzzAdBenefitSDK.BIEvent)
+  @objc func track(_ event: BuzzAdBenefitSDK.BIEvent, unitId: Swift.String)
 }
 extension UIKit.UIImage {
   @objc public static func bab_dynamicImage(light: UIKit.UIImage, dark: UIKit.UIImage) -> UIKit.UIImage
@@ -401,7 +398,7 @@ public protocol DailyRewardService {
   @objc deinit
 }
 extension UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public func bab_presentWidgetTutorial(config: BuzzAdBenefitSDK.WidgetTutorialViewConfig, delegate: (any BuzzAdBenefitSDK.WidgetTutorialViewControllerDelegate)?)
+  @_Concurrency.MainActor(unsafe) public func bab_presentWidgetTutorial(config: BuzzAdBenefitSDK.WidgetTutorialViewConfig, delegate: BuzzAdBenefitSDK.WidgetTutorialViewControllerDelegate?)
 }
 extension UIKit.UIImageView {
   @_Concurrency.MainActor(unsafe) public func bab_aspectRatio() -> CoreFoundation.CGFloat
@@ -487,8 +484,8 @@ extension Swift.String {
   @objc deinit
 }
 public struct Config : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum RemoteConfigError : Swift.Error {
   case invalidRequest
@@ -509,13 +506,13 @@ public protocol UnitManager {
   func getCachedSettings(with unitId: Swift.String) -> BuzzAdBenefitSDK.UnitSettings
 }
 extension BuzzAdBenefitSDK.BaseBIEvent {
-  @objc public static func initSDK() -> any BuzzAdBenefitSDK.BIEvent
-  @objc public static func enterForeground() -> any BuzzAdBenefitSDK.BIEvent
-  @objc public static func showPrivacyPolicy() -> any BuzzAdBenefitSDK.BIEvent
-  @objc public static func agreePrivacyPolicy() -> any BuzzAdBenefitSDK.BIEvent
-  @objc public static func disagreePrivacyPolicy() -> any BuzzAdBenefitSDK.BIEvent
-  @objc public static func enterPrivacyPolicyWebPage() -> any BuzzAdBenefitSDK.BIEvent
-  @objc public static func clickWidget() -> any BuzzAdBenefitSDK.BIEvent
+  @objc public static func initSDK() -> BuzzAdBenefitSDK.BIEvent
+  @objc public static func enterForeground() -> BuzzAdBenefitSDK.BIEvent
+  @objc public static func showPrivacyPolicy() -> BuzzAdBenefitSDK.BIEvent
+  @objc public static func agreePrivacyPolicy() -> BuzzAdBenefitSDK.BIEvent
+  @objc public static func disagreePrivacyPolicy() -> BuzzAdBenefitSDK.BIEvent
+  @objc public static func enterPrivacyPolicyWebPage() -> BuzzAdBenefitSDK.BIEvent
+  @objc public static func clickWidget() -> BuzzAdBenefitSDK.BIEvent
 }
 public protocol WidgetTutorialViewControllerDelegate : AnyObject {
   func widgetTutorialViewControllerDidCancel(_ viewController: UIKit.UIViewController)
@@ -617,7 +614,7 @@ public struct DailyRewardPageDTO : Swift.Decodable {
   public let pageType: Swift.String
   public let pageId: Swift.String
   public let pageDetail: BuzzAdBenefitSDK.DailyRewardDTO
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers final public class BZVNativeAd2Pool : ObjectiveC.NSObject {
   @objc public init(unitId: Swift.String)
@@ -771,7 +768,7 @@ public struct DailyRewardDTO : Swift.Decodable {
   public let maxAttendableDays: Swift.Int
   public let rewardPointAmount: Swift.Int
   public let toastMessage: Swift.String?
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension UIKit.UIViewController {
   @objc @_Concurrency.MainActor(unsafe) dynamic public var bab_isVisible: Swift.Bool {
@@ -901,8 +898,8 @@ extension BuzzAdBenefitSDK.Color {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(BABBaseRewardManager) final public class BaseRewardManager : ObjectiveC.NSObject {
   @objc convenience override dynamic public init()
-  @objc final public func getBaseRewardAmount(with unitId: Swift.String, eventType: BuzzAdBenefitSDK.BaseRewardEventType, resourceType: BuzzAdBenefitSDK.BaseRewardResourceType, onSuccess: @escaping (Swift.Int) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
-  @objc final public func claimBaseReward(with unitId: Swift.String, eventType: BuzzAdBenefitSDK.BaseRewardEventType, resourceType: BuzzAdBenefitSDK.BaseRewardResourceType, onSuccess: @escaping (Swift.Int) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
+  @objc final public func getBaseRewardAmount(with unitId: Swift.String, eventType: BuzzAdBenefitSDK.BaseRewardEventType, resourceType: BuzzAdBenefitSDK.BaseRewardResourceType, onSuccess: @escaping (Swift.Int) -> Swift.Void, onFailure: @escaping (Swift.Error) -> Swift.Void)
+  @objc final public func claimBaseReward(with unitId: Swift.String, eventType: BuzzAdBenefitSDK.BaseRewardEventType, resourceType: BuzzAdBenefitSDK.BaseRewardResourceType, onSuccess: @escaping (Swift.Int) -> Swift.Void, onFailure: @escaping (Swift.Error) -> Swift.Void)
   @objc deinit
 }
 @objc public enum BuzzMediaViewAspect : Swift.Int {
@@ -925,7 +922,7 @@ extension BuzzAdBenefitSDK.Color {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @objc @_Concurrency.MainActor(unsafe) public func loadImage(atUrl url: Foundation.URL)
   @objc @_Concurrency.MainActor(unsafe) public func loadVideo(atUrl url: Foundation.URL, autoPlay: Swift.Bool, thumbnailImageUrl: Foundation.URL, fromSecond: Foundation.TimeInterval, mute: Swift.Bool)
-  @objc @_Concurrency.MainActor(unsafe) public func loadVideo(withBuzzPlayer player: any BuzzAdBenefitSDK.BuzzPlayerProtocol, autoPlay: Swift.Bool, thumbnailImageUrl: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) public func loadVideo(withBuzzPlayer player: BuzzAdBenefitSDK.BuzzPlayerProtocol, autoPlay: Swift.Bool, thumbnailImageUrl: Foundation.URL)
   @objc @_Concurrency.MainActor(unsafe) public func loadVideo(atVastTag vastTag: Swift.String, autoPlay: Swift.Bool, thumbnailImageUrl: Foundation.URL, fromSecond: Foundation.TimeInterval, mute: Swift.Bool)
   @objc @_Concurrency.MainActor(unsafe) public func didEnterFullscreen()
   @objc @_Concurrency.MainActor(unsafe) public func didExitFullscreen()
@@ -953,23 +950,23 @@ public enum ConfigKey : Swift.String {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(BABSDKCore) final public class SDKCore : ObjectiveC.NSObject {
   @objc public static let shared: BuzzAdBenefitSDK.SDKCore
-  @objc final public var authManager: any BuzzAdBenefitSDK.AuthManager {
+  @objc final public var authManager: BuzzAdBenefitSDK.AuthManager {
     @objc get
     @objc set
   }
-  @objc final public var biEventTracker: any BuzzAdBenefitSDK.BIEventTracker {
+  @objc final public var biEventTracker: BuzzAdBenefitSDK.BIEventTracker {
     @objc get
     @objc set
   }
-  final public var dailyRewardService: any BuzzAdBenefitSDK.DailyRewardService {
+  final public var dailyRewardService: BuzzAdBenefitSDK.DailyRewardService {
     get
     set
   }
   @objc final public let baseRewardManager: BuzzAdBenefitSDK.BaseRewardManager
   @objc final public let server: BuzzAdBenefitSDK.Server
-  @objc final public let trackingAuthorizer: any BuzzAdBenefitSDK.TrackingAuthorizer
-  final public let unitManager: any BuzzAdBenefitSDK.UnitManager
-  final public let widgetInstallChecker: any BuzzAdBenefitSDK.WidgetInstallChecker
+  @objc final public let trackingAuthorizer: BuzzAdBenefitSDK.TrackingAuthorizer
+  final public let unitManager: BuzzAdBenefitSDK.UnitManager
+  final public let widgetInstallChecker: BuzzAdBenefitSDK.WidgetInstallChecker
   @objc final public var userInterfaceStyle: BuzzAdBenefitSDK.BZVUserInterfaceStyle
   @objc deinit
 }
@@ -1027,8 +1024,8 @@ extension BuzzAdBenefitSDK.Color {
 public struct ConfigList {
 }
 extension BuzzAdBenefitSDK.ConfigList : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @objc(BABAuthManagerSwift) public protocol AuthManager {
   @objc func isLoggedIn() -> Swift.Bool
@@ -1036,7 +1033,7 @@ extension BuzzAdBenefitSDK.ConfigList : Swift.Codable {
   @objc func loadSession() -> BuzzAdBenefitSDK.SessionDTO?
   @objc func loadToken() -> Swift.String?
   @objc func loadUserProfile() -> BuzzAdBenefitSDK.UserProfileDTO?
-  @objc func login(with userProfile: BuzzAdBenefitSDK.UserProfileDTO, onSuccess: @escaping (BuzzAdBenefitSDK.SessionDTO) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
+  @objc func login(with userProfile: BuzzAdBenefitSDK.UserProfileDTO, onSuccess: @escaping (BuzzAdBenefitSDK.SessionDTO) -> Swift.Void, onFailure: @escaping (Swift.Error) -> Swift.Void)
   @objc func logout()
 }
 extension UIKit.UIViewController {
@@ -1046,7 +1043,7 @@ extension UIKit.UIViewController {
   @objc func canGuideAuthorization() -> Swift.Bool
   @objc func canRequestAuthorization() -> Swift.Bool
   @objc func loadAuthorizationGuideURL() -> Foundation.URL
-  @objc func requestAuthorization(onSuccess: @escaping (BuzzAdBenefitSDK.TrackingAuthorizationStatus) -> Swift.Void, onFailure: @escaping (any Swift.Error) -> Swift.Void)
+  @objc func requestAuthorization(onSuccess: @escaping (BuzzAdBenefitSDK.TrackingAuthorizationStatus) -> Swift.Void, onFailure: @escaping (Swift.Error) -> Swift.Void)
 }
 extension BuzzAdBenefitSDK.Color {
   @objc public static var dimmer_base: UIKit.UIColor {
@@ -1078,14 +1075,14 @@ public struct UnitSettings : Swift.Decodable, Swift.Equatable {
   public let feedRatio: BuzzAdBenefitSDK.FeedRatio
   public init(feedRatio: BuzzAdBenefitSDK.FeedRatio)
   public static func == (a: BuzzAdBenefitSDK.UnitSettings, b: BuzzAdBenefitSDK.UnitSettings) -> Swift.Bool
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public struct FeedRatio : Swift.Decodable, Swift.Equatable {
   public let ad: Swift.Int
   public let content: Swift.Int
   public init(ad: Swift.Int, content: Swift.Int)
   public static func == (a: BuzzAdBenefitSDK.FeedRatio, b: BuzzAdBenefitSDK.FeedRatio) -> Swift.Bool
-  public init(from decoder: any Swift.Decoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_inheritsConvenienceInitializers @objc public class BABNativeAdMapper : ObjectiveC.NSObject {
   @objc(transformFromBABAd:) public func transform(ad: BuzzAdBenefitSDK.BABAd) -> BuzzAdBenefitSDK.BZVNativeAd
@@ -1100,8 +1097,8 @@ public struct FeedRatio : Swift.Decodable, Swift.Equatable {
   @objc func didParticipateAd(_ nativeAd: BuzzAdBenefitSDK.BZVNativeAd)
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class BZVNativeAd : ObjectiveC.NSObject {
-  @objc weak public var delegate: (any BuzzAdBenefitSDK.BZVNativeAdEventDelegate)?
-  @objc weak public var internalDelegate: (any BuzzAdBenefitSDK.BZVNativeAdEventDelegate)?
+  @objc weak public var delegate: BuzzAdBenefitSDK.BZVNativeAdEventDelegate?
+  @objc weak public var internalDelegate: BuzzAdBenefitSDK.BZVNativeAdEventDelegate?
   @objc final public let ad: BuzzAdBenefitSDK.BABAd
   @objc(nativeAdWithBABAd:) public static func nativeAd(ad: BuzzAdBenefitSDK.BABAd) -> BuzzAdBenefitSDK.BZVNativeAd
   @objc public var Id: Swift.String {
@@ -1158,7 +1155,7 @@ extension UIKit.UIColor {
   @objc dynamic public func bab_isEqual(_ other: UIKit.UIColor) -> Swift.Bool
 }
 @objc @objcMembers public class BABCtaPresenter : ObjectiveC.NSObject {
-  @objc public init(ctaView: any BuzzAdBenefitSDK.BZVCtaViewProtocol)
+  @objc public init(ctaView: BuzzAdBenefitSDK.BZVCtaViewProtocol)
   @objc(bindWithNativeAd:) public func bind(nativeAd: BuzzAdBenefitSDK.BZVNativeAd)
   @objc deinit
 }
@@ -1170,7 +1167,7 @@ extension BuzzAdBenefitSDK.BZVNativeAd2ViewBinder {
     final public func iconImageView(_ iconImageView: UIKit.UIImageView) -> Self
     final public func titleLabel(_ titleLabel: UIKit.UILabel) -> Self
     final public func descriptionLabel(_ descriptionLabel: UIKit.UILabel) -> Self
-    final public func ctaView(_ ctaView: any UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol) -> Self
+    final public func ctaView(_ ctaView: UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol) -> Self
     final public func setClickableViews(_ clickableViews: [UIKit.UIView]) -> Self
     final public func build() -> BuzzAdBenefitSDK.BZVNativeAd2ViewBinder
     @objc deinit
@@ -1186,7 +1183,7 @@ extension BuzzAdBenefitSDK.BZVNativeAd2ViewBinder {
   @objc final public var iconImageView: UIKit.UIImageView?
   @objc final public var titleLabel: UIKit.UILabel?
   @objc final public var descriptionLabel: UIKit.UILabel?
-  @objc final public var ctaView: (any UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol)?
+  @objc final public var ctaView: (UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol)?
   @objc final public var clickableViews: [UIKit.UIView]?
   @objc final public var unitId: Swift.String?
   @objc deinit

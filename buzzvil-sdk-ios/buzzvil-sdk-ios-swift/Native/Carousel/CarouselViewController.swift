@@ -140,15 +140,14 @@ extension CarouselViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    // ##ARTHUR
-//    if (indexPath.item % loadedAdCount) == loadedAdCount - 1 {
-//      // last index인 경우 FeedPromotionCell을 반환합니다.
-//      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedPromotionCell", for: indexPath) as? FeedPromotionCell else {
-//        return UICollectionViewCell()
-//      }
-//      cell.bind()
-//      return cell
-//    } else {
+    if (indexPath.item % loadedAdCount) == loadedAdCount - 1 {
+      // last index인 경우 FeedPromotionCell을 반환합니다.
+      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedPromotionCell", for: indexPath) as? FeedPromotionCell else {
+        return UICollectionViewCell()
+      }
+      cell.bind()
+      return cell
+    } else {
       // last index가 아닌 경우 CarouselCell을 반환합니다.
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as? CarouselCell else {
         return UICollectionViewCell()
@@ -163,7 +162,7 @@ extension CarouselViewController: UICollectionViewDataSource {
       cell.setPool(with: pool, for: indexPath.item)
       cell.bind()
       return cell
-//    }
+    }
   }
   
   // 무한루프 구현 시

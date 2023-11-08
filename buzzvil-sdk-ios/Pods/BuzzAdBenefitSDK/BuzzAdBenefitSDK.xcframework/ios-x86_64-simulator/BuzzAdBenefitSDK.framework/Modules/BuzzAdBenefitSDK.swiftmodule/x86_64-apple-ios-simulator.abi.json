@@ -1674,13 +1674,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -4854,13 +4847,6 @@
             "printedName": "UserInterfaceStyleOverridable",
             "usr": "c:@M@BuzzAdBenefitSDK@objc(pl)BABUserInterfaceStyleOverridable",
             "mangledName": "$s16BuzzAdBenefitSDK29UserInterfaceStyleOverridableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -10718,13 +10704,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -12596,13 +12575,6 @@
             "printedName": "UserInterfaceStyleOverridable",
             "usr": "c:@M@BuzzAdBenefitSDK@objc(pl)BABUserInterfaceStyleOverridable",
             "mangledName": "$s16BuzzAdBenefitSDK29UserInterfaceStyleOverridableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -24790,13 +24762,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -30387,34 +30352,6 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "BuzzAdBenefitSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "BuzzAdBenefitSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "SwiftUI",
-        "printedName": "SwiftUI",
-        "declKind": "Import",
-        "moduleName": "BuzzAdBenefitSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "DeveloperToolsSupport",
-        "printedName": "DeveloperToolsSupport",
-        "declKind": "Import",
-        "moduleName": "BuzzAdBenefitSDK"
-      },
-      {
         "kind": "TypeDecl",
         "name": "UIViewController",
         "printedName": "UIViewController",
@@ -30739,13 +30676,6 @@
             "printedName": "UserInterfaceStyleOverridable",
             "usr": "c:@M@BuzzAdBenefitSDK@objc(pl)BABUserInterfaceStyleOverridable",
             "mangledName": "$s16BuzzAdBenefitSDK29UserInterfaceStyleOverridableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -31462,13 +31392,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -31591,13 +31514,6 @@
             "printedName": "UserInterfaceStyleOverridable",
             "usr": "c:@M@BuzzAdBenefitSDK@objc(pl)BABUserInterfaceStyleOverridable",
             "mangledName": "$s16BuzzAdBenefitSDK29UserInterfaceStyleOverridableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -32209,92 +32125,6 @@
             ],
             "usr": "s:16CoreTransferable0B0P",
             "mangledName": "$s16CoreTransferable0B0P"
-          },
-          {
-            "kind": "Conformance",
-            "name": "EntityIdentifierConvertible",
-            "printedName": "EntityIdentifierConvertible",
-            "usr": "s:10AppIntents27EntityIdentifierConvertibleP",
-            "mangledName": "$s10AppIntents27EntityIdentifierConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_IntentValue",
-            "printedName": "_IntentValue",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "ValueType",
-                "printedName": "ValueType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ]
-              },
-              {
-                "kind": "TypeWitness",
-                "name": "UnwrappedType",
-                "printedName": "UnwrappedType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ]
-              },
-              {
-                "kind": "TypeWitness",
-                "name": "Specification",
-                "printedName": "Specification",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "OpaqueTypeArchetype",
-                    "printedName": "some AppIntents.ResolverSpecification",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ResolverSpecification",
-                        "printedName": "AppIntents.ResolverSpecification",
-                        "usr": "s:10AppIntents21ResolverSpecificationP"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Hashable",
-                        "printedName": "Swift.Hashable",
-                        "usr": "s:SH"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Sendable",
-                        "printedName": "Swift.Sendable",
-                        "usr": "s:s8SendableP"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Sequence",
-                        "printedName": "Swift.Sequence",
-                        "usr": "s:ST"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Equatable",
-                        "printedName": "Swift.Equatable",
-                        "usr": "s:SQ"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "usr": "s:10AppIntents12_IntentValueP",
-            "mangledName": "$s10AppIntents12_IntentValueP"
           }
         ]
       },
@@ -32425,13 +32255,6 @@
             "printedName": "UserInterfaceStyleOverridable",
             "usr": "c:@M@BuzzAdBenefitSDK@objc(pl)BABUserInterfaceStyleOverridable",
             "mangledName": "$s16BuzzAdBenefitSDK29UserInterfaceStyleOverridableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -33087,13 +32910,6 @@
             "printedName": "UserInterfaceStyleOverridable",
             "usr": "c:@M@BuzzAdBenefitSDK@objc(pl)BABUserInterfaceStyleOverridable",
             "mangledName": "$s16BuzzAdBenefitSDK29UserInterfaceStyleOverridableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "UITraitChangeObservable",
-            "printedName": "UITraitChangeObservable",
-            "usr": "s:5UIKit23UITraitChangeObservableP",
-            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -36158,286 +35974,6 @@
       "offset": 45,
       "length": 15,
       "value": "\"BuzzAdBenefitSDK.BABCtaPresenter\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 732,
-      "length": 12,
-      "value": "\"arrow_left\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 869,
-      "length": 10,
-      "value": "\"arrow_up\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1003,
-      "length": 9,
-      "value": "\"article\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1151,
-      "length": 17,
-      "value": "\"calendar_active\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1311,
-      "length": 19,
-      "value": "\"calendar_inactive\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1450,
-      "length": 7,
-      "value": "\"check\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1598,
-      "length": 18,
-      "value": "\"checkbox_checked\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1761,
-      "length": 20,
-      "value": "\"checkbox_unchecked\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1914,
-      "length": 14,
-      "value": "\"chevron_left\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2063,
-      "length": 15,
-      "value": "\"chevron_right\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2198,
-      "length": 7,
-      "value": "\"close\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2338,
-      "length": 14,
-      "value": "\"close_circle\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2470,
-      "length": 6,
-      "value": "\"coin\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2605,
-      "length": 12,
-      "value": "\"coin_check\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2746,
-      "length": 12,
-      "value": "\"coin_empty\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2878,
-      "length": 7,
-      "value": "\"empty\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3005,
-      "length": 7,
-      "value": "\"error\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3165,
-      "length": 25,
-      "value": "\"feed_daily_reward_point\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3319,
-      "length": 12,
-      "value": "\"feed_empty\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3475,
-      "length": 20,
-      "value": "\"feed_empty_privacy\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3649,
-      "length": 25,
-      "value": "\"feed_promotion_creative\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3820,
-      "length": 21,
-      "value": "\"feed_promotion_icon\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3959,
-      "length": 6,
-      "value": "\"gift\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4103,
-      "length": 17,
-      "value": "\"gift_box_closed\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4258,
-      "length": 17,
-      "value": "\"gift_box_opened\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4411,
-      "length": 16,
-      "value": "\"gift_with_coin\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4545,
-      "length": 6,
-      "value": "\"help\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4680,
-      "length": 12,
-      "value": "\"learn_more\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4812,
-      "length": 7,
-      "value": "\"pause\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4937,
-      "length": 6,
-      "value": "\"play\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5065,
-      "length": 8,
-      "value": "\"replay\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5204,
-      "length": 13,
-      "value": "\"screen_full\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5352,
-      "length": 15,
-      "value": "\"shining_coins\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5491,
-      "length": 9,
-      "value": "\"tooltip\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5646,
-      "length": 21,
-      "value": "\"total_reward_widget\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5798,
-      "length": 13,
-      "value": "\"volume_mute\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5938,
-      "length": 11,
-      "value": "\"volume_on\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 6099,
-      "length": 23,
-      "value": "\"widget_tutorial_step1\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 6272,
-      "length": 23,
-      "value": "\"widget_tutorial_step2\""
-    },
-    {
-      "filePath": "\/Users\/distiller\/project\/DerivedData\/Build\/Intermediates.noindex\/ArchiveIntermediates\/BuzzAdBenefitSDK\/IntermediateBuildFilesPath\/BuzzAdBenefit.build\/Release-iphonesimulator\/BuzzAdBenefitSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 6445,
-      "length": 23,
-      "value": "\"widget_tutorial_step3\""
     }
   ]
 }

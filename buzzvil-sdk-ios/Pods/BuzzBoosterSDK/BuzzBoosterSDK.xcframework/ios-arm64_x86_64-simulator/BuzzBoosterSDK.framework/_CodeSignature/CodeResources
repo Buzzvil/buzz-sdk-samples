@@ -6,23 +6,23 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		loD9IzzD6ZRp/aL/tOkyMS89vNQ=
+		sX1LdRXrhSfLYM7zJQZ0TAVODEg=
 		</data>
 		<key>BBSCoreDataEvent.momd/BBSCoreDataEvent.mom</key>
 		<data>
-		daINbVIxbU7kCZxLpvGZ6f+5Zlk=
+		NrZkWzI4lyWCFsMqxPeahg9J2p0=
 		</data>
 		<key>BBSCoreDataEvent.momd/VersionInfo.plist</key>
 		<data>
-		G0XT/PrWcJiE7fKl3spqDi7XLX4=
+		iA9SMEdKOTEXJgI6/u5unegSPVc=
 		</data>
 		<key>BIEventCoreData.momd/BIEventCoreData.mom</key>
 		<data>
-		I8N/bP1AMaMOSyuXuiWbunYOElc=
+		Pi7VE1a3ECnpRJ1DgRd+UlLpOJk=
 		</data>
 		<key>BIEventCoreData.momd/VersionInfo.plist</key>
 		<data>
-		pgCn+uaWDHNIHVglXWjEd2fAVgs=
+		uU96A98UUfjeylcx0Ix9uUgksnY=
 		</data>
 		<key>Headers/BBSEventMapper.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/BuzzBoosterSDK-Swift.h</key>
 		<data>
-		tVhVAfWi1ANCeTZnmlxLaHr2k2M=
+		/iA2DyP3d+qnN2sCoV1IkDnoD6M=
 		</data>
 		<key>Headers/BuzzBoosterSDK.h</key>
 		<data>
@@ -38,51 +38,51 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SXYcf8VEsu/la8zmusMv9j91TSo=
+		zXjHV325z2j7LDUYY5wNRSjkhao=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ke0whZz7HMWRbweWBY+HQAg76Fo=
+		H8V1vgfe551ekRt/D699UJnWrhE=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		DFEs4hA1KXfelj1eCaFxUraWe1w=
+		MVRB0yUMz4qfzOhk/Y+fpnaTnD4=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		aqkOdE/40BNZzsIOmEuZGxS2Jsk=
+		CcW4RE9bB47LS2vmnzLDGBtw2EE=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		DFEs4hA1KXfelj1eCaFxUraWe1w=
+		MVRB0yUMz4qfzOhk/Y+fpnaTnD4=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XxMUiJG1s51x2ptCihWJNCgYbEk=
+		mMexlG2Xa7Tkv9383qpWjOGOJw0=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ke0whZz7HMWRbweWBY+HQAg76Fo=
+		H8V1vgfe551ekRt/D699UJnWrhE=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8Obn9XMmhC1rIJRRx1qCyPDR8Ho=
+		OdLub/q8YggxBQu4bv+hVx3rF98=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		OW5lUtTdZGB/7dvoxGGNeg27z9Y=
+		jTidolijIHFbRRgXveXiEErK0VM=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8Obn9XMmhC1rIJRRx1qCyPDR8Ho=
+		OdLub/q8YggxBQu4bv+hVx3rF98=
 		</data>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mPTIGloK3GhT8lSg8/7ixHo7ERE=
+		FUDrXJfeJRsKC5PYISAu6saYDTQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		vMJQcUuB+i+tvjlW6QqgoluqmiA=
+		vOlQpEdsloKA5qHeidRoNXOqg3A=
 		</data>
 		<key>bst_ic_confetti.gif</key>
 		<data>
@@ -95,35 +95,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+VLZzqpnvfEFx6okGE/zEfTO9rDuNXLAaiWTR8pgm8Q=
+			J6aLbgA8OH/CvqCVMaxImDqJq4RxVzbPRWzUTlDeiQ0=
 			</data>
 		</dict>
 		<key>BBSCoreDataEvent.momd/BBSCoreDataEvent.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cw8/sy3gIwuYC3KR06ZHVXjk8sjXwGPGFYFDgkXkyAk=
+			+xV5OmXeLEJzZoa9xhJBvyLKvIAgRW9gAFhlEH/Q+Tc=
 			</data>
 		</dict>
 		<key>BBSCoreDataEvent.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f2CsCf0sjh9oHT+7fX9ajyCvCB3vj1MFB1WDSGtyBYo=
+			Paszu8G8J5TG044cDVkuHQDawX0rrMh2KFqu4+Wf2rw=
 			</data>
 		</dict>
 		<key>BIEventCoreData.momd/BIEventCoreData.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/4nN8+3dZj77ZudlCjL7PCT68i/9jNOL3kRR/+alYQY=
+			sPh90IPe0zVBm8aSHRCL8wbkbgduof57au0WDw+GqiA=
 			</data>
 		</dict>
 		<key>BIEventCoreData.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			U7DiOV4/2I21MhnNZsSvxDnnT/XnkD4hH80KQJlm8bk=
+			Bmf7iXqKc5IadMKH5Rb9/UxdLzHqkoHMtzjOJcAhmpg=
 			</data>
 		</dict>
 		<key>Headers/BBSEventMapper.h</key>
@@ -137,7 +137,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CiijC/4AcEWh18meq+239aWQwBJlvjJuQtuQ0JMV2UE=
+			Z+1CKrktIdpatbEkLUkfMKUmPbuN1yvpoOpyNFqiuPk=
 			</data>
 		</dict>
 		<key>Headers/BuzzBoosterSDK.h</key>
@@ -151,77 +151,77 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			McKN3bIxfDj13ARxNll++lNQPqUrG5GKYf52gaS8KuA=
+			OWmzo7y6s2YSDq3ndKglOZ6aaSbvCD9rae64eS62JP0=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Kv84ffqrdNlqJCWwOAvdx+3PCjlBDJF5zhXkZ2V74QM=
+			Al59H8/FN9h6hAmS1G0QtGkP6GF/N8nqpBMNP0AFSxs=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oiGSnSg5ONgH4eeXoWbsTKD76J7x+k6IDWqKrpKvlNk=
+			ZOnnyCPJ7o026Kxy+2wAw0yA7UdXQmWoGiKRIjWnJjI=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Kv84ffqrdNlqJCWwOAvdx+3PCjlBDJF5zhXkZ2V74QM=
+			Al59H8/FN9h6hAmS1G0QtGkP6GF/N8nqpBMNP0AFSxs=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iy4L8SZLhjU4pD2wHXNYg4+Us30xmoxzUz3iqmLDCQI=
+			CaExZE5AUnQrh5mGQGCyB8RuJSTf0iVzne05qQMDO00=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			McKN3bIxfDj13ARxNll++lNQPqUrG5GKYf52gaS8KuA=
+			OWmzo7y6s2YSDq3ndKglOZ6aaSbvCD9rae64eS62JP0=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1itLVmxkRBYzh3f6t18ZuWOHkVv+dSl3+SHXN8RbGMQ=
+			asdW49W9ZD1/2bTifP+r8vE3VOZviCM+7YmxoZu8ZyU=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w4u3mM4qH4y2wmneCVdwgUKnSpHpk1EueJyJ9Du+QyE=
+			VgaxZH6Vt26bR4C8lkiLjWeCwd2e/hlBFVGy1c5chQ4=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1itLVmxkRBYzh3f6t18ZuWOHkVv+dSl3+SHXN8RbGMQ=
+			asdW49W9ZD1/2bTifP+r8vE3VOZviCM+7YmxoZu8ZyU=
 			</data>
 		</dict>
 		<key>Modules/BuzzBoosterSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8fHkDB2VW4Ydq17u5pYkQltn9s7BL9e9qhmJVqKDpWI=
+			hC2AFgud3SnC/OUmTqd5nmqDW/k0FcWJravkG21yg+Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gmRBkAMvyEKVz+OeWmbDLvwHySu9nehssxRCh/fJyes=
+			MrY95Il3zFzJXYU4QB7xeSWMtBS3GDMY1rqz9boRD0Y=
 			</data>
 		</dict>
 		<key>bst_ic_confetti.gif</key>

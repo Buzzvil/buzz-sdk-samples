@@ -30,13 +30,12 @@
 
 // 적립 가능한 포인트 표시하기
 - (void)getAvailiableReward {
-  // ##ARTHUR
   BZVBenefitHub *benefitHub = [BZVBenefitHub benefitHubWithBlock:^(BZVBenefitHubBuilder * _Nonnull builder) {}];
-//  [benefitHub loadOnSuccess:^(NSInteger availableRewards) {
-//      // 적립 가능한 포인트를 직접 구현한 UI에 업데이트합니다.
-//    } onFailure:^(NSError * _Nonnull error) {
-//      // 적립 가능한 포인트를 가져올 수 없는 경우
-//  }];
+  [benefitHub loadOnSuccess:^() {
+      // 적립 가능한 포인트를 직접 구현한 UI에 업데이트합니다.
+    } onFailure:^(NSError * _Nonnull error) {
+      // 적립 가능한 포인트를 가져올 수 없는 경우
+  }];
 }
 
 @end

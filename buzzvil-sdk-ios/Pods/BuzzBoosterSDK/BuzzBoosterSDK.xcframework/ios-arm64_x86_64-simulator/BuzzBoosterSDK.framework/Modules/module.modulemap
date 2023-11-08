@@ -1,7 +1,7 @@
 framework module BuzzBoosterSDK {
   umbrella header "BuzzBoosterSDK.h"
-  export *
 
+  export *
   module * { export * }
 }
 

@@ -1,21 +1,18 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BuzzvilSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import BuzzAdBenefitSDK
 import BuzzBoosterSDK
 import BuzzRxSwift
 @_exported import BuzzvilSDK
-import DeveloperToolsSupport
 import Foundation
 import ObjectiveC
 import SafariServices
 import Swift
-import SwiftUI
 import UIKit
 import _Concurrency
 import _StringProcessing
-import _SwiftConcurrencyShims
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class BZVBenefitHubConfig : ObjectiveC.NSObject {
   @objc final public let unitID: Swift.String
   @objc final public let headerViewClass: BuzzvilSDK.BZVBenefitHubHeaderView.Type
@@ -69,6 +66,16 @@ public typealias BZVBenefitHubThemeBuilderBlock = (BuzzvilSDK.BZVBenefitHubTheme
 extension BuzzvilSDK.BZVBenefitHubTheme {
   @objc public static func theme(block: (BuzzvilSDK.BZVBenefitHubThemeBuilder) -> Swift.Void) -> BuzzvilSDK.BZVBenefitHubTheme
   @objc convenience dynamic public init(block: (BuzzvilSDK.BZVBenefitHubThemeBuilder) -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class BZVFeedPromotionView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension BuzzvilSDK.BZVFeedPromotionView : BuzzAdBenefitSDK.BABImpressionTrackableView {
+  @_Concurrency.MainActor(unsafe) @objc final public func shouldTrackImpression() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func viewDidImpressed()
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefitConfig : ObjectiveC.NSObject {
   @objc deinit
@@ -168,7 +175,7 @@ extension BuzzvilSDK.BZVBenefitHubViewController : UIKit.UICollectionViewDelegat
   @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
 }
 extension BuzzvilSDK.BZVBenefitHubViewController : BuzzBoosterSDK.CampaignBannerViewControllerDelegate {
-  @_Concurrency.MainActor(unsafe) final public func campaignBannerViewController(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController, didOccur error: any Swift.Error)
+  @_Concurrency.MainActor(unsafe) final public func campaignBannerViewController(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController, didOccur error: Swift.Error)
   @_Concurrency.MainActor(unsafe) final public func campaignBannerViewControllerLoadingDidStart(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
   @_Concurrency.MainActor(unsafe) final public func campaignBannerViewControllerLoadingDidEnd(_ campaignBannerViewController: BuzzBoosterSDK.CampaignBannerViewController)
 }
@@ -230,22 +237,54 @@ extension BuzzvilSDK.BZVBenefitHubEntryView : BuzzAdBenefitSDK.BABImpressionTrac
   @_Concurrency.MainActor(unsafe) @objc dynamic public func viewDidImpressed()
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefit : ObjectiveC.NSObject {
-  @objc public static let shared: BuzzvilSDK.BuzzBenefit
+  @objc(sharedInstance) public static let shared: BuzzvilSDK.BuzzBenefit
   @objc final public var config: BuzzvilSDK.BuzzBenefitConfig? {
     @objc get
   }
   @objc deinit
 }
 extension BuzzvilSDK.BuzzBenefit {
-  @objc final public func initialize(with config: BuzzvilSDK.BuzzBenefitConfig)
+  @objc(initializeWithConfig:) final public func initialize(with config: BuzzvilSDK.BuzzBenefitConfig)
 }
 extension BuzzvilSDK.BuzzBenefit {
-  @objc final public func login(with user: BuzzvilSDK.BuzzBenefitUser, onSuccess: (() -> Swift.Void)?, onFailure: ((any Swift.Error) -> Swift.Void)?)
+  @objc(loginWithUser:onSuccess:onFailure:) final public func login(with user: BuzzvilSDK.BuzzBenefitUser, onSuccess: (() -> Swift.Void)?, onFailure: ((Swift.Error) -> Swift.Void)?)
   @objc final public func isLoggedIn() -> Swift.Bool
   @objc final public func logout()
 }
 extension BuzzvilSDK.BuzzBenefit {
   @objc final public func setUserInterfaceStyle(_ style: BuzzvilSDK.BuzzBenefitUserInterfaceStyle)
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers final public class BZVFeedPromotionViewBinder : ObjectiveC.NSObject {
+  @objc final public func bind()
+  @objc final public func unbind()
+  @objc deinit
+}
+extension BuzzvilSDK.BZVFeedPromotionViewBinder {
+  final public class Builder {
+    public init(unitId: Swift.String)
+    final public func feedPromotionView(_ feedPromotionView: BuzzvilSDK.BZVFeedPromotionView) -> Self
+    final public func creativeView(_ creativeView: UIKit.UIImageView) -> Self
+    final public func iconImageView(_ iconImageView: UIKit.UIImageView) -> Self
+    final public func titleLabel(_ titleLabel: UIKit.UILabel) -> Self
+    final public func ctaView(_ ctaView: UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol) -> Self
+    final public func setClickableViews(_ clickableViews: [UIKit.UIView]) -> Self
+    final public func build() -> BuzzvilSDK.BZVFeedPromotionViewBinder
+    @objc deinit
+  }
+}
+extension BuzzvilSDK.BZVFeedPromotionViewBinder {
+  public typealias BZVFeedPromotionViewBinderBlock = (BuzzvilSDK.BZVFeedPromotionViewBinderBuilder) -> Swift.Void
+  @objc(viewBinderWithBlock:) public static func viewBinder(with block: (BuzzvilSDK.BZVFeedPromotionViewBinderBuilder) -> Swift.Void) -> BuzzvilSDK.BZVFeedPromotionViewBinder
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers final public class BZVFeedPromotionViewBinderBuilder : ObjectiveC.NSObject {
+  @objc final public var feedPromotionView: BuzzvilSDK.BZVFeedPromotionView?
+  @objc final public var creativeView: UIKit.UIImageView?
+  @objc final public var iconImageView: UIKit.UIImageView?
+  @objc final public var titleLabel: UIKit.UILabel?
+  @objc final public var ctaView: (UIKit.UIView & BuzzAdBenefitSDK.BZVCtaViewProtocol)?
+  @objc final public var clickableViews: [UIKit.UIView]?
+  @objc final public var unitId: Swift.String?
+  @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class BuzzBenefitUser : ObjectiveC.NSObject {
   @objc deinit

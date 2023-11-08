@@ -6,15 +6,15 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		wptd5nmQn1xk+aGgO8Tk6+fW+Qg=
+		H61xM4tKZ/Py/pttFfHr9bu3vv0=
 		</data>
 		<key>BABInquiry.storyboardc/8yv-XB-mQm-view-jut-aL-Ebd.nib</key>
 		<data>
-		PvtFHKP3iTFMU7SxMtxXIcf9G3o=
+		v60lqG9y0V59RQAOXDFdcBDrTeA=
 		</data>
 		<key>BABInquiry.storyboardc/BABInquiryViewController.nib</key>
 		<data>
-		XAkRJ5erkYQImGKgo37IhypadXI=
+		a5ervyQzcuADQ+jvoAoQr8TUFu8=
 		</data>
 		<key>BABInquiry.storyboardc/Info.plist</key>
 		<data>
@@ -262,7 +262,7 @@
 		</data>
 		<key>Headers/BuzzAdBenefitSDK-Swift.h</key>
 		<data>
-		Y9+DzsfllaSh0mauPopjdLMuY60=
+		NmqiJuGQz7peCmyaVCaiRyxsQ80=
 		</data>
 		<key>Headers/BuzzAdBenefitSDK.h</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wL7oUFrsGBREhWwcLVHAro1IiI4=
+		lvZC30pT3M40tcGIReUmo2SFvfo=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
@@ -322,27 +322,27 @@
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		rAoSeRsnZ/g4Up74qzDZwZZMbok=
+		vHcuNaILWjRkVg/0iWMWjPfpM6U=
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		5X5s8erJ84HTP8VXJ2SsgHqsMTk=
+		5V6XmvuLpvYUND+/keRfm2B0/XY=
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		oKQaS1fumcnPWk6HMlXLr2gVr9o=
+		LHlfxFbFCLsBHv1WFDCu7hVsjN4=
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		5X5s8erJ84HTP8VXJ2SsgHqsMTk=
+		5V6XmvuLpvYUND+/keRfm2B0/XY=
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		uH9KW9IpUWcm45yJuWZTlVb6zLw=
+		DbnJ7scX806vaUHCY59nDDa7sIs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		ReIM/Lti2UpUC6Y95yV57+bDxFI=
+		wpmoS70ATnS4j5RKzwR3qcdLOMk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -351,21 +351,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rwzMn90ZTT0wOw1R49MvEll7vY1m/PfzpqP+RUSpM3U=
+			s8CB0fDvjrGDtj45PCLpkEV7Pmbvj2AHG3zhn7vyrig=
 			</data>
 		</dict>
 		<key>BABInquiry.storyboardc/8yv-XB-mQm-view-jut-aL-Ebd.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3YY7wd4i59s+JBfqhhXF42rAH/kv/431lv0AYVGJBZg=
+			pk0sJxV0p6nCekJNq4ACvekjYo61U3rFm9Iuzw05Pd0=
 			</data>
 		</dict>
 		<key>BABInquiry.storyboardc/BABInquiryViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fEzOEFAnUpOjfBMb0nbiHssskePQO01nCNNQnXYmwZw=
+			5DwSBNds+2FypYCuPR5Njhc+Cj56Ril+X3LIZuc6VKM=
 			</data>
 		</dict>
 		<key>BABInquiry.storyboardc/Info.plist</key>
@@ -799,7 +799,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gc5qOud8Imu7f619/z2zLoZIkMDknqEcRMcLaY2dkmU=
+			Sd1lJyJWiSwvyZG6PCRfpc3nD5s2FVS7Bkg2EawYAtQ=
 			</data>
 		</dict>
 		<key>Headers/BuzzAdBenefitSDK.h</key>
@@ -897,42 +897,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nZMq2XA3xDqfm4BpGziSyqX4lH8K0a6lmerYVHhAfTM=
+			fKl/3F9NC54RZbpEY0QSKPSk3kpoLzh7abHgx9fZoJ0=
 			</data>
 		</dict>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mPVsmKRcEEa2Qts8nsab+swPpyPJO7IacBOGJ7YWU8g=
+			NFWfWgcIrCicCJakzE/LU04OsPz3RjBlVx3BwVaNt3M=
 			</data>
 		</dict>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V93cN8iTAzqxY1K5FwQoyDWBDBf6vL7ybjHTZEwf+nA=
+			Z+N9zSMVBPcqmeNvxX8RoC0qzwHo49tFt/tOYRW350g=
 			</data>
 		</dict>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mPVsmKRcEEa2Qts8nsab+swPpyPJO7IacBOGJ7YWU8g=
+			NFWfWgcIrCicCJakzE/LU04OsPz3RjBlVx3BwVaNt3M=
 			</data>
 		</dict>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ySJwdBLLQp4H/wJ6TR0XDO93+H+QPKGJZzFF7ZGPo3s=
+			ivoLunypGoiNgzTkSu7V2I1Llj/xHAWuM/zayVjvThA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MS5ebDLPwYPTHqPfq4AAB9Hjn7c3BBK+gZnAxIjU/J0=
+			neuUsQF/QTS4ArRxSQPWiMLhDM+O2KpucXVgvCvH0mk=
 			</data>
 		</dict>
 	</dict>

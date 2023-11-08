@@ -16,6 +16,6 @@ final class CustomLauncher: NSObject, BZVLauncher {
     }
 
     let customBrowserViewController = CustomBrowserViewController()
-    YOUR_ROOT_VIEW_CONTROLLER.presentedViewController?.present(customBrowserViewController, animated: true, completion: nil)
+//    YOUR_ROOT_VIEW_CONTROLLER.presentedViewController?.present(customBrowserViewController, animated: true, completion: nil)
   }
 }

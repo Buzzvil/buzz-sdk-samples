@@ -1,7 +1,7 @@
 framework module BuzzvilSDK {
   umbrella header "BuzzvilSDK.h"
-  export *
 
+  export *
   module * { export * }
 }
 
