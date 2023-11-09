@@ -2,7 +2,6 @@
 #import "CarouselViewController.h"
 #import "CarouselCell.h"
 #import "FeedPromotionCell.h"
-#import "CarouselFeedEntryView.h"
 
 static NSString * const kUnitId = @"YOUR_UNIT_ID";
 

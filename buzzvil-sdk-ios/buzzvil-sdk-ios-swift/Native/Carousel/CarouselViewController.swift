@@ -113,7 +113,7 @@ class CarouselViewController: UIViewController {
       carouselCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
       carouselCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       carouselCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      carouselCollectionView.heightAnchor.constraint(equalTo: carouselCollectionView.widthAnchor, multiplier: 0.65),
+      carouselCollectionView.heightAnchor.constraint(equalTo: carouselCollectionView.widthAnchor, multiplier: 0.7),
     ])
     
     // eg. auto layout constraints for pageControl
@@ -121,6 +121,12 @@ class CarouselViewController: UIViewController {
     NSLayoutConstraint.activate([
       pageControl.topAnchor.constraint(equalTo: carouselCollectionView.bottomAnchor, constant: 16),
       pageControl.centerXAnchor.constraint(equalTo: carouselCollectionView.centerXAnchor),
+    ])
+    
+    feedEntryView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      feedEntryView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      feedEntryView.topAnchor.constraint(equalTo: carouselCollectionView.bottomAnchor)
     ])
   }
   

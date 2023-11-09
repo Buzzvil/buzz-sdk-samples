@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		003FA7AB2AFCC18300F943D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */; };
-		003FA7B12AFCC24400F943D7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7B02AFCC24400F943D7 /* SceneDelegate.m */; };
+		003FA7B52AFCD29900F943D7 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7B42AFCD29900F943D7 /* UIButton+Custom.m */; };
 		004850832AF100D600CD6D64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850822AF100D600CD6D64 /* AppDelegate.m */; };
 		004850892AF100D600CD6D64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850882AF100D600CD6D64 /* ViewController.m */; };
-		0048508C2AF100D700CD6D64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0048508A2AF100D700CD6D64 /* Main.storyboard */; };
 		0048508E2AF100D800CD6D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0048508D2AF100D800CD6D64 /* Assets.xcassets */; };
-		004850912AF100D800CD6D64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0048508F2AF100D800CD6D64 /* LaunchScreen.storyboard */; };
 		004850942AF100D800CD6D64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850932AF100D800CD6D64 /* main.m */; };
 		0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048509E2AF1023600CD6D64 /* AppDelegate.swift */; };
 		004850A32AF1023600CD6D64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850A22AF1023600CD6D64 /* ViewController.swift */; };
@@ -31,7 +29,6 @@
 		005266EF2AF1F0E50080C392 /* FeedPromotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266EE2AF1F0E50080C392 /* FeedPromotionCell.swift */; };
 		005266F22AF1F10A0080C392 /* FeedPromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266F12AF1F10A0080C392 /* FeedPromotionCell.m */; };
 		005266F42AF1F3CA0080C392 /* CarouselFeedEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266F32AF1F3CA0080C392 /* CarouselFeedEntryView.swift */; };
-		005266F72AF1F4150080C392 /* CarouselFeedEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266F62AF1F4150080C392 /* CarouselFeedEntryView.m */; };
 		005266FA2AF21AE70080C392 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266F92AF21AE70080C392 /* InterstitialViewController.swift */; };
 		005266FE2AF21B4F0080C392 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266FD2AF21B4F0080C392 /* InterstitialViewController.m */; };
 		005267032AF21C320080C392 /* CustomCtaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005267022AF21C320080C392 /* CustomCtaView.m */; };
@@ -46,16 +43,14 @@
 
 /* Begin PBXFileReference section */
 		003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		003FA7AF2AFCC24400F943D7 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneDelegate.h; path = "buzzvil-sdk-ios-objc/SceneDelegate.h"; sourceTree = SOURCE_ROOT; };
-		003FA7B02AFCC24400F943D7 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneDelegate.m; path = "buzzvil-sdk-ios-objc/SceneDelegate.m"; sourceTree = SOURCE_ROOT; };
+		003FA7B32AFCD29900F943D7 /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
+		003FA7B42AFCD29900F943D7 /* UIButton+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
 		0048507F2AF100D600CD6D64 /* buzzvil-sdk-ios-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004850812AF100D600CD6D64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		004850822AF100D600CD6D64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		004850872AF100D600CD6D64 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		004850882AF100D600CD6D64 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0048508B2AF100D700CD6D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0048508D2AF100D800CD6D64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		004850902AF100D800CD6D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004850922AF100D800CD6D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004850932AF100D800CD6D64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0048509C2AF1023600CD6D64 /* buzzvil-sdk-ios-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +77,6 @@
 		005266F02AF1F10A0080C392 /* FeedPromotionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedPromotionCell.h; sourceTree = "<group>"; };
 		005266F12AF1F10A0080C392 /* FeedPromotionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedPromotionCell.m; sourceTree = "<group>"; };
 		005266F32AF1F3CA0080C392 /* CarouselFeedEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFeedEntryView.swift; sourceTree = "<group>"; };
-		005266F52AF1F4150080C392 /* CarouselFeedEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselFeedEntryView.h; sourceTree = "<group>"; };
-		005266F62AF1F4150080C392 /* CarouselFeedEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselFeedEntryView.m; sourceTree = "<group>"; };
 		005266F92AF21AE70080C392 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		005266FC2AF21B4F0080C392 /* InterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
 		005266FD2AF21B4F0080C392 /* InterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
@@ -124,9 +117,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003FA7B22AFCD28600F943D7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				003FA7B32AFCD29900F943D7 /* UIButton+Custom.h */,
+				003FA7B42AFCD29900F943D7 /* UIButton+Custom.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		004850802AF100D600CD6D64 /* buzzvil-sdk-ios-objc */ = {
 			isa = PBXGroup;
 			children = (
+				003FA7B22AFCD28600F943D7 /* Util */,
 				005266FF2AF21BA20080C392 /* Custom */,
 				005266FB2AF21B420080C392 /* Interstitial */,
 				005266E02AF1E8610080C392 /* Native */,
@@ -135,9 +138,7 @@
 				004850822AF100D600CD6D64 /* AppDelegate.m */,
 				004850872AF100D600CD6D64 /* ViewController.h */,
 				004850882AF100D600CD6D64 /* ViewController.m */,
-				0048508A2AF100D700CD6D64 /* Main.storyboard */,
 				0048508D2AF100D800CD6D64 /* Assets.xcassets */,
-				0048508F2AF100D800CD6D64 /* LaunchScreen.storyboard */,
 				004850922AF100D800CD6D64 /* Info.plist */,
 				004850932AF100D800CD6D64 /* main.m */,
 			);
@@ -172,8 +173,6 @@
 		005266D72AF1DBCB0080C392 /* BenefitHub */ = {
 			isa = PBXGroup;
 			children = (
-				003FA7AF2AFCC24400F943D7 /* SceneDelegate.h */,
-				003FA7B02AFCC24400F943D7 /* SceneDelegate.m */,
 				005266D12AF1D4780080C392 /* BenefitHubViewController.h */,
 				005266D22AF1D4780080C392 /* BenefitHubViewController.m */,
 				005266D82AF1DBEA0080C392 /* BenefitHubContainerViewController.h */,
@@ -206,8 +205,6 @@
 			children = (
 				005266E42AF1E9C20080C392 /* CarouselViewController.h */,
 				005266E52AF1E9C20080C392 /* CarouselViewController.m */,
-				005266F52AF1F4150080C392 /* CarouselFeedEntryView.h */,
-				005266F62AF1F4150080C392 /* CarouselFeedEntryView.m */,
 				005266EB2AF1EBAA0080C392 /* CarouselCell.h */,
 				005266EC2AF1EBAA0080C392 /* CarouselCell.m */,
 				005266F02AF1F10A0080C392 /* FeedPromotionCell.h */,
@@ -390,9 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004850912AF100D800CD6D64 /* LaunchScreen.storyboard in Resources */,
 				0048508E2AF100D800CD6D64 /* Assets.xcassets in Resources */,
-				0048508C2AF100D700CD6D64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,11 +494,10 @@
 				005266D32AF1D4780080C392 /* BenefitHubViewController.m in Sources */,
 				004850942AF100D800CD6D64 /* main.m in Sources */,
 				005266DA2AF1DBEA0080C392 /* BenefitHubContainerViewController.m in Sources */,
-				003FA7B12AFCC24400F943D7 /* SceneDelegate.m in Sources */,
 				005266E32AF1E8740080C392 /* NativeViewController.m in Sources */,
-				005266F72AF1F4150080C392 /* CarouselFeedEntryView.m in Sources */,
 				005266FE2AF21B4F0080C392 /* InterstitialViewController.m in Sources */,
 				0052670E2AF220D20080C392 /* CustomLauncher.m in Sources */,
+				003FA7B52AFCD29900F943D7 /* UIButton+Custom.m in Sources */,
 				005267032AF21C320080C392 /* CustomCtaView.m in Sources */,
 				005267092AF21E9B0080C392 /* CustomBrowserViewController.m in Sources */,
 				005266F22AF1F10A0080C392 /* FeedPromotionCell.m in Sources */,
@@ -532,25 +526,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		0048508A2AF100D700CD6D64 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0048508B2AF100D700CD6D64 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0048508F2AF100D800CD6D64 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				004850902AF100D800CD6D64 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		004850962AF100D800CD6D64 /* Debug */ = {

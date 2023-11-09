@@ -1,7 +1,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-  private static let navigationItemTitle = "BuzzAdBenefit"
+  private static let navigationItemTitle = "BuzzvilSDK"
   private static let nativeButtonTitle = "Native"
   private static let interstitialButtonTitle = "Interstitial"
   private static let benefitHubButtonTitle = "BenefitHub"

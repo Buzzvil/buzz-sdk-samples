@@ -17,8 +17,14 @@
 
 @implementation NativeViewController
 - (void)viewDidLoad {
-  [super viewDidLoad];
   
+  [super viewDidLoad];
+  [self setupView];
+  [self setupLayout];
+  [self nativeAdLoad];
+}
+
+- (void)setupView {
   _nativeAd2View = [[BZVNativeAd2View alloc] initWithFrame:CGRectZero];
   [self.view addSubview:_nativeAd2View];
   
@@ -46,10 +52,56 @@
     builder.descriptionLabel = self.descriptionLabel;
     builder.ctaView = self.ctaView;
   }];
-  
-  // AutoLayout Constraints 설정
-  // ...
-  
+}
+
+- (void)setupLayout {
+  _nativeAd2View.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_nativeAd2View.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+    [_nativeAd2View.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+    [_nativeAd2View.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:8],
+    [_nativeAd2View.heightAnchor constraintGreaterThanOrEqualToConstant:0],
+  ]];
+
+  _mediaView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_mediaView.leadingAnchor constraintEqualToAnchor:_nativeAd2View.leadingAnchor],
+    [_mediaView.trailingAnchor constraintEqualToAnchor:_nativeAd2View.trailingAnchor],
+    [_mediaView.topAnchor constraintEqualToAnchor:_nativeAd2View.topAnchor],
+    [_mediaView.heightAnchor constraintEqualToAnchor:_mediaView.widthAnchor multiplier:627.0 / 1200.0],
+  ]];
+
+  _iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_iconImageView.widthAnchor constraintEqualToConstant:32],
+    [_iconImageView.heightAnchor constraintEqualToConstant:32],
+    [_iconImageView.leadingAnchor constraintEqualToAnchor:_mediaView.leadingAnchor constant:8],
+    [_iconImageView.topAnchor constraintEqualToAnchor:_mediaView.bottomAnchor constant:8],
+  ]];
+
+  _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_titleLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.trailingAnchor constant:8],
+    [_titleLabel.trailingAnchor constraintEqualToAnchor:_nativeAd2View.trailingAnchor constant:-8],
+    [_titleLabel.centerYAnchor constraintEqualToAnchor:_iconImageView.centerYAnchor],
+  ]];
+
+  _descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_descriptionLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.leadingAnchor],
+    [_descriptionLabel.trailingAnchor constraintEqualToAnchor:_titleLabel.trailingAnchor],
+    [_descriptionLabel.topAnchor constraintEqualToAnchor:_iconImageView.bottomAnchor constant:8],
+  ]];
+
+  _ctaView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_ctaView.trailingAnchor constraintEqualToAnchor:_nativeAd2View.trailingAnchor constant:-8],
+    [_ctaView.topAnchor constraintEqualToAnchor:_descriptionLabel.bottomAnchor constant:8],
+    [_ctaView.bottomAnchor constraintEqualToAnchor:_nativeAd2View.bottomAnchor constant:-8],
+  ]];
+}
+
+- (void)nativeAdLoad {
   // 광고 보여주기 & 광고 이벤트 리스너 등록하기
   /// Warning: retain cycle 방지를 위해 weak self를 사용해주세요.
   __weak typeof(self) weakSelf = self;

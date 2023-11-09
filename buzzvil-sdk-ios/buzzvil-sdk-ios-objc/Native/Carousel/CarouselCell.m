@@ -65,7 +65,6 @@
 }
 
 - (void)setupLayout {
-  // eg. auto layout constraints for nativeAd2View
   _nativeAd2View.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
     [_nativeAd2View.topAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.topAnchor],
@@ -74,8 +73,58 @@
     [_nativeAd2View.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
   ]];
   
-  // AutoLayout Constraints를 설정하세요.
-  // ...
+  // MARK: 네이티브 2.0 캐러셀 구현 - 앞뒤 광고 아이템을 부분적으로 노출하기
+//  _nativeAd2View.translatesAutoresizingMaskIntoConstraints = NO;
+//  [NSLayoutConstraint activateConstraints:@[
+//    [_nativeAd2View.topAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.topAnchor],
+//    [_nativeAd2View.leadingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.leadingAnchor],
+//    [_nativeAd2View.trailingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.trailingAnchor],
+//    [_nativeAd2View.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
+//  ]];
+  
+  _mediaView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_mediaView.topAnchor constraintEqualToAnchor:_nativeAd2View.topAnchor],
+    [_mediaView.leadingAnchor constraintEqualToAnchor:_nativeAd2View.leadingAnchor],
+    [_mediaView.trailingAnchor constraintEqualToAnchor:_nativeAd2View.trailingAnchor],
+    [_mediaView.heightAnchor constraintEqualToAnchor:_mediaView.widthAnchor multiplier:627.0/1200.0],
+  ]];
+  
+  _iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_iconImageView.topAnchor constraintEqualToAnchor:_mediaView.bottomAnchor constant:8],
+    [_iconImageView.leadingAnchor constraintEqualToAnchor:_mediaView.leadingAnchor constant:8],
+    [_iconImageView.heightAnchor constraintEqualToConstant:32],
+    [_iconImageView.widthAnchor constraintEqualToConstant:32],
+  ]];
+  
+  _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_titleLabel.centerYAnchor constraintEqualToAnchor:_iconImageView.centerYAnchor],
+    [_titleLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.trailingAnchor constant:8],
+    [_titleLabel.trailingAnchor constraintEqualToAnchor:_nativeAd2View.trailingAnchor constant:-8],
+  ]];
+  
+  _descriptionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_descriptionLabel.topAnchor constraintEqualToAnchor:_iconImageView.bottomAnchor constant:8],
+    [_descriptionLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.leadingAnchor],
+    [_descriptionLabel.trailingAnchor constraintEqualToAnchor:_titleLabel.trailingAnchor],
+  ]];
+  
+  _ctaView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_ctaView.topAnchor constraintEqualToAnchor:_descriptionLabel.bottomAnchor constant:8],
+    [_ctaView.trailingAnchor constraintEqualToAnchor:_nativeAd2View.trailingAnchor constant:-8],
+    [_ctaView.bottomAnchor constraintEqualToAnchor:_nativeAd2View.bottomAnchor constant:-8],
+    [_ctaView.heightAnchor constraintEqualToConstant:32],
+  ]];
+  
+  _activityIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_activityIndicatorView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor],
+    [_activityIndicatorView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor],
+  ]];
   
   // 로딩화면 구현하기
   _activityIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -84,20 +133,6 @@
     [_activityIndicatorView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor],
   ]];
 }
-
-// 앞뒤 광고 아이템을 부분적으로 노출하기
-//- (void)setupLayout {
-//  // CarouselCell과 동일한 크기로 설정합니다.
-//  _nativeAd2View.translatesAutoresizingMaskIntoConstraints = NO;
-//  [NSLayoutConstraint activateConstraints:@[
-//    [_nativeAd2View.topAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.topAnchor],
-//    [_nativeAd2View.leadingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.leadingAnchor],
-//    [_nativeAd2View.trailingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.trailingAnchor],
-//    [_nativeAd2View.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
-//  ]];
-//  
-//  // ...
-//}
 
 - (void)prepareForReuse {
   [super prepareForReuse];

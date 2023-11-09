@@ -1,12 +1,11 @@
-//
-//  UIButton+Custom.m
-//  buzzvil-sdk-ios-objc
-//
-//  Created by 주향이 on 11/9/23.
-//
-
 #import "UIButton+Custom.h"
 
-@implementation UIButton_Custom
+@implementation UIButton (Custom)
+
+- (void)applyCustomStyle {
+  self.backgroundColor = UIColor.systemBlueColor;
+  self.layer.cornerRadius = 8;
+  [self setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+}
 
 @end

@@ -29,12 +29,14 @@ class BenefitHubViewController: UIViewController {
   func getAvailiableReward() {
     let benefitHub = BZVBenefitHub { _ in }
     benefitHub.load(
-        onSuccess: {
-          // 광고 로드에 성공했을 경우
-        },
-        onFailure: { error in
-            // 적립 가능한 포인트를 가져올 수 없는 경우
-        }
+      onSuccess: {
+        // 광고 로드에 성공했을 경우
+        // 적립 가능한 포인트를 직접 구현한 UI에 업데이트합니다.
+        let availiableReward = benefitHub.availableRewards
+      },
+      onFailure: { error in
+        // 적립 가능한 포인트를 가져올 수 없는 경우
+      }
     )
   }
 }
