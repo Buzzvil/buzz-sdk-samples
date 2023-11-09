@@ -26,7 +26,6 @@ static CGFloat const kButtonAspectRatio = 1.5;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  printf("##ARTHUR VIEWDIDLOAD");
   [self setupView];
   [self setupLayout];
   [self setupEvent];
