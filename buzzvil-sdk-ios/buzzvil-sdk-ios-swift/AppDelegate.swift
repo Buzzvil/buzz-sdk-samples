@@ -28,7 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       .setDefaultBenefitHubConfig(benefitHubConfig)
       .build()
     
+    themeCustomize()
+    
     BuzzBenefit.shared.initialize(with: config)
+    
+    setBuzzBenefitHubTheme()
     buzzBenefitLogin()
     
     // 다크 모드 설정하기
@@ -70,6 +74,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func buzzBenefitLogout() {
        // 로그아웃하는 코드입니다.
     BuzzBenefit.shared.logout()
+  }
+  
+  // 커스터마이징
+  func themeCustomize() {
+    let theme = BuzzBenefitTheme()
+    // 주요 색상
+    theme.setPrimaryColor(UIColor.red)
+    theme.setPrimaryLightColor(UIColor.blue)
+    
+    // 리워드 아이콘
+//    theme.setRewardIcon(UIImage(named: "YOUR_REWARD_ICON"))
+    BuzzBenefitTheme.setGlobalTheme(theme)
+  }
+  
+  func setBuzzBenefitHubTheme() {
+    // 광고 분류 필터
+    let benefitHubTheme = BZVBenefitHubTheme { builder in
+      builder.usePrimaryColorInFilter = true
+    }
+    
+    BZVBenefitHub.setDefaultTheme(benefitHubTheme)
   }
 }
 
