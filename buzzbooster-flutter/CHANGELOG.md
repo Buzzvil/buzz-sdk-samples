@@ -1,3 +1,23 @@
+## [3.1.2] - 2023-11-09
+> * [NEW] 출석체크 캠페인 상세페이지에 띠배너, 공유 버튼 추가
+> * [NEW] 출석체크 캠페인 달력에 예상 달성 미션 표시
+> * [UPDATE] Android 홈, 인앱팝업에서 딥링크를 사용할 수 있도록 개선
+> * [UPDATE] 네이버페이 브랜드 로고 변경
+> * [UPDATE] BottomSheet UI/UX 개선
+> * [UPDATE] 일부 아이콘 수정
+> * [UPDATE] `showHome`이 플러그인 유무에 상관 없이 항상 Home으로 이동되게 수정
+> * [UPDATE] 스탬프 캠페인 시작하기 버튼 추가
+> * [FIX] 캘린더 디자인 수정
+> * [FIX] Android 특정 Event가 너무 많이 처리되던 문제 수정
+> * [FIX] Android SDK 예외 추적 로직 개선
+> * [FIX] Android 유저 로그인 호출 이전에 캠페인 상세페이지 실행시 발생하는 크래시 수정
+> * [FIX] Android 절전모드에서 액티비티가 실행되지 않는 현상 수정
+> * [FIX] iOS 긁는 복권 참여 시 간헐적으로 한번 시도에 여러번 참여되는 문제 수정
+> * [FIX] iOS UINavigationBar 다크 테마 문제 수정
+> * [FIX] iOS 캠페인에서 에러 발생 시 에러뷰만 보이게 수정
+> * [FIX] Xcode15에서 발생하는 warning 제거
+> * [FIX] iOS에서 간헐적으로 Buzz-UUID가 의도치 않게 여러번 생성되는 문제 수정
+
 ## [3.1.1] - 2023-09-15
 > * [NEW] 출석체크 캠페인 과거 기록 조회 기능 추가
 > * [NEW] iOS Swift Documentation 추가
