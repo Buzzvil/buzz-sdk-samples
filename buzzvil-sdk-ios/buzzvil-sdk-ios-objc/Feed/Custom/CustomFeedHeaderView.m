@@ -9,7 +9,7 @@
 @implementation CustomFeedHeaderView
 
 + (CGFloat)desiredHeight {
-  return 100;
+  return 60;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder {

@@ -31,6 +31,10 @@
   return self;
 }
 
++ (CGFloat)desiredHeight:(CGFloat)width {
+  return 350;
+}
+
 - (void)setupView {
   // 광고 레이아웃 컴포넌트를 생성합니다.
   _nativeAdView = [[BZVNativeAdView alloc] initWithFrame:CGRectZero];

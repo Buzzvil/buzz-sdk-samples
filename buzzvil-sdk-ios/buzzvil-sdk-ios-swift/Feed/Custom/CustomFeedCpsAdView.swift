@@ -40,6 +40,10 @@ final class CustomFeedCpsAdView: BZVFeedAdView {
     setupView()
     setupLayout()
   }
+  
+  override class func desiredHeight(_ width: CGFloat) -> CGFloat {
+    return 350
+  }
 
   private func setupView() {
     // 광고 레이아웃 컴포넌트를 생성합니다.

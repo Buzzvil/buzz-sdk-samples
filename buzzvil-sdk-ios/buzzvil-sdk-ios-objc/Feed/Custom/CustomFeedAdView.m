@@ -30,6 +30,10 @@
   return self;
 }
 
++ (CGFloat)desiredHeight:(CGFloat)width {
+  return width * 0.8;
+}
+
 - (void)setupView {
   _nativeAdView = [[BZVNativeAdView alloc] initWithFrame:CGRectZero];
   [self addSubview:_nativeAdView];
@@ -57,7 +61,6 @@
     builder.descriptionLabel = self.descriptionLabel;
     builder.ctaView = self.ctaView;
   }];
-  
 }
 
 - (void)setupLayout {

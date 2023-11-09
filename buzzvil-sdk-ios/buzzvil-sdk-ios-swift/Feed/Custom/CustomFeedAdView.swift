@@ -29,6 +29,10 @@ final class CustomFeedAdView: BZVFeedAdView {
     setupView()
     setupLayout()
   }
+  
+  override class func desiredHeight(_ width: CGFloat) -> CGFloat {
+    return width * 0.8
+  }
 
   func setupView() {
     addSubview(nativeAdView)

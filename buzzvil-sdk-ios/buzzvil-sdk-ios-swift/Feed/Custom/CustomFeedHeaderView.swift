@@ -5,7 +5,7 @@ final class CustomFeedHeaderView: BZVFeedHeaderView {
   let headerLabel = UILabel(frame: .zero)
   
   override class func desiredHeight(_ width: CGFloat) -> CGFloat {
-    return 100.0
+    return 60
   }
 
   required init?(coder: NSCoder) {
