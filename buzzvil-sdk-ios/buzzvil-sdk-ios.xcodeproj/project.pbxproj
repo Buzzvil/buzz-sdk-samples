@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		003FA7AB2AFCC18300F943D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */; };
 		003FA7B52AFCD29900F943D7 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7B42AFCD29900F943D7 /* UIButton+Custom.m */; };
+		003FA7BA2AFCE1C700F943D7 /* CustomHeaderViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7B92AFCE1C700F943D7 /* CustomHeaderViewHolder.swift */; };
+		003FA7BC2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7BB2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift */; };
+		003FA7BE2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift */; };
 		004850832AF100D600CD6D64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850822AF100D600CD6D64 /* AppDelegate.m */; };
 		004850892AF100D600CD6D64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850882AF100D600CD6D64 /* ViewController.m */; };
 		0048508E2AF100D800CD6D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0048508D2AF100D800CD6D64 /* Assets.xcassets */; };
@@ -16,10 +19,10 @@
 		0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0048509E2AF1023600CD6D64 /* AppDelegate.swift */; };
 		004850A32AF1023600CD6D64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850A22AF1023600CD6D64 /* ViewController.swift */; };
 		004850A82AF1023800CD6D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004850A72AF1023800CD6D64 /* Assets.xcassets */; };
-		004850B12AF1038000CD6D64 /* BenefitHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */; };
-		005266D32AF1D4780080C392 /* BenefitHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266D22AF1D4780080C392 /* BenefitHubViewController.m */; };
-		005266D52AF1DB890080C392 /* BenefitHubContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266D42AF1DB890080C392 /* BenefitHubContainerViewController.swift */; };
-		005266DA2AF1DBEA0080C392 /* BenefitHubContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266D92AF1DBEA0080C392 /* BenefitHubContainerViewController.m */; };
+		004850B12AF1038000CD6D64 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004850B02AF1038000CD6D64 /* FeedViewController.swift */; };
+		005266D32AF1D4780080C392 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266D22AF1D4780080C392 /* FeedViewController.m */; };
+		005266D52AF1DB890080C392 /* FeedContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266D42AF1DB890080C392 /* FeedContainerViewController.swift */; };
+		005266DA2AF1DBEA0080C392 /* FeedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266D92AF1DBEA0080C392 /* FeedContainerViewController.m */; };
 		005266DD2AF1E73B0080C392 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266DC2AF1E73B0080C392 /* NativeViewController.swift */; };
 		005266DF2AF1E82E0080C392 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005266DE2AF1E82E0080C392 /* CarouselViewController.swift */; };
 		005266E32AF1E8740080C392 /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005266E22AF1E8740080C392 /* NativeViewController.m */; };
@@ -45,6 +48,9 @@
 		003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		003FA7B32AFCD29900F943D7 /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
 		003FA7B42AFCD29900F943D7 /* UIButton+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
+		003FA7B92AFCE1C700F943D7 /* CustomHeaderViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderViewHolder.swift; sourceTree = "<group>"; };
+		003FA7BB2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedAdViewHolder.swift; sourceTree = "<group>"; };
+		003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedCpsAdViewHolder.swift; sourceTree = "<group>"; };
 		0048507F2AF100D600CD6D64 /* buzzvil-sdk-ios-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004850812AF100D600CD6D64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		004850822AF100D600CD6D64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,12 +64,12 @@
 		004850A22AF1023600CD6D64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		004850A72AF1023800CD6D64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004850AC2AF1023800CD6D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubViewController.swift; sourceTree = "<group>"; };
-		005266D12AF1D4780080C392 /* BenefitHubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BenefitHubViewController.h; sourceTree = "<group>"; };
-		005266D22AF1D4780080C392 /* BenefitHubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BenefitHubViewController.m; sourceTree = "<group>"; };
-		005266D42AF1DB890080C392 /* BenefitHubContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubContainerViewController.swift; sourceTree = "<group>"; };
-		005266D82AF1DBEA0080C392 /* BenefitHubContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BenefitHubContainerViewController.h; sourceTree = "<group>"; };
-		005266D92AF1DBEA0080C392 /* BenefitHubContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BenefitHubContainerViewController.m; sourceTree = "<group>"; };
+		004850B02AF1038000CD6D64 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		005266D12AF1D4780080C392 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		005266D22AF1D4780080C392 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		005266D42AF1DB890080C392 /* FeedContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedContainerViewController.swift; sourceTree = "<group>"; };
+		005266D82AF1DBEA0080C392 /* FeedContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedContainerViewController.h; sourceTree = "<group>"; };
+		005266D92AF1DBEA0080C392 /* FeedContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedContainerViewController.m; sourceTree = "<group>"; };
 		005266DC2AF1E73B0080C392 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
 		005266DE2AF1E82E0080C392 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		005266E12AF1E8740080C392 /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
@@ -133,7 +139,7 @@
 				005266FF2AF21BA20080C392 /* Custom */,
 				005266FB2AF21B420080C392 /* Interstitial */,
 				005266E02AF1E8610080C392 /* Native */,
-				005266D72AF1DBCB0080C392 /* BenefitHub */,
+				005266D72AF1DBCB0080C392 /* Feed */,
 				004850812AF100D600CD6D64 /* AppDelegate.h */,
 				004850822AF100D600CD6D64 /* AppDelegate.m */,
 				004850872AF100D600CD6D64 /* ViewController.h */,
@@ -151,7 +157,7 @@
 				005267002AF21BD40080C392 /* Custom */,
 				005266F82AF21AD20080C392 /* Interstitial */,
 				005266DB2AF1E72D0080C392 /* Native */,
-				005266D62AF1DB8D0080C392 /* BenefitHub */,
+				005266D62AF1DB8D0080C392 /* Feed */,
 				0048509E2AF1023600CD6D64 /* AppDelegate.swift */,
 				004850A22AF1023600CD6D64 /* ViewController.swift */,
 				004850A72AF1023800CD6D64 /* Assets.xcassets */,
@@ -161,24 +167,27 @@
 			path = "buzzvil-sdk-ios-swift";
 			sourceTree = "<group>";
 		};
-		005266D62AF1DB8D0080C392 /* BenefitHub */ = {
+		005266D62AF1DB8D0080C392 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				004850B02AF1038000CD6D64 /* BenefitHubViewController.swift */,
-				005266D42AF1DB890080C392 /* BenefitHubContainerViewController.swift */,
+				004850B02AF1038000CD6D64 /* FeedViewController.swift */,
+				005266D42AF1DB890080C392 /* FeedContainerViewController.swift */,
+				003FA7B92AFCE1C700F943D7 /* CustomHeaderViewHolder.swift */,
+				003FA7BB2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift */,
+				003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift */,
 			);
-			path = BenefitHub;
+			path = Feed;
 			sourceTree = "<group>";
 		};
-		005266D72AF1DBCB0080C392 /* BenefitHub */ = {
+		005266D72AF1DBCB0080C392 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				005266D12AF1D4780080C392 /* BenefitHubViewController.h */,
-				005266D22AF1D4780080C392 /* BenefitHubViewController.m */,
-				005266D82AF1DBEA0080C392 /* BenefitHubContainerViewController.h */,
-				005266D92AF1DBEA0080C392 /* BenefitHubContainerViewController.m */,
+				005266D12AF1D4780080C392 /* FeedViewController.h */,
+				005266D22AF1D4780080C392 /* FeedViewController.m */,
+				005266D82AF1DBEA0080C392 /* FeedContainerViewController.h */,
+				005266D92AF1DBEA0080C392 /* FeedContainerViewController.m */,
 			);
-			path = BenefitHub;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		005266DB2AF1E72D0080C392 /* Native */ = {
@@ -491,9 +500,9 @@
 				004850892AF100D600CD6D64 /* ViewController.m in Sources */,
 				005266ED2AF1EBAA0080C392 /* CarouselCell.m in Sources */,
 				004850832AF100D600CD6D64 /* AppDelegate.m in Sources */,
-				005266D32AF1D4780080C392 /* BenefitHubViewController.m in Sources */,
+				005266D32AF1D4780080C392 /* FeedViewController.m in Sources */,
 				004850942AF100D800CD6D64 /* main.m in Sources */,
-				005266DA2AF1DBEA0080C392 /* BenefitHubContainerViewController.m in Sources */,
+				005266DA2AF1DBEA0080C392 /* FeedContainerViewController.m in Sources */,
 				005266E32AF1E8740080C392 /* NativeViewController.m in Sources */,
 				005266FE2AF21B4F0080C392 /* InterstitialViewController.m in Sources */,
 				0052670E2AF220D20080C392 /* CustomLauncher.m in Sources */,
@@ -508,19 +517,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004850B12AF1038000CD6D64 /* BenefitHubViewController.swift in Sources */,
+				004850B12AF1038000CD6D64 /* FeedViewController.swift in Sources */,
 				003FA7AB2AFCC18300F943D7 /* SceneDelegate.swift in Sources */,
 				0052670B2AF21EAE0080C392 /* CustomBrowserViewController.swift in Sources */,
 				005267102AF220E60080C392 /* CustomLauncher.swift in Sources */,
+				003FA7BC2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift in Sources */,
 				005266DF2AF1E82E0080C392 /* CarouselViewController.swift in Sources */,
 				005266FA2AF21AE70080C392 /* InterstitialViewController.swift in Sources */,
 				004850A32AF1023600CD6D64 /* ViewController.swift in Sources */,
+				003FA7BE2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift in Sources */,
 				005266EA2AF1EB5F0080C392 /* CarouselCell.swift in Sources */,
+				003FA7BA2AFCE1C700F943D7 /* CustomHeaderViewHolder.swift in Sources */,
 				005266EF2AF1F0E50080C392 /* FeedPromotionCell.swift in Sources */,
 				0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */,
 				005266DD2AF1E73B0080C392 /* NativeViewController.swift in Sources */,
 				005267052AF21C490080C392 /* CustomCtaView.swift in Sources */,
-				005266D52AF1DB890080C392 /* BenefitHubContainerViewController.swift in Sources */,
+				005266D52AF1DB890080C392 /* FeedContainerViewController.swift in Sources */,
 				005266F42AF1F3CA0080C392 /* CarouselFeedEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

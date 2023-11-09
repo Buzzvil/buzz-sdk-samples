@@ -3,7 +3,7 @@
 #import "Native/NativeViewController.h"
 #import "Native/Carousel/CarouselViewController.h"
 #import "Interstitial/InterstitialViewController.h"
-#import "BenefitHub/BenefitHubViewController.h"
+#import "Feed/FeedViewController.h"
 
 static NSString * const kNavigationItemTitle = @"BuzzvilSDK";
 static NSString * const kNativeButtonTitle = @"Native";

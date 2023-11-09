@@ -1,19 +1,19 @@
 @import BuzzvilSDK;
-#import "BenefitHubContainerViewController.h"
+#import "FeedContainerViewController.h"
 
-@interface BenefitHubContainerViewController ()
+@interface FeedContainerViewController ()
 
-@property (nonatomic, strong, readonly) BZVBenefitHub *benefitHub;
+@property (nonatomic, strong, readonly) BZVBuzzAdFeed *buzzAdFeed;
 
 @end
 
-@implementation BenefitHubContainerViewController
+@implementation FeedContainerViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  _benefitHub = [BZVBenefitHub benefitHubWithBlock:^(BZVBenefitHubBuilder * _Nonnull builder) {}];
-  [self displayContentViewController:[_benefitHub viewController]];
+  _benefitHub = [BZVBuzzAdFeed feedWithBlock:^(BZVBenefitHubBuilder * _Nonnull builder) {}];
+  [self displayContentViewController:[_buzzAdFeed viewController]];
 }
 
 - (void)displayContentViewController:(UIViewController*)contentViewController {

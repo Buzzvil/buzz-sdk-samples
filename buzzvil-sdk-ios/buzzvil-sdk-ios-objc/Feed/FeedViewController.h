@@ -2,7 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BenefitHubViewController : UIViewController
+@interface FeedViewController : UIViewController
 
 @end
 

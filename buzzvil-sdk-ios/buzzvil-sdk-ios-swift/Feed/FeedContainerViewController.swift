@@ -2,12 +2,12 @@ import BuzzvilSDK
 import UIKit
 
 // 하위 뷰 컨트롤러로 베네핏허브 연동하기
-class BenefitHubContainerViewController: UIViewController {
-  let buzzBenefitHub = BZVBenefitHub { builder in }
+class FeedContainerViewController: UIViewController {
+  let buzzAdFeed = BZVBuzzAdFeed { _ in }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    displayContentViewController(buzzBenefitHub.viewController)
+    displayContentViewController(buzzAdFeed.viewController)
   }
   
   private func displayContentViewController(_ contentViewController: UIViewController) {

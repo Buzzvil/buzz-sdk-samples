@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // 베네핏 허브 초기화 하기
-  BZVBenefitHubConfig *benefitHubConfig = [BZVBenefitHubConfig configWithBlock:^(BZVBenefitHubConfigBuilder * _Nonnull builder) {
+  BZVFeedConfig *feedConfig = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
 //    builder.unitID = @"YOUR_FEED_UNIT_ID"; ##ARTHUR
     builder.unitID = @"59026668927900";
   }];
@@ -32,7 +32,7 @@
   BuzzBenefitConfig *config = [BuzzBenefitConfig configWithBlock:^(BuzzBenefitConfigBuilder * _Nonnull builder) {
 //    builder.appID = @"YOUR_APP_ID"; ##ARTHUR
     builder.appID = @"325625817193493";
-    builder.benefitHubConfig = benefitHubConfig;
+    builder.defaultFeedConfig = benefitHubConfig;
   }];
   [[BuzzBenefit sharedInstance] initializeWithConfig:config];
   

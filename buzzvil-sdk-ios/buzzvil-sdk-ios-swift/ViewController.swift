@@ -1,11 +1,14 @@
 import UIKit
+import BuzzvilSDK
 
 class ViewController: UIViewController {
   private static let navigationItemTitle = "BuzzvilSDK"
   private static let nativeButtonTitle = "Native"
   private static let interstitialButtonTitle = "Interstitial"
-  private static let benefitHubButtonTitle = "BenefitHub"
+  private static let buzzAdFeedButtonTitle = "Feed"
+  private static let buzzAdFeedConatinerButtonTitle = "Feed Container"
   private static let carouselButtonTitle = "Carousel"
+  private static let inquiryButtonTitle = "Inquiry"
   private static let buttonAspectRatio: CGFloat = 1.5
   private static let buttonMargin: CGFloat = 12
   private static let buttonCornerRadius: CGFloat = 8
@@ -34,8 +37,22 @@ class ViewController: UIViewController {
   
   private lazy var feedButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.benefitHubButtonTitle, for: .normal)
-    button.addTarget(self, action: #selector(pushBenefitHubViewController), for: .touchUpInside)
+    button.setTitle(Self.buzzAdFeedButtonTitle, for: .normal)
+    button.addTarget(self, action: #selector(pushFeedViewController), for: .touchUpInside)
+    return button
+  }()
+  
+  private lazy var feedContainerButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle(Self.buzzAdFeedConatinerButtonTitle, for: .normal)
+    button.addTarget(self, action: #selector(pushFeedContainerViewController), for: .touchUpInside)
+    return button
+  }()
+  
+  private lazy var inquiryButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle(Self.inquiryButtonTitle, for: .normal)
+    button.addTarget(self, action: #selector(showInquiry), for: .touchUpInside)
     return button
   }()
   
@@ -52,12 +69,14 @@ class ViewController: UIViewController {
     view.addSubview(interstitialButton)
     view.addSubview(carouselButton)
     view.addSubview(feedButton)
+    view.addSubview(feedContainerButton)
     
     let buttonsToSetupAppearance = [
       nativeButton,
       interstitialButton,
       carouselButton,
-      feedButton
+      feedButton,
+      feedContainerButton
     ]
     
     buttonsToSetupAppearance.forEach { button in
@@ -98,6 +117,14 @@ class ViewController: UIViewController {
       feedButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Self.buttonMargin),
       feedButton.widthAnchor.constraint(equalTo: feedButton.heightAnchor, multiplier: Self.buttonAspectRatio)
     ])
+    
+    feedContainerButton.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      feedContainerButton.topAnchor.constraint(equalTo: carouselButton.bottomAnchor, constant: Self.buttonMargin),
+      feedContainerButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Self.buttonMargin),
+      feedContainerButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -Self.buttonMargin/2),
+      feedContainerButton.widthAnchor.constraint(equalTo: feedContainerButton.heightAnchor, multiplier: Self.buttonAspectRatio)
+    ])
   }
   
   private func setupAppearanceOfButton(button: UIButton) {
@@ -122,9 +149,17 @@ class ViewController: UIViewController {
     navigationController?.pushViewController(interstitialViewController, animated: true)
   }
   
-  @objc private func pushBenefitHubViewController() {
-    let benefitHubViewController = BenefitHubViewController()
-    navigationController?.pushViewController(benefitHubViewController, animated: true)
+  @objc private func pushFeedViewController() {
+    let feedViewController = FeedViewController()
+    navigationController?.pushViewController(feedViewController, animated: true)
   }
   
+  @objc private func pushFeedContainerViewController() {
+    let feedContainerViewController = FeedContainerViewController()
+    navigationController?.pushViewController(feedContainerViewController, animated: true)
+  }
+  
+  @objc private func showInquiry() {
+    BuzzAdBenefit.presentInquiryPage(on: self, unitId: "YOUR_UNIT_ID")
+  }
 }
