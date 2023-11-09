@@ -184,16 +184,6 @@ extension CarouselViewController: UICollectionViewDataSource {
 //    cell.bind()
 //    return cell
 //  }
-  
-  
-  // 로딩 화면 구현하기
-//  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//    // ...
-//    cell.setupLoading()
-//    cell.setPool(with: pool, for: indexPath.item)
-//    cell.bind()
-//    return cell
-//  }
 }
 
 extension CarouselViewController: UICollectionViewDelegateFlowLayout {

@@ -1,10 +1,10 @@
 import UIKit
 import BuzzvilSDK
 
-final class CustomHeaderViewHolder: BZVFeedHeaderViewHolder {
+final class CustomFeedHeaderView: BZVFeedHeaderView {
   let headerLabel = UILabel(frame: .zero)
-
-  override class func desiredHeight() -> CGFloat {
+  
+  override class func desiredHeight(_ width: CGFloat) -> CGFloat {
     return 100.0
   }
 
@@ -20,6 +20,8 @@ final class CustomHeaderViewHolder: BZVFeedHeaderViewHolder {
 
   func setUpView() {
     addSubview(headerLabel)
+    headerLabel.textColor = .white
+    headerLabel.text = "HEADER CUSTOM"
 
     // LayoutConstraint 설정
     // ...

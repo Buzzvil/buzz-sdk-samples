@@ -13,8 +13,9 @@
   [super viewDidLoad];
 
   _buzzAdInterstitial = [BZVBuzzAdInterstitial interstitialWithBlock:^(BZVBuzzAdInterstitialBuilder * _Nonnull builder) {
-    builder.unitId = @"YOUR_INTERSTITIAL_UNIT_ID";
-    builder.type = BZVBuzzAdInterstitialDialog;
+//    builder.unitId = @"YOUR_INTERSTITIAL_UNIT_ID"; ##ARTHUR
+    builder.unitId = @"189682733480080";
+    builder.type = BZVBuzzAdInterstitialTypeDialog;
   }];
   _buzzAdInterstitial.delegate = self;
   [_buzzAdInterstitial load];

@@ -457,12 +457,13 @@ SWIFT_CLASS("_TtC16BuzzAdBenefitSDK21BZVBuzzAdInterstitial")
 - (nonnull instancetype)initWithBlock:(SWIFT_NOESCAPE void (^ _Nonnull)(BZVBuzzAdInterstitialBuilder * _Nonnull))block;
 @end
 
+enum BZVBuzzAdInterstitialType : NSInteger;
 @class BZVBuzzAdInterstitialTheme;
 
 SWIFT_CLASS("_TtC16BuzzAdBenefitSDK28BZVBuzzAdInterstitialBuilder")
 @interface BZVBuzzAdInterstitialBuilder : NSObject
 @property (nonatomic, copy) NSString * _Nullable unitId;
-@property (nonatomic) BZVBuzzAdInterstitialType type;
+@property (nonatomic) enum BZVBuzzAdInterstitialType type;
 @property (nonatomic, strong) BZVBuzzAdInterstitialTheme * _Nullable theme;
 @property (nonatomic) BOOL inquiryButtonHidden;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -475,6 +476,11 @@ SWIFT_PROTOCOL("_TtP16BuzzAdBenefitSDK29BZVBuzzAdInterstitialDelegate_")
 - (void)BZVBuzzAdInterstitialDidFailToLoadAd:(BZVBuzzAdInterstitial * _Nonnull)interstitial withError:(NSError * _Nonnull)withError;
 - (void)BZVBuzzAdInterstitialDidDismiss:(UIViewController * _Nonnull)viewController;
 @end
+
+typedef SWIFT_ENUM(NSInteger, BZVBuzzAdInterstitialType, open) {
+  BZVBuzzAdInterstitialTypeDialog = 0,
+  BZVBuzzAdInterstitialTypeBottomSheet = 1,
+};
 
 @class BZVNativeAdRequest;
 @class NSError;
@@ -1066,20 +1072,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 
 
 @interface BABColor (SWIFT_EXTENSION(BuzzAdBenefitSDK))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_best;)
-+ (UIColor * _Nonnull)status_best SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_success;)
-+ (UIColor * _Nonnull)status_success SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_warning;)
-+ (UIColor * _Nonnull)status_warning SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_error;)
-+ (UIColor * _Nonnull)status_error SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_alert;)
-+ (UIColor * _Nonnull)status_alert SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface BABColor (SWIFT_EXTENSION(BuzzAdBenefitSDK))
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull primary_dark;)
 + (UIColor * _Nonnull)primary_dark SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull primary_base;)
@@ -1090,6 +1082,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _N
 + (UIColor * _Nonnull)primary_lighter SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull primary_lightest;)
 + (UIColor * _Nonnull)primary_lightest SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface BABColor (SWIFT_EXTENSION(BuzzAdBenefitSDK))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_best;)
++ (UIColor * _Nonnull)status_best SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_success;)
++ (UIColor * _Nonnull)status_success SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_warning;)
++ (UIColor * _Nonnull)status_warning SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_error;)
++ (UIColor * _Nonnull)status_error SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) UIColor * _Nonnull status_alert;)
++ (UIColor * _Nonnull)status_alert SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

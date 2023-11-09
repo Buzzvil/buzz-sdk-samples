@@ -62,7 +62,6 @@
 
 // From BuzzAdBenefitInterstitial
 #import <BuzzAdBenefitSDK/BZVBuzzAdInterstitialTheme.h>
-#import <BuzzAdBenefitSDK/BZVBuzzAdInterstitialType.h>
 // From BuzzAdBenefitInterstitial end
 
 // From BuzzAdBenefit

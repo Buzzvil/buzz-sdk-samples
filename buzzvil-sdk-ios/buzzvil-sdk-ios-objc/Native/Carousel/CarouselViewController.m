@@ -2,8 +2,10 @@
 #import "CarouselViewController.h"
 #import "CarouselCell.h"
 #import "FeedPromotionCell.h"
+#import "CarouselFeedEntryView.h"
 
-static NSString * const kUnitId = @"YOUR_UNIT_ID";
+//static NSString * const kUnitId = @"YOUR_UNIT_ID"; ##ARTHUR
+static NSString * const kUnitId = @"453995955032448";
 
 @interface CarouselViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -24,7 +26,7 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
 
 @property (nonatomic, strong, readonly) UIPageControl *pageControl;
 
-//@property (nonatomic, strong, readonly) CarouselFeedEntryView *feedEntryView;
+@property (nonatomic, strong, readonly) CarouselFeedEntryView *feedEntryView;
 
 @end
 
@@ -52,6 +54,7 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
   // BZVNativeAd2Pool에 광고 할당을 요청합니다.
   [self.pool loadAdsWithCount:self.adRequestCount completionHandler:^(NSInteger adCount) {
     __strong typeof(self) strongSelf = weakSelf;
+    printf ("##ARTHUR loadADWithCount %ld\n", (long)adCount);
     if (strongSelf) {
       // 실제로 할당받은 광고의 개수(adCount)에 베네핏허브 진입 슬라이드 개수(feedPromotionSlideCount)를 더해서 cell 개수(loadedAdCount)를 설정합니다.
       strongSelf.loadedAdCount = adCount + strongSelf.feedPromotionSlideCount;
@@ -68,6 +71,11 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
     }
   } errorHandler:^(NSError * _Nonnull error) {
     // 광고 할당 실패 시 발생하는 NSError 오류 코드에 대한 자세한 내용은 오류 코드가 나타납니다 토픽을 참고하세요.
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      self.loadedAdCount = self.feedPromotionSlideCount;
+      [self.carouselCollectionView reloadData];
+    }
   }];
 }
 
@@ -84,6 +92,7 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
   // flowLayout을 carouselCollectionView에 설정하세요.
   _carouselCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
   [_carouselCollectionView registerClass:[CarouselCell class] forCellWithReuseIdentifier:@"CarouselCell"];
+  [_carouselCollectionView registerClass:[FeedPromotionCell class] forCellWithReuseIdentifier:@"FeedPromotionCell"];
   _carouselCollectionView.delegate = self;
   _carouselCollectionView.dataSource = self;
   _carouselCollectionView.showsHorizontalScrollIndicator = NO;
@@ -102,9 +111,8 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
   _pageControl.userInteractionEnabled = NO;
   [self.view addSubview:self.pageControl];
   
-// ##ARTHUR
-//  _feedEntryView = [[CarouselFeedEntryView alloc] initWithFrame:CGRectZero];
-//  [self.view addSubview:self.feedEntryView];
+  _feedEntryView = [[CarouselFeedEntryView alloc] initWithFrame:CGRectZero];
+  [self.view addSubview:self.feedEntryView];
 }
 
 - (void)setupLayout {
@@ -122,6 +130,12 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
   [NSLayoutConstraint activateConstraints:@[
     [_pageControl.topAnchor constraintEqualToAnchor:_carouselCollectionView.bottomAnchor constant:16],
     [_pageControl.centerXAnchor constraintEqualToAnchor:_carouselCollectionView.centerXAnchor],
+  ]];
+  
+  _feedEntryView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_feedEntryView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
+    [_feedEntryView.topAnchor constraintEqualToAnchor:_carouselCollectionView.bottomAnchor],
   ]];
 }
 
@@ -179,14 +193,6 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
 //  [cell bind];
 //  return cell;
 //}
-
-//
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView c12ellForItemAtIndexPath:(NSIndexPath *)indexPath {
-  CarouselCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CarouselCell" forIndexPath:indexPath];
-  [cell setPool:_pool forAdKey:indexPath.item];
-  [cell bind];
-  return cell;
-}
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 

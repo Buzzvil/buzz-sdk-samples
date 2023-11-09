@@ -44,7 +44,8 @@
   [_nativeAd2View addSubview:_ctaView];
   
   _viewBinder = [BZVNativeAd2ViewBinder viewBinderWithBlock:^(BZVNativeAd2ViewBinderBuilder * _Nonnull builder) {
-    builder.unitId = @"YOUR_NATIVE_UNIT_ID";
+//    builder.unitId = @"YOUR_NATIVE_UNIT_ID";
+    builder.unitId = @"453995955032448";
     builder.nativeAd2View = self.nativeAd2View;
     builder.mediaView = self.mediaView;
     builder.iconImageView = self.iconImageView;

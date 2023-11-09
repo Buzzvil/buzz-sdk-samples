@@ -13,20 +13,20 @@
   [self showFeed];
 }
 
-// 베네핏허브 표시하기
+// 피드 표시하기
 - (void)showFeed {
   BZVBuzzAdFeed *buzzAdFeed = [BZVBuzzAdFeed feedWithBlock:^(BZVBuzzAdFeedBuilder * _Nonnull builder) {}];
-  [benefitHub showOn:self];
+  [buzzAdFeed showOn:self];
 }
 
-// 베네핏허브 표시하기
+// 피드 표시하기
 - (void)showFeedWithUnitID {
   BZVBuzzAdFeed *buzzAdFeed = [BZVBuzzAdFeed feedWithBlock:^(BZVBuzzAdFeedBuilder * _Nonnull builder) {
     builder.config = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
       builder.unitID = @"SECOND_FEED_UNIT_ID";
     }];
   }];
-  [benefitHub showOn:self];
+  [buzzAdFeed showOn:self];
 }
 
 // 적립 가능한 포인트 표시하기

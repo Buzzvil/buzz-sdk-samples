@@ -5,21 +5,21 @@ class FeedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    showBenefitHub()
+    showFeed()
   }
   
-  // 베네핏허브 표시하기
-  func showBenefitHub() {
+  // 피드 표시하기
+  func showFeed() {
     let buzzAdFeed = BZVBuzzAdFeed { _ in }
     
     buzzAdFeed.show(on: self)
   }
   
-  // 베네핏허브 표시하기
+  // 피드 표시하기
   func showFeedWithUnitID() {
     let buzzAdFeed = BZVBuzzAdFeed { builder in
       builder.config = BZVFeedConfig { builder in
-        builder.unitID = "SECOND_BENEFIT_HUB_UNIT_ID"
+        builder.unitID = "SECOND_FEED_UNIT_ID"
       }
     }
     buzzAdFeed.show(on: self)

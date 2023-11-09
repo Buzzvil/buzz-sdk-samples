@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let feedConfig = BZVFeedConfig { builder in
 //      builder.unitID = "YOUR_FEED_UNIT_ID" // ##ARTHUR
       builder.unitID = "59026668927900" // ##ARTHUR
-      builder.headerViewHolderCass = CustomHeaderViewHolder.self // 헤더
-      builder.cpsAdViewHolderClass = CustomCpsAdViewHolder.self
+//      builder.headerViewClass = CustomFeedHeaderView.self // 헤더
+//      builder.adViewClass = CustomFeedAdView.self // 일반 광고 디자인
+//      builder.cpsAdViewClass = CustomFeedCpsAdView.self // 쇼핑 광고 디자인
     }
     
     // Buzzvil SDK 초기화하기
@@ -82,19 +83,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   // 커스터마이징
   func themeCustomize() {
-    let theme = BuzzBenefitTheme()
-    // 주요 색상
-    theme.setPrimaryColor(UIColor.red)
-    theme.setPrimaryLightColor(UIColor.blue)
+    let theme = BuzzBenefitTheme { builder in
+      
+      // 주요 색상
+      // builder.primaryColor = YOUR_PRIMARY_COLOR
+      // builder.primaryLightColor = YOUR_PRIMARY_LIGHT_COLOR
+      
+      // 리워드 아이콘
+      // builder.rewardIcon = YOUR_REWARD_ICON
+      // builder.participatedIcon = YOUR_PARTICIPATED_ICON
+    }
     
-    // 리워드 아이콘
-//    theme.setRewardIcon(UIImage(named: "YOUR_REWARD_ICON"))
-    BuzzBenefitTheme.setGlobalTheme(theme)
+    BuzzBenefit.shared.setGlobalTheme(theme)
   }
   
   func setFeedTheme() {
     // 광고 분류 필터
-    let benefitHubTheme = BZVBenefitHubTheme { builder in
+    let feedTheme = BZVFeedTheme { builder in
       builder.navigationBarTitle = "YOUR_TITLE" // 네비게이션 바 UI 스트링 변경하기
       builder.usePrimaryColorInFilter = true // 광고 분류 필터
       
@@ -135,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     }
     
-    BZVBenefitHub.setDefaultTheme(benefitHubTheme)
+    BZVBuzzAdFeed.setDefaultTheme(feedTheme)
   }
   
   // 동영상 광고 재생 조건 변경하기

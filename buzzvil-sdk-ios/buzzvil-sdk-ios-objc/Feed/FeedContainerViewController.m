@@ -12,7 +12,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  _benefitHub = [BZVBuzzAdFeed feedWithBlock:^(BZVBenefitHubBuilder * _Nonnull builder) {}];
+  _buzzAdFeed = [BZVBuzzAdFeed feedWithBlock:^(BZVBuzzAdFeedBuilder * _Nonnull builder) {}];
   [self displayContentViewController:[_buzzAdFeed viewController]];
 }
 

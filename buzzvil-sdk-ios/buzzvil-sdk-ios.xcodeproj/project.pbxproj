@@ -9,9 +9,15 @@
 /* Begin PBXBuildFile section */
 		003FA7AB2AFCC18300F943D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */; };
 		003FA7B52AFCD29900F943D7 /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7B42AFCD29900F943D7 /* UIButton+Custom.m */; };
-		003FA7BA2AFCE1C700F943D7 /* CustomHeaderViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7B92AFCE1C700F943D7 /* CustomHeaderViewHolder.swift */; };
-		003FA7BC2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7BB2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift */; };
-		003FA7BE2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift */; };
+		003FA7BA2AFCE1C700F943D7 /* CustomFeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7B92AFCE1C700F943D7 /* CustomFeedHeaderView.swift */; };
+		003FA7BC2AFCE27F00F943D7 /* CustomFeedAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7BB2AFCE27F00F943D7 /* CustomFeedAdView.swift */; };
+		003FA7BE2AFCE33800F943D7 /* CustomFeedCpsAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdView.swift */; };
+		003FA7C02AFD088300F943D7 /* CustomFeedEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7BF2AFD088300F943D7 /* CustomFeedEntryView.swift */; };
+		003FA7C32AFD101A00F943D7 /* CustomFeedEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7C22AFD101A00F943D7 /* CustomFeedEntryView.m */; };
+		003FA7C62AFD126C00F943D7 /* CustomFeedHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7C52AFD126C00F943D7 /* CustomFeedHeaderView.m */; };
+		003FA7CB2AFD13F100F943D7 /* CustomFeedAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7CA2AFD13F100F943D7 /* CustomFeedAdView.m */; };
+		003FA7CE2AFD155100F943D7 /* CustomFeedCpsAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7CD2AFD155100F943D7 /* CustomFeedCpsAdView.m */; };
+		003FA7D12AFD18C600F943D7 /* CarouselFeedEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003FA7D02AFD18C600F943D7 /* CarouselFeedEntryView.m */; };
 		004850832AF100D600CD6D64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850822AF100D600CD6D64 /* AppDelegate.m */; };
 		004850892AF100D600CD6D64 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004850882AF100D600CD6D64 /* ViewController.m */; };
 		0048508E2AF100D800CD6D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0048508D2AF100D800CD6D64 /* Assets.xcassets */; };
@@ -48,9 +54,20 @@
 		003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		003FA7B32AFCD29900F943D7 /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
 		003FA7B42AFCD29900F943D7 /* UIButton+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
-		003FA7B92AFCE1C700F943D7 /* CustomHeaderViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderViewHolder.swift; sourceTree = "<group>"; };
-		003FA7BB2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedAdViewHolder.swift; sourceTree = "<group>"; };
-		003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedCpsAdViewHolder.swift; sourceTree = "<group>"; };
+		003FA7B92AFCE1C700F943D7 /* CustomFeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedHeaderView.swift; sourceTree = "<group>"; };
+		003FA7BB2AFCE27F00F943D7 /* CustomFeedAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedAdView.swift; sourceTree = "<group>"; };
+		003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedCpsAdView.swift; sourceTree = "<group>"; };
+		003FA7BF2AFD088300F943D7 /* CustomFeedEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeedEntryView.swift; sourceTree = "<group>"; };
+		003FA7C12AFD101A00F943D7 /* CustomFeedEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedEntryView.h; sourceTree = "<group>"; };
+		003FA7C22AFD101A00F943D7 /* CustomFeedEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedEntryView.m; sourceTree = "<group>"; };
+		003FA7C42AFD126C00F943D7 /* CustomFeedHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedHeaderView.h; sourceTree = "<group>"; };
+		003FA7C52AFD126C00F943D7 /* CustomFeedHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedHeaderView.m; sourceTree = "<group>"; };
+		003FA7C92AFD13F100F943D7 /* CustomFeedAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedAdView.h; sourceTree = "<group>"; };
+		003FA7CA2AFD13F100F943D7 /* CustomFeedAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedAdView.m; sourceTree = "<group>"; };
+		003FA7CC2AFD155100F943D7 /* CustomFeedCpsAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomFeedCpsAdView.h; sourceTree = "<group>"; };
+		003FA7CD2AFD155100F943D7 /* CustomFeedCpsAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomFeedCpsAdView.m; sourceTree = "<group>"; };
+		003FA7CF2AFD18C600F943D7 /* CarouselFeedEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselFeedEntryView.h; sourceTree = "<group>"; };
+		003FA7D02AFD18C600F943D7 /* CarouselFeedEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselFeedEntryView.m; sourceTree = "<group>"; };
 		0048507F2AF100D600CD6D64 /* buzzvil-sdk-ios-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		004850812AF100D600CD6D64 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		004850822AF100D600CD6D64 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,6 +149,32 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		003FA7C72AFD13A000F943D7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				003FA7C12AFD101A00F943D7 /* CustomFeedEntryView.h */,
+				003FA7C22AFD101A00F943D7 /* CustomFeedEntryView.m */,
+				003FA7C42AFD126C00F943D7 /* CustomFeedHeaderView.h */,
+				003FA7C52AFD126C00F943D7 /* CustomFeedHeaderView.m */,
+				003FA7C92AFD13F100F943D7 /* CustomFeedAdView.h */,
+				003FA7CA2AFD13F100F943D7 /* CustomFeedAdView.m */,
+				003FA7CC2AFD155100F943D7 /* CustomFeedCpsAdView.h */,
+				003FA7CD2AFD155100F943D7 /* CustomFeedCpsAdView.m */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		003FA7C82AFD13AC00F943D7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				003FA7B92AFCE1C700F943D7 /* CustomFeedHeaderView.swift */,
+				003FA7BB2AFCE27F00F943D7 /* CustomFeedAdView.swift */,
+				003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdView.swift */,
+				003FA7BF2AFD088300F943D7 /* CustomFeedEntryView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		004850802AF100D600CD6D64 /* buzzvil-sdk-ios-objc */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,11 +213,9 @@
 		005266D62AF1DB8D0080C392 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				003FA7C82AFD13AC00F943D7 /* Custom */,
 				004850B02AF1038000CD6D64 /* FeedViewController.swift */,
 				005266D42AF1DB890080C392 /* FeedContainerViewController.swift */,
-				003FA7B92AFCE1C700F943D7 /* CustomHeaderViewHolder.swift */,
-				003FA7BB2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift */,
-				003FA7BD2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -182,6 +223,7 @@
 		005266D72AF1DBCB0080C392 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				003FA7C72AFD13A000F943D7 /* Custom */,
 				005266D12AF1D4780080C392 /* FeedViewController.h */,
 				005266D22AF1D4780080C392 /* FeedViewController.m */,
 				005266D82AF1DBEA0080C392 /* FeedContainerViewController.h */,
@@ -218,6 +260,8 @@
 				005266EC2AF1EBAA0080C392 /* CarouselCell.m */,
 				005266F02AF1F10A0080C392 /* FeedPromotionCell.h */,
 				005266F12AF1F10A0080C392 /* FeedPromotionCell.m */,
+				003FA7CF2AFD18C600F943D7 /* CarouselFeedEntryView.h */,
+				003FA7D02AFD18C600F943D7 /* CarouselFeedEntryView.m */,
 			);
 			path = Carousel;
 			sourceTree = "<group>";
@@ -496,11 +540,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003FA7C32AFD101A00F943D7 /* CustomFeedEntryView.m in Sources */,
 				005266E62AF1E9C20080C392 /* CarouselViewController.m in Sources */,
+				003FA7D12AFD18C600F943D7 /* CarouselFeedEntryView.m in Sources */,
 				004850892AF100D600CD6D64 /* ViewController.m in Sources */,
 				005266ED2AF1EBAA0080C392 /* CarouselCell.m in Sources */,
+				003FA7C62AFD126C00F943D7 /* CustomFeedHeaderView.m in Sources */,
 				004850832AF100D600CD6D64 /* AppDelegate.m in Sources */,
 				005266D32AF1D4780080C392 /* FeedViewController.m in Sources */,
+				003FA7CE2AFD155100F943D7 /* CustomFeedCpsAdView.m in Sources */,
 				004850942AF100D800CD6D64 /* main.m in Sources */,
 				005266DA2AF1DBEA0080C392 /* FeedContainerViewController.m in Sources */,
 				005266E32AF1E8740080C392 /* NativeViewController.m in Sources */,
@@ -510,6 +558,7 @@
 				005267032AF21C320080C392 /* CustomCtaView.m in Sources */,
 				005267092AF21E9B0080C392 /* CustomBrowserViewController.m in Sources */,
 				005266F22AF1F10A0080C392 /* FeedPromotionCell.m in Sources */,
+				003FA7CB2AFD13F100F943D7 /* CustomFeedAdView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,14 +570,15 @@
 				003FA7AB2AFCC18300F943D7 /* SceneDelegate.swift in Sources */,
 				0052670B2AF21EAE0080C392 /* CustomBrowserViewController.swift in Sources */,
 				005267102AF220E60080C392 /* CustomLauncher.swift in Sources */,
-				003FA7BC2AFCE27F00F943D7 /* CustomFeedAdViewHolder.swift in Sources */,
+				003FA7BC2AFCE27F00F943D7 /* CustomFeedAdView.swift in Sources */,
 				005266DF2AF1E82E0080C392 /* CarouselViewController.swift in Sources */,
 				005266FA2AF21AE70080C392 /* InterstitialViewController.swift in Sources */,
 				004850A32AF1023600CD6D64 /* ViewController.swift in Sources */,
-				003FA7BE2AFCE33800F943D7 /* CustomFeedCpsAdViewHolder.swift in Sources */,
+				003FA7BE2AFCE33800F943D7 /* CustomFeedCpsAdView.swift in Sources */,
 				005266EA2AF1EB5F0080C392 /* CarouselCell.swift in Sources */,
-				003FA7BA2AFCE1C700F943D7 /* CustomHeaderViewHolder.swift in Sources */,
+				003FA7BA2AFCE1C700F943D7 /* CustomFeedHeaderView.swift in Sources */,
 				005266EF2AF1F0E50080C392 /* FeedPromotionCell.swift in Sources */,
+				003FA7C02AFD088300F943D7 /* CustomFeedEntryView.swift in Sources */,
 				0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */,
 				005266DD2AF1E73B0080C392 /* NativeViewController.swift in Sources */,
 				005267052AF21C490080C392 /* CustomCtaView.swift in Sources */,

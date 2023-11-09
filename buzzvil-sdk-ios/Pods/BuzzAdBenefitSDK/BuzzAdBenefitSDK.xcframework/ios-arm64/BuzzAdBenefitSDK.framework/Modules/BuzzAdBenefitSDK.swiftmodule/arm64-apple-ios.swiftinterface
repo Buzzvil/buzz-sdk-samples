@@ -400,6 +400,15 @@ public protocol DailyRewardService {
 extension UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) public func bab_presentWidgetTutorial(config: BuzzAdBenefitSDK.WidgetTutorialViewConfig, delegate: BuzzAdBenefitSDK.WidgetTutorialViewControllerDelegate?)
 }
+@objc public enum BZVBuzzAdInterstitialType : Swift.Int {
+  case dialog
+  case bottomSheet
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 extension UIKit.UIImageView {
   @_Concurrency.MainActor(unsafe) public func bab_aspectRatio() -> CoreFoundation.CGFloat
   @_Concurrency.MainActor(unsafe) public func bab_reverseAspectRatio() -> CoreFoundation.CGFloat
@@ -1037,6 +1046,7 @@ extension BuzzAdBenefitSDK.ConfigList : Swift.Codable {
   @objc func logout()
 }
 extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func actionWhenViewControllerVisible(timeInterval: Dispatch.DispatchTimeInterval, action: @escaping (() -> Swift.Void), disposeBag: BuzzRxSwift.DisposeBag)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func bab_presentBottomSheet(_ viewControllerToPresent: UIKit.UIViewController, completion: (() -> Swift.Void)? = nil)
 }
 @objc(BABTrackingAuthorizer) public protocol TrackingAuthorizer {
@@ -1205,6 +1215,9 @@ extension BuzzAdBenefitSDK.URLRequestBuilder.ContentType : Swift.RawRepresentabl
 extension BuzzAdBenefitSDK.URLRequestBuilder.Method : Swift.Equatable {}
 extension BuzzAdBenefitSDK.URLRequestBuilder.Method : Swift.Hashable {}
 extension BuzzAdBenefitSDK.URLRequestBuilder.Method : Swift.RawRepresentable {}
+extension BuzzAdBenefitSDK.BZVBuzzAdInterstitialType : Swift.Equatable {}
+extension BuzzAdBenefitSDK.BZVBuzzAdInterstitialType : Swift.Hashable {}
+extension BuzzAdBenefitSDK.BZVBuzzAdInterstitialType : Swift.RawRepresentable {}
 extension BuzzAdBenefitSDK.ImageError : Swift.Equatable {}
 extension BuzzAdBenefitSDK.ImageError : Swift.Hashable {}
 extension BuzzAdBenefitSDK.ObjectStorageError : Swift.Equatable {}

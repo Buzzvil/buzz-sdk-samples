@@ -49,7 +49,8 @@
   
   // NativeAd2View와 하위 컴포넌트를 연결합니다.
   [BZVNativeAd2ViewBinder viewBinderWithBlock:^(BZVNativeAd2ViewBinderBuilder * _Nonnull builder) {
-    builder.unitId = @"YOUR_NATIVE_UNIT_ID";
+//    builder.unitId = @"YOUR_NATIVE_UNIT_ID";  ##ARTHUR
+    builder.unitId = @"453995955032448";
     builder.nativeAd2View = self.nativeAd2View;
     builder.mediaView = self.mediaView;
     builder.iconImageView = self.iconImageView;
@@ -149,6 +150,7 @@
 // collectionView의 collectionView(_:cellForItemAt:) 시점에 호출합니다.
 - (void)bind {
   // NativeAd2ViewBinder의 bind()를 호출하면 광고 할당 및 갱신이 자동으로 수행됩니다.
+  printf ("##ARTHUR bind\n");
   [_viewBinder bind];
 }
 

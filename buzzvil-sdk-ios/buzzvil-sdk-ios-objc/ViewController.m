@@ -4,12 +4,14 @@
 #import "Native/Carousel/CarouselViewController.h"
 #import "Interstitial/InterstitialViewController.h"
 #import "Feed/FeedViewController.h"
+#import "Feed/FeedContainerViewController.h"
 
 static NSString * const kNavigationItemTitle = @"BuzzvilSDK";
 static NSString * const kNativeButtonTitle = @"Native";
 static NSString * const kInterstitialButtonTitle = @"Interstitial";
-static NSString * const kBenefitHubButtonTitle = @"BenefitHub";
+static NSString * const kFeedButtonTitle = @"Feed";
 static NSString * const kCarouselButtonTitle = @"Carousel";
+static NSString * const kFeedContainerButtonTitle = @"Feed Container";
 static CGFloat const kButtonMargin = 12;
 static CGFloat const kButtonAspectRatio = 1.5;
 
@@ -19,6 +21,7 @@ static CGFloat const kButtonAspectRatio = 1.5;
 @property (nonatomic, strong, readonly) UIButton *carouselButton;
 @property (nonatomic, strong, readonly) UIButton *interstitialButton;
 @property (nonatomic, strong, readonly) UIButton *feedButton;
+@property (nonatomic, strong, readonly) UIButton *feedContainerButton;
 
 @end
 
@@ -37,24 +40,30 @@ static CGFloat const kButtonAspectRatio = 1.5;
   
   _nativeButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [self.view addSubview:_nativeButton];
-  [_nativeButton setTitle:@"Native" forState:UIControlStateNormal];
+  [_nativeButton setTitle:kNativeButtonTitle forState:UIControlStateNormal];
   [_nativeButton applyCustomStyle];
   
   _interstitialButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [self.view addSubview:_interstitialButton];
-  [_interstitialButton setTitle:@"Interstitial" forState:UIControlStateNormal];
+  [_interstitialButton setTitle:kInterstitialButtonTitle forState:UIControlStateNormal];
   [_interstitialButton applyCustomStyle];
   
   _carouselButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [self.view addSubview:_carouselButton];
-  [_carouselButton setTitle:@"Native 2.0 Carousel" forState:UIControlStateNormal];
+  [_carouselButton setTitle:kCarouselButtonTitle forState:UIControlStateNormal];
   [_carouselButton applyCustomStyle];
   
   
   _feedButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [self.view addSubview:_feedButton];
-  [_feedButton setTitle:@"Feed" forState:UIControlStateNormal];
+  [_feedButton setTitle:kFeedButtonTitle forState:UIControlStateNormal];
   [_feedButton applyCustomStyle];
+  
+  _feedContainerButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [self.view addSubview:_feedContainerButton];
+  [_feedContainerButton setTitle:kFeedContainerButtonTitle forState:UIControlStateNormal];
+  [_feedContainerButton applyCustomStyle];
+
 }
 
 - (void) setupLayout {
@@ -89,6 +98,14 @@ static CGFloat const kButtonAspectRatio = 1.5;
     [_feedButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-kButtonMargin],
     [_feedButton.widthAnchor constraintEqualToAnchor:_feedButton.heightAnchor multiplier:kButtonAspectRatio],
   ]];
+  
+  _feedContainerButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_feedContainerButton.topAnchor constraintEqualToAnchor:_carouselButton.bottomAnchor constant:kButtonMargin],
+    [_feedContainerButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:kButtonMargin],
+    [_feedContainerButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:-kButtonMargin / 2],
+    [_feedContainerButton.widthAnchor constraintEqualToAnchor:_feedContainerButton.heightAnchor multiplier:kButtonAspectRatio],
+  ]];
 }
 
 
@@ -97,11 +114,12 @@ static CGFloat const kButtonAspectRatio = 1.5;
   [_nativeButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushNativeViewController:)]];
   [_carouselButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushCarouselViewController:)]];
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
+  [_feedContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedContainerViewController:)]];
 }
 
 - (void)pushFeedViewController:(id)sender {
-  //  FeedViewController *feedViewController = [[FeedViewController alloc] init];
-  //  [self.navigationController pushViewController:feedViewController animated:YES];
+    FeedViewController *feedViewController = [[FeedViewController alloc] init];
+    [self.navigationController pushViewController:feedViewController animated:YES];
 }
 
 - (void)pushNativeViewController:(id)sender {
@@ -117,6 +135,11 @@ static CGFloat const kButtonAspectRatio = 1.5;
 - (void)pushInterstitialViewController:(id)sender {
   InterstitialViewController *interstitialViewController = [[InterstitialViewController alloc] init];
   [self.navigationController pushViewController:interstitialViewController animated:YES];
+}
+
+- (void)pushFeedContainerViewController:(id)sender {
+  FeedContainerViewController *feedContainerViewController = [[FeedContainerViewController alloc] init];
+  [self.navigationController pushViewController:feedContainerViewController animated:YES];
 }
 
 @end
