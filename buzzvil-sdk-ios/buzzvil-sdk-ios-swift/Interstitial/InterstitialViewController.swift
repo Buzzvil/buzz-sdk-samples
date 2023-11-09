@@ -3,7 +3,8 @@ import UIKit
 
 class InterstitialViewController: UIViewController {
   let buzzAdInterstitial = BZVBuzzAdInterstitial { builder in
-    builder.unitId = "YOUR_INTERSTITIAL_UNIT_ID"
+//    builder.unitId = "YOUR_INTERSTITIAL_UNIT_ID"
+    builder.unitId = "189682733480080" // ##ARTHUR
     builder.type = .dialog
   }
   override func viewDidLoad() {

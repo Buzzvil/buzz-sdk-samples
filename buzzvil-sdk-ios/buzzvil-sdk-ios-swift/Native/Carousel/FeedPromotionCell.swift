@@ -38,7 +38,43 @@ class FeedPromotionCell: UICollectionViewCell {
   
   private func setupLayout() {
     // AutoLayout Constraints를 설정하세요.
-    // ...
+    feedPromotionView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      feedPromotionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+      feedPromotionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+      feedPromotionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8)
+    ])
+    
+    creativeView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      creativeView.topAnchor.constraint(equalTo: feedPromotionView.topAnchor),
+      creativeView.leadingAnchor.constraint(equalTo: feedPromotionView.leadingAnchor),
+      creativeView.trailingAnchor.constraint(equalTo: feedPromotionView.trailingAnchor),
+      creativeView.heightAnchor.constraint(equalTo: feedPromotionView.widthAnchor, multiplier: 627/1200),
+    ])
+    
+    iconImageView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      iconImageView.topAnchor.constraint(equalTo: creativeView.bottomAnchor, constant: 8),
+      iconImageView.leadingAnchor.constraint(equalTo: creativeView.leadingAnchor, constant: 8),
+      iconImageView.heightAnchor.constraint(equalToConstant: 32),
+      iconImageView.widthAnchor.constraint(equalToConstant: 32)
+    ])
+    
+    titleLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      titleLabel.centerYAnchor.constraint(equalTo: iconImageView.centerYAnchor),
+      titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 8),
+      titleLabel.trailingAnchor.constraint(equalTo: feedPromotionView.trailingAnchor, constant: -8)
+    ])
+    
+    ctaView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      ctaView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+      ctaView.trailingAnchor.constraint(equalTo: feedPromotionView.trailingAnchor, constant: -8),
+      ctaView.bottomAnchor.constraint(equalTo: feedPromotionView.bottomAnchor, constant: -8),
+      ctaView.heightAnchor.constraint(equalToConstant: 32)
+    ])
   }
   
   override func prepareForReuse() {

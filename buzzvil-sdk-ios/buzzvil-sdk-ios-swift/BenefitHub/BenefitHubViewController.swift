@@ -4,6 +4,8 @@ import BuzzvilSDK
 class BenefitHubViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    showBenefitHub()
   }
   
   // 베네핏허브 표시하기

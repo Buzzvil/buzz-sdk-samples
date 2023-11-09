@@ -51,16 +51,51 @@ class CarouselCell: UICollectionViewCell {
   
   private func setupLayout() {
     // eg. auto layout constraints for nativeAd2View
+    // AutoLayout Constraints 설정
     nativeAd2View.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      nativeAd2View.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
       nativeAd2View.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
       nativeAd2View.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-      nativeAd2View.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+      nativeAd2View.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8)
     ])
     
-    // AutoLayout Constraints를 설정하세요.
-    // ...
+    mediaView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      mediaView.topAnchor.constraint(equalTo: nativeAd2View.topAnchor),
+      mediaView.leadingAnchor.constraint(equalTo: nativeAd2View.leadingAnchor),
+      mediaView.trailingAnchor.constraint(equalTo: nativeAd2View.trailingAnchor),
+      mediaView.heightAnchor.constraint(equalTo: mediaView.widthAnchor, multiplier: 627/1200),
+    ])
+    
+    iconImageView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      iconImageView.topAnchor.constraint(equalTo: mediaView.bottomAnchor, constant: 8),
+      iconImageView.leadingAnchor.constraint(equalTo: mediaView.leadingAnchor, constant: 8),
+      iconImageView.heightAnchor.constraint(equalToConstant: 32),
+      iconImageView.widthAnchor.constraint(equalToConstant: 32)
+    ])
+    
+    titleLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      titleLabel.centerYAnchor.constraint(equalTo: iconImageView.centerYAnchor),
+      titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 8),
+      titleLabel.trailingAnchor.constraint(equalTo: nativeAd2View.trailingAnchor, constant: -8)
+    ])
+    
+    descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      descriptionLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 8),
+      descriptionLabel.leadingAnchor.constraint(equalTo: iconImageView.leadingAnchor),
+      descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
+    ])
+    
+    ctaView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      ctaView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
+      ctaView.trailingAnchor.constraint(equalTo: nativeAd2View.trailingAnchor, constant: -8),
+      ctaView.bottomAnchor.constraint(equalTo: nativeAd2View.bottomAnchor, constant: -8),
+      ctaView.heightAnchor.constraint(equalToConstant: 32)
+    ])
     
     // 로딩화면 구현하기
     activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
