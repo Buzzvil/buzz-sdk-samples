@@ -27,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // 베네핏 허브 초기화 하기
   BZVFeedConfig *feedConfig = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
-//    builder.unitID = @"YOUR_FEED_UNIT_ID"; ##ARTHUR
+    //    builder.unitID = @"YOUR_FEED_UNIT_ID"; ##ARTHUR
     builder.unitID = @"59026668927900";
 //    builder.headerViewClass = [CustomFeedHeaderView self]; // 헤더
 //    builder.adViewClass = [CustomFeedAdView self]; // 일반 광고 디자인
@@ -36,7 +36,7 @@
   
   // Buzzvil SDK 초기화하기
   BuzzBenefitConfig *config = [BuzzBenefitConfig configWithBlock:^(BuzzBenefitConfigBuilder * _Nonnull builder) {
-//    builder.appID = @"YOUR_APP_ID"; ##ARTHUR
+    //    builder.appID = @"YOUR_APP_ID"; ##ARTHUR
     builder.appID = @"325625817193493";
     builder.defaultFeedConfig = feedConfig;
   }];
@@ -49,9 +49,9 @@
   [self buzzBenefitLogin];
   
   // 다크모드 설정하기 TODO
-//  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleSystem];
-//  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleLight];
-//  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleDark];
+  //  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleSystem];
+  //  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleLight];
+  //  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleDark];
   
   _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
   UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
@@ -79,7 +79,7 @@
 }
 
 - (void)buzzBenefitLogout {
-   // 로그아웃하는 코드입니다.
+  // 로그아웃하는 코드입니다.
   [[BuzzBenefit sharedInstance] logout];
 }
 
@@ -134,7 +134,7 @@
     // ATT 허용 유도 모달
     // builder.appTrackingTransparencyGuideModalImage = ...;
   }];
-//  [BZVBuzzAdFeed setDefaultTheme:feedTheme];
+  //  [BZVBuzzAdFeed setDefaultTheme:feedTheme];
 }
 
 // 동영상 광고 재생 조건 변경하기

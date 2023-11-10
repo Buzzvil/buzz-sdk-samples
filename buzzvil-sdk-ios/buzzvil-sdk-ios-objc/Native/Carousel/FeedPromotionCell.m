@@ -33,14 +33,14 @@
   [self.feedPromotionView addSubview:self.ctaView];
   
   // NativeAd2View와 하위 컴포넌트를 연결합니다.
-    _viewBinder = [BZVFeedPromotionViewBinder viewBinderWithBlock:^(BZVFeedPromotionViewBinderBuilder * _Nonnull builder) {
-      builder.unitId = @"59026668927900";
-      builder.feedPromotionView = self.feedPromotionView;
-      builder.creativeView = self.creativeView;
-      builder.iconImageView = self.iconImageView;
-      builder.titleLabel = self.titleLabel;
-      builder.ctaView = self.ctaView;
-    }];
+  _viewBinder = [BZVFeedPromotionViewBinder viewBinderWithBlock:^(BZVFeedPromotionViewBinderBuilder * _Nonnull builder) {
+    builder.unitId = @"59026668927900";
+    builder.feedPromotionView = self.feedPromotionView;
+    builder.creativeView = self.creativeView;
+    builder.iconImageView = self.iconImageView;
+    builder.titleLabel = self.titleLabel;
+    builder.ctaView = self.ctaView;
+  }];
 }
 
 - (void)setupLayout {

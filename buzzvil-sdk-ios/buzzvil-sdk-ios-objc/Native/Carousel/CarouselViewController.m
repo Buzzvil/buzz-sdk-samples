@@ -54,7 +54,6 @@ static NSString * const kUnitId = @"453995955032448";
   // BZVNativeAd2Pool에 광고 할당을 요청합니다.
   [self.pool loadAdsWithCount:self.adRequestCount completionHandler:^(NSInteger adCount) {
     __strong typeof(self) strongSelf = weakSelf;
-    printf ("##ARTHUR loadADWithCount %ld\n", (long)adCount);
     if (strongSelf) {
       // 실제로 할당받은 광고의 개수(adCount)에 베네핏허브 진입 슬라이드 개수(feedPromotionSlideCount)를 더해서 cell 개수(loadedAdCount)를 설정합니다.
       strongSelf.loadedAdCount = adCount + strongSelf.feedPromotionSlideCount;
@@ -99,10 +98,10 @@ static NSString * const kUnitId = @"453995955032448";
   _carouselCollectionView.pagingEnabled = YES;
   
   // isPagingEnabled를 false로 설정합니다.
-   _carouselCollectionView.pagingEnabled = NO;
-   // 아래 속성들을 설정합니다.
-   _carouselCollectionView.decelerationRate = UIScrollViewDecelerationRateFast;
-   _carouselCollectionView.contentInset = UIEdgeInsetsMake(0, 2 * [self spacing], 0, 2 * [self spacing]);
+//   _carouselCollectionView.pagingEnabled = NO;
+//   // 아래 속성들을 설정합니다.
+//   _carouselCollectionView.decelerationRate = UIScrollViewDecelerationRateFast;
+//   _carouselCollectionView.contentInset = UIEdgeInsetsMake(0, 2 * [self spacing], 0, 2 * [self spacing]);
   
   [self.view addSubview:_carouselCollectionView];
   
@@ -122,7 +121,7 @@ static NSString * const kUnitId = @"453995955032448";
     [self.carouselCollectionView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:16],
     [self.carouselCollectionView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
     [self.carouselCollectionView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
-    [self.carouselCollectionView.heightAnchor constraintEqualToAnchor:self.carouselCollectionView.widthAnchor multiplier:0.65]
+    [self.carouselCollectionView.heightAnchor constraintEqualToAnchor:self.carouselCollectionView.widthAnchor multiplier:0.8]
   ]];
   
   // eg. auto layout constraints for pageControl

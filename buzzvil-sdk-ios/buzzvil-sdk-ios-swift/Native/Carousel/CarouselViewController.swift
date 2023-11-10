@@ -113,7 +113,7 @@ class CarouselViewController: UIViewController {
       carouselCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
       carouselCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
       carouselCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-      carouselCollectionView.heightAnchor.constraint(equalTo: carouselCollectionView.widthAnchor, multiplier: 0.7),
+      carouselCollectionView.heightAnchor.constraint(equalTo: carouselCollectionView.widthAnchor, multiplier: 0.8),
     ])
     
     // eg. auto layout constraints for pageControl
