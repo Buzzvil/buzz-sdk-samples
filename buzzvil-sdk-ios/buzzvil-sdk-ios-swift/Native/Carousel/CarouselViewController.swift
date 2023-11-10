@@ -85,7 +85,7 @@ class CarouselViewController: UIViewController {
       // 광고 할당이 완료되면 carouselCollectionView를 갱신합니다.
       self?.carouselCollectionView.reloadData()
       
-      self?.pageControl.numberOfPages = adCount
+      self?.pageControl.numberOfPages = self?.loadedAdCount ?? 1
       
       // 무한루프 구현 시
       // 총 cell 개수를 pageControl 개수로 설정합니다.

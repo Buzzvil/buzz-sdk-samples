@@ -1,6 +1,8 @@
 #import "FeedPromotionCell.h"
 @import BuzzvilSDK;
 
+static NSString * const kFeedUnitId = @"YOUR_FEED_UNIT_ID";
+
 @interface FeedPromotionCell ()
 
 @property (nonatomic, strong, readonly) BZVFeedPromotionView *feedPromotionView;
@@ -26,6 +28,12 @@
 }
 
 - (void)setupView {
+  _feedPromotionView = [[BZVFeedPromotionView alloc] initWithFrame:CGRectZero];
+  _creativeView = [[UIImageView alloc] initWithFrame:CGRectZero];
+  _iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+  _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  _ctaView = [[BZVDefaultCtaView alloc] initWithFrame:CGRectZero];
+  
   [self.contentView addSubview:self.feedPromotionView];
   [self.feedPromotionView addSubview:self.creativeView];
   [self.feedPromotionView addSubview:self.iconImageView];
@@ -34,7 +42,7 @@
   
   // NativeAd2View와 하위 컴포넌트를 연결합니다.
   _viewBinder = [BZVFeedPromotionViewBinder viewBinderWithBlock:^(BZVFeedPromotionViewBinderBuilder * _Nonnull builder) {
-    builder.unitId = @"59026668927900";
+    builder.unitId = kFeedUnitId;
     builder.feedPromotionView = self.feedPromotionView;
     builder.creativeView = self.creativeView;
     builder.iconImageView = self.iconImageView;
@@ -52,6 +60,37 @@
     [_feedPromotionView.leadingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.leadingAnchor constant:16],
     [_feedPromotionView.trailingAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.trailingAnchor constant:-16],
     [_feedPromotionView.bottomAnchor constraintEqualToAnchor:self.contentView.safeAreaLayoutGuide.bottomAnchor],
+  ]];
+  
+  _creativeView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_creativeView.topAnchor constraintEqualToAnchor:_feedPromotionView.topAnchor],
+    [_creativeView.leadingAnchor constraintEqualToAnchor:_feedPromotionView.leadingAnchor],
+    [_creativeView.trailingAnchor constraintEqualToAnchor:_feedPromotionView.trailingAnchor],
+    [_creativeView.heightAnchor constraintEqualToAnchor:_creativeView.widthAnchor multiplier:627.0/1200.0],
+  ]];
+  
+  _iconImageView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_iconImageView.topAnchor constraintEqualToAnchor:_creativeView.bottomAnchor constant:8],
+    [_iconImageView.leadingAnchor constraintEqualToAnchor:_creativeView.leadingAnchor constant:8],
+    [_iconImageView.heightAnchor constraintEqualToConstant:32],
+    [_iconImageView.widthAnchor constraintEqualToConstant:32],
+  ]];
+  
+  _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_titleLabel.centerYAnchor constraintEqualToAnchor:_iconImageView.centerYAnchor],
+    [_titleLabel.leadingAnchor constraintEqualToAnchor:_iconImageView.trailingAnchor constant:8],
+    [_titleLabel.trailingAnchor constraintEqualToAnchor:_feedPromotionView.trailingAnchor constant:-8],
+  ]];
+  
+  _ctaView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_ctaView.topAnchor constraintEqualToAnchor:_titleLabel.bottomAnchor constant:8],
+    [_ctaView.trailingAnchor constraintEqualToAnchor:_feedPromotionView.trailingAnchor constant:-8],
+    [_ctaView.bottomAnchor constraintEqualToAnchor:_feedPromotionView.bottomAnchor constant:-8],
+    [_ctaView.heightAnchor constraintEqualToConstant:32],
   ]];
 }
 

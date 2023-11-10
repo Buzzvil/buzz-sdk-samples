@@ -61,7 +61,7 @@ static NSString * const kUnitId = @"453995955032448";
       // 광고 할당이 완료되면 carouselCollectionView를 갱신합니다.
       [strongSelf.carouselCollectionView reloadData];
       
-      strongSelf.pageControl.numberOfPages = adCount;
+      strongSelf.pageControl.numberOfPages = strongSelf.loadedAdCount;
       
       // 무한루프 구현 시
       // 총 cell 개수를 pageControl 개수로 설정합니다.
