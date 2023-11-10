@@ -34,6 +34,11 @@
   return width * 0.8;
 }
 
+- (void)renderAd:(BZVNativeAd *)ad {
+  [_viewBinder bindWithNativeAd:ad];
+  ad.delegate = self;
+}
+
 - (void)setupView {
   _nativeAdView = [[BZVNativeAdView alloc] initWithFrame:CGRectZero];
   [self addSubview:_nativeAdView];
@@ -109,11 +114,6 @@
     [_ctaView.topAnchor constraintEqualToAnchor:_descriptionLabel.bottomAnchor constant:8],
     [_ctaView.bottomAnchor constraintEqualToAnchor:_nativeAdView.bottomAnchor constant:-8],
   ]];
-}
-
-- (void)renderAd:(BZVNativeAd *)ad {
-  [_viewBinder bindWithNativeAd:ad];
-  ad.delegate = self;
 }
 
 #pragma mark - BZVNativeAdEventDelegate
