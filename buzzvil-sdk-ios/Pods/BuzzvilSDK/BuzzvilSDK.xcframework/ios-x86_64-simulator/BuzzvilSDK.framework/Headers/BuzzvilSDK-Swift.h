@@ -319,15 +319,13 @@ SWIFT_CLASS("_TtC10BuzzvilSDK20BZVBuzzAdFeedBuilder")
 @end
 
 
-@class BZVFeedHeaderView;
-@class BZVFeedAdView;
 
 SWIFT_CLASS("_TtC10BuzzvilSDK13BZVFeedConfig")
 @interface BZVFeedConfig : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull unitID;
-@property (nonatomic, readonly) SWIFT_METATYPE(BZVFeedHeaderView) _Nullable headerViewClass;
-@property (nonatomic, readonly) SWIFT_METATYPE(BZVFeedAdView) _Nullable adViewClass;
-@property (nonatomic, readonly) SWIFT_METATYPE(BZVFeedAdView) _Nullable cpsAdViewClass;
+@property (nonatomic, readonly) Class _Nullable headerViewClass;
+@property (nonatomic, readonly) Class _Nullable adViewClass;
+@property (nonatomic, readonly) Class _Nullable cpsAdViewClass;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

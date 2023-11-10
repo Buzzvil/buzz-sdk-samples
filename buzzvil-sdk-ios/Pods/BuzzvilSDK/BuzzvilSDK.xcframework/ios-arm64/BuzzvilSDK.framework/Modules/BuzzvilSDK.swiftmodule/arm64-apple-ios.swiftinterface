@@ -15,9 +15,9 @@ import _Concurrency
 import _StringProcessing
 @objc @_hasMissingDesignatedInitializers @objcMembers final public class BZVFeedConfig : ObjectiveC.NSObject {
   @objc final public let unitID: Swift.String
-  @objc final public let headerViewClass: BuzzvilSDK.BZVFeedHeaderView.Type?
-  @objc final public let adViewClass: BuzzvilSDK.BZVFeedAdView.Type?
-  @objc final public let cpsAdViewClass: BuzzvilSDK.BZVFeedAdView.Type?
+  @objc final public let headerViewClass: Swift.AnyClass?
+  @objc final public let adViewClass: Swift.AnyClass?
+  @objc final public let cpsAdViewClass: Swift.AnyClass?
   @objc deinit
 }
 public typealias BZVFeedConfigBuilderBlock = (BuzzvilSDK.BZVFeedConfigBuilder) -> Swift.Void

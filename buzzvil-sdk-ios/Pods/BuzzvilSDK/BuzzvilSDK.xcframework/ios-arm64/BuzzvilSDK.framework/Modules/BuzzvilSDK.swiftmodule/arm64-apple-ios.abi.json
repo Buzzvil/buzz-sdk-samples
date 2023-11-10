@@ -81,18 +81,17 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "BuzzvilSDK.BZVFeedHeaderView.Type?",
+                "printedName": "AnyObject.Type?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "BuzzvilSDK.BZVFeedHeaderView.Type",
+                    "name": "ExistentialMetatype",
+                    "printedName": "AnyObject.Type",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "BZVFeedHeaderView",
-                        "printedName": "BuzzvilSDK.BZVFeedHeaderView",
-                        "usr": "c:objc(cs)BZVFeedHeaderView"
+                        "name": "ProtocolComposition",
+                        "printedName": "AnyObject"
                       }
                     ]
                   }
@@ -102,7 +101,7 @@
             ],
             "declKind": "Var",
             "usr": "c:@M@BuzzvilSDK@objc(cs)BZVFeedConfig(py)headerViewClass",
-            "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC15headerViewClassSo0c6HeaderF0CmSgvp",
+            "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC15headerViewClassyXlXpSgvp",
             "moduleName": "BuzzvilSDK",
             "declAttributes": [
               "Final",
@@ -121,18 +120,17 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "BuzzvilSDK.BZVFeedHeaderView.Type?",
+                    "printedName": "AnyObject.Type?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "BuzzvilSDK.BZVFeedHeaderView.Type",
+                        "name": "ExistentialMetatype",
+                        "printedName": "AnyObject.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "BZVFeedHeaderView",
-                            "printedName": "BuzzvilSDK.BZVFeedHeaderView",
-                            "usr": "c:objc(cs)BZVFeedHeaderView"
+                            "name": "ProtocolComposition",
+                            "printedName": "AnyObject"
                           }
                         ]
                       }
@@ -142,7 +140,7 @@
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@BuzzvilSDK@objc(cs)BZVFeedConfig(im)headerViewClass",
-                "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC15headerViewClassSo0c6HeaderF0CmSgvg",
+                "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC15headerViewClassyXlXpSgvg",
                 "moduleName": "BuzzvilSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -161,18 +159,17 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "BuzzvilSDK.BZVFeedAdView.Type?",
+                "printedName": "AnyObject.Type?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "BuzzvilSDK.BZVFeedAdView.Type",
+                    "name": "ExistentialMetatype",
+                    "printedName": "AnyObject.Type",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "BZVFeedAdView",
-                        "printedName": "BuzzvilSDK.BZVFeedAdView",
-                        "usr": "c:objc(cs)BZVFeedAdView"
+                        "name": "ProtocolComposition",
+                        "printedName": "AnyObject"
                       }
                     ]
                   }
@@ -182,7 +179,7 @@
             ],
             "declKind": "Var",
             "usr": "c:@M@BuzzvilSDK@objc(cs)BZVFeedConfig(py)adViewClass",
-            "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC11adViewClassSo0c2AdF0CmSgvp",
+            "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC11adViewClassyXlXpSgvp",
             "moduleName": "BuzzvilSDK",
             "declAttributes": [
               "Final",
@@ -201,18 +198,17 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "BuzzvilSDK.BZVFeedAdView.Type?",
+                    "printedName": "AnyObject.Type?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "BuzzvilSDK.BZVFeedAdView.Type",
+                        "name": "ExistentialMetatype",
+                        "printedName": "AnyObject.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "BZVFeedAdView",
-                            "printedName": "BuzzvilSDK.BZVFeedAdView",
-                            "usr": "c:objc(cs)BZVFeedAdView"
+                            "name": "ProtocolComposition",
+                            "printedName": "AnyObject"
                           }
                         ]
                       }
@@ -222,7 +218,7 @@
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@BuzzvilSDK@objc(cs)BZVFeedConfig(im)adViewClass",
-                "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC11adViewClassSo0c2AdF0CmSgvg",
+                "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC11adViewClassyXlXpSgvg",
                 "moduleName": "BuzzvilSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -241,18 +237,17 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "BuzzvilSDK.BZVFeedAdView.Type?",
+                "printedName": "AnyObject.Type?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "BuzzvilSDK.BZVFeedAdView.Type",
+                    "name": "ExistentialMetatype",
+                    "printedName": "AnyObject.Type",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "BZVFeedAdView",
-                        "printedName": "BuzzvilSDK.BZVFeedAdView",
-                        "usr": "c:objc(cs)BZVFeedAdView"
+                        "name": "ProtocolComposition",
+                        "printedName": "AnyObject"
                       }
                     ]
                   }
@@ -262,7 +257,7 @@
             ],
             "declKind": "Var",
             "usr": "c:@M@BuzzvilSDK@objc(cs)BZVFeedConfig(py)cpsAdViewClass",
-            "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC14cpsAdViewClassSo0cfG0CmSgvp",
+            "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC14cpsAdViewClassyXlXpSgvp",
             "moduleName": "BuzzvilSDK",
             "declAttributes": [
               "Final",
@@ -281,18 +276,17 @@
                   {
                     "kind": "TypeNominal",
                     "name": "Optional",
-                    "printedName": "BuzzvilSDK.BZVFeedAdView.Type?",
+                    "printedName": "AnyObject.Type?",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Metatype",
-                        "printedName": "BuzzvilSDK.BZVFeedAdView.Type",
+                        "name": "ExistentialMetatype",
+                        "printedName": "AnyObject.Type",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "BZVFeedAdView",
-                            "printedName": "BuzzvilSDK.BZVFeedAdView",
-                            "usr": "c:objc(cs)BZVFeedAdView"
+                            "name": "ProtocolComposition",
+                            "printedName": "AnyObject"
                           }
                         ]
                       }
@@ -302,7 +296,7 @@
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@BuzzvilSDK@objc(cs)BZVFeedConfig(im)cpsAdViewClass",
-                "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC14cpsAdViewClassSo0cfG0CmSgvg",
+                "mangledName": "$s10BuzzvilSDK13BZVFeedConfigC14cpsAdViewClassyXlXpSgvg",
                 "moduleName": "BuzzvilSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -4062,6 +4056,20 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitSDK",
+        "printedName": "BuzzAdBenefitSDK",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -4423,6 +4431,20 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitSDK",
+        "printedName": "BuzzAdBenefitSDK",
         "declKind": "Import",
         "moduleName": "BuzzvilSDK"
       },
@@ -7282,6 +7304,13 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
         "name": "BuzzAdBenefitSDK",
         "printedName": "BuzzAdBenefitSDK",
         "declKind": "Import",
@@ -7389,6 +7418,13 @@
         "kind": "Import",
         "name": "BuzzAdBenefitSDK",
         "printedName": "BuzzAdBenefitSDK",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "BuzzvilSDK"
       },
@@ -8931,6 +8967,20 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "BuzzAdBenefitSDK",
+        "printedName": "BuzzAdBenefitSDK",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -9238,6 +9288,13 @@
         "kind": "Import",
         "name": "BuzzRxSwift",
         "printedName": "BuzzRxSwift",
+        "declKind": "Import",
+        "moduleName": "BuzzvilSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "BuzzvilSDK"
       },
@@ -12203,6 +12260,13 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Infrastructure\/Repository\/BenefitHubSessionRepositoryImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 173,
+      "length": 21,
+      "value": "\"benefit_hub_session\""
+    },
+    {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/View\/BenefitHubFullErrorView.swift",
       "kind": "IntegerLiteral",
       "offset": 300,
@@ -12688,49 +12752,49 @@
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/BZVFeedViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1426,
+      "offset": 1377,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/BZVFeedViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1812,
+      "offset": 1763,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/BZVFeedViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1983,
+      "offset": 1934,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/BZVFeedViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2154,
+      "offset": 2105,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/BZVFeedViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2287,
+      "offset": 2238,
       "length": 2,
       "value": "22"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/BZVFeedViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2305,
+      "offset": 2256,
       "length": 2,
       "value": "71"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/BZVFeedViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2533,
+      "offset": 2484,
       "length": 2,
       "value": "80"
     },
@@ -12775,6 +12839,20 @@
       "offset": 728,
       "length": 2,
       "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Domain\/Model\/BenefitHubSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 139,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Domain\/Model\/BenefitHubSession.swift",
+      "kind": "IntegerLiteral",
+      "offset": 144,
+      "length": 2,
+      "value": "60"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewController\/AppTrackingTransparencyGuideViewController.swift",
@@ -13451,91 +13529,91 @@
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "Array",
-      "offset": 1521,
+      "offset": 1541,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1565,
+      "offset": 1585,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1677,
+      "offset": 1697,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1722,
+      "offset": 1742,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1768,
+      "offset": 1788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1821,
+      "offset": 1841,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1885,
+      "offset": 1905,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1936,
+      "offset": 1956,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 2010,
+      "offset": 2030,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3665,
+      "offset": 3775,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3712,
+      "offset": 3822,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3755,
+      "offset": 3865,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/distiller\/project\/BuzzvilSDK\/BuzzvilSDK\/Feature\/BenefitHub\/Presentation\/ViewModel\/BenefitHubViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 3806,
+      "offset": 3916,
       "length": 5,
       "value": "false"
     },

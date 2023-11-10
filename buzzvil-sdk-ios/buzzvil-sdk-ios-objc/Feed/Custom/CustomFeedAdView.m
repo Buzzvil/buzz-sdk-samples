@@ -57,7 +57,7 @@
 
   _ctaView = [[BZVDefaultCtaView alloc] initWithFrame:CGRectZero];
   [_nativeAdView addSubview:_ctaView];
-
+  
   _viewBinder = [BZVNativeAdViewBinder viewBinderWithBlock:^(BZVNativeAdViewBinderBuilder * _Nonnull builder) {
     builder.nativeAdView = self.nativeAdView;
     builder.mediaView = self.mediaView;
@@ -65,6 +65,7 @@
     builder.titleLabel = self.titleLabel;
     builder.descriptionLabel = self.descriptionLabel;
     builder.ctaView = self.ctaView;
+    builder.clickableViews = @[self.mediaView, self.ctaView];
   }];
 }
 

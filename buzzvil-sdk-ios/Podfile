@@ -9,7 +9,7 @@ target 'buzzvil-sdk-ios-swift' do
   use_frameworks!
   
   # Pods for buzzvil-sdk-ios
-  pod 'BuzzvilSDK', '= 5.0.0-rc.5'
+  pod 'BuzzvilSDK', '= 5.0.0-rc.6'
   
 end
 
@@ -17,7 +17,7 @@ target 'buzzvil-sdk-ios-objc' do
   use_frameworks!
   
   # Pods for buzzvil-sdk-ios-objc
-  pod 'BuzzvilSDK', '= 5.0.0-rc.5'
+  pod 'BuzzvilSDK', '= 5.0.0-rc.6'
   
 end
 

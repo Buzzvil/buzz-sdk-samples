@@ -4,8 +4,7 @@
 #import "FeedPromotionCell.h"
 #import "CarouselFeedEntryView.h"
 
-//static NSString * const kUnitId = @"YOUR_UNIT_ID"; ##ARTHUR
-static NSString * const kUnitId = @"453995955032448";
+static NSString * const kUnitId = @"YOUR_UNIT_ID";
 
 @interface CarouselViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 

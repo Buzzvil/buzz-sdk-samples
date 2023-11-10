@@ -1108,7 +1108,8 @@ public struct FeedRatio : Swift.Decodable, Swift.Equatable {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class BZVNativeAd : ObjectiveC.NSObject {
   @objc weak public var delegate: BuzzAdBenefitSDK.BZVNativeAdEventDelegate?
-  @objc weak public var internalDelegate: BuzzAdBenefitSDK.BZVNativeAdEventDelegate?
+  @objc @available(*, deprecated, message: "For internal use only. Can be changed.")
+  weak public var feedEventDelegate: BuzzAdBenefitSDK.BZVNativeAdEventDelegate?
   @objc final public let ad: BuzzAdBenefitSDK.BABAd
   @objc(nativeAdWithBABAd:) public static func nativeAd(ad: BuzzAdBenefitSDK.BABAd) -> BuzzAdBenefitSDK.BZVNativeAd
   @objc public var Id: Swift.String {

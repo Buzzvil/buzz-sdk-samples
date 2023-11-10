@@ -26,11 +26,11 @@
 		</data>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/BuzzAdBenefitSDK</key>
 		<data>
-		gty3vokKHjzMDw5NE+XAQpaWkuU=
+		oV1B4PoxDOdRbZ/xiX4XllGRBYU=
 		</data>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/Info.plist</key>
 		<data>
-		h8VYIxjqOxwwUc7JI5G41fg7JfU=
+		VpmtYoZYA3mIqFVllX/cisjrv+w=
 		</data>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/Localizable.strings</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		B187y/XEZ+wT6sZTLsYcV4Aw5YI=
+		mK+pyTB7cwO0uksRIaeJvEuj5W4=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/Assets.car</key>
 		<data>
@@ -62,15 +62,15 @@
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/BuzzBoosterSDK</key>
 		<data>
-		XUiXpd7nhuZduPDapU2JwDwrWCU=
+		13rBzvYPcqSC3gYmVhfWUVHSlTc=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/Info.plist</key>
 		<data>
-		b3GwnWIC5KfJyucmbgCC9o3dW5c=
+		k2OuT7NxZNThjYbxh9vV8RjdCdc=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		grpUlKvopENTCWWfVX8gfK+/ucc=
+		Fo1tkxCvaQiOplat9vGplRVmnII=
 		</data>
 		<key>Frameworks/BuzzBoosterSDK.framework/bst_ic_confetti.gif</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Headers/BuzzvilSDK-Swift.h</key>
 		<data>
-		1wkMqrtsDCg7q8m0lJ0BS8Elt0w=
+		Q0rnmY5tRgfVThDqGzO7GR5uNxU=
 		</data>
 		<key>Headers/BuzzvilSDK.h</key>
 		<data>
@@ -98,15 +98,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MU6Lsa4iBBFI2lQPo2+vdZlzCmg=
+		HyCRMur+Cwcsxcw9LZ4756c/s8I=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		qaUh1rcciIsrVHJZfqVeZCEZqBQ=
+		Yi+4cZQeJGmmT+jQKY/qzISqSPI=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		jFCVOKPgAqzo/n7zvTeE0mPaQ0o=
+		yfLc0EDsKczbLNA1HtVuOfDr7xo=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -114,11 +114,11 @@
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		jFCVOKPgAqzo/n7zvTeE0mPaQ0o=
+		yfLc0EDsKczbLNA1HtVuOfDr7xo=
 		</data>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Shv6gEf3gReMNESI73yxzbRJxW4=
+		Lw44QkrQpywAfogwgN6qFKbYVWI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -178,14 +178,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V4U6etgHDhPrWFH4SlPeXx1gNQs59hcEUlMBihNr5U4=
+			aNnzjG9JzEFzWx2Mdync6rgd+MYS7fjMk/nW0rBVc2M=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DH4NCUni2cUrZvqJ6AOwE3h2qDL0ln6TsKZu2+B9/sA=
+			stGdnd3H8kdIAAd5ai/7FUzBUbrJpYFLpAW9EKqLP38=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzAdBenefitSDK.framework/Localizable.strings</key>
@@ -199,7 +199,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OQg0J6mexBFLMlDOJh5PY3jO4XLUxvfwCrx2x671+QA=
+			Iih78Qb1dqC3wz5qsNO9zFOQl9CZuwr9cowS1p80YfQ=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/Assets.car</key>
@@ -241,21 +241,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bl4BH4mS1Wud7duUHkq9a/17ifZDOTgbUWJDoxslRu4=
+			QNK41PAx7Dn7DRpezwDjmgvnebh12xMvgeLEUXXbz5g=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s4OSVeRBMAd9A8T+xE/mmdWa+uWyKAAJpnSaH7bVHiA=
+			1vHB8AmWIQYJLkvlJFLFyfCtivyImRKngj/4BIN8a+A=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XelsrdS9LUNau3qzwLxKvkgM6FHh0iredS3YGIYxJxI=
+			6YwSDQY8lDBTJBUgrAM1RgY7WY1UHV0uYrNkGJmGZsw=
 			</data>
 		</dict>
 		<key>Frameworks/BuzzBoosterSDK.framework/bst_ic_confetti.gif</key>
@@ -290,7 +290,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WFMTVmCsrmxa7KqZucVN+Hlg52q8O4kXlhujhQPfrVk=
+			zWPkip06eOsBb57QrFsRcWkBQYS/WNT1Qv873F1dZjo=
 			</data>
 		</dict>
 		<key>Headers/BuzzvilSDK.h</key>
@@ -304,14 +304,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UtrRUM9+/C3iVAeAAaMzts1zAdl4+1bs0eznBpLvx4U=
+			4rH6TLgkwQslSQ9FITT4F8fxSe9VchvKgYd+z5APVjw=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cUiurXonsBnxX9SWkqM0Sn2ptykvyqajsqmwnq1YDFg=
+			31g3XszQ0uHOWtrBNQFIb+ltn9t5JGR9Rs1uGOVHvn8=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -325,14 +325,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cUiurXonsBnxX9SWkqM0Sn2ptykvyqajsqmwnq1YDFg=
+			31g3XszQ0uHOWtrBNQFIb+ltn9t5JGR9Rs1uGOVHvn8=
 			</data>
 		</dict>
 		<key>Modules/BuzzvilSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x9ul17RK2g8nX30ud1TCwYKf3yITeHltWgs1Ud9xtzc=
+			umybM8hkOMOvDrAdlx/mlc4lOymz+dHm3q9hyiavgr0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

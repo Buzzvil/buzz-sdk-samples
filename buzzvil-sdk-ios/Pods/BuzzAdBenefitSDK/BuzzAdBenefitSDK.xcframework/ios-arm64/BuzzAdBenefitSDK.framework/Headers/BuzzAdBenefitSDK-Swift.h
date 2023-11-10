@@ -555,7 +555,7 @@ SWIFT_CLASS("_TtC16BuzzAdBenefitSDK12BZVMediaView")
 SWIFT_CLASS("_TtC16BuzzAdBenefitSDK11BZVNativeAd")
 @interface BZVNativeAd : NSObject
 @property (nonatomic, weak) id <BZVNativeAdEventDelegate> _Nullable delegate;
-@property (nonatomic, weak) id <BZVNativeAdEventDelegate> _Nullable internalDelegate;
+@property (nonatomic, weak) id <BZVNativeAdEventDelegate> _Nullable feedEventDelegate SWIFT_DEPRECATED_MSG("For internal use only. Can be changed.");
 @property (nonatomic, readonly, strong) BABAd * _Nonnull ad;
 + (BZVNativeAd * _Nonnull)nativeAdWithBABAd:(BABAd * _Nonnull)ad SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull Id;

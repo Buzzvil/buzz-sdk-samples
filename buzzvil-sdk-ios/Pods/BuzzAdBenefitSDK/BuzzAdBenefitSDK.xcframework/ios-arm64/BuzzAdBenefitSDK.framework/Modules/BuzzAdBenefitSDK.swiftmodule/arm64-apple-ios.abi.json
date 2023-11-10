@@ -28318,8 +28318,8 @@
           },
           {
             "kind": "Var",
-            "name": "internalDelegate",
-            "printedName": "internalDelegate",
+            "name": "feedEventDelegate",
+            "printedName": "feedEventDelegate",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -28328,14 +28328,16 @@
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVNativeAd(py)internalDelegate",
-            "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C16internalDelegateAA0eb5EventG0_pSgvp",
+            "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVNativeAd(py)feedEventDelegate",
+            "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C17feedEventDelegateAA0ebgH0_pSgvp",
             "moduleName": "BuzzAdBenefitSDK",
+            "deprecated": true,
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
               "ReferenceOwnership",
               "AccessControl",
+              "Available",
               "ObjC"
             ],
             "ownership": 1,
@@ -28362,8 +28364,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVNativeAd(im)internalDelegate",
-                "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C16internalDelegateAA0eb5EventG0_pSgvg",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVNativeAd(im)feedEventDelegate",
+                "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C17feedEventDelegateAA0ebgH0_pSgvg",
                 "moduleName": "BuzzAdBenefitSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -28397,8 +28399,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVNativeAd(im)setInternalDelegate:",
-                "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C16internalDelegateAA0eb5EventG0_pSgvs",
+                "usr": "c:@M@BuzzAdBenefitSDK@objc(cs)BZVNativeAd(im)setFeedEventDelegate:",
+                "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C17feedEventDelegateAA0ebgH0_pSgvs",
                 "moduleName": "BuzzAdBenefitSDK",
                 "implicit": true,
                 "declAttributes": [
@@ -28418,10 +28420,14 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:16BuzzAdBenefitSDK09BZVNativeB0C16internalDelegateAA0eb5EventG0_pSgvM",
-                "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C16internalDelegateAA0eb5EventG0_pSgvM",
+                "usr": "s:16BuzzAdBenefitSDK09BZVNativeB0C17feedEventDelegateAA0ebgH0_pSgvM",
+                "mangledName": "$s16BuzzAdBenefitSDK09BZVNativeB0C17feedEventDelegateAA0ebgH0_pSgvM",
                 "moduleName": "BuzzAdBenefitSDK",
+                "deprecated": true,
                 "implicit": true,
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]

@@ -16,6 +16,7 @@ final class CustomFeedAdView: BZVFeedAdView {
     builder.titleLabel = self.titleLabel
     builder.descriptionLabel = self.descriptionLabel
     builder.ctaView = self.ctaView
+    builder.clickableViews = [self.mediaView, self.ctaView]
   }
 
   required init?(coder: NSCoder) {
@@ -41,7 +42,6 @@ final class CustomFeedAdView: BZVFeedAdView {
     nativeAdView.addSubview(titleLabel)
     nativeAdView.addSubview(descriptionLabel)
     nativeAdView.addSubview(ctaView)
-    titleLabel.textColor = .red
   }
   
   func setupLayout() {

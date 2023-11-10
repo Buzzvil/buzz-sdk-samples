@@ -5,31 +5,16 @@ import BuzzvilSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow? = nil
   
-  /** BABSample // ##ARTHUR
-   AppId: 325625817193493
-   FeedUnitId : 59026668927900
-   NativeUnitId: 453995955032448
-   InterstitialUnitId : 189682733480080
-   */
-  
-  /** BzzvilSDKSample
-   AppId: 381196917823555
-   FeedUnitId : 117188628912128
-   */
-
-  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let feedConfig = BZVFeedConfig { builder in
-//      builder.unitID = "YOUR_FEED_UNIT_ID" // ##ARTHUR
-      builder.unitID = "59026668927900" // ##ARTHUR
-//      builder.headerViewClass = CustomFeedHeaderView.self // 헤더
-//      builder.adViewClass = CustomFeedAdView.self // 일반 광고 디자인
-//      builder.cpsAdViewClass = CustomFeedCpsAdView.self // 쇼핑 광고 디자인
+      builder.unitID = "YOUR_FEED_UNIT_ID"
+      builder.headerViewClass = CustomFeedHeaderView.self // 헤더
+      builder.adViewClass = CustomFeedAdView.self // 일반 광고 디자인
+      builder.cpsAdViewClass = CustomFeedCpsAdView.self // 쇼핑 광고 디자인
     }
     
     // Buzzvil SDK 초기화하기
-//    let config = BuzzBenefitConfig.Builder(appID: "YOUR_APP_ID") // ##ARTHUR
-    let config = BuzzBenefitConfig.Builder(appID: "325625817193493") // ##ARTHUR
+    let config = BuzzBenefitConfig.Builder(appID: "YOUR_APP_ID")
       .setDefaultFeedConfig(feedConfig)
       .build()
     

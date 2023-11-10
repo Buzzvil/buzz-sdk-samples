@@ -9,8 +9,7 @@ class NativeViewController: UIViewController {
   private let descriptionLabel = UILabel(frame: .zero)
   private let ctaView = BZVDefaultCtaView(frame: .zero)
   private lazy var viewBinder = BZVNativeAd2ViewBinder
-//    .Builder(unitId: "YOUR_NATIVE_UNIT_ID")
-    .Builder(unitId: "453995955032448") // ##ARTHUR
+    .Builder(unitId: "YOUR_NATIVE_UNIT_ID")
     .nativeAd2View(nativeAd2View)
     .mediaView(mediaView)
     .iconImageView(iconImageView)

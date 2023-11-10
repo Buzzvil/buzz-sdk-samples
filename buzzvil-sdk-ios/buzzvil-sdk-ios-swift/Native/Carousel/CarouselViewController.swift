@@ -2,8 +2,7 @@ import BuzzvilSDK
 import UIKit
 
 class CarouselViewController: UIViewController {
-//  private let unitID = "YOUR_UNIT_ID" ##ARTHUR
-  private let unitID = "453995955032448"
+  private let unitID = "YOUR_UNIT_ID"
   
   // 최대 10개의 광고를 요청할 수 있습니다.
   private let adRequestCount = 5

@@ -258,7 +258,7 @@
 		</data>
 		<key>Headers/BuzzAdBenefitSDK-Swift.h</key>
 		<data>
-		Bypkf0SY+FzwmO58Di1mYtDxTYk=
+		Gv3G0DcIeIMoLbfr0hhSQ9rVIxA=
 		</data>
 		<key>Headers/BuzzAdBenefitSDK.h</key>
 		<data>
@@ -310,7 +310,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		h8VYIxjqOxwwUc7JI5G41fg7JfU=
+		VpmtYoZYA3mIqFVllX/cisjrv+w=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
@@ -318,11 +318,11 @@
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		PwMAPYjLlp8MezNX+1RSU+p/xDg=
+		Xc79rv5kEc2p3YReSzLJonrnR6g=
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Ks5Xg+wu9PMg0zTWg5TVsRYaSQw=
+		BKizuIyn8LmoUgm8sBHDf6tqjTs=
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -330,11 +330,11 @@
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Ks5Xg+wu9PMg0zTWg5TVsRYaSQw=
+		BKizuIyn8LmoUgm8sBHDf6tqjTs=
 		</data>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		jy+tHv0y8/h+WNro9qV2AykpfS4=
+		fqnkbIA6GDyHBeI/zGvzjMIszuc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -788,7 +788,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vjsL1Vwos3buc3LMaKA/gOU2+cyeFkXbNLqh7xH7RQQ=
+			qg/GX12Bhg2xVbRkBZ65xBmZ/NMqMJOUUy+ObVPK76A=
 			</data>
 		</dict>
 		<key>Headers/BuzzAdBenefitSDK.h</key>
@@ -886,14 +886,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q5jC852Hq37OgH8FgmPHP293+on2jUVKWrNOuixC/fc=
+			Cdauo7W6ZS5mhoAVRoXbzY8rn0YI5Hq+m4iqPuKZo/w=
 			</data>
 		</dict>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SjRx6Jtb2cPp7s6qrW68zmIe3bRjIo3niBC3WgBKUb4=
+			zdcAtigSH+EbtqJJgdNaYFAGZI2f4lvGLnetJhL8fF0=
 			</data>
 		</dict>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -907,14 +907,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SjRx6Jtb2cPp7s6qrW68zmIe3bRjIo3niBC3WgBKUb4=
+			zdcAtigSH+EbtqJJgdNaYFAGZI2f4lvGLnetJhL8fF0=
 			</data>
 		</dict>
 		<key>Modules/BuzzAdBenefitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I0XgL+xZkwmTUyOe5b/9gEd+6iNkJ5+NeqIoyV5D9m4=
+			xUeXt1tZKjX9qVYX6p2f4RWvNrZjIJ6AVu0SX5Luz10=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

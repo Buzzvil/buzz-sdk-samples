@@ -12,32 +12,18 @@
   UIWindow *_window;
 }
 
-/** BABSample // ##ARTHUR
- AppId: 325625817193493
- FeedUnitId : 59026668927900
- NativeUnitId: 453995955032448
- InterstitialUnitId : 189682733480080
- */
-
-/** BzzvilSDKSample
- AppId: 381196917823555
- FeedUnitId : 117188628912128
- */
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // 베네핏 허브 초기화 하기
   BZVFeedConfig *feedConfig = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
-    //    builder.unitID = @"YOUR_FEED_UNIT_ID"; ##ARTHUR
-    builder.unitID = @"59026668927900";
-//    builder.headerViewClass = [CustomFeedHeaderView class]; // 헤더
-//    builder.adViewClass = [CustomFeedAdView class]; // 일반 광고 디자인
-//    builder.cpsAdViewClass = [CustomFeedCpsAdView class]; // 쇼핑 광고 디자인
+    builder.unitID = @"YOUR_FEED_UNIT_ID";
+    builder.headerViewClass = [CustomFeedHeaderView class]; // 헤더
+    builder.adViewClass = [CustomFeedAdView class]; // 일반 광고 디자인
+    builder.cpsAdViewClass = [CustomFeedCpsAdView class]; // 쇼핑 광고 디자인
   }];
   
   // Buzzvil SDK 초기화하기
   BuzzBenefitConfig *config = [BuzzBenefitConfig configWithBlock:^(BuzzBenefitConfigBuilder * _Nonnull builder) {
-    //    builder.appID = @"YOUR_APP_ID"; ##ARTHUR
-    builder.appID = @"325625817193493";
+    builder.appID = @"YOUR_APP_ID";
     builder.defaultFeedConfig = feedConfig;
   }];
   
