@@ -1,6 +1,0 @@
-framework module Pods_buzzvil_sdk_ios_swift {
-  umbrella header "Pods-buzzvil-sdk-ios-swift-umbrella.h"
-
-  export *
-  module * { export * }
-}
