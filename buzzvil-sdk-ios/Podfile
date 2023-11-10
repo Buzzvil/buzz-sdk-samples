@@ -6,7 +6,6 @@ deployment_target = '11.0'
 platform :ios, deployment_target
 
 target 'buzzvil-sdk-ios-swift' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
   # Pods for buzzvil-sdk-ios
@@ -15,10 +14,9 @@ target 'buzzvil-sdk-ios-swift' do
 end
 
 target 'buzzvil-sdk-ios-objc' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
-  # Pods for buzzvil-sdk-ios
+  # Pods for buzzvil-sdk-ios-objc
   pod 'BuzzvilSDK', '= 5.0.0-rc.5'
   
 end

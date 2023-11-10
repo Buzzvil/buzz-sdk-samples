@@ -29,7 +29,7 @@
   BZVFeedConfig *feedConfig = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
 //    builder.unitID = @"YOUR_FEED_UNIT_ID"; ##ARTHUR
     builder.unitID = @"59026668927900";
-    builder.headerViewClass = [CustomFeedHeaderView self]; // 헤더
+//    builder.headerViewClass = [CustomFeedHeaderView self]; // 헤더
 //    builder.adViewClass = [CustomFeedAdView self]; // 일반 광고 디자인
 //    builder.cpsAdViewClass = [CustomFeedCpsAdView self]; // 쇼핑 광고 디자인
   }];

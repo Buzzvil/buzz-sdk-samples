@@ -6,7 +6,7 @@
 #import "Feed/FeedViewController.h"
 #import "Feed/FeedContainerViewController.h"
 
-static NSString * const kNavigationItemTitle = @"BuzzvilSDK";
+static NSString * const kNavigationItemTitle = @"BuzzvilSDK-ObjectiveC";
 static NSString * const kNativeButtonTitle = @"Native";
 static NSString * const kInterstitialButtonTitle = @"Interstitial";
 static NSString * const kFeedButtonTitle = @"Feed";
@@ -63,7 +63,6 @@ static CGFloat const kButtonAspectRatio = 1.5;
   [self.view addSubview:_feedContainerButton];
   [_feedContainerButton setTitle:kFeedContainerButtonTitle forState:UIControlStateNormal];
   [_feedContainerButton applyCustomStyle];
-
 }
 
 - (void) setupLayout {
@@ -118,8 +117,8 @@ static CGFloat const kButtonAspectRatio = 1.5;
 }
 
 - (void)pushFeedViewController:(id)sender {
-    FeedViewController *feedViewController = [[FeedViewController alloc] init];
-    [self.navigationController pushViewController:feedViewController animated:YES];
+  FeedViewController *feedViewController = [[FeedViewController alloc] init];
+  [self.navigationController pushViewController:feedViewController animated:YES];
 }
 
 - (void)pushNativeViewController:(id)sender {

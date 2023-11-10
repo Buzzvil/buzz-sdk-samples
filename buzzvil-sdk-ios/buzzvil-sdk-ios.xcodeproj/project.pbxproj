@@ -187,9 +187,9 @@
 				004850822AF100D600CD6D64 /* AppDelegate.m */,
 				004850872AF100D600CD6D64 /* ViewController.h */,
 				004850882AF100D600CD6D64 /* ViewController.m */,
+				004850932AF100D800CD6D64 /* main.m */,
 				0048508D2AF100D800CD6D64 /* Assets.xcassets */,
 				004850922AF100D800CD6D64 /* Info.plist */,
-				004850932AF100D800CD6D64 /* main.m */,
 			);
 			path = "buzzvil-sdk-ios-objc";
 			sourceTree = "<group>";
@@ -202,10 +202,10 @@
 				005266DB2AF1E72D0080C392 /* Native */,
 				005266D62AF1DB8D0080C392 /* Feed */,
 				0048509E2AF1023600CD6D64 /* AppDelegate.swift */,
+				003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */,
 				004850A22AF1023600CD6D64 /* ViewController.swift */,
 				004850A72AF1023800CD6D64 /* Assets.xcassets */,
 				004850AC2AF1023800CD6D64 /* Info.plist */,
-				003FA7AA2AFCC18300F943D7 /* SceneDelegate.swift */,
 			);
 			path = "buzzvil-sdk-ios-swift";
 			sourceTree = "<group>";
