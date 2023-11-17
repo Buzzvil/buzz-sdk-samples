@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/my_cta_background"
+    android:gravity="center"
+    android:minWidth="72dp"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- CTA 버튼의 아이콘 이미지 -->
+    <ImageView
+        android:id="@+id/imageReward"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        tools:src="@drawable/my_reward_icon" />
+
+    <!-- CTA 버튼의 리워드 텍스트 -->
+    <TextView
+        android:id="@+id/textReward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/buzzvil_benefit_hub_text_overlay"
+        tools:text="100P" />
+
+    <!-- CTA 버튼의 텍스트 -->
+    <TextView
+        android:id="@+id/textCta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/buzzvil_benefit_hub_text_overlay"
+        tools:text="팔로우 하기" />
+</LinearLayout>

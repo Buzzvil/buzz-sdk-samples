@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".nativead.NativeCarouselActivity">
+
+    <Button
+        android:id="@+id/loadCarouselButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Load Carousel" />
+
+    <!-- 광고를 표시할 Carousel -->
+    <!-- clipToPadding, paddingHorizontal: 이전과 이후 아이템을 살짝 보여주기 위해 설정 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/carouselRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="32dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/carousel_item" />
+
+    <!-- Carousel 하단에서 Feed를 열 수 있게 하는 Carousel To Feed Link -->
+    <!-- buzzvilFeedEntryViewName의 값은 "carousel_to_feed_link"를 사용해야 합니다. -->
+    <com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView
+        android:id="@+id/toFeedLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_margin="16dp"
+        app:buzzvilFeedEntryViewName="carousel_to_feed_link">
+
+        <!-- 내부 레이아웃은 자유롭게 설정할 수 있습니다. 아래는 LinearLayout으로 구현한 예시입니다. -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="포인트 더 받으러 가기"
+                android:textColor="#3B82F6"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/baseline_chevron_right_24"
+                app:tint="#3B82F6" />
+        </LinearLayout>
+    </com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedEntryView>
+</LinearLayout>
