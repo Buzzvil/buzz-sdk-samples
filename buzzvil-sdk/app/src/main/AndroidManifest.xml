@@ -22,9 +22,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".BenefitHubFragmentActivity"
+            android:name=".benefithub.BenefitHubFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".nativead.NativeSimpleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".nativead.NativeCustomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".nativead.NativeCarouselActivity"
             android:exported="false" />
     </application>
 

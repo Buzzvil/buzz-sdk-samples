@@ -134,7 +134,9 @@
                         tools:text="123,400" />
                 </LinearLayout>
 
-                <com.buzzvil.buzzad.benefit.presentation.media.DefaultCtaView
+                <!-- DefaultCtaView 대신 커스텀 CTA 뷰를 사용할 수 있습니다. -->
+                <!-- <com.buzzvil.buzzad.benefit.presentation.media.DefaultCtaView -->
+                <com.buzzvil.sample.buzzvilsdksample.custom.CustomCtaView
                     android:id="@+id/adCtaView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

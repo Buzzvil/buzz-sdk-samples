@@ -1,4 +1,4 @@
-package com.buzzvil.sample.buzzvilsdksample.carousel
+package com.buzzvil.sample.buzzvilsdksample.nativead.carousel
 
 import android.content.res.Resources
 import android.graphics.Rect

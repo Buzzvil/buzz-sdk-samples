@@ -1,4 +1,4 @@
-package com.buzzvil.sample.buzzvilsdksample.carousel
+package com.buzzvil.sample.buzzvilsdksample.nativead.carousel
 
 import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedPromotion
 

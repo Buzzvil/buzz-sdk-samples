@@ -1,12 +1,12 @@
-package com.buzzvil.sample.buzzvilsdksample.carousel
+package com.buzzvil.sample.buzzvilsdksample.nativead.carousel
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2Pool
-import com.buzzvil.sample.buzzvilsdksample.carousel.NativeAd2CarouselItem.CarouselToFeedSlideItem
-import com.buzzvil.sample.buzzvilsdksample.carousel.NativeAd2CarouselItem.NativeAd2Item
+import com.buzzvil.sample.buzzvilsdksample.nativead.carousel.NativeAd2CarouselItem.CarouselToFeedSlideItem
+import com.buzzvil.sample.buzzvilsdksample.nativead.carousel.NativeAd2CarouselItem.NativeAd2Item
 import com.buzzvil.sample.buzzvilsdksample.databinding.CarouselItemBinding
 
 class NativeAd2CarouselAdapter(
