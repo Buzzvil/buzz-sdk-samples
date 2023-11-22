@@ -1,8 +1,11 @@
 package com.buzzvil.sample.buzzvilsdksample
 
 import android.app.Application
+import com.buzzvil.buzzad.benefit.BuzzAdBenefit
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
+import com.buzzvil.sample.buzzvilsdksample.custom.CustomFeedHeaderViewAdapter
+import com.buzzvil.sample.buzzvilsdksample.custom.CustomLauncher
 import com.buzzvil.sdk.BuzzvilSdk
 
 class App : Application() {
@@ -13,6 +16,7 @@ class App : Application() {
         val feedConfig = FeedConfig.Builder(Constant.YOUR_FEED_ID)
             // 기본 내비게이션 바 제거하기
             // .navigationBarVisibility(false)
+            .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java)
             .build()
 
         // BuzzBenefit 설정
@@ -25,5 +29,7 @@ class App : Application() {
             application = this@App,
             buzzAdBenefitConfig = buzzAdBenefitConfig
         )
+
+        BuzzAdBenefit.setLauncher(CustomLauncher())
     }
 }
