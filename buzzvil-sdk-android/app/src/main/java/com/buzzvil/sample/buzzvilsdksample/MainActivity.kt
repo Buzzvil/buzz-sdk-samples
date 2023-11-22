@@ -2,11 +2,15 @@ package com.buzzvil.sample.buzzvilsdksample
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.core.models.UserProfile
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
+import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
+import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial
+import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdListener
 import com.buzzvil.sample.buzzvilsdksample.benefithub.BenefitHubFragmentActivity
 import com.buzzvil.sample.buzzvilsdksample.databinding.ActivityMainBinding
 import com.buzzvil.sample.buzzvilsdksample.nativead.NativeCarouselActivity
@@ -16,6 +20,10 @@ import com.buzzvil.sdk.BuzzvilSdk
 import com.buzzvil.sdk.BuzzvilSetUserProfileListener
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        private const val TAG = "MainActivity"
+    }
+
     private lateinit var binding: ActivityMainBinding
     private var buzzAdFeed: BuzzAdFeed? = null
     private fun getBuzzAdFeed(): BuzzAdFeed {
@@ -73,6 +81,14 @@ class MainActivity : AppCompatActivity() {
         binding.nativeCarouselButton.setOnClickListener {
             val intent = Intent(this, NativeCarouselActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.interstitialDialogButton.setOnClickListener {
+            showInterstitialDialog()
+        }
+
+        binding.interstitialBottomSheetButton.setOnClickListener {
+            showInterstitialBottomSheet()
         }
     }
 
@@ -169,6 +185,50 @@ class MainActivity : AppCompatActivity() {
             override fun onError(error: AdError?) {
                 // 광고 재할당에 실패한 경우 호출됩니다.
                 Toast.makeText(this@MainActivity, "onError: ${error?.adErrorType?.name}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun showInterstitialDialog() {
+        val buzzAdInterstitial = BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildDialog()
+        buzzAdInterstitial.load(object : InterstitialAdListener() {
+            override fun onAdLoaded() {
+                // 할당된 광고가 있으면 호출됩니다.
+                // Interstitial 광고를 화면에 표시합니다.
+                buzzAdInterstitial.show(this@MainActivity)
+            }
+
+            override fun onAdLoadFailed(error: AdError?) {
+                // 할당된 광고가 없으면 호출됩니다.
+                Log.e(TAG, "Failed to load a interstitial ad.", error);
+            }
+
+            override fun onAdClosed() {
+                super.onAdClosed()
+                // Interstitial 지면이 종료되면 호출됩니다.
+                // 필요에 따라 추가 기능을 구현하세요.
+            }
+        })
+    }
+
+    private fun showInterstitialBottomSheet() {
+        val buzzAdInterstitial = BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildBottomSheet()
+        buzzAdInterstitial.load(object : InterstitialAdListener() {
+            override fun onAdLoaded() {
+                // 할당된 광고가 있으면 호출됩니다.
+                // Interstitial 광고를 화면에 표시합니다.
+                buzzAdInterstitial.show(this@MainActivity)
+            }
+
+            override fun onAdLoadFailed(error: AdError?) {
+                // 할당된 광고가 없으면 호출됩니다.
+                Log.e(TAG, "Failed to load a interstitial ad.", error);
+            }
+
+            override fun onAdClosed() {
+                super.onAdClosed()
+                // Interstitial 지면이 종료되면 호출됩니다.
+                // 필요에 따라 추가 기능을 구현하세요.
             }
         })
     }
