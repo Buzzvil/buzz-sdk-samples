@@ -1,8 +1,13 @@
 package com.buzzvil.sample.buzzvilsdksample
 
 import android.app.Application
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
 import com.buzzvil.buzzad.benefit.BuzzAdBenefit
 import com.buzzvil.buzzad.benefit.BuzzAdBenefitConfig
+import com.buzzvil.buzzad.benefit.core.models.AutoplayType
+import com.buzzvil.buzzad.benefit.core.models.UserPreferences
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
 import com.buzzvil.sample.buzzvilsdksample.custom.CustomFeedHeaderViewAdapter
 import com.buzzvil.sample.buzzvilsdksample.custom.CustomLauncher
@@ -30,6 +35,40 @@ class App : Application() {
             buzzAdBenefitConfig = buzzAdBenefitConfig
         )
 
+        // 커스텀 런쳐 설정하기
+        // setCustomLauncher()
+
+        // 동영상 광고 자동재생 설정하기
+        // setVideoAutoPlayMode()
+
+        // 세션 준비가 완료되면 브로드캐스트를 수신하기
+        // setSessionBroadcastReceiver()
+    }
+
+    private fun setCustomLauncher() {
         BuzzAdBenefit.setLauncher(CustomLauncher())
+    }
+
+    private fun setVideoAutoPlayMode() {
+        val userPreferences = UserPreferences.Builder(BuzzAdBenefit.getUserPreferences())
+            .autoplayType(AutoplayType.ON_WIFI)
+            // .autoplayType(AutoplayType.DISABLED) // 동영상 광고를 자동으로 재생하지 않습니다.
+            // .autoplayType(AutoplayType.ENABLED) //  동영상 광고를 항상 자동재생합니다.
+            .build()
+        BuzzAdBenefit.setUserPreferences(userPreferences)
+    }
+
+    private fun setSessionBroadcastReceiver() {
+        val sessionReadyReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                // 세션이 준비 되었습니다.
+            }
+        }
+
+        // 세션 준비가 완료되면 브로드캐스트를 수신합니다.
+        BuzzAdBenefit.registerSessionReadyBroadcastReceiver(this, sessionReadyReceiver)
+
+        // 브로드캐스트를 수신하지 않으려면 다음과 같이 해제합니다.
+        BuzzAdBenefit.unregisterSessionReadyBroadcastReceiver(sessionReadyReceiver)
     }
 }
