@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.core.models.UserProfile
+import com.buzzvil.buzzad.benefit.pop.BuzzAdPop
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial
@@ -235,5 +236,23 @@ class MainActivity : AppCompatActivity() {
                 // 필요에 따라 추가 기능을 구현하세요.
             }
         })
+    }
+
+    private fun activatePop() {
+        BuzzAdPop.getInstance().activate(object: BuzzAdPop.PopActivateListener {
+            override fun onActivated() {
+                // 정상적으로 Pop이 활성화 되었을 때 호출됩니다.
+                // 유저 화면에 바로 Pop을 표시합니다.
+                BuzzAdPop.getInstance().show()
+            }
+
+            override fun onActivationFailed(error: Throwable?) {
+                // Pop 활성화에 실패하였을 때 호출됩니다.
+            }
+        })
+    }
+
+    private fun deactivatePop() {
+        BuzzAdPop.getInstance().deactivate(this)
     }
 }
