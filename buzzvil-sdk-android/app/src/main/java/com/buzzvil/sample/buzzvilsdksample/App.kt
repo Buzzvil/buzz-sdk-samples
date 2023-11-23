@@ -39,8 +39,8 @@ class App : Application() {
         val popFeedConfig = FeedConfig.Builder(Constant.YOUR_POP_ID)
             .build()
         val popConfig = PopConfig.Builder(popFeedConfig)
-            .popNotificationConfig(popNotificationConfig)
-            .controlService(YourPopControlService::class.java)
+            // .popNotificationConfig(popNotificationConfig)
+            // .controlService(YourPopControlService::class.java)
             // .initialSidePosition(SidePosition(SidePosition.Side.RIGHT, 0.6f))
             // .idleTimeInMillis(5000) // Pop 표시 시간
             // .marginBetweenIconAndPreviewInDp(8.0f) // 팝 버튼과 메시지 사이 간격
