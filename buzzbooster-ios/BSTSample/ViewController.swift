@@ -10,6 +10,11 @@ class ViewController: UIViewController {
   var likeButton: UIButton!
   var commentButton: UIButton!
   var postButton: UIButton!
+  var lightThemeButton: UIButton!
+  var darkThemeButton: UIButton!
+  var systemThemeButton: UIButton!
+  var userInterfaceStyleStackView: UIStackView!
+  var userInterfaceStyleLabel: UILabel!
   var stampActionStackView: UIStackView!
   var stackView: UIStackView!
   var login: Bool = false
@@ -60,12 +65,42 @@ class ViewController: UIViewController {
     stampActionStackView.distribution = .fillEqually
     stampActionStackView.spacing = 5
     
+    lightThemeButton = UIButton(type: .system)
+    lightThemeButton.setTitle("light", for: .normal)
+    lightThemeButton.addTarget(self, action: #selector(lightThemeButtonTapped), for: .touchUpInside)
+    setButtonAttributes(button: lightThemeButton)
+    
+    darkThemeButton = UIButton(type: .system)
+    darkThemeButton.setTitle("dark", for: .normal)
+    darkThemeButton.addTarget(self, action: #selector(darkThemeButtonTapped), for: .touchUpInside)
+    setButtonAttributes(button: darkThemeButton)
+    
+    systemThemeButton = UIButton(type: .system)
+    systemThemeButton.setTitle("system", for: .normal)
+    systemThemeButton.addTarget(self, action: #selector(systemThemeButtonTapped), for: .touchUpInside)
+    setButtonAttributes(button: systemThemeButton)
+    
+    userInterfaceStyleStackView = UIStackView(arrangedSubviews: [
+      lightThemeButton,
+      darkThemeButton,
+      systemThemeButton
+    ]);
+    userInterfaceStyleStackView.axis = .horizontal
+    userInterfaceStyleStackView.distribution = .fillEqually
+    userInterfaceStyleStackView.spacing = 5
+    
+    userInterfaceStyleLabel = UILabel()
+    userInterfaceStyleLabel.textColor = .white
+    userInterfaceStyleLabel.text = "UserInterfaceStyle: SYSTEM"
+    
     stackView = UIStackView(arrangedSubviews: [
       loginButton,
       showInAppMessageButton,
       showHomeButton,
       showAttendanceCampaignButton,
       stampActionStackView,
+      userInterfaceStyleStackView,
+      userInterfaceStyleLabel,
     ])
     stackView.axis = .vertical
     stackView.spacing = 8
@@ -176,5 +211,20 @@ class ViewController: UIViewController {
       values: [
         "posted_content_id": "1",
       ])
+  }
+  
+  @objc private func lightThemeButtonTapped() {
+    BuzzBooster.userInterfaceStyle = .light
+    userInterfaceStyleLabel.text = "UserInterfaceStyle: LIGHT"
+  }
+  
+  @objc private func darkThemeButtonTapped() {
+    BuzzBooster.userInterfaceStyle = .dark
+    userInterfaceStyleLabel.text = "UserInterfaceStyle: DARK"
+  }
+  
+  @objc private func systemThemeButtonTapped() {
+    BuzzBooster.userInterfaceStyle = .system
+    userInterfaceStyleLabel.text = "UserInterfaceStyle: SYSTEM"
   }
 }

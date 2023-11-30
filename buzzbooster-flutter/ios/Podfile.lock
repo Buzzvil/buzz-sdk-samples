@@ -1,8 +1,8 @@
 PODS:
-  - buzz_booster (3.1.3):
-    - BuzzBoosterSDK (= 3.1.9)
+  - buzz_booster (4.1.0):
+    - BuzzBoosterSDK (= 4.1.0)
     - Flutter
-  - BuzzBoosterSDK (3.1.9):
+  - BuzzBoosterSDK (4.1.0):
     - BuzzRxSwift (~> 6.5.1)
   - BuzzRxSwift (6.5.1)
   - Flutter (1.0.0)
@@ -31,13 +31,13 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/fluttertoast/ios"
 
 SPEC CHECKSUMS:
-  buzz_booster: b98319a61f70c43bfe1fdd5cef503fe32ddf307a
-  BuzzBoosterSDK: d09fb608fc56bfaf05338adfcff865e0bb21af92
+  buzz_booster: 9ede6fa6a53656aa5aae1f61b116afc1ed194385
+  BuzzBoosterSDK: 69b9d76aeec6e73c727188b25e0a2854b37fe629
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
+  fluttertoast: d410097af3a920745c7bb589f26967c6d35f92c0
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
 PODFILE CHECKSUM: 157fcc4b7b8be6d1d03dff7b5529a9b2485a2cf5
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.14.3

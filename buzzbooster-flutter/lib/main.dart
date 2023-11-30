@@ -50,6 +50,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class HomeRoute extends StatelessWidget {
+  BuzzBoosterTheme? _theme = BuzzBoosterTheme.system;
   @override
   Widget build(BuildContext context) {
     buzzBooster.optInMarketingCampaignMoveButtonClickedCallback = () async {
@@ -94,6 +95,7 @@ class HomeRoute extends StatelessWidget {
                 child: const Text("Referral Campaign"),
               ),
               eventWidget(),
+              themeWidget(),
             ],
           ),
         ),
@@ -162,6 +164,40 @@ class HomeRoute extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  StatefulWidget themeWidget() {
+    Widget buildRadioTile(BuzzBoosterTheme theme, String title,
+        Function(void Function()) setState) {
+      return Expanded(
+        child: ListTile(
+          title: Text(title),
+          contentPadding: EdgeInsets.all(0),
+          leading: Radio(
+            value: theme,
+            groupValue: _theme,
+            onChanged: (BuzzBoosterTheme? value) async {
+              if (value != null) {
+                await buzzBooster.setTheme(value);
+              }
+              setState(() {
+                _theme = value;
+              });
+            },
+          ),
+        ),
+      );
+    }
+
+    return StatefulBuilder(builder: (context, _setState) {
+      return Row(
+        children: [
+          buildRadioTile(BuzzBoosterTheme.light, 'Light', _setState),
+          buildRadioTile(BuzzBoosterTheme.dark, 'Dark', _setState),
+          buildRadioTile(BuzzBoosterTheme.system, 'System', _setState),
+        ],
+      );
+    });
   }
 
   void login() async {

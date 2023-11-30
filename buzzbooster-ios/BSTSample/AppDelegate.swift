@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     BuzzBooster.initialize(with: config)
     BuzzBooster.optInMarketingCampaignDelegate = self
-    BuzzBooster.userEventDelegate = self
+    BuzzBooster.addUserEventDelegate(self)
     window = UIWindow(frame: UIScreen.main.bounds)
     let navigationViewController = UINavigationController(rootViewController: ViewController())
     window?.rootViewController = navigationViewController

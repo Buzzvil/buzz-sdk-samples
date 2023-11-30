@@ -17,6 +17,12 @@ class App : Application() {
         private const val APP_KEY = "307117684877774"
     }
 
+    private val userEventListener = object : UserEventListener {
+        override fun onUserEvent(userEvent: UserEvent) {
+            Log.d("App", "onUserEvent: $userEvent")
+        }
+    }
+
     override fun onCreate() {
         super.onCreate()
         val buzzBoosterConfig = BuzzBoosterConfig(appKey = APP_KEY)
@@ -35,10 +41,11 @@ class App : Application() {
             BuzzBooster.setFCMToken(it)
         }
 
-        BuzzBooster.getInstance().setUserEventListener(object : UserEventListener {
-            override fun onUserEvent(userEvent: UserEvent) {
-                Log.d("App", "onUserEvent: $userEvent")
-            }
-        })
+        BuzzBooster.getInstance().addUserEventListener(userEventListener)
+    }
+
+    override fun onTerminate() {
+        super.onTerminate()
+        BuzzBooster.getInstance().removeUserEventListener(userEventListener)
     }
 }
