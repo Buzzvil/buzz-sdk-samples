@@ -42,8 +42,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.buzz_booster_flutter"
-        minSdkVersion flutter.minSdkVersion
-        compileSdkVersion flutter.compileSdkVersion
+        minSdkVersion 21
+        compileSdkVersion 33
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

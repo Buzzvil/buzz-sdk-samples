@@ -1,8 +1,9 @@
 package com.buzzvil.booster.sample.publisher
 
+import android.os.Build
 import android.os.Bundle
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.buzzvil.booster.external.BuzzBooster
 import com.buzzvil.booster.external.BuzzBoosterUser
 import com.buzzvil.booster.external.campaign.CampaignType
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun registerViewEvent() {
+        registerAppThemeAction()
         registerLoginAction()
         registerShowInAppMessageAction()
         registerShowHomeAction()
@@ -33,6 +35,22 @@ class MainActivity : AppCompatActivity() {
         registerPostButtonAction()
         registerUploadReviewButtonAction()
         registerPageVisitButtonAction()
+    }
+
+    private fun registerAppThemeAction() {
+        activityMainBinding.themeModeLightRadioButton.setOnClickListener {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+        activityMainBinding.themeModeDarkRadioButton.setOnClickListener {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        activityMainBinding.themeModeSystemRadioButton.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY)
+            }
+        }
     }
 
     private fun registerLoginAction() {

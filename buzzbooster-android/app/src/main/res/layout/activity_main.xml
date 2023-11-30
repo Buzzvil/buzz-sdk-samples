@@ -10,9 +10,54 @@
         android:layout_height="match_parent"
         android:text="PARTNER APP"
         android:textSize="40sp"
-        android:textColor="#0F000000"
+        android:textColor="#FF000000"
         android:gravity="center"
         android:background="#00FFFFFF"/>
+
+    <LinearLayout
+        android:id="@+id/themeModeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="앱 테마" />
+
+        <RadioGroup
+            android:id="@+id/themeModeRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/themeModeLightRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Light" />
+
+            <RadioButton
+                android:id="@+id/themeModeDarkRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dark" />
+
+            <RadioButton
+                android:id="@+id/themeModeSystemRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="System" />
+        </RadioGroup>
+    </LinearLayout>
 
     <Button
         android:id="@+id/loginButton"
@@ -21,7 +66,7 @@
         android:layout_marginTop="8dp"
         android:text="login"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/themeModeLayout" />
 
     <Button
         android:id="@+id/showInAppMessageButton"
