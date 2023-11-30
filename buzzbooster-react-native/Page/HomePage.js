@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useMemo, useEffect } from "react";
-import { BuzzBooster, CampaignType, UserBuilder } from 'react-native-buzz-booster';
+import { BuzzBooster, CampaignType, UserBuilder, Theme } from 'react-native-buzz-booster';
 import {
   ScrollView,
   StatusBar,
@@ -33,22 +33,22 @@ export default function HomePage({ route, navigation }) {
 
   const radioButtons = useMemo(() => ([
       {
-          id: "Light",
-          label: "Light",
-          value: "Light"
+          id: Theme.Light.valueOf(),
+          label: Theme.Light.valueOf(),
+          value: Theme.Light.valueOf()
       },
       {
-          id: "Dark",
-          label: "Dark",
-          value: "Dark"
+          id: Theme.Dark.valueOf(),
+          label: Theme.Dark.valueOf(),
+          value: Theme.Dark.valueOf()
       },
       {
-          id: "System",
-          label: "System",
-          value: "System"
+          id: Theme.System.valueOf(),
+          label: Theme.System.valueOf(),
+          value: Theme.System.valueOf()
       }
   ]), []);
-  const [theme, setTheme] = useState("System");
+  const [theme, setTheme] = useState(Theme.System.valueOf());
 
   const onRadioPress = (id) => {
     setTheme(id);
