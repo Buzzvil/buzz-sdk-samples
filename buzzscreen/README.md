@@ -8,7 +8,7 @@
 
 ## [4.43.0] - 2023-11-30
 * [FIX] 버그 수정
-* 자세한 사항은 [링크]() 참조
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.1-buzzad3.49-buzzscreen4.43) 참조
 
 ## [4.41.0] - 2023-11-02
 * [FIX] 서드파티 라이브러리의 리소스명과 충돌하는 내부 리소스 (bannerAdViewPlacementId / bannerAdViewSize )이름 변경
