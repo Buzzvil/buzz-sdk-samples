@@ -10,6 +10,8 @@
 * [UPDATE] 인터스티셜 디자인 업데이트
 * [UPDATE] UNKNOWN 오류 코드 대응 고도화를 위한 개선
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.1-buzzad3.43) 참조
+> ### [5.1.1] - 2023-12-01
+> * [FIX] 프리로드 과정에서 발생하는 개인정보 수집동의 관련 버그 수정
 
 ## [5.0.0] - 2023-11-10
 * [NEW] 수익화와 인게이지먼트를 동시에, 버즈베네핏(Buzzvil SDK v5) 출시
