@@ -1,5 +1,6 @@
 import UIKit
 import BuzzBoosterSDK
+import BuzzAdBenefit
 
 class ViewController: UIViewController {
   var scrollView: UIScrollView!
@@ -13,12 +14,27 @@ class ViewController: UIViewController {
   var stampActionStackView: UIStackView!
   var stackView: UIStackView!
   var login: Bool = false
-
+  
+  let buzzAdFeed = BZVBuzzAdFeed { builder in
+    builder.config = BZVFeedConfig(block: { builder in
+      builder.unitId = "11111111121111111"
+      builder.title = "feed"
+//      builder.shouldShowAppTrackingTransparencyDialog = true
+//      builder.headerViewHolderClass = CustomHeaderViewHolder.self
+//      builder.errorViewHolderClass = CustomFeedErrorViewHolder.self
+//      builder.adViewHolderClass = BZVFeedAdViewHolder.self
+//      builder.cpsAdViewHolderClass = BZVFeedAdViewHolder.self
+    })
+//    builder.theme = nil
+  }
+  let privacyPolicyManager = BuzzAdBenefit.privacyPolicyManager
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
     setupLayout()
     bindEvent()
+    
+//    BZVFeedEntryView(frame: .zero).setEntryName("")
   }
   
   func setupView() {
@@ -116,6 +132,7 @@ class ViewController: UIViewController {
   func bindEvent() {
     loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
     showInAppMessageButton.addTarget(self, action: #selector(showInAppMessageButtonAction), for: .touchUpInside)
+    showAttendanceCampaignButton.addTarget(self, action: #selector(showAttendanceCampaignListButtonAction), for: .touchUpInside)
     showHomeButton.addTarget(self, action: #selector(showHomeButtonAction), for: .touchUpInside)
     likeButton.addTarget(self, action: #selector(likeButtonAction), for: .touchUpInside)
     postButton.addTarget(self, action: #selector(postButtonAction), for: .touchUpInside)
@@ -124,6 +141,7 @@ class ViewController: UIViewController {
   
   @objc func loginButtonAction(button: UIButton!) {
     if (self.login) {
+      BuzzAdBenefit.logout()
       BuzzBooster.setUser(nil)
       loginButton.setTitle("Login", for: .normal)
     } else {
@@ -134,6 +152,17 @@ class ViewController: UIViewController {
       }
       BuzzBooster.setUser(user)
       BuzzBooster.showInAppMessage(with: self)
+      
+      BuzzAdBenefit.login { builder in
+        builder.userId = AppDelegate.USER_ID
+        builder.gender = .male // 남성 사용자
+        builder.birthYear = 2024
+      } onSuccess: {
+        print("success login")
+      } onFailure: { error in
+        print("error login \(error)")
+      }
+
       loginButton.setTitle("Logout", for: .normal)
     }
     self.login = !self.login
@@ -144,11 +173,15 @@ class ViewController: UIViewController {
   }
   
   @objc func showHomeButtonAction() {
-    BuzzBooster.showHome(with: self)
+//    BuzzBooster.showHome(with: self)
+    let feedViewController = buzzAdFeed.viewController
+    self.navigationController?.pushViewController(feedViewController, animated: true)
   }
   
   @objc func showAttendanceCampaignListButtonAction() {
-    BuzzBooster.showCampaign(by: .attendance, with: self)
+//    BuzzBooster.showCampaign(by: .attendance, with: self)
+    let feedViewController = buzzAdFeed.viewController
+    self.present(feedViewController, animated: true, completion: nil)
   }
   
   @objc func likeButtonAction() {
@@ -176,5 +209,54 @@ class ViewController: UIViewController {
       values: [
         "posted_content_id": "1",
       ])
+  }
+}
+
+final class CustomHeaderViewHolder: BZVFeedHeaderViewHolder {
+  let headerLabel = UILabel(frame: .zero)
+
+  override class func desiredHeight() -> CGFloat {
+    return 100.0
+  }
+
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    setUpView()
+  }
+
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setUpView()
+  }
+
+  func setUpView() {
+    addSubview(headerLabel)
+  }
+  
+  override func availableRewardDidUpdate(_ reward: Int) {
+    headerLabel.text = "리워드 \(reward)원"
+  }
+}
+
+final class CustomFeedErrorViewHolder: BZVFeedErrorViewHolder {
+  let label = UILabel()
+
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    setupView()
+  }
+
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    setupView()
+  }
+
+  private func setupView() {
+    label.text = "error view"
+    addSubview(label)
+  }
+
+  override func updateViewWithError(_ error: Error) {
+    // error에 따라 UI를 업데이트 할 수 있는 코드 작성
   }
 }

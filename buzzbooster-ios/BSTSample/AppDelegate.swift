@@ -1,6 +1,9 @@
 import UIKit
 import BuzzBoosterSDK
 import UserNotifications
+import BuzzAdBenefit
+
+/// 이슈1. SDK does not contain 'libarclite' at the path -> iOS 13
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -12,10 +15,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     UNUserNotificationCenter.current().delegate = self
     UIApplication.shared.registerForRemoteNotifications()
-    let config = BSTConfig { builder in
+    let config = BZVConfig { builder in
+      builder.appId = "279753136766115"
+    }
+    BuzzAdBenefit.initialize(with: config)
+    BuzzAdBenefit.setUserInterfaceStyle(.dark)
+    
+    let feedTheme = BZVBuzzAdFeedTheme { (builder: BZVBuzzAdFeedThemeBuilder) in
+      builder.colorPrimary = .blue
+      builder.feedBackgroundColor = .red
+      builder.tabBackgroundColor = .red
+      builder.filterBackgroundColor = BZVControlStateResource { builder in
+        builder.setValue(UIColor.red, for: .normal)
+        builder.setValue(UIColor.blue, for: .highlight)
+      }
+      builder.filterTextColor = BZVControlStateResource { builder in
+        builder.setValue(UIColor.red, for: .normal)
+        builder.setValue(UIColor.blue, for: .highlight)
+      }
+      builder.tabTextColor = BZVControlStateResource { builder in
+        builder.setValue(UIColor.red, for: .normal)
+        builder.setValue(UIColor.blue, for: .highlight)
+      }
+      builder.tabIndicatorColors = BZVControlStateResource { builder in
+        builder.setValue(UIColor.red, for: .normal)
+        builder.setValue(UIColor.blue, for: .highlight)
+      }
+      builder.ctaTextColor = BZVControlStateResource { builder in
+        builder.setValue(UIColor.red, for: .normal)
+        builder.setValue(UIColor.blue, for: .highlight)
+      }
+      builder.ctaBackgroundColor = BZVControlStateResource { builder in
+        builder.setValue(UIColor.red, for: .normal)
+        builder.setValue(UIColor.blue, for: .highlight)
+      }
+    }
+    BZVBuzzAdFeed.setDefaultTheme(feedTheme)
+    
+    let bstConfig = BSTConfig { builder in
       builder.appKey = AppDelegate.APP_KEY
     }
-    BuzzBooster.initialize(with: config)
+    BuzzBooster.initialize(with: bstConfig)
     BuzzBooster.optInMarketingCampaignDelegate = self
     BuzzBooster.userEventDelegate = self
     window = UIWindow(frame: UIScreen.main.bounds)

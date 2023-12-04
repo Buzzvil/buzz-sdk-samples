@@ -1,35 +1,119 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - BuzzAdBenefit (3.41.0):
+    - BuzzAdBenefitBase (~> 3.41.0)
+    - BuzzAdBenefitFeed (~> 3.41.0)
+    - BuzzAdBenefitInterstitial (~> 3.41.0)
+    - BuzzAdBenefitNative (~> 3.41.0)
+  - BuzzAdBenefitBase (3.41.0):
+    - AFNetworking (~> 4.0)
+    - BuzzRxSwift (~> 6.5.1)
+    - ReactiveObjC (~> 3.1.1)
+    - SDWebImage (~> 5.0)
+    - SDWebImageWebPCoder
+  - BuzzAdBenefitFeed (3.41.0):
+    - BuzzAdBenefitBase (~> 3.41.0)
+    - BuzzAdBenefitInterstitial (~> 3.41.0)
+    - BuzzAdBenefitNative (~> 3.41.0)
+    - BuzzRxSwift (~> 6.5.1)
+    - ReactiveObjC (~> 3.1.1)
+  - BuzzAdBenefitInterstitial (3.41.0):
+    - BuzzAdBenefitBase (~> 3.41.0)
+    - BuzzAdBenefitNative (~> 3.41.0)
+    - BuzzRxSwift (~> 6.5.1)
+  - BuzzAdBenefitNative (3.41.0):
+    - BuzzAdBenefitBase (~> 3.41.0)
+    - BuzzRxSwift (~> 6.5.1)
+    - GoogleAds-IMA-iOS-SDK (~> 3.12)
+    - ReactiveObjC (~> 3.1.1)
   - BuzzBoosterSDK (3.1.9):
     - BuzzRxSwift (~> 6.5.1)
   - BuzzRxSwift (6.5.1)
+  - GoogleAds-IMA-iOS-SDK (3.19.2)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - ReactiveObjC (3.1.1)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
     - RxSwift (= 6.6.0)
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
+  - SDWebImage (5.18.5):
+    - SDWebImage/Core (= 5.18.5)
+  - SDWebImage/Core (5.18.5)
+  - SDWebImageWebPCoder (0.14.2):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.17)
 
 DEPENDENCIES:
+  - BuzzAdBenefit (= 3.41.0)
   - BuzzBoosterSDK (~> 3.1.9)
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   https://github.com/Buzzvil/Specs:
+    - BuzzAdBenefit
+    - BuzzAdBenefitBase
+    - BuzzAdBenefitFeed
+    - BuzzAdBenefitInterstitial
+    - BuzzAdBenefitNative
     - BuzzBoosterSDK
   trunk:
+    - AFNetworking
     - BuzzRxSwift
+    - GoogleAds-IMA-iOS-SDK
+    - libwebp
+    - ReactiveObjC
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SDWebImage
+    - SDWebImageWebPCoder
 
 SPEC CHECKSUMS:
-  BuzzBoosterSDK: d09fb608fc56bfaf05338adfcff865e0bb21af92
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  BuzzAdBenefit: c8bfffd3ec191fe14e4331f55b1e912ac2f10e92
+  BuzzAdBenefitBase: 7e85e259ca1e80b8639d2bd0768caf5050efa103
+  BuzzAdBenefitFeed: 98405901620a0a30c0c40be7d56702f41934f4e4
+  BuzzAdBenefitInterstitial: f81965f2f7a73c04c0e5a4e3f561a3f4cf984dca
+  BuzzAdBenefitNative: e816c1bd96e8acee509d66f4542f2d3a71c91111
+  BuzzBoosterSDK: fbe2b41162f385377ed3685d55d448c2cd90c024
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
+  GoogleAds-IMA-iOS-SDK: 0e817c05ab26f1b9285c80f4a75e1350a916d50b
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SDWebImage: 7ac2b7ddc5e8484c79aa90fc4e30b149d6a2c88f
+  SDWebImageWebPCoder: 633b813fca24f1de5e076bcd7f720c038b23892b
 
-PODFILE CHECKSUM: 20eb97618c435d6b392881b41249acf763069b08
+PODFILE CHECKSUM: 7c77738986f5f7f5ff218ceef1feaa2aa685a015
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.14.3
