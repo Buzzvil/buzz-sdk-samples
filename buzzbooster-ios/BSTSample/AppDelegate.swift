@@ -1,7 +1,7 @@
 import UIKit
 import BuzzBoosterSDK
 import UserNotifications
-import BuzzAdBenefit
+import BuzzvilSDK
 
 /// 이슈1. SDK does not contain 'libarclite' at the path -> iOS 13
 
@@ -15,40 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     UNUserNotificationCenter.current().delegate = self
     UIApplication.shared.registerForRemoteNotifications()
-    let config = BZVConfig { builder in
-      builder.appId = "279753136766115"
-    }
-    BuzzAdBenefit.initialize(with: config)
-    BuzzAdBenefit.setUserInterfaceStyle(.dark)
     
-    let feedTheme = BZVBuzzAdFeedTheme { (builder: BZVBuzzAdFeedThemeBuilder) in
-      builder.colorPrimary = .blue
-      builder.feedBackgroundColor = .red
-      builder.tabBackgroundColor = .red
-      builder.filterBackgroundColor = BZVControlStateResource { builder in
-        builder.setValue(UIColor.red, for: .normal)
-        builder.setValue(UIColor.blue, for: .highlight)
-      }
-      builder.filterTextColor = BZVControlStateResource { builder in
-        builder.setValue(UIColor.red, for: .normal)
-        builder.setValue(UIColor.blue, for: .highlight)
-      }
-      builder.tabTextColor = BZVControlStateResource { builder in
-        builder.setValue(UIColor.red, for: .normal)
-        builder.setValue(UIColor.blue, for: .highlight)
-      }
-      builder.tabIndicatorColors = BZVControlStateResource { builder in
-        builder.setValue(UIColor.red, for: .normal)
-        builder.setValue(UIColor.blue, for: .highlight)
-      }
-      builder.ctaTextColor = BZVControlStateResource { builder in
-        builder.setValue(UIColor.red, for: .normal)
-        builder.setValue(UIColor.blue, for: .highlight)
-      }
-      builder.ctaBackgroundColor = BZVControlStateResource { builder in
-        builder.setValue(UIColor.red, for: .normal)
-        builder.setValue(UIColor.blue, for: .highlight)
-      }
+    let theme = BuzzBenefitTheme { builder in
+      builder.primaryColor = .red
+      builder.primaryLightColor = .blue
+    }
+
+    BuzzBenefit.shared.setGlobalTheme(theme)
+    
+    let config = BuzzBenefitConfig
+      .Builder(appID: "YOUR_APP_ID")
+      .build()
+    BuzzBenefit.shared.initialize(with: config)
+    BuzzBenefit.shared.setUserInterfaceStyle(.system)
+    
+    let feedTheme = BZVFeedTheme { builder in
+      builder.navigationBarTitle = "title"
+      // https://docs.buzzvil.com/docs/buzzbenefit-ios/v5/migration/#%ED%94%BC%EB%93%9C-%EC%83%89%EC%83%81-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0
+      // + colorPrimary도 지원 안함 추가 필요
     }
     BZVBuzzAdFeed.setDefaultTheme(feedTheme)
     
@@ -57,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     BuzzBooster.initialize(with: bstConfig)
     BuzzBooster.optInMarketingCampaignDelegate = self
-    BuzzBooster.userEventDelegate = self
+    BuzzBooster.addUserEventDelegate(self)
     window = UIWindow(frame: UIScreen.main.bounds)
     let navigationViewController = UINavigationController(rootViewController: ViewController())
     window?.rootViewController = navigationViewController
