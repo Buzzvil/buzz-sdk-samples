@@ -14,8 +14,8 @@ AppRegistry.registerComponent('app', () => App);
 export default function App() {
   React.useEffect(() => {
     BuzzBooster.init({
-      androidAppKey: '307117684877774',
-      iosAppKey: '279753136766115',
+      androidAppKey: '307117684877774', // TODO: Replace with your Android App Key
+      iosAppKey: '279753136766115', // TODO: Replace with your iOS App Key
     });
     BuzzBooster.setUserEventChannel((eventName, eventValues) => {
       console.log(

@@ -13,8 +13,8 @@ import java.util.UUID
 
 class App : Application() {
     companion object {
-        val USER_ID = UUID.randomUUID().toString()
-        private const val APP_KEY = "307117684877774"
+        val USER_ID = UUID.randomUUID().toString() // TODO: Replace with your user id
+        private const val APP_KEY = "307117684877774" // TODO: Replace with your app key
     }
 
     private val userEventListener = object : UserEventListener {

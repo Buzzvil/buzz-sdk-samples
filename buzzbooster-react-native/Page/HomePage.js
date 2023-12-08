@@ -81,7 +81,7 @@ export default function HomePage({ route, navigation }) {
 }
 
 function login() {
-  const userId = uuid.v4();
+  const userId = uuid.v4(); // TODO: Replace with your user id
   let user = new UserBuilder(userId)
     .setOptInMarketing(true)
     .addProperty("login_type", "sns(Facebook)")
