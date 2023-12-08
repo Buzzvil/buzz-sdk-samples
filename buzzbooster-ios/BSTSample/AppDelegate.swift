@@ -4,8 +4,8 @@ import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-  static var APP_KEY: String = "279753136766115"
-  static var USER_ID: String = NSUUID().uuidString
+  static var APP_KEY: String = "279753136766115" // TODO: Replace with your app key
+  static var USER_ID: String = NSUUID().uuidString // TODO: Replace with your user id
 
   var window: UIWindow?
   

@@ -4,8 +4,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:uuid/uuid.dart';
 
 final buzzBooster = BuzzBooster();
-const androidAppKey = '307117684877774';
-const iosAppKey = '279753136766115';
+const androidAppKey = '307117684877774'; // TODO: Replace with your Android app key
+const iosAppKey = '279753136766115'; // TODO: Replace with your iOS app key
 
 void main() async {
   runApp(MyApp());
@@ -201,7 +201,7 @@ class HomeRoute extends StatelessWidget {
   }
 
   void login() async {
-    String userId = const Uuid().v4();
+    String userId = const Uuid().v4(); // TODO: Replace with your user id
     if (userId.isNotEmpty) {
       showToast("login");
       User user = UserBuilder(userId)
