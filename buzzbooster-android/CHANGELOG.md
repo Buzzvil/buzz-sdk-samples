@@ -1,3 +1,9 @@
+## [4.2.0] - 2023-12-14
+> * [UPDATE] 친구초대 코드 입력을 완료한 유저에게는 코드 입력 버튼 숨김
+> * [FIX] 동일한 캠페인 상세페이지가 백스택에 존재하지 않도록 수정
+> * [FIX] Android API level 25 이하에서 Foreground 헤드업 노티가 나타나지 않는 현상 수정
+> * [FIX] MainActivity의 launchMode에 따라 notification click이 동작하지 않는 현상 수정
+
 ## [4.1.0] - 2023-11-30
 > * [NEW] 다크모드 지원
 > * [UPDATE] 리워드 영역 UX 개선
