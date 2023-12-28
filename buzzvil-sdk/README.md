@@ -6,6 +6,11 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.2.0] - 2023-12-28
+* [NEW] 자체 포인트 시스템이 없는 고객을 위한 리워드 시스템 출시
+* [FIX] 버그 수정
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.2-buzzad3.50-buzzscreen4.44) 참조
+
 ## [5.1.0] - 2023-11-30
 * [UPDATE] 인터스티셜 지면의 디자인을 업데이트하여 닫기 버튼의 위치가 변경되었습니다.
 * [UPDATE] 연동 과정 중에 문제가 발생하여 서비스 제공에 문제가 생길 때 전달되는 UNKNOWN 오류 코드에 대한 화면을 추가했습니다.
