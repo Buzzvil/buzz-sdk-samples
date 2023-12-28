@@ -30,7 +30,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    buzzAdBenefitVersionName = '3.49.+'
+    buzzAdBenefitVersionName = '3.50.+'
 
     mediationAdfitVersion = '3.4.0.1'
     mediationIgaworksVersion = '3.0.5.0'
