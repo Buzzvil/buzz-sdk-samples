@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let buzzBenefitUser = BuzzBenefitUser.Builder(userID: "USER_ID")
       .setGender(.male)
       .setBirthYear(1996)
+      .setMarketingStatus(.undetermined) // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션 입니다. (.optIn/.optOut /.undetermined )
       .build()
     
     BuzzBenefit.shared.login(
