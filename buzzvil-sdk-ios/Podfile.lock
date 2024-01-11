@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzAdBenefitSDK (5.3.0):
+  - BuzzAdBenefitSDK (5.3.1):
     - AFNetworking (~> 4.0)
     - BuzzRxSwift (~> 6.5.1)
     - GoogleAds-IMA-iOS-SDK (~> 3.12)
@@ -24,8 +24,8 @@ PODS:
   - BuzzBoosterSDK (4.3.0):
     - BuzzRxSwift (~> 6.5.1)
   - BuzzRxSwift (6.5.1)
-  - BuzzvilSDK (5.3.0):
-    - BuzzAdBenefitSDK (~> 5.3.0)
+  - BuzzvilSDK (5.3.1):
+    - BuzzAdBenefitSDK (~> 5.3.1)
     - BuzzBoosterSDK (~> 4.3.0)
     - BuzzRxSwift (~> 6.5.1)
   - GoogleAds-IMA-iOS-SDK (3.19.2)
@@ -42,24 +42,23 @@ PODS:
   - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.18.8):
-    - SDWebImage/Core (= 5.18.8)
-  - SDWebImage/Core (5.18.8)
+  - SDWebImage (5.18.9):
+    - SDWebImage/Core (= 5.18.9)
+  - SDWebImage/Core (5.18.9)
   - SDWebImageWebPCoder (0.14.2):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.17)
 
 DEPENDENCIES:
-  - BuzzvilSDK (= 5.3.0)
+  - BuzzvilSDK (= 5.3.1)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs.git:
-    - BuzzAdBenefitSDK
-    - BuzzvilSDK
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - BuzzAdBenefitSDK
     - BuzzBoosterSDK
     - BuzzRxSwift
+    - BuzzvilSDK
     - GoogleAds-IMA-iOS-SDK
     - libwebp
     - ReactiveObjC
@@ -68,16 +67,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  BuzzAdBenefitSDK: 77b39e3b529791e09d9ad97d00522d74a1c9abf3
+  BuzzAdBenefitSDK: 2ce5d16d1dcb94f3c8810a9c9315283688c8f297
   BuzzBoosterSDK: 231f87627ff732afba4818b59028e6de58846c3e
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
-  BuzzvilSDK: 7505bc4f5619994d5db4be44bd6c9edf7ec74668
+  BuzzvilSDK: 9d91400601528ff178be78030409bcd07e101abe
   GoogleAds-IMA-iOS-SDK: 0e817c05ab26f1b9285c80f4a75e1350a916d50b
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: a81bbb3ba4ea5f810f4069c68727cb118467a04a
+  SDWebImage: 5e9b5f18ce88146692b1a5c174858948c84ff237
   SDWebImageWebPCoder: 633b813fca24f1de5e076bcd7f720c038b23892b
 
-PODFILE CHECKSUM: ea59d1136010d53be6403d86b8cf4b11cfe68a9d
+PODFILE CHECKSUM: 08602ba4386dfc38e88d9d19bf3fd4b635172fc2
 
 COCOAPODS: 1.14.3
