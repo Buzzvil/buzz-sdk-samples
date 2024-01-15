@@ -13,9 +13,10 @@
 * [FIX] 인터스티셜 지면에서 global theme이 적용되지 않는 문제 해결
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.3-buzzad3.51-buzzscreen4.45) 참조
 
-## [5.2.0] - 2023-11-30
+## [5.2.0] - 2023-12-28
 * [NEW] 자체 포인트 시스템이 없는 고객을 위한 리워드 시스템 출시
-* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.1-buzzad3.49-buzzscreen4.43) 참조
+* [FIX] 버그 수정
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.2-buzzad3.50-buzzscreen4.44) 참조
 
 ## [5.1.0] - 2023-11-30
 * [UPDATE] 인터스티셜 지면의 디자인을 업데이트하여 닫기 버튼의 위치가 변경되었습니다.

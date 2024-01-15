@@ -52,6 +52,7 @@
     builder.userID = @"USER_ID";
     builder.gender = BuzzBenefitUserGenderMale;
     builder.birthYear = 1996;
+    builder.marketingStatus = BuzzBenefitMarketingStatusUndetermined; // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션입니다. (BuzzBenefitMarketingStatusOptIn, BuzzBenefitMarketingStatusOptOut, BuzzBenefitMarketingStatusUndetermined)
   }];
   
   [[BuzzBenefit sharedInstance] loginWithUser:buzzBenefitUser onSuccess:^{
