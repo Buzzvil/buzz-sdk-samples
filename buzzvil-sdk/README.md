@@ -14,7 +14,7 @@
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.3-buzzad3.51-buzzscreen4.45) 참조
 
 ## [5.2.0] - 2023-11-30
-* [FIX] 버그 수정
+* [NEW] 자체 포인트 시스템이 없는 고객을 위한 리워드 시스템 출시
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.1-buzzad3.49-buzzscreen4.43) 참조
 
 ## [5.1.0] - 2023-11-30
