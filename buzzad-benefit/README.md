@@ -6,6 +6,15 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [3.51.0] - 2024-01-11
+* [UPDATE] 브랜드 테마에 맞게 색상을 자유롭게 설정할 수 있도록 버즈룰렛 (BuzzRoulette) 을 개선하였습니다.
+* [FIX] 인터스티셜 지면에서 global theme이 적용되지 않는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.1-buzzad3.49-buzzscreen4.43) 참조
+
+## [3.50.0] - 2023-12-28
+* [FIX] 버그 수정
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.2-buzzad3.50-buzzscreen4.44) 참조
+
 ## [3.49.0] - 2023-11-30
 * [UPDATE] 연동 과정 중에 문제가 발생하여 서비스 제공에 문제가 생길 때 전달되는 UNKNOWN 오류 코드에 대한 화면을 추가했습니다.
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.1-buzzad3.49-buzzscreen4.43) 참조
