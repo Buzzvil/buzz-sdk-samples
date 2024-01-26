@@ -8,8 +8,7 @@ import android.widget.TextView
 import com.buzzvil.buzzad.benefit.presentation.feed.header.FeedHeaderViewAdapter
 import com.buzzvil.sample.buzzvilsdksample.R
 
-
-class CustomFeedHeaderViewAdapter: FeedHeaderViewAdapter {
+class CustomFeedHeaderViewAdapter : FeedHeaderViewAdapter {
 
     override fun onCreateView(context: Context, parent: ViewGroup): View {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -17,7 +16,7 @@ class CustomFeedHeaderViewAdapter: FeedHeaderViewAdapter {
     }
 
     override fun onBindView(view: View, reward: Int) {
-        val rewardTextView: TextView = view.findViewById(R.id.textReward)
+        val rewardTextView: TextView = view.findViewById(R.id.rewardText)
         rewardTextView.text = reward.toString()
     }
 
