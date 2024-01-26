@@ -24,6 +24,9 @@ class NativeCarouselActivity : AppCompatActivity() {
         binding = ActivityNativeCarouselBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 캐러셀 아이템 각각에 양 옆 여백 설정
+        binding.carouselRecyclerView.addItemDecoration(PaddingDividerDecoration(16))
+
         binding.loadCarouselButton.setOnClickListener {
             initCarouselPool()
         }
@@ -62,9 +65,6 @@ class NativeCarouselActivity : AppCompatActivity() {
 
         // RecyclerView에 어댑터를 설정합니다.
         binding.carouselRecyclerView.adapter = adapter
-
-        // 양 옆 여백 설정
-        binding.carouselRecyclerView.addItemDecoration(PaddingDividerDecoration(16))
 
         if (isInfiniteLoopEnabled) {
             // 적당히 큰 수의 position으로 이동하여 무한 스크롤 효과를 구현합니다.
