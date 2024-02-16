@@ -7,8 +7,12 @@
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
 ## [5.5.0] - 2024-02-15
-* [] 
-* 자세한 사항은 [링크]() 참조
+* [NEW] iOS 17 정책 대응을 위해 Buzzvil SDK 내에서 수집하는 개인정보들과 유저 추적 등의 내용들을 SDK 내의 정해진 파일에 공시 
+* [UPDATE] Lottie 내재화
+* [UPDATE] 베네핏허브의 스크롤 유도 버튼에 애니메이션 효과를 추가
+* [UPDATE] ATT 유도가이드 화면을 통해 iPhone 시스템 설정의 앱 영역으로 이동할 수 있도록 개선
+* [FIX] 네이티브 캐러셀에서 비디오 광고가 자동 재생 하지 않는 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.5) 참조
 
 ## [5.3.0] - 2024-01-11
 * [FIX] 인터스티셜 지면에서 global theme이 적용되지 않는 문제 해결 
