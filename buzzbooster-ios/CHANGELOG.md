@@ -1,3 +1,18 @@
+## [4.5.1] - 2024-02-20
+> * [FIX] APNS 사용 시 Provisioning Profile에 따라 APNS Sandbox/Production을 자동으로 선택하도록 수정
+
+## [4.5.0] - 2024-02-15
+> * [FIX] 한 달 이상의 장기간 출석체크 진행 시, 간헐적으로 출석체크 캘린더의 위치가 현재 달을 처음으로 표시하지 않는 문제 수정
+> * [FIX] SafeArea UI 개선
+
+## [4.4.0] - 2024-02-05
+> * [UPDATE] 이미지 디스크 캐시 최적화
+> * [UPDATE] SDK Author 및 Privacy Manifest 추가 
+
+## [4.3.1] - 2023-01-15
+> * [UPDATE] 이벤트 전송 로직 최적화
+> * [FIX] 친구초대 캠페인에서 발생하는 Layout Feedback Loop 수정
+
 ## [4.3.0] - 2023-12-28
 > * [UPDATE] 이벤트 전송 성능 개선
 > * [FIX] 스탬프 캠페인 UI 개선
