@@ -26,6 +26,8 @@ class App : Application() {
             // 기본 내비게이션 바 제거하기
             // .navigationBarVisibility(false)
             .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java)
+            // 커스텀 광고 UI 적용하기
+            // .benefitHubAdViewAdapterClass(CustomBenefitHubAdViewAdapter::class.java)
             // Pop UnitID 없이 Pop 기능만 켜기
             // .optInFeatureList(Collections.singletonList(OptInFeature.Pop))
             .build()

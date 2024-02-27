@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Buzzvil SDK</string>
+    <string name="cps_price_unit">%,d원</string>
 </resources>

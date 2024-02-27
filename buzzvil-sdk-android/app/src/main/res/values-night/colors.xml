@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="benefit_hub_border_default">#4B5563</color>
+    <color name="benefit_hub_background_default">#0B0C10</color>
+    <color name="benefit_hub_text_title">#F9F8FB</color>
+    <color name="benefit_hub_text_subtle">#9CA3AF</color>
+</resources>
