@@ -2,8 +2,10 @@
 <resources>
     <style name="text_size_14_bold">
         <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/bold_pretendard</item>
     </style>
     <style name="text_size_12_regular">
         <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/regular_pretendard</item>
     </style>
 </resources>
