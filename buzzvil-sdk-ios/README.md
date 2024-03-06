@@ -12,7 +12,9 @@
 * [UPDATE] 베네핏허브의 스크롤 유도 버튼에 애니메이션 효과를 추가
 * [UPDATE] ATT 유도가이드 화면을 통해 iPhone 시스템 설정의 앱 영역으로 이동할 수 있도록 개선
 * [FIX] 네이티브 캐러셀에서 비디오 광고가 자동 재생 하지 않는 문제 해결
-* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.5) 참조
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.5) 참경
+> ### [5.5.3] - 2024-03-06
+> * [UPDATE] 문의하기 버튼 위치 베네핏 허브 하단에서 헤더로 변경
 
 ## [5.3.0] - 2024-01-11
 * [FIX] 인터스티셜 지면에서 global theme이 적용되지 않는 문제 해결 
