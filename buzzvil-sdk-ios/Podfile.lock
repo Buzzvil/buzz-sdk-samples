@@ -14,19 +14,19 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - BuzzAdBenefitSDK (5.7.0):
+  - BuzzAdBenefitSDK (5.7.1):
     - AFNetworking (~> 4.0)
     - BuzzRxSwift (~> 6.5.1)
     - GoogleAds-IMA-iOS-SDK (~> 3.12)
     - ReactiveObjC (~> 3.1.1)
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder
-  - BuzzBoosterSDK (4.7.0):
+  - BuzzBoosterSDK (4.7.1):
     - BuzzRxSwift (~> 6.5.1)
   - BuzzRxSwift (6.5.1)
-  - BuzzvilSDK (5.7.0):
-    - BuzzAdBenefitSDK (~> 5.7.0)
-    - BuzzBoosterSDK (~> 4.7.0)
+  - BuzzvilSDK (5.7.1):
+    - BuzzAdBenefitSDK (~> 5.7.1)
+    - BuzzBoosterSDK (~> 4.7.1)
     - BuzzRxSwift (~> 6.5.1)
   - GoogleAds-IMA-iOS-SDK (3.20.0)
   - libwebp (1.3.2):
@@ -50,7 +50,7 @@ PODS:
     - SDWebImage/Core (~> 5.17)
 
 DEPENDENCIES:
-  - BuzzvilSDK (= 5.7.0)
+  - BuzzvilSDK (= 5.7.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -67,16 +67,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  BuzzAdBenefitSDK: a609885d4972059a35c4f2a9840cfe929eac9ebc
-  BuzzBoosterSDK: 624225ab6b4f3a3003177a6d36f06881ae682704
+  BuzzAdBenefitSDK: 6350fb2756e917a018d6dfc06230b3d861ef2456
+  BuzzBoosterSDK: 8fbb4d6e87ab72c7d47193778220fd8545da6376
   BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
-  BuzzvilSDK: fa5007edfcf8330ce01cd7a257a348c400d635a3
+  BuzzvilSDK: e240b2440a8c310713e359e83974364515e08bc9
   GoogleAds-IMA-iOS-SDK: f9a6bd69e34f6c3a2d6b2f7cd56814b78fc680f9
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
   SDWebImageWebPCoder: c94f09adbca681822edad9e532ac752db713eabf
 
-PODFILE CHECKSUM: 70e93259580ce4b4ddd9e0cc16bc64ebd91a43f5
+PODFILE CHECKSUM: 14c5b46196dae2ae524aca715db94cc540468036
 
 COCOAPODS: 1.15.2
