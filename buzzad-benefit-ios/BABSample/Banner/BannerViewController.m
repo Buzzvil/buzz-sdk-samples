@@ -53,7 +53,7 @@ static CGFloat const kStackViewSpacing = 8;
   
   _banner50View = [[BZVBannerView alloc] initWithFrame:CGRectZero];
   _banner50View.delegate = self;
-  [_banner50View setBannerAdWithRootVC:self placementId:@"dbe834db-9c91-4f08-b32d-f4ee46808d51" size:BZVBannerSizeW320h50];
+  [_banner50View setBannerAdWithRootVC:self placementId:@"PLACEMENT_ID" size:BZVBannerSizeW320h50];
   
   _banner100Label = [[UILabel alloc] initWithFrame:CGRectZero];
   _banner100Label.text = @"Banner W320xH100";
@@ -62,7 +62,7 @@ static CGFloat const kStackViewSpacing = 8;
   
   _banner100View = [[BZVBannerView alloc] initWithFrame:CGRectZero];
   _banner100View.delegate = self;
-  [_banner100View setBannerAdWithRootVC:self placementId:@"b52b5f27-1b92-4569-8c9d-d3c465aff97f" size:BZVBannerSizeW320h100];
+  [_banner100View setBannerAdWithRootVC:self placementId:@"PLACEMENT_ID" size:BZVBannerSizeW320h100];
   
   _bannerDynamicLabel = [[UILabel alloc] initWithFrame:CGRectZero];
   _bannerDynamicLabel.text = @"Banner Dynamic";
@@ -71,7 +71,7 @@ static CGFloat const kStackViewSpacing = 8;
   
   _bannerDynamicView = [[BZVBannerView alloc] initWithFrame:CGRectZero];
   _bannerDynamicView.delegate = self;
-  [_bannerDynamicView setBannerAdWithRootVC:self placementId:@"a7b63f99-aa3c-435b-9280-5fac3d2bc035" size:BZVBannerSizeDynamic];
+  [_bannerDynamicView setBannerAdWithRootVC:self placementId:@"PLACEMENT_ID" size:BZVBannerSizeDynamic];
   
   _stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
     _banner50Label,
@@ -107,19 +107,19 @@ static CGFloat const kStackViewSpacing = 8;
 
 #pragma mark - BZVBannerDelegate
 - (void)onBannerLoadedWithApid:(NSString * _Nonnull)apid {
-  // Banner가 load에 성공했을 때 호출됩니다.
+  // Banner에 광고가 할당 되었을 때 호출 됩니다.
 }
 
 - (void)onBannerFailedWithApid:(NSString * _Nonnull)apid error:(BZVBannerError * _Nonnull)error {
-  // Banner가 load에 실패했을 때 호출됩니다.
+  // Banner에 광고 할당이 실패했을 때 호출 됩니다.
 }
 
 - (void)onBannerClickedWithApid:(NSString * _Nonnull)apid {
-  // Banner가 click되었을 때 호출됩니다.
+  // Banner가 클릭되었을 때 호출 됩니다.
 }
 
 - (void)onBannerRemovedWithApid:(NSString * _Nonnull)apid {
-  // Banner가 remove되었을 때 호출됩니다.
+  // Banner가 제거되었을 떄 호출 됩니다.
 }
 
 @end
