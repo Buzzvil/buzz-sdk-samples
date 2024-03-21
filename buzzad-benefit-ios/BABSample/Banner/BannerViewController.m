@@ -1,7 +1,6 @@
 #import "BannerViewController.h"
 
 @import BuzzAdBenefit;
-@import Toast;
 
 static NSString * const kNavigationItemTitle = @"Banner";
 static CGFloat const kStackViewSpacing = 8;
@@ -108,27 +107,19 @@ static CGFloat const kStackViewSpacing = 8;
 
 #pragma mark - BZVBannerDelegate
 - (void)onBannerLoadedWithApid:(NSString * _Nonnull)apid {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [self.view makeToast:[NSString stringWithFormat:@"onBannerLoaded %@", apid]];
-  });
+  // Banner가 load에 성공했을 때 호출됩니다.
 }
 
 - (void)onBannerFailedWithApid:(NSString * _Nonnull)apid error:(BZVBannerError * _Nonnull)error {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [self.view makeToast:[NSString stringWithFormat:@"onBannerFailed %@ (%@)", apid, error.message]];
-  });
+  // Banner가 load에 실패했을 때 호출됩니다.
 }
 
 - (void)onBannerClickedWithApid:(NSString * _Nonnull)apid {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [self.view makeToast:[NSString stringWithFormat:@"onBannerClicked %@", apid]];
-  });
+  // Banner가 click되었을 때 호출됩니다.
 }
 
 - (void)onBannerRemovedWithApid:(NSString * _Nonnull)apid {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [self.view makeToast:[NSString stringWithFormat:@"onBannerRemoved %@", apid]];
-  });
+  // Banner가 remove되었을 때 호출됩니다.
 }
 
 @end
