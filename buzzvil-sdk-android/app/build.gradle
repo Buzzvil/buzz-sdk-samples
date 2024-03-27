@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-    api platform("com.buzzvil:buzzvil-bom:5.5.+")
+    api platform("com.buzzvil:buzzvil-bom:5.7.+")
     implementation "com.buzzvil:buzzvil-sdk"
 
     implementation 'androidx.core:core-ktx:1.6.0'
