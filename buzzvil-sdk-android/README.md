@@ -6,6 +6,15 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.9.0] - 2024-04-04
+* [NEW] 네이티브지면에 베네핏허브로의 진입을 유도하는 네이티브 오버레이 추가
+* [UPDATE] 로컬 푸시 알림 기능 제거
+* [UPDATE] minSDKVersion 을 19로 업데이트
+* [UPDATE] ADCash 의 버전을 2.1.0.6 로 업데이트하여 Lifecyle 문제로 발생한 NullPointException 이 발생되지 않도록 개선
+* [FIX] 간헐적으로 발생하던 ANR 문제 해결
+* [FIX] 간헐적으로 발생하던 버즈스크린 백화현상 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.9-buzzscreen5.9) 참조
+
 ## [5.7.0] - 2024-03-07
 * [FIX] 다크모드에서 광고 ID 변경 방지 알림 텍스트 식별 불가 문제 해결
 * [FIX] 새로고침 버튼 터치를 반복하는 경우 새로고침 버튼 색상이 진해지는 문제 해결
