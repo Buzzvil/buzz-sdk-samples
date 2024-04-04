@@ -14,6 +14,11 @@
 * [FIX] Android 14 잠금화면에서 발생하는 락스크린 서비스관련 크래시 문제 해결
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.5-buzzad3.52-buzzscreen4.46) 참조
 
+## [4.46.0, 5.5.0] - 2024-02-15
+* [FIX] 잠금화면에서 빈화면이 노출되던 문제 해결
+* [FIX] Android 14 잠금화면에서 발생하는 락스크린 서비스관련 크래시 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.5-buzzad3.52-buzzscreen4.46) 참조
+
 ## [4.45.0] - 2024-01-11
 * [UPDATE] Android 14 잠금화면 정책 대응을 위하여 Buzzvil SDK 에서 전체화면 인텐트를 제거하였습니다.
 * [FIX] Android 14 잠금화면에서 발생하는 락스크린 서비스관련 크래시 문제 해결
