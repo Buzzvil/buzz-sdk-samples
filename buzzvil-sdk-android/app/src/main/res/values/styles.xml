@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="text_size_14_bold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/buzzvil_default_font_bold</item>
+    </style>
+    <style name="text_size_12_regular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/buzzvil_default_font</item>
+    </style>
+</resources>

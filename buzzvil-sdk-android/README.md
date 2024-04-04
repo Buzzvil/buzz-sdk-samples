@@ -6,12 +6,17 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.7.0] - 2024-03-07
+* [FIX] 다크모드에서 광고 ID 변경 방지 알림 텍스트 식별 불가 문제 해결
+* [FIX] 새로고침 버튼 터치를 반복하는 경우 새로고침 버튼 색상이 진해지는 문제 해결
+* [FIX] 룰렛 내 노티피케이션 기능에서 특정 유저에게 간헐적으로 발생하던 문제 해결
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.7-buzzscreen5.7) 참조
+
 ## [5.5.0] - 2024-02-15
-* [UPDATE] Lottie 내재화작업: 베네핏허브의 스크롤 유도 버튼에 Lottie 애니메이션 효과를 추가하였습니다.
-* [UPDATE] gradle wrapper 버전을 7.2 이상으로 업데이트 하였습니다.
-* [FIX] 잠금화면에서 빈화면이 노출되던 문제 해결
+* [NEW] 광고 ID 변경 방지 알림 추가
+* [UPDATE] Lottie 내재화작업
+* [UPDATE] gradle wrapper 버전을 7.2 이상으로 업데이트
 * [FIX] Android 14 에서 POP의 Foregound Service 에서 발생하던 크래시 문제 해결
-* [FIX] Android 14 잠금화면에서 발생하는 락스크린 서비스관련 크래시 문제 해결
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.5-buzzad3.52-buzzscreen4.46) 참조
 
 ## [5.3.0] - 2024-01-11

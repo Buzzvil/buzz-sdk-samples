@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="benefit_hub_border_default">#E5E7EB</color>
+    <color name="benefit_hub_background_default">#FFFFFF</color>
+    <color name="benefit_hub_text_title">#111827</color>
+    <color name="benefit_hub_text_subtle">#4B5563</color>
+
+    <color name="benefit_hub_text_shopping">#EF4444</color>
 </resources>
