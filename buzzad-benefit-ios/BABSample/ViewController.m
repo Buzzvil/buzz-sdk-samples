@@ -8,6 +8,7 @@
 #import "Native2Carousel/CarouselViewController.h"
 #import "Web/WebViewController.h"
 #import "WebToFeed/WebToFeedViewController.h"
+#import "Banner/BannerViewController.h"
 #import "CustomBrowserViewController.h"
 #import "UIButton+Custom.h"
 
@@ -33,6 +34,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
 @property (nonatomic, strong, readonly) UIButton *feedEntryButton;
 @property (nonatomic, strong, readonly) UIButton *webButton;
 @property (nonatomic, strong, readonly) UIButton *webToFeedButton;
+@property (nonatomic, strong, readonly) UIButton *bannerButton;
 
 @end
 
@@ -122,6 +124,10 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_webToFeedButton setTitle:@"Web to Feed" forState:UIControlStateNormal];
   [_webToFeedButton applyCustomStyle];
   
+  _bannerButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_bannerButton setTitle:@"Banner" forState:UIControlStateNormal];
+  [_bannerButton applyCustomStyle];
+  
   _stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
     _nativeButton,
     _native2Button,
@@ -131,6 +137,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
     _feedEntryButton,
     _webButton,
     _webToFeedButton,
+    _bannerButton,
   ]];
   _stackView.axis = UILayoutConstraintAxisVertical;
   _stackView.spacing = kStackViewSpacing;
@@ -180,6 +187,7 @@ static CGFloat const kArrangedSubviewHeight = 48;
   [_feedEntryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedEntryViewController:)]];
   [_webButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebViewController:)]];
   [_webToFeedButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushWebToFeedViewController:)]];
+  [_bannerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBannerViewController:)]];
 }
 
 - (void)pushFeedViewController:(id)sender {
@@ -222,6 +230,11 @@ static CGFloat const kArrangedSubviewHeight = 48;
 - (void)pushWebToFeedViewController:(id)sender {
   WebToFeedViewController *webToFeedViewController = [[WebToFeedViewController alloc] init];
   [self.navigationController pushViewController:webToFeedViewController animated:YES];
+}
+
+- (void)pushBannerViewController:(id)sender {
+  BannerViewController *bannerViewController = [[BannerViewController alloc] init];
+  [self.navigationController pushViewController:bannerViewController animated:YES];
 }
 
 @end
