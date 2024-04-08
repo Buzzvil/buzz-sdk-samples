@@ -6,6 +6,13 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.9.0] - 2024-04-04
+* [NEW] 네이티브 오버레이 기능 추가
+* [UPDATE] BuzzRxSwift PrivacyInfo.xcprivacy 파일 추가
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.9) 참조
+> ### [5.9.1] - 2024-04-08
+> * [UPDATE] SDWebImage, SDWebImageWebPCoder 라이브러리 종속성 제거
+
 ## [5.7.0] - 2024-03-07
 * [FIX] 다른 화면으로 이동 후 베네핏허브로 다시 돌아올 때, 버즈부스터 활성화 시 나타나는 스크롤 유도 버튼의 애니메이션이 멈추는 문제 해결
 * [FIX] 네트워트 에러 발생한 상태에서 새로고침 버튼을 터치하면 광고 필터가 노출되는 문제 해결

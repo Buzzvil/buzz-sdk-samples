@@ -1,3 +1,10 @@
+## [4.9.0] - 2024-04-04
+> * [FIX] 룰렛 상세 페이지 해상도 개선
+> * [UPDATE] BuzzRxSwift PrivacyInfo.xcprivacy 추가
+
+## [4.7.0] - 2024-03-15
+> * [FIX] 긁는 복권 캠페인에서 간헐적으로 발생하는 크래시 해결
+
 ## [4.5.1] - 2024-02-20
 > * [FIX] APNS 사용 시 Provisioning Profile에 따라 APNS Sandbox/Production을 자동으로 선택하도록 수정
 

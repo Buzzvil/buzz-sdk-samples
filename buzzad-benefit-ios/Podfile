@@ -1,4 +1,4 @@
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -8,7 +8,7 @@ inhibit_all_warnings!
 deployment_target = '11.0'
 
 target 'BABSample' do
-  pod 'BuzzAdBenefit', '~> 3.41.0'
+  pod 'BuzzAdBenefit', '~> 3.45.0'
   pod 'Toast', '~> 4.0.0'
 end
 

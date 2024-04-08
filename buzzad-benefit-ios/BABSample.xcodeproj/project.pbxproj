@@ -316,6 +316,7 @@
 				C4A297482240F06900F6D677 /* Frameworks */,
 				C4A297492240F06900F6D677 /* Resources */,
 				DA3D40DB9F25CF5860181C84 /* [CP] Embed Pods Frameworks */,
+				E83CF1F97FAB4555B6D72221 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,6 +410,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E83CF1F97FAB4555B6D72221 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

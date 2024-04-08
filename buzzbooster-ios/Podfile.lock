@@ -1,7 +1,7 @@
 PODS:
-  - BuzzBoosterSDK (4.3.0):
-    - BuzzRxSwift (~> 6.5.1)
-  - BuzzRxSwift (6.5.1)
+  - BuzzBoosterSDK (4.9.1):
+    - BuzzRxSwift (= 7.0.0)
+  - BuzzRxSwift (7.0.0)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
     - RxSwift (= 6.6.0)
@@ -10,26 +10,26 @@ PODS:
   - RxSwift (6.6.0)
 
 DEPENDENCIES:
-  - BuzzBoosterSDK (~> 4.3.0)
+  - BuzzBoosterSDK (~> 4.9.0)
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   https://github.com/Buzzvil/Specs:
     - BuzzBoosterSDK
-  trunk:
     - BuzzRxSwift
+  trunk:
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
-  BuzzBoosterSDK: 231f87627ff732afba4818b59028e6de58846c3e
-  BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
+  BuzzBoosterSDK: 2af4b46c0b98adb1c2606dc9bada3025971f5d30
+  BuzzRxSwift: 055d46ce39e6852aa3a6039eebd85fe5ef30628e
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
 
-PODFILE CHECKSUM: 625c1e64c0371ef1cb905e1d471444c395124c62
+PODFILE CHECKSUM: a696e3d010fe905ff9073875a95ff5da4e690f64
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
