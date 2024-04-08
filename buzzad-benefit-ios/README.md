@@ -6,9 +6,9 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
-## [3.45.0] - 2024-04-04
-* [FIX] 피드와 브릿지 페이지에 새로운 광고 배너인 버즈배너(BuzzBanner) 추가
-* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.9#buzzad-ios-sdk-3450) 참조
+## [3.45.0] - 2024-03-21
+* [NEW] 피드와 브릿지 페이지에 새로운 광고 배너 버즈배너(BuzzBanner) 추가 
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.9) 참조
 
 ## [3.41.0] - 2023-11-02
 * [FIX] 버그 수정

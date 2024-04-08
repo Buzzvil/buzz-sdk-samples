@@ -1,18 +1,40 @@
 PODS:
-  - BuzzAdBenefitSDK (5.9.1):
+  - BuzzAdBenefitSDK (5.9.0):
     - BuzzRxSwift (= 7.0.0)
     - GoogleAds-IMA-iOS-SDK (= 3.18.5)
-  - BuzzBoosterSDK (4.9.1):
+    - SDWebImage (= 5.19.0)
+    - SDWebImageWebPCoder
+  - BuzzBoosterSDK (4.9.0):
     - BuzzRxSwift (= 7.0.0)
   - BuzzRxSwift (7.0.0)
-  - BuzzvilSDK (5.9.1):
-    - BuzzAdBenefitSDK (~> 5.9.1)
-    - BuzzBoosterSDK (~> 4.9.1)
+  - BuzzvilSDK (5.9.0):
+    - BuzzAdBenefitSDK (~> 5.9.0)
+    - BuzzBoosterSDK (~> 4.9.0)
     - BuzzRxSwift (= 7.0.0)
   - GoogleAds-IMA-iOS-SDK (3.18.5)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - SDWebImage (5.19.0):
+    - SDWebImage/Core (= 5.19.0)
+  - SDWebImage/Core (5.19.0)
+  - SDWebImageWebPCoder (0.14.5):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.17)
 
 DEPENDENCIES:
-  - BuzzvilSDK (= 5.9.1)
+  - BuzzAdBenefitSDK (= 5.9.0)
+  - BuzzBoosterSDK (= 4.9.0)
+  - BuzzvilSDK (= 5.9.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -21,14 +43,20 @@ SPEC REPOS:
     - BuzzRxSwift
     - BuzzvilSDK
     - GoogleAds-IMA-iOS-SDK
+    - libwebp
+    - SDWebImage
+    - SDWebImageWebPCoder
 
 SPEC CHECKSUMS:
-  BuzzAdBenefitSDK: c7f44fd2fcd6a83328e435d286f55b15caf821a1
-  BuzzBoosterSDK: 2af4b46c0b98adb1c2606dc9bada3025971f5d30
+  BuzzAdBenefitSDK: 75cc4480b632dab09a44dc7f974b50eca973eed0
+  BuzzBoosterSDK: dd0bebe53187afd13eba67146c5ce417f888425a
   BuzzRxSwift: 8d04c2083985af36f1e28a9a4db45675c6816c34
-  BuzzvilSDK: 782a63b69711443950add8517b43f4c867448053
+  BuzzvilSDK: 23bac35f5c2d0105a78e0d03224a63af297a3163
   GoogleAds-IMA-iOS-SDK: 7dbef0755db43698f2f6a3a7ac51a88571945399
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
+  SDWebImageWebPCoder: c94f09adbca681822edad9e532ac752db713eabf
 
-PODFILE CHECKSUM: fec4114812029a88865d0c5892977db78c46f117
+PODFILE CHECKSUM: d36ffdcc134e8a5702feada7375c4a3c5ff918a5
 
 COCOAPODS: 1.15.2
