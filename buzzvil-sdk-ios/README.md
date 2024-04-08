@@ -11,6 +11,7 @@
 * [UPDATE] iOS deployment target 12.0으로 변경
 * [UPDATE] AFNetworking, ReactiveObjc 의존성 제거
 * [UPDATE] GoogleAds-IMA-iOS-SDK 3.18.5으로 업데이트
+* [UPDATE] SDWebImage 5.19.0으로 업데이트
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.9) 참조
 
 ## [5.7.0] - 2024-03-07
