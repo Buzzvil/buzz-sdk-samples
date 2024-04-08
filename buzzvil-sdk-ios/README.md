@@ -9,10 +9,12 @@
 ## [5.9.0] - 2024-04-04
 * [NEW] 네이티브지면에 베네핏허브로의 진입을 유도하는 네이티브 오버레이 추가
 * [UPDATE] iOS deployment target 12.0으로 변경
-* [UPDATE] AFNetworking, ReactiveObjc 의존성 제거
+* [UPDATE] AFNetworking, ReactiveObjc 라이브러리 제거
 * [UPDATE] GoogleAds-IMA-iOS-SDK 3.18.5으로 업데이트
 * [UPDATE] SDWebImage 5.19.0으로 업데이트
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.9) 참조
+> ### [5.9.1] - 2024-04-08
+> * [UPDATE] SDWebImage, SDWebImageWebPCoder 라이브러리 제거
 
 ## [5.7.0] - 2024-03-07
 * [FIX] 다른 화면으로 이동 후 베네핏허브로 다시 돌아올 때, 버즈부스터 활성화 시 나타나는 스크롤 유도 버튼의 애니메이션이 멈추는 문제 해결
