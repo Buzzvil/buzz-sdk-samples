@@ -1,3 +1,15 @@
+## [4.9.3] - 2024-04-11
+> * Android 변경 사항 없음
+> * iOS 변경 사항 [참고](../buzzbooster-ios/CHANGELOG.md#493---2024-04-11)
+
+## [4.9.2] - 2024-04-08
+> * Android 변경 사항 없음
+> * iOS 변경 사항 [참고](../buzzbooster-ios/CHANGELOG.md#492---2024-04-08)
+
+## [4.9.0] - 2024-04-04
+> * Android 변경 사항 [참고](../buzzbooster-ios/CHANGELOG.md#490---2024-04-04)
+> * iOS 변경 사항 [참고](../buzzbooster-android/CHANGELOG.md#490---2024-04-04)
+
 ## [4.1.1] - 2023-12-01
 > * [FIX] Xcode 14.3 이상을 지원하도록 수정
 
