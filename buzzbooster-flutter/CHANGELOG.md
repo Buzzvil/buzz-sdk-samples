@@ -1,3 +1,10 @@
+## [4.9.0] - 2024-04-11
+> * Android 변경 사항 [참고](../buzzbooster-ios/CHANGELOG.md#490---2024-04-04)
+> * iOS 변경 사항 
+>   - [4.9.3 참고](../buzzbooster-ios/CHANGELOG.md#493---2024-04-11)
+>   - [4.9.2 참고](../buzzbooster-ios/CHANGELOG.md#492---2024-04-08)
+>   - [4.9.0 참고](../buzzbooster-android/CHANGELOG.md#490---2024-04-04)
+
 ## [4.1.0] - 2023-11-30
 > * [NEW] 다크모드 지원
 > * [UPDATE] 리워드 영역 UX 개선
