@@ -11,10 +11,11 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+  
   _buzzAdInterstitial = [BZVBuzzAdInterstitial interstitialWithBlock:^(BZVBuzzAdInterstitialBuilder * _Nonnull builder) {
     builder.unitId = @"YOUR_INTERSTITIAL_UNIT_ID";
     builder.type = BZVBuzzAdInterstitialTypeDialog;
+    builder.buzzAdBenefitRouter = [BuzzBenefitRouterFactory createFeedRouter:nil];
   }];
   _buzzAdInterstitial.delegate = self;
   [_buzzAdInterstitial load];
