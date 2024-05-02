@@ -2,10 +2,12 @@ import BuzzvilSDK
 import UIKit
 
 class InterstitialViewController: UIViewController {
-  let buzzAdInterstitial = BZVBuzzAdInterstitial { builder in
+  private lazy var buzzAdInterstitial = BZVBuzzAdInterstitial { builder in
     builder.unitId = "YOUR_INTERSTITIAL_UNIT_ID"
     builder.type = .dialog
+    builder.buzzAdBenefitRouter = BuzzBenefitRouterFactory.createFeedRouter()
   }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     buzzAdInterstitial.delegate = self

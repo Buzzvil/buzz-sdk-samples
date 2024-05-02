@@ -6,6 +6,11 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.11.0] - 2024-05-02
+* [NEW] Swift Package Manager 지원
+* [UPDATE] Interstitial 광고에 Feed 진입점 추가
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.11) 참조
+
 ## [5.9.0] - 2024-04-04
 * [NEW] 네이티브지면에 베네핏허브로의 진입을 유도하는 네이티브 오버레이 추가
 * [UPDATE] iOS deployment target 12.0으로 변경
