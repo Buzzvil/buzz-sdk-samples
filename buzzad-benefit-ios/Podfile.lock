@@ -15,39 +15,37 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - AvatyeAdCash (2.1.3):
-    - AvatyeAdCash/Core (= 2.1.3)
-  - AvatyeAdCash/Core (2.1.3):
+  - AvatyeAdCash (2.1.6):
+    - AvatyeAdCash/Core (= 2.1.6)
+  - AvatyeAdCash/Core (2.1.6):
     - AdPopcornSSP (= 2.5.9)
-  - BuzzAdBenefit (3.45.0):
-    - BuzzAdBenefitBase (~> 3.45.0)
-    - BuzzAdBenefitFeed (~> 3.45.0)
-    - BuzzAdBenefitInterstitial (~> 3.45.0)
-    - BuzzAdBenefitNative (~> 3.45.0)
-  - BuzzAdBenefitBase (3.45.0):
+  - BuzzAdBenefit (3.45.2):
+    - BuzzAdBenefitBase (~> 3.45.2)
+    - BuzzAdBenefitFeed (~> 3.45.2)
+    - BuzzAdBenefitInterstitial (~> 3.45.2)
+    - BuzzAdBenefitNative (~> 3.45.2)
+  - BuzzAdBenefitBase (3.45.2):
     - AFNetworking (~> 4.0)
-    - AvatyeAdCash (~> 2.1.2)
-    - BuzzRxSwift (~> 6.5.1)
+    - AvatyeAdCash (~> 2.1.5)
+    - BuzzRxSwift (~> 7.0.0)
     - ReactiveObjC (~> 3.1.1)
-    - SDWebImage (~> 5.0)
+    - SDWebImage (~> 5.19)
     - SDWebImageWebPCoder
-  - BuzzAdBenefitFeed (3.45.0):
-    - BuzzAdBenefitBase (~> 3.45.0)
-    - BuzzAdBenefitInterstitial (~> 3.45.0)
-    - BuzzAdBenefitNative (~> 3.45.0)
-    - BuzzRxSwift (~> 6.5.1)
+  - BuzzAdBenefitFeed (3.45.2):
+    - BuzzAdBenefitBase (~> 3.45.2)
+    - BuzzAdBenefitInterstitial (~> 3.45.2)
+    - BuzzAdBenefitNative (~> 3.45.2)
+    - BuzzRxSwift (~> 7.0.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzAdBenefitInterstitial (3.45.0):
-    - BuzzAdBenefitBase (~> 3.45.0)
-    - BuzzAdBenefitNative (~> 3.45.0)
-    - BuzzRxSwift (~> 6.5.1)
-  - BuzzAdBenefitNative (3.45.0):
-    - BuzzAdBenefitBase (~> 3.45.0)
-    - BuzzRxSwift (~> 6.5.1)
-    - GoogleAds-IMA-iOS-SDK (~> 3.12)
+  - BuzzAdBenefitInterstitial (3.45.2):
+    - BuzzAdBenefitBase (~> 3.45.2)
+    - BuzzAdBenefitNative (~> 3.45.2)
+    - BuzzRxSwift (~> 7.0.0)
+  - BuzzAdBenefitNative (3.45.2):
+    - BuzzAdBenefitBase (~> 3.45.2)
+    - BuzzRxSwift (~> 7.0.0)
     - ReactiveObjC (~> 3.1.1)
-  - BuzzRxSwift (6.5.1)
-  - GoogleAds-IMA-iOS-SDK (3.20.0)
+  - BuzzRxSwift (7.0.0)
   - libwebp (1.3.2):
     - libwebp/demux (= 1.3.2)
     - libwebp/mux (= 1.3.2)
@@ -61,31 +59,29 @@ PODS:
   - libwebp/webp (1.3.2):
     - libwebp/sharpyuv
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.19.0):
-    - SDWebImage/Core (= 5.19.0)
-  - SDWebImage/Core (5.19.0)
-  - SDWebImageWebPCoder (0.14.5):
+  - SDWebImage (5.19.1):
+    - SDWebImage/Core (= 5.19.1)
+  - SDWebImage/Core (5.19.1)
+  - SDWebImageWebPCoder (0.14.6):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.17)
   - Toast (4.0.0)
 
 DEPENDENCIES:
-  - BuzzAdBenefit (~> 3.45.0)
+  - BuzzAdBenefit (~> 3.45.2)
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - AdPopcornSSP
+    - AFNetworking
+    - AvatyeAdCash
     - BuzzAdBenefit
     - BuzzAdBenefitBase
     - BuzzAdBenefitFeed
     - BuzzAdBenefitInterstitial
     - BuzzAdBenefitNative
-  https://github.com/CocoaPods/Specs.git:
-    - AdPopcornSSP
-    - AFNetworking
-    - AvatyeAdCash
     - BuzzRxSwift
-    - GoogleAds-IMA-iOS-SDK
     - libwebp
     - ReactiveObjC
     - SDWebImage
@@ -95,20 +91,19 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AdPopcornSSP: e79f18861974c117fde010aba2bbe0fb4e9e1ebb
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
-  AvatyeAdCash: cfdd2ecc0e8d549d54e600a670dd3fbe70dc3a55
-  BuzzAdBenefit: 8594dd8e29fa79ef5bacc66aaf2024b02e46b717
-  BuzzAdBenefitBase: 04a6347a0b96484c04e794d35f9b4363e4d6ee25
-  BuzzAdBenefitFeed: 86a9138fb5285e571e2ef74b424659eae88238de
-  BuzzAdBenefitInterstitial: 8201ba2af063c0a0dd7ce03cf4e77c5a46049f74
-  BuzzAdBenefitNative: 761c52ed1a3b256c121fd657beaa6c73176d373f
-  BuzzRxSwift: 0ca1668aa41a0b4a811c9eb00d74c89a95a8553f
-  GoogleAds-IMA-iOS-SDK: f9a6bd69e34f6c3a2d6b2f7cd56814b78fc680f9
+  AvatyeAdCash: 60fd69a848329cc810c1202ad7dc32750a99c0b9
+  BuzzAdBenefit: 486ce46127f449140ea6ceb237fbb8c14ad53d6c
+  BuzzAdBenefitBase: d443543facc6a36f9e7c5531f1a2e7661858aec8
+  BuzzAdBenefitFeed: d0f7b6a24214b3662dc16ee489ccc5ff52a8cb91
+  BuzzAdBenefitInterstitial: 6c7be0e88ef09fd617495336b9697c1919eb8f47
+  BuzzAdBenefitNative: fd347675d2548df4071c6f244cff42042ff643ed
+  BuzzRxSwift: 8d04c2083985af36f1e28a9a4db45675c6816c34
   libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
-  SDWebImageWebPCoder: c94f09adbca681822edad9e532ac752db713eabf
+  SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
+  SDWebImageWebPCoder: e38c0a70396191361d60c092933e22c20d5b1380
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 28306a4b53c2676dd0f3f2c632dd5db1dcccfd03
+PODFILE CHECKSUM: c3add8cdb98d0e89cdcca6d9fc64e433f848ff76
 
 COCOAPODS: 1.15.2

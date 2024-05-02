@@ -15,6 +15,19 @@
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.9) 참조
 > ### [5.9.1] - 2024-04-08
 > * [UPDATE] SDWebImage, SDWebImageWebPCoder 라이브러리 제거
+> ### [5.9.2] - 2024-04-09
+> * [FIX] BuzzBoosterSDK 유저 행동 분석 이벤트가 서버로 정상적으로 전달되지 않는 문제 수정
+> ### [5.9.3] - 2024-04-11
+> * [FIX] BuzzBoosterSDK CampaignViewController에서 발생하는 메모리 릭 수정
+> ### [5.9.4] - 2024-04-19
+> * [FIX] Feed collectionView에서 간헐적으로 발생하는 index out of bounds 문제 수정
+> * [FIX] BuzzBoosterSDK iOS 14 기기에서 Attendance 캠페인 진입 시 App freesing 문제 수정
+> ### [5.9.5] - 2024-04-24
+> * [UPDATE] GoogleAds-IMA-iOS-SDK iOS 17 대응된 3.22.1으로 업데이트
+> ### [5.9.6] - 2024-04-24
+> * [UPDATE] GoogleAds-IMA-iOS-SDK 라이브러리 제거
+> ### [5.9.7] - 2024-05-02
+> * [FIX] Feed CTAButton reward icon empty UIImage를 넣을 경우 좌우 여백이 동일하도록 수정
 
 ## [5.7.0] - 2024-03-07
 * [FIX] 다른 화면으로 이동 후 베네핏허브로 다시 돌아올 때, 버즈부스터 활성화 시 나타나는 스크롤 유도 버튼의 애니메이션이 멈추는 문제 해결
