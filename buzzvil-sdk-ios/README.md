@@ -22,6 +22,12 @@
 > ### [5.9.4] - 2024-04-19
 > * [FIX] Feed collectionView에서 간헐적으로 발생하는 index out of bounds 문제 수정
 > * [FIX] BuzzBoosterSDK iOS 14 기기에서 Attendance 캠페인 진입 시 App freesing 문제 수정
+> ### [5.9.5] - 2024-04-24
+> * [UPDATE] GoogleAds-IMA-iOS-SDK iOS 17 대응된 3.22.1으로 업데이트
+> ### [5.9.6] - 2024-04-24
+> * [UPDATE] GoogleAds-IMA-iOS-SDK 라이브러리 제거
+> ### [5.9.7] - 2024-05-02
+> * [FIX] Feed CTAButton reward icon empty UIImage를 넣을 경우 좌우 여백이 동일하도록 수정
 
 ## [5.7.0] - 2024-03-07
 * [FIX] 다른 화면으로 이동 후 베네핏허브로 다시 돌아올 때, 버즈부스터 활성화 시 나타나는 스크롤 유도 버튼의 애니메이션이 멈추는 문제 해결
