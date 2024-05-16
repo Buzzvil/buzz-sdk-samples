@@ -10,6 +10,14 @@
 * [NEW] Swift Package Manager 지원
 * [UPDATE] Interstitial 광고에 Feed 진입점 추가
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.11) 참조
+> ### [5.11.1] - 2024-05-02
+> * [UPDATE] GoogleAds-IMA-iOS-SDK 라이브러리 제거
+> * [FIX] Feed CTAButton reward icon empty UIImage를 넣을 경우 좌우 여백이 동일하도록 수정
+> ### [5.11.2] - 2024-05-03
+> * [UPDATE] BZVNativeAd의 id 속성을 public으로 변경
+> ### [5.11.4] - 2024-05-14
+> * [FIX] 네이티브 오버레이 버그 수정
+> * [FIX] iOS 12 crash 수정
 
 ## [5.9.0] - 2024-04-04
 * [NEW] 네이티브지면에 베네핏허브로의 진입을 유도하는 네이티브 오버레이 추가
