@@ -11,8 +11,12 @@
 * 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.9) 참조
 > ### [3.45.2] - 2024-04-29
 > * [UPDATE] iOS deployment target 12.0으로 변경
-> * [UPDATE] GoogleAds-IMA-iOS-SDK 라이브러리 제거
+> * [UPDATE] 임시적으로 GoogleAds-IMA-iOS-SDK 라이브러리 제거
 > * [UPDATE] AvatyeAdCash 2.1.5으로 업데이트
+> ### [3.45.3] - 2024-05-10
+> * [UPDATE] AvatyeAdCash 2.1.7으로 업데이트
+> ### [3.45.4] - 2024-05-14
+> * [UPDATE] 임시적으로 AvatyeAdCash 라이브러리 제거
 
 ## [3.41.0] - 2023-11-02
 * [FIX] 버그 수정

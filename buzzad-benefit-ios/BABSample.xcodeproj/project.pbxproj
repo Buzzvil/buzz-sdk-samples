@@ -10,7 +10,6 @@
 		001D85B72A383EDC001738BD /* FeedPromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001D85B62A383EDC001738BD /* FeedPromotionCell.m */; };
 		650CC82629E9623D0059A92D /* CarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650CC82529E9623D0059A92D /* CarouselViewController.m */; };
 		650CC82929EE971E0059A92D /* CarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 650CC82829EE971E0059A92D /* CarouselCell.m */; };
-		6519F7882BABBD4500F44BBC /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519F7872BABBD4500F44BBC /* BannerViewController.m */; };
 		6567783F29F0D38F006D4E90 /* CarouselFeedEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6567783E29F0D38F006D4E90 /* CarouselFeedEntryView.m */; };
 		65FDA0732910F91200DF170F /* Native2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FDA0722910F91200DF170F /* Native2ViewController.m */; };
 		683F0936FBFC48292F446A65 /* Pods_BABSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C010A71222260E34CF771D /* Pods_BABSample.framework */; };
@@ -51,8 +50,6 @@
 		650CC82529E9623D0059A92D /* CarouselViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselViewController.m; sourceTree = "<group>"; };
 		650CC82729EE971E0059A92D /* CarouselCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselCell.h; sourceTree = "<group>"; };
 		650CC82829EE971E0059A92D /* CarouselCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselCell.m; sourceTree = "<group>"; };
-		6519F7862BABBD4500F44BBC /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
-		6519F7872BABBD4500F44BBC /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		6567783D29F0D38F006D4E90 /* CarouselFeedEntryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselFeedEntryView.h; sourceTree = "<group>"; };
 		6567783E29F0D38F006D4E90 /* CarouselFeedEntryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselFeedEntryView.m; sourceTree = "<group>"; };
 		65FDA0712910F91200DF170F /* Native2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Native2ViewController.h; sourceTree = "<group>"; };
@@ -144,15 +141,6 @@
 			path = Native2Carousel;
 			sourceTree = "<group>";
 		};
-		6519F7852BABBD1900F44BBC /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				6519F7862BABBD4500F44BBC /* BannerViewController.h */,
-				6519F7872BABBD4500F44BBC /* BannerViewController.m */,
-			);
-			path = Banner;
-			sourceTree = "<group>";
-		};
 		65FDA0702910F72400DF170F /* Native2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +191,6 @@
 				D67A47E927B2500D00C5B4DC /* Interstitial */,
 				D67A47ED27B250F200C5B4DC /* Web */,
 				D67A47EE27B252B000C5B4DC /* WebToFeed */,
-				6519F7852BABBD1900F44BBC /* Banner */,
 				D6E4C05527B22CDB0062B597 /* Util */,
 				C4A2974E2240F06900F6D677 /* AppDelegate.h */,
 				C4A2974F2240F06900F6D677 /* AppDelegate.m */,
@@ -328,7 +315,6 @@
 				C4A297482240F06900F6D677 /* Frameworks */,
 				C4A297492240F06900F6D677 /* Resources */,
 				DA3D40DB9F25CF5860181C84 /* [CP] Embed Pods Frameworks */,
-				ADA57E8728B7CD54FE29ECF0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -407,23 +393,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADA57E8728B7CD54FE29ECF0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BABSample/Pods-BABSample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DA3D40DB9F25CF5860181C84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,7 +431,6 @@
 				D626FBA0273E3B6600103555 /* MessageView.m in Sources */,
 				C4A2975E2240F06B00F6D677 /* main.m in Sources */,
 				D67A47EC27B2502400C5B4DC /* InterstitialViewController.m in Sources */,
-				6519F7882BABBD4500F44BBC /* BannerViewController.m in Sources */,
 				D6E4C05827B22CF40062B597 /* AppConstant.m in Sources */,
 				D6E4C05B27B22F960062B597 /* UIButton+Custom.m in Sources */,
 				6B9435E328223B2900E79DBE /* CustomFeedBaseRewardViewHolder.m in Sources */,
