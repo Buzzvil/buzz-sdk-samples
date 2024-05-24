@@ -184,6 +184,7 @@
   }];
 }
 
+// 로그 기록, 단순 알림 외에 다른 동작을 추가하는 것을 권장하지 않습니다. 자동 갱신 등 네이티브 2.0의 기능과 직접 구현한 동작이 충돌할 수 있습니다.
 - (void)setupEventListeners {
   __weak typeof(self) weakSelf = self;
   [_viewBinder subscribeAdEventsOnImpressed:^(BZVNativeAd2 * _Nonnull ad) {
