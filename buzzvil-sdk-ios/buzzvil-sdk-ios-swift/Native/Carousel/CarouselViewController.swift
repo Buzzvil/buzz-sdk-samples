@@ -141,9 +141,6 @@ class CarouselViewController: UIViewController {
 extension CarouselViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return loadedAdCount
-    
-    // 무한루프 구현 시
-    // return infiniteItemCount
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -171,19 +168,35 @@ extension CarouselViewController: UICollectionViewDataSource {
       return cell
     }
   }
-  
-  // 무한루프 구현 시
-//  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as? CarouselCell else {
-//      return UICollectionViewCell()
-//    }
-//    
-//    // 할당된 고유 광고 개수로 모듈러 연산하여 index를 적용합니다.
-//    cell.setPool(with: pool, for: indexPath.item % loadedAdCount)
-//    cell.bind()
-//    return cell
-//  }
 }
+
+// 무한 루프 구현 시 DataSource Extension example
+//extension CarouselViewController: UICollectionViewDataSource {
+//  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//    // 무한루프 구현 시
+//    return infiniteItemCount
+//  }
+//  
+//  // 무한루프 구현 시
+//  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//    if (indexPath.item % loadedAdCount) == loadedAdCount - 1 { // << 추가된 if 문
+//      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedPromotionCell", for: indexPath) as? FeedPromotionCell else {
+//        return UICollectionViewCell()
+//      }
+//      cell.bind()
+//      return cell
+//    } else {
+//      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as? CarouselCell else {
+//        return UICollectionViewCell()
+//      }
+//      
+//      // 할당된 고유 광고 개수로 모듈러 연산하여 index를 적용합니다.
+//      cell.setPool(with: pool, for: indexPath.item % loadedAdCount)
+//      cell.bind()
+//      return cell
+//    }
+//  }
+//}
 
 extension CarouselViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
