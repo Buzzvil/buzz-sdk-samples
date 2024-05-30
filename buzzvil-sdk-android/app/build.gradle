@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.buzzvil.sample.buzzvilsdksample'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.buzzvil.sample.buzzvilsdksample"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -36,8 +36,9 @@ android {
 }
 
 dependencies {
-    api platform("com.buzzvil:buzzvil-bom:5.9.+")
+    api platform("com.buzzvil:buzzvil-bom:5.13.+")
     implementation "com.buzzvil:buzzvil-sdk"
+    implementation "com.buzzvil:buzzad-benefit-pop"
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
