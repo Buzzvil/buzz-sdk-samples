@@ -1,16 +1,16 @@
 PODS:
-  - BuzzAdBenefitSDK (5.11.4):
+  - BuzzAdBenefitSDK (5.13.1):
     - BuzzRxSwift (= 7.0.0)
-  - BuzzBoosterSDK (4.11.4):
+  - BuzzBoosterSDK (4.13.1):
     - BuzzRxSwift (= 7.0.0)
   - BuzzRxSwift (7.0.0)
-  - BuzzvilSDK (5.11.4):
-    - BuzzAdBenefitSDK (~> 5.11.4)
-    - BuzzBoosterSDK (~> 4.11.4)
+  - BuzzvilSDK (5.13.1):
+    - BuzzAdBenefitSDK (~> 5.13.1)
+    - BuzzBoosterSDK (~> 4.13.1)
     - BuzzRxSwift (= 7.0.0)
 
 DEPENDENCIES:
-  - BuzzvilSDK (= 5.11.4)
+  - BuzzvilSDK (= 5.13.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -20,11 +20,11 @@ SPEC REPOS:
     - BuzzvilSDK
 
 SPEC CHECKSUMS:
-  BuzzAdBenefitSDK: ab7a38da11fd2ad31819c7e64387672ca71be6f4
-  BuzzBoosterSDK: ce5bb82fbcf75bb62d1f8bf1ad73f6c1405213d5
+  BuzzAdBenefitSDK: 6f07205e8f167741218f8f4b960e931461529c87
+  BuzzBoosterSDK: 11b6017d590e4b504a48e183a3cf924793c0c584
   BuzzRxSwift: 8d04c2083985af36f1e28a9a4db45675c6816c34
-  BuzzvilSDK: de383eba0329a843d364bbfc11f0daab3bb821d1
+  BuzzvilSDK: a08d82bd97eaffa92c5802116168534cdc10e068
 
-PODFILE CHECKSUM: b98807442215423d1a8f563b5d194c5743eef1b3
+PODFILE CHECKSUM: 5f75b1fb98fa6b00b12d9a017ec6879de949c9f0
 
 COCOAPODS: 1.15.2
