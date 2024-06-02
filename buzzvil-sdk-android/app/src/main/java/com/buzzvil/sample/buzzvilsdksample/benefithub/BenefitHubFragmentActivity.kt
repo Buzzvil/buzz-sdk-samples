@@ -2,6 +2,7 @@ package com.buzzvil.sample.buzzvilsdksample.benefithub
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
 import com.buzzvil.sample.buzzvilsdksample.R
 import com.buzzvil.sample.buzzvilsdksample.databinding.ActivityBenefitHubFragmentBinding
 

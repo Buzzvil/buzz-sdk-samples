@@ -9,13 +9,8 @@ import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.core.models.UserProfile
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
-import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial
 import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdListener
-import com.buzzvil.buzzbanner.BuzzBanner
-import com.buzzvil.buzzbanner.BuzzBannerConfig
-import com.buzzvil.buzzbanner.BuzzBannerView
-import com.buzzvil.buzzbanner.BuzzBannerViewListener
 import com.buzzvil.sample.buzzvilsdksample.benefithub.BenefitHubFragmentActivity
 import com.buzzvil.sample.buzzvilsdksample.databinding.ActivityMainBinding
 import com.buzzvil.sample.buzzvilsdksample.nativead.NativeCarouselActivity
@@ -94,6 +89,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.interstitialBottomSheetButton.setOnClickListener {
             showInterstitialBottomSheet()
+        }
+
+        binding.activatePopButton.setOnClickListener {
+            activatePop()
+        }
+
+        binding.deactivatePopButton.setOnClickListener {
+            deactivatePop()
         }
     }
 
@@ -248,6 +251,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onActivationFailed(error: Throwable?) {
                 // Pop 활성화에 실패하였을 때 호출됩니다.
+                Toast.makeText(this@MainActivity, "Pop activation failed", Toast.LENGTH_SHORT).show()
             }
         })
     }
