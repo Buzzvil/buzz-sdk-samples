@@ -6,9 +6,15 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
-## [5.15.2] - 2024-07-01
+## [5.15.0] - 2024-07-01
+* [NEW] 버즈배너 기능 추가
+* [UPDATE] 임시적으로 제외되었던 AvatyeAdCash 라이브러리 3.0.5 추가
 * [UPDATE] 임시적으로 제외되었던 피드와 브릿지 페이지의 배너 추가
-* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.15) 참조
+* [FIX] 네이티브 오버레이 관련 버그 수정
+> ### [5.15.1] - 2024-07-01
+> * [UPDATE] AvatyeAdCash 버전 3.0.6으로 업데이트
+> ### [5.15.2] - 2024-07-01
+> * [MINOR] CPI 광고 설치 확인 로직 업데이트
 
 ## [5.13.0] - 2024-05-30
 * [FIX] 간헐적으로 네이티브 오버레이가 노출되지 않는 문제 해결
