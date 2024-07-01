@@ -17,6 +17,9 @@
 > * [UPDATE] AvatyeAdCash 2.1.7으로 업데이트
 > ### [3.45.4] - 2024-05-14
 > * [UPDATE] 임시적으로 AvatyeAdCash 라이브러리 제거
+> ### [3.45.13] - 2024-05-14
+> * [UPDATE] 임시적으로 제거되었던 AvatyeAdCash 라이브러리 추가
+> * [UPDATE] AvatyeAdCash 3.0.6으로 업데이트
 
 ## [3.41.0] - 2023-11-02
 * [FIX] 버그 수정
