@@ -46,6 +46,8 @@
 		0052670B2AF21EAE0080C392 /* CustomBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0052670A2AF21EAE0080C392 /* CustomBrowserViewController.swift */; };
 		0052670E2AF220D20080C392 /* CustomLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052670D2AF220D20080C392 /* CustomLauncher.m */; };
 		005267102AF220E60080C392 /* CustomLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0052670F2AF220E60080C392 /* CustomLauncher.swift */; };
+		007F222A2C327CD00028DEF3 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F22292C327CD00028DEF3 /* BannerViewController.swift */; };
+		007F222E2C327E310028DEF3 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F222D2C327E310028DEF3 /* BannerViewController.m */; };
 		1612FB6118DEFD09C07E45D6 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A87C7F858727B70B72BD29 /* Pods_buzzvil_sdk_ios_swift.framework */; };
 		BF849AC5937D3F0F63EE4BFD /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B481659B157D50D1E6E2F1 /* Pods_buzzvil_sdk_ios_objc.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +114,9 @@
 		0052670C2AF220D20080C392 /* CustomLauncher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomLauncher.h; sourceTree = "<group>"; };
 		0052670D2AF220D20080C392 /* CustomLauncher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomLauncher.m; sourceTree = "<group>"; };
 		0052670F2AF220E60080C392 /* CustomLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLauncher.swift; sourceTree = "<group>"; };
+		007F22292C327CD00028DEF3 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		007F222C2C327E310028DEF3 /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		007F222D2C327E310028DEF3 /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		1447D86BA22E7F77A3348109 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		31B2EB1619B034FDBD96B173 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
 		56F167CAC7E92C9B4BBB8F46 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +183,7 @@
 		004850802AF100D600CD6D64 /* buzzvil-sdk-ios-objc */ = {
 			isa = PBXGroup;
 			children = (
+				007F222B2C327E250028DEF3 /* Banner */,
 				003FA7B22AFCD28600F943D7 /* Util */,
 				005266FF2AF21BA20080C392 /* Custom */,
 				005266FB2AF21B420080C392 /* Interstitial */,
@@ -197,6 +203,7 @@
 		0048509D2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */ = {
 			isa = PBXGroup;
 			children = (
+				007F22282C327CC40028DEF3 /* Banner */,
 				005267002AF21BD40080C392 /* Custom */,
 				005266F82AF21AD20080C392 /* Interstitial */,
 				005266DB2AF1E72D0080C392 /* Native */,
@@ -315,6 +322,23 @@
 				0052670F2AF220E60080C392 /* CustomLauncher.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		007F22282C327CC40028DEF3 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				007F22292C327CD00028DEF3 /* BannerViewController.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		007F222B2C327E250028DEF3 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				007F222C2C327E310028DEF3 /* BannerViewController.h */,
+				007F222D2C327E310028DEF3 /* BannerViewController.m */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		00AF60BE2AF0DA2D00242DD6 = {
@@ -590,6 +614,7 @@
 				005266E32AF1E8740080C392 /* NativeViewController.m in Sources */,
 				005266FE2AF21B4F0080C392 /* InterstitialViewController.m in Sources */,
 				0052670E2AF220D20080C392 /* CustomLauncher.m in Sources */,
+				007F222E2C327E310028DEF3 /* BannerViewController.m in Sources */,
 				003FA7B52AFCD29900F943D7 /* UIButton+Custom.m in Sources */,
 				005267032AF21C320080C392 /* CustomCtaView.m in Sources */,
 				005267092AF21E9B0080C392 /* CustomBrowserViewController.m in Sources */,
@@ -605,6 +630,7 @@
 				004850B12AF1038000CD6D64 /* FeedViewController.swift in Sources */,
 				003FA7AB2AFCC18300F943D7 /* SceneDelegate.swift in Sources */,
 				0052670B2AF21EAE0080C392 /* CustomBrowserViewController.swift in Sources */,
+				007F222A2C327CD00028DEF3 /* BannerViewController.swift in Sources */,
 				005267102AF220E60080C392 /* CustomLauncher.swift in Sources */,
 				003FA7BC2AFCE27F00F943D7 /* CustomFeedAdView.swift in Sources */,
 				005266DF2AF1E82E0080C392 /* CarouselViewController.swift in Sources */,
