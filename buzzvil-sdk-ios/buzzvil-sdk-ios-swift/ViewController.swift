@@ -7,6 +7,7 @@ class ViewController: UIViewController {
   private static let interstitialButtonTitle = "Interstitial"
   private static let buzzAdFeedButtonTitle = "Feed"
   private static let buzzAdFeedConatinerButtonTitle = "Feed Container"
+  private static let buzzAdBannerButtonTitle = "Banner"
   private static let carouselButtonTitle = "Carousel"
   private static let inquiryButtonTitle = "Inquiry"
   private static let buttonAspectRatio: CGFloat = 1.5
@@ -49,6 +50,13 @@ class ViewController: UIViewController {
     return button
   }()
   
+  private lazy var bannerButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle(Self.buzzAdBannerButtonTitle, for: .normal)
+    button.addTarget(self, action: #selector(pushBannerViewController), for: .touchUpInside)
+    return button
+  }()
+
   private lazy var inquiryButton: UIButton = {
     let button = UIButton(frame: .zero)
     button.setTitle(Self.inquiryButtonTitle, for: .normal)
@@ -70,13 +78,15 @@ class ViewController: UIViewController {
     view.addSubview(carouselButton)
     view.addSubview(feedButton)
     view.addSubview(feedContainerButton)
-    
+    view.addSubview(bannerButton)
+
     let buttonsToSetupAppearance = [
       nativeButton,
       interstitialButton,
       carouselButton,
       feedButton,
-      feedContainerButton
+      feedContainerButton,
+      bannerButton
     ]
     
     buttonsToSetupAppearance.forEach { button in
@@ -125,6 +135,14 @@ class ViewController: UIViewController {
       feedContainerButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -Self.buttonMargin/2),
       feedContainerButton.widthAnchor.constraint(equalTo: feedContainerButton.heightAnchor, multiplier: Self.buttonAspectRatio)
     ])
+    
+    bannerButton.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      feedButton.topAnchor.constraint(equalTo: feedButton.bottomAnchor, constant: Self.buttonMargin),
+      feedButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: Self.buttonMargin/2),
+      feedButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Self.buttonMargin),
+      feedButton.widthAnchor.constraint(equalTo: bannerButton.heightAnchor, multiplier: Self.buttonAspectRatio)
+    ])
   }
   
   private func setupAppearanceOfButton(button: UIButton) {
@@ -159,6 +177,11 @@ class ViewController: UIViewController {
     navigationController?.pushViewController(feedContainerViewController, animated: true)
   }
   
+  @objc private func pushBannerViewController() {
+    let bannerViewController = BannerViewController()
+    navigationController?.pushViewController(bannerViewController, animated: true)
+  }
+
   @objc private func showInquiry() {
     BuzzAdBenefit.presentInquiryPage(on: self, unitId: "YOUR_UNIT_ID")
   }

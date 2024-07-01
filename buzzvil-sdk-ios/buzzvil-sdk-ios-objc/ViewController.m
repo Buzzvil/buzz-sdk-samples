@@ -5,6 +5,7 @@
 #import "Interstitial/InterstitialViewController.h"
 #import "Feed/FeedViewController.h"
 #import "Feed/FeedContainerViewController.h"
+#import "Banner/BannerViewController.h"
 
 static NSString * const kNavigationItemTitle = @"BuzzvilSDK-ObjectiveC";
 static NSString * const kNativeButtonTitle = @"Native";
@@ -12,6 +13,7 @@ static NSString * const kInterstitialButtonTitle = @"Interstitial";
 static NSString * const kFeedButtonTitle = @"Feed";
 static NSString * const kCarouselButtonTitle = @"Carousel";
 static NSString * const kFeedContainerButtonTitle = @"Feed Container";
+static NSString * const kBannerButtonTitle = @"Banner";
 static CGFloat const kButtonMargin = 12;
 static CGFloat const kButtonAspectRatio = 1.5;
 
@@ -22,6 +24,7 @@ static CGFloat const kButtonAspectRatio = 1.5;
 @property (nonatomic, strong, readonly) UIButton *interstitialButton;
 @property (nonatomic, strong, readonly) UIButton *feedButton;
 @property (nonatomic, strong, readonly) UIButton *feedContainerButton;
+@property (nonatomic, strong, readonly) UIButton *bannerButton;
 
 @end
 
@@ -63,6 +66,11 @@ static CGFloat const kButtonAspectRatio = 1.5;
   [self.view addSubview:_feedContainerButton];
   [_feedContainerButton setTitle:kFeedContainerButtonTitle forState:UIControlStateNormal];
   [_feedContainerButton applyCustomStyle];
+  
+  _bannerButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [self.view addSubview:_bannerButton];
+  [_bannerButton setTitle:kBannerButtonTitle forState:UIControlStateNormal];
+  [_bannerButton applyCustomStyle];
 }
 
 - (void) setupLayout {
@@ -105,6 +113,14 @@ static CGFloat const kButtonAspectRatio = 1.5;
     [_feedContainerButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:-kButtonMargin / 2],
     [_feedContainerButton.widthAnchor constraintEqualToAnchor:_feedContainerButton.heightAnchor multiplier:kButtonAspectRatio],
   ]];
+  
+  _bannerButton.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_bannerButton.topAnchor constraintEqualToAnchor:_feedButton.bottomAnchor constant:kButtonMargin],
+    [_bannerButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:kButtonMargin/2],
+    [_bannerButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-kButtonMargin],
+    [_bannerButton.widthAnchor constraintEqualToAnchor:_bannerButton.heightAnchor multiplier:kButtonAspectRatio],
+  ]];
 }
 
 
@@ -114,6 +130,7 @@ static CGFloat const kButtonAspectRatio = 1.5;
   [_carouselButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushCarouselViewController:)]];
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_feedContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedContainerViewController:)]];
+  [_bannerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBannerViewController:)]];
 }
 
 - (void)pushFeedViewController:(id)sender {
@@ -139,6 +156,11 @@ static CGFloat const kButtonAspectRatio = 1.5;
 - (void)pushFeedContainerViewController:(id)sender {
   FeedContainerViewController *feedContainerViewController = [[FeedContainerViewController alloc] init];
   [self.navigationController pushViewController:feedContainerViewController animated:YES];
+}
+
+- (void)pushBannerViewController:(id)sender {
+  BannerViewController *bannerViewController = [[BannerViewController alloc] init];
+  [self.navigationController pushViewController:bannerViewController animated:YES];
 }
 
 @end
