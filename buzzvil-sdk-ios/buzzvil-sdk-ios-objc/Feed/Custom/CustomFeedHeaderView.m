@@ -8,7 +8,7 @@
 
 @implementation CustomFeedHeaderView
 
-+ (CGFloat)desiredHeight {
++ (CGFloat)desiredHeight:(CGFloat)width {
   return 60;
 }
 
