@@ -138,10 +138,10 @@ class ViewController: UIViewController {
     
     bannerButton.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      feedButton.topAnchor.constraint(equalTo: feedButton.bottomAnchor, constant: Self.buttonMargin),
-      feedButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: Self.buttonMargin/2),
-      feedButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Self.buttonMargin),
-      feedButton.widthAnchor.constraint(equalTo: bannerButton.heightAnchor, multiplier: Self.buttonAspectRatio)
+      bannerButton.topAnchor.constraint(equalTo: feedButton.bottomAnchor, constant: Self.buttonMargin),
+      bannerButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: Self.buttonMargin/2),
+      bannerButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Self.buttonMargin),
+      bannerButton.widthAnchor.constraint(equalTo: bannerButton.heightAnchor, multiplier: Self.buttonAspectRatio)
     ])
   }
   
