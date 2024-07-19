@@ -21,6 +21,7 @@ import com.buzzvil.sample.buzzvilsdksample.databinding.ActivityNativeCustomBindi
  */
 class NativeCustomActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNativeCustomBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNativeCustomBinding.inflate(layoutInflater)
@@ -31,6 +32,11 @@ class NativeCustomActivity : AppCompatActivity() {
             cardViewNativeToFeed()
             setNativeOverlay()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateNativeToFeedText(Constant.YOUR_FEED_ID)
     }
 
     private fun loadCardViewNativeAd() {
@@ -152,5 +158,17 @@ class NativeCustomActivity : AppCompatActivity() {
     private fun setNativeOverlay() {
         val nativeAdView = binding.cardViewNativeAdLayout.nativeAdView
         nativeAdView.enableNativeToFeedOverlay()
+    }
+
+    private fun updateNativeToFeedText(feedUnitId: String) {
+        BuzzAdBenefit.getBaseRewardManager()?.getAvailableFeedBaseReward(feedUnitId, object : BaseRewardManager.BaseRewardListener {
+            override fun onBaseRewardLoaded(reward: Int) {
+                if (reward < 1) {
+                    binding.cardViewNativeAdLayout.nativeToFeedText.text = "더 많은 참여 기회 보기"
+                } else {
+                    binding.cardViewNativeAdLayout.nativeToFeedText.text = "$reward 포인트 받고 더 많은 참여 기회 보기"
+                }
+            }
+        })
     }
 }
