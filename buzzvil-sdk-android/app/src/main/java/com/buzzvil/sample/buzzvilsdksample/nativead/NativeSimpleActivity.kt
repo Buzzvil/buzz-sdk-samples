@@ -26,6 +26,11 @@ class NativeSimpleActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        updateNativeToFeedText(Constant.YOUR_FEED_ID)
+    }
+
     private fun loadNativeAd() {
         val nativeAd2View = binding.simpleNativeAdLayout.nativeAdView
         val mediaView = binding.simpleNativeAdLayout.adMediaView
@@ -51,19 +56,36 @@ class NativeSimpleActivity : AppCompatActivity() {
     private fun setNativeToFeed() {
         binding.simpleNativeAdLayout.nativeToFeedLayout.setNativeUnitId(Constant.YOUR_NATIVE_ID)
 
-        BuzzAdBenefit.getBaseRewardManager()?.getAvailableFeedBaseReward(Constant.YOUR_FEED_ID, object : BaseRewardManager.BaseRewardListener {
-            override fun onBaseRewardLoaded(reward: Int) {
-                if (reward < 1) {
-                    binding.simpleNativeAdLayout.nativeToFeedText.text = "더 많은 참여 기회 보기"
-                } else {
-                    binding.simpleNativeAdLayout.nativeToFeedText.text = "$reward 포인트 받고 더 많은 참여 기회 보기"
+        BuzzAdBenefit.getBaseRewardManager()?.getAvailableFeedBaseReward(
+            Constant.YOUR_FEED_ID,
+            object : BaseRewardManager.BaseRewardListener {
+                override fun onBaseRewardLoaded(reward: Int) {
+                    if (reward < 1) {
+                        binding.simpleNativeAdLayout.nativeToFeedText.text = "더 많은 참여 기회 보기"
+                    } else {
+                        binding.simpleNativeAdLayout.nativeToFeedText.text =
+                            "$reward 포인트 받고 더 많은 참여 기회 보기"
+                    }
                 }
-            }
-        })
+            })
     }
 
     private fun setNativeOverlay() {
         val nativeAdView = binding.simpleNativeAdLayout.nativeAdView
         nativeAdView.enableNativeToFeedOverlay()
+    }
+
+    private fun updateNativeToFeedText(feedUnitId: String) {
+        BuzzAdBenefit.getBaseRewardManager()
+            ?.getAvailableFeedBaseReward(feedUnitId, object : BaseRewardManager.BaseRewardListener {
+                override fun onBaseRewardLoaded(reward: Int) {
+                    if (reward < 1) {
+                        binding.simpleNativeAdLayout.nativeToFeedText.text = "더 많은 참여 기회 보기"
+                    } else {
+                        binding.simpleNativeAdLayout.nativeToFeedText.text =
+                            "$reward 포인트 받고 더 많은 참여 기회 보기"
+                    }
+                }
+            })
     }
 }

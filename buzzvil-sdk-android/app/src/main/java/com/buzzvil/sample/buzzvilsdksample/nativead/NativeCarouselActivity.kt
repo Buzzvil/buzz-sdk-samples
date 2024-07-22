@@ -3,6 +3,8 @@ package com.buzzvil.sample.buzzvilsdksample.nativead
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.buzzvil.buzzad.benefit.BaseRewardManager
+import com.buzzvil.buzzad.benefit.BuzzAdBenefit
 import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2Pool
 import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2PoolInitListener
@@ -30,6 +32,11 @@ class NativeCarouselActivity : AppCompatActivity() {
         binding.loadCarouselButton.setOnClickListener {
             initCarouselPool()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateNativeToFeedText(Constant.YOUR_FEED_ID)
     }
 
     private fun initCarouselPool() {
@@ -84,5 +91,17 @@ class NativeCarouselActivity : AppCompatActivity() {
         carouselItems[carouselItems.size - 1] = carouselToFeedSlideItem
 
         return carouselItems.toList().filterNotNull()
+    }
+
+    private fun updateNativeToFeedText(feedUnitId: String) {
+        BuzzAdBenefit.getBaseRewardManager()?.getAvailableFeedBaseReward(feedUnitId, object : BaseRewardManager.BaseRewardListener {
+            override fun onBaseRewardLoaded(reward: Int) {
+                if (reward < 1) {
+                    binding.nativeToFeedLayoutTextView.text = "더 많은 참여 기회 보기"
+                } else {
+                    binding.nativeToFeedLayoutTextView.text = "$reward 포인트 받고 더 많은 참여 기회 보기"
+                }
+            }
+        })
     }
 }
