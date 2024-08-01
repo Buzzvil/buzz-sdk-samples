@@ -78,6 +78,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // 리워드 아이콘
       // builder.rewardIcon = YOUR_REWARD_ICON
       // builder.participatedIcon = YOUR_PARTICIPATED_ICON
+      
+      // 자체 구현한 CTA 버튼 GlobalTheme 적용하기
+      // builder.ctaViewClass = CustomCtaView.self
     }
     
     BuzzBenefit.shared.setGlobalTheme(theme)
