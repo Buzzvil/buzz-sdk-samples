@@ -6,6 +6,20 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.17.0] - 2024-07-25
+* [NEW] 새로운 유저 인게이지먼트 및 수익화 기능, “럭키박스” 출시!🎁
+* [NEW] 오버레이 미노출 광고 유형 설정 기능 추가
+* [NEW] CTA 뷰 전역 커스터마이징 기능 추가
+* 자세한 사항은 [링크](https://docs.buzzvil.com/docs/release-news/ios/buzzvil5.17) 참조
+> ### [5.17.1] - 2024-07-25
+> * [FIX] 럭키박스 참여 과정에서 발생하는 인터스티셜 광고 관련 버그 수정
+> ### [5.17.2] - 2024-07-25
+> * [FIX] 네이티브 오버레이 event 수집 관련 버그 수정
+> ### [5.17.3] - 2024-07-25
+> * [MINOR] 럭키박스 event 업데이트 사항 반영
+> ### [5.17.4] - 2024-08-01
+> * [FIX] BZVFeedConfig의 Objective-C 호환성 문제 해결
+
 ## [5.15.0] - 2024-07-01
 * [NEW] 버즈배너 기능 추가
 * [UPDATE] 임시적으로 제외되었던 AvatyeAdCash 라이브러리 3.0.5 추가

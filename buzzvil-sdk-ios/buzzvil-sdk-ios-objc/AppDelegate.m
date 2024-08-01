@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Custom/CustomCtaView.h"
 #import "Feed/Custom/CustomFeedHeaderView.h"
 #import "Feed/Custom/CustomFeedAdView.h"
 #import "Feed/Custom/CustomFeedCpsAdView.h"
@@ -13,12 +14,17 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // 베네핏 허브 초기화 하기
   BZVFeedConfig *feedConfig = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
     builder.unitID = @"YOUR_FEED_UNIT_ID";
-    builder.headerViewClass = [CustomFeedHeaderView class]; // 헤더
-    builder.adViewClass = [CustomFeedAdView class]; // 일반 광고 디자인
-    builder.cpsAdViewClass = [CustomFeedCpsAdView class]; // 쇼핑 광고 디자인
+    
+    // 베네핏허브 헤더 자체 구현하기
+    // builder.headerViewClass = [CustomFeedHeaderView class];
+    
+    // 베네핏허브 일반 광고 디자인 자체 구현하기
+    // builder.adViewClass = [CustomFeedAdView class];
+    
+    // 베네핏허브 쇼핑 적립 광고 디자인 자체 구현하기
+    // builder.cpsAdViewClass = [CustomFeedCpsAdView class];
   }];
   
   // Buzzvil SDK 초기화하기
@@ -28,16 +34,14 @@
   }];
   
   [self themeCustomize];
-  [self setFeedTheme];
   
   [[BuzzBenefit sharedInstance] initializeWithConfig:config];
   
+  [self setFeedTheme];
   [self buzzBenefitLogin];
   
-  // 다크모드 설정하기 TODO
-  //  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleSystem];
-  //  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleLight];
-  //  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleDark];
+  // 다크모드 설정하기
+  [[BuzzBenefit sharedInstance] setUserInterfaceStyle:BuzzBenefitUserInterfaceStyleSystem]; // (BuzzBenefitUserInterfaceStyleSystem / BuzzBenefitUserInterfaceStyleLight / BuzzBenefitUserInterfaceStyleDark)
   
   _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
   UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
@@ -47,12 +51,14 @@
   return YES;
 }
 
+// 로그인 요청하기
 - (void)buzzBenefitLogin {
+  // 로그인을 요청하는 코드입니다.
   BuzzBenefitUser *buzzBenefitUser = [BuzzBenefitUser userWithBlock:^(BuzzBenefitUserBuilder * _Nonnull builder) {
     builder.userID = @"USER_ID";
     builder.gender = BuzzBenefitUserGenderMale;
     builder.birthYear = 1996;
-    builder.marketingStatus = BuzzBenefitMarketingStatusUndetermined; // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션입니다. (BuzzBenefitMarketingStatusOptIn, BuzzBenefitMarketingStatusOptOut, BuzzBenefitMarketingStatusUndetermined)
+    builder.marketingStatus = BuzzBenefitMarketingStatusUndetermined; // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션입니다. (BuzzBenefitMarketingStatusOptIn / BuzzBenefitMarketingStatusOptOut / BuzzBenefitMarketingStatusUndetermined)
   }];
   
   [[BuzzBenefit sharedInstance] loginWithUser:buzzBenefitUser onSuccess:^{
@@ -76,22 +82,25 @@
     // 주요 색상
     // builder.primaryColor = YOUR_PRIMARY_COLOR;
     // builder.primaryLightColor = YOUR_PRIMARY_LIGHT_COLOR;
-    builder.primaryColor = [UIColor redColor];
-    builder.primaryLightColor = [UIColor blueColor];
     
     // 리워드 아이콘
     // builder.rewardIcon = YOUR_REWARD_ICON;
     // builder.participatedIcon = YOUR_PARTICIPATED_ICON;
+    
+    // 자체 구현한 CTA 버튼 GlobalTheme 적용하기
+    // builder.ctaViewClass = [CustomCtaView class];
   }];
+  
   [[BuzzBenefit sharedInstance] setGlobalTheme:theme];
 }
 
 - (void)setFeedTheme {
   BZVFeedTheme *feedTheme = [BZVFeedTheme themeWithBlock:^(BZVFeedThemeBuilder * _Nonnull builder) {
-    builder.navigationBarTitle = @"YOUR_TITLE";
+    // 내비게이션 바 UI 스트링 변경하기
+    // builder.navigationBarTitle = @"YOUR_TITLE";
     
     // 광고 분류 필터
-    builder.usePrimaryColorInFilter = YES;
+    // builder.usePrimaryColorInFilter = YES;
     
     // 광고 미할당 안내 UI
     // builder.noFillErrorImage = ...;
@@ -121,16 +130,16 @@
     // ATT 허용 유도 모달
     // builder.appTrackingTransparencyGuideModalImage = ...;
   }];
-  //  [BZVBuzzAdFeed setDefaultTheme:feedTheme];
+  
+  [BZVBuzzAdFeed setDefaultTheme:feedTheme];
 }
 
 // 동영상 광고 재생 조건 변경하기
 - (void)setVideoPlayMod {
   BZVUserPreferences *userPreferences = [BZVUserPreferences userPreferencesWithBlock:^(BZVUserPreferencesBuilder * _Nonnull builder) {
-    builder.autoPlayType = BZVVideoAutoPlayOnWifi;
-    // builder.autoPlayType = BZVVideoAutoPlayEnabled;
-    // builder.autoPlayType = BZVVideoAutoPlayDisabled;
+    builder.autoPlayType = BZVVideoAutoPlayOnWifi; // (BZVVideoAutoPlayOnWifi / BZVVideoAutoPlayEnabled / BZVVideoAutoPlayDisabled)
   }];
+  
   [BuzzAdBenefit setUserPreferences:userPreferences];
 }
 

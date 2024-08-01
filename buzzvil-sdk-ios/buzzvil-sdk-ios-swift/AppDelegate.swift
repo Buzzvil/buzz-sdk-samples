@@ -8,9 +8,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     let feedConfig = BZVFeedConfig { builder in
       builder.unitID = "YOUR_FEED_UNIT_ID"
-      builder.headerViewClass = CustomFeedHeaderView.self // 헤더
-      builder.adViewClass = CustomFeedAdView.self // 일반 광고 디자인
-      builder.cpsAdViewClass = CustomFeedCpsAdView.self // 쇼핑 광고 디자인
+      
+      // 베네핏허브 헤더 자체 구현하기
+      // builder.headerViewClass = CustomFeedHeaderView.self
+      
+      // 베네핏허브 일반 광고 디자인 자체 구현하기
+      // builder.adViewClass = CustomFeedAdView.self
+      
+      // 베네핏허브 쇼핑 적립 광고 디자인 자체 구현하기
+      // builder.cpsAdViewClass = CustomFeedCpsAdView.self
     }
     
     // Buzzvil SDK 초기화하기
@@ -26,9 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     buzzBenefitLogin()
     
     // 다크 모드 설정하기
-    BuzzBenefit.shared.setUserInterfaceStyle(.system)
-//    BuzzBenefit.shared.setUserInterfaceStyle(.dark)
-//    BuzzBenefit.shared.setUserInterfaceStyle(.light)
+    BuzzBenefit.shared.setUserInterfaceStyle(.system) // (.system / .dark / .light)
     
     window = UIWindow(frame: UIScreen.main.bounds)
     let viewController = ViewController()
@@ -45,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let buzzBenefitUser = BuzzBenefitUser.Builder(userID: "USER_ID")
       .setGender(.male)
       .setBirthYear(1996)
-      .setMarketingStatus(.undetermined) // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션 입니다. (.optIn/.optOut /.undetermined )
+      .setMarketingStatus(.undetermined) // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션 입니다. (.optIn / .optOut / .undetermined)
       .build()
     
     BuzzBenefit.shared.login(
@@ -63,14 +67,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func buzzBenefitLogout() {
-       // 로그아웃하는 코드입니다.
+    // 로그아웃하는 코드입니다.
     BuzzBenefit.shared.logout()
   }
   
   // 커스터마이징
   func themeCustomize() {
     let theme = BuzzBenefitTheme { builder in
-      
       // 주요 색상
       // builder.primaryColor = YOUR_PRIMARY_COLOR
       // builder.primaryLightColor = YOUR_PRIMARY_LIGHT_COLOR
@@ -78,52 +81,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // 리워드 아이콘
       // builder.rewardIcon = YOUR_REWARD_ICON
       // builder.participatedIcon = YOUR_PARTICIPATED_ICON
+      
+      // 자체 구현한 CTA 버튼 GlobalTheme 적용하기
+      // builder.ctaViewClass = CustomCtaView.self
     }
     
     BuzzBenefit.shared.setGlobalTheme(theme)
   }
   
   func setFeedTheme() {
-    // 광고 분류 필터
     let feedTheme = BZVFeedTheme { builder in
-      builder.navigationBarTitle = "YOUR_TITLE" // 네비게이션 바 UI 스트링 변경하기
-      builder.usePrimaryColorInFilter = true // 광고 분류 필터
+      // 내비게이션 바 UI 스트링 변경하기
+      // builder.navigationBarTitle = "YOUR_TITLE"
+      
+      // 베네핏허브 광고 분류 필터
+      // builder.usePrimaryColorInFilter = true
       
       // 광고 미할당 안내 UI
-      /*
-      builder.noFillErrorImage = UIImage(named: "NO_FILL_ERROR_IMAGE")
-      builder.noFillErrorTitle = "noFillErrorTitle"
-      builder.noFillErrorDescription1st = "noFillErrorDescription1st"
-      builder.noFillErrorDescription2nd = "noFillErrorDescription2nd"
-      builder.noFillErrorDescription3rd = "noFillErrorDescription3rd"
-      builder.noFillErrorDescriptionFinalAllFilter = "noFillErrorDescriptionFinalAllFilter"
-      builder.noFillErrorDescriptionFinalOtherFilters = "noFillErrorDescriptionFinalOtherFilters"
-      builder.noFillErrorButton1st = "noFillErrorButton1st"
-      builder.noFillErrorButton2nd = "noFillErrorButton2nd"
-      builder.noFillErrorButton3rd = "noFillErrorButton3rd"
-      builder.noFillErrorButtonFinalAllFilter = "noFillErrorButtonFinalAllFilter"
-      builder.noFillErrorButtonFinalOtherFilters = "noFillErrorButtonFinalOtherFilters"
-     */
+      // builder.noFillErrorImage = UIImage(named: "NO_FILL_ERROR_IMAGE")
+      // builder.noFillErrorTitle = "noFillErrorTitle"
+      // builder.noFillErrorDescription1st = "noFillErrorDescription1st"
+      // builder.noFillErrorDescription2nd = "noFillErrorDescription2nd"
+      // builder.noFillErrorDescription3rd = "noFillErrorDescription3rd"
+      // builder.noFillErrorDescriptionFinalAllFilter = "noFillErrorDescriptionFinalAllFilter"
+      // builder.noFillErrorDescriptionFinalOtherFilters = "noFillErrorDescriptionFinalOtherFilters"
+      // builder.noFillErrorButton1st = "noFillErrorButton1st"
+      // builder.noFillErrorButton2nd = "noFillErrorButton2nd"
+      // builder.noFillErrorButton3rd = "noFillErrorButton3rd"
+      // builder.noFillErrorButtonFinalAllFilter = "noFillErrorButtonFinalAllFilter"
+      // builder.noFillErrorButtonFinalOtherFilters = "noFillErrorButtonFinalOtherFilters"
       
       // 유저 프로필 오류 안내 UI
-      /*
-      builder.userProfileErrorImage = ...
-      builder.userProfileErrorTitle = ...
-      builder.userProfileErrorDescription = ...
-     */
+      // builder.userProfileErrorImage = ...
+      // builder.userProfileErrorTitle = ...
+      // builder.userProfileErrorDescription = ...
       
       // 기타 오류화면 UI
-      /*
-      builder.privacyPolicyErrorImage = ...
-      builder.agePolicyErrorImage = ...
-      builder.networkErrorImage = ...
-      builder.unknownErrorImage = ...
-     */
+      // builder.privacyPolicyErrorImage = ...
+      // builder.agePolicyErrorImage = ...
+      // builder.networkErrorImage = ...
+      // builder.unknownErrorImage = ...
       
       // ATT 허용 유도 모달
-      /*
-      builder.appTrackingTransparencyGuideModalImage = ...
-     */
+      // builder.appTrackingTransparencyGuideModalImage = ...
     }
     
     BZVBuzzAdFeed.setDefaultTheme(feedTheme)
@@ -132,12 +132,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // 동영상 광고 재생 조건 변경하기
   func setVideoPlayMod() {
     let userPreferences = BZVUserPreferences { builder in
-      builder.autoPlayType = .onWifi
-//      builder.autoPlayType = .enabled
-//      builder.autoPlayType = .disabled
+      builder.autoPlayType = .onWifi // (.onWifi / .enabled / .disabled)
     }
     
     BuzzAdBenefit.setUserPreferences(userPreferences)
   }
 }
-
