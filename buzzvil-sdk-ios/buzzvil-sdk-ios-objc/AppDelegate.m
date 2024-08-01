@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Custom/CustomCtaView.h"
 #import "Feed/Custom/CustomFeedHeaderView.h"
 #import "Feed/Custom/CustomFeedAdView.h"
 #import "Feed/Custom/CustomFeedCpsAdView.h"
@@ -82,6 +83,9 @@
     // 리워드 아이콘
     // builder.rewardIcon = YOUR_REWARD_ICON;
     // builder.participatedIcon = YOUR_PARTICIPATED_ICON;
+    
+    // 자체 구현한 CTA 버튼 GlobalTheme 적용하기
+    // builder.ctaViewClass = [CustomCtaView class];
   }];
   [[BuzzBenefit sharedInstance] setGlobalTheme:theme];
 }
