@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // 커스터마이징
   func themeCustomize() {
     let theme = BuzzBenefitTheme { builder in
-      
       // 주요 색상
       // builder.primaryColor = YOUR_PRIMARY_COLOR
       // builder.primaryLightColor = YOUR_PRIMARY_LIGHT_COLOR
@@ -91,10 +90,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func setFeedTheme() {
-    // 광고 분류 필터
     let feedTheme = BZVFeedTheme { builder in
-      builder.navigationBarTitle = "YOUR_TITLE" // 네비게이션 바 UI 스트링 변경하기
-      builder.usePrimaryColorInFilter = true // 광고 분류 필터
+      // 내비게이션 바 UI 스트링 변경하기
+      // builder.navigationBarTitle = "YOUR_TITLE"
+      
+      // 베네핏허브 광고 분류 필터
+      // builder.usePrimaryColorInFilter = true
       
       // 광고 미할당 안내 UI
       // builder.noFillErrorImage = UIImage(named: "NO_FILL_ERROR_IMAGE")
