@@ -6,6 +6,12 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.17.0] - 2024-07-25
+* [NEW] 새로운 유저 인게이지먼트 및 수익화 기능, “럭키박스” 출시!
+* [NEW] 오버레이 미노출 광고 유형 설정 기능 추가
+* [NEW] CTA 뷰 전역 커스터마이징 기능 추가
+* 자세한 사항은 [릴리스 뉴스](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.17) 참조
+
 ## [5.13.0] - 2024-05-30
 * [UPDATE] Android 14 정책 대응
 * [UPDATE] 심리스한 베네핏허브 프래그먼트 경험을 제공하기 위한 광고 프리로드 기능 지원
