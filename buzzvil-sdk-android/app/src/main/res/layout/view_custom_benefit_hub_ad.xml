@@ -85,7 +85,7 @@
                     android:layout_marginHorizontal="@dimen/spacing_l"
                     android:layout_marginTop="@dimen/spacing_s"
                     android:orientation="vertical"
-                    android:visibility="gone" >
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
                         android:textColor="@color/benefit_hub_text_subtle" />
                 </LinearLayout>
 
-                <com.buzzvil.buzzad.benefit.presentation.media.DefaultCtaView
+                <com.buzzvil.sample.buzzvilsdksample.custom.CustomCtaView
                     android:id="@+id/adCtaView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

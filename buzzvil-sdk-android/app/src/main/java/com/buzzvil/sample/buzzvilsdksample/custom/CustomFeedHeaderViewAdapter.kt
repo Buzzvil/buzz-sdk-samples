@@ -17,7 +17,7 @@ class CustomFeedHeaderViewAdapter : FeedHeaderViewAdapter {
 
     override fun onBindView(view: View, reward: Int) {
         val rewardTextView: TextView = view.findViewById(R.id.rewardText)
-        rewardTextView.text = reward.toString()
+        rewardTextView.text = "받을 수 있는 포인트: $reward 포인트"
     }
 
     override fun onDestroyView() {

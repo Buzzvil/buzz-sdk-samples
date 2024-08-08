@@ -23,13 +23,10 @@ class App : Application() {
 
         // Feed(베네핏허브) 설정
         val feedConfig = FeedConfig.Builder(Constant.YOUR_FEED_ID)
-            // 기본 내비게이션 바 제거하기
-            // .navigationBarVisibility(false)
-            .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java)
-            // 커스텀 광고 UI 적용하기
-            // .benefitHubAdViewAdapterClass(CustomBenefitHubAdViewAdapter::class.java)
-            // Pop UnitID 없이 Pop 기능만 켜기
-            // .optInFeatureList(Collections.singletonList(OptInFeature.Pop))
+            // .navigationBarVisibility(false) // 기본 내비게이션 바 제거하기
+            // .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java) // 커스텀 헤더 UI 적용하기
+            // .benefitHubAdViewAdapterClass(CustomBenefitHubAdViewAdapter::class.java) // 커스텀 광고 UI 적용하기
+            // .optInFeatureList(Collections.singletonList(OptInFeature.Pop)) // Pop UnitID 없이 Pop 기능만 켜기
             .build()
 
         // PopNotificationConfig 설정

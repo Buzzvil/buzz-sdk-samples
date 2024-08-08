@@ -9,9 +9,12 @@ import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.core.models.UserProfile
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
+import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial
 import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdListener
 import com.buzzvil.sample.buzzvilsdksample.benefithub.BenefitHubFragmentActivity
+import com.buzzvil.sample.buzzvilsdksample.custom.CustomBenefitHubAdViewAdapter
+import com.buzzvil.sample.buzzvilsdksample.custom.CustomFeedHeaderViewAdapter
 import com.buzzvil.sample.buzzvilsdksample.databinding.ActivityMainBinding
 import com.buzzvil.sample.buzzvilsdksample.nativead.NativeCarouselActivity
 import com.buzzvil.sample.buzzvilsdksample.nativead.NativeCustomActivity
@@ -35,6 +38,24 @@ class MainActivity : AppCompatActivity() {
         return buzzAdFeed!!
     }
 
+    private var customBuzzAdFeed: BuzzAdFeed? = null
+    private fun getCustomBuzzAdFeed(): BuzzAdFeed {
+        if (customBuzzAdFeed == null) {
+            val feedConfig = FeedConfig.Builder(Constant.YOUR_FEED_ID)
+                .navigationBarVisibility(false) // 기본 내비게이션 바 제거하기
+                .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java) // 커스텀 헤더 UI 적용하기
+                .benefitHubAdViewAdapterClass(CustomBenefitHubAdViewAdapter::class.java) // 커스텀 광고 UI 적용하기
+                .build()
+
+            // 하나의 피드에 하나의 buzzAdFeed 인스턴스를 생성하여 사용합니다.
+            customBuzzAdFeed = BuzzAdFeed.Builder()
+                .feedConfig(feedConfig)
+                .build()
+        }
+
+        return customBuzzAdFeed!!
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -52,7 +73,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.showBenefitHubButton.setOnClickListener {
-            showBenefitHub()
+            getBuzzAdFeed().show(this@MainActivity)
+        }
+
+        binding.showCustomBenefitHubButton.setOnClickListener {
+            getCustomBuzzAdFeed().show(this@MainActivity)
         }
 
         binding.getAvailableRewardsButton.setOnClickListener {
@@ -125,7 +150,11 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onFailure(errorType: BuzzvilSetUserProfileListener.ErrorType) {
                     // 유저 정보를 정상적으로 등록하지 못한 경우 호출됩니다.
-                    Toast.makeText(this@MainActivity, "onFailure: ${errorType.name}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        "onFailure: ${errorType.name}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         )
@@ -158,14 +187,14 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onFailure(errorType: BuzzvilSetUserProfileListener.ErrorType) {
                     // 유저 정보를 정상적으로 등록하지 못한 경우 호출됩니다.
-                    Toast.makeText(this@MainActivity, "onFailure: ${errorType.name}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@MainActivity,
+                        "onFailure: ${errorType.name}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         )
-    }
-
-    private fun showBenefitHub() {
-        getBuzzAdFeed().show(this@MainActivity)
     }
 
     private fun getAvailableRewards() {
@@ -192,13 +221,18 @@ class MainActivity : AppCompatActivity() {
 
             override fun onError(error: AdError?) {
                 // 광고 재할당에 실패한 경우 호출됩니다.
-                Toast.makeText(this@MainActivity, "onError: ${error?.adErrorType?.name}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@MainActivity,
+                    "onError: ${error?.adErrorType?.name}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         })
     }
 
     private fun showInterstitialDialog() {
-        val buzzAdInterstitial = BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildDialog()
+        val buzzAdInterstitial =
+            BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildDialog()
         buzzAdInterstitial.load(object : InterstitialAdListener() {
             override fun onAdLoaded() {
                 // 할당된 광고가 있으면 호출됩니다.
@@ -220,7 +254,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showInterstitialBottomSheet() {
-        val buzzAdInterstitial = BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildBottomSheet()
+        val buzzAdInterstitial =
+            BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildBottomSheet()
         buzzAdInterstitial.load(object : InterstitialAdListener() {
             override fun onAdLoaded() {
                 // 할당된 광고가 있으면 호출됩니다.
@@ -242,7 +277,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun activatePop() {
-        BuzzAdPop.getInstance().activate(object: BuzzAdPop.PopActivateListener {
+        BuzzAdPop.getInstance().activate(object : BuzzAdPop.PopActivateListener {
             override fun onActivated() {
                 // 정상적으로 Pop이 활성화 되었을 때 호출됩니다.
                 // 유저 화면에 바로 Pop을 표시합니다.
@@ -251,7 +286,8 @@ class MainActivity : AppCompatActivity() {
 
             override fun onActivationFailed(error: Throwable?) {
                 // Pop 활성화에 실패하였을 때 호출됩니다.
-                Toast.makeText(this@MainActivity, "Pop activation failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Pop activation failed", Toast.LENGTH_SHORT)
+                    .show()
             }
         })
     }
