@@ -8,6 +8,7 @@ class NativeViewController: UIViewController {
   private let titleLabel = UILabel(frame: .zero)
   private let descriptionLabel = UILabel(frame: .zero)
   private let ctaView = BZVDefaultCtaView(frame: .zero)
+  private let nativeToFeedView = BZVNativeToFeedView(frame: .zero)
   private lazy var viewBinder = BZVNativeAd2ViewBinder
     .Builder(unitId: "YOUR_NATIVE_UNIT_ID")
     .nativeAd2View(nativeAd2View)
@@ -36,6 +37,9 @@ class NativeViewController: UIViewController {
     nativeAd2View.addSubview(titleLabel)
     nativeAd2View.addSubview(descriptionLabel)
     nativeAd2View.addSubview(ctaView)
+    
+    self.view.addSubview(nativeToFeedView)
+    nativeToFeedView.setUnitId("YOUR_NATIVE_UNIT_ID")
   }
   
   private func setupLayout() {
@@ -83,6 +87,13 @@ class NativeViewController: UIViewController {
       ctaView.trailingAnchor.constraint(equalTo: nativeAd2View.trailingAnchor, constant: -8),
       ctaView.bottomAnchor.constraint(equalTo: nativeAd2View.bottomAnchor, constant: -8),
       ctaView.heightAnchor.constraint(equalToConstant: 32)
+    ])
+    
+    nativeToFeedView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      nativeToFeedView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      nativeToFeedView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      nativeToFeedView.topAnchor.constraint(equalTo: nativeAd2View.bottomAnchor),
     ])
   }
   

@@ -9,6 +9,7 @@
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UILabel *descriptionLabel;
 @property (nonatomic, strong, readonly) BZVDefaultCtaView *ctaView;
+@property (nonatomic, strong, readonly) BZVNativeToFeedView *nativeToFeedView;
 @property (nonatomic, strong, readonly) BZVNativeAd2ViewBinder *viewBinder;
 
 @property (nonatomic, strong, readonly) UIActivityIndicatorView *activityIndicatorView;
@@ -42,6 +43,9 @@
   
   _ctaView = [[BZVDefaultCtaView alloc] initWithFrame:CGRectZero];
   [_nativeAd2View addSubview:_ctaView];
+  
+  _nativeToFeedView = [[BZVNativeToFeedView alloc] initWithFrame:CGRectZero];
+  [self.view addSubview:_nativeToFeedView];
   
   _viewBinder = [BZVNativeAd2ViewBinder viewBinderWithBlock:^(BZVNativeAd2ViewBinderBuilder * _Nonnull builder) {
 //    builder.unitId = @"YOUR_NATIVE_UNIT_ID";
@@ -99,6 +103,13 @@
     [_ctaView.trailingAnchor constraintEqualToAnchor:_nativeAd2View.trailingAnchor constant:-8],
     [_ctaView.topAnchor constraintEqualToAnchor:_descriptionLabel.bottomAnchor constant:8],
     [_ctaView.bottomAnchor constraintEqualToAnchor:_nativeAd2View.bottomAnchor constant:-8],
+  ]];
+  
+  _nativeToFeedView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_nativeToFeedView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+    [_nativeToFeedView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+    [_nativeToFeedView.topAnchor constraintEqualToAnchor:_nativeAd2View.bottomAnchor constant:8],
   ]];
 }
 
