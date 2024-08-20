@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.buzzvil.buzzad.benefit.annotation.BuzzExperimentalApi
 import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.core.models.UserProfile
 import com.buzzvil.buzzad.benefit.pop.BuzzAdPop
 import com.buzzvil.buzzad.benefit.presentation.feed.BuzzAdFeed
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
+import com.buzzvil.buzzad.benefit.presentation.feed.FeedInitialNavigationPage
 import com.buzzvil.buzzad.benefit.presentation.interstitial.BuzzAdInterstitial
 import com.buzzvil.buzzad.benefit.presentation.interstitial.InterstitialAdListener
 import com.buzzvil.sample.buzzvilsdksample.benefithub.BenefitHubFragmentActivity
@@ -39,12 +41,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var customBuzzAdFeed: BuzzAdFeed? = null
+
+    @OptIn(BuzzExperimentalApi::class) // 실험 기능을 사용하기 위한 어노테이션
     private fun getCustomBuzzAdFeed(): BuzzAdFeed {
         if (customBuzzAdFeed == null) {
-            val feedConfig = FeedConfig.Builder(Constant.YOUR_FEED_ID)
+            val feedConfig = FeedConfig.Builder(Constant.YOUR_FEED_UNIT_ID)
                 .navigationBarVisibility(false) // 기본 내비게이션 바 제거하기
                 .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java) // 커스텀 헤더 UI 적용하기
                 .benefitHubAdViewAdapterClass(CustomBenefitHubAdViewAdapter::class.java) // 커스텀 광고 UI 적용하기
+                .initialSelectedFilterName("쇼핑적립") // (실험 기능) 초기 필터 선택하기
+                .initialNavigationPage(FeedInitialNavigationPage.LUCKYBOX) // (실험 기능) 초기 페이지 선택하기
                 .build()
 
             // 하나의 피드에 하나의 buzzAdFeed 인스턴스를 생성하여 사용합니다.
@@ -232,7 +238,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showInterstitialDialog() {
         val buzzAdInterstitial =
-            BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildDialog()
+            BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_UNIT_ID).buildDialog()
         buzzAdInterstitial.load(object : InterstitialAdListener() {
             override fun onAdLoaded() {
                 // 할당된 광고가 있으면 호출됩니다.
@@ -255,7 +261,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showInterstitialBottomSheet() {
         val buzzAdInterstitial =
-            BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_ID).buildBottomSheet()
+            BuzzAdInterstitial.Builder(Constant.YOUR_INTERSTITIAL_UNIT_ID).buildBottomSheet()
         buzzAdInterstitial.load(object : InterstitialAdListener() {
             override fun onAdLoaded() {
                 // 할당된 광고가 있으면 호출됩니다.

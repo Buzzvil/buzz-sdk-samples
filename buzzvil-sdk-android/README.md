@@ -6,6 +6,14 @@
 ### 오픈 소스 라이센스 고지
 - 이 소프트웨어가 사용하는 오픈 소스 소프트웨어의 라이센스는 "오픈 소스 라이센스 고지 페이지 ([원본 파일](/3rd_party_licenses.html)|[렌더링 버전](https://htmlpreview.github.io/?https://github.com/Buzzvil/buzz-sdk-samples/blob/master/3rd_party_licenses.html))"에서 확인할 수 있다.
 
+## [5.19.0] - 2024-08-22
+* [NEW] 베네핏허브 진입 시 지정된 필터나 럭키박스 페이지로 이동시키는 기능 추가
+* [NEW] 럭키박스 수익화 장치 On/Off 기능 추가
+* [FIX] 럭키박스 참여 전 아이콘 커스텀이 안 되던 문제 해결
+* [FIX] 다른 화면에 가려진 팝 아이콘 클릭 시 동작하지 않는 문제 수정
+* [FIX] 캐시버튼 NPE 버그 수정
+* 자세한 사항은 [릴리스 뉴스](https://docs.buzzvil.com/docs/release-news/android/buzzvil5.19) 참조
+
 ## [5.17.0] - 2024-07-25
 * [NEW] 새로운 유저 인게이지먼트 및 수익화 기능, “럭키박스” 출시!
 * [NEW] 오버레이 미노출 광고 유형 설정 기능 추가

@@ -36,7 +36,7 @@ class NativeAd2CarouselViewHolder(
             .descriptionTextView(descriptionTextView)
             .iconImageView(iconImageView)
             .ctaView(ctaView)
-            .build(Constant.YOUR_NATIVE_ID)
+            .build(Constant.YOUR_NATIVE_UNIT_ID)
 
         // 광고 로딩 상태에 따라 로딩 뷰를 보여주거나 숨깁니다.
         nativeAd2ViewBinder.addNativeAd2StateChangedListener(object : NativeAd2StateChangedListener {

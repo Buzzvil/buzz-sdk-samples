@@ -10,9 +10,7 @@ import com.buzzvil.buzzad.benefit.core.models.AutoplayType
 import com.buzzvil.buzzad.benefit.core.models.UserPreferences
 import com.buzzvil.buzzad.benefit.pop.PopConfig
 import com.buzzvil.buzzad.benefit.pop.PopNotificationConfig
-import com.buzzvil.buzzad.benefit.pop.popicon.SidePosition
 import com.buzzvil.buzzad.benefit.presentation.feed.FeedConfig
-import com.buzzvil.sample.buzzvilsdksample.custom.CustomFeedHeaderViewAdapter
 import com.buzzvil.sample.buzzvilsdksample.custom.CustomLauncher
 import com.buzzvil.sample.buzzvilsdksample.pop.YourPopControlService
 import com.buzzvil.sdk.BuzzvilSdk
@@ -22,7 +20,7 @@ class App : Application() {
         super.onCreate()
 
         // Feed(베네핏허브) 설정
-        val feedConfig = FeedConfig.Builder(Constant.YOUR_FEED_ID)
+        val feedConfig = FeedConfig.Builder(Constant.YOUR_FEED_UNIT_ID)
             // .navigationBarVisibility(false) // 기본 내비게이션 바 제거하기
             // .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java) // 커스텀 헤더 UI 적용하기
             // .benefitHubAdViewAdapterClass(CustomBenefitHubAdViewAdapter::class.java) // 커스텀 광고 UI 적용하기
@@ -35,7 +33,7 @@ class App : Application() {
             .build()
 
         // Pop을 Feed와 분리하여 따로 설정
-        val popFeedConfig = FeedConfig.Builder(Constant.YOUR_POP_ID)
+        val popFeedConfig = FeedConfig.Builder(Constant.YOUR_POP_UNIT_ID)
             .build()
         val popConfig = PopConfig.Builder(popFeedConfig)
             // .popNotificationConfig(popNotificationConfig)

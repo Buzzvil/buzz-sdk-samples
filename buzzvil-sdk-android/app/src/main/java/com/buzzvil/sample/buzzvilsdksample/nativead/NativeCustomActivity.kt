@@ -36,7 +36,7 @@ class NativeCustomActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        updateNativeToFeedText(Constant.YOUR_FEED_ID)
+        updateNativeToFeedText(Constant.YOUR_FEED_UNIT_ID)
     }
 
     private fun loadCardViewNativeAd() {
@@ -55,7 +55,7 @@ class NativeCustomActivity : AppCompatActivity() {
             .descriptionTextView(descriptionTextView)
             .iconImageView(iconImageView)
             .ctaView(ctaView)
-            .build(Constant.YOUR_NATIVE_ID)
+            .build(Constant.YOUR_NATIVE_UNIT_ID)
 
         // (Optional) 광고 요청 상태에 따른 UI를 구현합니다.
         binder.addNativeAd2StateChangedListener(object : NativeAd2StateChangedListener {
@@ -142,9 +142,9 @@ class NativeCustomActivity : AppCompatActivity() {
     }
 
     private fun cardViewNativeToFeed() {
-        binding.cardViewNativeAdLayout.nativeToFeedLayout.setNativeUnitId(Constant.YOUR_NATIVE_ID)
+        binding.cardViewNativeAdLayout.nativeToFeedLayout.setNativeUnitId(Constant.YOUR_NATIVE_UNIT_ID)
 
-        BuzzAdBenefit.getBaseRewardManager()?.getAvailableFeedBaseReward(Constant.YOUR_FEED_ID, object : BaseRewardManager.BaseRewardListener {
+        BuzzAdBenefit.getBaseRewardManager()?.getAvailableFeedBaseReward(Constant.YOUR_FEED_UNIT_ID, object : BaseRewardManager.BaseRewardListener {
             override fun onBaseRewardLoaded(reward: Int) {
                 if (reward < 1) {
                     binding.cardViewNativeAdLayout.nativeToFeedText.text = "더 많은 참여 기회 보기"
