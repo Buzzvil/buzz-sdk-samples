@@ -10,6 +10,7 @@
 @property (nonatomic, strong, readonly) UILabel *descriptionLabel;
 @property (nonatomic, strong, readonly) BZVDefaultCtaView *ctaView;
 @property (nonatomic, strong, readonly) BZVNativeToFeedView *nativeToFeedView;
+@property (nonatomic, strong, readonly) UILabel *nativeToFeedLabel;
 @property (nonatomic, strong, readonly) BZVNativeAd2ViewBinder *viewBinder;
 
 @property (nonatomic, strong, readonly) UIActivityIndicatorView *activityIndicatorView;
@@ -23,6 +24,8 @@
   [self setupView];
   [self setupLayout];
   [self nativeAdLoad];
+  
+  [self showBaseRewardToLabel];
 }
 
 - (void)setupView {
@@ -47,9 +50,11 @@
   _nativeToFeedView = [[BZVNativeToFeedView alloc] initWithFrame:CGRectZero];
   [self.view addSubview:_nativeToFeedView];
   
+  _nativeToFeedLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  [_nativeToFeedView addSubview:_nativeToFeedLabel];
+  
   _viewBinder = [BZVNativeAd2ViewBinder viewBinderWithBlock:^(BZVNativeAd2ViewBinderBuilder * _Nonnull builder) {
-//    builder.unitId = @"YOUR_NATIVE_UNIT_ID";
-    builder.unitId = @"453995955032448";
+    builder.unitId = @"YOUR_NATIVE_UNIT_ID";
     builder.nativeAd2View = self.nativeAd2View;
     builder.mediaView = self.mediaView;
     builder.iconImageView = self.iconImageView;
@@ -111,6 +116,12 @@
     [_nativeToFeedView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
     [_nativeToFeedView.topAnchor constraintEqualToAnchor:_nativeAd2View.bottomAnchor constant:8],
   ]];
+  
+  _nativeToFeedLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [_nativeToFeedLabel.topAnchor constraintEqualToAnchor: _nativeToFeedView.topAnchor],
+    [_nativeToFeedLabel.bottomAnchor constraintEqualToAnchor: _nativeToFeedView.bottomAnchor],
+  ]];
 }
 
 - (void)nativeAdLoad {
@@ -158,6 +169,20 @@
   
   // 동영상 광고 리스너 등록하기
   _nativeAd2View.videoDelegate = self;
+}
+
+- (void)showBaseRewardToLabel {
+  __weak typeof(self) weakSelf = self;
+  [BuzzAdBenefit getAvailableFeedBaseRewardFor:@"YOUR_FEED_UNIT_ID" onComplete:^(NSInteger reward) {
+    __strong typeof(self) strongSelf = weakSelf;
+    if (strongSelf) {
+      if (reward > 0) {
+        strongSelf.nativeToFeedLabel.text = [NSString stringWithFormat:@"%d 포인트 받고 더 많은 참여 기회 보기", reward];
+      } else {
+        strongSelf.nativeToFeedLabel.text = @"더 많은 참여 기회 보기";
+      }
+    }
+  }];
 }
 
 #pragma mark - BZVNativeAdViewVideoDelegate
