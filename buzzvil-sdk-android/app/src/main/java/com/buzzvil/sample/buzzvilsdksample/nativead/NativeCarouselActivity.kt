@@ -36,12 +36,12 @@ class NativeCarouselActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        updateNativeToFeedText(Constant.YOUR_FEED_ID)
+        updateNativeToFeedText(Constant.YOUR_FEED_UNIT_ID)
     }
 
     private fun initCarouselPool() {
         // 광고 중복 할당을 막기 위해 하나의 캐러셀에 하나의 NativeAd2Pool 인스턴스를 생성하여 사용합니다.
-        val carouselPool = NativeAd2Pool(Constant.YOUR_NATIVE_ID)
+        val carouselPool = NativeAd2Pool(Constant.YOUR_NATIVE_UNIT_ID)
         val REQUEST_AD_COUNT = 5
 
         // 현재 할당 받을 수 있는 광고의 갯수를 확인합니다.
@@ -87,7 +87,7 @@ class NativeCarouselActivity : AppCompatActivity() {
         carouselItems.fill(NativeAd2CarouselItem.NativeAd2Item)
 
         // 마지막 아이템은 CarouselToFeedSlideItem으로 설정합니다.
-        val carouselToFeedSlideItem = NativeAd2CarouselItem.CarouselToFeedSlideItem(FeedPromotionFactory(Constant.YOUR_NATIVE_ID).buildForCarousel())
+        val carouselToFeedSlideItem = NativeAd2CarouselItem.CarouselToFeedSlideItem(FeedPromotionFactory(Constant.YOUR_NATIVE_UNIT_ID).buildForCarousel())
         carouselItems[carouselItems.size - 1] = carouselToFeedSlideItem
 
         return carouselItems.toList().filterNotNull()

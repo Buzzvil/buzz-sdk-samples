@@ -28,7 +28,7 @@ class NativeSimpleActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        updateNativeToFeedText(Constant.YOUR_FEED_ID)
+        updateNativeToFeedText(Constant.YOUR_FEED_UNIT_ID)
     }
 
     private fun loadNativeAd() {
@@ -47,17 +47,17 @@ class NativeSimpleActivity : AppCompatActivity() {
             .descriptionTextView(descriptionTextView)
             .iconImageView(iconImageView)
             .ctaView(ctaView)
-            .build(Constant.YOUR_NATIVE_ID)
+            .build(Constant.YOUR_NATIVE_UNIT_ID)
 
         // 광고 할당 및 표시를 자동으로 수행합니다.
         binder.bind()
     }
 
     private fun setNativeToFeed() {
-        binding.simpleNativeAdLayout.nativeToFeedLayout.setNativeUnitId(Constant.YOUR_NATIVE_ID)
+        binding.simpleNativeAdLayout.nativeToFeedLayout.setNativeUnitId(Constant.YOUR_NATIVE_UNIT_ID)
 
         BuzzAdBenefit.getBaseRewardManager()?.getAvailableFeedBaseReward(
-            Constant.YOUR_FEED_ID,
+            Constant.YOUR_FEED_UNIT_ID,
             object : BaseRewardManager.BaseRewardListener {
                 override fun onBaseRewardLoaded(reward: Int) {
                     if (reward < 1) {
