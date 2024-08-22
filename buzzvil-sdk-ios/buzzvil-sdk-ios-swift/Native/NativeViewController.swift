@@ -8,6 +8,9 @@ class NativeViewController: UIViewController {
   private let titleLabel = UILabel(frame: .zero)
   private let descriptionLabel = UILabel(frame: .zero)
   private let ctaView = BZVDefaultCtaView(frame: .zero)
+  private let nativeToFeedView = BZVNativeToFeedView(frame: .zero)
+  private let nativeToFeedLabel: UILabel = UILabel(frame: .zero)
+  
   private lazy var viewBinder = BZVNativeAd2ViewBinder
     .Builder(unitId: "YOUR_NATIVE_UNIT_ID")
     .nativeAd2View(nativeAd2View)
@@ -26,6 +29,8 @@ class NativeViewController: UIViewController {
     setupView()
     setupLayout()
     nativeAdLoad()
+    
+    showBaseRewardToLabel()
   }
   
   private func setupView() {
@@ -36,6 +41,10 @@ class NativeViewController: UIViewController {
     nativeAd2View.addSubview(titleLabel)
     nativeAd2View.addSubview(descriptionLabel)
     nativeAd2View.addSubview(ctaView)
+    
+    self.view.addSubview(nativeToFeedView)
+    nativeToFeedView.addSubview(nativeToFeedLabel)
+    nativeToFeedView.setUnitId("YOUR_NATIVE_UNIT_ID")
   }
   
   private func setupLayout() {
@@ -84,6 +93,19 @@ class NativeViewController: UIViewController {
       ctaView.bottomAnchor.constraint(equalTo: nativeAd2View.bottomAnchor, constant: -8),
       ctaView.heightAnchor.constraint(equalToConstant: 32)
     ])
+    
+    nativeToFeedView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      nativeToFeedView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      nativeToFeedView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      nativeToFeedView.topAnchor.constraint(equalTo: nativeAd2View.bottomAnchor),
+    ])
+    
+    nativeToFeedLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      nativeToFeedLabel.topAnchor.constraint(equalTo: nativeToFeedView.topAnchor),
+      nativeToFeedLabel.trailingAnchor.constraint(equalTo: nativeToFeedView.trailingAnchor),
+    ])
   }
   
   private func nativeAdLoad() {
@@ -118,6 +140,17 @@ class NativeViewController: UIViewController {
     
     // 동영상 광고 리스너 등록하기
     nativeAd2View.videoDelegate = self
+  }
+  
+  private func showBaseRewardToLabel() {
+    BuzzAdBenefit.getAvailableFeedBaseReward(for: "YOUR_FEED_UNIT_ID") { [weak self] (reward) in
+      guard let self = self else { return }
+      if reward > 0 {
+        self.nativeToFeedLabel.text = "\(reward) 포인트 받고 더 많은 참여 기회 보기"
+      } else {
+        self.nativeToFeedLabel.text = "더 많은 참여 기회 보기"
+      }
+    }
   }
 }
 

@@ -29,6 +29,28 @@
   [buzzAdFeed showOn:self];
 }
 
+// 필터 선택하면서 피드 표시하기
+- (void)showFeedWithSelectFilter {
+  BZVBuzzAdFeed *buzzAdFeed = [BZVBuzzAdFeed feedWithBlock:^(BZVBuzzAdFeedBuilder * _Nonnull builder) {
+    builder.config = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
+      builder.unitID = @"BENEFITHUB_UNIT_ID";
+      builder.initialSelectedFilterName = @"클릭적립";
+    }];
+  }];
+  [buzzAdFeed showOn:self];
+}
+
+// 럭키박스 표시하기
+- (void)showLuckyBox {
+  BZVBuzzAdFeed *buzzAdFeed = [BZVBuzzAdFeed feedWithBlock:^(BZVBuzzAdFeedBuilder * _Nonnull builder) {
+    builder.config = [BZVFeedConfig configWithBlock:^(BZVFeedConfigBuilder * _Nonnull builder) {
+      builder.unitID = @"BENEFITHUB_UNIT_ID";
+      builder.initialNavigationPage = BZVFeedInitialNavigationPageLuckyBox;
+    }];
+  }];
+  [buzzAdFeed showOn:self];
+}
+
 // 적립 가능한 포인트 표시하기
 - (void)getAvailiableReward {
   BZVBuzzAdFeed *buzzAdFeed = [BZVBuzzAdFeed feedWithBlock:^(BZVBuzzAdFeedBuilder * _Nonnull builder) {}];

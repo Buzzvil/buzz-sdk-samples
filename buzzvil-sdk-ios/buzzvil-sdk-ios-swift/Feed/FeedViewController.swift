@@ -25,6 +25,28 @@ class FeedViewController: UIViewController {
     buzzAdFeed.show(on: self)
   }
   
+  // 필터 선택하면서 피드 표시하기
+  func showFeedWithSelectFilter() {
+    let buzzAdFeed = BZVBuzzAdFeed { builder in
+      builder.config = BZVFeedConfig { builder in
+        builder.unitID = "BENEFITHUB_UNIT_ID"
+        builder.initialSelectedFilterName = "클릭적립"
+      }
+    }
+    buzzAdFeed.show(on: self)
+  }
+  
+  // 럭키박스 표시하기
+  func showLuckyBox() {
+    let buzzAdFeed = BZVBuzzAdFeed { builder in
+      builder.config = BZVFeedConfig { builder in
+        builder.unitID = "BENEFITHUB_UNIT_ID"
+        builder.initialNavigationPage = .luckyBox
+      }
+    }
+    buzzAdFeed.show(on: self)
+  }
+
   // 적립 가능한 포인트 표시하기
   func getAvailiableReward() {
     let buzzAdFeed = BZVBuzzAdFeed { _ in }
