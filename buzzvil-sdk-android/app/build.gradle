@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-    api platform("com.buzzvil:buzzvil-bom:5.21.0")
+    api platform("com.buzzvil:buzzvil-bom:5.21.+")
     implementation "com.buzzvil:buzzvil-sdk"
     implementation "com.buzzvil:buzzad-benefit-pop"
 
