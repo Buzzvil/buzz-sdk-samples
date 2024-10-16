@@ -48,6 +48,7 @@
 		005267102AF220E60080C392 /* CustomLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0052670F2AF220E60080C392 /* CustomLauncher.swift */; };
 		007F222A2C327CD00028DEF3 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F22292C327CD00028DEF3 /* BannerViewController.swift */; };
 		007F222E2C327E310028DEF3 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F222D2C327E310028DEF3 /* BannerViewController.m */; };
+		008F9E682CBF580700FC4C70 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008F9E672CBF580700FC4C70 /* LabeledTextField.swift */; };
 		1612FB6118DEFD09C07E45D6 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A87C7F858727B70B72BD29 /* Pods_buzzvil_sdk_ios_swift.framework */; };
 		BF849AC5937D3F0F63EE4BFD /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B481659B157D50D1E6E2F1 /* Pods_buzzvil_sdk_ios_objc.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		007F22292C327CD00028DEF3 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		007F222C2C327E310028DEF3 /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		007F222D2C327E310028DEF3 /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		008F9E672CBF580700FC4C70 /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
 		1447D86BA22E7F77A3348109 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		31B2EB1619B034FDBD96B173 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
 		56F167CAC7E92C9B4BBB8F46 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		0048509D2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */ = {
 			isa = PBXGroup;
 			children = (
+				008F9E662CBF57F600FC4C70 /* Util */,
 				007F22282C327CC40028DEF3 /* Banner */,
 				005267002AF21BD40080C392 /* Custom */,
 				005266F82AF21AD20080C392 /* Interstitial */,
@@ -339,6 +342,14 @@
 				007F222D2C327E310028DEF3 /* BannerViewController.m */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		008F9E662CBF57F600FC4C70 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				008F9E672CBF580700FC4C70 /* LabeledTextField.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		00AF60BE2AF0DA2D00242DD6 = {
@@ -646,6 +657,7 @@
 				005267052AF21C490080C392 /* CustomCtaView.swift in Sources */,
 				005266D52AF1DB890080C392 /* FeedContainerViewController.swift in Sources */,
 				005266F42AF1F3CA0080C392 /* CarouselFeedEntryView.swift in Sources */,
+				008F9E682CBF580700FC4C70 /* LabeledTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
