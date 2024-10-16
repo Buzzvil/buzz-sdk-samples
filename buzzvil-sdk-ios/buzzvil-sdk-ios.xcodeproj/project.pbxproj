@@ -46,6 +46,7 @@
 		0052670B2AF21EAE0080C392 /* CustomBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0052670A2AF21EAE0080C392 /* CustomBrowserViewController.swift */; };
 		0052670E2AF220D20080C392 /* CustomLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052670D2AF220D20080C392 /* CustomLauncher.m */; };
 		005267102AF220E60080C392 /* CustomLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0052670F2AF220E60080C392 /* CustomLauncher.swift */; };
+		008F9E652CBF4DAB00FC4C70 /* LabeldTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008F9E642CBF4DAB00FC4C70 /* LabeldTextField.swift */; };
 		1612FB6118DEFD09C07E45D6 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A87C7F858727B70B72BD29 /* Pods_buzzvil_sdk_ios_swift.framework */; };
 		BF849AC5937D3F0F63EE4BFD /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B481659B157D50D1E6E2F1 /* Pods_buzzvil_sdk_ios_objc.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		0052670C2AF220D20080C392 /* CustomLauncher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomLauncher.h; sourceTree = "<group>"; };
 		0052670D2AF220D20080C392 /* CustomLauncher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomLauncher.m; sourceTree = "<group>"; };
 		0052670F2AF220E60080C392 /* CustomLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLauncher.swift; sourceTree = "<group>"; };
+		008F9E642CBF4DAB00FC4C70 /* LabeldTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeldTextField.swift; sourceTree = "<group>"; };
 		1447D86BA22E7F77A3348109 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		31B2EB1619B034FDBD96B173 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
 		56F167CAC7E92C9B4BBB8F46 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		0048509D2AF1023600CD6D64 /* buzzvil-sdk-ios-swift */ = {
 			isa = PBXGroup;
 			children = (
+				008F9E632CBF4DA200FC4C70 /* Util */,
 				005267002AF21BD40080C392 /* Custom */,
 				005266F82AF21AD20080C392 /* Interstitial */,
 				005266DB2AF1E72D0080C392 /* Native */,
@@ -317,6 +320,14 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		008F9E632CBF4DA200FC4C70 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				008F9E642CBF4DAB00FC4C70 /* LabeldTextField.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		00AF60BE2AF0DA2D00242DD6 = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +380,7 @@
 				0048507C2AF100D600CD6D64 /* Frameworks */,
 				0048507D2AF100D600CD6D64 /* Resources */,
 				CB579AF34BC5047472374E7D /* [CP] Embed Pods Frameworks */,
+				A544F160D06124867737A994 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -388,6 +400,7 @@
 				004850992AF1023600CD6D64 /* Frameworks */,
 				0048509A2AF1023600CD6D64 /* Resources */,
 				F0E9B6851894929B30784D40 /* [CP] Embed Pods Frameworks */,
+				4B7470A9D8948EB6C1E15EAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -499,6 +512,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4B7470A9D8948EB6C1E15EAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A544F160D06124867737A994 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CB579AF34BC5047472374E7D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,6 +629,7 @@
 				0048509F2AF1023600CD6D64 /* AppDelegate.swift in Sources */,
 				005266DD2AF1E73B0080C392 /* NativeViewController.swift in Sources */,
 				005267052AF21C490080C392 /* CustomCtaView.swift in Sources */,
+				008F9E652CBF4DAB00FC4C70 /* LabeldTextField.swift in Sources */,
 				005266D52AF1DB890080C392 /* FeedContainerViewController.swift in Sources */,
 				005266F42AF1F3CA0080C392 /* CarouselFeedEntryView.swift in Sources */,
 			);
