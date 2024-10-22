@@ -89,6 +89,9 @@
     
     // 자체 구현한 CTA 버튼 GlobalTheme 적용하기
     // builder.ctaViewClass = [CustomCtaView class];
+    
+    // Gradient 배경 적용하기
+    // builder.backgroundGradientColors = @[UIColor.systemRedColor, UIColor.systemBlueColor];
   }];
   
   [[BuzzBenefit sharedInstance] setGlobalTheme:theme];
