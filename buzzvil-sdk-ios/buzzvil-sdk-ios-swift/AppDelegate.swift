@@ -83,7 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // builder.participatedIcon = YOUR_PARTICIPATED_ICON
       
       // 자체 구현한 CTA 버튼 GlobalTheme 적용하기
-      // builder.ctaViewClass = CustomCtaView.self
+       builder.ctaViewClass = CustomCtaView.self
+      
+      // Gradient 배경 적용하기
+      // builder.backgroundGradientColors = [.systemRed, .systemBlue]
     }
     
     BuzzBenefit.shared.setGlobalTheme(theme)
