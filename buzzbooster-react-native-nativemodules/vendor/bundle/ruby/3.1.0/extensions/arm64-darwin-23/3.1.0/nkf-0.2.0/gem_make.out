@@ -1,0 +1,16 @@
+current directory: /Users/juhyang/buzzvil/dev/boosterSample/vendor/bundle/ruby/3.1.0/gems/nkf-0.2.0/ext/nkf
+/Users/juhyang/.rbenv/versions/3.1.3/bin/ruby -I /Users/juhyang/.rbenv/versions/3.1.3/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/juhyang/buzzvil/dev/boosterSample/vendor/bundle/ruby/3.1.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241104-20045-sbb90n sitelibdir\=./.gem.20241104-20045-sbb90n clean
+
+current directory: /Users/juhyang/buzzvil/dev/boosterSample/vendor/bundle/ruby/3.1.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241104-20045-sbb90n sitelibdir\=./.gem.20241104-20045-sbb90n
+compiling nkf.c
+linking shared-object nkf.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.1'
+
+current directory: /Users/juhyang/buzzvil/dev/boosterSample/vendor/bundle/ruby/3.1.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20241104-20045-sbb90n sitelibdir\=./.gem.20241104-20045-sbb90n install
+/opt/homebrew/bin/ginstall -c -m 0755 nkf.bundle ./.gem.20241104-20045-sbb90n
