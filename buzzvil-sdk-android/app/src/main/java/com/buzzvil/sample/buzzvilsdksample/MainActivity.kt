@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.buzzvil.buzzad.benefit.annotation.BuzzExperimentalApi
 import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.core.models.UserProfile
@@ -21,8 +22,10 @@ import com.buzzvil.sample.buzzvilsdksample.databinding.ActivityMainBinding
 import com.buzzvil.sample.buzzvilsdksample.nativead.NativeCarouselActivity
 import com.buzzvil.sample.buzzvilsdksample.nativead.NativeCustomActivity
 import com.buzzvil.sample.buzzvilsdksample.nativead.NativeSimpleActivity
+import com.buzzvil.sdk.BuzzMissionPack
 import com.buzzvil.sdk.BuzzvilSdk
 import com.buzzvil.sdk.BuzzvilSetUserProfileListener
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -128,6 +131,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.deactivatePopButton.setOnClickListener {
             deactivatePop()
+        }
+
+        binding.showMissionPackSisButton.setOnClickListener {
+            showMissionPackSis()
         }
     }
 
@@ -300,5 +307,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun deactivatePop() {
         BuzzAdPop.getInstance().deactivate(this)
+    }
+
+    private fun showMissionPackSis() {
+        lifecycleScope.launch {
+            if (BuzzMissionPack.isAvailable(unitId = Constant.YOUR_MISSION_PACK_UNIT_ID)) {
+                BuzzMissionPack.showMissionPack(
+                    unitId = Constant.YOUR_MISSION_PACK_UNIT_ID,
+                    context = this@MainActivity
+                )
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    "MissionPack is not available",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 }
