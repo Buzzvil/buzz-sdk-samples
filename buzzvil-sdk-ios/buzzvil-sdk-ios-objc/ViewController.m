@@ -6,6 +6,7 @@
 #import "Feed/FeedViewController.h"
 #import "Feed/FeedContainerViewController.h"
 #import "Banner/BannerViewController.h"
+#import "MissionPack/MissionPackViewController.h"
 
 static NSString * const kNavigationItemTitle = @"BuzzvilSDK-ObjectiveC";
 static NSString * const kNativeButtonTitle = @"Native";
@@ -14,17 +15,19 @@ static NSString * const kFeedButtonTitle = @"Feed";
 static NSString * const kCarouselButtonTitle = @"Carousel";
 static NSString * const kFeedContainerButtonTitle = @"Feed Container";
 static NSString * const kBannerButtonTitle = @"Banner";
+static NSString * const kMissionPackButtonTitle = @"MissionPack";
 static CGFloat const kButtonMargin = 12;
-static CGFloat const kButtonAspectRatio = 1.5;
 
 @interface ViewController ()
 
+@property (nonatomic, strong, readonly) UIStackView *rootStackView;
 @property (nonatomic, strong, readonly) UIButton *nativeButton;
 @property (nonatomic, strong, readonly) UIButton *carouselButton;
 @property (nonatomic, strong, readonly) UIButton *interstitialButton;
 @property (nonatomic, strong, readonly) UIButton *feedButton;
 @property (nonatomic, strong, readonly) UIButton *feedContainerButton;
 @property (nonatomic, strong, readonly) UIButton *bannerButton;
+@property (nonatomic, strong, readonly) UIButton *missionPackButton;
 
 @end
 
@@ -41,85 +44,55 @@ static CGFloat const kButtonAspectRatio = 1.5;
 - (void)setupView {
   self.navigationItem.title = kNavigationItemTitle;
   
+  _rootStackView = [[UIStackView alloc] initWithFrame:CGRectZero];
+  [self.view addSubview:_rootStackView];
+  _rootStackView.axis = UILayoutConstraintAxisVertical;
+  _rootStackView.spacing = kButtonMargin;
+  _rootStackView.distribution = UIStackViewDistributionFillEqually;
+  
   _nativeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [self.view addSubview:_nativeButton];
   [_nativeButton setTitle:kNativeButtonTitle forState:UIControlStateNormal];
   [_nativeButton applyCustomStyle];
   
   _interstitialButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [self.view addSubview:_interstitialButton];
   [_interstitialButton setTitle:kInterstitialButtonTitle forState:UIControlStateNormal];
   [_interstitialButton applyCustomStyle];
   
   _carouselButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [self.view addSubview:_carouselButton];
   [_carouselButton setTitle:kCarouselButtonTitle forState:UIControlStateNormal];
   [_carouselButton applyCustomStyle];
   
-  
   _feedButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [self.view addSubview:_feedButton];
   [_feedButton setTitle:kFeedButtonTitle forState:UIControlStateNormal];
   [_feedButton applyCustomStyle];
   
   _feedContainerButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [self.view addSubview:_feedContainerButton];
   [_feedContainerButton setTitle:kFeedContainerButtonTitle forState:UIControlStateNormal];
   [_feedContainerButton applyCustomStyle];
   
   _bannerButton = [UIButton buttonWithType:UIButtonTypeSystem];
-  [self.view addSubview:_bannerButton];
   [_bannerButton setTitle:kBannerButtonTitle forState:UIControlStateNormal];
   [_bannerButton applyCustomStyle];
+  
+  _missionPackButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_missionPackButton setTitle:kMissionPackButtonTitle forState:UIControlStateNormal];
+  [_missionPackButton applyCustomStyle];
+  
+  [_rootStackView addArrangedSubview: _nativeButton];
+  [_rootStackView addArrangedSubview: _interstitialButton];
+  [_rootStackView addArrangedSubview: _feedButton];
+  [_rootStackView addArrangedSubview: _feedContainerButton];
+  [_rootStackView addArrangedSubview: _bannerButton];
+  [_rootStackView addArrangedSubview: _missionPackButton];
 }
 
 - (void) setupLayout {
-  _nativeButton.translatesAutoresizingMaskIntoConstraints = NO;
+  _rootStackView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
-    [_nativeButton.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:kButtonMargin],
-    [_nativeButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:kButtonMargin],
-    [_nativeButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:-kButtonMargin/2],
-    [_nativeButton.widthAnchor constraintEqualToAnchor:_nativeButton.heightAnchor multiplier:kButtonAspectRatio],
-  ]];
-  
-  _interstitialButton.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_interstitialButton.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:kButtonMargin],
-    [_interstitialButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:kButtonMargin/2],
-    [_interstitialButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-kButtonMargin],
-    [_interstitialButton.widthAnchor constraintEqualToAnchor:_interstitialButton.heightAnchor multiplier:kButtonAspectRatio],
-  ]];
-  
-  _carouselButton.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_carouselButton.topAnchor constraintEqualToAnchor:_nativeButton.bottomAnchor constant:kButtonMargin],
-    [_carouselButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:kButtonMargin],
-    [_carouselButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:-kButtonMargin / 2],
-    [_carouselButton.widthAnchor constraintEqualToAnchor:_carouselButton.heightAnchor multiplier:kButtonAspectRatio],
-  ]];
-  
-  _feedButton.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_feedButton.topAnchor constraintEqualToAnchor:_interstitialButton.bottomAnchor constant:kButtonMargin],
-    [_feedButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:kButtonMargin/2],
-    [_feedButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-kButtonMargin],
-    [_feedButton.widthAnchor constraintEqualToAnchor:_feedButton.heightAnchor multiplier:kButtonAspectRatio],
-  ]];
-  
-  _feedContainerButton.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_feedContainerButton.topAnchor constraintEqualToAnchor:_carouselButton.bottomAnchor constant:kButtonMargin],
-    [_feedContainerButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:kButtonMargin],
-    [_feedContainerButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:-kButtonMargin / 2],
-    [_feedContainerButton.widthAnchor constraintEqualToAnchor:_feedContainerButton.heightAnchor multiplier:kButtonAspectRatio],
-  ]];
-  
-  _bannerButton.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_bannerButton.topAnchor constraintEqualToAnchor:_feedButton.bottomAnchor constant:kButtonMargin],
-    [_bannerButton.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor constant:kButtonMargin/2],
-    [_bannerButton.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-kButtonMargin],
-    [_bannerButton.widthAnchor constraintEqualToAnchor:_bannerButton.heightAnchor multiplier:kButtonAspectRatio],
+    [_rootStackView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+    [_rootStackView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor],
+    [_rootStackView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor],
+    [_rootStackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor],
   ]];
 }
 
@@ -131,6 +104,7 @@ static CGFloat const kButtonAspectRatio = 1.5;
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_feedContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushFeedContainerViewController:)]];
   [_bannerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBannerViewController:)]];
+  [_missionPackButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushMissionPackViewController:)]];
 }
 
 - (void)pushFeedViewController:(id)sender {
@@ -161,6 +135,11 @@ static CGFloat const kButtonAspectRatio = 1.5;
 - (void)pushBannerViewController:(id)sender {
   BannerViewController *bannerViewController = [[BannerViewController alloc] init];
   [self.navigationController pushViewController:bannerViewController animated:YES];
+}
+
+- (void)pushMissionPackViewController:(id)sender {
+  MissionPackViewController *missionPackViewController = [[MissionPackViewController alloc] init];
+  [self.navigationController pushViewController:missionPackViewController animated:YES];
 }
 
 @end
