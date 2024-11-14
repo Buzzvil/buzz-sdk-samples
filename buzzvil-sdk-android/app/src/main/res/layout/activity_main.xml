@@ -203,8 +203,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:text="Deactivate Pop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:text="SIS (Service in Service)"
+                android:textSize="24dp" />
+
+            <Button
+                android:id="@+id/showMissionPackSisButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="Show MissionPack (SIS)" />
         </LinearLayout>
-
-
     </ScrollView>
 </FrameLayout>
