@@ -8,12 +8,21 @@ class ViewController: UIViewController {
   private static let buzzAdFeedButtonTitle = "Feed"
   private static let buzzAdFeedConatinerButtonTitle = "Feed Container"
   private static let buzzAdBannerButtonTitle = "Banner"
+  private static let buzzAdMissionPackButtonTitle = "MissionPack"
   private static let carouselButtonTitle = "Carousel"
   private static let inquiryButtonTitle = "Inquiry"
   private static let buttonAspectRatio: CGFloat = 1.5
   private static let buttonMargin: CGFloat = 12
   private static let buttonCornerRadius: CGFloat = 8
   private static let buttonFontSize: CGFloat = 16
+  
+  private lazy var rootStackView: UIStackView = {
+    let stackView = UIStackView(frame: .zero)
+    stackView.axis = .vertical
+    stackView.spacing = Self.buttonMargin
+    stackView.distribution = .fillEqually
+    return stackView
+  }()
   
   private lazy var nativeButton: UIButton = {
     let button = UIButton(frame: .zero)
@@ -56,6 +65,13 @@ class ViewController: UIViewController {
     button.addTarget(self, action: #selector(pushBannerViewController), for: .touchUpInside)
     return button
   }()
+  
+  private lazy var missionPackButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle(Self.buzzAdMissionPackButtonTitle, for: .normal)
+    button.addTarget(self, action: #selector(pushMissionPackViewcontroller), for: .touchUpInside)
+    return button
+  }()
 
   private lazy var inquiryButton: UIButton = {
     let button = UIButton(frame: .zero)
@@ -73,12 +89,16 @@ class ViewController: UIViewController {
   
   private func setupView() {
     navigationItem.title = Self.navigationItemTitle
-    view.addSubview(nativeButton)
-    view.addSubview(interstitialButton)
-    view.addSubview(carouselButton)
-    view.addSubview(feedButton)
-    view.addSubview(feedContainerButton)
-    view.addSubview(bannerButton)
+    
+    rootStackView.addArrangedSubview(nativeButton)
+    rootStackView.addArrangedSubview(interstitialButton)
+    rootStackView.addArrangedSubview(carouselButton)
+    rootStackView.addArrangedSubview(feedButton)
+    rootStackView.addArrangedSubview(feedContainerButton)
+    rootStackView.addArrangedSubview(bannerButton)
+    rootStackView.addArrangedSubview(missionPackButton)
+    
+    view.addSubview(rootStackView)
 
     let buttonsToSetupAppearance = [
       nativeButton,
@@ -86,7 +106,8 @@ class ViewController: UIViewController {
       carouselButton,
       feedButton,
       feedContainerButton,
-      bannerButton
+      bannerButton,
+      missionPackButton,
     ]
     
     buttonsToSetupAppearance.forEach { button in
@@ -95,53 +116,12 @@ class ViewController: UIViewController {
   }
   
   private func setupLayout() {
-    nativeButton.translatesAutoresizingMaskIntoConstraints = false
+    rootStackView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      nativeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Self.buttonMargin),
-      nativeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Self.buttonMargin),
-      nativeButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: -Self.buttonMargin/2),
-      nativeButton.widthAnchor.constraint(equalTo: nativeButton.heightAnchor, multiplier: Self.buttonAspectRatio)
-    ])
-    
-    interstitialButton.translatesAutoresizingMaskIntoConstraints = false
-    interstitialButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      interstitialButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Self.buttonMargin),
-      interstitialButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: Self.buttonMargin/2),
-      interstitialButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Self.buttonMargin),
-      interstitialButton.widthAnchor.constraint(equalTo: interstitialButton.heightAnchor, multiplier: Self.buttonAspectRatio)
-    ])
-    
-    carouselButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      carouselButton.topAnchor.constraint(equalTo: nativeButton.bottomAnchor, constant: Self.buttonMargin),
-      carouselButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Self.buttonMargin),
-      carouselButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -Self.buttonMargin/2),
-      carouselButton.widthAnchor.constraint(equalTo: carouselButton.heightAnchor, multiplier: Self.buttonAspectRatio)
-    ])
-    
-    feedButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      feedButton.topAnchor.constraint(equalTo: interstitialButton.bottomAnchor, constant: Self.buttonMargin),
-      feedButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: Self.buttonMargin/2),
-      feedButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Self.buttonMargin),
-      feedButton.widthAnchor.constraint(equalTo: feedButton.heightAnchor, multiplier: Self.buttonAspectRatio)
-    ])
-    
-    feedContainerButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      feedContainerButton.topAnchor.constraint(equalTo: carouselButton.bottomAnchor, constant: Self.buttonMargin),
-      feedContainerButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Self.buttonMargin),
-      feedContainerButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -Self.buttonMargin/2),
-      feedContainerButton.widthAnchor.constraint(equalTo: feedContainerButton.heightAnchor, multiplier: Self.buttonAspectRatio)
-    ])
-    
-    bannerButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      bannerButton.topAnchor.constraint(equalTo: feedButton.bottomAnchor, constant: Self.buttonMargin),
-      bannerButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: Self.buttonMargin/2),
-      bannerButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -Self.buttonMargin),
-      bannerButton.widthAnchor.constraint(equalTo: bannerButton.heightAnchor, multiplier: Self.buttonAspectRatio)
+      rootStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      rootStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      rootStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      rootStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
     ])
   }
   
@@ -150,6 +130,10 @@ class ViewController: UIViewController {
     button.layer.cornerRadius = Self.buttonCornerRadius
     button.setTitleColor(.white, for: .normal)
     button.titleLabel?.font = UIFont.systemFont(ofSize: Self.buttonFontSize)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      button.heightAnchor.constraint(equalToConstant: 32)
+    ])
   }
   
   @objc private func pushNativeAdViewController() {
@@ -180,6 +164,11 @@ class ViewController: UIViewController {
   @objc private func pushBannerViewController() {
     let bannerViewController = BannerViewController()
     navigationController?.pushViewController(bannerViewController, animated: true)
+  }
+  
+  @objc private func pushMissionPackViewcontroller() {
+    let missionPackViewController = MissionPackViewController()
+    navigationController?.pushViewController(missionPackViewController, animated: true)
   }
 
   @objc private func showInquiry() {
