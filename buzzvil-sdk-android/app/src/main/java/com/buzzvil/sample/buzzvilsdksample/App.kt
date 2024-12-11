@@ -25,6 +25,7 @@ class App : Application() {
             // .feedHeaderViewAdapterClass(CustomFeedHeaderViewAdapter::class.java) // 커스텀 헤더 UI 적용하기
             // .benefitHubAdViewAdapterClass(CustomBenefitHubAdViewAdapter::class.java) // 커스텀 광고 UI 적용하기
             // .optInFeatureList(Collections.singletonList(OptInFeature.Pop)) // Pop UnitID 없이 Pop 기능만 켜기
+            // .initialNavigationPage(FeedInitialNavigationPage.LUCKYBOX) // 피드 첫 화면 설정
             .build()
 
         // PopNotificationConfig 설정
