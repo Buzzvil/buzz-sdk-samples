@@ -2,29 +2,29 @@ PODS:
   - AdPopcornSSP (2.7.2)
   - AvatyeAdCash (3.0.6):
     - AdPopcornSSP (~> 2.7.1)
-  - BuzzAdBenefitSDK (5.27.1):
+  - BuzzAdBenefitSDK (5.29.2):
     - BuzzRxSwift (= 7.0.0)
     - GoogleAds-IMA-iOS-SDK (~> 3.23)
-  - BuzzAvatyeAdCash (5.27.1):
+  - BuzzAvatyeAdCash (5.29.2):
     - AvatyeAdCash (= 3.0.6)
-    - BuzzAdBenefitSDK (= 5.27.1)
-  - BuzzBoosterSDK (4.27.1):
+    - BuzzAdBenefitSDK (= 5.29.2)
+  - BuzzBoosterSDK (4.29.2):
     - BuzzRxSwift (= 7.0.0)
   - BuzzRxSwift (7.0.0)
-  - BuzzvilSDK (5.27.1):
-    - BuzzAdBenefitSDK (= 5.27.1)
-    - BuzzBoosterSDK (= 4.27.1)
+  - BuzzvilSDK (5.29.2):
+    - BuzzAdBenefitSDK (= 5.29.2)
+    - BuzzBoosterSDK (= 4.29.2)
     - BuzzRxSwift (= 7.0.0)
-    - BuzzvilSDK/Default (= 5.27.1)
-  - BuzzvilSDK/Default (5.27.1):
-    - BuzzAdBenefitSDK (= 5.27.1)
-    - BuzzAvatyeAdCash (= 5.27.1)
-    - BuzzBoosterSDK (= 4.27.1)
+    - BuzzvilSDK/Default (= 5.29.2)
+  - BuzzvilSDK/Default (5.29.2):
+    - BuzzAdBenefitSDK (= 5.29.2)
+    - BuzzAvatyeAdCash (= 5.29.2)
+    - BuzzBoosterSDK (= 4.29.2)
     - BuzzRxSwift (= 7.0.0)
   - GoogleAds-IMA-iOS-SDK (3.23.0)
 
 DEPENDENCIES:
-  - BuzzvilSDK (= 5.27.1)
+  - BuzzvilSDK (= 5.29.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -40,13 +40,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AdPopcornSSP: a4525e6f38fb05c5c29751fc4859c0ace1709deb
   AvatyeAdCash: 52dfdf24ddca778c942d8a9c97bd8985ac500ffb
-  BuzzAdBenefitSDK: 32fc54eac44d83999e0a906bbe853dd2f2b208f6
-  BuzzAvatyeAdCash: 2bc31be53c3f62d1f1a21cff06fa2aa9fb0b5bfc
-  BuzzBoosterSDK: 6cabe95bd67857dd91987d6854dbb38c7682b097
+  BuzzAdBenefitSDK: 5872990b3608650df8974312d84653e9f8fc096e
+  BuzzAvatyeAdCash: 20f61b4120b327a726b4fa431d96854731289a62
+  BuzzBoosterSDK: 0a52682472e03bc6b778e8df346bcf4d1fa41f58
   BuzzRxSwift: 8d04c2083985af36f1e28a9a4db45675c6816c34
-  BuzzvilSDK: 3bf3843aa90e958756c5f620da52621b1756693c
+  BuzzvilSDK: 4688516ad7c5829d34e2f8559dc87719521ebe73
   GoogleAds-IMA-iOS-SDK: ee2a68ed7a1a17c7bb81bdb1b81590b35a3fc8f3
 
-PODFILE CHECKSUM: 25001117a951f1444e51f7adc65e70a936a5d540
+PODFILE CHECKSUM: c98edb7f85c035b30861a4883c905f95c6ee6c3b
 
 COCOAPODS: 1.16.2
