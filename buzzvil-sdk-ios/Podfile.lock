@@ -2,52 +2,51 @@ PODS:
   - AdPopcornSSP (2.7.2)
   - AvatyeAdCash (3.0.6):
     - AdPopcornSSP (~> 2.7.1)
-  - BuzzAdBenefitSDK (5.29.1):
+  - BuzzAdBenefitSDK (5.29.2):
     - BuzzRxSwift (= 7.0.0)
     - GoogleAds-IMA-iOS-SDK (~> 3.23)
-  - BuzzAvatyeAdCash (5.29.1):
+  - BuzzAvatyeAdCash (5.29.2):
     - AvatyeAdCash (= 3.0.6)
-    - BuzzAdBenefitSDK (= 5.29.1)
-  - BuzzBoosterSDK (4.29.1):
+    - BuzzAdBenefitSDK (= 5.29.2)
+  - BuzzBoosterSDK (4.29.2):
     - BuzzRxSwift (= 7.0.0)
   - BuzzRxSwift (7.0.0)
-  - BuzzvilSDK (5.29.1):
-    - BuzzAdBenefitSDK (= 5.29.1)
-    - BuzzBoosterSDK (= 4.29.1)
+  - BuzzvilSDK (5.29.2):
+    - BuzzAdBenefitSDK (= 5.29.2)
+    - BuzzBoosterSDK (= 4.29.2)
     - BuzzRxSwift (= 7.0.0)
-    - BuzzvilSDK/Default (= 5.29.1)
-  - BuzzvilSDK/Default (5.29.1):
-    - BuzzAdBenefitSDK (= 5.29.1)
-    - BuzzAvatyeAdCash (= 5.29.1)
-    - BuzzBoosterSDK (= 4.29.1)
+    - BuzzvilSDK/Default (= 5.29.2)
+  - BuzzvilSDK/Default (5.29.2):
+    - BuzzAdBenefitSDK (= 5.29.2)
+    - BuzzAvatyeAdCash (= 5.29.2)
+    - BuzzBoosterSDK (= 4.29.2)
     - BuzzRxSwift (= 7.0.0)
   - GoogleAds-IMA-iOS-SDK (3.23.0)
 
 DEPENDENCIES:
-  - BuzzvilSDK (= 5.29.1)
+  - BuzzvilSDK (= 5.29.2)
 
 SPEC REPOS:
-  https://github.com/Buzzvil/Specs.git:
-    - BuzzAdBenefitSDK
-    - BuzzAvatyeAdCash
-    - BuzzBoosterSDK
-    - BuzzvilSDK
   https://github.com/CocoaPods/Specs.git:
     - AdPopcornSSP
     - AvatyeAdCash
+    - BuzzAdBenefitSDK
+    - BuzzAvatyeAdCash
+    - BuzzBoosterSDK
     - BuzzRxSwift
+    - BuzzvilSDK
     - GoogleAds-IMA-iOS-SDK
 
 SPEC CHECKSUMS:
   AdPopcornSSP: a4525e6f38fb05c5c29751fc4859c0ace1709deb
   AvatyeAdCash: 52dfdf24ddca778c942d8a9c97bd8985ac500ffb
-  BuzzAdBenefitSDK: 400e7b2f6150d63f3473165808b13975d6ff5d6a
-  BuzzAvatyeAdCash: a86b8950fd0efcd959e0b7739b924640666939c4
-  BuzzBoosterSDK: d52f677465c817930e778cc1fc3d7998ceaa1770
+  BuzzAdBenefitSDK: 5872990b3608650df8974312d84653e9f8fc096e
+  BuzzAvatyeAdCash: 20f61b4120b327a726b4fa431d96854731289a62
+  BuzzBoosterSDK: 0a52682472e03bc6b778e8df346bcf4d1fa41f58
   BuzzRxSwift: 8d04c2083985af36f1e28a9a4db45675c6816c34
-  BuzzvilSDK: 4c7f26d4403a12cec128944159f05206779843f2
+  BuzzvilSDK: 4688516ad7c5829d34e2f8559dc87719521ebe73
   GoogleAds-IMA-iOS-SDK: ee2a68ed7a1a17c7bb81bdb1b81590b35a3fc8f3
 
-PODFILE CHECKSUM: 8769474a3ce0ae9e96a7bca529dabc385202f0e9
+PODFILE CHECKSUM: c98edb7f85c035b30861a4883c905f95c6ee6c3b
 
 COCOAPODS: 1.16.2
