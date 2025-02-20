@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2Pool
-import com.buzzvil.buzzad.benefit.presentation.FeedPromotionDestroyListener
 import com.buzzvil.buzzad.benefit.presentation.media.CtaView
 import com.buzzvil.buzzad.benefit.presentation.media.MediaView
 import com.buzzvil.buzzad.benefit.presentation.nativead.NativeAdView
 import com.buzzvil.sample.buzzvilsdksample.R
 
+@SuppressWarnings("RestrictedApi")
 class CustomFeedPromotionViewBinder private constructor(
     private val nativeAdView: NativeAdView,
     private val mediaView: MediaView,
@@ -24,16 +23,6 @@ class CustomFeedPromotionViewBinder private constructor(
     private val sponsoredLayout: ViewGroup?,
     private val customClickableViews: List<View>
 ) {
-    private val feedPromotionDestroyListener = object : FeedPromotionDestroyListener {
-        override fun onDestroy() {
-            unbind()
-        }
-    }
-
-    fun setPool(nativeAd2Pool: NativeAd2Pool) {
-        nativeAd2Pool.setFeedPromotionDestroyListener(feedPromotionDestroyListener)
-    }
-
     fun bind() {
         nativeAdView.isFeedPromotionView = true
         mediaView.setCreative(null)
