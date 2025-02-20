@@ -42,7 +42,7 @@ class NativeAd2CarouselAdapter(
         if (item is NativeAd2Item) {
             holder.bind(itemPosition)
         } else if (item is CarouselToFeedSlideItem) {
-            holder.bind(itemPosition, item.feedPromotion)
+            holder.bindCarouselToFeedSlideItem(itemPosition)
         }
     }
 
