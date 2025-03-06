@@ -18,7 +18,7 @@ class NativeAd2CarouselViewHolder(
     private val binding: CarouselItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
     private val nativeAd2ViewBinder: NativeAd2ViewBinder
-    private val carouselToFeedViewBinder: FeedPromotionViewBinder
+    private val carouselToFeedViewBinder: CustomFeedPromotionViewBinder
 
     init {
         val nativeAd2View = binding.nativeAdView
@@ -68,7 +68,7 @@ class NativeAd2CarouselViewHolder(
         })
 
         // CarouselToFeedSlideItem을 위한 바인더를 빌드합니다.
-        carouselToFeedViewBinder = FeedPromotionViewBinder.Builder(nativeAd2View, mediaView)
+        carouselToFeedViewBinder = CustomFeedPromotionViewBinder.Builder(nativeAd2View, mediaView)
             .titleTextView(titleTextView)
             .descriptionTextView(descriptionTextView)
             .iconImageView(iconImageView)
@@ -86,9 +86,9 @@ class NativeAd2CarouselViewHolder(
         nativeAd2ViewBinder.bind(position)
     }
 
-    fun bind(position: Int, feedPromotion: FeedPromotion) {
+    fun bindCarouselToFeedSlideItem(position: Int) {
         // FeedPromotion 객체를 뷰에 바인드합니다.
-        carouselToFeedViewBinder.bind(feedPromotion)
+        carouselToFeedViewBinder.bind()
 
         // 베네핏허브 진입 슬라이드는 로딩 뷰가 필요 없기 때문에 false로 설정합니다.
         setLoadingView(false)
