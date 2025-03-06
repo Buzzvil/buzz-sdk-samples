@@ -16,6 +16,11 @@
 | io.gsonfire:gson-fire | - | Apache-2.0 license | https://github.com/julman99/gson-fire/blob/master/LICENSE | https://github.com/julman99/gson-fire |   |
 | com.google.android.material:material | - | Apache-2.0 license | https://github.com/material-components/material-components-android/blob/master/LICENSE | https://github.com/material-components/material-components-android?tab=readme-ov-file |   |
 | com.squareup.okio:okio | Copyright 2013 Square, Inc. | Apache-2.0 license | https://github.com/square/okio/blob/master/LICENSE.txt | https://github.com/square/okio |   |
+| buzz-lottie</br>(com.airbnb.android:lottie) | - | Apache-2.0 license | https://github.com/airbnb/lottie-android/blob/master/LICENSE | https://github.com/airbnb/lottie-android | 코드 내재화하여 사용 |
+| buzz-glide</br>(com.github.bumptech.glide:glide) | - | BSD, part MIT and Apache 2.0. | https://github.com/bumptech/glide/blob/master/LICENSE | https://github.com/bumptech/glide | 코드 내재화하여 사용 |
+| google/hover | Copyright (C) 2016 Nest Labs | Apache-2.0 license | https://github.com/google/hover/blob/master/LICENSE  | https://github.com/google/hover  | 코드 내재화하여 사용 |
+| Universal Image Loader | - | Apache-2.0 license | https://github.com/nostra13/Android-Universal-Image-Loader/blob/master/LICENSE | https://github.com/nostra13/Android-Universal-Image-Loader | 코드 내재화하여 사용 |
+
 
 # iOS
 
