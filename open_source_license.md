@@ -1,11 +1,13 @@
 # Android
 
 ## BuzzvilSdk
+
 | 오픈소스명 | 저작권 정보 | 라이센스 유형 | 라이센스 전문 | 원본저장소 URL | 비고 |
 |--|--|--|--|--|--|
 | BuzzvilSDK | - | - | - | - |  |
 
 ## Third parties
+
 | 오픈소스명 | 저작권 정보 | 라이센스 유형 | 라이센스 전문 | 원본저장소 URL | 비고 |
 |--|--|--|--|--|--|
 | retrofit | Copyright 2013 Square, Inc. | Apache-2.0 license | [라이센스 전문](https://github.com/square/retrofit/blob/trunk/LICENSE.txt) | [저장소 URL](https://github.com/square/retrofit) |   |
@@ -25,6 +27,7 @@
 # iOS
 
 ## BuzzvilSdk
+
 | 오픈소스명 | 저작권 정보 | 라이센스 유형 | 라이센스 전문 | 원본저장소 URL | 비고 |
 |--|--|--|--|--|--|
 | BuzzvilSDK | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | 바이너리 배포 형태로 제공 (xcframework) |
@@ -34,6 +37,7 @@
 
 
 ## Third parties
+
 | 오픈소스명 | 저작권 정보 | 라이센스 유형 | 라이센스 전문 | 원본저장소 URL | 비고 |
 |--|--|--|--|--|--|
 | RxSwift | Copyright © 2015 Krunoslav Zaher, Shai Mishali | MIT license | [라이센스 전문](https://raw.githubusercontent.com/Buzzvil/RxSwift/refs/heads/main/LICENSE.md) | [저장소 URL](https://github.com/Buzzvil/RxSwift) | 소스 fork 및 재배포하여 사용 |
