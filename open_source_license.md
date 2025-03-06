@@ -27,10 +27,10 @@
 ## BuzzvilSdk
 | 오픈소스명 | 저작권 정보 | 라이센스 유형 | 라이센스 전문 | 원본저장소 URL | 비고 |
 |--|--|--|--|--|--|
-| BuzzvilSDK | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A (private repository) | N/A (private repository) | 바이너리 배포 형태로 제공 (xcframework) |
-| BuzzAdBenefitSDK | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A (private repository) | N/A (private repository) | 바이너리 배포 형태로 제공 (xcframework) |
-| BuzzBoosterSDK | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A (private repository) | N/A (private repository) | 바이너리 배포 형태로 제공 (xcframework) |
-| BuzzAvatyeAdCash | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A (private repository) | N/A (private repository) | 바이너리 배포 형태로 제공 (xcframework) |
+| BuzzvilSDK | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | 바이너리 배포 형태로 제공 (xcframework) |
+| BuzzAdBenefitSDK | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | 바이너리 배포 형태로 제공 (xcframework) |
+| BuzzBoosterSDK | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | 바이너리 배포 형태로 제공 (xcframework) |
+| BuzzAvatyeAdCash | Copyright (c) 2018 Buzzvil Co., Ltd. | MIT license | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | N/A ([private repository](https://github.com/Buzzvil/bab-ios/blob/main/LICENSE)) | 바이너리 배포 형태로 제공 (xcframework) |
 
 
 ## Third parties
