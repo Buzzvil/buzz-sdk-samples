@@ -37,7 +37,7 @@
 | 오픈소스명 | 저작권 정보 | 라이센스 유형 | 라이센스 전문 | 원본저장소 URL | 비고 |
 |--|--|--|--|--|--|
 | RxSwift | Copyright © 2015 Krunoslav Zaher, Shai Mishali | MIT license | https://raw.githubusercontent.com/Buzzvil/RxSwift/refs/heads/main/LICENSE.md | Buzzvil/RxSwift | 소스 fork 및 재배포하여 사용 |
-| GoogleInteractiveMediaAds | Copyright 2015 Google, Inc. | Apache-2.0 license | https://raw.githubusercontent.com/googleads/swift-package-manager-google-interactive-media-ads-ios/refs/heads/ | N/A (private repository) | - 바이너리 배포 형태 (xcframework) - package manager(cocoapods, swift package manager)로 사용 |
-| AvatyeAdCash | Copyright (c) 2024 Avatye Corp. | MIT license | N/A (private repository) | N/A (private repository) | - 바이너리 배포 형태 (xcframework) - package manager(cocoapods, swift package manager)로 사용 |
+| GoogleInteractiveMediaAds | Copyright 2015 Google, Inc. | Apache-2.0 license | https://raw.githubusercontent.com/googleads/swift-package-manager-google-interactive-media-ads-ios/refs/heads/ | N/A (private repository) | - 바이너리 배포 형태 (xcframework)</br>- package manager(cocoapods, swift package manager)로 사용 |
+| AvatyeAdCash | Copyright (c) 2024 Avatye Corp. | MIT license | N/A (private repository) | N/A (private repository) | - 바이너리 배포 형태 (xcframework)</br>- package manager(cocoapods, swift package manager)로 사용 |
 | lottie-ios | Copyright 2018 Airbnb, Inc. | Apache-2.0 license | https://raw.githubusercontent.com/airbnb/lottie-ios/refs/heads/master/LICENSE | https://github.com/airbnb/lottie-ios | 코드 내재화하여 사용 |
 | Kingfisher | Copyright (c) 2019 Wei Wang | MIT license | https://raw.githubusercontent.com/onevcat/Kingfisher/refs/heads/master/LICENSE | https://github.com/onevcat/Kingfisher  | 코드 내재화하여 사용 |
