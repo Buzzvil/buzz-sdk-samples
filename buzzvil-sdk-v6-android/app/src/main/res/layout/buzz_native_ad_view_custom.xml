@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buzzNativeAdView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:orientation="vertical">
+
+        <com.buzzvil.buzzbenefit.buzznative.BuzzMediaView
+            android:id="@+id/buzzMediaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/excpsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="@dimen/buzzvil_spacing_xs"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ic_my_reward" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="인스타그램 팔로우 하면" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="팔로우 하기" />
+        </LinearLayout>
+
+        <!-- DefaultCtaView 대신 커스텀 CTA 뷰를 사용할 수 있습니다. -->
+        <!-- <com.buzzvil.buzzad.benefit.presentation.media.DefaultCtaView -->
+        <com.buzzvil.sample.buzzvil_sdk_v6_sample.custom.YourCustomBuzzCtaView
+            android:id="@+id/buzzCtaView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/yourNativeToBenefitHubEntryPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="포인트 더 받으러 가기 >" />
+    </LinearLayout>
+</com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdView>

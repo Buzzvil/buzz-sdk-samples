@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".buzznative.YourNativeCarouselActivity">
+
+    <Button
+        android:id="@+id/loadCarouselButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Load Carousel" />
+
+    <!-- 광고를 표시할 Carousel -->
+    <!-- clipToPadding, paddingHorizontal: 이전과 이후 아이템을 살짝 보여주기 위해 설정 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/carouselRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="32dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/buzz_native_ad_view" />
+
+    <LinearLayout
+        android:id="@+id/carousel_to_feed_link"
+        android:layout_gravity="end"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nativeToFeedLayoutTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="포인트 더 받으러 가기"
+            android:textColor="#3B82F6"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_chevron_right_24"
+            app:tint="#3B82F6" />
+    </LinearLayout>
+</LinearLayout>

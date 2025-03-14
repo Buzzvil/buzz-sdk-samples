@@ -1,4 +1,4 @@
-package com.buzzvil.sample.buzzvilsdksample
+package com.buzzvil.sample.buzzvil_sdk_v6_sample
 
 /**
  * 여기에 버즈빌 매니저로부터 발급받은 ID를 입력해주세요.
@@ -7,9 +7,8 @@ package com.buzzvil.sample.buzzvilsdksample
  */
 object Constant {
     const val YOUR_APP_ID = "YOUR_APP_ID"
-    const val YOUR_FEED_UNIT_ID = "YOUR_FEED_UNIT_ID"
-    const val YOUR_NATIVE_UNIT_ID = "YOUR_NATIVE_UNIT_ID"
-    const val YOUR_INTERSTITIAL_UNIT_ID = "YOUR_INTERSTITIAL_UNIT_ID"
+    const val YOUR_NATIVE_ID = "YOUR_NATIVE_ID"
+    const val YOUR_INTERSTITIAL_ID = "YOUR_INTERSTITIAL_ID"
     const val YOUR_POP_UNIT_ID = "YOUR_POP_UNIT_ID"
-    const val YOUR_MISSION_PACK_UNIT_ID = "YOUR_MISSION_PACK_UNIT_ID"
+    const val YOUR_BANNER_ID = "YOUR_BANNER_ID"
 }

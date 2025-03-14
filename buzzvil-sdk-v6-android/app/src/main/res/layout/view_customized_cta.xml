@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark">
+    <!-- CTA 버튼의 텍스트 -->
+    <TextView
+        android:id="@+id/textCta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- CTA 버튼의 아이콘 이미지 -->
+    <ImageView
+        android:id="@+id/imageReward"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/custom_reward_icon" />
+
+    <!-- CTA 버튼의 리워드 텍스트 -->
+    <TextView
+        android:id="@+id/textReward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
