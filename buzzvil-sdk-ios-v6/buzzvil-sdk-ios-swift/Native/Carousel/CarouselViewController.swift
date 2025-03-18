@@ -2,8 +2,7 @@ import BuzzvilSDK
 import UIKit
 
 class CarouselViewController: UIViewController {
-//  private let unitID = "YOUR_UNIT_ID"
-  private let unitID = "453995955032448"
+  private let unitID = "YOUR_UNIT_ID"
 
   // 최대 10개의 광고를 요청할 수 있습니다.
   private let adRequestCount = 5
@@ -32,7 +31,7 @@ class CarouselViewController: UIViewController {
     flowLayout.minimumInteritemSpacing = .zero
     
     // 앞뒤 광고 아이템을 부분적으로 노출하기
-//    // flowLayout의 minimumLineSpacing을 spacing 값으로 설정합니다.
+    // flowLayout의 minimumLineSpacing을 spacing 값으로 설정합니다.
 //    flowLayout.minimumLineSpacing = spacing
     return flowLayout
   }()
@@ -47,7 +46,7 @@ class CarouselViewController: UIViewController {
     collectionView.isPagingEnabled = true
     
     // 앞뒤 광고 광고 아이템을 부분적으로 노출하기
-//    // isPagingEnabled를 false로 설정합니다.
+    // isPagingEnabled를 false로 설정합니다.
 //    collectionView.isPagingEnabled = false
 //    // 아래 속성들을 설정합니다.
 //    collectionView.decelerationRate = .fast
@@ -148,22 +147,15 @@ extension CarouselViewController: UICollectionViewDataSource {
 //  
 //  // 무한루프 구현 시
 //  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//    if (indexPath.item % loadedAdCount) == loadedAdCount - 1 { // << 추가된 if 문
-//      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedPromotionCell", for: indexPath) as? FeedPromotionCell else {
-//        return UICollectionViewCell()
-//      }
-//      cell.bind()
-//      return cell
-//    } else {
-//      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as? CarouselCell else {
-//        return UICollectionViewCell()
-//      }
-//      
-//      // 할당된 고유 광고 개수로 모듈러 연산하여 index를 적용합니다.
-//      cell.setPool(with: pool, for: indexPath.item % loadedAdCount)
-//      cell.bind()
-//      return cell
+//    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselCell", for: indexPath) as? CarouselCell else {
+//      return UICollectionViewCell()
 //    }
+//    
+//    // 할당된 고유 광고 개수로 모듈러 연산하여 index를 적용합니다.
+//    let native = nativeGroup.natives[indexPath.item % loadedAdCount]
+//    cell.bind(with: native)
+//    
+//    return cell
 //  }
 //}
 

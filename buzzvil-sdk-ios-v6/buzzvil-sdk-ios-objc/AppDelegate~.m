@@ -32,7 +32,7 @@
 - (void)buzzBenefitLogin {
   // 로그인을 요청하는 코드입니다.
   BuzzBenefitUser *buzzBenefitUser = [BuzzBenefitUser userWithBlock:^(BuzzBenefitUserBuilder * _Nonnull builder) {
-    builder.userID = @"PUBLIC_SAMPLE_APP_USER_ID";
+    builder.userID = @"USER_ID";
     builder.gender = BuzzBenefitUserGenderMale;
     builder.birthYear = 1996;
     builder.marketingStatus = BuzzBenefitMarketingStatusUndetermined; // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션입니다. (BuzzBenefitMarketingStatusOptIn / BuzzBenefitMarketingStatusOptOut / BuzzBenefitMarketingStatusUndetermined)
@@ -52,5 +52,22 @@
   // 로그아웃하는 코드입니다.
   [[BuzzBenefit sharedInstance] logout];
 }
+
+#pragma mark - UISceneSession lifecycle
+
+
+- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
+  // Called when a new scene session is being created.
+  // Use this method to select a configuration to create the new scene with.
+  return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+}
+
+
+- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
+  // Called when the user discards a scene session.
+  // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+  // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+}
+
 
 @end
