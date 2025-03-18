@@ -41,7 +41,6 @@ class CarouselViewController: UIViewController {
   private lazy var carouselCollectionView: UICollectionView = {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
     collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: "CarouselCell")
-    collectionView.register(FeedPromotionCell.self, forCellWithReuseIdentifier: "FeedPromotionCell")
     collectionView.delegate = self
     collectionView.dataSource = self
     collectionView.showsHorizontalScrollIndicator = false

@@ -43,7 +43,7 @@ class BenefitHubViewController: UIViewController {
     return button
   }()
 
-  private lazy var benefitHub = BuzzAdBenefitHub()
+  private lazy var benefitHub = BuzzBenefitHub()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -93,7 +93,7 @@ class BenefitHubViewController: UIViewController {
   // 베네핏허브 표시하기
   @objc
   private func showBenefitHub() {
-    benefitHub = BuzzAdBenefitHub()
+    benefitHub = BuzzBenefitHub()
     
     benefitHub.show(on: self)
   }
@@ -101,9 +101,9 @@ class BenefitHubViewController: UIViewController {
   // 럭키박스 표시하기
   @objc
   private func showLuckyBox() {
-    benefitHub = BuzzAdBenefitHub()
-    benefitHub.setConfig(BenefitHubConfig { builder in
-      builder.routePath = BenefitHubRoutePath.luckyBox
+    benefitHub = BuzzBenefitHub()
+    benefitHub.setConfig(BuzzBenefitHubConfig { builder in
+      builder.routePath = BuzzBenefitHubRoutePath.luckyBox
     })
     
     benefitHub.show(on: self)
@@ -112,9 +112,9 @@ class BenefitHubViewController: UIViewController {
   // 미션팩 표시하기
   @objc
   private func showMissionPack() {
-    benefitHub = BuzzAdBenefitHub()
-    benefitHub.setConfig(BenefitHubConfig { builder in
-      builder.routePath = BenefitHubRoutePath.missionPack
+    benefitHub = BuzzBenefitHub()
+    benefitHub.setConfig(BuzzBenefitHubConfig { builder in
+      builder.routePath = BuzzBenefitHubRoutePath.missionPack
     })
     
     benefitHub.show(on: self)
@@ -123,9 +123,9 @@ class BenefitHubViewController: UIViewController {
   // 적립내역 표시하기
   @objc
   private func showHistory() {
-    benefitHub = BuzzAdBenefitHub()
-    benefitHub.setConfig(BenefitHubConfig { builder in
-      builder.routePath = BenefitHubRoutePath.history
+    benefitHub = BuzzBenefitHub()
+    benefitHub.setConfig(BuzzBenefitHubConfig { builder in
+      builder.routePath = BuzzBenefitHubRoutePath.history
     })
     
     benefitHub.show(on: self)

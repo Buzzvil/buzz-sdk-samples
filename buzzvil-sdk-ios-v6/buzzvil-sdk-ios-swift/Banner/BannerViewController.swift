@@ -2,8 +2,8 @@ import BuzzvilSDK
 import UIKit
 
 class BannerViewController: UIViewController {
-  private lazy var bannerView: BuzzAdBenefitBannerView = {
-    let bannerView = BuzzAdBenefitBannerView(frame: .zero)
+  private lazy var bannerView: BuzzBannerView = {
+    let bannerView = BuzzBannerView(frame: .zero)
     bannerView.delegate = self
     return bannerView
   }()
@@ -12,7 +12,7 @@ class BannerViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
     
-    let config = BuzzAdBenefitBannerConfig.Builder(placementID: "YOUR_PLACEMENT_ID")
+    let config = BuzzBannerConfig.Builder(placementID: "YOUR_PLACEMENT_ID")
       .setSize(.w320h50)
       .build()
     bannerView.setConfig(rootViewController: self, config: config)
@@ -35,20 +35,20 @@ class BannerViewController: UIViewController {
   }
 }
 
-extension BannerViewController: BuzzAdBenefitBannerViewDelegate {
-  func bannerView(_ bannerView: BuzzAdBenefitBannerView, didLoadApid: String) {
+extension BannerViewController: BuzzBannerViewDelegate {
+  func bannerView(_ bannerView: BuzzBannerView, didLoadApid: String) {
     // Banner에 광고가 할당 되었을 때 호출 됩니다.
   }
   
-  func bannerView(_ bannerView: BuzzAdBenefitBannerView, didFailApid: String, error: NSError) {
+  func bannerView(_ bannerView: BuzzBannerView, didFailApid: String, error: NSError) {
     // Banner에 광고 할당이 실패했을 때 호출 됩니다.
   }
   
-  func bannerView(_ bannerView: BuzzAdBenefitBannerView, didClickApid: String) {
+  func bannerView(_ bannerView: BuzzBannerView, didClickApid: String) {
     // Banner가 클릭되었을 때 호출 됩니다.
   }
   
-  func bannerView(_ bannerView: BuzzAdBenefitSDK.BuzzAdBenefitBannerView, didRemoveApid: String) {
+  func bannerView(_ bannerView: BuzzBannerView, didRemoveApid: String) {
     // Banner가 제거되었을 떄 호출 됩니다.
   }
 }
