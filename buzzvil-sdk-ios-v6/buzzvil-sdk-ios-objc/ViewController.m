@@ -7,6 +7,8 @@
 #import "BenefitHub/BenefitHubContainerViewController.h"
 #import "Banner/BannerViewController.h"
 
+@import BuzzvilSDK;
+
 @interface ViewController ()
 
 @property (nonatomic, strong, readonly) UIStackView *rootStackView;
@@ -16,6 +18,10 @@
 @property (nonatomic, strong, readonly) UIButton *benefitHubButton;
 @property (nonatomic, strong, readonly) UIButton *benefitHubContainerButton;
 @property (nonatomic, strong, readonly) UIButton *bannerButton;
+@property (nonatomic, strong, readonly) UIButton *inquiryButton;
+@property (nonatomic, strong, readonly) UILabel *privacyConsentStatusLabel;
+@property (nonatomic, strong, readonly) UIButton *loadPrivacyConsentStatusButton;
+@property (nonatomic, strong, readonly) UIButton *grantPrivacyConsentButton;
 
 @end
 
@@ -63,11 +69,30 @@
   [_bannerButton setTitle:@"Banner" forState:UIControlStateNormal];
   [_bannerButton applyCustomStyle];
   
+  _inquiryButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_inquiryButton setTitle:@"Inquiry" forState:UIControlStateNormal];
+  [_inquiryButton applyCustomStyle];
+  
+  _privacyConsentStatusLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  _privacyConsentStatusLabel.numberOfLines = 0;
+  
+  _loadPrivacyConsentStatusButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_loadPrivacyConsentStatusButton setTitle:@"Load PrivacyConsent Status" forState:UIControlStateNormal];
+  [_loadPrivacyConsentStatusButton applyCustomStyle];
+  
+  _grantPrivacyConsentButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_grantPrivacyConsentButton setTitle:@"Grant PrivacyConsent" forState:UIControlStateNormal];
+  [_grantPrivacyConsentButton applyCustomStyle];
+
   [_rootStackView addArrangedSubview: _nativeButton];
   [_rootStackView addArrangedSubview: _interstitialButton];
   [_rootStackView addArrangedSubview: _benefitHubButton];
   [_rootStackView addArrangedSubview: _benefitHubContainerButton];
   [_rootStackView addArrangedSubview: _bannerButton];
+  [_rootStackView addArrangedSubview: _inquiryButton];
+  [_rootStackView addArrangedSubview: _privacyConsentStatusLabel];
+  [_rootStackView addArrangedSubview: _loadPrivacyConsentStatusButton];
+  [_rootStackView addArrangedSubview: _grantPrivacyConsentButton];
 }
 
 - (void) setupLayout {
@@ -88,6 +113,9 @@
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_benefitHubContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBenefitHubContainerViewController:)]];
   [_bannerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBannerViewController:)]];
+  [_inquiryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showInquiryPage:)]];
+  [_loadPrivacyConsentStatusButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadPrivacyConsentStatus:)]];
+  [_grantPrivacyConsentButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(grantPribacyConsent:)]];
 }
 
 - (void)pushBenefitHubViewController:(id)sender {
@@ -118,6 +146,42 @@
 - (void)pushBannerViewController:(id)sender {
   BannerViewController *bannerViewController = [[BannerViewController alloc] init];
   [self.navigationController pushViewController:bannerViewController animated:YES];
+}
+
+- (void)showInquiryPage:(id)sender {
+  [BuzzAdBenefit presentInquiryPageOnViewController:self];
+}
+
+- (void)loadPrivacyConsentStatus:(id)sender {
+  __weak typeof(self) weakSelf = self;
+  
+  [BuzzAdBenefit.sharedInstance loadPrivacyConsentStatusOnSuccess:^(enum BuzzPrivacyConsentStatus status) {
+    __strong typeof(self) strongSelf = weakSelf;
+    switch (status) {
+      case BuzzPrivacyConsentStatusGranted:
+        strongSelf.privacyConsentStatusLabel.text = @"Granted";
+        break;
+      case BuzzPrivacyConsentStatusRevoked:
+        strongSelf.privacyConsentStatusLabel.text = @"Revoked";
+        break;
+    }
+  } onFailure:^(NSError * _Nonnull error) {
+    __strong typeof(self) strongSelf = weakSelf;
+    
+    strongSelf.privacyConsentStatusLabel.text = [NSString stringWithFormat:@"LoadPrivacyConsentStatus is failed Error: %@", error.localizedDescription];
+  }];
+}
+
+- (void)grantPribacyConsent:(id)sender {
+  __weak typeof(self) weakSelf = self;
+  
+  [BuzzAdBenefit.sharedInstance grantPrivacyConsentOnSuccess:^{
+    __strong typeof(self) strongSelf = weakSelf;
+    strongSelf.privacyConsentStatusLabel.text = @"Granted";
+  } onFailure:^(NSError * _Nonnull error) {
+    __strong typeof(self) strongSelf = weakSelf;
+    strongSelf.privacyConsentStatusLabel.text = [NSString stringWithFormat:@"GrantPrivacyPolicy is failed Error: %@", error.localizedDescription];
+  }];
 }
 
 @end

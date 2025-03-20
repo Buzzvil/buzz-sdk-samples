@@ -2,77 +2,87 @@ import UIKit
 import BuzzvilSDK
 
 class ViewController: UIViewController {
-  private static let navigationItemTitle = "BuzzvilSDK"
-  private static let nativeButtonTitle = "Native"
-  private static let interstitialButtonTitle = "Interstitial"
-  private static let buzzAdBenefitHubButtonTitle = "BenefitHub"
-  private static let buzzAdBenefitHubConatinerButtonTitle = "BenefitHub Container"
-  private static let buzzAdBannerButtonTitle = "Banner"
-  private static let buzzAdMissionPackButtonTitle = "MissionPack"
-  private static let carouselButtonTitle = "Carousel"
-  private static let inquiryButtonTitle = "Inquiry"
-  private static let buttonAspectRatio: CGFloat = 1.5
-  private static let buttonMargin: CGFloat = 12
-  private static let buttonCornerRadius: CGFloat = 8
-  private static let buttonFontSize: CGFloat = 16
-  
   private lazy var rootStackView: UIStackView = {
     let stackView = UIStackView(frame: .zero)
     stackView.axis = .vertical
-    stackView.spacing = Self.buttonMargin
+    stackView.spacing = 12
     stackView.distribution = .fillEqually
     return stackView
   }()
   
   private lazy var nativeButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.nativeButtonTitle, for: .normal)
+    button.setTitle("Native", for: .normal)
     button.addTarget(self, action: #selector(pushNativeAdViewController), for: .touchUpInside)
     return button
   }()
   
   private lazy var interstitialButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.interstitialButtonTitle, for: .normal)
+    button.setTitle("Interstitial", for: .normal)
     button.addTarget(self, action: #selector(pushInterstitialViewController), for: .touchUpInside)
     return button
   }()
   
   private lazy var carouselButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.carouselButtonTitle, for: .normal)
+    button.setTitle("Carousel", for: .normal)
     button.addTarget(self, action: #selector(pushCarouselViewController), for: .touchUpInside)
     return button
   }()
   
   private lazy var benefitHubButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.buzzAdBenefitHubButtonTitle, for: .normal)
+    button.setTitle("BenefitHub", for: .normal)
     button.addTarget(self, action: #selector(pushFeedViewController), for: .touchUpInside)
     return button
   }()
   
   private lazy var benefitHubContainerButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.buzzAdBenefitHubConatinerButtonTitle, for: .normal)
+    button.setTitle("BenefitHub Container", for: .normal)
     button.addTarget(self, action: #selector(pushFeedContainerViewController), for: .touchUpInside)
     return button
   }()
   
   private lazy var bannerButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.buzzAdBannerButtonTitle, for: .normal)
+    button.setTitle("Banner", for: .normal)
     button.addTarget(self, action: #selector(pushBannerViewController), for: .touchUpInside)
     return button
   }()
   
   private lazy var inquiryButton: UIButton = {
     let button = UIButton(frame: .zero)
-    button.setTitle(Self.inquiryButtonTitle, for: .normal)
+    button.setTitle("Inquiry", for: .normal)
     button.addTarget(self, action: #selector(showInquiry), for: .touchUpInside)
     return button
   }()
   
+  private lazy var privacyConsentStatusLabel: UILabel = {
+    let label = UILabel(frame: .zero)
+    label.text = "Before Load Status"
+    label.numberOfLines = 0
+    
+    return label
+  }()
+  
+  private lazy var loadPrivacyConsentStatusButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle("Load PrivacyConsent Status", for: .normal)
+    button.addTarget(self, action: #selector(loadPrivacyConsentStatus), for: .touchUpInside)
+    
+    return button
+  }()
+  
+  private lazy var grantPrivacyConsentButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle("Grant PrivacyConsent", for: .normal)
+    button.addTarget(self, action: #selector(grantPrviacyConsent), for: .touchUpInside)
+    
+    return button
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -83,7 +93,7 @@ class ViewController: UIViewController {
   private func setupView() {
     view.backgroundColor = .systemBackground
 
-    navigationItem.title = Self.navigationItemTitle
+    navigationItem.title = "BuzzvilSDK"
     
     rootStackView.addArrangedSubview(nativeButton)
     rootStackView.addArrangedSubview(interstitialButton)
@@ -91,7 +101,11 @@ class ViewController: UIViewController {
     rootStackView.addArrangedSubview(benefitHubButton)
     rootStackView.addArrangedSubview(benefitHubContainerButton)
     rootStackView.addArrangedSubview(bannerButton)
-    
+    rootStackView.addArrangedSubview(inquiryButton)
+    rootStackView.addArrangedSubview(privacyConsentStatusLabel)
+    rootStackView.addArrangedSubview(loadPrivacyConsentStatusButton)
+    rootStackView.addArrangedSubview(grantPrivacyConsentButton)
+
     view.addSubview(rootStackView)
     
     let buttonsToSetupAppearance = [
@@ -101,6 +115,9 @@ class ViewController: UIViewController {
       benefitHubButton,
       benefitHubContainerButton,
       bannerButton,
+      inquiryButton,
+      loadPrivacyConsentStatusButton,
+      grantPrivacyConsentButton,
     ]
     
     buttonsToSetupAppearance.forEach { button in
@@ -113,16 +130,16 @@ class ViewController: UIViewController {
     NSLayoutConstraint.activate([
       rootStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       rootStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-      rootStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-      rootStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+      rootStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+      rootStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
     ])
   }
   
   private func setupAppearanceOfButton(button: UIButton) {
     button.backgroundColor = .systemBlue
-    button.layer.cornerRadius = Self.buttonCornerRadius
+    button.layer.cornerRadius = 8
     button.setTitleColor(.white, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: Self.buttonFontSize)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
     button.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       button.heightAnchor.constraint(equalToConstant: 32)
@@ -161,5 +178,32 @@ class ViewController: UIViewController {
   
   @objc private func showInquiry() {
     BuzzAdBenefit.presentInquiryPage(on: self, unitId: "YOUR_UNIT_ID")
+  }
+  
+  @objc private func loadPrivacyConsentStatus() {
+    BuzzAdBenefit.shared.loadPrivacyConsentStatus { [weak self] status in
+      guard let self = self else { return }
+      switch status {
+      case .granted:
+        self.privacyConsentStatusLabel.text = "Granted"
+      case .revoked:
+        self.privacyConsentStatusLabel.text = "Revoked"
+      }
+    } onFailure: { [weak self] error in
+      guard let self = self else { return }
+      
+      self.privacyConsentStatusLabel.text = "LoadPrivacyConsentStatus is failed Error: \(error)"
+    }
+  }
+  
+  @objc private func grantPrviacyConsent() {
+    BuzzAdBenefit.shared.grantPrivacyConsent { [weak self] in
+      guard let self = self else { return }
+      self.privacyConsentStatusLabel.text = "Granted"
+    } onFailure: { [weak self] error in
+      guard let self = self else { return }
+      
+      self.privacyConsentStatusLabel.text = "GrantPrivacyConsentStatus is failed Error: \(error)"
+    }
   }
 }
