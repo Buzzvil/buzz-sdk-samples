@@ -52,6 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 로그아웃하는 코드입니다.
     BuzzBenefit.shared.logout()
   }
+  
+  private func setTheme() {
+    let theme = BuzzTheme.Builder()
+      .ctaViewClass(CustomCtaView.self)
+      .build()
+    BuzzAdBenefit.shared.setTheme(theme)
+  }
 
   // MARK: UISceneSession Lifecycle
 

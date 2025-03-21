@@ -9,14 +9,14 @@ target 'buzzvil-sdk-ios-swift' do
   use_frameworks!
   
   # Pods for buzzvil-sdk-ios
-  pod 'BuzzvilSDK', '= 6.0.0-rc.3-prodmini'
+  pod 'BuzzvilSDK', '= 6.0.0-rc.4-prodmini'
 end
 
 target 'buzzvil-sdk-ios-objc' do
   use_frameworks!
   
   # Pods for buzzvil-sdk-ios-objc
-  pod 'BuzzvilSDK', '= 6.0.0-rc.3-prodmini'
+  pod 'BuzzvilSDK', '= 6.0.0-rc.4-prodmini'
 end
 
 post_install do |installer|

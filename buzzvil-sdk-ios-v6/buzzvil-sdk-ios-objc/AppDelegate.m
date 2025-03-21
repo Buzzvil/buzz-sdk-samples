@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Custom/CustomCtaView.h"
 @import BuzzvilSDK;
 
 @interface AppDelegate ()
@@ -51,6 +52,13 @@
 - (void)buzzBenefitLogout {
   // 로그아웃하는 코드입니다.
   [[BuzzBenefit sharedInstance] logout];
+}
+
+- (void)setBuzzTheme {
+  BuzzTheme * buzzTheme = [BuzzTheme themeWithBlock:^(BuzzThemeBuilder * _Nonnull builder) {
+    builder.ctaViewClass = CustomCtaView.self;
+  }];
+  [BuzzAdBenefit.sharedInstance setTheme:buzzTheme];
 }
 
 @end
