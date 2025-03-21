@@ -11,6 +11,13 @@ class NativeViewController: UIViewController {
   private let descriptionLabel = UILabel(frame: .zero)
   private let ctaView = BuzzDefaultCtaView(frame: .zero)
   
+  private lazy var benefitHubEntryView: UILabel = {
+    let label = UILabel(frame: .zero)
+    label.text = "포인트 더 받으러 가기 >"
+    
+    return label
+  }()
+  
   private lazy var viewBinder = BuzzNativeViewBinder.Builder()
     .nativeAdView(nativeAdView)
     .mediaView(mediaView)
@@ -33,6 +40,8 @@ class NativeViewController: UIViewController {
   private func setupView() {
     // 광고 레이아웃 구성하기
     view.backgroundColor = .systemBackground
+    self.view.addSubview(benefitHubEntryView)
+    benefitHubEntryView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showBenefitHub)))
     self.view.addSubview(nativeAdView)
     nativeAdView.addSubview(mediaView)
     nativeAdView.addSubview(iconImageView)
@@ -43,11 +52,17 @@ class NativeViewController: UIViewController {
   
   private func setupLayout() {
     // AutoLayout Constraints 설정
+    benefitHubEntryView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      benefitHubEntryView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+      benefitHubEntryView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+    ])
+    
     nativeAdView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       nativeAdView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
       nativeAdView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-      nativeAdView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
+      nativeAdView.topAnchor.constraint(equalTo: benefitHubEntryView.bottomAnchor, constant: 8)
     ])
     
     mediaView.translatesAutoresizingMaskIntoConstraints = false
@@ -132,5 +147,12 @@ class NativeViewController: UIViewController {
     
     // 할당된 광고 표시를 자동으로 수행합니다.
     viewBinder.bind(native)
+  }
+  
+  @objc
+  private func showBenefitHub() {
+    let benefitHub = BuzzBenefitHub()
+    
+    benefitHub.show(on: self)
   }
 }

@@ -13,6 +13,8 @@
 @property (nonatomic, strong) BuzzNativeViewBinder *viewBinder;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 
+@property (nonatomic, strong) UILabel *benefitHubEntryView;
+
 @end
 
 @implementation NativeViewController
@@ -27,6 +29,9 @@
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _descriptionLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _ctaView = [[BuzzDefaultCtaView alloc] initWithFrame:CGRectZero];
+    _benefitHubEntryView = [[UILabel alloc] initWithFrame:CGRectZero];
+    _benefitHubEntryView.text = @"포인트 더 받으러 가기 >";
+    [_benefitHubEntryView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBenefitHub:)]];
     
     _viewBinder = [BuzzNativeViewBinder viewBinderWithBlock:^(BuzzNativeViewBinderBuilder * _Nonnull builder) {
       builder.nativeAdView = _nativeAdView;
@@ -52,6 +57,7 @@
 
 - (void)setupView {
   self.view.backgroundColor = [UIColor systemBackgroundColor];
+  [self.view addSubview:self.benefitHubEntryView];
   [self.view addSubview:self.nativeAdView];
   [self.nativeAdView addSubview:self.mediaView];
   [self.nativeAdView addSubview:self.iconImageView];
@@ -61,11 +67,17 @@
 }
 
 - (void)setupLayout {
+  self.benefitHubEntryView.translatesAutoresizingMaskIntoConstraints = NO;
+  [NSLayoutConstraint activateConstraints:@[
+    [self.benefitHubEntryView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:8],
+    [self.benefitHubEntryView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-16]
+  ]];
+  
   self.nativeAdView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
     [self.nativeAdView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor constant:16],
     [self.nativeAdView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor constant:-16],
-    [self.nativeAdView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:8]
+    [self.nativeAdView.topAnchor constraintEqualToAnchor:self.benefitHubEntryView.bottomAnchor constant:8]
   ]];
   
   self.mediaView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -136,6 +148,11 @@
   }];
   
   [self.viewBinder bind:self.native];
+}
+
+- (void)showBenefitHub:(id)sender {
+  BuzzBenefitHub * benefitHub = [[BuzzBenefitHub alloc] init];
+  [benefitHub showOn:self];
 }
 
 @end
