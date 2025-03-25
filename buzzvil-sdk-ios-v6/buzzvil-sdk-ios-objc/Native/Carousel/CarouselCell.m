@@ -48,7 +48,7 @@
   [self.nativeAdView addSubview:_ctaView];
   
   // NativeAdView와 하위 컴포넌트를 연결합니다.
-  _viewBinder = [BuzzNativeViewBinder viewBinderWithBlock:^(BuzzNativeViewBinderBuilder * _Nonnull builder) {
+  _viewBinder = [BuzzNativeViewBinder viewBinderWith:^(BuzzNativeViewBinderBuilder * _Nonnull builder) {
     builder.nativeAdView = self.nativeAdView;
     builder.mediaView = self.mediaView;
     builder.iconImageView = self.iconImageView;

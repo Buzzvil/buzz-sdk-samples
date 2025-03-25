@@ -149,7 +149,7 @@
 }
 
 - (void)showInquiryPage:(id)sender {
-  [BuzzAdBenefit presentInquiryPageOnViewController:self];
+  [[BuzzAdBenefit sharedInstance] openInquiryPageWithUnitId:@"YOUR_UNIT_ID"];
 }
 
 - (void)loadPrivacyConsentStatus:(id)sender {

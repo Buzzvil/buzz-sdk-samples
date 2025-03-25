@@ -13,7 +13,7 @@
   [super viewDidLoad];
   
   _benefitHub = [[BuzzBenefitHub alloc] init];
-  [self displayContentViewController:[_benefitHub getViewController]];
+  [self displayContentViewController:[_benefitHub createViewController]];
 }
 
 - (void)displayContentViewController:(UIViewController*)contentViewController {

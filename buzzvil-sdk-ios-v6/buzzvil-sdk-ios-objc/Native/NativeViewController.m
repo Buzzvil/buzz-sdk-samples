@@ -33,7 +33,7 @@
     _benefitHubEntryView.text = @"포인트 더 받으러 가기 >";
     [_benefitHubEntryView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBenefitHub:)]];
     
-    _viewBinder = [BuzzNativeViewBinder viewBinderWithBlock:^(BuzzNativeViewBinderBuilder * _Nonnull builder) {
+    _viewBinder = [BuzzNativeViewBinder viewBinderWith:^(BuzzNativeViewBinderBuilder * _Nonnull builder) {
       builder.nativeAdView = _nativeAdView;
       builder.mediaView = _mediaView;
       builder.iconImageView = _iconImageView;

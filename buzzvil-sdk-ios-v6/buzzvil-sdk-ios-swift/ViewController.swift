@@ -34,14 +34,14 @@ class ViewController: UIViewController {
   private lazy var benefitHubButton: UIButton = {
     let button = UIButton(frame: .zero)
     button.setTitle("BenefitHub", for: .normal)
-    button.addTarget(self, action: #selector(pushFeedViewController), for: .touchUpInside)
+    button.addTarget(self, action: #selector(pushBenefitHubViewController), for: .touchUpInside)
     return button
   }()
   
   private lazy var benefitHubContainerButton: UIButton = {
     let button = UIButton(frame: .zero)
     button.setTitle("BenefitHub Container", for: .normal)
-    button.addTarget(self, action: #selector(pushFeedContainerViewController), for: .touchUpInside)
+    button.addTarget(self, action: #selector(pushBenefitHubContainerViewController), for: .touchUpInside)
     return button
   }()
   
@@ -161,14 +161,14 @@ class ViewController: UIViewController {
     navigationController?.pushViewController(interstitialViewController, animated: true)
   }
   
-  @objc private func pushFeedViewController() {
-    let feedViewController = BenefitHubViewController()
-    navigationController?.pushViewController(feedViewController, animated: true)
+  @objc private func pushBenefitHubViewController() {
+    let benefitHubViewController = BenefitHubViewController()
+    navigationController?.pushViewController(benefitHubViewController, animated: true)
   }
   
-  @objc private func pushFeedContainerViewController() {
-    let feedContainerViewController = BenefitHubContainerViewController()
-    navigationController?.pushViewController(feedContainerViewController, animated: true)
+  @objc private func pushBenefitHubContainerViewController() {
+    let benefitHubContainerViewController = BenefitHubContainerViewController()
+    navigationController?.pushViewController(benefitHubContainerViewController, animated: true)
   }
   
   @objc private func pushBannerViewController() {
@@ -177,7 +177,7 @@ class ViewController: UIViewController {
   }
   
   @objc private func showInquiry() {
-    BuzzAdBenefit.presentInquiryPage(on: self, unitId: "YOUR_UNIT_ID")
+    BuzzAdBenefit.shared.openInquiryPage(unitId: "YOUR_UNIT_ID")
   }
   
   @objc private func loadPrivacyConsentStatus() {

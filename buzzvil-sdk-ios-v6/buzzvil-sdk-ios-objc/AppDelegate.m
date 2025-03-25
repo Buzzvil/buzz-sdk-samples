@@ -13,11 +13,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Buzzvil SDK 초기화하기
-  BuzzBenefitConfig *config = [BuzzBenefitConfig configWithBlock:^(BuzzBenefitConfigBuilder * _Nonnull builder) {
-    builder.appID = @"YOUR_APP_ID";
+  BuzzBenefitConfig *config = [BuzzBenefitConfig configWith:^(BuzzBenefitConfigBuilder * _Nonnull builder) {
+    builder.appId = @"YOUR_APP_ID";
   }];
   
-  [[BuzzBenefit sharedInstance] initializeWithConfig:config onCompleted:^{ }];
+  [[BuzzBenefit sharedInstance] initializeWith:config onCompleted:^{ }];
   
   [self buzzBenefitLogin];
   
@@ -32,14 +32,14 @@
 // 로그인 요청하기
 - (void)buzzBenefitLogin {
   // 로그인을 요청하는 코드입니다.
-  BuzzBenefitUser *buzzBenefitUser = [BuzzBenefitUser userWithBlock:^(BuzzBenefitUserBuilder * _Nonnull builder) {
-    builder.userID = @"PUBLIC_SAMPLE_APP_USER_ID";
+  BuzzBenefitUser *buzzBenefitUser = [BuzzBenefitUser userWith:^(BuzzBenefitUserBuilder * _Nonnull builder) {
+    builder.userId = @"PUBLIC_SAMPLE_APP_USER_ID";
     builder.gender = BuzzBenefitUserGenderMale;
     builder.birthYear = 1996;
     builder.marketingStatus = BuzzBenefitMarketingStatusUndetermined; // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션입니다. (BuzzBenefitMarketingStatusOptIn / BuzzBenefitMarketingStatusOptOut / BuzzBenefitMarketingStatusUndetermined)
   }];
   
-  [[BuzzBenefit sharedInstance] loginWithUser:buzzBenefitUser onSuccess:^{
+  [[BuzzBenefit sharedInstance] loginWith:buzzBenefitUser onSuccess:^{
     // 로그인이 성공한 경우 호출됩니다.
   } onFailure:^(NSError * _Nonnull error) {
     // 로그인이 실패한 경우 호출됩니다.
@@ -55,7 +55,7 @@
 }
 
 - (void)setBuzzTheme {
-  BuzzTheme * buzzTheme = [BuzzTheme themeWithBlock:^(BuzzThemeBuilder * _Nonnull builder) {
+  BuzzTheme * buzzTheme = [BuzzTheme themeWith:^(BuzzThemeBuilder * _Nonnull builder) {
     builder.ctaViewClass = CustomCtaView.self;
   }];
   [BuzzAdBenefit.sharedInstance setTheme:buzzTheme];

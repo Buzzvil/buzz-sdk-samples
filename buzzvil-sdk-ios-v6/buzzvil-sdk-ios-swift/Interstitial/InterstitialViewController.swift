@@ -5,7 +5,6 @@ class InterstitialViewController: UIViewController {
   private lazy var buzzAdInterstitial = BuzzInterstitial { builder in
     builder.unitId = "YOUR_INTERSTITIAL_UNIT_ID"
     builder.type = .dialog
-    builder.benefitHubNavigateButtonHidden = false
   }
   
   override func viewDidLoad() {

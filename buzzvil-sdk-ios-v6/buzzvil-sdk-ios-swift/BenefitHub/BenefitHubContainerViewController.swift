@@ -9,7 +9,7 @@ class BenefitHubContainerViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
 
-    displayContentViewController(benefitHub.getViewController())
+    displayContentViewController(benefitHub.createViewController())
   }
   
   private func displayContentViewController(_ contentViewController: UIViewController) {

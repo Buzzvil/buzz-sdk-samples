@@ -40,7 +40,7 @@ extension BannerViewController: BuzzBannerViewDelegate {
     // Banner에 광고가 할당 되었을 때 호출 됩니다.
   }
   
-  func bannerView(_ bannerView: BuzzBannerView, didFailApid: String, error: NSError) {
+  func bannerView(_ bannerView: BuzzBannerView, didFailApid: String, error: Error) {
     // Banner에 광고 할당이 실패했을 때 호출 됩니다.
   }
   

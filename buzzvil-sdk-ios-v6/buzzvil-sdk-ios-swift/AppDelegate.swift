@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     // Buzzvil SDK 초기화하기
-    let config = BuzzBenefitConfig.Builder(appID: "YOUR_APP_ID")
+    let config = BuzzBenefitConfig.Builder(appId: "YOUR_APP_ID")
       .build()
     
     BuzzBenefit.shared.initialize(with: config)
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // 로그인 요청하기
   private func buzzBenefitLogin() {
     // 로그인을 요청하는 코드입니다.
-    let buzzBenefitUser = BuzzBenefitUser.Builder(userID: "public_sample_app")
+    let buzzBenefitUser = BuzzBenefitUser.Builder(userId: "public_sample_app")
       .setGender(.male)
       .setBirthYear(1996)
       .setMarketingStatus(.undetermined) // (optional) BuzzBooster 이벤트 사용 시 필요한 옵션 입니다. (.optIn / .optOut / .undetermined)
