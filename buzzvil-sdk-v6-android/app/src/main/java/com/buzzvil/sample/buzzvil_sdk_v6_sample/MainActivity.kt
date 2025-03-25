@@ -6,13 +6,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.buzzbenefit.BuzzAdError
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHub
-import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubPage
-import com.buzzvil.buzzbenefit.inapppop.BuzzInAppPop
-import com.buzzvil.buzzbenefit.inapppop.BuzzInAppPopTheme
+import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubConfig
+import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubRoutePath
 import com.buzzvil.buzzbenefit.interstitial.BuzzInterstitial
 import com.buzzvil.buzzbenefit.interstitial.BuzzInterstitialListener
 import com.buzzvil.buzzbenefit.pop.BuzzPop
 import com.buzzvil.buzzbenefit.pop.BuzzPopActivateListener
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_USER_ID
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.banner.YourBannerActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzbenefithub.YourBenefitHubActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeCarouselActivity
@@ -24,18 +24,12 @@ import com.buzzvil.sdk.BuzzvilSdkLoginListener
 import com.buzzvil.sdk.BuzzvilSdkUser
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var buzzInAppPop: BuzzInAppPop
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val buzzInAppPopTheme = BuzzInAppPopTheme.getDefault()
-            // .iconResId(R.drawable.your_pop_icon)
-            // .rewardReadyIconResId(R.drawable.your_pop_icon_reward_ready)
-        buzzInAppPop = BuzzInAppPop.Builder(this, Constant.YOUR_POP_UNIT_ID).theme(buzzInAppPopTheme).build()
 
         binding.sdkVersionTextView.text = "SDK Version: ${BuzzvilSdk.versionName}"
 
@@ -61,15 +55,27 @@ class MainActivity : AppCompatActivity() {
 
         // SIS
         binding.showLuckyBoxSis.setOnClickListener {
-            BuzzBenefitHub.show(this, BuzzBenefitHubPage.LUCKY_BOX)
+            val benefitHubConfig = BuzzBenefitHubConfig.Builder()
+                .routePath(BuzzBenefitHubRoutePath.LUCKY_BOX)
+                .build()
+
+            BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)
         }
 
         binding.showMissionPackSisButton.setOnClickListener {
-            BuzzBenefitHub.show(this, BuzzBenefitHubPage.MISSION_PACK)
+            val benefitHubConfig = BuzzBenefitHubConfig.Builder()
+                .routePath(BuzzBenefitHubRoutePath.MISSION_PACK)
+                .build()
+
+            BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)
         }
 
         binding.showHistorySisButton.setOnClickListener {
-            BuzzBenefitHub.show(this, BuzzBenefitHubPage.HISTORY)
+            val benefitHubConfig = BuzzBenefitHubConfig.Builder()
+                .routePath(BuzzBenefitHubRoutePath.HISTORY)
+                .build()
+
+            BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)
         }
 
         // Native
@@ -195,14 +201,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.activateInAppPopButton.setOnClickListener {
-            buzzInAppPop.show(this)
-        }
-
-        binding.deactivateInAppPopButton.setOnClickListener {
-            buzzInAppPop.hide()
-        }
-
         // Banner
         binding.buzzBannerButton.setOnClickListener {
             navigateActivity(YourBannerActivity::class.java)
@@ -223,7 +221,7 @@ class MainActivity : AppCompatActivity() {
     private fun login() {
         // 유저 정보를 등록합니다.
         val buzzvilSdkUser = BuzzvilSdkUser(
-            userId = "SAMPLE_USER_ID_PATRICK",
+            userId = YOUR_USER_ID,
             gender = BuzzvilSdkUser.Gender.MALE,
             birthYear = 1980,
         )

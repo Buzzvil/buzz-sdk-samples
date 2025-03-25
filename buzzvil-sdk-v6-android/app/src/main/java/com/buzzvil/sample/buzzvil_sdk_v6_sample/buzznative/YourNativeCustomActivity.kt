@@ -9,8 +9,8 @@ import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHub
 import com.buzzvil.buzzbenefit.buzznative.BuzzNative
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAd
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdEventsListener
+import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeRefreshEventsListener
-import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzRewardResult
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeCustomBinding
@@ -37,8 +37,8 @@ class YourNativeCustomActivity : AppCompatActivity() {
         val buzzCtaView = binding.simpleNativeAdLayout.buzzCtaView
 
         // 광고 레이아웃을 설정합니다.
-        val binder: BuzzNativeViewBinder = BuzzNativeViewBinder.Builder()
-            .buzzNativeView(buzzNativeAdView)
+        val binder: BuzzNativeAdViewBinder = BuzzNativeAdViewBinder.Builder()
+            .buzzNativeAdView(buzzNativeAdView)
             .buzzMediaView(buzzMediaView)
             .titleTextView(titleTextView)
             .descriptionTextView(descriptionTextView)
@@ -62,6 +62,12 @@ class YourNativeCustomActivity : AppCompatActivity() {
                     // 광고 할당에 성공하면 호출됩니다.
                     // 이후에 광고 갱신 시 onRequest()가 다시 호출됩니다.
                     // 광고 자동 갱신을 성공할 때마다 반복적으로 호출됩니다.
+                    val revenueType = nativeAd.revenueType
+
+                    if (revenueType == "cpa") {
+                        // 액션형 광고일 때 동작
+                    }
+
                     Toast.makeText(this, "onSuccess : 광고 할당 성공 ${nativeAd.title}", Toast.LENGTH_SHORT).show()
                 },
                 onFailure = { adError ->

@@ -9,7 +9,6 @@ import com.buzzvil.buzzbenefit.buzznative.BuzzNative
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeGroup
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.carousel.BuzzNativeCarouselAdapter
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.carousel.BuzzNativeCarouselItem
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.carousel.PaddingDividerDecoration
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeCarouselBinding
 
@@ -53,7 +52,7 @@ class YourNativeCarouselActivity : AppCompatActivity() {
                 REQUEST_AD_COUNT,
                 onSuccess = { adCount ->
                     // 어댑터를 초기화 합니다.
-                    initCarouselAdapter(it.natives, adCount, nativeUnitId)
+                    initCarouselAdapter(it.natives, adCount)
 
                     binding.carouselRecyclerView.visibility = View.VISIBLE
                     binding.carouselToFeedLink.visibility = View.VISIBLE
@@ -67,14 +66,12 @@ class YourNativeCarouselActivity : AppCompatActivity() {
         }
     }
 
-    private fun initCarouselAdapter(natives: List<BuzzNative>, adCount: Int, nativeUnitId: String) {
+    private fun initCarouselAdapter(natives: List<BuzzNative>, adCount: Int) {
         // 무한 스크롤을 적용합니다.
         val isInfiniteLoopEnabled = true
 
-        // 할당 받은 광고 갯수(adCount) 크기의 아이템 리스트를 만들어 BuzzNativeCarouselAdapter 생성합니다.
-        val list = buildCarouselItems(natives, adCount)
-
-        val adapter = BuzzNativeCarouselAdapter(nativeUnitId, list, isInfiniteLoopEnabled)
+        // 할당 받은 광고 리스트로 BuzzNativeCarouselAdapter를 생성합니다.
+        val adapter = BuzzNativeCarouselAdapter(natives, isInfiniteLoopEnabled)
 
         // RecyclerView에 어댑터를 설정합니다.
         binding.carouselRecyclerView.adapter = adapter
@@ -83,25 +80,6 @@ class YourNativeCarouselActivity : AppCompatActivity() {
             // 적당히 큰 수의 position으로 이동하여 무한 스크롤 효과를 구현합니다.
             binding.carouselRecyclerView.layoutManager?.scrollToPosition(adCount * 10000)
         }
-    }
-
-    private fun buildCarouselItems(
-        natives: List<BuzzNative>,
-        adCount: Int
-    ): List<BuzzNativeCarouselItem> {
-        // 마지막 페이지에 CarouselToFeedSlideItem을 추가하기 위해 1개 더 큰 사이즈로 배열을 생성합니다.
-        val carouselItems = arrayOfNulls<BuzzNativeCarouselItem>(adCount + 1)
-
-        // 배열을 BuzzNativeItem으로 채웁니다.
-        natives.forEachIndexed { index, native ->
-            carouselItems[index] = BuzzNativeCarouselItem.BuzzNativeItem(native)
-        }
-
-        // 마지막 아이템은 CarouselToFeedSlideItem으로 설정합니다.
-        val buzzBenefitHubPromotionItem = BuzzNativeCarouselItem.BuzzBenefitHubPromotionItem
-        carouselItems[adCount] = buzzBenefitHubPromotionItem
-
-        return carouselItems.toList().filterNotNull()
     }
 
     override fun onDestroy() {

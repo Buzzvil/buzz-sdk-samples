@@ -3,6 +3,8 @@ package com.buzzvil.sample.buzzvil_sdk_v6_sample
 import android.app.Application
 import android.widget.Toast
 import com.buzzvil.buzzbenefit.BuzzBenefitConfig
+import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubConfig
+import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubRoutePath
 import com.buzzvil.buzzbenefit.pop.BuzzPopConfig
 import com.buzzvil.buzzbenefit.pop.BuzzPopNotificationConfig
 import com.buzzvil.buzzbenefit.pop.BuzzPopSidePosition
@@ -23,18 +25,23 @@ class App : Application() {
         // BuzzBenefit 설정
         val buzzBenefitConfig = BuzzBenefitConfig.Builder(YOUR_APP_ID)
 
+        // 팝 베네핏허브의 첫 페이지 설정
+        val popBuzzBenefitHubConfig = BuzzBenefitHubConfig.Builder()
+            .routePath(BuzzBenefitHubRoutePath.MISSION_PACK)
+            .build()
+
         val buzzPopNotificationConfig = BuzzPopNotificationConfig.Builder(this@App)
+            // .notificationId(5000) // 기본값
             .notificationId(YourBuzzPopControlService.POP_NOTIFICATION_ID)
             .smallIconResId(R.drawable.your_small_icon)
             .titleResId(R.string.your_pop_notification_title)
             .textResId(R.string.your_pop_notification_text)
             .colorResId(R.color.your_pop_notification_color)
-            .notificationId(5000) // 기본값
-            .notificationId(1021)
             .build()
 
         val buzzPopConfigBuilder = BuzzPopConfig
             .Builder(YOUR_POP_UNIT_ID)
+//            .buzzPopBenefitHubConfig(popBuzzBenefitHubConfig)
 //            .idleTimeInMillis(5000L) // Pop 표시 시간
 //            .initialSidePosition(BuzzPopSidePosition.RIGHT, 0.6f) // Pop 표시 위치
 //            .marginBetweenIconAndPreviewInDp(8.0f) // 팝 버튼과 메시지 사이 간격

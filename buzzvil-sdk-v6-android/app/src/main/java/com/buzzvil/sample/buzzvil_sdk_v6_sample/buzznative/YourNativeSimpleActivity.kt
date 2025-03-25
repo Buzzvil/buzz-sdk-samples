@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHub
 import com.buzzvil.buzzbenefit.buzznative.BuzzNative
-import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
+import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdViewBinder
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeSimpleBinding
 
@@ -32,8 +32,8 @@ class YourNativeSimpleActivity : AppCompatActivity() {
         val buzzCtaView = binding.simpleNativeAdLayout.buzzCtaView
 
         // 광고 레이아웃을 설정합니다.
-        val binder: BuzzNativeViewBinder = BuzzNativeViewBinder.Builder()
-            .buzzNativeView(buzzNativeAdView)
+        val binder: BuzzNativeAdViewBinder = BuzzNativeAdViewBinder.Builder()
+            .buzzNativeAdView(buzzNativeAdView)
             .buzzMediaView(buzzMediaView)
             .titleTextView(titleTextView)
             .descriptionTextView(descriptionTextView)
@@ -53,6 +53,7 @@ class YourNativeSimpleActivity : AppCompatActivity() {
                     // 이후에 광고 갱신 시 onRequest()가 다시 호출됩니다.
                     // 광고 자동 갱신을 성공할 때마다 반복적으로 호출됩니다.
                     Toast.makeText(this, "onSuccess : 광고 할당 성공 ${nativeAd.title}", Toast.LENGTH_SHORT).show()
+                    binding.simpleNativeAdLayout.layout.visibility = View.VISIBLE
                 },
                 onFailure = { adError ->
                     // 최초 광고 할당에 실패하면 호출됩니다.

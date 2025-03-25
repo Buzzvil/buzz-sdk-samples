@@ -188,38 +188,13 @@
                     android:layout_marginHorizontal="2dp"
                     android:layout_weight="1"
                     android:text="Deactivate Pop" />
-
-                <Button
-                    android:id="@+id/togglePopButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="2dp"
-                    android:layout_weight="1"
-                    android:text="Toggle Pop" />
             </LinearLayout>
-
-            <LinearLayout
+            <Button
+                android:id="@+id/togglePopButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/activateInAppPopButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="2dp"
-                    android:layout_weight="1"
-                    android:text="Activate InApp Pop" />
-
-                <Button
-                    android:id="@+id/deactivateInAppPopButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="2dp"
-                    android:layout_weight="1"
-                    android:text="Deactivate InApp Pop" />
-            </LinearLayout>
+                android:layout_marginHorizontal="16dp"
+                android:text="Toggle Pop" />
 
             <TextView
                 android:layout_width="wrap_content"

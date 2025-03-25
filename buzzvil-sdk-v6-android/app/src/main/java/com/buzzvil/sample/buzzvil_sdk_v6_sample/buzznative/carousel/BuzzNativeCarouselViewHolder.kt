@@ -6,15 +6,15 @@ import com.buzzvil.buzzbenefit.BuzzAdError
 import com.buzzvil.buzzbenefit.buzznative.BuzzNative
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAd
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdEventsListener
+import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeRefreshEventsListener
-import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzRewardResult
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.BuzzNativeAdViewBinding
 
 class BuzzNativeCarouselViewHolder(
     private val binding: BuzzNativeAdViewBinding
 ) : RecyclerView.ViewHolder(binding.root) {
-    private val buzzNativeViewBinder: BuzzNativeViewBinder
+    private val buzzNativeAdViewBinder: BuzzNativeAdViewBinder
 
     init {
         val buzzNativeAdView = binding.buzzNativeAdView
@@ -26,8 +26,8 @@ class BuzzNativeCarouselViewHolder(
         val nativeOverlayView = binding.nativeOverlayView
 
         // BuzzNativeView와 하위 컴포넌트를 바인드합니다.
-        buzzNativeViewBinder = BuzzNativeViewBinder.Builder()
-            .buzzNativeView(buzzNativeAdView)
+        buzzNativeAdViewBinder = BuzzNativeAdViewBinder.Builder()
+            .buzzNativeAdView(buzzNativeAdView)
             .buzzMediaView(buzzMediaView)
             .titleTextView(titleTextView)
             .descriptionTextView(descriptionTextView)
@@ -69,12 +69,12 @@ class BuzzNativeCarouselViewHolder(
             override fun onRewarded(buzzNativeAd: BuzzNativeAd, buzzRewardResult: BuzzRewardResult) {}
         })
 
-        buzzNativeViewBinder.bind(native)
+        buzzNativeAdViewBinder.bind(native)
     }
 
     fun unbind() {
         // unbind를 반드시 호출하여 뷰를 재사용할 때 문제가 발생하지 않게 합니다.
-        buzzNativeViewBinder.unbind()
+        buzzNativeAdViewBinder.unbind()
     }
 
     private fun setLoadingView(isLoading: Boolean) {

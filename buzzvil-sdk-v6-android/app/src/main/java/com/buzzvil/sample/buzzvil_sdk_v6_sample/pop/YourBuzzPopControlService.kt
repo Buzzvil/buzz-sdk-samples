@@ -1,9 +1,9 @@
 package com.buzzvil.sample.buzzvil_sdk_v6_sample.pop
 
-import android.annotation.TargetApi
 import android.app.Notification
 import android.os.Build
 import android.widget.RemoteViews
+import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.buzzvil.buzzbenefit.pop.BuzzPopControlService
 import com.buzzvil.buzzbenefit.pop.BuzzPopNotificationConfig
@@ -15,7 +15,7 @@ class YourBuzzPopControlService : BuzzPopControlService() {
         buzzPopNotificationConfig: BuzzPopNotificationConfig,
     ): Notification {
         // Pop을 표시하는 PendingIntent (원형 아이콘)
-        val popPendingIntent = getPopPendingIntent(unitId, this)
+        val popPendingIntent = getPopPendingIntent(this)
 
         // 필요에 따라 notificationChannel을 등록합니다.
         val builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -40,7 +40,7 @@ class YourBuzzPopControlService : BuzzPopControlService() {
         return builder.build()
     }
 
-    @TargetApi(Build.VERSION_CODES.O)
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun createNotificationChannelIfNeeded() {
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as android.app.NotificationManager
         if (notificationManager.getNotificationChannel(POP_NOTIFICATION_CHANNEL_ID) == null) {
