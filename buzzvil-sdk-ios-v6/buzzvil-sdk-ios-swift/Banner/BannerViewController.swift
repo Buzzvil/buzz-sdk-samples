@@ -12,7 +12,7 @@ class BannerViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
     
-    let config = BuzzBannerConfig.Builder(placementID: "YOUR_PLACEMENT_ID")
+    let config = BuzzBannerConfig.Builder(placementId: "YOUR_PLACEMENT_ID")
       .setSize(.w320h50)
       .build()
     bannerView.setConfig(rootViewController: self, config: config)

@@ -84,25 +84,31 @@
 
 - (void)showLuckyBox {
   self.benefitHub = [[BuzzBenefitHub alloc] init];
-  [self.benefitHub setConfig:[[BuzzBenefitHubConfig alloc] initWithBlock:^(BuzzBenefitHubConfigBuilder *builder) {
+  BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
     builder.routePath = BuzzBenefitHubRoutePath.luckyBox;
-  }]];
+  }];
+  
+  [self.benefitHub setConfig:benefithubConfig];
   [self.benefitHub showOn:self];
 }
 
 - (void)showMissionPack {
   self.benefitHub = [[BuzzBenefitHub alloc] init];
-  [self.benefitHub setConfig:[[BuzzBenefitHubConfig alloc] initWithBlock:^(BuzzBenefitHubConfigBuilder *builder) {
+  BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
     builder.routePath = BuzzBenefitHubRoutePath.missionPack;
-  }]];
+  }];
+  
+  [self.benefitHub setConfig:benefithubConfig];
   [self.benefitHub showOn:self];
 }
 
 - (void)showHistory {
   self.benefitHub = [[BuzzBenefitHub alloc] init];
-  [self.benefitHub setConfig:[[BuzzBenefitHubConfig alloc] initWithBlock:^(BuzzBenefitHubConfigBuilder *builder) {
+  BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
     builder.routePath = BuzzBenefitHubRoutePath.history;
-  }]];
+  }];
+  
+  [self.benefitHub setConfig:benefithubConfig];
   [self.benefitHub showOn:self];
 }
 

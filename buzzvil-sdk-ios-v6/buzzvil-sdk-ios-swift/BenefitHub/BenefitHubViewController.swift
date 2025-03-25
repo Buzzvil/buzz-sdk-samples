@@ -102,10 +102,10 @@ class BenefitHubViewController: UIViewController {
   @objc
   private func showLuckyBox() {
     benefitHub = BuzzBenefitHub()
-    benefitHub.setConfig(BuzzBenefitHubConfig { builder in
-      builder.routePath = BuzzBenefitHubRoutePath.luckyBox
-    })
-    
+    let benefitHubConfig = BuzzBenefitHubConfig.Builder()
+      .setRoutePath(BuzzBenefitHubRoutePath.luckyBox)
+      .build()
+    benefitHub.setConfig(benefitHubConfig)
     benefitHub.show(on: self)
   }
   
@@ -113,10 +113,11 @@ class BenefitHubViewController: UIViewController {
   @objc
   private func showMissionPack() {
     benefitHub = BuzzBenefitHub()
-    benefitHub.setConfig(BuzzBenefitHubConfig { builder in
-      builder.routePath = BuzzBenefitHubRoutePath.missionPack
-    })
-    
+    let benefitHubConfig = BuzzBenefitHubConfig.Builder()
+      .setRoutePath(BuzzBenefitHubRoutePath.missionPack)
+      .build()
+    benefitHub.setConfig(benefitHubConfig)
+
     benefitHub.show(on: self)
   }
   
@@ -124,9 +125,10 @@ class BenefitHubViewController: UIViewController {
   @objc
   private func showHistory() {
     benefitHub = BuzzBenefitHub()
-    benefitHub.setConfig(BuzzBenefitHubConfig { builder in
-      builder.routePath = BuzzBenefitHubRoutePath.history
-    })
+    let benefitHubConfig = BuzzBenefitHubConfig.Builder()
+      .setRoutePath(BuzzBenefitHubRoutePath.history)
+      .build()
+    benefitHub.setConfig(benefitHubConfig)
     
     benefitHub.show(on: self)
   }

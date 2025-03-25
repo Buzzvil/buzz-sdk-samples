@@ -18,8 +18,8 @@
 - (void)setupView {
   self.view.backgroundColor = [UIColor systemBackgroundColor];
 
-  BuzzBannerConfig * config = [BuzzBannerConfig configWithBlock:^(BuzzBannerConfigBuilder * _Nonnull builder) {
-    builder.placementID = @"YOUR_PLCEMENT_ID";
+  BuzzBannerConfig * config = [BuzzBannerConfig configWith:^(BuzzBannerConfigBuilder * _Nonnull builder) {
+    builder.placementId = @"YOUR_PLCEMENT_ID";
     builder.size = BuzzBannerSizeW320h50;
   }];
   _bannerView = [[BuzzBannerView alloc] initWithFrame:CGRectZero];

@@ -74,6 +74,7 @@
   [_inquiryButton applyCustomStyle];
   
   _privacyConsentStatusLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+  _privacyConsentStatusLabel.text = @"UNKNWON_STATUS";
   _privacyConsentStatusLabel.numberOfLines = 0;
   
   _loadPrivacyConsentStatusButton = [UIButton buttonWithType:UIButtonTypeSystem];

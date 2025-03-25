@@ -2,10 +2,7 @@ import BuzzvilSDK
 import UIKit
 
 class InterstitialViewController: UIViewController {
-  private lazy var buzzAdInterstitial = BuzzInterstitial { builder in
-    builder.unitId = "YOUR_INTERSTITIAL_UNIT_ID"
-    builder.type = .dialog
-  }
+  private lazy var buzzAdInterstitial = BuzzInterstitial(unitId: "YOUR_INTERSTITIAL_UNIT_ID", type: .dialog)
   
   override func viewDidLoad() {
     super.viewDidLoad()

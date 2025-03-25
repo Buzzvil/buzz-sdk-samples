@@ -14,10 +14,8 @@
   
   self.view.backgroundColor = [UIColor systemBackgroundColor];
   
-  _buzzAdInterstitial = [BuzzInterstitial interstitialWith:^(BuzzInterstitialBuilder * _Nonnull builder) {
-    builder.unitId = @"YOUR_INTERSTITIAL_UNIT_ID";
-    builder.type = BuzzInterstitialTypeDialog;
-  }];
+  _buzzAdInterstitial = [[BuzzInterstitial alloc] initWithUnitId:@"YOUR_INTERSTITIAL_UNIT_ID" type:BuzzInterstitialTypeDialog];
+  
   _buzzAdInterstitial.delegate = self;
   [_buzzAdInterstitial load];
 }
