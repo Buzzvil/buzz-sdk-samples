@@ -1,0 +1,838 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0041F4CF2D87E7E300B901E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F4C52D87E7E300B901E2 /* AppDelegate.swift */; };
+		0041F4D02D87E7E300B901E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F4CC2D87E7E300B901E2 /* SceneDelegate.swift */; };
+		0041F4D12D87E7E300B901E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F4CD2D87E7E300B901E2 /* ViewController.swift */; };
+		0041F4D22D87E7E300B901E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0041F4C62D87E7E300B901E2 /* Assets.xcassets */; };
+		0041F5022D87E80900B901E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0041F4F62D87E80900B901E2 /* Assets.xcassets */; };
+		0041F5062D87E80900B901E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0041F4F52D87E80900B901E2 /* AppDelegate.m */; };
+		0041F5072D87E80900B901E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0041F4FA2D87E80900B901E2 /* main.m */; };
+		0041F5092D87E80900B901E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0041F5002D87E80900B901E2 /* ViewController.m */; };
+		0041F5262D87EE7C00B901E2 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F5122D87EE7C00B901E2 /* InterstitialViewController.swift */; };
+		0041F5272D87EE7C00B901E2 /* CustomCtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F50E2D87EE7C00B901E2 /* CustomCtaView.swift */; };
+		0041F5282D87EE7C00B901E2 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F5152D87EE7C00B901E2 /* CarouselCell.swift */; };
+		0041F5292D87EE7C00B901E2 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F50C2D87EE7C00B901E2 /* BannerViewController.swift */; };
+		0041F52C2D87EE7C00B901E2 /* BenefitHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F5202D87EE7C00B901E2 /* BenefitHubViewController.swift */; };
+		0041F52F2D87EE7C00B901E2 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F5192D87EE7C00B901E2 /* NativeViewController.swift */; };
+		0041F5302D87EE7C00B901E2 /* BenefitHubContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F5212D87EE7C00B901E2 /* BenefitHubContainerViewController.swift */; };
+		0041F5312D87EE7C00B901E2 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F5142D87EE7C00B901E2 /* CarouselViewController.swift */; };
+		008FB3672D8909F400DA135E /* BenefitHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3622D8909F400DA135E /* BenefitHubViewController.m */; };
+		008FB36A2D8909F400DA135E /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3562D8909F400DA135E /* NativeViewController.m */; };
+		008FB36B2D8909F400DA135E /* CarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB34D2D8909F400DA135E /* CarouselViewController.m */; };
+		008FB36E2D8909F400DA135E /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB34A2D8909F400DA135E /* InterstitialViewController.m */; };
+		008FB36F2D8909F400DA135E /* CarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB34F2D8909F400DA135E /* CarouselCell.m */; };
+		008FB3712D8909F400DA135E /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB33D2D8909F400DA135E /* BannerViewController.m */; };
+		008FB3732D8909F400DA135E /* CustomCtaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3432D8909F400DA135E /* CustomCtaView.m */; };
+		008FB3752D8909F400DA135E /* BenefitHubContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3642D8909F400DA135E /* BenefitHubContainerViewController.m */; };
+		008FB3762D8909F400DA135E /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3402D8909F400DA135E /* UIButton+Custom.m */; };
+		6D0BB1B787C634B4D36FF9E9 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0CD1C640147ADD6CAF2754C /* Pods_buzzvil_sdk_ios_swift.framework */; };
+		6F5E979C95756FE3C7DF3787 /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF2B4AF44BEA0294F33A1FA /* Pods_buzzvil_sdk_ios_objc.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0041F49D2D87E77900B901E2 /* buzzvil-sdk-ios-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0041F4C52D87E7E300B901E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0041F4C62D87E7E300B901E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0041F4C72D87E7E300B901E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0041F4CC2D87E7E300B901E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0041F4CD2D87E7E300B901E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0041F4DA2D87E80400B901E2 /* buzzvil-sdk-ios-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0041F4F42D87E80900B901E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0041F4F52D87E80900B901E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0041F4F62D87E80900B901E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0041F4F72D87E80900B901E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0041F4FA2D87E80900B901E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0041F4FF2D87E80900B901E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0041F5002D87E80900B901E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0041F50C2D87EE7C00B901E2 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		0041F50E2D87EE7C00B901E2 /* CustomCtaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCtaView.swift; sourceTree = "<group>"; };
+		0041F5122D87EE7C00B901E2 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		0041F5142D87EE7C00B901E2 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		0041F5152D87EE7C00B901E2 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		0041F5192D87EE7C00B901E2 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
+		0041F5202D87EE7C00B901E2 /* BenefitHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubViewController.swift; sourceTree = "<group>"; };
+		0041F5212D87EE7C00B901E2 /* BenefitHubContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubContainerViewController.swift; sourceTree = "<group>"; };
+		008FB33C2D8909F400DA135E /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		008FB33D2D8909F400DA135E /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		008FB33F2D8909F400DA135E /* UIButton+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Custom.h"; sourceTree = "<group>"; };
+		008FB3402D8909F400DA135E /* UIButton+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Custom.m"; sourceTree = "<group>"; };
+		008FB3422D8909F400DA135E /* CustomCtaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCtaView.h; sourceTree = "<group>"; };
+		008FB3432D8909F400DA135E /* CustomCtaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCtaView.m; sourceTree = "<group>"; };
+		008FB3492D8909F400DA135E /* InterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
+		008FB34A2D8909F400DA135E /* InterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
+		008FB34C2D8909F400DA135E /* CarouselViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselViewController.h; sourceTree = "<group>"; };
+		008FB34D2D8909F400DA135E /* CarouselViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselViewController.m; sourceTree = "<group>"; };
+		008FB34E2D8909F400DA135E /* CarouselCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselCell.h; sourceTree = "<group>"; };
+		008FB34F2D8909F400DA135E /* CarouselCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselCell.m; sourceTree = "<group>"; };
+		008FB3552D8909F400DA135E /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
+		008FB3562D8909F400DA135E /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		008FB3612D8909F400DA135E /* BenefitHubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BenefitHubViewController.h; sourceTree = "<group>"; };
+		008FB3622D8909F400DA135E /* BenefitHubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BenefitHubViewController.m; sourceTree = "<group>"; };
+		008FB3632D8909F400DA135E /* BenefitHubContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BenefitHubContainerViewController.h; sourceTree = "<group>"; };
+		008FB3642D8909F400DA135E /* BenefitHubContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BenefitHubContainerViewController.m; sourceTree = "<group>"; };
+		057F172B0C985593A357AA86 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		33C7EEC398E7549318BD0C1D /* Pods-buzzvil-sdk-ios-v6.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-v6.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-v6/Pods-buzzvil-sdk-ios-v6.release.xcconfig"; sourceTree = "<group>"; };
+		3C929DA00BDACA51529D2186 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
+		5A7EFCB75C68B88536BBC841 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
+		9DF2B4AF44BEA0294F33A1FA /* Pods_buzzvil_sdk_ios_objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C9481B4C732CB7679FBAD3 /* Pods-buzzvil-sdk-ios-v6.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-v6.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-v6/Pods-buzzvil-sdk-ios-v6.debug.xcconfig"; sourceTree = "<group>"; };
+		C0CD1C640147ADD6CAF2754C /* Pods_buzzvil_sdk_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9F1053655DEA887F8AB8D6 /* Pods-buzzvil-sdk-ios-objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0041F49A2D87E77900B901E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D0BB1B787C634B4D36FF9E9 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0041F4D72D87E80400B901E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F5E979C95756FE3C7DF3787 /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0041F4942D87E77900B901E2 = {
+			isa = PBXGroup;
+			children = (
+				0041F4CE2D87E7E300B901E2 /* buzzvil-sdk-ios-swift */,
+				0041F5012D87E80900B901E2 /* buzzvil-sdk-ios-objc */,
+				0041F49E2D87E77900B901E2 /* Products */,
+				7F2F55ECBB3F7142A71DC390 /* Pods */,
+				34285D5B589E2683FF6764DC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0041F49E2D87E77900B901E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0041F49D2D87E77900B901E2 /* buzzvil-sdk-ios-swift.app */,
+				0041F4DA2D87E80400B901E2 /* buzzvil-sdk-ios-objc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0041F4CE2D87E7E300B901E2 /* buzzvil-sdk-ios-swift */ = {
+			isa = PBXGroup;
+			children = (
+				0041F50D2D87EE7C00B901E2 /* Banner */,
+				0041F5112D87EE7C00B901E2 /* Custom */,
+				0041F5132D87EE7C00B901E2 /* Interstitial */,
+				0041F51A2D87EE7C00B901E2 /* Native */,
+				0041F5222D87EE7C00B901E2 /* BenefitHub */,
+				0041F4C52D87E7E300B901E2 /* AppDelegate.swift */,
+				0041F4C62D87E7E300B901E2 /* Assets.xcassets */,
+				0041F4C72D87E7E300B901E2 /* Info.plist */,
+				0041F4CC2D87E7E300B901E2 /* SceneDelegate.swift */,
+				0041F4CD2D87E7E300B901E2 /* ViewController.swift */,
+			);
+			path = "buzzvil-sdk-ios-swift";
+			sourceTree = "<group>";
+		};
+		0041F5012D87E80900B901E2 /* buzzvil-sdk-ios-objc */ = {
+			isa = PBXGroup;
+			children = (
+				008FB33E2D8909F400DA135E /* Banner */,
+				008FB3412D8909F400DA135E /* Util */,
+				008FB3482D8909F400DA135E /* Custom */,
+				008FB34B2D8909F400DA135E /* Interstitial */,
+				008FB3572D8909F400DA135E /* Native */,
+				008FB3652D8909F400DA135E /* BenefitHub */,
+				0041F4F42D87E80900B901E2 /* AppDelegate.h */,
+				0041F4F52D87E80900B901E2 /* AppDelegate.m */,
+				0041F4F62D87E80900B901E2 /* Assets.xcassets */,
+				0041F4F72D87E80900B901E2 /* Info.plist */,
+				0041F4FA2D87E80900B901E2 /* main.m */,
+				0041F4FF2D87E80900B901E2 /* ViewController.h */,
+				0041F5002D87E80900B901E2 /* ViewController.m */,
+			);
+			path = "buzzvil-sdk-ios-objc";
+			sourceTree = "<group>";
+		};
+		0041F50D2D87EE7C00B901E2 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				0041F50C2D87EE7C00B901E2 /* BannerViewController.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		0041F5112D87EE7C00B901E2 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				0041F50E2D87EE7C00B901E2 /* CustomCtaView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		0041F5132D87EE7C00B901E2 /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				0041F5122D87EE7C00B901E2 /* InterstitialViewController.swift */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		0041F5182D87EE7C00B901E2 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				0041F5142D87EE7C00B901E2 /* CarouselViewController.swift */,
+				0041F5152D87EE7C00B901E2 /* CarouselCell.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		0041F51A2D87EE7C00B901E2 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				0041F5182D87EE7C00B901E2 /* Carousel */,
+				0041F5192D87EE7C00B901E2 /* NativeViewController.swift */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		0041F5222D87EE7C00B901E2 /* BenefitHub */ = {
+			isa = PBXGroup;
+			children = (
+				0041F5202D87EE7C00B901E2 /* BenefitHubViewController.swift */,
+				0041F5212D87EE7C00B901E2 /* BenefitHubContainerViewController.swift */,
+			);
+			path = BenefitHub;
+			sourceTree = "<group>";
+		};
+		008FB33E2D8909F400DA135E /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				008FB33C2D8909F400DA135E /* BannerViewController.h */,
+				008FB33D2D8909F400DA135E /* BannerViewController.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		008FB3412D8909F400DA135E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				008FB33F2D8909F400DA135E /* UIButton+Custom.h */,
+				008FB3402D8909F400DA135E /* UIButton+Custom.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		008FB3482D8909F400DA135E /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				008FB3422D8909F400DA135E /* CustomCtaView.h */,
+				008FB3432D8909F400DA135E /* CustomCtaView.m */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		008FB34B2D8909F400DA135E /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				008FB3492D8909F400DA135E /* InterstitialViewController.h */,
+				008FB34A2D8909F400DA135E /* InterstitialViewController.m */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		008FB3542D8909F400DA135E /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				008FB34C2D8909F400DA135E /* CarouselViewController.h */,
+				008FB34D2D8909F400DA135E /* CarouselViewController.m */,
+				008FB34E2D8909F400DA135E /* CarouselCell.h */,
+				008FB34F2D8909F400DA135E /* CarouselCell.m */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		008FB3572D8909F400DA135E /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				008FB3542D8909F400DA135E /* Carousel */,
+				008FB3552D8909F400DA135E /* NativeViewController.h */,
+				008FB3562D8909F400DA135E /* NativeViewController.m */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		008FB3652D8909F400DA135E /* BenefitHub */ = {
+			isa = PBXGroup;
+			children = (
+				008FB3612D8909F400DA135E /* BenefitHubViewController.h */,
+				008FB3622D8909F400DA135E /* BenefitHubViewController.m */,
+				008FB3632D8909F400DA135E /* BenefitHubContainerViewController.h */,
+				008FB3642D8909F400DA135E /* BenefitHubContainerViewController.m */,
+			);
+			path = BenefitHub;
+			sourceTree = "<group>";
+		};
+		34285D5B589E2683FF6764DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DF2B4AF44BEA0294F33A1FA /* Pods_buzzvil_sdk_ios_objc.framework */,
+				C0CD1C640147ADD6CAF2754C /* Pods_buzzvil_sdk_ios_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F2F55ECBB3F7142A71DC390 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6C9481B4C732CB7679FBAD3 /* Pods-buzzvil-sdk-ios-v6.debug.xcconfig */,
+				33C7EEC398E7549318BD0C1D /* Pods-buzzvil-sdk-ios-v6.release.xcconfig */,
+				FA9F1053655DEA887F8AB8D6 /* Pods-buzzvil-sdk-ios-objc.debug.xcconfig */,
+				3C929DA00BDACA51529D2186 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */,
+				057F172B0C985593A357AA86 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */,
+				5A7EFCB75C68B88536BBC841 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0041F49C2D87E77900B901E2 /* buzzvil-sdk-ios-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0041F4B02D87E77B00B901E2 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-swift" */;
+			buildPhases = (
+				534E2676460CA19105AA3FFE /* [CP] Check Pods Manifest.lock */,
+				0041F4992D87E77900B901E2 /* Sources */,
+				0041F49A2D87E77900B901E2 /* Frameworks */,
+				0041F49B2D87E77900B901E2 /* Resources */,
+				4D376F79A7512EE146FE8A0E /* [CP] Embed Pods Frameworks */,
+				654D49710D5C4AF099535994 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "buzzvil-sdk-ios-swift";
+			productName = "buzzvil-sdk-ios-v6";
+			productReference = 0041F49D2D87E77900B901E2 /* buzzvil-sdk-ios-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0041F4D92D87E80400B901E2 /* buzzvil-sdk-ios-objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0041F4F12D87E80500B901E2 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-objc" */;
+			buildPhases = (
+				057AB2A12B408027E94E7812 /* [CP] Check Pods Manifest.lock */,
+				0041F4D62D87E80400B901E2 /* Sources */,
+				0041F4D72D87E80400B901E2 /* Frameworks */,
+				0041F4D82D87E80400B901E2 /* Resources */,
+				135FC0F11B11153AF9E01F7C /* [CP] Embed Pods Frameworks */,
+				4F331AAE8A812AC717B9CA3F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "buzzvil-sdk-ios-objc";
+			productName = "buzzvil-sdk-ios-objc";
+			productReference = 0041F4DA2D87E80400B901E2 /* buzzvil-sdk-ios-objc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0041F4952D87E77900B901E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					0041F49C2D87E77900B901E2 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					0041F4D92D87E80400B901E2 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 0041F4982D87E77900B901E2 /* Build configuration list for PBXProject "buzzvil-sdk-ios-v6" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0041F4942D87E77900B901E2;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0041F49E2D87E77900B901E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0041F49C2D87E77900B901E2 /* buzzvil-sdk-ios-swift */,
+				0041F4D92D87E80400B901E2 /* buzzvil-sdk-ios-objc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0041F49B2D87E77900B901E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0041F4D22D87E7E300B901E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0041F4D82D87E80400B901E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0041F5022D87E80900B901E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		057AB2A12B408027E94E7812 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-buzzvil-sdk-ios-objc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		135FC0F11B11153AF9E01F7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D376F79A7512EE146FE8A0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F331AAE8A812AC717B9CA3F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		534E2676460CA19105AA3FFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-buzzvil-sdk-ios-swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		654D49710D5C4AF099535994 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0041F4992D87E77900B901E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0041F4CF2D87E7E300B901E2 /* AppDelegate.swift in Sources */,
+				0041F4D02D87E7E300B901E2 /* SceneDelegate.swift in Sources */,
+				0041F4D12D87E7E300B901E2 /* ViewController.swift in Sources */,
+				0041F5262D87EE7C00B901E2 /* InterstitialViewController.swift in Sources */,
+				0041F5272D87EE7C00B901E2 /* CustomCtaView.swift in Sources */,
+				0041F5282D87EE7C00B901E2 /* CarouselCell.swift in Sources */,
+				0041F5292D87EE7C00B901E2 /* BannerViewController.swift in Sources */,
+				0041F52C2D87EE7C00B901E2 /* BenefitHubViewController.swift in Sources */,
+				0041F52F2D87EE7C00B901E2 /* NativeViewController.swift in Sources */,
+				0041F5302D87EE7C00B901E2 /* BenefitHubContainerViewController.swift in Sources */,
+				0041F5312D87EE7C00B901E2 /* CarouselViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0041F4D62D87E80400B901E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0041F5062D87E80900B901E2 /* AppDelegate.m in Sources */,
+				008FB3672D8909F400DA135E /* BenefitHubViewController.m in Sources */,
+				008FB36A2D8909F400DA135E /* NativeViewController.m in Sources */,
+				008FB36B2D8909F400DA135E /* CarouselViewController.m in Sources */,
+				008FB36E2D8909F400DA135E /* InterstitialViewController.m in Sources */,
+				008FB36F2D8909F400DA135E /* CarouselCell.m in Sources */,
+				008FB3712D8909F400DA135E /* BannerViewController.m in Sources */,
+				008FB3732D8909F400DA135E /* CustomCtaView.m in Sources */,
+				008FB3752D8909F400DA135E /* BenefitHubContainerViewController.m in Sources */,
+				008FB3762D8909F400DA135E /* UIButton+Custom.m in Sources */,
+				0041F5072D87E80900B901E2 /* main.m in Sources */,
+				0041F5092D87E80900B901E2 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0041F4B12D87E77B00B901E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 057F172B0C985593A357AA86 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-swift/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Tracking Usage Description - Buzzvil";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buzzvil.buzzvil-sdk-ios-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0041F4B22D87E77B00B901E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A7EFCB75C68B88536BBC841 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-swift/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Tracking Usage Description - Buzzvil";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buzzvil.buzzvil-sdk-ios-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0041F4B32D87E77B00B901E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0041F4B42D87E77B00B901E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0041F4F22D87E80500B901E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA9F1053655DEA887F8AB8D6 /* Pods-buzzvil-sdk-ios-objc.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-objc/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Tracking Usage Description - Buzzvil";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buzzvil.buzzvil-sdk-ios-objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0041F4F32D87E80500B901E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C929DA00BDACA51529D2186 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 67369282ZY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "buzzvil-sdk-ios-objc/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Tracking Usage Description - Buzzvil";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buzzvil.buzzvil-sdk-ios-objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0041F4982D87E77900B901E2 /* Build configuration list for PBXProject "buzzvil-sdk-ios-v6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0041F4B32D87E77B00B901E2 /* Debug */,
+				0041F4B42D87E77B00B901E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0041F4B02D87E77B00B901E2 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0041F4B12D87E77B00B901E2 /* Debug */,
+				0041F4B22D87E77B00B901E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0041F4F12D87E80500B901E2 /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0041F4F22D87E80500B901E2 /* Debug */,
+				0041F4F32D87E80500B901E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0041F4952D87E77900B901E2 /* Project object */;
+}
