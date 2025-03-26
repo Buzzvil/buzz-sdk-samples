@@ -1,5 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/Buzzvil/Specs.git'
 
 deployment_target = '13.0'
 
@@ -9,14 +8,14 @@ target 'buzzvil-sdk-ios-swift' do
   use_frameworks!
   
   # Pods for buzzvil-sdk-ios
-  pod 'BuzzvilSDK', '= 6.0.0-rc.6'
+  pod 'BuzzvilSDK', '= 6.0.0'
 end
 
 target 'buzzvil-sdk-ios-objc' do
   use_frameworks!
   
   # Pods for buzzvil-sdk-ios-objc
-  pod 'BuzzvilSDK', '= 6.0.0-rc.6'
+  pod 'BuzzvilSDK', '= 6.0.0'
 end
 
 post_install do |installer|
