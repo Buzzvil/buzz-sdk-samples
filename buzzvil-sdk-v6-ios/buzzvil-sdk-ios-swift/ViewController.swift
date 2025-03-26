@@ -93,7 +93,7 @@ class ViewController: UIViewController {
   private func setupView() {
     view.backgroundColor = .systemBackground
 
-    navigationItem.title = "BuzzvilSDK"
+    navigationItem.title = "BuzzvilSDK-Swift"
     
     rootStackView.addArrangedSubview(nativeButton)
     rootStackView.addArrangedSubview(interstitialButton)

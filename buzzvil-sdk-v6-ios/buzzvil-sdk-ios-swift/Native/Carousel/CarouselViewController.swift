@@ -64,9 +64,9 @@ class CarouselViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupCarousel()
     setupView()
     setupLayout()
+    setupCarousel()
   }
   
   private func setupCarousel() {

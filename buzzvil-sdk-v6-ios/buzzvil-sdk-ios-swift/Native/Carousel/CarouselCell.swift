@@ -19,8 +19,6 @@ class CarouselCell: UICollectionViewCell {
     .ctaView(ctaView)
     .build()
   
-  // ...
-  
   // 로딩 화면 구현하기
   private lazy var activityIndicatorView: UIActivityIndicatorView = {
       let indicator = UIActivityIndicatorView(frame: .zero)
@@ -109,12 +107,12 @@ class CarouselCell: UICollectionViewCell {
   // 앞뒤 광고 아이템을 부분적으로 노출하기
 //  private func setupLayout() {
 //    // CarouselCell과 동일한 크기로 설정합니다.
-//    nativeAd2View.translatesAutoresizingMaskIntoConstraints = false
+//    nativeAdView.translatesAutoresizingMaskIntoConstraints = false
 //    NSLayoutConstraint.activate([
-//      nativeAd2View.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//      nativeAd2View.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-//      nativeAd2View.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-//      nativeAd2View.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+//      nativeAdView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+//      nativeAdView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+//      nativeAdView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+//      nativeAdView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 //    ])
 //
 //    // ...
