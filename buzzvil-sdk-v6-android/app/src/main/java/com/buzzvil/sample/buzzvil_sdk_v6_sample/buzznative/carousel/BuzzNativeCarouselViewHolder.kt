@@ -38,7 +38,7 @@ class BuzzNativeCarouselViewHolder(
     }
 
     fun bind(native: BuzzNative) {
-        // BuzzNativeViewBinder의 bind()를 호출하면 광고 갱신이 자동으로 수행됩니다.
+        // BuzzNativeAdViewBinder의 bind()를 호출하면 광고 갱신이 자동으로 수행됩니다.
         // (Optional) BuzzNativeRefreshEventsListener, BuzzNativeAdEventsListener를 bind 하기 전 연결해야 합니다.
 
         native.setRefreshEventsListener(
