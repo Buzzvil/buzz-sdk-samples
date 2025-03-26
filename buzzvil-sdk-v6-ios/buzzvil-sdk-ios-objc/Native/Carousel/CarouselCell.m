@@ -119,12 +119,6 @@
     [_ctaView.heightAnchor constraintEqualToConstant:32],
   ]];
   
-  _activityIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
-  [NSLayoutConstraint activateConstraints:@[
-    [_activityIndicatorView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor],
-    [_activityIndicatorView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor],
-  ]];
-  
   // 로딩화면 구현하기
   _activityIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
   [NSLayoutConstraint activateConstraints:@[
