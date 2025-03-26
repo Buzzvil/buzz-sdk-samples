@@ -36,9 +36,9 @@ static NSString * const kUnitId = @"YOUR_UNIT_ID";
   _loadedAdCount = 0;
   _nativeGroup = [[BuzzNativeGroup alloc] initWithUnitId:kUnitId];
   
-  [self setupCarousel];
   [self setupView];
   [self setupLayout];
+  [self setupCarousel];
 }
 
 - (void)setupCarousel {

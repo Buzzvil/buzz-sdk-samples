@@ -87,6 +87,7 @@
 
   [_rootStackView addArrangedSubview: _nativeButton];
   [_rootStackView addArrangedSubview: _interstitialButton];
+  [_rootStackView addArrangedSubview: _carouselButton];
   [_rootStackView addArrangedSubview: _benefitHubButton];
   [_rootStackView addArrangedSubview: _benefitHubContainerButton];
   [_rootStackView addArrangedSubview: _bannerButton];
