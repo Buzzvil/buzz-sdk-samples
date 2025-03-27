@@ -8,7 +8,6 @@ import com.buzzvil.buzzad.benefit.BuzzAdBenefit
 import com.buzzvil.buzzad.benefit.core.ad.AdError
 import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2Pool
 import com.buzzvil.buzzad.benefit.nativead2.api.NativeAd2PoolInitListener
-import com.buzzvil.buzzad.benefit.presentation.feed.entrypoint.FeedPromotionFactory
 import com.buzzvil.sample.buzzvilsdksample.Constant
 import com.buzzvil.sample.buzzvilsdksample.databinding.ActivityNativeCarouselBinding
 import com.buzzvil.sample.buzzvilsdksample.nativead.carousel.NativeAd2CarouselAdapter
@@ -87,7 +86,7 @@ class NativeCarouselActivity : AppCompatActivity() {
         carouselItems.fill(NativeAd2CarouselItem.NativeAd2Item)
 
         // 마지막 아이템은 CarouselToFeedSlideItem으로 설정합니다.
-        val carouselToFeedSlideItem = NativeAd2CarouselItem.CarouselToFeedSlideItem(FeedPromotionFactory(Constant.YOUR_NATIVE_UNIT_ID).buildForCarousel())
+        val carouselToFeedSlideItem = NativeAd2CarouselItem.CarouselToFeedSlideItem
         carouselItems[carouselItems.size - 1] = carouselToFeedSlideItem
 
         return carouselItems.toList().filterNotNull()
