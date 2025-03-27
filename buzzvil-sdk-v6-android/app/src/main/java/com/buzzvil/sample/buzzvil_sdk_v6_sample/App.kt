@@ -10,7 +10,6 @@ import com.buzzvil.buzzbenefit.pop.BuzzPopNotificationConfig
 import com.buzzvil.buzzbenefit.pop.BuzzPopSidePosition
 import com.buzzvil.buzzbenefit.pop.BuzzPopTheme
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_APP_ID
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_POP_UNIT_ID
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.CustomPopToolbarHolder
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopControlService
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopMessageView
@@ -40,7 +39,7 @@ class App : Application() {
             .build()
 
         val buzzPopConfigBuilder = BuzzPopConfig
-            .Builder(YOUR_POP_UNIT_ID)
+            .Builder()
 //            .buzzPopBenefitHubConfig(popBuzzBenefitHubConfig)
 //            .idleTimeInMillis(5000L) // Pop 표시 시간
 //            .initialSidePosition(BuzzPopSidePosition.RIGHT, 0.6f) // Pop 표시 위치

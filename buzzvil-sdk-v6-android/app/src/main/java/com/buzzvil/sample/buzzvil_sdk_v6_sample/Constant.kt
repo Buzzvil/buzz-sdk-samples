@@ -10,6 +10,5 @@ object Constant {
     const val YOUR_APP_ID = "YOUR_APP_ID"
     const val YOUR_NATIVE_ID = "YOUR_NATIVE_ID"
     const val YOUR_INTERSTITIAL_ID = "YOUR_INTERSTITIAL_ID"
-    const val YOUR_POP_UNIT_ID = "YOUR_POP_UNIT_ID"
     const val YOUR_BANNER_ID = "YOUR_BANNER_ID"
 }

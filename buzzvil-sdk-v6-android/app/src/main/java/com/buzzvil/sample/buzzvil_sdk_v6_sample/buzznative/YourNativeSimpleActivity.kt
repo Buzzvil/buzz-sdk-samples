@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHub
 import com.buzzvil.buzzbenefit.buzznative.BuzzNative
-import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdViewBinder
+import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeSimpleBinding
 
@@ -32,7 +32,7 @@ class YourNativeSimpleActivity : AppCompatActivity() {
         val buzzCtaView = binding.simpleNativeAdLayout.buzzCtaView
 
         // 광고 레이아웃을 설정합니다.
-        val binder: BuzzNativeAdViewBinder = BuzzNativeAdViewBinder.Builder()
+        val binder: BuzzNativeViewBinder = BuzzNativeViewBinder.Builder()
             .buzzNativeAdView(buzzNativeAdView)
             .buzzMediaView(buzzMediaView)
             .titleTextView(titleTextView)

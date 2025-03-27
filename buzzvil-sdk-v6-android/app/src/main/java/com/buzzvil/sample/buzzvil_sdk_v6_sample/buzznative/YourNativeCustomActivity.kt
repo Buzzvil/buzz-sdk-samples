@@ -9,8 +9,8 @@ import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHub
 import com.buzzvil.buzzbenefit.buzznative.BuzzNative
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAd
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdEventsListener
-import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeRefreshEventsListener
+import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzRewardResult
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeCustomBinding
@@ -37,18 +37,13 @@ class YourNativeCustomActivity : AppCompatActivity() {
         val buzzCtaView = binding.simpleNativeAdLayout.buzzCtaView
 
         // 광고 레이아웃을 설정합니다.
-        val binder: BuzzNativeAdViewBinder = BuzzNativeAdViewBinder.Builder()
+        val binder: BuzzNativeViewBinder = BuzzNativeViewBinder.Builder()
             .buzzNativeAdView(buzzNativeAdView)
             .buzzMediaView(buzzMediaView)
             .titleTextView(titleTextView)
             .descriptionTextView(descriptionTextView)
             .iconImageView(iconImageView)
             .buzzCtaView(buzzCtaView)
-            // 클릭이 되도록 하고 싶은 뷰를 추가합니다.
-            .addClickableView(titleTextView)
-            // addClickableView를 여러 번 호출하여 여러 개의 클릭 가능 영역을 추가할 수 있습니다.
-            .addClickableView(descriptionTextView)
-            .addClickableView(iconImageView)
             .build()
 
         binding.simpleNativeAdLayout.yourNativeToBenefitHubEntryPoint.setOnClickListener {

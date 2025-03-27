@@ -6,15 +6,15 @@ import com.buzzvil.buzzbenefit.BuzzAdError
 import com.buzzvil.buzzbenefit.buzznative.BuzzNative
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAd
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdEventsListener
-import com.buzzvil.buzzbenefit.buzznative.BuzzNativeAdViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeRefreshEventsListener
+import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzRewardResult
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.BuzzNativeAdViewBinding
 
 class BuzzNativeCarouselViewHolder(
     private val binding: BuzzNativeAdViewBinding
 ) : RecyclerView.ViewHolder(binding.root) {
-    private val buzzNativeAdViewBinder: BuzzNativeAdViewBinder
+    private val buzzNativeAdViewBinder: BuzzNativeViewBinder
 
     init {
         val buzzNativeAdView = binding.buzzNativeAdView
@@ -26,7 +26,7 @@ class BuzzNativeCarouselViewHolder(
         val nativeOverlayView = binding.nativeOverlayView
 
         // BuzzNativeView와 하위 컴포넌트를 바인드합니다.
-        buzzNativeAdViewBinder = BuzzNativeAdViewBinder.Builder()
+        buzzNativeAdViewBinder = BuzzNativeViewBinder.Builder()
             .buzzNativeAdView(buzzNativeAdView)
             .buzzMediaView(buzzMediaView)
             .titleTextView(titleTextView)
@@ -38,7 +38,7 @@ class BuzzNativeCarouselViewHolder(
     }
 
     fun bind(native: BuzzNative) {
-        // BuzzNativeAdViewBinder의 bind()를 호출하면 광고 갱신이 자동으로 수행됩니다.
+        // BuzzNativeViewBinder의 bind()를 호출하면 광고 갱신이 자동으로 수행됩니다.
         // (Optional) BuzzNativeRefreshEventsListener, BuzzNativeAdEventsListener를 bind 하기 전 연결해야 합니다.
 
         native.setRefreshEventsListener(
