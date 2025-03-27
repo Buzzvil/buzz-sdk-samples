@@ -1,4 +1,4 @@
-package com.buzzvil.sample.buzzvilsdksample
+package com.buzzvil.sample.buzzvil_sdk_v6_sample
 
 /**
  * 여기에 버즈빌 매니저로부터 발급받은 ID를 입력해주세요.
@@ -6,10 +6,9 @@ package com.buzzvil.sample.buzzvilsdksample
  * 올바른 ID를 입력해도 테스트 광고가 노출되지 않는 경우 버즈빌 매니저에게 문의해주세요.
  */
 object Constant {
+    const val YOUR_USER_ID = "YOUR_USER_ID"
     const val YOUR_APP_ID = "YOUR_APP_ID"
-    const val YOUR_FEED_UNIT_ID = "YOUR_FEED_UNIT_ID"
-    const val YOUR_NATIVE_UNIT_ID = "YOUR_NATIVE_UNIT_ID"
-    const val YOUR_INTERSTITIAL_UNIT_ID = "YOUR_INTERSTITIAL_UNIT_ID"
-    const val YOUR_POP_UNIT_ID = "YOUR_POP_UNIT_ID"
-    const val YOUR_MISSION_PACK_UNIT_ID = "YOUR_MISSION_PACK_UNIT_ID"
+    const val YOUR_NATIVE_ID = "YOUR_NATIVE_ID"
+    const val YOUR_INTERSTITIAL_ID = "YOUR_INTERSTITIAL_ID"
+    const val YOUR_BANNER_ID = "YOUR_BANNER_ID"
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 종료 아이콘 -->
+    <item android:drawable="@drawable/icon_pop_selected" android:state_selected="true" />
+    <!-- 평상시 팝 아이콘 -->
+    <item android:drawable="@drawable/icon_pop"/>
+</selector>
