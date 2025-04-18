@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0041F49C2D87E77900B901E2"
-               BuildableName = "buzzvil-sdk-ios-swift.app"
-               BlueprintName = "buzzvil-sdk-ios-swift"
+               BlueprintIdentifier = "0041F4D92D87E80400B901E2"
+               BuildableName = "buzzvil-sdk-ios-objc.app"
+               BlueprintName = "buzzvil-sdk-ios-objc"
                ReferencedContainer = "container:buzzvil-sdk-ios-v6.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0041F49C2D87E77900B901E2"
-            BuildableName = "buzzvil-sdk-ios-swift.app"
-            BlueprintName = "buzzvil-sdk-ios-swift"
+            BlueprintIdentifier = "0041F4D92D87E80400B901E2"
+            BuildableName = "buzzvil-sdk-ios-objc.app"
+            BlueprintName = "buzzvil-sdk-ios-objc"
             ReferencedContainer = "container:buzzvil-sdk-ios-v6.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0041F49C2D87E77900B901E2"
-            BuildableName = "buzzvil-sdk-ios-swift.app"
-            BlueprintName = "buzzvil-sdk-ios-swift"
+            BlueprintIdentifier = "0041F4D92D87E80400B901E2"
+            BuildableName = "buzzvil-sdk-ios-objc.app"
+            BlueprintName = "buzzvil-sdk-ios-objc"
             ReferencedContainer = "container:buzzvil-sdk-ios-v6.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
