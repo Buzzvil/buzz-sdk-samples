@@ -77,6 +77,6 @@ extension BannerViewController: BuzzBannerViewDelegate {
   }
   
   func bannerView(_ bannerView: BuzzBannerView, didRemoveApid: String) {
-    // Banner가 제거되었을 떄 호출 됩니다.
+    // Banner가 제거되었을 때 호출 됩니다.
   }
 }
