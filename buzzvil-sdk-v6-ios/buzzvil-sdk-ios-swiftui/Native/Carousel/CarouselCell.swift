@@ -62,7 +62,7 @@ final class CarouselCell: UICollectionViewCell {
       mediaView.topAnchor.constraint(equalTo: nativeAdView.topAnchor),
       mediaView.leadingAnchor.constraint(equalTo: nativeAdView.leadingAnchor),
       mediaView.trailingAnchor.constraint(equalTo: nativeAdView.trailingAnchor),
-      mediaView.heightAnchor.constraint(equalTo: mediaView.widthAnchor, multiplier: 627/1200),
+      mediaView.heightAnchor.constraint(equalTo: mediaView.widthAnchor, multiplier: 627.0/1200.0),
     ])
     
     iconImageView.translatesAutoresizingMaskIntoConstraints = false
