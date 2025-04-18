@@ -32,8 +32,22 @@
 		008FB3732D8909F400DA135E /* CustomCtaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3432D8909F400DA135E /* CustomCtaView.m */; };
 		008FB3752D8909F400DA135E /* BenefitHubContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3642D8909F400DA135E /* BenefitHubContainerViewController.m */; };
 		008FB3762D8909F400DA135E /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3402D8909F400DA135E /* UIButton+Custom.m */; };
+		654651552DAE406700684E6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651522DAE406700684E6F /* ContentView.swift */; };
+		654651562DAE406700684E6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654651502DAE406700684E6F /* Assets.xcassets */; };
+		654651582DAE443800684E6F /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651572DAE443800684E6F /* SampleApp.swift */; };
+		6546515B2DAE49A200684E6F /* NativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546515A2DAE49A200684E6F /* NativeView.swift */; };
+		6546515E2DAE56A900684E6F /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546515D2DAE56A900684E6F /* CarouselView.swift */; };
+		654651602DAE56C300684E6F /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546515F2DAE56C300684E6F /* CarouselCell.swift */; };
+		654651632DAE5D7600684E6F /* InterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651622DAE5D7600684E6F /* InterstitialView.swift */; };
+		654651652DAE5D8800684E6F /* InterstitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651642DAE5D8800684E6F /* InterstitialController.swift */; };
+		654651682DAE5F4300684E6F /* BenefitHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651672DAE5F4300684E6F /* BenefitHubView.swift */; };
+		6546516A2DAE5F4B00684E6F /* BenefitHubContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651692DAE5F4B00684E6F /* BenefitHubContainerView.swift */; };
+		65BB66F42DB22AEC000D1381 /* CustomCtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB66F32DB22AEC000D1381 /* CustomCtaView.swift */; };
+		65BB66F72DB22B3D000D1381 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB66F62DB22B3D000D1381 /* BannerView.swift */; };
+		65BB66FA2DB22FD5000D1381 /* PrivacyConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB66F92DB22FD5000D1381 /* PrivacyConsentView.swift */; };
 		6D0BB1B787C634B4D36FF9E9 /* Pods_buzzvil_sdk_ios_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0CD1C640147ADD6CAF2754C /* Pods_buzzvil_sdk_ios_swift.framework */; };
 		6F5E979C95756FE3C7DF3787 /* Pods_buzzvil_sdk_ios_objc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF2B4AF44BEA0294F33A1FA /* Pods_buzzvil_sdk_ios_objc.framework */; };
+		D35C325E5F3F95B5EB6609A3 /* Pods_buzzvil_sdk_ios_swiftui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAC264F952F1EAD2F6F2D32 /* Pods_buzzvil_sdk_ios_swiftui.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,10 +94,27 @@
 		057F172B0C985593A357AA86 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		33C7EEC398E7549318BD0C1D /* Pods-buzzvil-sdk-ios-v6.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-v6.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-v6/Pods-buzzvil-sdk-ios-v6.release.xcconfig"; sourceTree = "<group>"; };
 		3C929DA00BDACA51529D2186 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
+		4497853BCA0C173A392B0789 /* Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig"; sourceTree = "<group>"; };
 		5A7EFCB75C68B88536BBC841 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
+		654651452DAE405A00684E6F /* buzzvil-sdk-ios-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		654651502DAE406700684E6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		654651522DAE406700684E6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		654651572DAE443800684E6F /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
+		6546515A2DAE49A200684E6F /* NativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeView.swift; sourceTree = "<group>"; };
+		6546515D2DAE56A900684E6F /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		6546515F2DAE56C300684E6F /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
+		654651622DAE5D7600684E6F /* InterstitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialView.swift; sourceTree = "<group>"; };
+		654651642DAE5D8800684E6F /* InterstitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialController.swift; sourceTree = "<group>"; };
+		654651672DAE5F4300684E6F /* BenefitHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubView.swift; sourceTree = "<group>"; };
+		654651692DAE5F4B00684E6F /* BenefitHubContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubContainerView.swift; sourceTree = "<group>"; };
+		65BB66F32DB22AEC000D1381 /* CustomCtaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCtaView.swift; sourceTree = "<group>"; };
+		65BB66F62DB22B3D000D1381 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		65BB66F92DB22FD5000D1381 /* PrivacyConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyConsentView.swift; sourceTree = "<group>"; };
 		9DF2B4AF44BEA0294F33A1FA /* Pods_buzzvil_sdk_ios_objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C9481B4C732CB7679FBAD3 /* Pods-buzzvil-sdk-ios-v6.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-v6.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-v6/Pods-buzzvil-sdk-ios-v6.debug.xcconfig"; sourceTree = "<group>"; };
 		C0CD1C640147ADD6CAF2754C /* Pods_buzzvil_sdk_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCAC264F952F1EAD2F6F2D32 /* Pods_buzzvil_sdk_ios_swiftui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_swiftui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE05E78C66F1FC2CC1892E22 /* Pods-buzzvil-sdk-ios-swiftui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swiftui.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui.release.xcconfig"; sourceTree = "<group>"; };
 		FA9F1053655DEA887F8AB8D6 /* Pods-buzzvil-sdk-ios-objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,14 +135,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		654651422DAE405A00684E6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D35C325E5F3F95B5EB6609A3 /* Pods_buzzvil_sdk_ios_swiftui.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0041F4942D87E77900B901E2 = {
 			isa = PBXGroup;
 			children = (
-				0041F4CE2D87E7E300B901E2 /* buzzvil-sdk-ios-swift */,
 				0041F5012D87E80900B901E2 /* buzzvil-sdk-ios-objc */,
+				0041F4CE2D87E7E300B901E2 /* buzzvil-sdk-ios-swift */,
+				654651532DAE406700684E6F /* buzzvil-sdk-ios-swiftui */,
 				0041F49E2D87E77900B901E2 /* Products */,
 				7F2F55ECBB3F7142A71DC390 /* Pods */,
 				34285D5B589E2683FF6764DC /* Frameworks */,
@@ -123,6 +163,7 @@
 			children = (
 				0041F49D2D87E77900B901E2 /* buzzvil-sdk-ios-swift.app */,
 				0041F4DA2D87E80400B901E2 /* buzzvil-sdk-ios-objc.app */,
+				654651452DAE405A00684E6F /* buzzvil-sdk-ios-swiftui.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,8 +329,85 @@
 			children = (
 				9DF2B4AF44BEA0294F33A1FA /* Pods_buzzvil_sdk_ios_objc.framework */,
 				C0CD1C640147ADD6CAF2754C /* Pods_buzzvil_sdk_ios_swift.framework */,
+				CCAC264F952F1EAD2F6F2D32 /* Pods_buzzvil_sdk_ios_swiftui.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		654651532DAE406700684E6F /* buzzvil-sdk-ios-swiftui */ = {
+			isa = PBXGroup;
+			children = (
+				65BB66F82DB22FCA000D1381 /* PrivacyConsent */,
+				65BB66F52DB22B2E000D1381 /* Banner */,
+				65BB66F22DB22AD3000D1381 /* Custom */,
+				654651612DAE5D5F00684E6F /* Interstitial */,
+				654651592DAE497700684E6F /* Native */,
+				654651662DAE5F1B00684E6F /* BenefitHub */,
+				654651572DAE443800684E6F /* SampleApp.swift */,
+				654651522DAE406700684E6F /* ContentView.swift */,
+				654651502DAE406700684E6F /* Assets.xcassets */,
+			);
+			path = "buzzvil-sdk-ios-swiftui";
+			sourceTree = "<group>";
+		};
+		654651592DAE497700684E6F /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				6546515C2DAE568700684E6F /* Carousel */,
+				6546515A2DAE49A200684E6F /* NativeView.swift */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		6546515C2DAE568700684E6F /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				6546515D2DAE56A900684E6F /* CarouselView.swift */,
+				6546515F2DAE56C300684E6F /* CarouselCell.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		654651612DAE5D5F00684E6F /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				654651622DAE5D7600684E6F /* InterstitialView.swift */,
+				654651642DAE5D8800684E6F /* InterstitialController.swift */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		654651662DAE5F1B00684E6F /* BenefitHub */ = {
+			isa = PBXGroup;
+			children = (
+				654651672DAE5F4300684E6F /* BenefitHubView.swift */,
+				654651692DAE5F4B00684E6F /* BenefitHubContainerView.swift */,
+			);
+			path = BenefitHub;
+			sourceTree = "<group>";
+		};
+		65BB66F22DB22AD3000D1381 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				65BB66F32DB22AEC000D1381 /* CustomCtaView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		65BB66F52DB22B2E000D1381 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				65BB66F62DB22B3D000D1381 /* BannerView.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		65BB66F82DB22FCA000D1381 /* PrivacyConsent */ = {
+			isa = PBXGroup;
+			children = (
+				65BB66F92DB22FD5000D1381 /* PrivacyConsentView.swift */,
+			);
+			path = PrivacyConsent;
 			sourceTree = "<group>";
 		};
 		7F2F55ECBB3F7142A71DC390 /* Pods */ = {
@@ -301,6 +419,8 @@
 				3C929DA00BDACA51529D2186 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */,
 				057F172B0C985593A357AA86 /* Pods-buzzvil-sdk-ios-swift.debug.xcconfig */,
 				5A7EFCB75C68B88536BBC841 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */,
+				4497853BCA0C173A392B0789 /* Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig */,
+				DE05E78C66F1FC2CC1892E22 /* Pods-buzzvil-sdk-ios-swiftui.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -348,6 +468,26 @@
 			productReference = 0041F4DA2D87E80400B901E2 /* buzzvil-sdk-ios-objc.app */;
 			productType = "com.apple.product-type.application";
 		};
+		654651442DAE405A00684E6F /* buzzvil-sdk-ios-swiftui */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6546514F2DAE405C00684E6F /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-swiftui" */;
+			buildPhases = (
+				256DC25B6762550F0480E79B /* [CP] Check Pods Manifest.lock */,
+				654651412DAE405A00684E6F /* Sources */,
+				654651422DAE405A00684E6F /* Frameworks */,
+				654651432DAE405A00684E6F /* Resources */,
+				4A94F015C4BF859F78532E5C /* [CP] Embed Pods Frameworks */,
+				2E9F66180E50D878225B3CA7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "buzzvil-sdk-ios-swiftui";
+			productName = "buzzvil-sdk-ios-swiftui";
+			productReference = 654651452DAE405A00684E6F /* buzzvil-sdk-ios-swiftui.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -355,14 +495,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					0041F49C2D87E77900B901E2 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 					0041F4D92D87E80400B901E2 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					654651442DAE405A00684E6F = {
+						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
@@ -380,8 +523,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0041F49C2D87E77900B901E2 /* buzzvil-sdk-ios-swift */,
 				0041F4D92D87E80400B901E2 /* buzzvil-sdk-ios-objc */,
+				0041F49C2D87E77900B901E2 /* buzzvil-sdk-ios-swift */,
+				654651442DAE405A00684E6F /* buzzvil-sdk-ios-swiftui */,
 			);
 		};
 /* End PBXProject section */
@@ -400,6 +544,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0041F5022D87E80900B901E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		654651432DAE405A00684E6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654651562DAE406700684E6F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,13 +588,81 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		256DC25B6762550F0480E79B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-buzzvil-sdk-ios-swiftui-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E9F66180E50D878225B3CA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A94F015C4BF859F78532E5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4D376F79A7512EE146FE8A0E /* [CP] Embed Pods Frameworks */ = {
@@ -453,9 +673,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -470,9 +694,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,9 +737,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -558,6 +790,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		654651412DAE405A00684E6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654651652DAE5D8800684E6F /* InterstitialController.swift in Sources */,
+				654651582DAE443800684E6F /* SampleApp.swift in Sources */,
+				65BB66F42DB22AEC000D1381 /* CustomCtaView.swift in Sources */,
+				654651552DAE406700684E6F /* ContentView.swift in Sources */,
+				6546515E2DAE56A900684E6F /* CarouselView.swift in Sources */,
+				6546515B2DAE49A200684E6F /* NativeView.swift in Sources */,
+				65BB66FA2DB22FD5000D1381 /* PrivacyConsentView.swift in Sources */,
+				6546516A2DAE5F4B00684E6F /* BenefitHubContainerView.swift in Sources */,
+				654651632DAE5D7600684E6F /* InterstitialView.swift in Sources */,
+				65BB66F72DB22B3D000D1381 /* BannerView.swift in Sources */,
+				654651682DAE5F4300684E6F /* BenefitHubView.swift in Sources */,
+				654651602DAE56C300684E6F /* CarouselCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -569,7 +820,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67369282ZY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "buzzvil-sdk-ios-swift/Info.plist";
@@ -600,7 +850,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67369282ZY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "buzzvil-sdk-ios-swift/Info.plist";
@@ -658,6 +907,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 67369282ZY;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -721,6 +971,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 67369282ZY;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -750,7 +1001,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67369282ZY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "buzzvil-sdk-ios-objc/Info.plist";
@@ -780,7 +1030,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 67369282ZY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "buzzvil-sdk-ios-objc/Info.plist";
@@ -798,6 +1047,68 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.buzzvil.buzzvil-sdk-ios-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6546514D2DAE405C00684E6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4497853BCA0C173A392B0789 /* Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Tracking Usage Description - Buzzvil";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buzzvil.buzzvil-sdk-ios-swiftui";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6546514E2DAE405C00684E6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE05E78C66F1FC2CC1892E22 /* Pods-buzzvil-sdk-ios-swiftui.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Tracking Usage Description - Buzzvil";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buzzvil.buzzvil-sdk-ios-swiftui";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -828,6 +1139,15 @@
 			buildConfigurations = (
 				0041F4F22D87E80500B901E2 /* Debug */,
 				0041F4F32D87E80500B901E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6546514F2DAE405C00684E6F /* Build configuration list for PBXNativeTarget "buzzvil-sdk-ios-swiftui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6546514D2DAE405C00684E6F /* Debug */,
+				6546514E2DAE405C00684E6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
