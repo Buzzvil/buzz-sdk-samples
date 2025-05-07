@@ -103,7 +103,7 @@ class BenefitHubViewController: UIViewController {
   private func showLuckyBox() {
     benefitHub = BuzzBenefitHub()
     let benefitHubConfig = BuzzBenefitHubConfig.Builder()
-      .setRoutePath(BuzzBenefitHubRoutePath.luckyBox)
+      .setQueryParams(BuzzBenefitHubPage.luckyBox.toRedirectQueryParams())
       .build()
     benefitHub.setConfig(benefitHubConfig)
     benefitHub.show(on: self)
@@ -114,7 +114,7 @@ class BenefitHubViewController: UIViewController {
   private func showMissionPack() {
     benefitHub = BuzzBenefitHub()
     let benefitHubConfig = BuzzBenefitHubConfig.Builder()
-      .setRoutePath(BuzzBenefitHubRoutePath.missionPack)
+      .setQueryParams(BuzzBenefitHubPage.missionPack.toRedirectQueryParams())
       .build()
     benefitHub.setConfig(benefitHubConfig)
 
@@ -126,7 +126,7 @@ class BenefitHubViewController: UIViewController {
   private func showHistory() {
     benefitHub = BuzzBenefitHub()
     let benefitHubConfig = BuzzBenefitHubConfig.Builder()
-      .setRoutePath(BuzzBenefitHubRoutePath.history)
+      .setQueryParams(BuzzBenefitHubPage.history.toRedirectQueryParams())
       .build()
     benefitHub.setConfig(benefitHubConfig)
     
