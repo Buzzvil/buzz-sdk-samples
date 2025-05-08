@@ -85,7 +85,7 @@
 - (void)showLuckyBox {
   self.benefitHub = [[BuzzBenefitHub alloc] init];
   BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
-    builder.routePath = BuzzBenefitHubRoutePath.luckyBox;
+    builder.queryParams = [BuzzBenefitHubPage.luckyBox toRedirectQueryParams];
   }];
   
   [self.benefitHub setConfig:benefithubConfig];
@@ -95,7 +95,7 @@
 - (void)showMissionPack {
   self.benefitHub = [[BuzzBenefitHub alloc] init];
   BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
-    builder.routePath = BuzzBenefitHubRoutePath.missionPack;
+    builder.queryParams = [BuzzBenefitHubPage.missionPack toRedirectQueryParams];
   }];
   
   [self.benefitHub setConfig:benefithubConfig];
@@ -105,7 +105,7 @@
 - (void)showHistory {
   self.benefitHub = [[BuzzBenefitHub alloc] init];
   BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
-    builder.routePath = BuzzBenefitHubRoutePath.history;
+    builder.queryParams = [BuzzBenefitHubPage.history toRedirectQueryParams];
   }];
   
   [self.benefitHub setConfig:benefithubConfig];

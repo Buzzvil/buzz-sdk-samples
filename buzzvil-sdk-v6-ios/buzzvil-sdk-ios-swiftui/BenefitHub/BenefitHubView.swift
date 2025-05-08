@@ -15,21 +15,21 @@ struct BenefitHubView: View {
       // 럭키박스 표시하기
       Button("Show LuckyBox") {
         benefitHubConfig = BuzzBenefitHubConfig.Builder()
-          .setRoutePath(BuzzBenefitHubRoutePath.luckyBox)
+          .setQueryParams(BuzzBenefitHubPage.luckyBox.toRedirectQueryParams())
           .build()
       }
       
       // 미션팩 표시하기
       Button("Show MissionPack") {
         benefitHubConfig = BuzzBenefitHubConfig.Builder()
-          .setRoutePath(BuzzBenefitHubRoutePath.missionPack)
+          .setQueryParams(BuzzBenefitHubPage.missionPack.toRedirectQueryParams())
           .build()
       }
       
       // 적립내역 표시하기
       Button("Show History") {
         benefitHubConfig = BuzzBenefitHubConfig.Builder()
-          .setRoutePath(BuzzBenefitHubRoutePath.history)
+          .setQueryParams(BuzzBenefitHubPage.history.toRedirectQueryParams())
           .build()
       }
       
