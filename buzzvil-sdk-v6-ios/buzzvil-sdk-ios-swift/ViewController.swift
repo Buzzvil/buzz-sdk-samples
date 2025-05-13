@@ -45,6 +45,13 @@ class ViewController: UIViewController {
     return button
   }()
   
+  private lazy var benefitHubCustomNaviContainerButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle("BenefitHub CustomNavi Container", for: .normal)
+    button.addTarget(self, action: #selector(pushBenefitHubCustomNaviContainerViewController), for: .touchUpInside)
+    return button
+  }()
+
   private lazy var bannerButton: UIButton = {
     let button = UIButton(frame: .zero)
     button.setTitle("Banner", for: .normal)
@@ -100,6 +107,7 @@ class ViewController: UIViewController {
     rootStackView.addArrangedSubview(carouselButton)
     rootStackView.addArrangedSubview(benefitHubButton)
     rootStackView.addArrangedSubview(benefitHubContainerButton)
+    rootStackView.addArrangedSubview(benefitHubCustomNaviContainerButton)
     rootStackView.addArrangedSubview(bannerButton)
     rootStackView.addArrangedSubview(inquiryButton)
     rootStackView.addArrangedSubview(privacyConsentStatusLabel)
@@ -114,6 +122,7 @@ class ViewController: UIViewController {
       carouselButton,
       benefitHubButton,
       benefitHubContainerButton,
+      benefitHubCustomNaviContainerButton,
       bannerButton,
       inquiryButton,
       loadPrivacyConsentStatusButton,
@@ -165,12 +174,17 @@ class ViewController: UIViewController {
     let benefitHubViewController = BenefitHubViewController()
     navigationController?.pushViewController(benefitHubViewController, animated: true)
   }
-  
+
   @objc private func pushBenefitHubContainerViewController() {
     let benefitHubContainerViewController = BenefitHubContainerViewController()
     navigationController?.pushViewController(benefitHubContainerViewController, animated: true)
   }
   
+  @objc private func pushBenefitHubCustomNaviContainerViewController() {
+    let benefitHubCustomNaviViewController = BenefitHubNavigationCustomContainerViewController()
+    navigationController?.pushViewController(benefitHubCustomNaviViewController, animated: true)
+  }
+
   @objc private func pushBannerViewController() {
     let bannerViewController = BannerViewController()
     navigationController?.pushViewController(bannerViewController, animated: true)

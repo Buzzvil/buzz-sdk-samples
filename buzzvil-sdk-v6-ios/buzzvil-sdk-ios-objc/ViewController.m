@@ -5,6 +5,7 @@
 #import "Interstitial/InterstitialViewController.h"
 #import "BenefitHub/BenefitHubViewController.h"
 #import "BenefitHub/BenefitHubContainerViewController.h"
+#import "BenefitHub/BenefitHubNavigationCustomContainerViewController.h"
 #import "Banner/BannerViewController.h"
 
 @import BuzzvilSDK;
@@ -17,6 +18,7 @@
 @property (nonatomic, strong, readonly) UIButton *interstitialButton;
 @property (nonatomic, strong, readonly) UIButton *benefitHubButton;
 @property (nonatomic, strong, readonly) UIButton *benefitHubContainerButton;
+@property (nonatomic, strong, readonly) UIButton *benefitHubNaviCustomContainerButton;
 @property (nonatomic, strong, readonly) UIButton *bannerButton;
 @property (nonatomic, strong, readonly) UIButton *inquiryButton;
 @property (nonatomic, strong, readonly) UILabel *privacyConsentStatusLabel;
@@ -65,6 +67,10 @@
   [_benefitHubContainerButton setTitle:@"BenefitHub Container" forState:UIControlStateNormal];
   [_benefitHubContainerButton applyCustomStyle];
   
+  _benefitHubNaviCustomContainerButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_benefitHubNaviCustomContainerButton setTitle:@"BenefitHub navi custom Container" forState:UIControlStateNormal];
+  [_benefitHubNaviCustomContainerButton applyCustomStyle];
+
   _bannerButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_bannerButton setTitle:@"Banner" forState:UIControlStateNormal];
   [_bannerButton applyCustomStyle];
@@ -90,6 +96,7 @@
   [_rootStackView addArrangedSubview: _carouselButton];
   [_rootStackView addArrangedSubview: _benefitHubButton];
   [_rootStackView addArrangedSubview: _benefitHubContainerButton];
+  [_rootStackView addArrangedSubview: _benefitHubNaviCustomContainerButton];
   [_rootStackView addArrangedSubview: _bannerButton];
   [_rootStackView addArrangedSubview: _inquiryButton];
   [_rootStackView addArrangedSubview: _privacyConsentStatusLabel];
@@ -114,6 +121,7 @@
   [_carouselButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushCarouselViewController:)]];
   [_interstitialButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushInterstitialViewController:)]];
   [_benefitHubContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBenefitHubContainerViewController:)]];
+  [_benefitHubNaviCustomContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBenefitHubNaviCustomContainerViewController:)]];
   [_bannerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBannerViewController:)]];
   [_inquiryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showInquiryPage:)]];
   [_loadPrivacyConsentStatusButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadPrivacyConsentStatus:)]];
@@ -121,8 +129,8 @@
 }
 
 - (void)pushBenefitHubViewController:(id)sender {
-  BenefitHubViewController *feedViewController = [[BenefitHubViewController alloc] init];
-  [self.navigationController pushViewController:feedViewController animated:YES];
+  BenefitHubViewController *benefitHubViewController = [[BenefitHubViewController alloc] init];
+  [self.navigationController pushViewController:benefitHubViewController animated:YES];
 }
 
 - (void)pushNativeViewController:(id)sender {
@@ -141,8 +149,13 @@
 }
 
 - (void)pushBenefitHubContainerViewController:(id)sender {
-  BenefitHubContainerViewController *feedContainerViewController = [[BenefitHubContainerViewController alloc] init];
-  [self.navigationController pushViewController:feedContainerViewController animated:YES];
+  BenefitHubContainerViewController *benefitHubContainerViewController = [[BenefitHubContainerViewController alloc] init];
+  [self.navigationController pushViewController:benefitHubContainerViewController animated:YES];
+}
+
+- (void)pushBenefitHubNaviCustomContainerViewController:(id)sender {
+  BenefitHubNavigationCustomContainerViewController *benefitHubNaviCustomConatiner = [[BenefitHubNavigationCustomContainerViewController alloc] init];
+  [self.navigationController pushViewController:benefitHubNaviCustomConatiner animated:YES];
 }
 
 - (void)pushBannerViewController:(id)sender {
