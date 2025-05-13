@@ -1,7 +1,7 @@
 @import BuzzvilSDK;
 #import "BenefitHubNavigationCustomContainerViewController.h"
 
-@interface BenefitHubNavigationCustomContainerViewController ()
+@interface BenefitHubNavigationCustomContainerViewController()
 
 @property (nonatomic, strong, readonly) BuzzBenefitHub *benefitHub;
 

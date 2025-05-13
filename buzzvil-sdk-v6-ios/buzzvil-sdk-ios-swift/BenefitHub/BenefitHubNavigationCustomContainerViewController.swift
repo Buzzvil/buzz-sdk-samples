@@ -34,7 +34,6 @@ class BenefitHubNavigationCustomContainerViewController: UIViewController {
     navigationController.navigationBar.tintColor = .red
     viewController.navigationItem.largeTitleDisplayMode = .never
     let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
-    viewController.navigationItem.rightBarButtonItem = backButton
     viewController.navigationItem.leftBarButtonItem = backButton
     
     let navigationBar = navigationController.navigationBar
