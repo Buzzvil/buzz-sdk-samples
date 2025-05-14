@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.buzzvil.buzzbenefit.BuzzAdError
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHub
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubConfig
-import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubRoutePath
+import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubPage
 import com.buzzvil.buzzbenefit.interstitial.BuzzInterstitial
 import com.buzzvil.buzzbenefit.interstitial.BuzzInterstitialListener
 import com.buzzvil.buzzbenefit.pop.BuzzPop
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         // SIS
         binding.showLuckyBoxSis.setOnClickListener {
             val benefitHubConfig = BuzzBenefitHubConfig.Builder()
-                .routePath(BuzzBenefitHubRoutePath.LUCKY_BOX)
+                .routePath(BuzzBenefitHubPage.LUCKY_BOX.toRoutePath())
                 .build()
 
             BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.showMissionPackSisButton.setOnClickListener {
             val benefitHubConfig = BuzzBenefitHubConfig.Builder()
-                .routePath(BuzzBenefitHubRoutePath.MISSION_PACK)
+                .routePath(BuzzBenefitHubPage.MISSION_PACK.toRoutePath())
                 .build()
 
             BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.showHistorySisButton.setOnClickListener {
             val benefitHubConfig = BuzzBenefitHubConfig.Builder()
-                .routePath(BuzzBenefitHubRoutePath.HISTORY)
+                .routePath(BuzzBenefitHubPage.HISTORY.toRoutePath())
                 .build()
 
             BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)

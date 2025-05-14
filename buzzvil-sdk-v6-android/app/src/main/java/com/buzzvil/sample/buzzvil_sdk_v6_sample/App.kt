@@ -4,7 +4,7 @@ import android.app.Application
 import android.widget.Toast
 import com.buzzvil.buzzbenefit.BuzzBenefitConfig
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubConfig
-import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubRoutePath
+import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubPage
 import com.buzzvil.buzzbenefit.pop.BuzzPopConfig
 import com.buzzvil.buzzbenefit.pop.BuzzPopNotificationConfig
 import com.buzzvil.buzzbenefit.pop.BuzzPopSidePosition
@@ -26,7 +26,7 @@ class App : Application() {
 
         // 팝 베네핏허브의 첫 페이지 설정
         val popBuzzBenefitHubConfig = BuzzBenefitHubConfig.Builder()
-            .routePath(BuzzBenefitHubRoutePath.MISSION_PACK)
+            .routePath(BuzzBenefitHubPage.MISSION_PACK.toRoutePath())
             .build()
 
         val buzzPopNotificationConfig = BuzzPopNotificationConfig.Builder(this@App)
