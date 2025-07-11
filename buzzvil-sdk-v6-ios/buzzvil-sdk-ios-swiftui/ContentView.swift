@@ -35,8 +35,13 @@ struct ContentView: View {
             .navigationTitle("Banner")
         }
         
+        NavigationLink("EntryPoint") {
+          EntryPointView()
+            .navigationTitle("EntryPoint")
+        }
+        
         Button("Inquiry") {
-          BuzzAdBenefit.shared.openInquiryPage(unitId: "YOUR_UNIT_ID")
+          BuzzAdBenefit.shared.openInquiryPage()
         }
         
         PrivacyConsentView()

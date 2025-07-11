@@ -7,6 +7,7 @@
 #import "BenefitHub/BenefitHubContainerViewController.h"
 #import "BenefitHub/BenefitHubNavigationCustomContainerViewController.h"
 #import "Banner/BannerViewController.h"
+#import "EntryPoint/EntryPointViewController.h"
 
 @import BuzzvilSDK;
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong, readonly) UIButton *benefitHubContainerButton;
 @property (nonatomic, strong, readonly) UIButton *benefitHubNaviCustomContainerButton;
 @property (nonatomic, strong, readonly) UIButton *bannerButton;
+@property (nonatomic, strong, readonly) UIButton *entryPointButton;
 @property (nonatomic, strong, readonly) UIButton *inquiryButton;
 @property (nonatomic, strong, readonly) UILabel *privacyConsentStatusLabel;
 @property (nonatomic, strong, readonly) UIButton *loadPrivacyConsentStatusButton;
@@ -70,10 +72,14 @@
   _benefitHubNaviCustomContainerButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_benefitHubNaviCustomContainerButton setTitle:@"BenefitHub navi custom Container" forState:UIControlStateNormal];
   [_benefitHubNaviCustomContainerButton applyCustomStyle];
-
+  
   _bannerButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_bannerButton setTitle:@"Banner" forState:UIControlStateNormal];
   [_bannerButton applyCustomStyle];
+  
+  _entryPointButton = [UIButton buttonWithType:UIButtonTypeSystem];
+  [_entryPointButton setTitle:@"EntryPoint" forState:UIControlStateNormal];
+  [_entryPointButton applyCustomStyle];
   
   _inquiryButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_inquiryButton setTitle:@"Inquiry" forState:UIControlStateNormal];
@@ -90,7 +96,7 @@
   _grantPrivacyConsentButton = [UIButton buttonWithType:UIButtonTypeSystem];
   [_grantPrivacyConsentButton setTitle:@"Grant PrivacyConsent" forState:UIControlStateNormal];
   [_grantPrivacyConsentButton applyCustomStyle];
-
+  
   [_rootStackView addArrangedSubview: _nativeButton];
   [_rootStackView addArrangedSubview: _interstitialButton];
   [_rootStackView addArrangedSubview: _carouselButton];
@@ -98,6 +104,7 @@
   [_rootStackView addArrangedSubview: _benefitHubContainerButton];
   [_rootStackView addArrangedSubview: _benefitHubNaviCustomContainerButton];
   [_rootStackView addArrangedSubview: _bannerButton];
+  [_rootStackView addArrangedSubview: _entryPointButton];
   [_rootStackView addArrangedSubview: _inquiryButton];
   [_rootStackView addArrangedSubview: _privacyConsentStatusLabel];
   [_rootStackView addArrangedSubview: _loadPrivacyConsentStatusButton];
@@ -123,6 +130,7 @@
   [_benefitHubContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBenefitHubContainerViewController:)]];
   [_benefitHubNaviCustomContainerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBenefitHubNaviCustomContainerViewController:)]];
   [_bannerButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushBannerViewController:)]];
+  [_entryPointButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushEntryPointViewController:)]];
   [_inquiryButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showInquiryPage:)]];
   [_loadPrivacyConsentStatusButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadPrivacyConsentStatus:)]];
   [_grantPrivacyConsentButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(grantPribacyConsent:)]];
@@ -163,8 +171,13 @@
   [self.navigationController pushViewController:bannerViewController animated:YES];
 }
 
+- (void)pushEntryPointViewController:(id)sender {
+  EntryPointViewController *entryPointViewController = [[EntryPointViewController alloc] init];
+  [self.navigationController pushViewController:entryPointViewController animated:YES];
+}
+
 - (void)showInquiryPage:(id)sender {
-  [[BuzzAdBenefit sharedInstance] openInquiryPageWithUnitId:@"YOUR_UNIT_ID"];
+  [[BuzzAdBenefit sharedInstance] openInquiryPage];
 }
 
 - (void)loadPrivacyConsentStatus:(id)sender {

@@ -7,19 +7,19 @@ platform :ios, deployment_target
 target 'buzzvil-sdk-ios-objc' do
   use_frameworks!
   
-  pod 'BuzzvilSDK', '= 6.1.0'
+  pod 'BuzzvilSDK', '= 6.2.0'
 end
 
 target 'buzzvil-sdk-ios-swift' do
   use_frameworks!
   
-  pod 'BuzzvilSDK', '= 6.1.0'
+  pod 'BuzzvilSDK', '= 6.2.0'
 end
 
 target 'buzzvil-sdk-ios-swiftui' do
   use_frameworks!
   
-  pod 'BuzzvilSDK', '= 6.1.0'
+  pod 'BuzzvilSDK', '= 6.2.0'
 end
 
 post_install do |installer|
