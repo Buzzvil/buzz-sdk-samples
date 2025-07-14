@@ -51,11 +51,18 @@ class ViewController: UIViewController {
     button.addTarget(self, action: #selector(pushBenefitHubCustomNaviContainerViewController), for: .touchUpInside)
     return button
   }()
-
+  
   private lazy var bannerButton: UIButton = {
     let button = UIButton(frame: .zero)
     button.setTitle("Banner", for: .normal)
     button.addTarget(self, action: #selector(pushBannerViewController), for: .touchUpInside)
+    return button
+  }()
+  
+  private lazy var entryPointButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle("EntryPoint", for: .normal)
+    button.addTarget(self, action: #selector(pushEntryPointViewController), for: .touchUpInside)
     return button
   }()
   
@@ -89,7 +96,7 @@ class ViewController: UIViewController {
     
     return button
   }()
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -99,7 +106,7 @@ class ViewController: UIViewController {
   
   private func setupView() {
     view.backgroundColor = .systemBackground
-
+    
     navigationItem.title = "BuzzvilSDK-Swift"
     
     rootStackView.addArrangedSubview(nativeButton)
@@ -109,11 +116,12 @@ class ViewController: UIViewController {
     rootStackView.addArrangedSubview(benefitHubContainerButton)
     rootStackView.addArrangedSubview(benefitHubCustomNaviContainerButton)
     rootStackView.addArrangedSubview(bannerButton)
+    rootStackView.addArrangedSubview(entryPointButton)
     rootStackView.addArrangedSubview(inquiryButton)
     rootStackView.addArrangedSubview(privacyConsentStatusLabel)
     rootStackView.addArrangedSubview(loadPrivacyConsentStatusButton)
     rootStackView.addArrangedSubview(grantPrivacyConsentButton)
-
+    
     view.addSubview(rootStackView)
     
     let buttonsToSetupAppearance = [
@@ -124,6 +132,7 @@ class ViewController: UIViewController {
       benefitHubContainerButton,
       benefitHubCustomNaviContainerButton,
       bannerButton,
+      entryPointButton,
       inquiryButton,
       loadPrivacyConsentStatusButton,
       grantPrivacyConsentButton,
@@ -174,7 +183,7 @@ class ViewController: UIViewController {
     let benefitHubViewController = BenefitHubViewController()
     navigationController?.pushViewController(benefitHubViewController, animated: true)
   }
-
+  
   @objc private func pushBenefitHubContainerViewController() {
     let benefitHubContainerViewController = BenefitHubContainerViewController()
     navigationController?.pushViewController(benefitHubContainerViewController, animated: true)
@@ -184,14 +193,19 @@ class ViewController: UIViewController {
     let benefitHubCustomNaviViewController = BenefitHubNavigationCustomContainerViewController()
     navigationController?.pushViewController(benefitHubCustomNaviViewController, animated: true)
   }
-
+  
   @objc private func pushBannerViewController() {
     let bannerViewController = BannerViewController()
     navigationController?.pushViewController(bannerViewController, animated: true)
   }
   
+  @objc private func pushEntryPointViewController() {
+    let entryPointViewController = EntryPointViewController()
+    navigationController?.pushViewController(entryPointViewController, animated: true)
+  }
+  
   @objc private func showInquiry() {
-    BuzzAdBenefit.shared.openInquiryPage(unitId: "YOUR_UNIT_ID")
+    BuzzAdBenefit.shared.openInquiryPage()
   }
   
   @objc private func loadPrivacyConsentStatus() {

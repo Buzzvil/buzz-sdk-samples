@@ -34,6 +34,8 @@
 		008FB3732D8909F400DA135E /* CustomCtaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3432D8909F400DA135E /* CustomCtaView.m */; };
 		008FB3752D8909F400DA135E /* BenefitHubContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3642D8909F400DA135E /* BenefitHubContainerViewController.m */; };
 		008FB3762D8909F400DA135E /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3402D8909F400DA135E /* UIButton+Custom.m */; };
+		6520320D2E20F92500B1B227 /* EntryPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6520320C2E20F92500B1B227 /* EntryPointViewController.m */; };
+		652032102E20FD7500B1B227 /* EntryPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520320F2E20FD7500B1B227 /* EntryPointView.swift */; };
 		654651552DAE406700684E6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651522DAE406700684E6F /* ContentView.swift */; };
 		654651562DAE406700684E6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654651502DAE406700684E6F /* Assets.xcassets */; };
 		654651582DAE443800684E6F /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651572DAE443800684E6F /* SampleApp.swift */; };
@@ -44,6 +46,7 @@
 		654651652DAE5D8800684E6F /* InterstitialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651642DAE5D8800684E6F /* InterstitialController.swift */; };
 		654651682DAE5F4300684E6F /* BenefitHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651672DAE5F4300684E6F /* BenefitHubView.swift */; };
 		6546516A2DAE5F4B00684E6F /* BenefitHubContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651692DAE5F4B00684E6F /* BenefitHubContainerView.swift */; };
+		65577C892E03F2300019DAE8 /* EntryPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65577C882E03F2300019DAE8 /* EntryPointViewController.swift */; };
 		65BB66F42DB22AEC000D1381 /* CustomCtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB66F32DB22AEC000D1381 /* CustomCtaView.swift */; };
 		65BB66F72DB22B3D000D1381 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB66F62DB22B3D000D1381 /* BannerView.swift */; };
 		65BB66FA2DB22FD5000D1381 /* PrivacyConsentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB66F92DB22FD5000D1381 /* PrivacyConsentView.swift */; };
@@ -101,6 +104,9 @@
 		3C929DA00BDACA51529D2186 /* Pods-buzzvil-sdk-ios-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-objc.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc.release.xcconfig"; sourceTree = "<group>"; };
 		4497853BCA0C173A392B0789 /* Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui.debug.xcconfig"; sourceTree = "<group>"; };
 		5A7EFCB75C68B88536BBC841 /* Pods-buzzvil-sdk-ios-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-swift.release.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift.release.xcconfig"; sourceTree = "<group>"; };
+		6520320B2E20F92500B1B227 /* EntryPointViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryPointViewController.h; sourceTree = "<group>"; };
+		6520320C2E20F92500B1B227 /* EntryPointViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntryPointViewController.m; sourceTree = "<group>"; };
+		6520320F2E20FD7500B1B227 /* EntryPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointView.swift; sourceTree = "<group>"; };
 		654651452DAE405A00684E6F /* buzzvil-sdk-ios-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "buzzvil-sdk-ios-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		654651502DAE406700684E6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		654651522DAE406700684E6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		654651642DAE5D8800684E6F /* InterstitialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialController.swift; sourceTree = "<group>"; };
 		654651672DAE5F4300684E6F /* BenefitHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubView.swift; sourceTree = "<group>"; };
 		654651692DAE5F4B00684E6F /* BenefitHubContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitHubContainerView.swift; sourceTree = "<group>"; };
+		65577C882E03F2300019DAE8 /* EntryPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointViewController.swift; sourceTree = "<group>"; };
 		65BB66F32DB22AEC000D1381 /* CustomCtaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCtaView.swift; sourceTree = "<group>"; };
 		65BB66F62DB22B3D000D1381 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		65BB66F92DB22FD5000D1381 /* PrivacyConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyConsentView.swift; sourceTree = "<group>"; };
@@ -181,6 +188,7 @@
 				0041F5132D87EE7C00B901E2 /* Interstitial */,
 				0041F51A2D87EE7C00B901E2 /* Native */,
 				0041F5222D87EE7C00B901E2 /* BenefitHub */,
+				65577C872E03F21B0019DAE8 /* EntryPoint */,
 				0041F4C52D87E7E300B901E2 /* AppDelegate.swift */,
 				0041F4C62D87E7E300B901E2 /* Assets.xcassets */,
 				0041F4C72D87E7E300B901E2 /* Info.plist */,
@@ -199,6 +207,7 @@
 				008FB34B2D8909F400DA135E /* Interstitial */,
 				008FB3572D8909F400DA135E /* Native */,
 				008FB3652D8909F400DA135E /* BenefitHub */,
+				6520320A2E20F90700B1B227 /* EntryPoint */,
 				0041F4F42D87E80900B901E2 /* AppDelegate.h */,
 				0041F4F52D87E80900B901E2 /* AppDelegate.m */,
 				0041F4F62D87E80900B901E2 /* Assets.xcassets */,
@@ -342,6 +351,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6520320A2E20F90700B1B227 /* EntryPoint */ = {
+			isa = PBXGroup;
+			children = (
+				6520320B2E20F92500B1B227 /* EntryPointViewController.h */,
+				6520320C2E20F92500B1B227 /* EntryPointViewController.m */,
+			);
+			path = EntryPoint;
+			sourceTree = "<group>";
+		};
+		6520320E2E20FD3A00B1B227 /* EntryPoint */ = {
+			isa = PBXGroup;
+			children = (
+				6520320F2E20FD7500B1B227 /* EntryPointView.swift */,
+			);
+			path = EntryPoint;
+			sourceTree = "<group>";
+		};
 		654651532DAE406700684E6F /* buzzvil-sdk-ios-swiftui */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +377,7 @@
 				654651612DAE5D5F00684E6F /* Interstitial */,
 				654651592DAE497700684E6F /* Native */,
 				654651662DAE5F1B00684E6F /* BenefitHub */,
+				6520320E2E20FD3A00B1B227 /* EntryPoint */,
 				654651572DAE443800684E6F /* SampleApp.swift */,
 				654651522DAE406700684E6F /* ContentView.swift */,
 				654651502DAE406700684E6F /* Assets.xcassets */,
@@ -392,6 +419,14 @@
 				654651692DAE5F4B00684E6F /* BenefitHubContainerView.swift */,
 			);
 			path = BenefitHub;
+			sourceTree = "<group>";
+		};
+		65577C872E03F21B0019DAE8 /* EntryPoint */ = {
+			isa = PBXGroup;
+			children = (
+				65577C882E03F2300019DAE8 /* EntryPointViewController.swift */,
+			);
+			path = EntryPoint;
 			sourceTree = "<group>";
 		};
 		65BB66F22DB22AD3000D1381 /* Custom */ = {
@@ -596,13 +631,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -639,13 +670,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -660,13 +687,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swiftui/Pods-buzzvil-sdk-ios-swiftui-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -681,13 +704,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -702,13 +721,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-objc/Pods-buzzvil-sdk-ios-objc-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -745,13 +760,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-buzzvil-sdk-ios-swift/Pods-buzzvil-sdk-ios-swift-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -770,6 +781,7 @@
 				0041F4D12D87E7E300B901E2 /* ViewController.swift in Sources */,
 				0041F5262D87EE7C00B901E2 /* InterstitialViewController.swift in Sources */,
 				006B6A702DD2C0B400B30BA1 /* BenefitHubNavigationCustomContainerViewController.swift in Sources */,
+				65577C892E03F2300019DAE8 /* EntryPointViewController.swift in Sources */,
 				0041F5272D87EE7C00B901E2 /* CustomCtaView.swift in Sources */,
 				0041F5282D87EE7C00B901E2 /* CarouselCell.swift in Sources */,
 				0041F5292D87EE7C00B901E2 /* BannerViewController.swift in Sources */,
@@ -788,6 +800,7 @@
 				008FB3672D8909F400DA135E /* BenefitHubViewController.m in Sources */,
 				008FB36A2D8909F400DA135E /* NativeViewController.m in Sources */,
 				008FB36B2D8909F400DA135E /* CarouselViewController.m in Sources */,
+				6520320D2E20F92500B1B227 /* EntryPointViewController.m in Sources */,
 				008FB36E2D8909F400DA135E /* InterstitialViewController.m in Sources */,
 				008FB36F2D8909F400DA135E /* CarouselCell.m in Sources */,
 				006B6A6C2DD2BD6300B30BA1 /* BenefitHubNavigationCustomContainerViewController.m in Sources */,
@@ -816,6 +829,7 @@
 				65BB66F72DB22B3D000D1381 /* BannerView.swift in Sources */,
 				654651682DAE5F4300684E6F /* BenefitHubView.swift in Sources */,
 				654651602DAE56C300684E6F /* CarouselCell.swift in Sources */,
+				652032102E20FD7500B1B227 /* EntryPointView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
