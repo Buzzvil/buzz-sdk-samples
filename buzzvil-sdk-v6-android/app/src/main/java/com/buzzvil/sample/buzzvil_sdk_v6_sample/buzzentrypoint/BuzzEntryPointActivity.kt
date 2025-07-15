@@ -26,23 +26,27 @@ class BuzzEntryPointActivity : AppCompatActivity() {
         }
 
         binding.buttonShowFab.setOnClickListener {
-            // Buzz Entry Point FAB를 표시합니다.
+            // BuzzEntryPoint FAB를 표시합니다.
             BuzzEntryPoint.showFab(lifecycleOwner = this, binding.root)
         }
 
         binding.buttonShowBanner.setOnClickListener {
+            // BuzzEntryPoint 배너를 표시합니다.
             BuzzEntryPoint.showBanner(binding.buzzEntryPointBanner)
         }
 
         binding.buttonShowPopup.setOnClickListener {
+            // BuzzEntryPoint 팝업을 표시합니다.
             BuzzEntryPoint.showPopup(this)
         }
 
         binding.buttonShowBottomSheet.setOnClickListener {
+            // BuzzEntryPoint 바텀 시트를 표시합니다.
             BuzzEntryPoint.showBottomSheet(this)
         }
 
         binding.buttonCustomEntry.setOnClickListener {
+            // BuzzEntryPoint의 커스텀 엔트리 포인트를 클릭합니다.
             BuzzEntryPoint.customEntryPointClicked(this, "custom_1")
         }
 
