@@ -10,10 +10,7 @@ import com.buzzvil.buzzbenefit.pop.BuzzPopNotificationConfig
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.R
 
 class YourBuzzPopControlService : BuzzPopControlService() {
-    override fun buildForegroundNotification(
-        unitId: String,
-        buzzPopNotificationConfig: BuzzPopNotificationConfig,
-    ): Notification {
+    override fun buildForegroundNotification(buzzPopNotificationConfig: BuzzPopNotificationConfig): Notification? {
         // Pop을 표시하는 PendingIntent (원형 아이콘)
         val popPendingIntent = getPopPendingIntent(this)
 

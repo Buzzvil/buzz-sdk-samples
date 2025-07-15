@@ -38,4 +38,9 @@
         android:layout_height="wrap_content"
         android:text="Custom Entry"/>
 
+    <com.buzzvil.entrypoint.presentation.BuzzEntryPointBanner
+        android:id="@+id/buzzEntryPointBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

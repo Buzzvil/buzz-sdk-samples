@@ -45,13 +45,14 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "loggedOut", Toast.LENGTH_SHORT).show()
         }
 
+        // Buzz Entry Point
+        binding.showBuzzEntryPointButton.setOnClickListener {
+            navigateActivity(BuzzEntryPointActivity::class.java)
+        }
+
         // BenefitHub
         binding.showBenefitHubButton.setOnClickListener {
             BuzzBenefitHub.show(this)
-        }
-
-        binding.showBuzzEntryPointButton.setOnClickListener {
-            navigateActivity(BuzzEntryPointActivity::class.java)
         }
 
         binding.showBenefitHubFragmentButton.setOnClickListener {

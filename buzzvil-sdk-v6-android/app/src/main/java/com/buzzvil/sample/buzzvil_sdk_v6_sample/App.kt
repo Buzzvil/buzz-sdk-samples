@@ -7,14 +7,8 @@ import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubConfig
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubPage
 import com.buzzvil.buzzbenefit.pop.BuzzPopConfig
 import com.buzzvil.buzzbenefit.pop.BuzzPopNotificationConfig
-import com.buzzvil.buzzbenefit.pop.BuzzPopSidePosition
-import com.buzzvil.buzzbenefit.pop.BuzzPopTheme
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_APP_ID
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.CustomPopToolbarHolder
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopControlService
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopMessageView
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopToolbarHolder
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopUtilityLayoutHandler
 import com.buzzvil.sdk.BuzzvilSdk
 
 class App : Application() {
