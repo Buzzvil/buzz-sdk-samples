@@ -15,6 +15,7 @@ import com.buzzvil.buzzbenefit.pop.BuzzPopActivateListener
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_USER_ID
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.banner.YourBannerActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzbenefithub.YourBenefitHubActivity
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzentrypoint.BuzzEntryPointActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeCarouselActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeCustomActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeSimpleActivity
@@ -47,6 +48,10 @@ class MainActivity : AppCompatActivity() {
         // BenefitHub
         binding.showBenefitHubButton.setOnClickListener {
             BuzzBenefitHub.show(this)
+        }
+
+        binding.showBuzzEntryPointButton.setOnClickListener {
+            navigateActivity(BuzzEntryPointActivity::class.java)
         }
 
         binding.showBenefitHubFragmentButton.setOnClickListener {
