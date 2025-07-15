@@ -40,7 +40,7 @@ android {
 
 dependencies {
     // buzzvil-sdk
-    val buzzvilBomVersion = "6.1.1"
+    val buzzvilBomVersion = "6.2.3"
 
     api(platform("com.buzzvil:buzzvil-bom:$buzzvilBomVersion"))
     implementation("com.buzzvil:buzzvil-sdk")
