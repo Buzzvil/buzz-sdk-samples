@@ -40,10 +40,6 @@ class App : Application() {
 //            .marginBetweenIconAndPreviewInDp(8.0f) // 팝 버튼과 메시지 사이 간격
 //            .marginBetweenIconAndScreenEdgeInDp(24.0f) // 팝 버튼과 화면 끝 사이 간격
 //            .buzzPopNotificationConfig(buzzPopNotificationConfig)
-//            .buzzPopToolbarHolderClass(YourBuzzPopToolbarHolder::class.java)
-//            .buzzPopMessageViewClass(YourBuzzPopMessageView::class.java)
-//            .buzzPopToolbarHolderClass(CustomPopToolbarHolder::class.java)
-//            .buzzPopUtilityLayoutHandlerClass(YourBuzzPopUtilityLayoutHandler::class.java)
 
         // BuzzPopTheme.iconResId = R.drawable.your_pop_icon
         // BuzzPopTheme.rewardReadyIconResId = R.drawable.your_pop_icon_reward_ready
