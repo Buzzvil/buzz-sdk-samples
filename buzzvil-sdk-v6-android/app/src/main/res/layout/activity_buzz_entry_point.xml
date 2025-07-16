@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".buzzentrypoint.BuzzEntryPointActivity">
+
+    <Button
+        android:id="@+id/buttonShowFab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show FAB"/>
+
+    <Button
+        android:id="@+id/buttonShowBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Banner"/>
+
+    <Button
+        android:id="@+id/buttonShowPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Popup"/>
+
+    <Button
+        android:id="@+id/buttonShowBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show BottomSheet"/>
+
+    <Button
+        android:id="@+id/buttonCustomEntry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom Entry"/>
+
+    <com.buzzvil.entrypoint.presentation.BuzzEntryPointBanner
+        android:id="@+id/buzzEntryPointBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

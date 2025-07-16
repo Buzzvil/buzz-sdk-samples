@@ -15,6 +15,7 @@ import com.buzzvil.buzzbenefit.pop.BuzzPopActivateListener
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_USER_ID
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.banner.YourBannerActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzbenefithub.YourBenefitHubActivity
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzentrypoint.BuzzEntryPointActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeCarouselActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeCustomActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeSimpleActivity
@@ -42,6 +43,11 @@ class MainActivity : AppCompatActivity() {
             // 유저 정보를 삭제합니다.
             BuzzvilSdk.logout()
             Toast.makeText(this@MainActivity, "loggedOut", Toast.LENGTH_SHORT).show()
+        }
+
+        // Buzz Entry Point
+        binding.showBuzzEntryPointButton.setOnClickListener {
+            navigateActivity(BuzzEntryPointActivity::class.java)
         }
 
         // BenefitHub

@@ -7,14 +7,8 @@ import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubConfig
 import com.buzzvil.buzzbenefit.benefithub.BuzzBenefitHubPage
 import com.buzzvil.buzzbenefit.pop.BuzzPopConfig
 import com.buzzvil.buzzbenefit.pop.BuzzPopNotificationConfig
-import com.buzzvil.buzzbenefit.pop.BuzzPopSidePosition
-import com.buzzvil.buzzbenefit.pop.BuzzPopTheme
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_APP_ID
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.CustomPopToolbarHolder
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopControlService
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopMessageView
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopToolbarHolder
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.pop.YourBuzzPopUtilityLayoutHandler
 import com.buzzvil.sdk.BuzzvilSdk
 
 class App : Application() {
@@ -46,10 +40,6 @@ class App : Application() {
 //            .marginBetweenIconAndPreviewInDp(8.0f) // 팝 버튼과 메시지 사이 간격
 //            .marginBetweenIconAndScreenEdgeInDp(24.0f) // 팝 버튼과 화면 끝 사이 간격
 //            .buzzPopNotificationConfig(buzzPopNotificationConfig)
-//            .buzzPopToolbarHolderClass(YourBuzzPopToolbarHolder::class.java)
-//            .buzzPopMessageViewClass(YourBuzzPopMessageView::class.java)
-//            .buzzPopToolbarHolderClass(CustomPopToolbarHolder::class.java)
-//            .buzzPopUtilityLayoutHandlerClass(YourBuzzPopUtilityLayoutHandler::class.java)
 
         // BuzzPopTheme.iconResId = R.drawable.your_pop_icon
         // BuzzPopTheme.rewardReadyIconResId = R.drawable.your_pop_icon_reward_ready
