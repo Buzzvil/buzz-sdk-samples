@@ -14,6 +14,7 @@ import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
 import com.buzzvil.buzzbenefit.buzznative.BuzzRewardResult
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeCustomBinding
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.util.setupWindowInsets
 
 /**
  * 네이티브 custom 구현 예제입니다.
@@ -25,6 +26,7 @@ class YourNativeCustomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityYourNativeCustomBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupWindowInsets()
 
         // BuzzNative 객체를 생성합니다.
         val buzzNative = BuzzNative(Constant.YOUR_NATIVE_ID)
