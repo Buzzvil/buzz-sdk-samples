@@ -11,6 +11,7 @@ import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.carousel.BuzzNativeCarouselAdapter
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.carousel.PaddingDividerDecoration
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeCarouselBinding
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.util.setupWindowInsets
 
 /**
  * 네이티브 캐러셀 구현 예제입니다.
@@ -23,6 +24,7 @@ class YourNativeCarouselActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityYourNativeCarouselBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupWindowInsets()
 
         // snap
         binding.carouselRecyclerView.onFlingListener = null

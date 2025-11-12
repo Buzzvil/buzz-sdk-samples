@@ -2,13 +2,10 @@ package com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzentrypoint
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.buzzvil.entrypoint.BuzzEntryPoint
-import com.buzzvil.sample.buzzvil_sdk_v6_sample.R
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityBuzzEntryPointBinding
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.util.setupWindowInsets
 
 class BuzzEntryPointActivity : AppCompatActivity() {
 
@@ -17,13 +14,8 @@ class BuzzEntryPointActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBuzzEntryPointBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        setupWindowInsets()
 
         binding.buttonShowFab.setOnClickListener {
             // BuzzEntryPoint FAB를 표시합니다.

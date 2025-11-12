@@ -10,6 +10,7 @@ import com.buzzvil.buzzbanner.BuzzBannerView
 import com.buzzvil.buzzbanner.BuzzBannerViewListener
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_BANNER_ID
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourBannerBinding
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.util.setupWindowInsets
 
 class YourBannerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityYourBannerBinding
@@ -19,6 +20,7 @@ class YourBannerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityYourBannerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupWindowInsets()
 
         bannerView = binding.buzzBannerView
 

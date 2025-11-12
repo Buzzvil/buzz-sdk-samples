@@ -23,6 +23,7 @@ import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityMainBinding
 import com.buzzvil.sdk.BuzzvilSdk
 import com.buzzvil.sdk.BuzzvilSdkLoginListener
 import com.buzzvil.sdk.BuzzvilSdkUser
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.util.setupWindowInsets
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupWindowInsets()
 
         binding.sdkVersionTextView.text = "SDK Version: ${BuzzvilSdk.versionName}"
 

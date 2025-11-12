@@ -9,6 +9,7 @@ import com.buzzvil.buzzbenefit.buzznative.BuzzNative
 import com.buzzvil.buzzbenefit.buzznative.BuzzNativeViewBinder
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.databinding.ActivityYourNativeSimpleBinding
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.util.setupWindowInsets
 
 /**
  * 네이티브 기본 구현 예제입니다.
@@ -20,6 +21,7 @@ class YourNativeSimpleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityYourNativeSimpleBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupWindowInsets()
 
         // BuzzNative 객체를 생성합니다.
         val buzzNative = BuzzNative(Constant.YOUR_NATIVE_ID)
