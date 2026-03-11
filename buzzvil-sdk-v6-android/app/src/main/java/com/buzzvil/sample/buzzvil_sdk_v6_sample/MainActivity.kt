@@ -86,6 +86,15 @@ class MainActivity : AppCompatActivity() {
             BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)
         }
 
+        // Feature Flag Demo
+        binding.showFeatureFlagDemoButton.setOnClickListener {
+            val benefitHubConfig = BuzzBenefitHubConfig.Builder()
+                .routePath("feature-flag-demo")
+                .build()
+
+            BuzzBenefitHub.show(context = this, benefitHubConfig = benefitHubConfig)
+        }
+
         // Native
         binding.nativeSimpleButton.setOnClickListener {
             navigateActivity(YourNativeSimpleActivity::class.java)

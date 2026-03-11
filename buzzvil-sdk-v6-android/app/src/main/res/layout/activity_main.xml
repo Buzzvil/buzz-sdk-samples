@@ -123,6 +123,13 @@
                     android:text="History SIS" />
             </LinearLayout>
 
+            <Button
+                android:id="@+id/showFeatureFlagDemoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="Feature Flag Demo" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
