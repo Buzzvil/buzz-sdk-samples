@@ -32,7 +32,14 @@ struct BenefitHubView: View {
           .setQueryParams(BuzzBenefitHubPage.history.toRedirectQueryParams())
           .build()
       }
-      
+
+      // 피쳐 플래그 데모 표시하기
+      Button("Feature Flag Demo") {
+        benefitHubConfig = BuzzBenefitHubConfig.Builder()
+          .setRoutePath("feature-flag-demo")
+          .build()
+      }
+
       Spacer()
     }
     .frame(maxWidth: .infinity)

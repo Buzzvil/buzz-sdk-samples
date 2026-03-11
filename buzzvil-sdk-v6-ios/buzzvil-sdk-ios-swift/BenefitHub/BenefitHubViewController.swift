@@ -3,7 +3,7 @@ import BuzzvilSDK
 
 class BenefitHubViewController: UIViewController {
   private lazy var stackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [showBenefitHubButton, showLuckyBoxButton, showMissionPackButton, showHistoryButton])
+    let stackView = UIStackView(arrangedSubviews: [showBenefitHubButton, showLuckyBoxButton, showMissionPackButton, showHistoryButton, showFeatureFlagDemoButton])
     stackView.axis = .vertical
     stackView.spacing = 8
     stackView.distribution = .fillEqually
@@ -43,6 +43,14 @@ class BenefitHubViewController: UIViewController {
     return button
   }()
 
+  private lazy var showFeatureFlagDemoButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle("Feature Flag Demo", for: .normal)
+    button.addTarget(self, action: #selector(showFeatureFlagDemo), for: .touchUpInside)
+
+    return button
+  }()
+
   private lazy var benefitHub = BuzzBenefitHub()
   
   override func viewDidLoad() {
@@ -62,6 +70,7 @@ class BenefitHubViewController: UIViewController {
       showLuckyBoxButton,
       showMissionPackButton,
       showHistoryButton,
+      showFeatureFlagDemoButton,
     ]
     
     buttonsToSetupAppearance.forEach { button in
@@ -129,7 +138,19 @@ class BenefitHubViewController: UIViewController {
       .setQueryParams(BuzzBenefitHubPage.history.toRedirectQueryParams())
       .build()
     benefitHub.setConfig(benefitHubConfig)
-    
+
+    benefitHub.show(on: self)
+  }
+
+  // 피쳐 플래그 데모 표시하기
+  @objc
+  private func showFeatureFlagDemo() {
+    benefitHub = BuzzBenefitHub()
+    let benefitHubConfig = BuzzBenefitHubConfig.Builder()
+      .setRoutePath("feature-flag-demo")
+      .build()
+    benefitHub.setConfig(benefitHubConfig)
+
     benefitHub.show(on: self)
   }
 }

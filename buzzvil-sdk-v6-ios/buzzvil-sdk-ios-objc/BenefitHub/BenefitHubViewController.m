@@ -9,6 +9,7 @@
 @property (nonatomic, strong) UIButton *showLuckyBoxButton;
 @property (nonatomic, strong) UIButton *showMissionPackButton;
 @property (nonatomic, strong) UIButton *showHistoryButton;
+@property (nonatomic, strong) UIButton *showFeatureFlagDemoButton;
 
 @end
 
@@ -34,15 +35,16 @@
   self.showLuckyBoxButton = [self createButtonWithTitle:@"Show LuckyBox" action:@selector(showLuckyBox)];
   self.showMissionPackButton = [self createButtonWithTitle:@"Show MissionPack" action:@selector(showMissionPack)];
   self.showHistoryButton = [self createButtonWithTitle:@"Show History" action:@selector(showHistory)];
-  
-  self.stackView = [[UIStackView alloc] initWithArrangedSubviews:@[self.showBenefitHubButton, self.showLuckyBoxButton, self.showMissionPackButton, self.showHistoryButton]];
+  self.showFeatureFlagDemoButton = [self createButtonWithTitle:@"Feature Flag Demo" action:@selector(showFeatureFlagDemo)];
+
+  self.stackView = [[UIStackView alloc] initWithArrangedSubviews:@[self.showBenefitHubButton, self.showLuckyBoxButton, self.showMissionPackButton, self.showHistoryButton, self.showFeatureFlagDemoButton]];
   self.stackView.axis = UILayoutConstraintAxisVertical;
   self.stackView.spacing = 8;
   self.stackView.distribution = UIStackViewDistributionFillEqually;
   
   [self.view addSubview:self.stackView];
   
-  NSArray *buttonsToSetupAppearance = @[self.showBenefitHubButton, self.showLuckyBoxButton, self.showMissionPackButton, self.showHistoryButton];
+  NSArray *buttonsToSetupAppearance = @[self.showBenefitHubButton, self.showLuckyBoxButton, self.showMissionPackButton, self.showHistoryButton, self.showFeatureFlagDemoButton];
   
   for (UIButton *button in buttonsToSetupAppearance) {
     [self setupAppearanceOfButton:button];
@@ -107,7 +109,17 @@
   BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
     builder.queryParams = [BuzzBenefitHubPage.history toRedirectQueryParams];
   }];
-  
+
+  [self.benefitHub setConfig:benefithubConfig];
+  [self.benefitHub showOn:self];
+}
+
+- (void)showFeatureFlagDemo {
+  self.benefitHub = [[BuzzBenefitHub alloc] init];
+  BuzzBenefitHubConfig * benefithubConfig = [BuzzBenefitHubConfig configWith:^(BuzzBenefitHubConfigBuilder * _Nonnull builder) {
+    builder.routePath = @"feature-flag-demo";
+  }];
+
   [self.benefitHub setConfig:benefithubConfig];
   [self.benefitHub showOn:self];
 }
