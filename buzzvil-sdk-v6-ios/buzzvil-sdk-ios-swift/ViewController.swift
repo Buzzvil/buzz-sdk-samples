@@ -65,6 +65,13 @@ class ViewController: UIViewController {
     button.addTarget(self, action: #selector(pushEntryPointViewController), for: .touchUpInside)
     return button
   }()
+
+  private lazy var flexAdButton: UIButton = {
+    let button = UIButton(frame: .zero)
+    button.setTitle("FlexAd", for: .normal)
+    button.addTarget(self, action: #selector(pushFlexAdViewController), for: .touchUpInside)
+    return button
+  }()
   
   private lazy var inquiryButton: UIButton = {
     let button = UIButton(frame: .zero)
@@ -117,6 +124,7 @@ class ViewController: UIViewController {
     rootStackView.addArrangedSubview(benefitHubCustomNaviContainerButton)
     rootStackView.addArrangedSubview(bannerButton)
     rootStackView.addArrangedSubview(entryPointButton)
+    rootStackView.addArrangedSubview(flexAdButton)
     rootStackView.addArrangedSubview(inquiryButton)
     rootStackView.addArrangedSubview(privacyConsentStatusLabel)
     rootStackView.addArrangedSubview(loadPrivacyConsentStatusButton)
@@ -133,6 +141,7 @@ class ViewController: UIViewController {
       benefitHubCustomNaviContainerButton,
       bannerButton,
       entryPointButton,
+      flexAdButton,
       inquiryButton,
       loadPrivacyConsentStatusButton,
       grantPrivacyConsentButton,
@@ -202,6 +211,11 @@ class ViewController: UIViewController {
   @objc private func pushEntryPointViewController() {
     let entryPointViewController = EntryPointViewController()
     navigationController?.pushViewController(entryPointViewController, animated: true)
+  }
+
+  @objc private func pushFlexAdViewController() {
+    let flexAdViewController = FlexAdViewController()
+    navigationController?.pushViewController(flexAdViewController, animated: true)
   }
   
   @objc private func showInquiry() {

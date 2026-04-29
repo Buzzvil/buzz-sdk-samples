@@ -40,6 +40,9 @@
         <activity
             android:name=".banner.YourBannerActivity"
             android:exported="false" />
+        <activity
+            android:name=".flexad.YourFlexAdActivity"
+            android:exported="false" />
 
         <service
             android:name=".pop.YourBuzzPopControlService"
