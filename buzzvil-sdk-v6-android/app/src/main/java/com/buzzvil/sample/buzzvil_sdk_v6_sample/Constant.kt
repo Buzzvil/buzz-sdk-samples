@@ -11,4 +11,5 @@ object Constant {
     const val YOUR_NATIVE_ID = "YOUR_NATIVE_ID"
     const val YOUR_INTERSTITIAL_ID = "YOUR_INTERSTITIAL_ID"
     const val YOUR_BANNER_ID = "YOUR_BANNER_ID"
+    const val YOUR_FLEX_AD_ID = "YOUR_FLEX_AD_ID"
 }
