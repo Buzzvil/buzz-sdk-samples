@@ -9,7 +9,7 @@ import { name as appName } from './app.json';
 
 // Your web app's Firebase configuration
 // const firebaseConfig = {
-//     apiKey: "AIzaSyDMWYfzE1sTNYA7rAXWIJ_Zrz8YTGhZzYk",
+//     apiKey: "YOUR-API-KEY",
 //     authDomain: "booster-sample.firebaseapp.com",
 //     projectId: "booster-sample",
 //     storageBucket: "booster-sample.firebasestorage.app",
