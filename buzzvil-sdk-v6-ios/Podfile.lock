@@ -2,19 +2,19 @@ PODS:
   - AdPopcornSSP (2.11.9)
   - AvatyeAdCash (3.4.2):
     - AdPopcornSSP (~> 2.11.1)
-  - BuzzAdBenefitSDK (6.7.7)
-  - BuzzAvatyeAdCash (6.7.7):
+  - BuzzAdBenefitSDK (6.7.9)
+  - BuzzAvatyeAdCash (6.7.9):
     - AvatyeAdCash (~> 3.4.2)
-    - BuzzAdBenefitSDK (= 6.7.7)
-  - BuzzvilSDK (6.7.7):
-    - BuzzAdBenefitSDK (= 6.7.7)
-    - BuzzvilSDK/Default (= 6.7.7)
-  - BuzzvilSDK/Default (6.7.7):
-    - BuzzAdBenefitSDK (= 6.7.7)
-    - BuzzAvatyeAdCash (= 6.7.7)
+    - BuzzAdBenefitSDK (= 6.7.9)
+  - BuzzvilSDK (6.7.9):
+    - BuzzAdBenefitSDK (= 6.7.9)
+    - BuzzvilSDK/Default (= 6.7.9)
+  - BuzzvilSDK/Default (6.7.9):
+    - BuzzAdBenefitSDK (= 6.7.9)
+    - BuzzAvatyeAdCash (= 6.7.9)
 
 DEPENDENCIES:
-  - BuzzvilSDK (= 6.7.7)
+  - BuzzvilSDK (= 6.7.9)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -27,10 +27,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AdPopcornSSP: aca347b5f575b3e7d06b76b18be43251d3f21e30
   AvatyeAdCash: feee179adf2811beb35e0917d8eef6efd59b08a6
-  BuzzAdBenefitSDK: 65e902c157984ceeaea00d7d62f27a117bfa3037
-  BuzzAvatyeAdCash: b593259acd92e7a72786cba0db761d9fa8eadb69
-  BuzzvilSDK: 014220a103c6bc5de0fbe6cd0108c07efccd9849
+  BuzzAdBenefitSDK: f5be5131ad268afba322e45cfc352da5799eb7b6
+  BuzzAvatyeAdCash: 403c4f09516d880f41c8796061353b2401070576
+  BuzzvilSDK: cb470055d73c53ea5f1e9be733c382284f587013
 
-PODFILE CHECKSUM: 6a7194bdb661fb4a00a6e9e09933e655d72f21ef
+PODFILE CHECKSUM: 9bd562c9cf49eaa4bc7d86247910454cf751ed44
 
 COCOAPODS: 1.16.2
