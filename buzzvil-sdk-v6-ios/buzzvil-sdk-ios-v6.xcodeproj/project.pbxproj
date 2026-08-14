@@ -35,6 +35,7 @@
 		008FB3752D8909F400DA135E /* BenefitHubContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3642D8909F400DA135E /* BenefitHubContainerViewController.m */; };
 		008FB3762D8909F400DA135E /* UIButton+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 008FB3402D8909F400DA135E /* UIButton+Custom.m */; };
 		45B7DF90249E277C9C58C0A3 /* FlexAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D40A31A9D7AC52F9DFEE9 /* FlexAdViewController.swift */; };
+		45B7DF90249E277C9C58C0B0 /* FlexAdMidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D40A31A9D7AC52F9DFEF0 /* FlexAdMidViewController.swift */; };
 		6520320D2E20F92500B1B227 /* EntryPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6520320C2E20F92500B1B227 /* EntryPointViewController.m */; };
 		652032102E20FD7500B1B227 /* EntryPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520320F2E20FD7500B1B227 /* EntryPointView.swift */; };
 		654651552DAE406700684E6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654651522DAE406700684E6F /* ContentView.swift */; };
@@ -124,6 +125,7 @@
 		65BB66F62DB22B3D000D1381 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		65BB66F92DB22FD5000D1381 /* PrivacyConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyConsentView.swift; sourceTree = "<group>"; };
 		8A6D40A31A9D7AC52F9DFEE9 /* FlexAdViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlexAdViewController.swift; sourceTree = "<group>"; };
+		8A6D40A31A9D7AC52F9DFEF0 /* FlexAdMidViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FlexAdMidViewController.swift; sourceTree = "<group>"; };
 		9DF2B4AF44BEA0294F33A1FA /* Pods_buzzvil_sdk_ios_objc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_objc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C9481B4C732CB7679FBAD3 /* Pods-buzzvil-sdk-ios-v6.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzzvil-sdk-ios-v6.debug.xcconfig"; path = "Target Support Files/Pods-buzzvil-sdk-ios-v6/Pods-buzzvil-sdk-ios-v6.debug.xcconfig"; sourceTree = "<group>"; };
 		C0CD1C640147ADD6CAF2754C /* Pods_buzzvil_sdk_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzzvil_sdk_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -436,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				8A6D40A31A9D7AC52F9DFEE9 /* FlexAdViewController.swift */,
+				8A6D40A31A9D7AC52F9DFEF0 /* FlexAdMidViewController.swift */,
 			);
 			name = FlexAd;
 			path = FlexAd;
@@ -802,6 +805,7 @@
 				0041F5302D87EE7C00B901E2 /* BenefitHubContainerViewController.swift in Sources */,
 				0041F5312D87EE7C00B901E2 /* CarouselViewController.swift in Sources */,
 				45B7DF90249E277C9C58C0A3 /* FlexAdViewController.swift in Sources */,
+				45B7DF90249E277C9C58C0B0 /* FlexAdMidViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

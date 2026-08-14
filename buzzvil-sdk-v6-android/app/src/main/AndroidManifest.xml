@@ -43,6 +43,9 @@
         <activity
             android:name=".flexad.YourFlexAdActivity"
             android:exported="false" />
+        <activity
+            android:name=".flexad.YourFlexAdMidActivity"
+            android:exported="false" />
 
         <service
             android:name=".pop.YourBuzzPopControlService"
