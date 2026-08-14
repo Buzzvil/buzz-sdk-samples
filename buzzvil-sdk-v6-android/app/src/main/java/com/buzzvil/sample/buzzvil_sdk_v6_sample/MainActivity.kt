@@ -15,6 +15,7 @@ import com.buzzvil.buzzbenefit.pop.BuzzPopActivateListener
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.Constant.YOUR_USER_ID
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.banner.YourBannerActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.flexad.YourFlexAdActivity
+import com.buzzvil.sample.buzzvil_sdk_v6_sample.flexad.YourFlexAdMidActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzbenefithub.YourBenefitHubActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzzentrypoint.BuzzEntryPointActivity
 import com.buzzvil.sample.buzzvil_sdk_v6_sample.buzznative.YourNativeCarouselActivity
@@ -218,6 +219,11 @@ class MainActivity : AppCompatActivity() {
         // FlexAd
         binding.flexAdButton.setOnClickListener {
             navigateActivity(YourFlexAdActivity::class.java)
+        }
+
+        // FlexAd (Mid)
+        binding.flexAdMidButton.setOnClickListener {
+            navigateActivity(YourFlexAdMidActivity::class.java)
         }
 
 
