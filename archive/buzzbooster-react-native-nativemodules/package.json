@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.10",
-    "@react-native-firebase/app": "^16.7.0",
-    "@react-native-firebase/app-distribution": "^16.7.0",
-    "@react-native-firebase/messaging": "^16.7.0",
+    "@react-native-firebase/app": "^26.3.3",
+    "@react-native-firebase/app-distribution": "^26.3.3",
+    "@react-native-firebase/messaging": "^26.3.3",
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
     "@react-navigation/stack": "^6.2.3",
