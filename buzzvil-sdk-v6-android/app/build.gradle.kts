@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.buzzvil.sample.buzzvil_sdk_v6_sample"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.buzzvil.sample.buzzvil_sdk_v6_sample"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -40,7 +40,7 @@ android {
 
 dependencies {
     // buzzvil-sdk
-    val buzzvilBomVersion = "6.7.10"
+    val buzzvilBomVersion = "6.9.2"
 
     api(platform("com.buzzvil:buzzvil-bom:$buzzvilBomVersion"))
     implementation("com.buzzvil:buzzvil-sdk")
