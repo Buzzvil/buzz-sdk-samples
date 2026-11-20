@@ -25,6 +25,7 @@ function setLoginUi(userId) {
 }
 
 function showToast(message, bad) {
+  toastr.options.escapeHtml = true;
   if (bad) {
     toastr.error(message);
   } else {
@@ -110,8 +111,8 @@ function log(message, bad) {
   function renderAd(placementView, nativeAd) {
     placementView.style.display = '';
     placementView.getElementsByClassName('icon')[0].setAttribute('src', nativeAd.iconUrl);
-    placementView.getElementsByClassName('name')[0].innerHTML = nativeAd.title;
-    placementView.getElementsByClassName('body')[0].innerHTML = nativeAd.description;
+    placementView.getElementsByClassName('name')[0].textContent = nativeAd.title;
+    placementView.getElementsByClassName('body')[0].textContent = nativeAd.description;
 
     updateCtaView(placementView.getElementsByClassName('cta')[0], nativeAd);
   }
